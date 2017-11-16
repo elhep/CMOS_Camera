@@ -91,23 +91,6 @@ GenerateClassCluster=0
 DocumentUniqueId=HAGQEEFA
 
 [Document4]
-DocumentPath=Schematics\Power.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=SKXJBWRI
-
-[Document5]
 DocumentPath=Schematics\RS422_RS485.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -124,7 +107,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QHHBHGHK
 
-[Document6]
+[Document5]
 DocumentPath=Schematics\Zynq_Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -141,7 +124,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HXGRAQKS
 
-[Document7]
+[Document6]
 DocumentPath=Schematics\Zynq_PS.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -158,7 +141,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VRMCGTOE
 
-[Document8]
+[Document7]
 DocumentPath=Schematics\Zynq_FPGA.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -175,7 +158,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=SMVCOAKM
 
-[Document9]
+[Document8]
 DocumentPath=Schematics\Zynq_MGT.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -192,7 +175,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=QGKFLLQR
 
-[Document10]
+[Document9]
 DocumentPath=Schematics\Zynq_Config.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -209,14 +192,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=YNHQFBCU
 
-[Document11]
+[Document10]
 DocumentPath=Schematics\Power_Ver1.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=12
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -226,7 +209,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OSTTDCFE
 
-[Document12]
+[Document11]
 DocumentPath=Schematics\Spektrop2.SchLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -243,7 +226,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=FNCEMPLB
 
-[Document13]
+[Document12]
 DocumentPath=PCB-Layout\CAM-DV-SENS_IMX035.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -260,7 +243,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=IKAYYMUF
 
-[Document14]
+[Document13]
 DocumentPath=PCB-Layout\IMX035_PCB_Rev_C.c.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -277,14 +260,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document15]
+[Document14]
 DocumentPath=Schematics\Sensor_Connectors.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=14
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -294,14 +277,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LPPYVVKE
 
-[Document16]
+[Document15]
 DocumentPath=Schematics\SDI.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=13
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -311,14 +294,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ONAEBDPE
 
-[Document17]
+[Document16]
 DocumentPath=Schematics\CoaXPress.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=11
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -328,7 +311,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NGHIKTAT
 
-[Document18]
+[Document17]
 DocumentPath=Schematics\RS422_RS485.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -345,8 +328,25 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
+[Document18]
+DocumentPath=Schematics\Zynq_FPGA.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [Document19]
-DocumentPath=Schematics\Zynq_PS.Harness
+DocumentPath=Spektrop2_Processor_Board_V1.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -363,7 +363,41 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document20]
-DocumentPath=Schematics\Zynq_FPGA.Harness
+DocumentPath=Schematics\Spektrop2_Processor_Board_V1.SCHLIB
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=OITWKAQC
+
+[Document21]
+DocumentPath=Schematics\CoaXPress.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document22]
+DocumentPath=Schematics\Zynq_PS.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -384,7 +418,9 @@ UniqueID=9B5F422A-711E-4725-89CA-2C891978FC62
 Description=Default
 AllowFabrication=0
 ParameterCount=0
-VariationCount=0
+VariationCount=2
+Variation1=Designator=R6|UniqueId=\BRISFSYA\LDKLYHEU\XCYXYCQL|Kind=1|AlternatePart= 
+Variation2=Designator=R8|UniqueId=\BRISFSYA\LDKLYHEU\IRCOTUSQ|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [SearchPath1]
@@ -1308,6 +1344,70 @@ MatchStrictly2=1
 PhysicalNamingFormat=$Component_$RoomName
 GlobalIndexSortOrder=3
 GlobalIndexSortLocation=0
+UniqueIDPath0=\LWGJCMNM
+DocumentName0=Power_Ver1.SchDoc
+IsEnabled0=1
+SelectionScope0=All
+Order0=1
+IndexEnabled0=0
+IndexStartValue0=1
+Suffix0=
+UniqueIDPath1=
+DocumentName1=TOP.SchDoc
+IsEnabled1=1
+SelectionScope1=All
+Order1=2
+IndexEnabled1=0
+IndexStartValue1=1
+Suffix1=
+UniqueIDPath2=\BRISFSYA\LOHVRRQP
+DocumentName2=Zynq_Config.SchDoc
+IsEnabled2=1
+SelectionScope2=All
+Order2=3
+IndexEnabled2=0
+IndexStartValue2=1
+Suffix2=
+UniqueIDPath3=\BRISFSYA\BIACTJYP
+DocumentName3=Zynq_FPGA.SchDoc
+IsEnabled3=1
+SelectionScope3=All
+Order3=4
+IndexEnabled3=0
+IndexStartValue3=1
+Suffix3=
+UniqueIDPath4=\BRISFSYA\RHALMMFP
+DocumentName4=Zynq_MGT.SchDoc
+IsEnabled4=1
+SelectionScope4=All
+Order4=5
+IndexEnabled4=0
+IndexStartValue4=1
+Suffix4=
+UniqueIDPath5=\BRISFSYA\SKTCARRM
+DocumentName5=Zynq_Power.SchDoc
+IsEnabled5=1
+SelectionScope5=All
+Order5=6
+IndexEnabled5=0
+IndexStartValue5=1
+Suffix5=
+UniqueIDPath6=\BRISFSYA\LDKLYHEU
+DocumentName6=Zynq_PS.SchDoc
+IsEnabled6=1
+SelectionScope6=All
+Order6=7
+IndexEnabled6=0
+IndexStartValue6=1
+Suffix6=
+UniqueIDPath7=\BRISFSYA
+DocumentName7=Zynq_Top.SchDoc
+IsEnabled7=1
+SelectionScope7=All
+Order7=8
+IndexEnabled7=0
+IndexStartValue7=1
+Suffix7=
 
 [PrjClassGen]
 CompClassManualEnabled=0
@@ -1340,6 +1440,9 @@ UpdateCurrentModels=1
 SelectedOnly=0
 UpdateVariants=1
 PartTypes=0
+
+[NetInfos]
+Net1=NetName=SCLK|NetColor=clYellow
 
 [Comparison Options]
 ComparisonOptions0=Kind=Net|MinPercent=75|MinMatch=3|ShowMatch=-1|Confirm=-1|UseName=-1|InclAllRules=0
