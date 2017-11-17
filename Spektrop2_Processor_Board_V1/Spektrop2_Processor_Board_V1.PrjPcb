@@ -142,7 +142,7 @@ GenerateClassCluster=0
 DocumentUniqueId=VRMCGTOE
 
 [Document7]
-DocumentPath=Schematics\Zynq_FPGA.SchDoc
+DocumentPath=Schematics\Zynq_FPGA_Bank34_13.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
