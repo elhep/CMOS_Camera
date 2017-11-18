@@ -227,40 +227,6 @@ GenerateClassCluster=0
 DocumentUniqueId=FNCEMPLB
 
 [Document12]
-DocumentPath=PCB-Layout\CAM-DV-SENS_IMX035.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=IKAYYMUF
-
-[Document13]
-DocumentPath=PCB-Layout\IMX035_PCB_Rev_C.c.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document14]
 DocumentPath=Schematics\Sensor_Connectors.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -277,7 +243,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LPPYVVKE
 
-[Document15]
+[Document13]
 DocumentPath=Schematics\SDI.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -294,7 +260,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ONAEBDPE
 
-[Document16]
+[Document14]
 DocumentPath=Schematics\CoaXPress.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -311,7 +277,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=NGHIKTAT
 
-[Document17]
+[Document15]
 DocumentPath=Schematics\RS422_RS485.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -328,7 +294,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document18]
+[Document16]
 DocumentPath=Schematics\Zynq_FPGA.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -345,7 +311,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document19]
+[Document17]
 DocumentPath=Spektrop2_Processor_Board_V1.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -362,7 +328,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document20]
+[Document18]
 DocumentPath=Schematics\Spektrop2_Processor_Board_V1.SCHLIB
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -379,24 +345,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OITWKAQC
 
-[Document21]
-DocumentPath=Schematics\CoaXPress.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document22]
+[Document19]
 DocumentPath=Schematics\Zynq_PS.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -413,7 +362,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document23]
+[Document20]
 DocumentPath=Schematics\Sensor_Connectors.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -430,7 +379,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document24]
+[Document21]
 DocumentPath=Schematics\PCIe.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -447,7 +396,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=PTSQHXUM
 
-[Document25]
+[Document22]
 DocumentPath=Schematics\Zynq_FPGA_Unused.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -464,8 +413,76 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AKGBGXLR
 
-[Document26]
+[Document23]
 DocumentPath=Schematics\Zynq_MGT.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document24]
+DocumentPath=Schematics\Zynq_FPGA_Bank34_13.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document25]
+DocumentPath=Schematics\SDI.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document26]
+DocumentPath=Schematics\PCIe.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document27]
+DocumentPath=Schematics\CoaXPress.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
