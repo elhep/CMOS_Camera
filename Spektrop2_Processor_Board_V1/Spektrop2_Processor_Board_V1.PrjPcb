@@ -588,9 +588,11 @@ UniqueID=9B5F422A-711E-4725-89CA-2C891978FC62
 Description=Default
 AllowFabrication=0
 ParameterCount=0
-VariationCount=2
+VariationCount=4
 Variation1=Designator=R6|UniqueId=\BRISFSYA\LDKLYHEU\XCYXYCQL|Kind=1|AlternatePart= 
 Variation2=Designator=R8|UniqueId=\BRISFSYA\LDKLYHEU\IRCOTUSQ|Kind=1|AlternatePart= 
+Variation3=Designator=R22|UniqueId=\BRISFSYA\LDKLYHEU\HATMOOWQ|Kind=1|AlternatePart= 
+Variation4=Designator=R23|UniqueId=\BRISFSYA\LDKLYHEU\EBIYKQDP|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [SearchPath1]
