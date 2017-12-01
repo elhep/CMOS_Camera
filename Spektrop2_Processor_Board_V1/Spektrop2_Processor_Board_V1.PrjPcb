@@ -312,7 +312,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document17]
-DocumentPath=Schematics\PCIe.SchDoc
+DocumentPath=Schematics\SATA.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -414,23 +414,6 @@ GenerateClassCluster=0
 DocumentUniqueId=UWSPRQEL
 
 [Document23]
-DocumentPath=Schematics\Zynq_FPGA_Bank13.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document24]
 DocumentPath=Spektrop2.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -447,7 +430,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document25]
+[Document24]
 DocumentPath=Schematics\MGT_Clock_Generation.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -464,24 +447,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=LOFOPHXC
 
-[Document26]
-DocumentPath=Schematics\Zynq_FPGA_Bank34.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document27]
+[Document25]
 DocumentPath=Schematics\RS485.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -498,7 +464,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document28]
+[Document26]
 DocumentPath=Schematics\MGT_Clock_Generation.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -515,7 +481,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document29]
+[Document27]
 DocumentPath=Schematics\Zynq_PS.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -532,7 +498,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document30]
+[Document28]
 DocumentPath=Schematics\Zynq_FPGA_Bank35.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -549,7 +515,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GIXSIYAS
 
-[Document31]
+[Document29]
 DocumentPath=Schematics\Zynq_FPGA_Unused.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -566,8 +532,42 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AKGBGXLR
 
-[Document32]
+[Document30]
 DocumentPath=Schematics\Zynq_FPGA_Bank35.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document31]
+DocumentPath=Schematics\SATA.Harness
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document32]
+DocumentPath=Schematics\Zynq_FPGA_Bank34.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
