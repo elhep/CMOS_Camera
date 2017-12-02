@@ -550,7 +550,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document31]
-DocumentPath=Schematics\Zynq_FPGA_Bank13.Harness
+DocumentPath=Schematics\Zynq_FPGA_Bank35.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -567,7 +567,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document32]
-DocumentPath=Schematics\Zynq_FPGA_Bank35.Harness
+DocumentPath=Schematics\Sensor_Board_Connectors.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
