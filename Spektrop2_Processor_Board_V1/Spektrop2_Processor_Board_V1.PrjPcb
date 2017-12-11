@@ -601,23 +601,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document34]
-DocumentPath=PCB-Layout\Spektrop2_Processor_Board_V1_draft_v2.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=PIIXRXVN
-
-[Document35]
 DocumentPath=Schematics\Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -652,6 +635,10 @@ DItemRevisionGUID=
 
 [GeneratedDocument2]
 DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board_V1.html
 DItemRevisionGUID=
 
 [SearchPath1]
