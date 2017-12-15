@@ -645,10 +645,6 @@ DItemRevisionGUID=
 Path=..\Kamery\CernLib_2017_07_14\*.*
 IncludeSubFolders=1
 
-[SearchPath2]
-Path=Library\Altium\*.*
-IncludeSubFolders=1
-
 [Configuration1]
 Name=Default Configuration
 ParameterCount=0
