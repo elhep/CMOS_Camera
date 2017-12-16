@@ -642,7 +642,7 @@ DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board
 DItemRevisionGUID=
 
 [SearchPath1]
-Path=..\Kamery\CernLib_2017_07_14\*.*
+Path=..\Kamery\CernLib_2017_07_14_temp\*.*
 IncludeSubFolders=1
 
 [Configuration1]
