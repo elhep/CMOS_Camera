@@ -1,6 +1,6 @@
 [Design]
 Version=1.0
-HierarchyMode=4
+HierarchyMode=2
 ChannelRoomNamingStyle=0
 ReleasesFolder=
 ChannelDesignatorFormatString=$Component_$RoomName
