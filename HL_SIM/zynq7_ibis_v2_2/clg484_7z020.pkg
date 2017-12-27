@@ -1,0 +1,5846 @@
+| 
+|************************************************************************ 
+| 
+[IBIS Ver]     3.2
+[Comment Char] |_char
+[File Name]    clg484_7z020.pkg
+[File Rev]     2.0 
+[Date]         6/27/2012
+[Source]       Sigrity SpeedPKG Suite XtractIM Version 11.1.4.05291
+[Notes]        One-Section RLC [Disclaimer]   
+|               The data in this model has been generated with the 
+|               utmost care and is believed to be accurate, although 
+|               accuracy cannot be guaranteed. This model has not been 
+|               correlated with lab measurements. Future revisions to 
+|               this model will be reflected in the model 
+|               revision number.
+[Copyright]     Copyright 2012, Xilinx Inc. All Rights Reserved 
+| 
+|************************************************************************ 
+| 
+[Define Package Model]   clg484_xc7z020
+[Manufacturer]           Xilinx Inc.
+[OEM]                    Xilinx
+[Description]            484 ball organic wirebond
+| 
+|[Number of Sections]    1
+[Number of Pins]         367
+| 
+[Pin Numbers]
+|[Pin Name]  Net Number    Net Name   Net's All Pins
+K11           | 1          VCCADC_0                           K11
+L10           | 2          VCCAUX                             L10
+                                                             |N10
+                                                             |P11
+                                                             |R10
+G9            | 3          VCCBATT_0                          G9
+H11           | 4          VCCBRAM                            H11
+                                                             |J10
+J12           | 5          VCCINT                             J12
+                                                             |J14
+                                                             |K13
+                                                             |L14
+                                                             |M13
+                                                             |N14
+                                                             |P13
+                                                             |R14
+R12           | 6          VCCO_0                             R12
+AA10          | 7          VCCO_13                            AA10
+                                                             |AB3
+                                                             |T5
+                                                             |U8
+                                                             |V11
+                                                             |W4
+                                                             |Y7
+AA20          | 8          VCCO_33                            AA20
+                                                             |AB13
+                                                             |U18
+                                                             |V21
+                                                             |W14
+                                                             |Y17
+K17           | 9          VCCO_34                            K17
+                                                             |L20
+                                                             |N16
+                                                             |P19
+                                                             |R22
+                                                             |T15
+A20           | 10         VCCO_35                            A20
+                                                             |C16
+                                                             |D19
+                                                             |E22
+                                                             |F15
+                                                             |G18
+                                                             |H21
+E2            | 11         VCCO_DDR                           E2
+                                                             |F5
+                                                             |H1
+                                                             |J4
+                                                             |K7
+                                                             |M3
+                                                             |N6
+                                                             |R2
+                                                             |V1
+B3            | 12         VCCO_P0                            B3
+                                                             |C6
+A10           | 13         VCCO_P1                            A10
+                                                             |B13
+                                                             |D9
+                                                             |E12
+K9            | 14         VCCPAUX                            K9
+                                                             |M9
+                                                             |P9
+                                                             |T9
+G8            | 15         VCCPINT                            G8
+                                                             |H9
+                                                             |J8
+                                                             |L8
+                                                             |N8
+                                                             |R8
+H10           | 16         VCCPLL                             H10
+G10           | 17         CCLK_0                             G10
+T13           | 18         CFGBVS_0                           T13
+T12           | 19         DONE_0                             T12
+N12           | 20         DXN_0                              N12
+N11           | 21         DXP_0                              N11
+T14           | 22         INIT_B_0                           T14
+R7            | 23         IO_0_13                            R7
+U19           | 24         IO_0_33                            U19
+H15           | 25         IO_0_34                            H15
+H17           | 26         IO_0_35                            H17
+U7            | 27         IO_25_13                           U7
+U14           | 28         IO_25_33                           U14
+R15           | 29         IO_25_34                           R15
+H18           | 30         IO_25_35                           H18
+V9            | 31         IO_L1N_T0_13                       V9
+U21           | 32         IO_L1N_T0_33                       U21
+E16           | 33         IO_L1N_T0_AD0N_35                  E16
+K15           | 34         IO_L1N_T0_D01_DIN_34               K15
+V10           | 35         IO_L1P_T0_13                       V10
+T21           | 36         IO_L1P_T0_33                       T21
+F16           | 37         IO_L1P_T0_AD0P_35                  F16
+J15           | 38         IO_L1P_T0_D00_MOSI_34              J15
+W8            | 39         IO_L2N_T0_13                       W8
+U22           | 40         IO_L2N_T0_33                       U22
+D17           | 41         IO_L2N_T0_AD8N_35                  D17
+J17           | 42         IO_L2N_T0_D03_34                   J17
+V8            | 43         IO_L2P_T0_13                       V8
+T22           | 44         IO_L2P_T0_33                       T22
+D16           | 45         IO_L2P_T0_AD8P_35                  D16
+J16           | 46         IO_L2P_T0_D02_34                   J16
+W10           | 47         IO_L3N_T0_DQS_13                   W10
+W22           | 48         IO_L3N_T0_DQS_33                   W22
+D15           | 49         IO_L3N_T0_DQS_AD1N_35              D15
+L16           | 50         IO_L3N_T0_DQS_EMCCLK_34            L16
+W11           | 51         IO_L3P_T0_DQS_13                   W11
+V22           | 52         IO_L3P_T0_DQS_33                   V22
+E15           | 53         IO_L3P_T0_DQS_AD1P_35              E15
+K16           | 54         IO_L3P_T0_DQS_PUDC_B_34            K16
+W12           | 55         IO_L4N_T0_13                       W12
+W21           | 56         IO_L4N_T0_33                       W21
+G16           | 57         IO_L4N_T0_35                       G16
+M17           | 58         IO_L4N_T0_D05_34                   M17
+V12           | 59         IO_L4P_T0_13                       V12
+W20           | 60         IO_L4P_T0_33                       W20
+G15           | 61         IO_L4P_T0_35                       G15
+L17           | 62         IO_L4P_T0_D04_34                   L17
+U11           | 63         IO_L5N_T0_13                       U11
+V20           | 64         IO_L5N_T0_33                       V20
+E18           | 65         IO_L5N_T0_AD9N_35                  E18
+N18           | 66         IO_L5N_T0_D07_34                   N18
+U12           | 67         IO_L5P_T0_13                       U12
+U20           | 68         IO_L5P_T0_33                       U20
+F18           | 69         IO_L5P_T0_AD9P_35                  F18
+N17           | 70         IO_L5P_T0_D06_34                   N17
+M16           | 71         IO_L6N_T0_D08_VREF_34              M16
+U9            | 72         IO_L6N_T0_VREF_13                  U9
+V19           | 73         IO_L6N_T0_VREF_33                  V19
+F17           | 74         IO_L6N_T0_VREF_35                  F17
+U10           | 75         IO_L6P_T0_13                       U10
+V18           | 76         IO_L6P_T0_33                       V18
+G17           | 77         IO_L6P_T0_35                       G17
+M15           | 78         IO_L6P_T0_FCS_B_34                 M15
+AB12          | 79         IO_L7N_T1_13                       AB12
+AB22          | 80         IO_L7N_T1_33                       AB22
+B15           | 81         IO_L7N_T1_AD2N_35                  B15
+K18           | 82         IO_L7N_T1_D10_34                   K18
+AA12          | 83         IO_L7P_T1_13                       AA12
+AA22          | 84         IO_L7P_T1_33                       AA22
+C15           | 85         IO_L7P_T1_AD2P_35                  C15
+J18           | 86         IO_L7P_T1_D09_34                   J18
+AB11          | 87         IO_L8N_T1_13                       AB11
+AB21          | 88         IO_L8N_T1_33                       AB21
+B17           | 89         IO_L8N_T1_AD10N_35                 B17
+J22           | 90         IO_L8N_T1_D12_34                   J22
+AA11          | 91         IO_L8P_T1_13                       AA11
+AA21          | 92         IO_L8P_T1_33                       AA21
+B16           | 93         IO_L8P_T1_AD10P_35                 B16
+J21           | 94         IO_L8P_T1_D11_34                   J21
+AB9           | 95         IO_L9N_T1_DQS_13                   AB9
+Y21           | 96         IO_L9N_T1_DQS_33                   Y21
+A17           | 97         IO_L9N_T1_DQS_AD3N_35              A17
+K21           | 98         IO_L9N_T1_DQS_D13_34               K21
+AB10          | 99         IO_L9P_T1_DQS_13                   AB10
+Y20           | 100        IO_L9P_T1_DQS_33                   Y20
+J20           | 101        IO_L9P_T1_DQS_34                   J20
+A16           | 102        IO_L9P_T1_DQS_AD3P_35              A16
+Y10           | 103        IO_L10N_T1_13                      Y10
+AB20          | 104        IO_L10N_T1_33                      AB20
+A19           | 105        IO_L10N_T1_AD11N_35                A19
+L22           | 106        IO_L10N_T1_D15_34                  L22
+Y11           | 107        IO_L10P_T1_13                      Y11
+AB19          | 108        IO_L10P_T1_33                      AB19
+A18           | 109        IO_L10P_T1_AD11P_35                A18
+L21           | 110        IO_L10P_T1_D14_34                  L21
+AA8           | 111        IO_L11N_T1_SRCC_13                 AA8
+AA19          | 112        IO_L11N_T1_SRCC_33                 AA19
+K20           | 113        IO_L11N_T1_SRCC_34                 K20
+C18           | 114        IO_L11N_T1_SRCC_35                 C18
+AA9           | 115        IO_L11P_T1_SRCC_13                 AA9
+Y19           | 116        IO_L11P_T1_SRCC_33                 Y19
+K19           | 117        IO_L11P_T1_SRCC_34                 K19
+C17           | 118        IO_L11P_T1_SRCC_35                 C17
+Y8            | 119        IO_L12N_T1_MRCC_13                 Y8
+AA18          | 120        IO_L12N_T1_MRCC_33                 AA18
+L19           | 121        IO_L12N_T1_MRCC_34                 L19
+C19           | 122        IO_L12N_T1_MRCC_35                 C19
+Y9            | 123        IO_L12P_T1_MRCC_13                 Y9
+Y18           | 124        IO_L12P_T1_MRCC_33                 Y18
+L18           | 125        IO_L12P_T1_MRCC_34                 L18
+D18           | 126        IO_L12P_T1_MRCC_35                 D18
+Y5            | 127        IO_L13N_T2_MRCC_13                 Y5
+W18           | 128        IO_L13N_T2_MRCC_33                 W18
+M20           | 129        IO_L13N_T2_MRCC_34                 M20
+B20           | 130        IO_L13N_T2_MRCC_35                 B20
+Y6            | 131        IO_L13P_T2_MRCC_13                 Y6
+W17           | 132        IO_L13P_T2_MRCC_33                 W17
+M19           | 133        IO_L13P_T2_MRCC_34                 M19
+B19           | 134        IO_L13P_T2_MRCC_35                 B19
+C20           | 135        IO_L14N_T2_AD4N_SRCC_35            C20
+AA6           | 136        IO_L14N_T2_SRCC_13                 AA6
+Y16           | 137        IO_L14N_T2_SRCC_33                 Y16
+N20           | 138        IO_L14N_T2_SRCC_34                 N20
+D20           | 139        IO_L14P_T2_AD4P_SRCC_35            D20
+AA7           | 140        IO_L14P_T2_SRCC_13                 AA7
+W16           | 141        IO_L14P_T2_SRCC_33                 W16
+N19           | 142        IO_L14P_T2_SRCC_34                 N19
+AB1           | 143        IO_L15N_T2_DQS_13                  AB1
+U16           | 144        IO_L15N_T2_DQS_33                  U16
+A22           | 145        IO_L15N_T2_DQS_AD12N_35            A22
+M22           | 146        IO_L15N_T2_DQS_DOUT_CSO_B_34       M22
+AB2           | 147        IO_L15P_T2_DQS_13                  AB2
+U15           | 148        IO_L15P_T2_DQS_33                  U15
+A21           | 149        IO_L15P_T2_DQS_AD12P_35            A21
+M21           | 150        IO_L15P_T2_DQS_RDWR_B_34           M21
+AB4           | 151        IO_L16N_T2_13                      AB4
+V17           | 152        IO_L16N_T2_33                      V17
+C22           | 153        IO_L16N_T2_35                      C22
+P22           | 154        IO_L16N_T2_A15_D31_34              P22
+AB5           | 155        IO_L16P_T2_13                      AB5
+U17           | 156        IO_L16P_T2_33                      U17
+D22           | 157        IO_L16P_T2_35                      D22
+N22           | 158        IO_L16P_T2_CSI_B_34                N22
+AB6           | 159        IO_L17N_T2_13                      AB6
+AB17          | 160        IO_L17N_T2_33                      AB17
+R21           | 161        IO_L17N_T2_A13_D29_34              R21
+D21           | 162        IO_L17N_T2_AD5N_35                 D21
+AB7           | 163        IO_L17P_T2_13                      AB7
+AA17          | 164        IO_L17P_T2_33                      AA17
+R20           | 165        IO_L17P_T2_A14_D30_34              R20
+E21           | 166        IO_L17P_T2_AD5P_35                 E21
+AA4           | 167        IO_L18N_T2_13                      AA4
+AB16          | 168        IO_L18N_T2_33                      AB16
+P21           | 169        IO_L18N_T2_A11_D27_34              P21
+B22           | 170        IO_L18N_T2_AD13N_35                B22
+Y4            | 171        IO_L18P_T2_13                      Y4
+AA16          | 172        IO_L18P_T2_33                      AA16
+P20           | 173        IO_L18P_T2_A12_D28_34              P20
+B21           | 174        IO_L18P_T2_AD13P_35                B21
+P15           | 175        IO_L19N_T3_A09_D25_VREF_34         P15
+T6            | 176        IO_L19N_T3_VREF_13                 T6
+V15           | 177        IO_L19N_T3_VREF_33                 V15
+H20           | 178        IO_L19N_T3_VREF_35                 H20
+R6            | 179        IO_L19P_T3_13                      R6
+V14           | 180        IO_L19P_T3_33                      V14
+H19           | 181        IO_L19P_T3_35                      H19
+N15           | 182        IO_L19P_T3_A10_D26_34              N15
+U4            | 183        IO_L20N_T3_13                      U4
+W13           | 184        IO_L20N_T3_33                      W13
+P18           | 185        IO_L20N_T3_A07_D23_34              P18
+F19           | 186        IO_L20N_T3_AD6N_35                 F19
+T4            | 187        IO_L20P_T3_13                      T4
+V13           | 188        IO_L20P_T3_33                      V13
+P17           | 189        IO_L20P_T3_A08_D24_34              P17
+G19           | 190        IO_L20P_T3_AD6P_35                 G19
+V4            | 191        IO_L21N_T3_DQS_13                  V4
+Y15           | 192        IO_L21N_T3_DQS_33                  Y15
+T17           | 193        IO_L21N_T3_DQS_A06_D22_34          T17
+E20           | 194        IO_L21N_T3_DQS_AD14N_35            E20
+V5            | 195        IO_L21P_T3_DQS_13                  V5
+W15           | 196        IO_L21P_T3_DQS_33                  W15
+T16           | 197        IO_L21P_T3_DQS_34                  T16
+E19           | 198        IO_L21P_T3_DQS_AD14P_35            E19
+U5            | 199        IO_L22N_T3_13                      U5
+AA14          | 200        IO_L22N_T3_33                      AA14
+T19           | 201        IO_L22N_T3_A04_D20_34              T19
+G21           | 202        IO_L22N_T3_AD7N_35                 G21
+U6            | 203        IO_L22P_T3_13                      U6
+Y14           | 204        IO_L22P_T3_33                      Y14
+R19           | 205        IO_L22P_T3_A05_D21_34              R19
+G20           | 206        IO_L22P_T3_AD7P_35                 G20
+W7            | 207        IO_L23N_T3_13                      W7
+AA13          | 208        IO_L23N_T3_33                      AA13
+F22           | 209        IO_L23N_T3_35                      F22
+T18           | 210        IO_L23N_T3_A02_D18_34              T18
+V7            | 211        IO_L23P_T3_13                      V7
+Y13           | 212        IO_L23P_T3_33                      Y13
+F21           | 213        IO_L23P_T3_35                      F21
+R18           | 214        IO_L23P_T3_A03_D19_34              R18
+W5            | 215        IO_L24N_T3_13                      W5
+AB15          | 216        IO_L24N_T3_33                      AB15
+R16           | 217        IO_L24N_T3_A00_D16_34              R16
+G22           | 218        IO_L24N_T3_AD15N_35                G22
+W6            | 219        IO_L24P_T3_13                      W6
+AB14          | 220        IO_L24P_T3_33                      AB14
+P16           | 221        IO_L24P_T3_A01_D17_34              P16
+H22           | 222        IO_L24P_T3_AD15P_35                H22
+T10           | 223        M0_0                               T10
+T8            | 224        M1_0                               T8
+T7            | 225        M2_0                               T7
+T11           | 226        PROGRAM_B_0                        T11
+F7            | 227        PS_CLK                             F7
+M4            | 228        PS_DDR_A0                          M4
+M5            | 229        PS_DDR_A1                          M5
+K4            | 230        PS_DDR_A2                          K4
+L4            | 231        PS_DDR_A3                          L4
+K6            | 232        PS_DDR_A4                          K6
+K5            | 233        PS_DDR_A5                          K5
+J7            | 234        PS_DDR_A6                          J7
+J6            | 235        PS_DDR_A7                          J6
+J5            | 236        PS_DDR_A8                          J5
+H5            | 237        PS_DDR_A9                          H5
+J3            | 238        PS_DDR_A10                         J3
+G5            | 239        PS_DDR_A11                         G5
+H4            | 240        PS_DDR_A12                         H4
+F4            | 241        PS_DDR_A13                         F4
+G4            | 242        PS_DDR_A14                         G4
+L7            | 243        PS_DDR_BA0                         L7
+L6            | 244        PS_DDR_BA1                         L6
+M6            | 245        PS_DDR_BA2                         M6
+P3            | 246        PS_DDR_CAS_B                       P3
+V3            | 247        PS_DDR_CKE                         V3
+N5            | 248        PS_DDR_CKN                         N5
+N4            | 249        PS_DDR_CKP                         N4
+P6            | 250        PS_DDR_CS_B                        P6
+B1            | 251        PS_DDR_DM0                         B1
+H3            | 252        PS_DDR_DM1                         H3
+P1            | 253        PS_DDR_DM2                         P1
+AA2           | 254        PS_DDR_DM3                         AA2
+D1            | 255        PS_DDR_DQ0                         D1
+C3            | 256        PS_DDR_DQ1                         C3
+B2            | 257        PS_DDR_DQ2                         B2
+D3            | 258        PS_DDR_DQ3                         D3
+E3            | 259        PS_DDR_DQ4                         E3
+E1            | 260        PS_DDR_DQ5                         E1
+F2            | 261        PS_DDR_DQ6                         F2
+F1            | 262        PS_DDR_DQ7                         F1
+G2            | 263        PS_DDR_DQ8                         G2
+G1            | 264        PS_DDR_DQ9                         G1
+L1            | 265        PS_DDR_DQ10                        L1
+L2            | 266        PS_DDR_DQ11                        L2
+L3            | 267        PS_DDR_DQ12                        L3
+K1            | 268        PS_DDR_DQ13                        K1
+J1            | 269        PS_DDR_DQ14                        J1
+K3            | 270        PS_DDR_DQ15                        K3
+M1            | 271        PS_DDR_DQ16                        M1
+T3            | 272        PS_DDR_DQ17                        T3
+N3            | 273        PS_DDR_DQ18                        N3
+T1            | 274        PS_DDR_DQ19                        T1
+R3            | 275        PS_DDR_DQ20                        R3
+T2            | 276        PS_DDR_DQ21                        T2
+M2            | 277        PS_DDR_DQ22                        M2
+R1            | 278        PS_DDR_DQ23                        R1
+AA3           | 279        PS_DDR_DQ24                        AA3
+U1            | 280        PS_DDR_DQ25                        U1
+AA1           | 281        PS_DDR_DQ26                        AA1
+U2            | 282        PS_DDR_DQ27                        U2
+W1            | 283        PS_DDR_DQ28                        W1
+Y3            | 284        PS_DDR_DQ29                        Y3
+W3            | 285        PS_DDR_DQ30                        W3
+Y1            | 286        PS_DDR_DQ31                        Y1
+D2            | 287        PS_DDR_DQS_N0                      D2
+J2            | 288        PS_DDR_DQS_N1                      J2
+P2            | 289        PS_DDR_DQS_N2                      P2
+W2            | 290        PS_DDR_DQS_N3                      W2
+C2            | 291        PS_DDR_DQS_P0                      C2
+H2            | 292        PS_DDR_DQS_P1                      H2
+N2            | 293        PS_DDR_DQS_P2                      N2
+V2            | 294        PS_DDR_DQS_P3                      V2
+F3            | 295        PS_DDR_DRST_B                      F3
+P5            | 296        PS_DDR_ODT                         P5
+R5            | 297        PS_DDR_RAS_B                       R5
+H7            | 298        PS_DDR_VREF0                       H7
+P7            | 299        PS_DDR_VREF1                       P7
+M7            | 300        PS_DDR_VRN                         M7
+N7            | 301        PS_DDR_VRP                         N7
+R4            | 302        PS_DDR_WE_B                        R4
+G6            | 303        PS_MIO0                            G6
+A1            | 304        PS_MIO1                            A1
+A2            | 305        PS_MIO2                            A2
+F6            | 306        PS_MIO3                            F6
+E4            | 307        PS_MIO4                            E4
+A3            | 308        PS_MIO5                            A3
+A4            | 309        PS_MIO6                            A4
+D5            | 310        PS_MIO7                            D5
+E5            | 311        PS_MIO8                            E5
+C4            | 312        PS_MIO9                            C4
+G7            | 313        PS_MIO10                           G7
+B4            | 314        PS_MIO11                           B4
+C5            | 315        PS_MIO12                           C5
+A6            | 316        PS_MIO13                           A6
+B6            | 317        PS_MIO14                           B6
+E6            | 318        PS_MIO15                           E6
+D6            | 319        PS_MIO16                           D6
+E9            | 320        PS_MIO17                           E9
+A7            | 321        PS_MIO18                           A7
+E10           | 322        PS_MIO19                           E10
+A8            | 323        PS_MIO20                           A8
+F11           | 324        PS_MIO21                           F11
+A14           | 325        PS_MIO22                           A14
+E11           | 326        PS_MIO23                           E11
+B7            | 327        PS_MIO24                           B7
+F12           | 328        PS_MIO25                           F12
+A13           | 329        PS_MIO26                           A13
+D7            | 330        PS_MIO27                           D7
+A12           | 331        PS_MIO28                           A12
+E8            | 332        PS_MIO29                           E8
+A11           | 333        PS_MIO30                           A11
+F9            | 334        PS_MIO31                           F9
+C7            | 335        PS_MIO32                           C7
+G13           | 336        PS_MIO33                           G13
+B12           | 337        PS_MIO34                           B12
+F14           | 338        PS_MIO35                           F14
+A9            | 339        PS_MIO36                           A9
+B14           | 340        PS_MIO37                           B14
+F13           | 341        PS_MIO38                           F13
+C13           | 342        PS_MIO39                           C13
+E14           | 343        PS_MIO40                           E14
+C8            | 344        PS_MIO41                           C8
+D8            | 345        PS_MIO42                           D8
+B11           | 346        PS_MIO43                           B11
+E13           | 347        PS_MIO44                           E13
+B9            | 348        PS_MIO45                           B9
+D12           | 349        PS_MIO46                           D12
+B10           | 350        PS_MIO47                           B10
+D11           | 351        PS_MIO48                           D11
+C14           | 352        PS_MIO49                           C14
+D13           | 353        PS_MIO50                           D13
+C10           | 354        PS_MIO51                           C10
+D10           | 355        PS_MIO52                           D10
+C12           | 356        PS_MIO53                           C12
+B5            | 357        PS_POR_B                           B5
+C9            | 358        PS_SRST_B                          C9
+F8            | 359        PS_VREF_MIO_15                     F8
+G11           | 360        TCK_0                              G11
+H13           | 361        TDI_0                              H13
+G14           | 362        TDO_0                              G14
+G12           | 363        TMS_0                              G12
+M12           | 364        VN_0                               M12
+L11           | 365        VP_0                               L11
+L12           | 366        VREFN_0                            L12
+M11           | 367        VREFP_0                            M11
+| 
+[Model Data]
+| 
+| The resistance matrix for this package has no coupling
+| 
+[Resistance Matrix]    Banded_matrix 
+[Bandwidth]            0 
+[Row]    K11
+0.210661
+[Row]    L10
+0.0130259
+[Row]    G9
+0.186549
+[Row]    H11
+0.0864677
+[Row]    J12
+0.00737344
+[Row]    R12
+0.158886
+[Row]    AA10
+0.0258263
+[Row]    AA20
+0.0194719
+[Row]    K17
+0.0212532
+[Row]    A20
+0.0203143
+[Row]    E2
+0.0149258
+[Row]    B3
+0.0641849
+[Row]    A10
+0.033368
+[Row]    K9
+0.0239001
+[Row]    G8
+0.0102864
+[Row]    H10
+0.0673856
+[Row]    G10
+0.278477
+[Row]    T13
+0.0931533
+[Row]    T12
+0.097389
+[Row]    N12
+0.373571
+[Row]    N11
+0.367791
+[Row]    T14
+0.240197
+[Row]    R7
+0.153162
+[Row]    U19
+0.20066
+[Row]    H15
+0.171696
+[Row]    H17
+0.197548
+[Row]    U7
+0.104293
+[Row]    U14
+0.150338
+[Row]    R15
+0.201223
+[Row]    H18
+0.139663
+[Row]    V9
+0.331977
+[Row]    U21
+0.260668
+[Row]    E16
+0.185354
+[Row]    K15
+0.300897
+[Row]    V10
+0.407198
+[Row]    T21
+0.266917
+[Row]    F16
+0.207511
+[Row]    J15
+0.300021
+[Row]    W8
+0.654857
+[Row]    U22
+0.356545
+[Row]    D17
+0.184491
+[Row]    J17
+0.200196
+[Row]    V8
+0.686645
+[Row]    T22
+0.316161
+[Row]    D16
+0.232453
+[Row]    J16
+0.365123
+[Row]    W10
+0.70981
+[Row]    W22
+0.35413
+[Row]    D15
+0.255862
+[Row]    L16
+0.21742
+[Row]    W11
+0.754075
+[Row]    V22
+0.361291
+[Row]    E15
+0.261755
+[Row]    K16
+0.284884
+[Row]    W12
+1.19303
+[Row]    W21
+0.322263
+[Row]    G16
+0.271331
+[Row]    M17
+0.419233
+[Row]    V12
+1.19899
+[Row]    W20
+0.370496
+[Row]    G15
+0.322896
+[Row]    L17
+0.404653
+[Row]    U11
+0.757018
+[Row]    V20
+0.33234
+[Row]    E18
+0.183233
+[Row]    N18
+0.474833
+[Row]    U12
+0.712413
+[Row]    U20
+0.229058
+[Row]    F18
+0.160672
+[Row]    N17
+0.432479
+[Row]    M16
+0.150582
+[Row]    U9
+0.246759
+[Row]    V19
+0.208729
+[Row]    F17
+0.159285
+[Row]    U10
+0.311189
+[Row]    V18
+0.226199
+[Row]    G17
+0.224775
+[Row]    M15
+0.259834
+[Row]    AB12
+0.555364
+[Row]    AB22
+0.434147
+[Row]    B15
+0.339817
+[Row]    K18
+0.265638
+[Row]    AA12
+0.59451
+[Row]    AA22
+0.438195
+[Row]    C15
+0.354948
+[Row]    J18
+0.233954
+[Row]    AB11
+0.590807
+[Row]    AB21
+0.41437
+[Row]    B17
+0.318937
+[Row]    J22
+0.281179
+[Row]    AA11
+0.606336
+[Row]    AA21
+0.350918
+[Row]    B16
+0.323195
+[Row]    J21
+0.262163
+[Row]    AB9
+0.515074
+[Row]    Y21
+0.2934
+[Row]    A17
+0.36559
+[Row]    K21
+0.218053
+[Row]    AB10
+0.61053
+[Row]    Y20
+0.269146
+[Row]    J20
+0.198648
+[Row]    A16
+0.36392
+[Row]    Y10
+0.540086
+[Row]    AB20
+0.403491
+[Row]    A19
+0.354052
+[Row]    L22
+0.255441
+[Row]    Y11
+0.567753
+[Row]    AB19
+0.366488
+[Row]    A18
+0.328452
+[Row]    L21
+0.193848
+[Row]    AA8
+0.46426
+[Row]    AA19
+0.337507
+[Row]    K20
+0.230026
+[Row]    C18
+0.254872
+[Row]    AA9
+0.459102
+[Row]    Y19
+0.366515
+[Row]    K19
+0.20606
+[Row]    C17
+0.27346
+[Row]    Y8
+0.355795
+[Row]    AA18
+0.319143
+[Row]    L19
+0.228004
+[Row]    C19
+0.374637
+[Row]    Y9
+0.300612
+[Row]    Y18
+0.328255
+[Row]    L18
+0.205038
+[Row]    D18
+0.380501
+[Row]    Y5
+0.283384
+[Row]    W18
+0.289179
+[Row]    M20
+0.179464
+[Row]    B20
+0.330763
+[Row]    Y6
+0.262968
+[Row]    W17
+0.269308
+[Row]    M19
+0.1331
+[Row]    B19
+0.279402
+[Row]    C20
+0.322618
+[Row]    AA6
+0.365645
+[Row]    Y16
+0.442491
+[Row]    N20
+0.180523
+[Row]    D20
+0.332502
+[Row]    AA7
+0.416223
+[Row]    W16
+0.467969
+[Row]    N19
+0.245074
+[Row]    AB1
+0.441465
+[Row]    U16
+0.277161
+[Row]    A22
+0.37322
+[Row]    M22
+0.230133
+[Row]    AB2
+0.398287
+[Row]    U15
+0.329899
+[Row]    A21
+0.371912
+[Row]    M21
+0.265906
+[Row]    AB4
+0.323724
+[Row]    V17
+0.189722
+[Row]    C22
+0.313363
+[Row]    P22
+0.28446
+[Row]    AB5
+0.349479
+[Row]    U17
+0.271797
+[Row]    D22
+0.30573
+[Row]    N22
+0.298156
+[Row]    AB6
+0.293188
+[Row]    AB17
+0.35989
+[Row]    R21
+0.31094
+[Row]    D21
+0.352007
+[Row]    AB7
+0.360292
+[Row]    AA17
+0.384674
+[Row]    R20
+0.39088
+[Row]    E21
+0.35375
+[Row]    AA4
+0.232186
+[Row]    AB16
+0.370716
+[Row]    P21
+0.265856
+[Row]    B22
+0.389504
+[Row]    Y4
+0.24628
+[Row]    AA16
+0.350851
+[Row]    P20
+0.319911
+[Row]    B21
+0.416022
+[Row]    P15
+0.169146
+[Row]    T6
+0.0987145
+[Row]    V15
+0.209402
+[Row]    H20
+0.130351
+[Row]    R6
+0.271786
+[Row]    V14
+0.326279
+[Row]    H19
+0.169805
+[Row]    N15
+0.361093
+[Row]    U4
+0.172888
+[Row]    W13
+0.298527
+[Row]    P18
+0.207468
+[Row]    F19
+0.206005
+[Row]    T4
+0.273165
+[Row]    V13
+0.322597
+[Row]    P17
+0.369902
+[Row]    G19
+0.196583
+[Row]    V4
+0.131159
+[Row]    Y15
+0.28349
+[Row]    T17
+0.440442
+[Row]    E20
+0.383862
+[Row]    V5
+0.20683
+[Row]    W15
+0.314851
+[Row]    T16
+0.49035
+[Row]    E19
+0.418782
+[Row]    U5
+0.0978516
+[Row]    AA14
+0.315017
+[Row]    T19
+0.241265
+[Row]    G21
+0.237875
+[Row]    U6
+0.157147
+[Row]    Y14
+0.300768
+[Row]    R19
+0.256552
+[Row]    G20
+0.258659
+[Row]    W7
+0.180037
+[Row]    AA13
+0.282697
+[Row]    F22
+0.384729
+[Row]    T18
+0.272042
+[Row]    V7
+0.177241
+[Row]    Y13
+0.280684
+[Row]    F21
+0.367769
+[Row]    R18
+0.211993
+[Row]    W5
+0.212139
+[Row]    AB15
+0.240813
+[Row]    R16
+0.294226
+[Row]    G22
+0.284742
+[Row]    W6
+0.22417
+[Row]    AB14
+0.272151
+[Row]    P16
+0.190301
+[Row]    H22
+0.200405
+[Row]    T10
+0.270314
+[Row]    T8
+0.349452
+[Row]    T7
+0.207949
+[Row]    T11
+0.175976
+[Row]    F7
+0.0996201
+[Row]    M4
+0.251651
+[Row]    M5
+0.227493
+[Row]    K4
+0.219697
+[Row]    L4
+0.165703
+[Row]    K6
+0.269392
+[Row]    K5
+0.249479
+[Row]    J7
+0.222216
+[Row]    J6
+0.201771
+[Row]    J5
+0.261892
+[Row]    H5
+0.234407
+[Row]    J3
+0.185468
+[Row]    G5
+0.236978
+[Row]    H4
+0.254564
+[Row]    F4
+0.29259
+[Row]    G4
+0.217658
+[Row]    L7
+0.156525
+[Row]    L6
+0.266513
+[Row]    M6
+0.212307
+[Row]    P3
+0.211978
+[Row]    V3
+0.443941
+[Row]    N5
+0.271251
+[Row]    N4
+0.271802
+[Row]    P6
+0.328678
+[Row]    B1
+0.322346
+[Row]    H3
+0.28189
+[Row]    P1
+0.303188
+[Row]    AA2
+0.41773
+[Row]    D1
+0.246177
+[Row]    C3
+0.321434
+[Row]    B2
+0.29426
+[Row]    D3
+0.286759
+[Row]    E3
+0.289209
+[Row]    E1
+0.272362
+[Row]    F2
+0.28482
+[Row]    F1
+0.287001
+[Row]    G2
+0.320707
+[Row]    G1
+0.294149
+[Row]    L1
+0.298724
+[Row]    L2
+0.309454
+[Row]    L3
+0.211708
+[Row]    K1
+0.281825
+[Row]    J1
+0.278064
+[Row]    K3
+0.304187
+[Row]    M1
+0.273328
+[Row]    T3
+0.362461
+[Row]    N3
+0.233683
+[Row]    T1
+0.337389
+[Row]    R3
+0.25805
+[Row]    T2
+0.278966
+[Row]    M2
+0.273139
+[Row]    R1
+0.28934
+[Row]    AA3
+0.423534
+[Row]    U1
+0.359956
+[Row]    AA1
+0.406118
+[Row]    U2
+0.383249
+[Row]    W1
+0.444407
+[Row]    Y3
+0.443742
+[Row]    W3
+0.507681
+[Row]    Y1
+0.40715
+[Row]    D2
+0.334394
+[Row]    J2
+0.275742
+[Row]    P2
+0.302801
+[Row]    W2
+0.434496
+[Row]    C2
+0.326983
+[Row]    H2
+0.292313
+[Row]    N2
+0.266168
+[Row]    V2
+0.441777
+[Row]    F3
+0.17751
+[Row]    P5
+0.243387
+[Row]    R5
+0.330611
+[Row]    H7
+0.0821258
+[Row]    P7
+0.146382
+[Row]    M7
+0.243712
+[Row]    N7
+0.287516
+[Row]    R4
+0.457108
+[Row]    G6
+0.150994
+[Row]    A1
+0.368404
+[Row]    A2
+0.321515
+[Row]    F6
+0.169254
+[Row]    E4
+0.171652
+[Row]    A3
+0.31674
+[Row]    A4
+0.321947
+[Row]    D5
+0.178029
+[Row]    E5
+0.177464
+[Row]    C4
+0.240003
+[Row]    G7
+0.109503
+[Row]    B4
+0.260026
+[Row]    C5
+0.225068
+[Row]    A6
+0.240912
+[Row]    B6
+0.28695
+[Row]    E6
+0.142925
+[Row]    D6
+0.214971
+[Row]    E9
+0.229221
+[Row]    A7
+0.333815
+[Row]    E10
+0.213394
+[Row]    A8
+0.359399
+[Row]    F11
+0.275056
+[Row]    A14
+0.505816
+[Row]    E11
+0.272171
+[Row]    B7
+0.273268
+[Row]    F12
+0.268715
+[Row]    A13
+0.447804
+[Row]    D7
+0.176444
+[Row]    A12
+0.386312
+[Row]    E8
+0.167923
+[Row]    A11
+0.340457
+[Row]    F9
+0.176475
+[Row]    C7
+0.231084
+[Row]    G13
+0.316238
+[Row]    B12
+0.393243
+[Row]    F14
+0.281111
+[Row]    A9
+0.288341
+[Row]    B14
+0.444185
+[Row]    F13
+0.314123
+[Row]    C13
+0.402094
+[Row]    E14
+0.445494
+[Row]    C8
+0.223849
+[Row]    D8
+0.164196
+[Row]    B11
+0.346381
+[Row]    E13
+0.242888
+[Row]    B9
+0.243189
+[Row]    D12
+0.303211
+[Row]    B10
+0.253321
+[Row]    D11
+0.194188
+[Row]    C14
+0.364895
+[Row]    D13
+0.284339
+[Row]    C10
+0.253724
+[Row]    D10
+0.162631
+[Row]    C12
+0.262663
+[Row]    B5
+0.21482
+[Row]    C9
+0.178058
+[Row]    F8
+0.0685751
+[Row]    G11
+0.115904
+[Row]    H13
+0.451683
+[Row]    G14
+0.477168
+[Row]    G12
+0.379732
+[Row]    M12
+0.311341
+[Row]    L11
+0.292968
+[Row]    L12
+0.422834
+[Row]    M11
+0.402496
+| 
+| The inductance matrix has sparse coupling
+| 
+[Inductance Matrix]    Sparse_matrix 
+[Row]    K11
+K11     5.76978e-009
+G9     1.15719e-010
+J12     3.52392e-011
+N12     1.30875e-010
+N11     1.53494e-010
+G13     9.35723e-011
+G11     4.70766e-010
+M12     1.18036e-010
+L11     1.96459e-010
+L12     1.07093e-010
+M11     1.11246e-010
+[Row]    L10
+L10     4.63159e-010
+G9     3.51918e-011
+H11     5.44311e-011
+G10     6.47349e-011
+N12     8.94178e-011
+N11     1.02717e-010
+H15     2.288e-011
+J16     3.54469e-011
+U11     1.59533e-010
+U10     5.28756e-011
+T10     7.37745e-011
+G11     7.27468e-011
+H13     2.21932e-011
+G14     3.30842e-011
+L12     6.33997e-011
+M11     6.9938e-011
+[Row]    G9
+G9     4.93953e-009
+R12     1.6253e-010
+G8     6.18508e-011
+H10     3.94606e-011
+G10     2.28125e-010
+F8     7.38472e-011
+G11     4.66815e-010
+M12     2.89839e-010
+L11     2.28932e-010
+[Row]    H11
+H11     2.27492e-009
+J12     2.06363e-011
+H10     9.086e-011
+G10     1.40944e-010
+N12     1.58282e-010
+N11     2.1052e-010
+T14     4.74789e-011
+G11     5.76255e-011
+G12     1.02043e-010
+L11     6.18129e-011
+[Row]    J12
+J12     1.64308e-010
+T13     4.71536e-011
+T12     4.83559e-011
+T14     7.06165e-011
+J15     5.35063e-011
+P15     3.49114e-011
+P16     4.45496e-011
+T11     5.04365e-011
+P6     2.76842e-011
+H13     6.5402e-011
+G14     2.73283e-011
+[Row]    R12
+R12     3.31214e-009
+T13     8.70091e-011
+T12     1.20622e-010
+T14     3.58791e-010
+T10     1.12819e-010
+T8     2.71335e-010
+T7     9.01294e-011
+T11     1.04289e-010
+G11     1.65687e-010
+H13     2.37658e-010
+G14     1.08107e-010
+[Row]    AA10
+AA10     6.70678e-010
+W8     2.26893e-010
+W11     3.89073e-010
+U10     2.83673e-010
+AB9     3.64248e-010
+AB10     3.38337e-010
+Y10     5.24571e-010
+Y11     4.81972e-010
+AA8     5.16242e-010
+Y9     2.70246e-010
+AA7     5.23862e-010
+AB1     3.47226e-010
+AB2     4.6966e-010
+AB5     4.42423e-010
+AB7     4.79076e-010
+Y4     4.11604e-010
+V5     3.6782e-010
+W6     3.33401e-010
+[Row]    AA20
+AA20     5.10229e-010
+U14     1.6563e-010
+Y21     2.62008e-010
+AB20     1.96693e-010
+AA19     2.22286e-010
+AA18     2.03192e-010
+Y18     2.03025e-010
+W16     2.65227e-010
+U17     3.37851e-010
+AA17     3.12366e-010
+W13     2.86664e-010
+V13     1.82245e-010
+Y15     1.81698e-010
+W15     2.62649e-010
+AA14     1.61457e-010
+Y14     1.22743e-010
+AA13     2.07206e-010
+Y13     1.37719e-010
+AB15     2.37218e-010
+AB14     3.00634e-010
+[Row]    K17
+K17     5.78582e-010
+M17     4.98317e-011
+L17     1.89503e-010
+N18     2.2831e-010
+N17     1.67074e-010
+M15     1.84622e-010
+J18     2.53664e-010
+J22     2.9984e-010
+J21     2.5183e-010
+K21     3.21056e-010
+L22     3.03387e-010
+K20     3.45783e-010
+N19     3.30285e-010
+N22     3.13441e-010
+R20     3.67646e-010
+P20     3.51284e-010
+P18     2.55759e-010
+T17     1.9237e-010
+T16     3.4271e-010
+R19     3.03661e-010
+[Row]    A20
+A20     5.21715e-010
+H18     1.25186e-010
+E16     2.15516e-010
+D16     2.17821e-010
+D15     1.74579e-010
+A19     2.86904e-010
+C18     2.69245e-010
+C17     1.8739e-010
+D18     1.97892e-010
+D20     2.75537e-010
+E20     3.04581e-010
+E19     2.92514e-010
+G21     2.26969e-010
+G20     3.23674e-010
+[Row]    E2
+E2     3.51192e-010
+K4     1.78539e-010
+J5     1.70026e-010
+H5     1.67109e-010
+H4     1.6063e-010
+F4     1.58288e-010
+M6     1.34665e-010
+N4     2.02376e-010
+L3     6.56479e-011
+N3     1.69466e-010
+J2     1.39785e-010
+H2     1.29156e-010
+N2     1.39524e-010
+[Row]    B3
+B3     1.32546e-009
+G6     1.75579e-010
+A1     6.44278e-010
+A2     5.61231e-010
+F6     1.12983e-010
+E4     1.27325e-010
+A3     5.64228e-010
+A4     4.05611e-010
+D5     1.22166e-010
+E5     1.15955e-010
+C4     3.67605e-010
+B4     4.60833e-010
+C5     1.48349e-010
+B6     2.96896e-010
+D6     2.19042e-010
+B5     2.58407e-010
+[Row]    A10
+A10     7.17329e-010
+A9     3.53814e-010
+C8     3.54394e-010
+D8     3.07818e-010
+B11     3.96399e-010
+E13     2.86305e-010
+B9     3.48848e-010
+B10     3.15668e-010
+D11     3.00009e-010
+C10     2.50803e-010
+C12     2.82009e-010
+[Row]    K9
+K9     4.55441e-010
+G10     4.90127e-011
+F7     9.7883e-011
+L7     5.51169e-011
+M7     4.49795e-011
+N7     7.00372e-011
+G7     3.81877e-011
+E9     5.18962e-011
+F11     5.00936e-011
+F12     3.73859e-011
+F9     3.93329e-011
+[Row]    G8
+G8     2.24209e-010
+H10     4.30539e-011
+R7     4.58855e-011
+L7     6.16961e-011
+H7     4.68621e-011
+P7     5.0151e-011
+M7     7.13381e-011
+N7     8.83841e-011
+G7     6.95246e-011
+F11     3.94275e-011
+F8     8.50692e-011
+[Row]    H10
+H10     1.2344e-009
+G10     5.81002e-011
+G7     2.94933e-011
+E8     3.95912e-011
+F9     4.17963e-011
+F14     5.23783e-011
+D8     2.79092e-011
+F8     1.02213e-010
+G11     4.46468e-011
+[Row]    G10
+G10     6.26588e-009
+G11     2.2195e-010
+M12     7.40194e-011
+L11     7.52922e-011
+[Row]    T13
+T13     1.65471e-009
+T12     4.38642e-010
+T14     9.07974e-011
+U7     1.19749e-011
+U14     2.18597e-011
+U15     2.28737e-011
+T10     6.1189e-011
+T7     9.87306e-011
+T11     4.388e-011
+[Row]    T12
+T12     2.34779e-009
+T14     5.37628e-011
+U7     1.58689e-011
+U14     2.70042e-011
+T10     1.09499e-010
+T7     1.74455e-010
+T11     1.36031e-010
+G12     7.51756e-011
+[Row]    N12
+N12     7.96194e-009
+N11     2.09197e-009
+G13     6.21426e-011
+F14     5.37689e-011
+M12     1.65329e-010
+L11     1.72324e-010
+L12     1.53672e-010
+M11     2.56059e-010
+[Row]    N11
+N11     8.84229e-009
+G13     5.57248e-011
+F14     4.31006e-011
+M12     1.25102e-010
+L11     1.30276e-010
+L12     9.882e-011
+M11     2.84503e-010
+[Row]    T14
+T14     4.57423e-009
+V13     1.44414e-010
+T10     9.08898e-011
+T8     2.48874e-010
+T11     1.2357e-010
+H13     8.2433e-010
+G14     3.78815e-010
+G12     8.61021e-011
+[Row]    R7
+R7     3.63455e-009
+U7     7.65494e-011
+V9     2.22804e-011
+V10     1.06665e-010
+Y4     1.04063e-010
+T6     1.49069e-010
+R6     1.00963e-010
+V4     7.89311e-011
+V5     6.78323e-011
+U5     8.66205e-011
+U6     6.64947e-011
+T7     6.30238e-011
+P7     1.52162e-010
+[Row]    U19
+U19     5.49507e-009
+U20     1.91168e-010
+V19     1.36006e-010
+V18     3.13287e-010
+W18     3.84801e-010
+W17     3.7795e-010
+U17     1.3299e-010
+P15     4.16803e-011
+V15     8.51479e-011
+P18     1.65479e-010
+R18     3.30269e-010
+R16     2.7327e-010
+P16     1.87831e-010
+[Row]    H15
+H15     4.57796e-009
+J15     3.3532e-011
+E15     3.79907e-011
+G16     3.77028e-011
+N17     6.16327e-011
+F17     2.96536e-011
+M19     3.20149e-011
+H20     3.38742e-011
+H22     5.55287e-011
+G14     2.59582e-010
+[Row]    H17
+H17     5.09668e-009
+E16     1.56277e-010
+F16     1.74807e-010
+D17     7.21827e-011
+D16     9.70591e-011
+G16     7.01668e-011
+G15     5.12146e-010
+F17     9.96413e-011
+G17     1.11725e-010
+H20     1.02941e-010
+H19     8.8906e-011
+F19     1.02281e-010
+[Row]    U7
+U7     2.67419e-009
+U9     8.0601e-011
+Y8     3.29744e-010
+T6     1.26631e-010
+R6     1.89366e-010
+U4     1.99667e-010
+V5     1.53955e-010
+U5     1.76986e-010
+U6     2.56311e-010
+W7     1.41996e-010
+V7     1.46989e-010
+W5     2.50937e-010
+W6     2.12339e-010
+[Row]    U14
+U14     5.02978e-009
+U15     1.39991e-010
+U17     1.53026e-010
+V14     1.83968e-010
+W13     1.38694e-010
+V13     1.29869e-010
+W15     3.17057e-010
+AB15     1.95544e-010
+AB14     1.79939e-010
+T11     1.51376e-010
+G12     1.3051e-010
+[Row]    R15
+R15     4.17285e-009
+L19     5.73109e-011
+N20     4.41516e-011
+M22     5.3347e-011
+P22     5.87854e-011
+P15     1.40046e-010
+P18     1.17988e-010
+T19     7.46813e-011
+R18     1.64628e-010
+R16     7.46797e-011
+P16     1.37306e-010
+[Row]    H18
+H18     3.77425e-009
+J17     9.94664e-011
+N17     5.61386e-010
+M15     2.13431e-010
+M19     9.83295e-011
+H19     1.08209e-010
+F19     1.75314e-010
+G19     9.80007e-011
+G21     1.26328e-010
+F21     1.88542e-010
+[Row]    V9
+V9     6.39605e-009
+V10     1.06733e-009
+W8     2.40947e-010
+W10     2.02551e-010
+U9     1.48438e-010
+U10     2.46399e-010
+T6     6.1308e-011
+V7     6.5521e-011
+Y3     1.09925e-010
+Y1     1.52079e-010
+[Row]    U21
+U21     6.7124e-009
+T21     7.752e-010
+U22     2.27818e-010
+W22     4.52555e-010
+W21     3.57738e-010
+W20     3.55549e-010
+R21     7.3365e-010
+P21     5.05982e-010
+P18     4.07629e-010
+T17     4.22616e-010
+T19     6.27468e-010
+R19     3.47011e-010
+T18     2.70275e-010
+R18     6.54764e-010
+R16     5.48089e-010
+P16     8.60798e-011
+[Row]    E16
+E16     3.53631e-009
+F16     8.14342e-010
+D17     1.77262e-010
+D16     3.24713e-010
+A19     1.20329e-010
+D20     1.18969e-010
+H19     6.9739e-011
+G21     8.89856e-011
+G20     1.29165e-010
+[Row]    K15
+K15     7.33577e-009
+J15     1.41028e-009
+J17     8.44828e-010
+L16     4.68616e-010
+K16     3.27495e-010
+M17     2.88171e-010
+J21     9.13953e-011
+F22     9.55481e-011
+F21     1.40248e-010
+G22     1.03408e-010
+[Row]    V10
+V10     7.90313e-009
+V8     7.30544e-010
+W11     2.17684e-010
+U9     1.01905e-010
+U10     1.43303e-010
+AB11     1.54003e-010
+W1     2.22929e-010
+W3     3.12357e-010
+V2     1.44388e-010
+[Row]    T21
+T21     6.03117e-009
+T22     9.08033e-010
+V22     3.4956e-010
+W20     1.6586e-010
+R21     4.51385e-010
+P18     2.29573e-010
+P17     5.4693e-010
+T17     2.83089e-010
+T16     4.75575e-010
+T19     2.83138e-010
+R19     6.17826e-010
+T18     6.91111e-010
+R18     2.19707e-010
+R16     5.13453e-010
+[Row]    F16
+F16     4.71275e-009
+D17     1.03153e-010
+D16     1.57173e-010
+G16     7.48208e-010
+G15     7.5208e-010
+E18     4.37311e-010
+F18     3.67563e-010
+F17     9.08231e-011
+G17     3.59552e-010
+B15     1.03488e-010
+C15     1.90431e-010
+C17     2.63594e-010
+C19     3.18923e-010
+D18     3.37204e-010
+[Row]    J15
+J15     7.25473e-009
+J17     3.53769e-010
+J16     7.05455e-010
+L16     1.7528e-010
+K16     5.37883e-010
+L17     2.64155e-010
+J18     1.6665e-010
+G20     1.86135e-010
+F22     2.07066e-010
+G22     5.16022e-010
+[Row]    W8
+W8     1.70936e-008
+V8     1.81035e-009
+W10     2.00611e-009
+W11     1.42198e-009
+W12     3.41998e-009
+V12     2.89311e-009
+U11     4.80944e-010
+AA11     5.7239e-010
+U1     3.11364e-010
+Y1     4.69936e-010
+[Row]    U22
+U22     8.27992e-009
+T22     1.86945e-009
+W22     1.26579e-009
+V22     7.53267e-010
+W21     7.6743e-010
+W20     3.24056e-010
+V20     4.09328e-010
+AA22     2.95775e-010
+AA21     5.68575e-010
+Y19     2.55956e-010
+[Row]    D17
+D17     3.02738e-009
+D16     4.29487e-010
+F18     5.74787e-011
+A19     9.04132e-011
+C18     1.19286e-010
+C17     1.00839e-010
+H19     5.22839e-011
+G20     9.13958e-011
+[Row]    J17
+J17     4.40625e-009
+J16     1.31739e-010
+L16     9.36435e-010
+K16     3.1038e-010
+M17     3.63954e-010
+M15     1.28397e-010
+K18     8.36575e-011
+J21     1.34096e-010
+[Row]    V8
+V8     1.54033e-008
+W11     6.44037e-010
+W12     2.83311e-009
+V12     3.18102e-009
+U11     4.7923e-010
+W1     3.78609e-010
+W3     5.55252e-010
+Y1     3.56197e-010
+V2     5.13324e-010
+[Row]    T22
+T22     6.91216e-009
+W22     5.22565e-010
+V22     8.77548e-010
+W21     4.04057e-010
+W20     5.39094e-010
+V20     5.02692e-010
+AB22     2.66935e-010
+AA22     3.3988e-010
+AA21     4.92221e-010
+AA19     2.41711e-010
+[Row]    D16
+D16     4.7275e-009
+D15     1.94834e-010
+E15     2.36927e-010
+A19     1.42052e-010
+C18     1.63356e-010
+D20     1.35616e-010
+G20     1.47514e-010
+[Row]    J16
+J16     8.46952e-009
+K16     6.98676e-010
+L17     4.46212e-010
+N18     3.02032e-010
+K18     1.89925e-010
+J21     2.0125e-010
+K21     1.87635e-010
+G20     2.26754e-010
+F22     4.76059e-010
+G22     3.91813e-010
+H22     1.33858e-010
+[Row]    W10
+W10     2.09467e-008
+W11     6.65617e-009
+W12     2.82096e-009
+V12     2.11776e-009
+U11     1.91047e-009
+U12     1.38001e-009
+AA11     1.13799e-009
+R3     6.72639e-010
+AA1     4.63604e-010
+U2     5.80786e-010
+[Row]    W22
+W22     9.22188e-009
+V22     1.42109e-009
+W21     1.14694e-009
+W20     1.21929e-009
+V20     3.37699e-010
+V18     2.45743e-010
+AA22     4.79774e-010
+AA21     5.46548e-010
+Y19     3.22647e-010
+[Row]    D15
+D15     6.47284e-009
+E15     1.24984e-009
+E18     1.52384e-010
+F18     8.1733e-010
+F17     1.47649e-010
+C15     3.2758e-010
+C18     2.68548e-010
+C17     2.24744e-010
+B20     1.89596e-010
+[Row]    L16
+L16     5.28818e-009
+K16     2.8779e-010
+M17     5.68373e-010
+L17     1.79628e-010
+M16     7.95065e-011
+K18     2.67335e-010
+J21     1.91975e-010
+F22     1.27728e-010
+H22     1.07076e-010
+[Row]    W11
+W11     2.05275e-008
+W12     1.48255e-009
+V12     2.61009e-009
+U11     1.52481e-009
+U12     9.37273e-010
+AB12     3.02201e-010
+AA12     3.7846e-010
+AA11     6.623e-010
+R3     7.88229e-010
+AA1     4.23014e-010
+[Row]    V22
+V22     7.44949e-009
+W21     5.5247e-010
+W20     1.24747e-009
+V20     5.38519e-010
+AA22     3.76453e-010
+AA21     3.42614e-010
+Y21     2.5622e-010
+[Row]    E15
+E15     6.80439e-009
+G16     2.37794e-010
+F18     1.6772e-010
+F17     1.4957e-010
+G17     2.12583e-010
+C15     2.14912e-010
+C18     2.23154e-010
+C17     1.99757e-010
+B20     1.84772e-010
+[Row]    K16
+K16     6.26013e-009
+L17     1.105e-009
+N18     3.67786e-010
+K18     2.96395e-010
+J18     2.7606e-010
+J21     2.12217e-010
+F22     2.26508e-010
+G22     2.27034e-010
+[Row]    W12
+W12     2.83313e-008
+V12     1.64163e-008
+U11     1.34185e-009
+U10     5.70686e-010
+AA11     9.37415e-010
+AA2     7.76065e-010
+U1     6.3009e-010
+[Row]    W21
+W21     9.11109e-009
+W20     1.09598e-009
+V20     3.92601e-010
+V18     5.9436e-010
+AB22     3.13072e-010
+AA22     5.6361e-010
+AA21     6.88103e-010
+AB19     1.69736e-010
+AA19     3.8388e-010
+Y19     4.02157e-010
+[Row]    G16
+G16     6.92647e-009
+G15     1.29619e-009
+E18     5.13834e-010
+F18     4.79919e-010
+G17     8.25103e-010
+B16     2.39716e-010
+A16     1.62691e-010
+A18     1.77157e-010
+C18     3.86753e-010
+C17     4.57604e-010
+C19     3.8527e-010
+D18     4.13636e-010
+[Row]    M17
+M17     1.1911e-008
+L17     1.35245e-009
+M15     9.94509e-010
+J20     1.41826e-010
+K19     3.99961e-010
+L18     1.76254e-010
+F22     2.37824e-010
+G22     2.09106e-010
+H22     1.56879e-010
+[Row]    V12
+V12     2.97457e-008
+U11     1.93021e-009
+U12     9.06715e-010
+AB12     3.47823e-010
+AA12     3.9101e-010
+AA11     7.6239e-010
+AA2     7.58189e-010
+AA1     6.33142e-010
+[Row]    W20
+W20     8.94295e-009
+V20     5.74879e-010
+AB22     4.30597e-010
+AA22     7.93208e-010
+AA17     2.51613e-010
+[Row]    G15
+G15     7.11072e-009
+E18     1.0665e-009
+F18     4.38438e-010
+G17     3.9943e-010
+B15     2.24887e-010
+C15     3.59447e-010
+B17     1.7161e-010
+C18     3.33387e-010
+C17     3.62263e-010
+D18     3.01263e-010
+[Row]    L17
+L17     1.00989e-008
+N18     5.49859e-010
+M16     7.1726e-011
+K18     4.15786e-010
+K21     3.68042e-010
+K20     2.84413e-010
+K19     2.81858e-010
+[Row]    U11
+U11     2.23538e-008
+U12     6.49552e-009
+AB12     8.64939e-010
+AA12     1.14716e-009
+AB11     1.11309e-009
+AA11     1.97e-009
+AA2     7.23447e-010
+T2     4.83691e-010
+AA1     1.33166e-009
+[Row]    V20
+V20     7.8099e-009
+U20     9.97143e-010
+V19     1.4666e-010
+AB22     4.94678e-010
+AA22     6.17999e-010
+AB21     2.87009e-010
+Y21     3.59857e-010
+Y20     3.99705e-010
+AA19     4.71105e-010
+Y19     5.9714e-010
+Y16     5.16706e-010
+W16     1.22906e-009
+AA17     3.35299e-010
+[Row]    E18
+E18     3.55678e-009
+F18     4.86512e-010
+F17     7.90462e-011
+G17     3.87455e-010
+B15     3.33621e-010
+C15     5.00624e-010
+B17     2.76365e-010
+A17     1.489e-010
+C17     2.80223e-010
+C19     3.66637e-010
+D18     3.94024e-010
+[Row]    N18
+N18     1.0671e-008
+N17     1.76343e-009
+K18     2.69682e-010
+J18     3.28647e-010
+J22     2.70056e-010
+J21     2.40242e-010
+P18     3.10703e-010
+[Row]    U12
+U12     2.07907e-008
+AB12     6.37779e-010
+AA12     5.82939e-010
+AB11     1.06828e-009
+AA11     1.54127e-009
+T10     1.58725e-010
+T8     1.57293e-010
+AA2     5.31354e-010
+T2     4.3498e-010
+AA1     1.30764e-009
+U2     5.393e-010
+[Row]    U20
+U20     5.47835e-009
+V19     2.87689e-010
+AA18     3.94274e-010
+Y18     4.54288e-010
+W18     3.48913e-010
+W17     3.17983e-010
+Y16     3.09272e-010
+W16     5.94175e-010
+U16     3.21767e-010
+V17     3.79455e-010
+AB17     2.73971e-010
+R19     2.40375e-010
+P16     8.42956e-011
+[Row]    F18
+F18     3.38216e-009
+F17     1.50978e-010
+G17     7.00445e-010
+B17     3.00623e-010
+B16     1.66e-010
+C18     2.74426e-010
+C17     2.87386e-010
+C19     3.44043e-010
+D18     3.59523e-010
+[Row]    N17
+N17     1.29019e-008
+M16     2.01015e-010
+M15     2.21148e-010
+J21     2.27344e-010
+K20     7.71407e-011
+L19     2.53485e-010
+M19     1.2388e-010
+P18     2.1965e-010
+[Row]    M16
+M16     2.56395e-009
+M15     9.39211e-011
+K21     3.79269e-011
+M19     6.30303e-011
+N20     3.41145e-011
+P15     4.51053e-011
+P18     4.69981e-011
+P16     4.64629e-011
+[Row]    U9
+U9     4.50841e-009
+U10     3.57547e-010
+Y5     1.16689e-010
+Y6     1.57957e-010
+Y4     1.1129e-010
+T6     9.37333e-011
+V5     7.53704e-011
+U5     8.35994e-011
+V7     7.78154e-011
+[Row]    V19
+V19     4.55458e-009
+Y20     1.62523e-010
+AA18     1.77931e-010
+Y18     2.19408e-010
+V17     1.67815e-010
+U17     1.55688e-010
+T19     1.30874e-010
+R18     1.22269e-010
+[Row]    F17
+F17     4.1377e-009
+G17     3.25881e-010
+C18     1.40243e-010
+B20     1.54513e-010
+H20     7.06383e-011
+[Row]    U10
+U10     7.10987e-009
+AB10     2.20818e-010
+AA7     1.86024e-010
+AB5     1.57697e-010
+Y4     1.35457e-010
+V5     1.41634e-010
+W6     1.32095e-010
+T8     1.24e-010
+[Row]    V18
+V18     5.86834e-009
+W18     2.14159e-010
+W17     2.52251e-010
+U16     2.36083e-010
+V17     2.73476e-010
+V14     2.34176e-010
+W13     2.55121e-010
+Y15     1.52669e-010
+AA14     2.3459e-010
+[Row]    G17
+G17     5.45453e-009
+B17     2.01925e-010
+B16     4.52515e-010
+A16     2.02381e-010
+A18     2.30951e-010
+C17     3.53228e-010
+C19     3.68027e-010
+D18     3.93129e-010
+[Row]    M15
+M15     5.50642e-009
+J21     1.80028e-010
+L18     1.33997e-010
+P21     1.07361e-010
+P15     4.37959e-011
+N15     1.50041e-010
+[Row]    AB12
+AB12     1.17672e-008
+AA12     3.28171e-009
+AB11     1.07306e-009
+AB9     3.14079e-010
+Y10     5.57273e-010
+AA8     3.55851e-010
+AA2     2.11299e-010
+[Row]    AB22
+AB22     8.95551e-009
+AA22     2.64436e-009
+AB21     6.95735e-010
+AA21     5.1484e-010
+Y21     4.91927e-010
+AB20     3.56101e-010
+AA19     3.48107e-010
+[Row]    B15
+B15     5.97381e-009
+C15     1.64185e-009
+B17     5.53386e-010
+B16     2.73713e-010
+A17     4.85652e-010
+A16     1.16834e-010
+A19     2.48533e-010
+C18     2.17209e-010
+[Row]    K18
+K18     6.38696e-009
+J18     2.25525e-009
+J22     5.85675e-010
+J21     9.1266e-010
+K21     5.37163e-010
+L22     4.01056e-010
+K20     3.91922e-010
+N19     2.66088e-010
+[Row]    AA12
+AA12     1.41406e-008
+AB11     8.28746e-010
+Y10     4.67758e-010
+Y11     2.37595e-010
+AA8     2.87482e-010
+AA2     2.68844e-010
+[Row]    AA22
+AA22     9.76696e-009
+AB21     5.03468e-010
+AA21     6.68711e-010
+Y21     4.48836e-010
+AB20     3.02073e-010
+AA19     3.86761e-010
+[Row]    C15
+C15     6.77738e-009
+B17     3.39818e-010
+A17     3.12385e-010
+A19     2.13983e-010
+C18     2.12965e-010
+[Row]    J18
+J18     5.64571e-009
+J22     4.06698e-010
+J21     8.77391e-010
+K21     4.19322e-010
+L22     3.18124e-010
+K20     3.29375e-010
+N19     2.36468e-010
+[Row]    AB11
+AB11     1.66495e-008
+AA11     5.266e-009
+AB9     1.44529e-009
+Y10     1.94409e-009
+Y11     1.51593e-009
+AA8     9.67024e-010
+AA9     6.93505e-010
+[Row]    AB21
+AB21     8.90959e-009
+AA21     1.18539e-009
+Y21     1.4216e-009
+AB20     4.4524e-010
+AB19     2.04109e-010
+AA19     6.451e-010
+Y19     3.45005e-010
+U17     2.00829e-010
+[Row]    B17
+B17     6.49859e-009
+B16     1.13656e-009
+A17     1.17077e-009
+A19     3.86306e-010
+C18     3.68328e-010
+[Row]    J22
+J22     7.23511e-009
+J21     2.48768e-010
+K21     1.43116e-009
+J20     3.79714e-010
+L22     5.94059e-010
+L21     2.70547e-010
+K20     5.66296e-010
+N19     5.06456e-010
+M21     2.96768e-010
+[Row]    AA11
+AA11     1.58182e-008
+AB9     3.85135e-010
+AB10     4.34326e-010
+Y10     1.08365e-009
+Y11     1.03516e-009
+T2     5.97361e-010
+U2     6.4731e-010
+[Row]    AA21
+AA21     7.78706e-009
+AB19     3.84696e-010
+AA19     4.17068e-010
+Y19     4.19598e-010
+[Row]    B16
+B16     6.10096e-009
+A17     2.44744e-010
+A16     5.14166e-010
+A18     3.87358e-010
+C19     3.30478e-010
+D18     3.68087e-010
+[Row]    J21
+J21     6.8409e-009
+K21     2.36703e-010
+J20     3.19784e-010
+L22     1.87514e-010
+L21     3.50183e-010
+H22     7.08001e-011
+[Row]    AB9
+AB9     1.42198e-008
+AB10     1.82509e-009
+Y10     1.62976e-009
+Y11     7.74428e-010
+AA8     1.17136e-009
+AA9     7.77475e-010
+AA7     5.70836e-010
+AB7     4.73724e-010
+[Row]    Y21
+Y21     6.03678e-009
+Y20     6.40695e-010
+AB20     9.87332e-010
+AB19     1.90628e-010
+AA19     1.28765e-009
+Y19     8.35588e-010
+[Row]    A17
+A17     6.5352e-009
+A16     9.24725e-010
+A19     6.06052e-010
+A18     2.98668e-010
+C18     4.14232e-010
+C17     1.89453e-010
+[Row]    K21
+K21     4.84764e-009
+J20     3.15951e-010
+L22     7.8501e-010
+L21     2.59426e-010
+K20     7.1291e-010
+N19     5.63718e-010
+M21     3.28024e-010
+N22     2.57765e-010
+[Row]    AB10
+AB10     1.29191e-008
+Y11     7.84752e-010
+AA9     5.66922e-010
+Y8     2.64519e-010
+Y9     3.11162e-010
+Y5     2.56226e-010
+AA6     2.72344e-010
+[Row]    Y20
+Y20     6.12101e-009
+AB20     3.10604e-010
+AB19     5.6184e-010
+AA19     5.96865e-010
+Y19     1.10693e-009
+AA18     5.15425e-010
+Y18     5.62781e-010
+W18     3.92557e-010
+W17     4.01572e-010
+U16     3.66044e-010
+U15     3.35276e-010
+V17     4.0711e-010
+[Row]    J20
+J20     4.32285e-009
+L21     1.13187e-009
+K19     6.39673e-010
+L19     3.13576e-010
+L18     4.74797e-010
+M20     3.3117e-010
+M19     2.44759e-010
+N20     3.22582e-010
+N19     3.59827e-010
+M22     3.39907e-010
+F22     2.42807e-010
+H22     5.6257e-011
+[Row]    A16
+A16     6.14946e-009
+A19     1.85742e-010
+A18     1.0636e-009
+C17     3.24852e-010
+C19     4.71608e-010
+D18     5.57249e-010
+[Row]    Y10
+Y10     1.38544e-008
+Y11     5.10369e-009
+AA8     2.80969e-009
+AA9     1.93384e-009
+AA6     6.69372e-010
+AA7     8.54526e-010
+AB7     6.55106e-010
+[Row]    AB20
+AB20     9.55463e-009
+AB19     4.25151e-010
+AA19     1.56095e-009
+Y19     6.27543e-010
+W16     3.72195e-010
+[Row]    A19
+A19     7.45928e-009
+A18     9.00374e-010
+C18     8.8305e-010
+C19     7.77612e-010
+D18     7.82964e-010
+B20     5.06472e-010
+B19     5.1342e-010
+D20     3.60042e-010
+A21     3.31295e-010
+[Row]    L22
+L22     5.16495e-009
+L21     2.93917e-010
+K20     1.24514e-009
+N19     5.62748e-010
+M21     4.68804e-010
+N22     3.3605e-010
+R20     3.00662e-010
+P20     3.45012e-010
+N15     2.56964e-010
+[Row]    Y11
+Y11     1.52318e-008
+AA8     2.67023e-009
+AA9     2.45832e-009
+Y9     4.22925e-010
+AA6     6.94496e-010
+AA7     6.83518e-010
+AB7     6.29567e-010
+[Row]    AB19
+AB19     6.36589e-009
+AA19     1.8598e-010
+Y19     4.86781e-010
+AA18     1.50876e-010
+Y18     2.03077e-010
+[Row]    A18
+A18     6.40915e-009
+C17     4.39679e-010
+C19     8.51285e-010
+D18     9.76617e-010
+A22     2.27683e-010
+[Row]    L21
+L21     4.11708e-009
+K20     3.74299e-010
+K19     6.04923e-010
+L19     2.64271e-010
+L18     4.5058e-010
+M20     3.34878e-010
+M19     2.08484e-010
+N20     2.91267e-010
+N19     3.32547e-010
+M22     3.13853e-010
+[Row]    AA8
+AA8     1.28365e-008
+AA9     3.15495e-009
+AA6     6.94398e-010
+AA7     1.73732e-009
+AB2     9.51128e-010
+AB5     7.77491e-010
+AB7     1.05939e-009
+[Row]    AA19
+AA19     8.53519e-009
+Y19     1.65295e-009
+W16     4.46084e-010
+[Row]    K20
+K20     4.67652e-009
+K19     3.11565e-010
+L19     1.93345e-010
+L18     2.3349e-010
+M20     2.85721e-010
+M19     1.67552e-010
+N20     2.245e-010
+N19     7.79686e-010
+M21     4.05089e-010
+N22     3.16886e-010
+R20     3.24929e-010
+N15     2.84979e-010
+[Row]    C18
+C18     6.32787e-009
+C17     1.05696e-009
+B20     3.56116e-010
+D20     3.30714e-010
+A21     2.9671e-010
+[Row]    AA9
+AA9     1.43992e-008
+Y8     5.12133e-010
+Y9     7.56062e-010
+Y5     5.39358e-010
+AA6     1.25371e-009
+AA7     1.38838e-009
+AB4     5.30878e-010
+T4     1.86126e-010
+[Row]    Y19
+Y19     9.23806e-009
+AA18     3.80113e-010
+Y18     8.10942e-010
+Y16     4.58198e-010
+[Row]    K19
+K19     4.54836e-009
+L19     4.78141e-010
+L18     1.06744e-009
+M20     4.10098e-010
+M19     3.27405e-010
+N20     4.09948e-010
+N19     3.4492e-010
+M22     3.98726e-010
+P22     2.77112e-010
+[Row]    C17
+C17     6.36167e-009
+C19     6.70142e-010
+D18     9.94336e-010
+B20     5.43867e-010
+[Row]    Y8
+Y8     8.635e-009
+Y9     1.58305e-009
+Y5     5.77715e-010
+Y6     4.67944e-010
+AA6     4.73137e-010
+AB1     3.69857e-010
+AB4     3.44341e-010
+AB6     3.10564e-010
+Y4     2.70615e-010
+[Row]    AA18
+AA18     7.49928e-009
+Y18     1.78174e-009
+W18     9.63301e-010
+W17     4.26488e-010
+Y16     5.68834e-010
+W16     3.34834e-010
+U16     5.58311e-010
+U15     3.82347e-010
+V17     6.16332e-010
+U17     2.90187e-010
+AB17     4.63258e-010
+AB16     4.05342e-010
+[Row]    L19
+L19     4.46713e-009
+L18     3.86209e-010
+M20     3.99126e-010
+M19     1.87195e-010
+N20     4.67598e-010
+M22     3.55592e-010
+P22     2.94222e-010
+[Row]    C19
+C19     9.4518e-009
+D18     3.52336e-009
+B20     1.28923e-009
+B19     4.07889e-010
+C20     8.32337e-010
+D20     7.41223e-010
+A22     4.50807e-010
+[Row]    Y9
+Y9     7.48884e-009
+Y5     4.06261e-010
+Y6     4.07082e-010
+AA6     3.53396e-010
+AB4     3.18965e-010
+AB7     3.34779e-010
+Y4     3.0706e-010
+R6     2.72031e-010
+[Row]    Y18
+Y18     7.49496e-009
+W18     6.80088e-010
+W17     5.81676e-010
+U16     4.67024e-010
+U15     3.43636e-010
+V17     5.5853e-010
+U17     2.96172e-010
+AB17     3.9003e-010
+[Row]    L18
+L18     4.12856e-009
+M20     3.6512e-010
+M19     2.51427e-010
+N20     3.58432e-010
+N19     2.41519e-010
+M22     3.33841e-010
+[Row]    D18
+D18     9.64124e-009
+B20     1.19094e-009
+B19     4.54114e-010
+C20     5.45014e-010
+D20     4.26783e-010
+A22     3.21954e-010
+[Row]    Y5
+Y5     6.94962e-009
+Y6     1.10405e-009
+AA6     1.15922e-009
+AB1     7.26361e-010
+AB4     7.68853e-010
+AB5     4.76414e-010
+AB6     7.16332e-010
+AB7     7.09638e-010
+AA4     8.13369e-010
+Y4     8.2918e-010
+T4     4.39078e-010
+W5     2.91419e-010
+W6     3.31816e-010
+[Row]    W18
+W18     7.07198e-009
+W17     1.72895e-009
+Y16     7.4141e-010
+U16     9.97658e-010
+U15     6.43287e-010
+V17     9.82456e-010
+U17     2.72599e-010
+AB17     5.01227e-010
+AB16     6.05877e-010
+AA16     3.3278e-010
+V15     7.72895e-011
+[Row]    M20
+M20     3.48332e-009
+M19     2.53296e-010
+N20     8.83871e-010
+N19     3.32338e-010
+M22     5.254e-010
+M21     2.84885e-010
+P22     3.19399e-010
+P20     4.43007e-010
+N15     4.28634e-010
+[Row]    B20
+B20     8.21734e-009
+B19     1.4113e-009
+C20     8.96985e-010
+D20     3.28527e-010
+A22     3.7162e-010
+C22     4.4504e-010
+[Row]    Y6
+Y6     7.33113e-009
+AB5     4.41435e-010
+AB6     5.94567e-010
+AB7     7.9822e-010
+AA4     3.9163e-010
+T4     4.72629e-010
+V5     2.97775e-010
+W6     4.36943e-010
+[Row]    W17
+W17     7.45066e-009
+U16     7.10339e-010
+U15     5.05062e-010
+V17     8.06728e-010
+AB17     3.38136e-010
+AB16     3.68644e-010
+AA16     2.17387e-010
+V15     8.61135e-011
+AA14     2.42404e-010
+[Row]    M19
+M19     2.78465e-009
+N20     3.23049e-010
+M22     3.18161e-010
+P22     2.64963e-010
+P15     3.1867e-011
+[Row]    B19
+B19     6.97941e-009
+C20     3.53287e-010
+D20     4.13338e-010
+C22     3.05885e-010
+D22     2.67095e-010
+H20     1.83128e-010
+F19     3.68172e-010
+[Row]    C20
+C20     6.93315e-009
+D20     1.39451e-009
+A22     7.54778e-010
+C22     7.22117e-010
+D22     3.30031e-010
+D21     3.91973e-010
+E21     7.91034e-010
+B22     2.74648e-010
+[Row]    AA6
+AA6     9.40485e-009
+AA7     2.09238e-009
+AB1     8.93922e-010
+AB2     9.247e-010
+AB4     8.86971e-010
+AB5     4.78696e-010
+AB6     5.35067e-010
+AA4     5.38856e-010
+Y4     4.74529e-010
+[Row]    Y16
+Y16     9.79178e-009
+W16     2.04172e-009
+U16     4.21441e-010
+V17     3.66762e-010
+AB17     2.85152e-010
+Y14     2.83699e-010
+AB15     4.47038e-010
+AB14     2.77002e-010
+[Row]    N20
+N20     4.02077e-009
+M22     7.53977e-010
+P22     5.25104e-010
+[Row]    D20
+D20     6.88878e-009
+A21     1.20166e-009
+D22     6.31658e-010
+E21     1.25954e-009
+B21     4.45453e-010
+H19     3.62658e-010
+G19     2.85783e-010
+[Row]    AA7
+AA7     9.28542e-009
+AB1     5.61956e-010
+AB2     1.8959e-009
+AB5     7.31631e-010
+AB7     7.8979e-010
+Y4     5.14966e-010
+[Row]    W16
+W16     1.12905e-008
+U15     9.67033e-010
+U17     5.04775e-010
+AA17     2.85452e-010
+V14     4.39426e-010
+V13     2.32728e-010
+[Row]    N19
+N19     6.0416e-009
+M21     1.35831e-009
+N22     4.65441e-010
+R20     4.56064e-010
+P20     4.55101e-010
+N15     8.56836e-010
+[Row]    AB1
+AB1     1.20712e-008
+AB2     2.19832e-009
+AB4     2.04164e-009
+AB6     6.93992e-010
+AA4     5.60054e-010
+Y4     5.6873e-010
+U4     3.66609e-010
+[Row]    U16
+U16     7.56847e-009
+U15     2.00993e-009
+V17     1.46249e-009
+AB17     5.21484e-010
+AB16     4.37452e-010
+Y15     1.89943e-010
+[Row]    A22
+A22     7.49283e-009
+A21     1.40074e-009
+C22     1.17905e-009
+D22     2.1504e-010
+D21     4.36334e-010
+B22     4.26725e-010
+[Row]    M22
+M22     5.1677e-009
+P22     1.33206e-009
+R21     6.14539e-010
+P21     4.61715e-010
+P20     4.41123e-010
+[Row]    AB2
+AB2     1.02055e-008
+AB4     7.37476e-010
+AB5     9.83045e-010
+AB7     9.18764e-010
+AA4     5.05862e-010
+Y4     6.30656e-010
+[Row]    U15
+U15     8.25596e-009
+V17     7.03571e-010
+U17     6.04394e-010
+AA17     4.16762e-010
+AA16     2.55255e-010
+V15     9.02189e-011
+Y15     2.10852e-010
+W15     5.14312e-010
+AA14     1.55677e-010
+T11     7.66673e-011
+[Row]    A21
+A21     7.00433e-009
+C22     1.96796e-010
+D22     5.90454e-010
+E21     3.88257e-010
+B21     4.33657e-010
+H19     2.69596e-010
+G19     1.7865e-010
+[Row]    M21
+M21     6.36135e-009
+N22     5.30536e-010
+R20     3.06146e-010
+P20     6.58827e-010
+N15     6.21833e-010
+[Row]    AB4
+AB4     7.27384e-009
+AB5     6.69515e-010
+AB6     8.33739e-010
+AA4     7.73596e-010
+Y4     8.23224e-010
+U4     3.99363e-010
+V4     2.8153e-010
+[Row]    V17
+V17     4.89244e-009
+U17     3.55761e-010
+AB17     6.16888e-010
+AB16     4.94949e-010
+V15     8.60015e-011
+V14     3.61745e-010
+W13     2.50911e-010
+[Row]    C22
+C22     8.04337e-009
+D22     1.63606e-009
+D21     1.35459e-009
+B22     5.99382e-010
+F19     3.81303e-010
+E20     8.48601e-010
+E19     5.00964e-010
+G21     4.46796e-010
+G20     4.03301e-010
+[Row]    P22
+P22     6.59258e-009
+R21     1.22747e-009
+R20     2.95034e-010
+P21     5.96188e-010
+P20     4.23241e-010
+[Row]    AB5
+AB5     8.12616e-009
+AB6     7.98022e-010
+AB7     2.58944e-009
+Y4     8.5021e-010
+R6     3.61946e-010
+V5     3.60811e-010
+W7     2.57292e-010
+W6     3.31145e-010
+[Row]    U17
+U17     5.10216e-009
+AB17     2.85829e-010
+AA17     9.80324e-010
+AB16     4.0237e-010
+AA16     4.69047e-010
+V15     8.77899e-011
+V14     2.53586e-010
+Y15     2.34411e-010
+AA13     1.22872e-010
+[Row]    D22
+D22     8.65617e-009
+D21     1.31523e-010
+E21     1.184e-009
+B21     4.9832e-010
+H20     2.18779e-010
+H19     8.57389e-010
+G19     5.57345e-010
+E20     5.25021e-010
+E19     5.91962e-010
+G21     4.11317e-010
+G20     4.12149e-010
+F21     4.33798e-010
+[Row]    N22
+N22     6.40436e-009
+R20     1.39749e-009
+P20     6.39983e-010
+N15     4.35626e-010
+T16     2.85975e-010
+R19     2.39513e-010
+[Row]    AB6
+AB6     7.65021e-009
+AB7     1.5964e-009
+AA4     1.31371e-009
+U4     3.66826e-010
+U5     3.10482e-010
+U6     2.663e-010
+[Row]    AB17
+AB17     7.8757e-009
+AA17     1.29321e-009
+AB16     1.35419e-009
+AA16     2.90298e-010
+W13     3.15076e-010
+[Row]    R21
+R21     8.19517e-009
+R20     4.97286e-010
+P21     1.98712e-009
+P18     7.9254e-010
+T17     7.00517e-010
+T19     4.45652e-010
+T18     2.66981e-010
+R18     4.77799e-010
+P16     8.56566e-011
+[Row]    D21
+D21     7.88114e-009
+E21     1.43449e-009
+B22     9.97909e-010
+B21     4.47165e-010
+F19     4.13823e-010
+E20     8.02619e-010
+E19     3.08302e-010
+G21     4.0471e-010
+G20     3.0566e-010
+[Row]    AB7
+AB7     8.87233e-009
+Y4     9.36381e-010
+[Row]    AA17
+AA17     8.10261e-009
+AB16     4.35197e-010
+AA16     5.79551e-010
+V14     3.06445e-010
+AB14     2.13192e-010
+[Row]    R20
+R20     8.88951e-009
+P20     8.06424e-010
+N15     5.47091e-010
+T16     3.14626e-010
+[Row]    E21
+E21     7.64322e-009
+B21     6.93815e-010
+H19     5.27894e-010
+G19     3.31852e-010
+E19     2.81714e-010
+G20     2.45173e-010
+[Row]    AA4
+AA4     7.51328e-009
+Y4     7.81947e-010
+U4     5.44459e-010
+V4     4.70203e-010
+U5     3.93978e-010
+U6     3.28391e-010
+[Row]    AB16
+AB16     7.75293e-009
+AA16     1.4593e-009
+W13     3.76752e-010
+Y14     2.45344e-010
+[Row]    P21
+P21     6.95411e-009
+P20     8.6134e-010
+P18     9.41427e-010
+P17     4.78105e-010
+T17     1.12601e-009
+T19     4.47397e-010
+T18     2.12089e-010
+R18     4.76207e-010
+R16     2.90615e-010
+[Row]    B22
+B22     8.19551e-009
+B21     1.83323e-009
+F19     6.04403e-010
+E20     1.07127e-009
+E19     7.08129e-010
+G21     3.80941e-010
+F21     4.19477e-010
+[Row]    Y4
+Y4     6.60325e-009
+T6     1.86642e-010
+R6     7.27064e-010
+T4     2.47051e-010
+V4     3.24501e-010
+V5     3.4286e-010
+W7     2.11429e-010
+[Row]    AA16
+AA16     7.52043e-009
+V14     7.86245e-010
+V13     2.07037e-010
+W15     1.98654e-010
+AB15     2.06406e-010
+AB14     2.19691e-010
+[Row]    P20
+P20     7.27502e-009
+N15     1.36635e-009
+P17     5.55192e-010
+[Row]    B21
+B21     7.573e-009
+H19     9.43114e-010
+G19     2.69288e-010
+E20     6.10117e-010
+E19     7.28106e-010
+[Row]    P15
+P15     2.81147e-009
+N15     1.48391e-010
+P18     2.96975e-011
+R16     7.99346e-011
+P16     1.63509e-010
+[Row]    T6
+T6     2.04959e-009
+V4     2.44987e-010
+V5     1.86324e-010
+U5     2.53745e-010
+U6     1.21485e-010
+W7     1.43805e-010
+V7     1.28588e-010
+W5     1.65131e-010
+W6     1.71171e-010
+T7     7.52628e-011
+P7     6.43884e-011
+[Row]    V15
+V15     4.60788e-009
+V14     1.40199e-010
+W13     1.00921e-010
+Y15     2.43672e-010
+AA14     1.56313e-010
+[Row]    H20
+H20     3.2641e-009
+H19     2.8573e-010
+F19     3.4383e-010
+G19     2.12566e-010
+E20     3.35667e-010
+E19     2.23651e-010
+G21     2.98702e-010
+G20     1.99061e-010
+F21     5.18117e-010
+H22     1.05443e-010
+[Row]    R6
+R6     6.40462e-009
+U4     3.00605e-010
+T4     5.3768e-010
+V4     2.89952e-010
+V5     4.47515e-010
+U5     2.64918e-010
+U6     2.21305e-010
+P7     7.67601e-011
+[Row]    V14
+V14     8.13666e-009
+W13     8.01661e-010
+V13     5.59919e-010
+Y15     4.73181e-010
+W15     6.9654e-010
+AA14     5.82436e-010
+AA13     1.65194e-010
+Y13     1.42764e-010
+T11     1.35764e-010
+G12     1.14512e-010
+[Row]    H19
+H19     3.19506e-009
+F19     3.03425e-010
+G19     8.725e-010
+E19     4.34339e-010
+G21     2.81725e-010
+G20     3.92135e-010
+F22     1.38865e-010
+F21     4.67428e-010
+[Row]    N15
+N15     8.10197e-009
+P17     4.70928e-010
+T16     3.72236e-010
+P16     9.93293e-011
+[Row]    U4
+U4     4.16926e-009
+T4     2.33702e-010
+V4     5.57596e-010
+V5     3.21329e-010
+U5     3.99184e-010
+U6     6.74316e-010
+W7     1.48257e-010
+V7     1.52334e-010
+W5     3.04952e-010
+W6     2.03921e-010
+[Row]    W13
+W13     7.41043e-009
+V13     7.21932e-010
+Y15     3.11347e-010
+W15     3.02274e-010
+AA14     3.92094e-010
+Y14     5.24606e-010
+AA13     1.45162e-010
+Y13     1.61805e-010
+[Row]    P18
+P18     4.92876e-009
+T17     9.4421e-010
+T19     5.16756e-010
+R18     5.60737e-010
+R16     3.43761e-010
+P16     1.78744e-010
+[Row]    F19
+F19     4.92891e-009
+G19     3.88817e-010
+E20     8.91894e-010
+G21     6.11658e-010
+G20     3.07322e-010
+F21     5.8815e-010
+[Row]    T4
+T4     7.44919e-009
+V5     1.58681e-009
+W7     2.40772e-010
+W5     4.32515e-010
+W6     3.19463e-010
+[Row]    V13
+V13     8.30674e-009
+W15     8.13328e-010
+Y14     3.57213e-010
+AA13     1.66753e-010
+Y13     1.33819e-010
+AB15     3.22817e-010
+AB14     3.26205e-010
+T10     1.04723e-010
+T8     1.1442e-010
+H13     8.62917e-011
+G14     6.7865e-011
+[Row]    P17
+P17     8.99769e-009
+T17     3.14748e-010
+T16     1.09013e-009
+R19     8.49947e-010
+T18     6.35298e-010
+R18     4.21718e-010
+R16     8.91487e-010
+P16     1.67575e-010
+[Row]    G19
+G19     4.71748e-009
+E19     8.42126e-010
+G21     3.24444e-010
+G20     5.22828e-010
+F22     2.0186e-010
+F21     4.46037e-010
+G22     1.55449e-010
+[Row]    V4
+V4     3.40371e-009
+V5     2.28188e-010
+U5     8.09642e-010
+U6     2.44133e-010
+V7     1.58142e-010
+W5     2.55316e-010
+[Row]    Y15
+Y15     7.25086e-009
+W15     6.37541e-010
+AA14     7.38283e-010
+[Row]    T17
+T17     1.23169e-008
+T16     2.311e-009
+T19     5.79166e-010
+R18     5.09643e-010
+[Row]    E20
+E20     9.35129e-009
+E19     2.38441e-009
+G21     8.33742e-010
+F21     7.39936e-010
+[Row]    V5
+V5     3.57435e-009
+U5     1.74984e-010
+U6     1.34541e-010
+W7     2.13698e-010
+V7     2.00369e-010
+W5     6.84733e-010
+W6     4.01681e-010
+[Row]    W15
+W15     8.39183e-009
+AA14     2.19e-010
+AA13     1.62501e-010
+Y13     1.37557e-010
+AB15     2.16543e-010
+[Row]    T16
+T16     1.24413e-008
+R19     5.94432e-010
+T18     4.0504e-010
+R16     2.70974e-010
+[Row]    E19
+E19     9.22302e-009
+G20     5.72233e-010
+[Row]    U5
+U5     2.88438e-009
+U6     3.44962e-010
+V7     1.35869e-010
+W5     2.04938e-010
+[Row]    AA14
+AA14     7.32845e-009
+Y14     4.07036e-010
+Y13     1.05265e-010
+[Row]    T19
+T19     5.39282e-009
+R19     4.61678e-010
+T18     5.4228e-010
+R18     1.05873e-009
+R16     3.29825e-010
+[Row]    G21
+G21     5.80283e-009
+G20     2.64712e-010
+F21     1.15638e-009
+G22     1.82416e-010
+H22     3.42063e-010
+[Row]    U6
+U6     2.45939e-009
+V7     1.3781e-010
+W5     1.7199e-010
+T7     4.61487e-011
+[Row]    Y14
+Y14     7.1077e-009
+AA13     2.5976e-010
+Y13     2.20745e-010
+AB15     2.16569e-010
+AB14     2.76361e-010
+[Row]    R19
+R19     5.74479e-009
+T18     9.59864e-010
+R16     5.22492e-010
+[Row]    G20
+G20     5.96846e-009
+F22     4.16097e-010
+F21     3.50685e-010
+G22     2.92198e-010
+[Row]    W7
+W7     4.30634e-009
+V7     6.15374e-010
+W5     3.53706e-010
+W6     4.4167e-010
+[Row]    AA13
+AA13     5.87253e-009
+Y13     1.58525e-009
+AB15     3.90985e-010
+AB14     6.24878e-010
+[Row]    F22
+F22     8.6966e-009
+F21     1.36143e-009
+G22     8.35788e-010
+H22     8.90857e-011
+[Row]    T18
+T18     6.04667e-009
+R18     2.17483e-010
+R16     1.00486e-009
+[Row]    V7
+V7     3.36176e-009
+W5     3.13618e-010
+W6     3.09052e-010
+[Row]    Y13
+Y13     5.42439e-009
+AB15     2.68314e-010
+AB14     6.09833e-010
+H13     7.71349e-011
+G14     6.31298e-011
+[Row]    F21
+F21     8.97209e-009
+G22     2.90337e-010
+H22     1.29857e-010
+[Row]    R18
+R18     5.27793e-009
+R16     7.95175e-010
+[Row]    W5
+W5     6.15644e-009
+W6     1.24109e-009
+[Row]    AB15
+AB15     5.8791e-009
+AB14     1.05289e-009
+[Row]    R16
+R16     6.79901e-009
+P16     8.54523e-011
+[Row]    G22
+G22     6.50189e-009
+H22     9.64247e-010
+[Row]    W6
+W6     4.81991e-009
+[Row]    AB14
+AB14     6.47658e-009
+[Row]    P16
+P16     4.37768e-009
+[Row]    H22
+H22     5.27269e-009
+[Row]    T10
+T10     5.77461e-009
+T8     7.55706e-010
+T7     1.58572e-010
+T11     5.58135e-011
+[Row]    T8
+T8     8.4263e-009
+T7     6.85418e-010
+T11     5.38103e-010
+H13     1.10929e-010
+G12     4.10121e-010
+[Row]    T7
+T7     5.7732e-009
+T11     3.23904e-010
+G12     2.01002e-010
+[Row]    T11
+T11     4.62984e-009
+H13     7.57592e-011
+G12     1.12639e-009
+[Row]    F7
+F7     3.21704e-009
+G6     1.01165e-010
+F6     1.1057e-010
+E5     8.23711e-011
+G7     1.0781e-010
+A6     9.56118e-011
+B6     1.0594e-010
+E6     2.14045e-010
+D6     9.9417e-011
+B5     1.73397e-010
+F8     1.07155e-010
+[Row]    M4
+M4     4.85007e-009
+M5     6.29913e-010
+K4     7.18524e-010
+K6     3.04636e-010
+K5     2.1741e-010
+H5     2.87645e-010
+H4     2.29101e-010
+L6     1.1567e-009
+N5     1.87016e-010
+N4     5.3339e-010
+P6     5.94641e-010
+G2     1.14583e-010
+L3     1.03444e-010
+R5     2.49983e-010
+N7     2.52982e-010
+R4     3.78212e-010
+[Row]    M5
+M5     5.30737e-009
+J7     2.1958e-010
+J6     2.23423e-010
+H5     2.39639e-010
+J3     2.20318e-010
+G5     2.36564e-010
+G4     1.89382e-010
+L7     8.22761e-011
+L6     2.01729e-010
+M6     5.80231e-010
+N5     7.29701e-010
+P6     2.37239e-010
+M1     1.41534e-010
+N3     1.40555e-010
+P5     1.91176e-010
+[Row]    K4
+K4     4.35001e-009
+L4     1.89534e-010
+K6     4.74605e-010
+K5     4.36009e-010
+J7     1.62426e-010
+J6     1.7273e-010
+J5     3.29929e-010
+H5     3.80072e-010
+G5     2.41249e-010
+H4     3.06738e-010
+F4     2.97876e-010
+L6     4.6854e-010
+N4     1.15739e-009
+P6     3.8496e-010
+K3     2.14466e-010
+N7     4.28649e-010
+R4     2.85492e-010
+[Row]    L4
+L4     3.53136e-009
+K6     2.62338e-010
+J7     5.2649e-010
+J6     4.29191e-010
+H5     2.82962e-010
+J3     2.57663e-010
+G5     2.55958e-010
+L7     6.40313e-011
+M6     1.05287e-010
+V3     2.84981e-010
+N5     1.69994e-010
+L3     8.63588e-011
+P5     3.33091e-010
+M7     3.80677e-010
+N7     4.73281e-010
+[Row]    K6
+K6     4.98489e-009
+K5     6.46535e-010
+J5     2.79117e-010
+H5     3.66473e-010
+H4     1.98635e-010
+L6     2.4467e-010
+N4     3.23643e-010
+H7     4.67878e-011
+M7     1.44557e-010
+N7     9.35315e-010
+[Row]    K5
+K5     4.96669e-009
+J7     2.63523e-010
+J6     2.04114e-010
+J5     1.28283e-009
+H5     4.3454e-010
+J3     2.38536e-010
+H4     4.22988e-010
+F4     3.86607e-010
+L6     2.11426e-010
+N4     4.77815e-010
+P6     1.7223e-010
+J1     1.58006e-010
+N7     3.28482e-010
+[Row]    J7
+J7     5.32808e-009
+J6     1.73192e-009
+J5     4.22137e-010
+H5     3.86719e-010
+J3     4.01785e-010
+G5     3.14048e-010
+N5     2.02901e-010
+H7     1.13541e-010
+M7     1.8239e-010
+[Row]    J6
+J6     4.56211e-009
+J5     3.79353e-010
+H5     4.16598e-010
+J3     5.13337e-010
+G5     3.87041e-010
+G4     2.1464e-010
+L7     4.47261e-011
+N5     1.99512e-010
+K3     1.97617e-010
+H7     5.56045e-011
+M7     1.90876e-010
+N7     1.87898e-010
+[Row]    J5
+J5     5.33447e-009
+H5     6.7207e-010
+J3     3.79424e-010
+G5     3.43753e-010
+H4     5.85012e-010
+F4     4.98184e-010
+G4     2.07196e-010
+L6     2.11351e-010
+N4     4.10822e-010
+L1     2.09579e-010
+L2     1.64245e-010
+K1     1.47471e-010
+J1     2.03636e-010
+K3     2.16036e-010
+N7     1.99744e-010
+[Row]    H5
+H5     4.95928e-009
+G5     2.94718e-010
+H4     4.74531e-010
+F4     3.30323e-010
+N5     2.13692e-010
+K1     1.45209e-010
+J1     1.955e-010
+P5     1.61213e-010
+N7     3.92098e-010
+[Row]    J3
+J3     4.50668e-009
+G5     1.35565e-009
+F4     4.37435e-010
+G4     2.73946e-010
+N5     1.6131e-010
+L1     1.9786e-010
+K3     4.57098e-010
+M7     1.12288e-010
+[Row]    G5
+G5     5.18389e-009
+H4     3.69147e-010
+G4     6.45931e-010
+L1     2.4849e-010
+L2     1.90463e-010
+K3     4.61614e-010
+G6     1.45363e-010
+[Row]    H4
+H4     5.71112e-009
+F4     1.43248e-009
+G4     7.56045e-010
+L6     1.92431e-010
+N4     3.64462e-010
+P6     1.97858e-010
+H3     1.50841e-010
+F1     1.47687e-010
+G2     1.60598e-010
+G1     1.25076e-010
+L1     8.63559e-010
+L2     7.12625e-010
+K1     2.92494e-010
+J1     3.95379e-010
+K3     3.35908e-010
+H2     1.57732e-010
+[Row]    F4
+F4     5.6183e-009
+G4     5.85631e-010
+H3     1.21314e-010
+L1     4.18344e-010
+L2     3.23906e-010
+K1     3.31302e-010
+J1     4.78766e-010
+F3     1.95245e-010
+F6     7.89796e-011
+[Row]    G4
+G4     4.79076e-009
+L1     1.0121e-009
+L2     7.67524e-010
+K1     2.09323e-010
+J1     1.84191e-010
+K3     8.55777e-010
+J2     1.78673e-010
+[Row]    L7
+L7     3.52973e-009
+L6     5.30455e-011
+M6     3.38447e-010
+N5     1.19731e-010
+L3     5.82296e-011
+N7     6.05162e-011
+[Row]    L6
+L6     5.54559e-009
+N4     4.48194e-010
+P6     7.79875e-010
+R4     4.335e-010
+[Row]    M6
+M6     4.12481e-009
+P3     1.93388e-010
+N5     3.48498e-010
+M1     1.48552e-010
+N3     1.13037e-010
+P5     2.47968e-010
+M7     1.20255e-010
+[Row]    P3
+P3     5.95863e-009
+P1     1.79905e-010
+M1     1.17209e-009
+T3     2.50826e-010
+N3     7.36387e-010
+R3     3.64717e-010
+T2     2.72078e-010
+AA3     3.48982e-010
+U1     2.96593e-010
+Y3     2.85689e-010
+W2     3.32178e-010
+N2     4.111e-010
+R5     5.23499e-010
+P7     8.05052e-011
+[Row]    V3
+V3     1.28342e-008
+P1     5.05708e-010
+T3     2.71277e-010
+T1     1.30995e-009
+M2     3.49371e-010
+AA3     3.47186e-010
+AA1     2.14643e-010
+W2     3.95492e-010
+P5     1.42889e-009
+R4     2.99192e-010
+[Row]    N5
+N5     5.99696e-009
+R3     1.71888e-010
+T2     2.06882e-010
+P5     3.44007e-010
+M7     1.51183e-010
+[Row]    N4
+N4     6.35336e-009
+P6     3.93206e-010
+L3     9.64558e-011
+T2     2.18494e-010
+N2     2.05333e-010
+P5     1.92945e-010
+R5     6.37633e-010
+N7     3.58208e-010
+R4     2.89045e-010
+[Row]    P6
+P6     7.56582e-009
+L3     1.11878e-010
+P5     6.00028e-010
+R5     3.4215e-010
+P7     1.17314e-010
+R4     1.12281e-009
+[Row]    B1
+B1     5.63706e-009
+B2     1.01201e-009
+D3     1.22708e-010
+E3     3.47936e-010
+E1     3.73713e-010
+D2     1.64703e-010
+C2     4.29825e-010
+F3     2.15397e-010
+A1     2.84564e-010
+A2     2.24838e-010
+A3     1.48336e-010
+[Row]    H3
+H3     4.78159e-009
+F2     1.55513e-010
+F1     2.14947e-010
+G2     4.33432e-010
+G1     3.35676e-010
+K1     2.8825e-010
+J1     2.52261e-010
+J2     2.4824e-010
+H2     1.1722e-009
+[Row]    P1
+P1     5.65388e-009
+M1     1.67469e-010
+T3     5.95551e-010
+T1     1.88191e-009
+M2     5.39805e-010
+R1     9.55867e-011
+P2     4.34947e-010
+N2     3.49954e-010
+R5     3.25391e-010
+R4     3.22507e-010
+[Row]    AA2
+AA2     1.0144e-008
+T3     2.5207e-010
+M2     5.26385e-010
+AA3     8.97518e-010
+AA1     1.49849e-009
+U2     2.40161e-010
+W1     3.74319e-010
+P2     5.43031e-010
+V2     1.10241e-009
+R4     2.75208e-010
+[Row]    D1
+D1     4.87601e-009
+C3     1.29728e-010
+D3     2.67671e-010
+E1     1.43051e-010
+F2     9.99404e-011
+F1     9.48045e-011
+G1     8.308e-011
+D2     1.4667e-010
+J2     9.4562e-011
+C2     1.04776e-010
+F3     5.04491e-010
+[Row]    C3
+C3     5.90034e-009
+B2     1.57943e-010
+D3     1.30314e-009
+D2     2.45125e-010
+C2     3.14395e-010
+F3     2.16905e-010
+A1     2.43075e-010
+A2     2.42619e-010
+A3     2.18514e-010
+A4     1.96386e-010
+C4     2.17078e-010
+B4     1.85185e-010
+[Row]    B2
+B2     4.98446e-009
+D3     2.28081e-010
+E3     2.28828e-010
+E1     2.46619e-010
+C2     1.57698e-010
+F3     3.6072e-010
+G6     1.06509e-010
+A1     2.46238e-010
+A2     2.70919e-010
+A3     2.05699e-010
+[Row]    D3
+D3     4.8604e-009
+E3     1.3776e-010
+F2     1.90066e-010
+F1     1.50397e-010
+D2     3.29888e-010
+C2     3.77644e-010
+F3     1.59976e-010
+A2     1.7307e-010
+C4     1.40577e-010
+[Row]    E3
+E3     5.15729e-009
+E1     1.51374e-009
+F2     1.92387e-010
+F1     1.77694e-010
+G1     1.32212e-010
+D2     1.3847e-010
+J2     1.75817e-010
+F3     1.59911e-010
+[Row]    E1
+E1     5.3676e-009
+F2     2.15144e-010
+F1     2.16526e-010
+G1     1.61601e-010
+L1     1.83186e-010
+D2     1.72932e-010
+J2     2.16774e-010
+C2     1.12931e-010
+F3     1.36889e-010
+[Row]    F2
+F2     4.24e-009
+F1     6.76891e-010
+G2     2.79305e-010
+G1     2.87691e-010
+D2     4.41398e-010
+C2     3.14795e-010
+H2     2.01802e-010
+[Row]    F1
+F1     4.74439e-009
+G2     5.27274e-010
+G1     4.94665e-010
+D2     2.48741e-010
+C2     1.91141e-010
+H2     2.77909e-010
+[Row]    G2
+G2     5.0881e-009
+G1     1.0732e-009
+K1     1.37096e-010
+J1     1.44508e-010
+J2     2.24996e-010
+H2     3.91046e-010
+[Row]    G1
+G1     4.62682e-009
+K1     1.45674e-010
+J1     1.43039e-010
+D2     1.42245e-010
+J2     2.35272e-010
+C2     1.09289e-010
+H2     5.08701e-010
+[Row]    L1
+L1     7.47376e-009
+L2     2.17291e-009
+K1     1.96936e-010
+K3     2.4975e-010
+J2     8.02363e-010
+[Row]    L2
+L2     6.87752e-009
+K1     1.10433e-010
+K3     2.19268e-010
+J2     3.87125e-010
+R5     2.0988e-010
+[Row]    L3
+L3     5.58946e-009
+M1     8.17511e-011
+P5     9.18085e-011
+H7     1.12669e-010
+R4     1.19179e-010
+[Row]    K1
+K1     4.81447e-009
+J1     1.40026e-009
+H2     3.97521e-010
+[Row]    J1
+J1     5.11005e-009
+K3     2.31784e-010
+H2     3.158e-010
+[Row]    K3
+K3     6.65497e-009
+J2     4.05155e-010
+[Row]    M1
+M1     5.8796e-009
+T3     3.63995e-010
+N3     5.48151e-010
+R3     1.92141e-010
+N2     4.88736e-010
+P5     1.8275e-010
+R5     6.15252e-010
+[Row]    T3
+T3     8.47279e-009
+T1     7.08129e-010
+M2     2.18832e-010
+AA1     4.21822e-010
+P2     2.14353e-010
+R5     1.14709e-009
+R4     1.11445e-009
+[Row]    N3
+N3     5.60718e-009
+R3     3.47322e-010
+AA3     4.24932e-010
+U1     2.39797e-010
+AA1     3.10081e-010
+P2     1.6609e-010
+P5     1.79108e-010
+[Row]    T1
+T1     7.79988e-009
+M2     4.93154e-010
+AA3     2.85643e-010
+P2     3.54052e-010
+W2     3.66845e-010
+N2     2.45215e-010
+V2     3.42773e-010
+R5     3.80022e-010
+[Row]    R3
+R3     5.90448e-009
+T2     2.66573e-010
+R1     9.83245e-010
+U1     9.25971e-010
+U2     8.61127e-010
+W1     4.6373e-010
+Y3     2.74886e-010
+W3     5.94209e-010
+Y1     2.96109e-010
+W2     4.29052e-010
+N2     7.09718e-010
+V2     3.67621e-010
+P7     8.08573e-011
+[Row]    T2
+T2     8.10358e-009
+R1     2.61454e-010
+U1     3.16459e-010
+U2     1.38653e-009
+P7     1.63636e-010
+[Row]    M2
+M2     6.38092e-009
+AA3     1.00296e-009
+AA1     6.10498e-010
+U2     2.41775e-010
+P2     1.00072e-009
+[Row]    R1
+R1     7.22677e-009
+U1     8.0367e-010
+U2     9.1702e-010
+W1     3.36905e-010
+Y3     2.329e-010
+W3     3.6409e-010
+Y1     2.77622e-010
+W2     5.02179e-010
+N2     3.03147e-010
+V2     6.96267e-010
+P7     8.15602e-011
+[Row]    AA3
+AA3     1.20217e-008
+AA1     1.59206e-009
+W1     7.3589e-010
+W3     9.35775e-010
+P2     7.304e-010
+W2     5.95273e-010
+V2     5.84737e-010
+[Row]    U1
+U1     1.03627e-008
+U2     2.05863e-009
+W1     4.26454e-010
+Y3     4.99932e-010
+W3     5.06084e-010
+Y1     8.01819e-010
+W2     4.97138e-010
+[Row]    AA1
+AA1     1.03825e-008
+P2     4.08789e-010
+V2     4.97067e-010
+[Row]    U2
+U2     1.01764e-008
+W1     4.10919e-010
+Y3     4.21856e-010
+W3     4.95791e-010
+Y1     5.66596e-010
+W2     6.70021e-010
+V2     4.62734e-010
+[Row]    W1
+W1     9.04268e-009
+Y3     7.13036e-010
+W3     3.5467e-009
+Y1     6.05792e-010
+W2     9.86462e-010
+V2     1.22209e-009
+[Row]    Y3
+Y3     9.864e-009
+W3     1.06092e-009
+Y1     2.22438e-009
+W2     6.75178e-010
+V2     4.90831e-010
+[Row]    W3
+W3     1.14773e-008
+Y1     6.65783e-010
+W2     9.23606e-010
+V2     1.26717e-009
+[Row]    Y1
+Y1     9.58538e-009
+W2     6.42939e-010
+V2     4.81754e-010
+[Row]    D2
+D2     5.10746e-009
+C2     1.30685e-009
+[Row]    J2
+J2     6.40514e-009
+H2     5.61301e-010
+[Row]    P2
+P2     6.94138e-009
+W2     3.16371e-010
+N2     7.00202e-010
+[Row]    W2
+W2     1.15015e-008
+V2     2.72389e-009
+[Row]    C2
+C2     5.15776e-009
+A2     1.26689e-010
+[Row]    H2
+H2     5.54745e-009
+[Row]    N2
+N2     6.64062e-009
+R5     4.42208e-010
+[Row]    V2
+V2     1.23241e-008
+[Row]    F3
+F3     3.86165e-009
+G6     3.50479e-010
+F6     1.96786e-010
+E4     1.41972e-010
+D5     9.67224e-011
+E5     8.78258e-011
+[Row]    P5
+P5     6.19075e-009
+P7     7.67903e-011
+[Row]    R5
+R5     8.84258e-009
+R4     4.11552e-010
+[Row]    H7
+H7     1.37476e-009
+G6     6.10258e-011
+F6     4.138e-011
+E4     3.72449e-011
+G7     1.11529e-010
+F8     4.19941e-011
+[Row]    P7
+P7     2.97875e-009
+[Row]    M7
+M7     5.57531e-009
+N7     5.27592e-010
+[Row]    N7
+N7     7.36596e-009
+[Row]    R4
+R4     1.0844e-008
+[Row]    G6
+G6     2.70867e-009
+F6     2.69904e-010
+E4     1.85193e-010
+D5     1.52454e-010
+E5     1.02653e-010
+G7     1.07578e-010
+[Row]    A1
+A1     6.12166e-009
+A2     1.68912e-009
+A3     6.31362e-010
+A4     3.77767e-010
+C4     2.96782e-010
+B4     3.3609e-010
+B6     2.03071e-010
+[Row]    A2
+A2     5.26657e-009
+A3     9.76978e-010
+A4     6.25048e-010
+C4     3.47996e-010
+B4     3.67678e-010
+B6     2.08104e-010
+[Row]    F6
+F6     3.63347e-009
+E4     6.3916e-010
+D5     2.075e-010
+G7     1.11531e-010
+C5     9.49178e-011
+E6     7.47655e-011
+[Row]    E4
+E4     3.38702e-009
+A4     9.19344e-011
+D5     3.84547e-010
+E5     4.83353e-010
+G7     1.01521e-010
+C5     1.38952e-010
+E6     1.36503e-010
+[Row]    A3
+A3     5.82389e-009
+A4     1.92417e-009
+C4     5.16201e-010
+B4     4.97297e-010
+B6     2.54787e-010
+B5     2.10831e-010
+[Row]    A4
+A4     6.01063e-009
+C4     6.4798e-010
+B4     5.75528e-010
+B6     2.72985e-010
+B5     2.26007e-010
+[Row]    D5
+D5     3.86113e-009
+E5     6.56842e-010
+G7     9.40692e-011
+C5     4.554e-010
+A6     1.57669e-010
+E6     1.9286e-010
+[Row]    E5
+E5     3.98517e-009
+G7     6.98379e-011
+C5     4.11533e-010
+E6     2.84392e-010
+D6     1.07546e-010
+[Row]    C4
+C4     4.05771e-009
+B4     1.20972e-009
+C5     1.04376e-010
+B6     3.69188e-010
+D6     2.23147e-010
+B5     2.96179e-010
+[Row]    G7
+G7     1.93551e-009
+A6     1.50001e-010
+F8     8.11583e-011
+[Row]    B4
+B4     4.87061e-009
+B6     5.69984e-010
+E6     1.72651e-010
+D6     2.45699e-010
+B5     3.85139e-010
+[Row]    C5
+C5     4.41182e-009
+A6     2.86993e-010
+D6     2.02661e-010
+A7     2.69934e-010
+A8     2.68296e-010
+[Row]    A6
+A6     5.25744e-009
+B6     1.75931e-010
+A7     1.50413e-010
+A8     1.1945e-010
+A14     1.54174e-010
+B7     1.92598e-010
+C7     1.00802e-010
+[Row]    B6
+B6     5.54858e-009
+E6     4.23562e-010
+D6     4.97007e-010
+A7     1.66423e-010
+A8     3.03933e-010
+B7     2.86347e-010
+B5     7.70362e-010
+[Row]    E6
+E6     3.11898e-009
+D6     5.10674e-010
+E9     1.74051e-010
+A7     3.14484e-010
+E10     2.79113e-010
+F11     2.14019e-010
+B5     5.86797e-010
+[Row]    D6
+D6     3.96725e-009
+E9     2.33729e-010
+A7     1.03433e-009
+E10     2.59769e-010
+A8     3.86211e-010
+F11     2.43127e-010
+D7     1.64985e-010
+B5     3.60348e-010
+[Row]    E9
+E9     4.85877e-009
+A7     2.81902e-010
+E10     6.96711e-010
+A8     3.18731e-010
+F11     4.28851e-010
+A14     2.98048e-010
+E11     5.38927e-010
+F12     4.22148e-010
+F14     7.76247e-010
+F8     1.59632e-010
+[Row]    A7
+A7     6.18657e-009
+E10     2.61353e-010
+A8     4.88412e-010
+B7     2.76468e-010
+C7     1.75401e-010
+B5     3.20408e-010
+[Row]    E10
+E10     5.56331e-009
+A8     4.01641e-010
+F11     5.99247e-010
+A14     4.13943e-010
+E11     1.07324e-009
+F12     3.04163e-010
+G13     9.31307e-010
+F13     9.89624e-010
+[Row]    A8
+A8     6.58999e-009
+F11     3.18903e-010
+A14     1.53007e-009
+B7     3.49417e-010
+[Row]    F11
+F11     6.51763e-009
+A14     4.10547e-010
+E11     1.00509e-009
+B7     3.07916e-010
+F12     3.00213e-010
+D7     1.93948e-010
+[Row]    A14
+A14     9.12227e-009
+E11     3.00149e-010
+B7     4.44588e-010
+A13     8.06115e-010
+A12     2.89454e-010
+B14     2.8886e-010
+[Row]    E11
+E11     7.60141e-009
+B7     3.98354e-010
+F12     7.63002e-010
+A13     3.37473e-010
+D7     2.97247e-010
+F9     2.57199e-010
+G13     1.1413e-009
+F14     2.08842e-010
+F13     9.43054e-010
+[Row]    B7
+B7     4.58887e-009
+F12     2.98571e-010
+A13     1.29888e-009
+D7     2.82074e-010
+A12     3.00152e-010
+A11     2.4273e-010
+C7     3.09196e-010
+[Row]    F12
+F12     6.9376e-009
+A13     3.73231e-010
+D7     7.75201e-010
+A12     2.9086e-010
+E8     2.49024e-010
+F9     3.9017e-010
+F14     4.93285e-010
+G11     6.61458e-011
+[Row]    A13
+A13     7.96393e-009
+D7     3.30812e-010
+A12     7.16368e-010
+A11     4.82048e-010
+C7     2.49576e-010
+B12     3.92371e-010
+C8     2.46003e-010
+[Row]    D7
+D7     3.59426e-009
+A12     4.38942e-010
+E8     5.863e-010
+A11     4.06453e-010
+F9     3.95857e-010
+C7     3.5218e-010
+G13     2.73938e-010
+C8     2.05681e-010
+[Row]    A12
+A12     6.70643e-009
+E8     4.17177e-010
+A11     1.83722e-009
+F9     3.06013e-010
+C7     4.10027e-010
+B12     6.15065e-010
+A9     2.78249e-010
+B14     2.25438e-010
+[Row]    E8
+E8     3.33611e-009
+A11     4.62785e-010
+F9     8.71095e-010
+C7     4.14498e-010
+G13     6.35493e-010
+B12     2.63093e-010
+F13     4.99147e-010
+C8     1.81853e-010
+D8     1.98472e-010
+F8     6.54552e-011
+[Row]    A11
+A11     5.3903e-009
+F9     3.82402e-010
+C7     5.23745e-010
+B12     6.60445e-010
+A9     3.10699e-010
+B14     2.35628e-010
+B11     2.59833e-010
+[Row]    F9
+F9     4.73391e-009
+C7     4.00653e-010
+G13     5.27529e-010
+B12     2.85804e-010
+F13     3.47671e-010
+F8     5.97733e-011
+[Row]    C7
+C7     3.6507e-009
+G13     3.56736e-010
+B12     8.61089e-010
+A9     2.78212e-010
+B14     1.81713e-010
+C8     2.73132e-010
+[Row]    G13
+G13     9.06101e-009
+B12     3.56871e-010
+F14     5.16533e-010
+F13     1.46897e-009
+E14     2.8053e-010
+E13     5.0043e-010
+[Row]    B12
+B12     6.62829e-009
+A9     8.32369e-010
+B14     4.57296e-010
+C13     2.63913e-010
+E14     1.64914e-010
+B11     2.99453e-010
+[Row]    F14
+F14     7.15975e-009
+A9     1.38467e-010
+B14     1.54571e-010
+F13     3.95627e-010
+F8     1.3226e-010
+M12     1.45346e-010
+L12     1.9458e-010
+M11     5.80268e-011
+[Row]    A9
+A9     4.70537e-009
+B14     1.111e-009
+C13     2.62555e-010
+E14     1.56465e-010
+C8     2.61546e-010
+D8     1.90461e-010
+B9     3.03603e-010
+B10     2.5871e-010
+C10     2.35216e-010
+[Row]    B14
+B14     8.2692e-009
+F13     2.56856e-010
+C13     3.56513e-010
+E14     4.96885e-010
+C8     2.22286e-010
+[Row]    F13
+F13     8.62982e-009
+C13     3.00893e-010
+E14     5.37159e-010
+C8     3.15929e-010
+D10     2.80572e-010
+C9     3.28306e-010
+G11     1.51613e-010
+M12     1.7381e-010
+L11     1.5037e-010
+[Row]    C13
+C13     7.39909e-009
+E14     9.36471e-010
+C8     1.00899e-009
+D8     3.86158e-010
+B11     7.16578e-010
+B9     2.12481e-010
+C14     4.96901e-010
+[Row]    E14
+E14     9.76012e-009
+C8     4.16999e-010
+D8     1.07235e-009
+B11     3.34146e-010
+B9     1.76367e-010
+[Row]    C8
+C8     3.51164e-009
+D8     4.44025e-010
+B11     4.93103e-010
+B9     3.88607e-010
+B10     2.56265e-010
+C12     2.01539e-010
+[Row]    D8
+D8     3.25739e-009
+B11     2.85438e-010
+E13     4.02179e-010
+B9     3.1845e-010
+D11     3.52682e-010
+D13     3.50067e-010
+D10     3.45401e-010
+C12     1.98301e-010
+C9     3.37599e-010
+F8     4.34428e-011
+[Row]    B11
+B11     6.06248e-009
+E13     2.42328e-010
+B9     1.20771e-009
+D12     3.98188e-010
+B10     5.29279e-010
+D11     2.62229e-010
+C14     2.67142e-010
+C10     2.2509e-010
+[Row]    E13
+E13     6.36145e-009
+B9     2.91834e-010
+D12     4.67959e-010
+D11     3.30382e-010
+D13     3.28975e-010
+D10     2.7895e-010
+C9     2.59206e-010
+M11     5.74453e-011
+[Row]    B9
+B9     4.24776e-009
+D12     3.97039e-010
+B10     6.72453e-010
+D11     3.99142e-010
+C14     3.64535e-010
+C10     2.50827e-010
+D10     2.25294e-010
+C12     2.63732e-010
+C9     2.0261e-010
+[Row]    D12
+D12     7.42596e-009
+B10     4.82825e-010
+D11     7.66222e-010
+C14     4.98305e-010
+D13     4.34317e-010
+C10     3.43457e-010
+D10     3.34258e-010
+C12     3.16231e-010
+C9     3.47103e-010
+[Row]    B10
+B10     4.11392e-009
+D11     5.16666e-010
+C14     1.0624e-009
+D13     3.62785e-010
+C10     3.98606e-010
+D10     2.54386e-010
+C12     2.64977e-010
+[Row]    D11
+D11     4.41994e-009
+C14     4.34382e-010
+D13     1.26038e-009
+C10     3.26561e-010
+D10     6.27033e-010
+C12     3.71855e-010
+C9     4.03443e-010
+[Row]    C14
+C14     7.00915e-009
+D13     4.27397e-010
+C10     3.40681e-010
+D10     2.2375e-010
+C12     2.21363e-010
+[Row]    D13
+D13     7.10786e-009
+C10     3.42201e-010
+D10     8.69671e-010
+C12     5.9595e-010
+C9     5.84105e-010
+[Row]    C10
+C10     4.03056e-009
+D10     5.01515e-010
+C12     4.10306e-010
+C9     3.60191e-010
+[Row]    D10
+D10     3.49821e-009
+C12     3.50584e-010
+C9     8.43725e-010
+[Row]    C12
+C12     5.45897e-009
+C9     4.13402e-010
+[Row]    B5
+B5     3.65168e-009
+[Row]    C9
+C9     3.84688e-009
+[Row]    F8
+F8     1.67014e-009
+[Row]    G11
+G11     3.07198e-009
+G14     5.20873e-011
+G12     7.28568e-011
+M12     1.32949e-010
+L11     1.4071e-010
+[Row]    H13
+H13     9.70165e-009
+G14     1.70222e-009
+G12     1.49042e-010
+[Row]    G14
+G14     1.0304e-008
+G12     1.0133e-010
+[Row]    G12
+G12     9.28782e-009
+L12     7.36616e-011
+M11     7.58176e-011
+[Row]    M12
+M12     6.90857e-009
+L11     1.98669e-009
+L12     5.0972e-010
+M11     5.3152e-010
+[Row]    L11
+L11     5.7759e-009
+L12     5.84977e-010
+M11     4.2414e-010
+[Row]    L12
+L12     8.1588e-009
+M11     2.20054e-009
+[Row]    M11
+M11     8.61232e-009
+| 
+| The capacitance matrix has sparse coupling
+| 
+[Capacitance Matrix]    Sparse_matrix 
+[Row]    K11
+K11     7.00786e-013
+J12     -9.61714e-014
+G11     -1.72546e-014
+[Row]    L10
+L10     2.89468e-011
+G9     -1.21132e-013
+H11     -7.11094e-013
+G10     -1.74307e-013
+N12     -9.78363e-014
+N11     -1.46026e-013
+H15     -2.50559e-013
+J16     -2.53698e-013
+U11     -2.73632e-013
+U10     -2.38943e-013
+T10     -2.30475e-013
+G11     -3.12605e-013
+H13     -2.23636e-013
+G14     -3.65726e-013
+G12     -5.27981e-013
+L12     -2.53443e-013
+M11     -1.91963e-013
+[Row]    G9
+G9     7.57987e-013
+G8     -2.11925e-014
+G11     -7.11388e-015
+M12     -1.91837e-014
+L11     -1.44761e-014
+[Row]    H11
+H11     7.02924e-012
+J12     -8.69719e-013
+T14     -2.10328e-014
+[Row]    J12
+J12     3.03051e-011
+T13     -3.18132e-014
+T12     -2.60333e-014
+T14     -1.80982e-013
+J15     -4.0612e-014
+P15     -5.6262e-015
+P16     -1.65384e-014
+T11     -6.26567e-014
+P6     -2.13543e-013
+H13     -4.20695e-013
+G14     -3.12232e-013
+[Row]    R12
+R12     1.82421e-012
+T12     -1.61803e-015
+T14     -2.7181e-015
+G11     -7.09852e-015
+[Row]    AA10
+AA10     2.3132e-011
+W8     -3.28023e-013
+W11     -6.27943e-013
+U10     -6.03928e-014
+AB9     -2.94212e-013
+AB10     -2.27551e-014
+Y10     -4.06434e-013
+Y11     -4.18944e-013
+AA8     -2.32174e-013
+Y9     -3.62526e-013
+AA7     -2.19137e-013
+AB1     -2.27919e-013
+AB2     -3.30601e-013
+AB5     -1.96989e-013
+AB7     -3.86661e-013
+Y4     -7.53222e-014
+V5     -5.15676e-014
+W6     -1.40712e-013
+[Row]    AA20
+AA20     3.04666e-011
+U14     -1.52973e-014
+Y21     -3.88756e-013
+AB20     -2.17985e-013
+AA19     -4.28566e-013
+AA18     -3.97774e-013
+Y18     -4.53676e-013
+W16     -3.98952e-013
+U17     -1.15664e-013
+AA17     -1.56738e-013
+W13     -3.31741e-013
+V13     -1.75055e-013
+Y15     -3.75342e-013
+W15     -2.05473e-013
+AA14     -1.36703e-013
+Y14     -3.12426e-013
+AA13     -8.87382e-014
+Y13     -6.43178e-014
+AB15     -4.39461e-013
+AB14     -5.54181e-013
+[Row]    K17
+K17     1.85576e-011
+M17     -4.1311e-013
+L17     -2.90194e-013
+N18     -4.57432e-013
+N17     -3.73292e-013
+M15     -7.68569e-014
+J18     -9.64593e-014
+J22     -2.59577e-013
+J21     -7.59153e-014
+K21     -5.74997e-014
+L22     -7.41029e-014
+K20     -8.99333e-014
+N19     -2.73375e-013
+N22     -1.08705e-013
+R20     -2.33303e-013
+P20     -3.29002e-013
+P18     -1.67863e-013
+T17     -3.32267e-013
+T16     -4.02685e-013
+R19     -1.8728e-013
+[Row]    A20
+A20     2.88689e-011
+H18     -2.113e-013
+E16     -6.08456e-014
+D16     -6.60624e-014
+D15     -4.74172e-013
+A19     -2.01892e-013
+C18     -4.12945e-013
+C17     -4.05883e-013
+D18     -5.13863e-013
+D20     -2.71066e-013
+E20     -3.3973e-013
+E19     -4.31203e-013
+G21     -2.28949e-013
+G20     -1.33405e-013
+[Row]    E2
+E2     3.3482e-011
+K4     -7.18042e-014
+J5     -1.32573e-013
+H5     -1.46877e-013
+H4     -1.39902e-013
+F4     -3.95927e-013
+M6     -6.42015e-014
+N4     -2.61402e-013
+L3     -3.30425e-013
+N3     -5.83289e-014
+J2     -3.76013e-013
+H2     -3.08552e-013
+N2     -2.01946e-013
+[Row]    B3
+B3     8.89807e-012
+G6     -1.62931e-014
+A1     -8.76729e-014
+A2     -6.64784e-014
+F6     -3.11408e-015
+E4     -5.82599e-014
+A3     -4.04441e-014
+A4     -1.62873e-014
+D5     -2.20087e-013
+E5     -2.70104e-014
+C4     -1.08124e-014
+B4     -2.74093e-014
+C5     -1.97346e-014
+B6     -6.76641e-014
+D6     -6.18569e-014
+B5     -1.36985e-014
+[Row]    A10
+A10     1.75972e-011
+A9     -7.63427e-014
+C8     -3.26981e-014
+D8     -2.92584e-014
+B11     -5.52135e-014
+E13     -9.6547e-014
+B9     -6.58834e-014
+B10     -3.21705e-014
+D11     -2.50358e-013
+C10     -7.38615e-014
+C12     -6.48282e-014
+[Row]    K9
+K9     1.02707e-011
+G10     -1.36545e-013
+F7     -1.81362e-013
+L7     -9.21351e-015
+M7     -2.04054e-013
+N7     -1.35747e-014
+G7     -9.85736e-015
+E9     -9.7039e-014
+F11     -1.68913e-013
+F12     -1.06551e-013
+F9     -5.15096e-014
+[Row]    G8
+G8     1.07121e-011
+H10     -1.03332e-014
+R7     -1.29582e-014
+L7     -2.67029e-013
+H7     -4.58232e-015
+P7     -2.37345e-014
+M7     -2.82151e-013
+N7     -2.3995e-013
+G7     -1.83787e-014
+F11     -1.18673e-013
+F8     -3.98322e-015
+[Row]    H10
+H10     1.19711e-012
+E8     -2.32448e-015
+F9     -2.0694e-015
+F8     -1.56864e-015
+[Row]    G10
+G10     9.21332e-013
+F11     -1.07435e-014
+F14     -2.07066e-014
+G11     -1.72998e-015
+[Row]    T13
+T13     4.8375e-013
+T12     -2.44349e-014
+T11     -6.96387e-015
+[Row]    T12
+T12     2.9977e-013
+[Row]    N12
+N12     1.27108e-012
+N11     -2.07666e-013
+M11     -8.03987e-015
+[Row]    N11
+N11     1.04597e-012
+[Row]    T14
+T14     6.87224e-013
+H13     -3.22512e-015
+[Row]    R7
+R7     4.67759e-013
+V9     -1.22736e-014
+V10     -3.28716e-014
+[Row]    U19
+U19     5.17435e-013
+W18     -1.01978e-014
+W17     -3.35175e-015
+P16     -2.26894e-015
+[Row]    H15
+H15     8.12004e-013
+G14     -2.00373e-014
+[Row]    H17
+H17     4.91877e-013
+E16     -1.43906e-015
+F16     -2.99257e-015
+G16     -1.0259e-014
+G15     -3.23644e-014
+[Row]    U7
+U7     2.47826e-013
+W5     -3.66736e-015
+W6     -1.88101e-015
+[Row]    U14
+U14     3.67853e-013
+W15     -2.24032e-014
+AB15     -3.5012e-015
+[Row]    R15
+R15     7.00288e-013
+P16     -3.082e-014
+[Row]    H18
+H18     5.41649e-013
+K15     -1.53342e-014
+F21     -1.7789e-015
+[Row]    V9
+V9     1.05345e-012
+V10     -1.68311e-013
+U9     -1.58858e-014
+U10     -3.39691e-015
+[Row]    U21
+U21     7.45907e-013
+T21     -3.4621e-014
+U22     -1.06487e-014
+W22     -1.03473e-014
+W20     -5.32977e-015
+R18     -2.75283e-015
+[Row]    E16
+E16     3.42317e-013
+F16     -1.71135e-014
+D16     -2.42419e-015
+[Row]    K15
+K15     7.07422e-013
+J15     -4.65011e-014
+J17     -1.57969e-014
+[Row]    V10
+V10     1.12872e-012
+V8     -2.21404e-014
+U9     -4.31654e-015
+[Row]    T21
+T21     4.96133e-013
+T22     -3.30337e-014
+V22     -1.0529e-014
+W20     -1.43655e-014
+T17     -5.23084e-015
+T16     -1.39737e-014
+R19     -1.05466e-014
+T18     -2.82088e-015
+R16     -3.82722e-015
+[Row]    F16
+F16     6.33655e-013
+[Row]    J15
+J15     6.15921e-013
+J16     -2.18051e-014
+K16     -2.65844e-015
+G22     -6.19752e-015
+[Row]    W8
+W8     1.85312e-012
+V8     -2.41527e-013
+W10     -2.36489e-014
+[Row]    U22
+U22     6.26704e-013
+T22     -5.45153e-014
+W22     -1.39756e-014
+[Row]    D17
+D17     3.62635e-013
+D16     -4.56443e-014
+[Row]    J17
+J17     4.15949e-013
+L16     -2.11513e-014
+M17     -1.9734e-015
+[Row]    V8
+V8     2.06876e-012
+W11     -4.59262e-015
+[Row]    T22
+T22     5.80399e-013
+V22     -4.0256e-015
+[Row]    D16
+D16     4.0887e-013
+D15     -5.30627e-015
+E15     -1.11005e-014
+[Row]    J16
+J16     9.47512e-013
+K16     -4.85122e-015
+G20     -1.01917e-014
+F22     -1.32145e-014
+[Row]    W10
+W10     1.8439e-012
+W11     -5.44975e-013
+W12     -1.94936e-014
+U11     -5.6645e-014
+U12     -2.14491e-014
+AA11     -6.16155e-015
+R3     -1.14203e-014
+AA1     -9.06483e-015
+[Row]    W22
+W22     5.6235e-013
+V22     -2.69163e-014
+W21     -3.58577e-015
+[Row]    D15
+D15     9.44279e-013
+E15     -9.48177e-014
+F18     -1.51529e-014
+C15     -2.22155e-014
+[Row]    L16
+L16     6.36184e-013
+M17     -3.73968e-015
+K18     -3.54877e-014
+[Row]    W11
+W11     1.95218e-012
+W12     -1.21021e-014
+V12     -3.69376e-014
+U11     -2.22225e-014
+U12     -1.08456e-014
+AA11     -3.64261e-015
+R3     -2.35928e-014
+AA1     -2.00427e-014
+[Row]    V22
+V22     8.11648e-013
+W20     -2.16461e-014
+[Row]    E15
+E15     9.46396e-013
+G16     -5.38104e-015
+C15     -1.05556e-014
+[Row]    K16
+K16     7.83364e-013
+L17     -3.16578e-014
+[Row]    W12
+W12     2.50356e-012
+V12     -4.91936e-013
+U10     -1.10659e-014
+[Row]    W21
+W21     6.3512e-013
+W20     -5.45685e-014
+V18     -1.50363e-014
+AB22     -3.98781e-015
+AA21     -3.22815e-015
+[Row]    G16
+G16     5.19153e-013
+G15     -2.36095e-014
+E18     -1.91609e-014
+G17     -8.84602e-015
+[Row]    M17
+M17     1.17656e-012
+L17     -9.44604e-014
+M15     -1.5818e-014
+J20     -1.54197e-014
+L18     -1.21725e-014
+[Row]    V12
+V12     2.46367e-012
+AA12     -1.04175e-014
+[Row]    W20
+W20     8.89323e-013
+V20     -5.02765e-015
+[Row]    G15
+G15     6.26249e-013
+E18     -1.75464e-014
+[Row]    L17
+L17     1.10529e-012
+N18     -6.45375e-015
+K21     -6.29973e-015
+[Row]    U11
+U11     2.14622e-012
+U12     -5.49383e-013
+AB12     -1.68278e-014
+AA12     -4.23132e-014
+AB11     -1.66057e-014
+AA11     -7.86552e-015
+AA2     -1.22064e-014
+AA1     -3.17501e-014
+[Row]    V20
+V20     7.88536e-013
+U20     -4.34889e-014
+AA22     -4.34127e-015
+AA19     -5.46234e-015
+Y19     -8.54048e-015
+Y16     -5.66786e-015
+W16     -2.37922e-014
+[Row]    E18
+E18     3.976e-013
+B15     -2.22609e-015
+C15     -6.10832e-015
+[Row]    N18
+N18     1.28376e-012
+N17     -1.64817e-013
+K18     -2.3348e-015
+J18     -4.96824e-015
+J21     -9.85045e-015
+[Row]    U12
+U12     2.15895e-012
+AB12     -4.85628e-014
+AA12     -8.31684e-015
+AB11     -5.92785e-014
+AA11     -2.02923e-014
+AA2     -1.10686e-014
+T2     -5.06985e-015
+AA1     -3.9138e-014
+U2     -4.21418e-015
+[Row]    U20
+U20     5.70171e-013
+W16     -1.62583e-014
+[Row]    F18
+F18     3.01893e-013
+F17     -1.67792e-015
+G17     -2.72549e-014
+[Row]    N17
+N17     1.39759e-012
+J21     -1.77133e-014
+K20     -9.68354e-015
+[Row]    M16
+M16     6.10764e-013
+M15     -1.15562e-014
+[Row]    U9
+U9     9.0315e-013
+U10     -1.97214e-014
+[Row]    V19
+V19     5.85432e-013
+[Row]    F17
+F17     3.66585e-013
+G17     -1.19043e-014
+[Row]    U10
+U10     9.08011e-013
+[Row]    V18
+V18     8.27432e-013
+[Row]    G17
+G17     4.39857e-013
+B16     -5.35264e-015
+[Row]    M15
+M15     8.07995e-013
+L18     -9.25384e-015
+[Row]    AB12
+AB12     1.65486e-012
+AA12     -2.83114e-013
+AB9     -2.76789e-015
+[Row]    AB22
+AB22     1.05851e-012
+AA22     -9.96328e-014
+AB21     -7.05551e-015
+Y21     -2.1911e-015
+[Row]    B15
+B15     9.97301e-013
+C15     -1.13094e-013
+B17     -9.05865e-015
+B16     -3.61353e-014
+A17     -4.4487e-015
+[Row]    K18
+K18     4.04564e-013
+J18     -3.13116e-014
+J22     -4.11378e-015
+K21     -1.96636e-015
+[Row]    AA12
+AA12     1.53497e-012
+[Row]    AA22
+AA22     7.88597e-013
+[Row]    C15
+C15     7.95978e-013
+B17     -3.95714e-015
+[Row]    J18
+J18     6.02662e-013
+J22     -2.55095e-015
+[Row]    AB11
+AB11     1.544e-012
+AA11     -4.79255e-013
+AB9     -3.12773e-014
+Y10     -2.25333e-014
+Y11     -7.50193e-015
+AA8     -4.47147e-015
+[Row]    AB21
+AB21     1.10295e-012
+AA21     -1.30044e-013
+Y21     -3.5697e-014
+[Row]    B17
+B17     9.64212e-013
+B16     -1.12729e-013
+A17     -4.90609e-014
+C18     -1.71119e-015
+[Row]    J22
+J22     6.40102e-013
+K21     -4.12524e-014
+L22     -2.15503e-015
+K20     -1.36189e-015
+[Row]    AA11
+AA11     1.53824e-012
+AB9     -6.19533e-015
+Y10     -5.52024e-014
+Y11     -1.74944e-014
+U2     -1.00796e-014
+[Row]    AA21
+AA21     9.90053e-013
+[Row]    B16
+B16     9.92345e-013
+A17     -5.9201e-015
+A16     -7.71509e-015
+[Row]    J21
+J21     3.92952e-013
+K21     -1.06025e-014
+J20     -5.84795e-015
+L21     -2.71703e-015
+[Row]    AB9
+AB9     8.93449e-013
+AB10     -3.00892e-014
+Y10     -4.55668e-015
+AA8     -3.00645e-015
+[Row]    Y21
+Y21     8.84697e-013
+Y20     -7.06293e-014
+AB20     -4.1851e-015
+AA19     -2.07514e-015
+[Row]    A17
+A17     1.10997e-012
+A16     -1.76651e-013
+A19     -3.78273e-015
+A18     -6.40684e-015
+C18     -1.5764e-015
+C17     -2.31172e-014
+[Row]    K21
+K21     4.9806e-013
+L22     -4.87321e-015
+K20     -2.48163e-015
+[Row]    AB10
+AB10     1.48195e-012
+Y11     -2.81752e-014
+AA9     -4.38695e-015
+[Row]    Y20
+Y20     8.41967e-013
+AB19     -1.56532e-014
+[Row]    J20
+J20     5.75609e-013
+L21     -2.26848e-014
+[Row]    A16
+A16     1.21364e-012
+A18     -4.32203e-014
+[Row]    Y10
+Y10     1.32043e-012
+Y11     -3.22574e-013
+AA8     -3.35387e-014
+AA9     -7.87649e-015
+[Row]    AB20
+AB20     8.13448e-013
+AB19     -6.48385e-014
+AA19     -2.82556e-014
+[Row]    A19
+A19     7.55196e-013
+A18     -6.98704e-014
+C18     -1.94904e-014
+C19     -7.06837e-015
+D18     -1.05736e-014
+B20     -9.18771e-015
+B19     -4.22825e-014
+D20     -3.40963e-015
+[Row]    L22
+L22     4.1969e-013
+K20     -4.7448e-014
+[Row]    Y11
+Y11     1.33604e-012
+AA8     -5.74867e-014
+AA9     -2.25023e-014
+AA7     -3.40333e-015
+[Row]    AB19
+AB19     9.42469e-013
+AA19     -3.72285e-015
+Y19     -6.49717e-015
+Y18     -1.66061e-015
+[Row]    A18
+A18     8.5434e-013
+C17     -3.14764e-015
+D18     -4.49616e-015
+[Row]    L21
+L21     3.33522e-013
+K20     -4.90351e-015
+K19     -3.49456e-015
+L18     -1.55085e-015
+[Row]    AA8
+AA8     1.00245e-012
+AA9     -1.5435e-013
+AA6     -2.639e-015
+AA7     -5.4232e-015
+[Row]    AA19
+AA19     7.86344e-013
+Y19     -2.39503e-014
+W16     -3.07931e-015
+[Row]    K20
+K20     4.07085e-013
+N19     -1.77267e-015
+[Row]    C18
+C18     8.12713e-013
+C17     -7.03169e-014
+[Row]    AA9
+AA9     9.68714e-013
+Y9     -1.5084e-014
+AA6     -5.29787e-015
+AA7     -1.31959e-014
+T4     -1.60436e-014
+[Row]    Y19
+Y19     9.62733e-013
+AA18     -2.7754e-015
+Y18     -2.22972e-014
+[Row]    K19
+K19     5.174e-013
+L18     -2.57732e-014
+[Row]    C17
+C17     9.5035e-013
+C19     -2.36452e-015
+D18     -2.13999e-014
+[Row]    Y8
+Y8     1.02327e-012
+Y9     -6.75238e-014
+[Row]    AA18
+AA18     7.74088e-013
+Y18     -1.1407e-013
+W18     -1.16176e-014
+Y16     -3.69693e-015
+[Row]    L19
+L19     6.42612e-013
+L18     -3.29906e-015
+M20     -3.47695e-015
+M19     -1.85728e-014
+N20     -1.80655e-015
+[Row]    C19
+C19     1.08477e-012
+D18     -1.95092e-013
+B20     -2.43949e-014
+B19     -4.26705e-015
+C20     -1.31822e-014
+D20     -5.35042e-014
+A22     -4.37727e-015
+[Row]    Y9
+Y9     9.89213e-013
+[Row]    Y18
+Y18     8.39893e-013
+W18     -3.42613e-015
+W17     -1.44252e-015
+[Row]    L18
+L18     4.39692e-013
+[Row]    D18
+D18     1.16746e-012
+B20     -4.95451e-014
+B19     -1.65932e-014
+C20     -3.62258e-015
+D20     -1.06334e-014
+[Row]    Y5
+Y5     8.06753e-013
+Y6     -3.71642e-014
+AA6     -2.40162e-014
+AA4     -9.95634e-015
+Y4     -6.82809e-015
+[Row]    W18
+W18     6.96827e-013
+W17     -1.01542e-013
+Y16     -1.77509e-014
+AA16     -8.12196e-015
+[Row]    M20
+M20     4.06625e-013
+N20     -2.12889e-014
+N19     -1.70313e-014
+M22     -1.91048e-015
+[Row]    B20
+B20     7.79325e-013
+B19     -1.25071e-013
+C20     -2.31258e-014
+D20     -1.42706e-014
+[Row]    Y6
+Y6     8.76766e-013
+AA4     -9.22592e-015
+[Row]    W17
+W17     8.56538e-013
+[Row]    M19
+M19     3.75551e-013
+[Row]    B19
+B19     7.46403e-013
+D20     -1.15011e-014
+[Row]    C20
+C20     6.48962e-013
+D20     -9.30791e-014
+A22     -1.67931e-014
+C22     -1.39949e-014
+D22     -4.23498e-015
+[Row]    AA6
+AA6     8.69552e-013
+AA7     -1.33132e-013
+AB1     -3.69752e-015
+[Row]    Y16
+Y16     1.23693e-012
+W16     -1.57344e-013
+U16     -3.80447e-015
+[Row]    N20
+N20     3.89402e-013
+M22     -3.59633e-015
+[Row]    D20
+D20     8.1683e-013
+A21     -3.32778e-014
+D22     -4.60251e-015
+E21     -1.77072e-015
+[Row]    AA7
+AA7     1.02012e-012
+AB2     -3.11236e-014
+[Row]    W16
+W16     1.29074e-012
+U15     -1.96819e-014
+U17     -3.6677e-015
+AA17     -3.18118e-015
+[Row]    N19
+N19     6.41142e-013
+M21     -4.93528e-014
+N22     -2.34087e-015
+R20     -1.68662e-015
+[Row]    AB1
+AB1     1.0782e-012
+AB2     -9.70205e-014
+AB4     -2.69393e-014
+AB6     -5.03512e-015
+[Row]    U16
+U16     5.69947e-013
+U15     -4.41461e-014
+V17     -2.23204e-014
+[Row]    A22
+A22     1.1189e-012
+A21     -1.85504e-013
+C22     -4.52192e-014
+D22     -8.24807e-015
+D21     -6.20119e-015
+[Row]    M22
+M22     7.0861e-013
+P22     -2.28509e-014
+[Row]    AB2
+AB2     9.66965e-013
+AB5     -3.6479e-015
+AB7     -3.0303e-015
+AA4     -1.13896e-014
+[Row]    U15
+U15     6.31318e-013
+U17     -5.3194e-015
+[Row]    A21
+A21     1.14378e-012
+D22     -4.39313e-015
+E21     -8.12131e-015
+[Row]    M21
+M21     4.80396e-013
+N22     -2.07762e-014
+R20     -1.27769e-014
+[Row]    AB4
+AB4     8.21133e-013
+AB6     -4.72793e-015
+Y4     -5.11202e-015
+U4     -7.72881e-015
+[Row]    V17
+V17     4.47847e-013
+U17     -1.05513e-014
+AB17     -4.6236e-015
+[Row]    C22
+C22     9.58835e-013
+D22     -1.40551e-013
+D21     -8.47351e-015
+[Row]    P22
+P22     5.8242e-013
+R21     -4.28259e-014
+R20     -1.10571e-014
+P20     -3.63067e-015
+[Row]    AB5
+AB5     7.19932e-013
+AB7     -3.61236e-014
+Y4     -2.16201e-015
+[Row]    U17
+U17     6.14795e-013
+AA17     -2.27359e-014
+Y15     -1.715e-014
+[Row]    D22
+D22     7.48497e-013
+D21     -5.42664e-014
+E21     -3.42784e-014
+H19     -2.18163e-015
+[Row]    N22
+N22     5.81234e-013
+R20     -5.42285e-014
+P20     -2.11744e-015
+[Row]    AB6
+AB6     8.8539e-013
+AB7     -3.02006e-014
+AA4     -1.80175e-014
+[Row]    AB17
+AB17     7.47748e-013
+AA17     -1.0465e-013
+AB16     -2.23682e-014
+[Row]    R21
+R21     8.89165e-013
+R20     -2.19298e-014
+P21     -2.11951e-014
+P18     -2.14013e-015
+T17     -1.10057e-014
+[Row]    D21
+D21     8.43939e-013
+E21     -1.16605e-013
+B22     -1.14524e-014
+E20     -4.93001e-015
+E19     -7.04524e-015
+G20     -7.25991e-015
+[Row]    AB7
+AB7     9.28685e-013
+Y4     -8.06871e-015
+[Row]    AA17
+AA17     7.86572e-013
+AA16     -4.41235e-015
+[Row]    R20
+R20     9.97368e-013
+P20     -4.58495e-015
+[Row]    E21
+E21     7.35028e-013
+B21     -4.32732e-015
+H19     -2.06295e-015
+E19     -5.98692e-015
+[Row]    AA4
+AA4     7.40238e-013
+Y4     -1.04732e-014
+U4     -2.53114e-015
+V4     -8.5917e-015
+[Row]    AB16
+AB16     9.40623e-013
+AA16     -9.18131e-014
+W13     -5.04656e-015
+[Row]    P21
+P21     5.36866e-013
+P20     -1.55276e-014
+P18     -8.32766e-015
+P17     -3.16957e-015
+T17     -2.03346e-014
+[Row]    B22
+B22     1.08798e-012
+B21     -1.56601e-013
+F19     -5.12325e-015
+E20     -2.94033e-015
+[Row]    Y4
+Y4     4.64435e-013
+R6     -2.69395e-014
+T4     -2.25591e-015
+V4     -5.74664e-015
+V5     -1.04073e-015
+[Row]    AA16
+AA16     6.72848e-013
+V14     -2.37706e-014
+[Row]    P20
+P20     7.83907e-013
+N15     -2.86715e-014
+P17     -5.23618e-015
+[Row]    B21
+B21     1.29621e-012
+H19     -2.08396e-014
+G19     -1.71889e-015
+E20     -7.15023e-015
+[Row]    P15
+P15     7.10413e-013
+N15     -1.89788e-014
+[Row]    T6
+T6     3.03423e-013
+V4     -2.42098e-015
+[Row]    V15
+V15     7.5247e-013
+[Row]    H20
+H20     5.62386e-013
+[Row]    R6
+R6     6.91123e-013
+T4     -3.62961e-015
+V4     -4.38636e-014
+V5     -1.62751e-015
+U5     -1.73816e-014
+[Row]    V14
+V14     6.81573e-013
+[Row]    H19
+H19     2.76832e-013
+G19     -1.25718e-014
+E19     -1.76744e-015
+[Row]    N15
+N15     9.21885e-013
+P17     -4.43074e-015
+[Row]    U4
+U4     3.14158e-013
+V4     -1.50906e-014
+V5     -3.1401e-015
+U6     -1.2563e-014
+[Row]    W13
+W13     8.8072e-013
+V13     -3.03291e-014
+Y14     -1.2771e-014
+[Row]    P18
+P18     4.48282e-013
+T17     -2.11266e-014
+T19     -1.70183e-015
+R18     -1.3368e-015
+[Row]    F19
+F19     6.62416e-013
+E20     -1.80642e-014
+G21     -1.87963e-015
+[Row]    T4
+T4     5.31181e-013
+V5     -2.85299e-014
+W5     -1.90039e-015
+[Row]    V13
+V13     8.81272e-013
+W15     -1.85375e-014
+AB15     -2.1637e-015
+[Row]    P17
+P17     9.09696e-013
+T17     -2.91127e-014
+T16     -4.26614e-014
+R19     -2.22051e-014
+R18     -4.92587e-015
+[Row]    G19
+G19     3.41103e-013
+E19     -2.14981e-014
+G20     -1.58024e-015
+[Row]    V4
+V4     3.71882e-013
+U5     -9.36879e-015
+[Row]    Y15
+Y15     9.89949e-013
+W15     -4.20538e-014
+AA14     -1.24424e-014
+[Row]    T17
+T17     1.22331e-012
+T16     -1.03951e-013
+T19     -3.67656e-015
+[Row]    E20
+E20     1.02967e-012
+E19     -1.27578e-013
+G21     -5.50605e-015
+F21     -3.18347e-015
+[Row]    V5
+V5     2.76231e-013
+[Row]    W15
+W15     9.06078e-013
+AB15     -1.77983e-015
+[Row]    T16
+T16     1.33722e-012
+R19     -4.78411e-015
+[Row]    E19
+E19     1.13693e-012
+G20     -3.91196e-015
+[Row]    U5
+U5     2.65873e-013
+U6     -2.23622e-014
+[Row]    AA14
+AA14     7.68414e-013
+Y14     -5.48825e-014
+[Row]    T19
+T19     7.94806e-013
+R19     -1.50105e-014
+T18     -2.21118e-014
+R18     -2.31954e-014
+[Row]    G21
+G21     5.07755e-013
+F21     -2.31681e-014
+[Row]    U6
+U6     3.12239e-013
+[Row]    Y14
+Y14     9.16589e-013
+[Row]    R19
+R19     6.82635e-013
+T18     -4.58027e-015
+R16     -2.17521e-015
+[Row]    G20
+G20     4.30174e-013
+F22     -4.24129e-015
+G22     -1.2265e-014
+[Row]    W7
+W7     3.10843e-013
+V7     -1.70337e-014
+W6     -2.35491e-015
+[Row]    AA13
+AA13     7.24961e-013
+Y13     -9.63136e-014
+AB14     -2.5465e-015
+[Row]    F22
+F22     7.82298e-013
+F21     -9.70907e-014
+G22     -1.86499e-014
+[Row]    T18
+T18     7.0542e-013
+R16     -2.03012e-014
+[Row]    V7
+V7     3.23414e-013
+[Row]    Y13
+Y13     8.22021e-013
+AB14     -1.25893e-014
+[Row]    F21
+F21     1.11012e-012
+[Row]    R18
+R18     5.78079e-013
+R16     -9.48959e-015
+[Row]    W5
+W5     3.49018e-013
+W6     -1.86623e-014
+[Row]    AB15
+AB15     8.00753e-013
+AB14     -4.68751e-014
+[Row]    R16
+R16     6.91553e-013
+[Row]    G22
+G22     6.53592e-013
+H22     -1.87452e-014
+[Row]    W6
+W6     4.44524e-013
+[Row]    AB14
+AB14     9.22766e-013
+[Row]    P16
+P16     4.40639e-013
+[Row]    H22
+H22     5.09547e-013
+[Row]    T10
+T10     8.68543e-013
+T8     -3.25905e-014
+T7     -1.92062e-014
+[Row]    T8
+T8     1.2757e-012
+T7     -6.0554e-014
+T11     -3.41136e-014
+G12     -2.3271e-014
+[Row]    T7
+T7     8.87746e-013
+T11     -2.41556e-014
+G12     -1.01752e-014
+[Row]    T11
+T11     4.86306e-013
+H13     -1.63509e-015
+G12     -6.19179e-014
+[Row]    F7
+F7     4.79599e-013
+E6     -2.03407e-015
+B5     -3.7324e-015
+[Row]    M4
+M4     4.11691e-013
+K4     -4.52147e-015
+L6     -3.12777e-014
+N4     -2.31808e-015
+P6     -2.31528e-015
+[Row]    M5
+M5     4.18524e-013
+L6     -4.95646e-015
+M6     -1.64855e-014
+N5     -3.37417e-015
+P5     -3.5119e-015
+[Row]    K4
+K4     4.10793e-013
+L6     -2.51204e-015
+N4     -2.94519e-014
+N7     -2.02486e-015
+[Row]    L4
+L4     5.26359e-013
+K6     -6.75478e-015
+J7     -6.96502e-015
+M7     -1.07107e-014
+N7     -1.22928e-014
+[Row]    K6
+K6     7.0224e-013
+K5     -2.00742e-014
+J5     -1.87157e-015
+N7     -4.63927e-014
+[Row]    K5
+K5     4.72249e-013
+J7     -7.99855e-015
+J5     -3.62375e-014
+[Row]    J7
+J7     4.79524e-013
+J6     -4.80261e-014
+J5     -1.52657e-014
+J3     -2.47601e-015
+[Row]    J6
+J6     4.53946e-013
+J5     -5.4628e-015
+J3     -7.15613e-015
+G5     -1.91647e-015
+H7     -1.47338e-014
+[Row]    J5
+J5     4.78783e-013
+H5     -1.62082e-014
+H4     -2.49428e-015
+F4     -1.46739e-015
+[Row]    H5
+H5     5.8102e-013
+H4     -4.80243e-015
+F4     -2.2837e-015
+[Row]    J3
+J3     4.2644e-013
+G5     -4.09819e-014
+K3     -1.93513e-015
+[Row]    G5
+G5     5.24945e-013
+G4     -2.29846e-014
+K3     -2.53494e-015
+[Row]    H4
+H4     4.60077e-013
+F4     -2.64744e-014
+J1     -1.8354e-015
+[Row]    F4
+F4     9.0246e-013
+G4     -6.05351e-014
+J1     -3.89408e-015
+[Row]    G4
+G4     7.15053e-013
+K3     -2.18619e-014
+J2     -1.61954e-015
+[Row]    L7
+L7     6.88986e-013
+[Row]    L6
+L6     6.65613e-013
+N4     -1.75579e-015
+P6     -4.93156e-015
+L3     -1.08561e-014
+[Row]    M6
+M6     6.35296e-013
+[Row]    P3
+P3     4.17133e-013
+M1     -2.2825e-014
+N3     -2.68246e-015
+R3     -3.41061e-014
+Y3     -1.08303e-014
+R5     -6.58274e-015
+[Row]    V3
+V3     1.189e-012
+P1     -5.55253e-015
+T3     -6.74679e-015
+T1     -8.76604e-014
+M2     -8.17482e-015
+AA3     -6.20927e-015
+AA1     -7.82908e-015
+W2     -8.4582e-015
+P5     -2.24343e-014
+[Row]    N5
+N5     5.93078e-013
+P7     -2.26762e-014
+[Row]    N4
+N4     6.15394e-013
+R5     -1.13117e-014
+N7     -3.84955e-015
+[Row]    P6
+P6     8.73275e-013
+P5     -3.45389e-014
+R5     -3.85283e-015
+R4     -3.0515e-014
+[Row]    B1
+B1     9.82202e-013
+B2     -4.6777e-014
+D3     -3.09886e-015
+E1     -3.55738e-015
+D2     -7.35607e-015
+C2     -9.6324e-014
+F3     -1.67088e-015
+[Row]    H3
+H3     7.30176e-013
+G2     -3.28139e-015
+G1     -1.63599e-014
+J2     -2.01649e-015
+H2     -5.78457e-014
+[Row]    P1
+P1     7.43654e-013
+T1     -8.8577e-014
+M2     -2.14742e-014
+R1     -9.57818e-015
+P2     -5.02649e-015
+N2     -2.97927e-015
+[Row]    AA2
+AA2     8.16429e-013
+AA1     -3.03807e-014
+U2     -1.16896e-014
+P2     -5.83915e-015
+V2     -3.23024e-014
+R4     -1.20149e-014
+[Row]    D1
+D1     8.85027e-013
+C3     -5.08699e-014
+F3     -2.13787e-014
+[Row]    C3
+C3     7.85565e-013
+B2     -4.71985e-015
+D3     -5.54755e-014
+F3     -2.14573e-014
+A1     -4.67269e-015
+[Row]    B2
+B2     9.17088e-013
+D3     -4.57161e-014
+C2     -4.22703e-015
+F3     -6.04459e-015
+[Row]    D3
+D3     7.30798e-013
+C2     -4.4823e-015
+[Row]    E3
+E3     9.91841e-013
+E1     -8.42111e-014
+F2     -1.3568e-014
+F1     -1.36865e-014
+[Row]    E1
+E1     7.71354e-013
+F2     -5.90749e-014
+F1     -3.08795e-015
+D2     -3.17364e-015
+[Row]    F2
+F2     7.59472e-013
+F1     -1.55948e-014
+D2     -2.05644e-014
+C2     -5.28174e-015
+[Row]    F1
+F1     7.13794e-013
+G2     -1.57263e-014
+G1     -3.57897e-015
+[Row]    G2
+G2     7.00029e-013
+G1     -3.74009e-014
+[Row]    G1
+G1     7.07596e-013
+H2     -2.82803e-015
+[Row]    L1
+L1     7.60802e-013
+L2     -7.34968e-014
+J2     -7.8403e-014
+[Row]    L2
+L2     7.45786e-013
+K1     -8.44202e-015
+J2     -1.28704e-014
+[Row]    L3
+L3     7.35638e-013
+H7     -2.9489e-015
+[Row]    K1
+K1     7.34661e-013
+J1     -6.15774e-014
+H2     -5.89302e-015
+[Row]    J1
+J1     5.26079e-013
+K3     -4.56564e-014
+H2     -3.11115e-015
+[Row]    K3
+K3     6.82162e-013
+J2     -5.02931e-015
+[Row]    M1
+M1     6.64471e-013
+N3     -6.11855e-015
+R5     -1.15526e-014
+[Row]    T3
+T3     8.47651e-013
+T1     -5.95652e-015
+AA1     -9.97429e-015
+R5     -2.16864e-014
+R4     -5.18269e-014
+[Row]    N3
+N3     4.82427e-013
+R3     -2.16779e-014
+M2     -2.12648e-014
+[Row]    T1
+T1     8.08983e-013
+M2     -1.37544e-014
+P2     -3.17766e-015
+[Row]    R3
+R3     5.23828e-013
+R1     -3.66991e-015
+U1     -2.946e-014
+N2     -2.13996e-014
+[Row]    T2
+T2     8.61269e-013
+U2     -5.91063e-014
+[Row]    M2
+M2     4.2731e-013
+AA3     -3.4683e-015
+AA1     -1.87841e-015
+P2     -5.45876e-015
+[Row]    R1
+R1     6.21998e-013
+U1     -3.79599e-015
+N2     -7.57516e-015
+[Row]    AA3
+AA3     1.16369e-012
+AA1     -3.87523e-014
+W1     -6.88425e-015
+W3     -1.22157e-014
+[Row]    U1
+U1     8.59387e-013
+U2     -3.06798e-014
+[Row]    AA1
+AA1     7.80998e-013
+P2     -3.37e-015
+V2     -3.52526e-015
+[Row]    U2
+U2     8.26158e-013
+W2     -4.81421e-015
+[Row]    W1
+W1     1.0995e-012
+W3     -1.73072e-013
+W2     -5.75668e-015
+V2     -4.87933e-015
+[Row]    Y3
+Y3     1.47455e-012
+W3     -1.06763e-014
+Y1     -6.92927e-014
+W2     -5.28675e-015
+[Row]    W3
+W3     1.27094e-012
+W2     -4.6813e-015
+[Row]    Y1
+Y1     9.9715e-013
+[Row]    D2
+D2     8.9646e-013
+C2     -1.13133e-013
+[Row]    J2
+J2     8.17323e-013
+H2     -4.35067e-014
+[Row]    P2
+P2     6.44468e-013
+N2     -4.02252e-014
+[Row]    W2
+W2     9.95842e-013
+V2     -7.16213e-014
+[Row]    C2
+C2     9.30367e-013
+[Row]    H2
+H2     8.78372e-013
+[Row]    N2
+N2     6.69998e-013
+[Row]    V2
+V2     9.89657e-013
+[Row]    F3
+F3     3.3772e-013
+G6     -5.31934e-015
+[Row]    P5
+P5     6.80709e-013
+[Row]    R5
+R5     7.64436e-013
+R4     -5.71318e-015
+[Row]    H7
+H7     8.10706e-013
+[Row]    P7
+P7     7.64757e-013
+[Row]    M7
+M7     9.27101e-013
+N7     -2.65448e-014
+[Row]    N7
+N7     8.62677e-013
+[Row]    R4
+R4     1.081e-012
+[Row]    G6
+G6     5.06064e-013
+[Row]    A1
+A1     1.09337e-012
+A2     -1.8188e-013
+A3     -1.0718e-014
+A4     -4.41139e-015
+[Row]    A2
+A2     1.00801e-012
+A3     -3.54112e-014
+A4     -7.75921e-015
+[Row]    F6
+F6     5.37957e-013
+E4     -1.91167e-014
+[Row]    E4
+E4     4.17945e-013
+A4     -1.15459e-014
+D5     -2.63337e-015
+E5     -1.59228e-015
+[Row]    A3
+A3     8.82548e-013
+A4     -1.21776e-013
+C4     -3.89689e-015
+B6     -2.19426e-015
+[Row]    A4
+A4     8.76925e-013
+C4     -1.07588e-014
+B4     -3.92145e-015
+B6     -2.35979e-015
+[Row]    D5
+D5     6.70125e-013
+E5     -1.28369e-014
+A6     -6.75349e-015
+E6     -5.06478e-015
+[Row]    E5
+E5     3.09733e-013
+C5     -4.41183e-015
+[Row]    C4
+C4     5.83837e-013
+B4     -4.00084e-014
+B6     -3.85001e-015
+[Row]    G7
+G7     4.96129e-013
+[Row]    B4
+B4     6.59876e-013
+B6     -2.52809e-014
+[Row]    C5
+C5     6.86825e-013
+A6     -1.00879e-014
+E6     -1.47122e-014
+[Row]    A6
+A6     7.23471e-013
+A8     -2.17575e-014
+A14     -7.30376e-014
+B7     -1.02122e-014
+[Row]    B6
+B6     5.71979e-013
+E6     -3.03578e-015
+D6     -2.95243e-015
+A7     -1.11485e-014
+B5     -2.24079e-014
+[Row]    E6
+E6     4.44551e-013
+D6     -6.07361e-015
+A7     -2.23341e-015
+B5     -1.3433e-014
+[Row]    D6
+D6     5.13572e-013
+A7     -2.42846e-014
+[Row]    E9
+E9     5.86649e-013
+A7     -3.65084e-015
+E10     -1.54565e-014
+A8     -3.30136e-015
+E11     -5.49275e-015
+[Row]    A7
+A7     8.55556e-013
+A8     -1.71314e-014
+B5     -1.69669e-014
+[Row]    E10
+E10     6.95843e-013
+A8     -4.74189e-015
+F11     -1.1629e-014
+A14     -4.47632e-015
+E11     -4.22106e-014
+[Row]    A8
+A8     9.11563e-013
+A14     -1.04991e-013
+[Row]    F11
+F11     9.1426e-013
+A14     -5.23104e-015
+E11     -1.70405e-014
+[Row]    A14
+A14     1.50601e-012
+B7     -5.21305e-015
+A13     -6.02055e-014
+A12     -7.84888e-015
+[Row]    E11
+E11     7.47564e-013
+B7     -4.35554e-015
+F12     -1.8334e-014
+G13     -3.20446e-014
+F13     -9.87936e-015
+[Row]    B7
+B7     7.01829e-013
+A13     -7.2071e-014
+A12     -4.54766e-015
+[Row]    F12
+F12     6.52079e-013
+A13     -5.26254e-015
+D7     -1.83425e-014
+[Row]    A13
+A13     1.28417e-012
+D7     -2.49548e-015
+A12     -3.66662e-014
+A11     -9.99443e-015
+B12     -4.10966e-015
+[Row]    D7
+D7     3.55667e-013
+A12     -2.94143e-015
+E8     -1.75008e-015
+[Row]    A12
+A12     1.17677e-012
+E8     -3.299e-015
+A11     -2.02879e-013
+C7     -2.68125e-015
+B12     -8.65986e-015
+[Row]    E8
+E8     5.00655e-013
+A11     -4.94565e-015
+F9     -1.81532e-014
+[Row]    A11
+A11     1.08924e-012
+F9     -3.14353e-015
+C7     -7.17625e-015
+B12     -4.05426e-014
+A9     -3.52521e-015
+B14     -5.75854e-015
+[Row]    F9
+F9     3.88034e-013
+C7     -4.06939e-015
+G13     -4.13404e-015
+B12     -1.86916e-015
+[Row]    C7
+C7     5.58209e-013
+G13     -3.70583e-015
+B12     -6.37916e-014
+[Row]    G13
+G13     9.06212e-013
+B12     -5.75774e-015
+F14     -4.00534e-015
+E13     -2.12723e-014
+[Row]    B12
+B12     9.83321e-013
+A9     -6.40198e-014
+B14     -9.94981e-014
+C13     -3.53087e-015
+E14     -1.58971e-014
+[Row]    F14
+F14     7.59913e-013
+F13     -1.19225e-014
+[Row]    A9
+A9     7.55022e-013
+B14     -9.49283e-014
+E14     -2.941e-015
+[Row]    B14
+B14     1.00556e-012
+F13     -4.57547e-015
+C13     -8.94408e-015
+E14     -4.26804e-014
+[Row]    F13
+F13     7.86275e-013
+E14     -5.41494e-015
+[Row]    C13
+C13     9.55737e-013
+E14     -1.08826e-013
+C8     -2.74892e-014
+D8     -1.85038e-015
+B11     -4.9364e-014
+C14     -1.65464e-014
+[Row]    E14
+E14     1.43164e-012
+C8     -5.10931e-015
+D8     -2.76096e-014
+B11     -3.99539e-015
+[Row]    C8
+C8     4.86067e-013
+D8     -4.47774e-015
+B11     -4.86279e-015
+[Row]    D8
+D8     2.83687e-013
+B11     -2.1413e-015
+E13     -1.34894e-015
+[Row]    B11
+B11     7.81992e-013
+B9     -4.75228e-014
+B10     -9.2875e-015
+[Row]    E13
+E13     5.57601e-013
+B9     -2.07153e-015
+D12     -1.16566e-014
+L12     -1.05345e-014
+M11     -4.50078e-015
+[Row]    B9
+B9     5.48933e-013
+D12     -4.85136e-015
+B10     -3.64076e-015
+[Row]    D12
+D12     7.01486e-013
+B10     -4.43784e-015
+D11     -6.33419e-015
+C14     -1.40828e-014
+D13     -1.22041e-014
+C10     -2.08933e-014
+C12     -1.03774e-014
+[Row]    B10
+B10     6.47738e-013
+D11     -5.08961e-015
+C14     -7.03558e-014
+C10     -2.02287e-015
+[Row]    D11
+D11     6.20507e-013
+C14     -5.3214e-015
+D13     -2.0594e-014
+[Row]    C14
+C14     7.72907e-013
+D13     -4.71746e-015
+C10     -4.92827e-015
+[Row]    D13
+D13     5.53381e-013
+C10     -2.44144e-015
+D10     -7.0123e-015
+[Row]    C10
+C10     4.18254e-013
+D10     -7.10158e-015
+C12     -3.95028e-015
+C9     -2.5489e-015
+[Row]    D10
+D10     3.4651e-013
+C12     -1.51144e-015
+C9     -2.83026e-014
+[Row]    C12
+C12     3.92635e-013
+C9     -6.39161e-015
+[Row]    B5
+B5     7.03568e-013
+[Row]    C9
+C9     5.29136e-013
+[Row]    F8
+F8     1.97774e-013
+[Row]    G11
+G11     6.34171e-013
+[Row]    H13
+H13     1.41305e-012
+G14     -8.44682e-014
+[Row]    G14
+G14     1.51798e-012
+[Row]    G12
+G12     1.39253e-012
+[Row]    M12
+M12     1.06631e-012
+L11     -1.70635e-013
+L12     -7.79636e-015
+M11     -2.65955e-014
+[Row]    L11
+L11     1.03527e-012
+L12     -1.63002e-014
+M11     -7.72226e-015
+[Row]    L12
+L12     1.35756e-012
+M11     -1.76003e-013
+[Row]    M11
+M11     1.29051e-012
+| 
+[End Model Data] 
+[End Package Model] 
+[End] 
+| 
+|============================================================
