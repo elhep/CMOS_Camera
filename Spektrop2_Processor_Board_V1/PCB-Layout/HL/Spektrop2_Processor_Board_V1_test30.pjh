@@ -152,3 +152,6 @@ count=0
 PROMPTED=1
 [DIFF_PAIRS]
 GenerateDiffPairs=0
+[POPUPS]
+RestoreSessionPrompt=1
+RestoreSessionChoices=31
