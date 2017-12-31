@@ -109,6 +109,8 @@ APAD=2.540000e-004
 ASEG=2.032000e-004
 [POWER_INTEGRITY]
 AutoReferenceLayers=1
+ConvertLargePadsToAreas_Convert=1
+ConvertLargePadsToAreas_ApplyTo=1
 [SI_SIM]
 InclTraceToAreaCoupling=0
 InclSelfCoupling=1
@@ -148,6 +150,7 @@ SaveWaveforms=1
 count=0
 [STIMULI_PIN]
 count=0
+import_path=C:\Users\ZdunekPC\Documents\Spektrop2\HL_SIM\
 [DATA_MODE]
 PROMPTED=1
 [DIFF_PAIRS]
