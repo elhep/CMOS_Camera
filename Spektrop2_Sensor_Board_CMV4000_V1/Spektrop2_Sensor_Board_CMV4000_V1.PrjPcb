@@ -125,23 +125,6 @@ GenerateClassCluster=0
 DocumentUniqueId=GAJLNWJC
 
 [Document6]
-DocumentPath=Schematics\CMV4000.Harness
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document7]
 DocumentPath=PCB-Layout\Spektrop2_Processor_Board_V1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -158,14 +141,14 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document8]
-DocumentPath=Schematics\Processor_Board_Connectors_temp.SchDoc
+[Document7]
+DocumentPath=Spektrop2_Sensor_Board_CMV4000_V1.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=3
+AnnotateOrder=-1
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -173,10 +156,27 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=PUGNOUIS
+DocumentUniqueId=
+
+[Document8]
+DocumentPath=Schematics\Processor_Board_Connectors.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=5
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=WQSBPPUN
 
 [Document9]
-DocumentPath=Schematics\Processor_Board_Connectors_temp.Harness
+DocumentPath=Schematics\CMV4000.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -193,7 +193,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document10]
-DocumentPath=Spektrop2_Sensor_Board_CMV4000_V1.Annotation
+DocumentPath=Schematics\Processor_Board_Connectors.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -1143,10 +1143,10 @@ IndexEnabled1=0
 IndexStartValue1=1
 Suffix1=
 UniqueIDPath2=\MQMTFMRA
-DocumentName2=Processor_Board_Connectors_temp.SchDoc
-IsEnabled2=0
+DocumentName2=Processor_Board_Connectors.SchDoc
+IsEnabled2=1
 SelectionScope2=All
-Order2=3
+Order2=5
 IndexEnabled2=0
 IndexStartValue2=1
 Suffix2=

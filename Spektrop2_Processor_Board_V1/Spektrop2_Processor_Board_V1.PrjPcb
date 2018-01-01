@@ -607,7 +607,7 @@ AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
 AnnotateSuffix=
 AnnotateScope=All
-AnnotateOrder=-1
+AnnotateOrder=23
 DoLibraryUpdate=1
 DoDatabaseUpdate=1
 ClassGenCCAutoEnabled=1
@@ -659,7 +659,7 @@ DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board
 DItemRevisionGUID=
 
 [SearchPath1]
-Path=..\Kamery\CernLib_2017_07_14_temp\*.*
+Path=..\Library\CernLib\*.*
 IncludeSubFolders=1
 
 [Configuration1]
