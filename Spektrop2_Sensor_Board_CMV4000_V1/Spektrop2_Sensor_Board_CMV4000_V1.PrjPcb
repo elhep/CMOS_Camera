@@ -210,7 +210,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [SearchPath1]
-Path=..\Kamery\CernLib_2017_07_14_temp\*.*
+Path=..\Library\CernLib\*.*
 IncludeSubFolders=1
 
 [Configuration1]
