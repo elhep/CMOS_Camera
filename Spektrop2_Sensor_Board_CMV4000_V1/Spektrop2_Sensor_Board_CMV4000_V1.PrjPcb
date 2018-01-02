@@ -74,7 +74,7 @@ GenerateClassCluster=0
 DocumentUniqueId=ORJDNHFE
 
 [Document3]
-DocumentPath=Schematics\Power.SchDoc
+DocumentPath=Schematics\Power_Supply.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -1108,11 +1108,11 @@ Order0=1
 IndexEnabled0=0
 IndexStartValue0=1
 Suffix0=
-UniqueIDPath1=\ANHKLJAY
-DocumentName1=Power.SchDoc
+UniqueIDPath1=\VNHDODTJ
+DocumentName1=Power_Supply.SchDoc
 IsEnabled1=1
 SelectionScope1=All
-Order1=2
+Order1=6
 IndexEnabled1=0
 IndexStartValue1=1
 Suffix1=
