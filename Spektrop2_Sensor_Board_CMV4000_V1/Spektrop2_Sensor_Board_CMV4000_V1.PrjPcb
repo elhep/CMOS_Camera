@@ -179,6 +179,10 @@ DocumentUniqueId=
 DocumentPath=ProjectOutputsDefault\Design Rule Check - FMC_CMOS_SENSOR.html
 DItemRevisionGUID=
 
+[GeneratedDocument2]
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Sensor_Board_CMV4000_V1.html
+DItemRevisionGUID=
+
 [SearchPath1]
 Path=..\Library\CernLib\*.*
 IncludeSubFolders=1
@@ -1098,7 +1102,7 @@ GlobalIndexSortOrder=3
 GlobalIndexSortLocation=0
 UniqueIDPath0=\NJOTWRSJ
 DocumentName0=CMV4000.SchDoc
-IsEnabled0=0
+IsEnabled0=1
 SelectionScope0=All
 Order0=1
 IndexEnabled0=0
@@ -1122,7 +1126,7 @@ IndexStartValue2=1
 Suffix2=
 UniqueIDPath3=
 DocumentName3=TOP.SchDoc
-IsEnabled3=0
+IsEnabled3=1
 SelectionScope3=All
 Order3=4
 IndexEnabled3=0
