@@ -74,23 +74,6 @@ GenerateClassCluster=0
 DocumentUniqueId=ORJDNHFE
 
 [Document3]
-DocumentPath=PCB-Layout\Spektrop2_Sensor_Board_CMV4000_V1.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=VNBUUNKE
-
-[Document4]
 DocumentPath=Schematics\Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -107,8 +90,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=HMDAXRIQ
 
-[Document5]
-DocumentPath=PCB-Layout\FMC_CMOS_SENSOR.PcbDoc
+[Document4]
+DocumentPath=PCB-Layout\Spektrop2_Sensor_Board_CMV4000_V1.PcbDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -124,24 +107,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=GAJLNWJC
 
-[Document6]
-DocumentPath=PCB-Layout\Spektrop2_Processor_Board_V1.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=
-
-[Document7]
+[Document5]
 DocumentPath=Spektrop2_Sensor_Board_CMV4000_V1.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -158,7 +124,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document8]
+[Document6]
 DocumentPath=Schematics\Processor_Board_Connectors.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -173,9 +139,9 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=WQSBPPUN
+DocumentUniqueId=HVYVXHUS
 
-[Document9]
+[Document7]
 DocumentPath=Schematics\CMV4000.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -192,7 +158,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document8]
 DocumentPath=Schematics\Processor_Board_Connectors.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -208,6 +174,10 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=ProjectOutputsDefault\Design Rule Check - FMC_CMOS_SENSOR.html
+DItemRevisionGUID=
 
 [SearchPath1]
 Path=..\Library\CernLib\*.*
