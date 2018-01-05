@@ -627,6 +627,10 @@ DItemRevisionGUID=
 DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board_V1.html
 DItemRevisionGUID=
 
+[GeneratedDocument4]
+DocumentPath=ProjectOutputsDefault\PCADNetlist\Spektrop2_Processor_Board_V1.NET
+DItemRevisionGUID=
+
 [SearchPath1]
 Path=..\Library\CernLib\*.*
 IncludeSubFolders=1
