@@ -616,18 +616,26 @@ Variation7=Designator=R72|UniqueId=\BRISFSYA\KGULSGNE\TIBEXUXT|Kind=1|AlternateP
 ParamVariationCount=0
 
 [GeneratedDocument1]
-DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1.csv
+DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1(Default).csv
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1.xlsx
+DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1(Default).xlsx
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board_V1.html
+DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1.csv
 DItemRevisionGUID=
 
 [GeneratedDocument4]
+DocumentPath=ProjectOutputsDefault\BOM\Bill of Materials-Spektrop2_Processor_Board_V1.xlsx
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board_V1.html
+DItemRevisionGUID=
+
+[GeneratedDocument6]
 DocumentPath=ProjectOutputsDefault\PCADNetlist\Spektrop2_Processor_Board_V1.NET
 DItemRevisionGUID=
 
