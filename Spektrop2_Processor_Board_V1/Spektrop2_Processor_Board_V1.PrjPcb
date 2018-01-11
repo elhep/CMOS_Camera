@@ -482,6 +482,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document27]
+DocumentPath=PCB-Layout\Spektrop2_Processor_Board_V1.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=XDRBRKNB
+
+[Document28]
 DocumentPath=Schematics\UHD_SDI.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -498,7 +515,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DDGLFLWG
 
-[Document28]
+[Document29]
 DocumentPath=Schematics\UHD_SDI.Harness
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -515,7 +532,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document29]
+[Document30]
 DocumentPath=Schematics\Power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -531,23 +548,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ADXUWDYB
-
-[Document30]
-DocumentPath=PCB-Layout\Spektrop2_Processor_Board_V1.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=HMXFQTON
 
 [Document31]
 DocumentPath=Schematics\MGT_Clock_Generation.Harness
@@ -636,6 +636,10 @@ DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board
 DItemRevisionGUID=
 
 [GeneratedDocument6]
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_Processor_Board_V1_TEMP.html
+DItemRevisionGUID=
+
+[GeneratedDocument7]
 DocumentPath=ProjectOutputsDefault\PCADNetlist\Spektrop2_Processor_Board_V1.NET
 DItemRevisionGUID=
 
