@@ -156,3 +156,5 @@ GenerateDiffPairs=0
 [POPUPS]
 RestoreSessionPrompt=1
 RestoreSessionChoices=31
+[DATA_MODE]
+PROMPTED=1
