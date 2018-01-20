@@ -1,0 +1,98 @@
+HyperLynx Field Solver
+Design File: "C:\Users\ZdunekPC\Documents\Spektrop2\HL_SIM\Spektrop2_Processor_Board_V1\Spektrop2_Processor_Board_V1_14.HYP"
+Report File: "C:\Users\ZdunekPC\Documents\Spektrop2\HL_SIM\Spektrop2_Processor_Board_V1\Coupling0019.TXT"
+
+------------------- Impedance and Termination Summary --------------------
+
+Differential Z   = 117.5 ohms
+   (suggested single line-to-line resistor for differential signals;
+    works best for opposed, balanced transitions)
+Odd-mode Z       = 58.7 ohms
+
+Common-mode Z    = 47.0 ohms
+Even-mode Z      = 94.0 ohms
+   (suggested single line-to-ground resistor for common-mode signals;
+    works best for all-1's or all-0's transitions)
+
+Line-to-ground Z = 76.4 ohms
+   (suggested single line-to-ground resistor for independent signals;
+    works best for mixed 1's and 0's transitions)
+
+Optimal termination (requires 3 resistors)
+   line to line     = 313.4 ohms
+   line 1 to ground = 94.0 ohms
+   line 2 to ground = 94.0 ohms
+   (suggested for terminating all of the above modes simultaneously;
+    but you may have to AC couple one or more resistors to maintain
+    proper DC levels)
+
+------------------------ Physical Input Data -----------------------
+
+Coupling Region
+ Name:    Coupling0019
+ Length:  0.060cm
+
+Position, Width, and Thickness are in Metric Units (um).
+The X-Position is relative to the center of the trace.
+
+Field Solver Traces
+               Matrix
+               Index   Layer   X-Pos    Width  Comment
+MGT_TX0_N       1:1      L2     0.00   100.00  
+MGT_TX0_P       2:2      L2   297.43   100.00  
+
+Field Solver Stackup 
+ Type   Thickness  Dielectric   Layer 
+Signal      64.11        1.00     TOP  
+       Diel       110.00        4.20
+Plane       21.77        4.20     L1-GND  
+       Diel       300.00        4.20
+Signal      21.77        4.20     L2  
+       Diel       110.00        4.20
+Signal      42.33        4.20     L3-1V8  
+       Diel       300.00        4.20
+Plane       42.33        4.20     L4-PWR  
+       Diel       110.00        4.20
+Signal      21.77        4.20     L5  
+       Diel       300.00        4.20
+Plane       21.77        4.20     L6-P2V5  
+       Diel       110.00        4.20
+Signal      64.11        1.00     BTM  
+
+-------------------- Field Solver Output Data ----------------------
+
+Optimal Terminator-Resistor Array [ohms]:
+       1       2
+ 1     94.0   313.4
+ 2    313.4    94.0
+
+Characteristic Impedance Matrix [ohms]:
+       1       2
+ 1     76.4    17.6
+ 2     17.6    76.4
+
+
+(Note: Off-diagonal values are negative by mathematical convention.
+However, the capacitances are physically real; you can effectively
+ignore the signs. The signs are required, though, if transporting
+matrix data to another tool.)
+
+Capacitance Matrix [pF/m]:
+       1       2
+ 1   94.555 -21.810
+ 2  -21.810  94.555
+
+Inductance Matrix [nH/m]:
+       1       2
+ 1  521.998 120.406
+ 2  120.406 521.999
+
+DC Resistance Matrix [ohms/m]:
+       1       2
+ 1    7.919   0.000
+ 2    0.000   7.919
+
+Propagation Speed:
+ 1.462837e+008 [m/s] = 0.4879c   Er(eff) = 4.200
+
+--------------------------------------------------------------------
