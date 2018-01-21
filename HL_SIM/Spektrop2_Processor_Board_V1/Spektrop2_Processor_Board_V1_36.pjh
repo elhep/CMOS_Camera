@@ -1,7 +1,5 @@
 [POWER_INTEGRITY]
 CapAutoGrouping=0
-ConvertLargePadsToAreas_Convert=1
-ConvertLargePadsToAreas_ApplyTo=1
 AutoReferenceLayers=1
 [VER]
 Name=HyperLynx Project File
