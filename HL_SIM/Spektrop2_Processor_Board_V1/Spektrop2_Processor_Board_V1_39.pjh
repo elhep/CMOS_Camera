@@ -11,7 +11,7 @@ Minor=1
 TermWizTol=0
 VICVi=1
 IVCCi=1
-XtF=0
+XtF=1
 XtE=0
 XtV=1.500000e-001
 XtGp=1.270000e-003
@@ -156,3 +156,5 @@ GenerateDiffPairs=0
 [POPUPS]
 RestoreSessionPrompt=1
 RestoreSessionChoices=31
+[DATA_MODE]
+PROMPTED=1
