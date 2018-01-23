@@ -1,0 +1,10 @@
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [Default] of Project [Spektrop2_Combined_Proc_CMV4000_V1.PrjPcb]
+   Generated File[Bill of Materials-Spektrop2_Combined_Proc_CMV4000_V1(Default).csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 1:22:22 AM On 23-Jan-18
