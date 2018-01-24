@@ -1,0 +1,11 @@
+2018-01-21 14:42:07 12232     [INFO] Opening Design: Spektrop2_Sensor_Board_CMV4000_V1_3.HYP
+2018-01-21 16:02:22 12232     [INFO] Close HyperLynx Session: Design file: Spektrop2_Sensor_Board_CMV4000_V1_3.HYP Save session edits (Yes/No)?  YES -> save, then close NO  -> close - The "Yes" button was selected
+2018-01-21 16:02:27 12232     [INFO] Closing Design: Spektrop2_Sensor_Board_CMV4000_V1_3.HYP
+2018-01-21 16:02:36 12232     [INFO] Opening Design: Spektrop2_Sensor_Board_CMV4000_V1_4.HYP
+2018-01-21 16:12:59 12232     [INFO] Close HyperLynx Session: Design file: Spektrop2_Sensor_Board_CMV4000_V1_4.HYP Save session edits (Yes/No)?  YES -> save, then close NO  -> close - The "Yes" button was selected
+2018-01-21 16:13:03 12232     [INFO] Closing Design: Spektrop2_Sensor_Board_CMV4000_V1_4.HYP
+2018-01-24 23:58:23 16424     [INFO] Opening Design: Spektrop2_Sensor_Board_CMV4000_V1_5.HYP
+2018-01-24 23:59:13 16424  [WARNING] Close Thermal Session: Save thermal data (Yes/No)?  YES -> save, then close NO  -> close - The "Yes" button was selected
+2018-01-24 23:59:17 16424     [INFO] Close HyperLynx Session: Design file: Spektrop2_Sensor_Board_CMV4000_V1_5.HYP Save session edits (Yes/No)?  YES -> save, then close NO  -> close - The "Yes" button was selected
+2018-01-24 23:59:20 16424     [INFO] Closing Design: Spektrop2_Sensor_Board_CMV4000_V1_5.HYP
+2018-01-24 23:59:21 16424     [INFO] ****** Closing HyperLynx 
