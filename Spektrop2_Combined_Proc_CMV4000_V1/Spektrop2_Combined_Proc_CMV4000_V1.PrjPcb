@@ -635,23 +635,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document36]
-DocumentPath=PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=-1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=JWTSTONN
-
-[Document37]
 DocumentPath=Spektrop2_Combined_Proc_CMV4000_V1.Annotation
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -668,7 +651,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document38]
+[Document37]
 DocumentPath=Spektrop2_Combined_Proc_CMV4000_V1.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -685,7 +668,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document39]
+[Document38]
 DocumentPath=PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -702,7 +685,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=OWDISOVJ
 
-[Document40]
+[Document39]
 DocumentPath=Spektrop2_PCB_Combined_CMV4000_V1_1.PCBDwf
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -718,6 +701,23 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
+
+[Document40]
+DocumentPath=PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V2.PcbDoc
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=ESFMFNLX
 
 [ProjectVariant1]
 UniqueID=CBD523E7-9758-477A-AA11-871F0C673E42
@@ -751,150 +751,154 @@ DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_PCB_Combined_CM
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\board_outline\features
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_PCB_Combined_CMV4000_V2.html
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_overlay\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\board_outline\features
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_paste\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_overlay\features
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_solder\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_paste\features
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\btm\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_solder\features
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\btm\features
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\features
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\features
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\keep-out_layer\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\features
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l1-gnd\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\keep-out_layer\features
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l2\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l1-gnd\features
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l3-1v8\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l2\features
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l4-pwr\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l3-1v8\features
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l5\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l4-pwr\features
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l6-p2v5\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l5\features
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_1\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l6-p2v5\features
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_3\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_1\features
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_4\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_3\features
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_5\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_4\features
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_6\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_5\features
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_13\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_6\features
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_14\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_13\features
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_15\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_14\features
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\notvisible\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_15\features
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\notvisible\features
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_overlay\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top\features
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_paste\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_overlay\features
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_solder\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_paste\features
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect24.4094x22.8346_225\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_solder\features
 DItemRevisionGUID=
 
 [GeneratedDocument35]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect30.315x28.7402_225\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect24.4094x22.8346_225\features
 DItemRevisionGUID=
 
 [GeneratedDocument36]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\matrix\matrix
+DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect30.315x28.7402_225\features
 DItemRevisionGUID=
 
 [GeneratedDocument37]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DocumentPath=Project Outputs for Free Documents\ODB\odb\matrix\matrix
 DItemRevisionGUID=
 
 [GeneratedDocument38]
-DocumentPath=Project Outputs for Free Documents\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\netlists\cadnet\netlist
 DItemRevisionGUID=
 
 [GeneratedDocument39]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\profile
+DocumentPath=Project Outputs for Free Documents\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
 DItemRevisionGUID=
 
 [GeneratedDocument40]
-DocumentPath=Project Outputs for Free Documents\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\profile
 DItemRevisionGUID=
 
 [GeneratedDocument41]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+DocumentPath=Project Outputs for Free Documents\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
 DItemRevisionGUID=
 
 [GeneratedDocument42]
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument43]
 DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 
