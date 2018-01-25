@@ -1,0 +1,38 @@
+------------------------------------------------------------------------------------------
+Gerber File Extension Report For: Spektrop2_PCB_Combined_CMV4000_V1.GBR   25-Jan-18  2:33:08 AM
+------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------
+Layer Extension     Layer Description                      
+------------------------------------------------------------------------------------------
+.GTL                TOP                                     
+.GP1                L1-GND                                  
+.G1                 L2                                      
+.G2                 L3-1V8                                  
+.GP2                L4-PWR                                  
+.G3                 L5                                      
+.GP3                L6-P2V5                                 
+.GBL                BTM                                     
+.GPB                Bottom Pad Master                       
+.GPT                Top Pad Master                          
+.GTO                Top Overlay                             
+.GTP                Top Paste                               
+.GTS                Top Solder                              
+.GBS                Bottom Solder                           
+.GBP                Bottom Paste                            
+.GBO                Bottom Overlay                          
+.GKO                Keep-Out Layer                          
+.GM8                Notvisible                              
+.GM13               Mechanical 13                           
+.GM14               Mechanical 14                           
+.GM15               Mechanical 15                           
+.GM9                Board Outline                           
+.GM6                Mechanical 6                            
+.GM5                Mechanical 5                            
+.GM4                Mechanical 4                            
+.GM3                Mechanical 3                            
+.GM1                Mechanical 1                            
+.GD1                Drill Drawing                           
+.GG1                Drill Guide                             
+------------------------------------------------------------------------------------------

@@ -1,0 +1,18 @@
+DRC Rules Export File for PCB: C:\Users\ZdunekPC\Documents\Spektrop2\Spektrop2_Combined_Proc_CMV4000_V1\PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc
+RuleKind=Clearance|RuleName=Clearance_HSTL|Scope=Board|Minimum=7.87
+RuleKind=Clearance|RuleName=Clearance_DIFF100|Scope=Board|Minimum=7.87
+RuleKind=Clearance|RuleName=Clearance_75OHM|Scope=Board|Minimum=11.81
+RuleKind=Width|RuleName=Width_BGA|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Clearance_BGA|Scope=Board|Minimum=3.94
+RuleKind=Width|RuleName=Width_SE75|Scope=Board|Minimum=3.94
+RuleKind=Clearance|RuleName=Clearance_DIFF_PAIRS|Scope=Board|Minimum=19.69
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion|Scope=Board|Minimum=0.00
+RuleKind=Width|RuleName=Width|Scope=Board|Minimum=3.94
+RuleKind=Width|RuleName=Width_PWR|Scope=Board|Minimum=5.91
+RuleKind=Clearance|RuleName=Clearance_General|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=Clearance_POLY|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=Clearance_PWR|Scope=Board|Minimum=4.92
+RuleKind=Width|RuleName=Width_SE50|Scope=Board|Minimum=3.94
+RuleKind=Width|RuleName=Width_JTAG|Scope=Board|Minimum=3.94
+RuleKind=Width|RuleName=Width_CTRL|Scope=Board|Minimum=3.94
