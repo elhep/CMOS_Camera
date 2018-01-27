@@ -899,147 +899,163 @@ DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\profile
 DItemRevisionGUID=
 
 [GeneratedDocument43]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.EXTREP
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.DRL
 DItemRevisionGUID=
 
 [GeneratedDocument44]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G1
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.DRR
 DItemRevisionGUID=
 
 [GeneratedDocument45]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G2
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.EXTREP
 DItemRevisionGUID=
 
 [GeneratedDocument46]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G3
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G1
 DItemRevisionGUID=
 
 [GeneratedDocument47]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBL
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G2
 DItemRevisionGUID=
 
 [GeneratedDocument48]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBO
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G3
 DItemRevisionGUID=
 
 [GeneratedDocument49]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBP
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBL
 DItemRevisionGUID=
 
 [GeneratedDocument50]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBS
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBO
 DItemRevisionGUID=
 
 [GeneratedDocument51]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GD1
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBP
 DItemRevisionGUID=
 
 [GeneratedDocument52]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GG1
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBS
 DItemRevisionGUID=
 
 [GeneratedDocument53]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GKO
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GD1
 DItemRevisionGUID=
 
 [GeneratedDocument54]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM1
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GG1
 DItemRevisionGUID=
 
 [GeneratedDocument55]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM3
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GKO
 DItemRevisionGUID=
 
 [GeneratedDocument56]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM4
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM1
 DItemRevisionGUID=
 
 [GeneratedDocument57]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM5
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM3
 DItemRevisionGUID=
 
 [GeneratedDocument58]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM6
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM4
 DItemRevisionGUID=
 
 [GeneratedDocument59]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM8
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM5
 DItemRevisionGUID=
 
 [GeneratedDocument60]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM9
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM6
 DItemRevisionGUID=
 
 [GeneratedDocument61]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM13
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM8
 DItemRevisionGUID=
 
 [GeneratedDocument62]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM14
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM9
 DItemRevisionGUID=
 
 [GeneratedDocument63]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM15
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM13
 DItemRevisionGUID=
 
 [GeneratedDocument64]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP1
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM14
 DItemRevisionGUID=
 
 [GeneratedDocument65]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP2
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM15
 DItemRevisionGUID=
 
 [GeneratedDocument66]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP3
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP1
 DItemRevisionGUID=
 
 [GeneratedDocument67]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPB
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP2
 DItemRevisionGUID=
 
 [GeneratedDocument68]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPT
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP3
 DItemRevisionGUID=
 
 [GeneratedDocument69]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTL
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPB
 DItemRevisionGUID=
 
 [GeneratedDocument70]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTO
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPT
 DItemRevisionGUID=
 
 [GeneratedDocument71]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTP
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTL
 DItemRevisionGUID=
 
 [GeneratedDocument72]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTS
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTO
 DItemRevisionGUID=
 
 [GeneratedDocument73]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTP
 DItemRevisionGUID=
 
 [GeneratedDocument74]
-DocumentPath=Project Outputs for Free Documents\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTS
 DItemRevisionGUID=
 
 [GeneratedDocument75]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.RUL
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.LDP
 DItemRevisionGUID=
 
 [GeneratedDocument76]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.REP
 DItemRevisionGUID=
 
 [GeneratedDocument77]
+DocumentPath=Project Outputs for Free Documents\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument78]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument79]
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument80]
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument81]
 DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 
 [SearchPath1]
-Path=G:\Applications\Altium\CernLib\*.*
+Path=..\Library\CernLib\*.*
 IncludeSubFolders=1
 
 [Configuration1]

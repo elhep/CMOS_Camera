@@ -1,0 +1,25 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc   27-Jan-18  1:37:05 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : TOP to BTM
+ASCII RoundHoles File : Spektrop2_PCB_Combined_CMV4000_V1.TXT
+EIA File   : Spektrop2_PCB_Combined_CMV4000_V1.DRL
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.201mm)                                            Round             948       PTH        56.54inch (1436.22mm)
+T2      20mil (0.5mm)                                             Round             95        PTH        5.50inch (139.70mm)
+T3      22mil (0.551mm)                                           Round             9         PTH        3.84inch (97.56mm)
+T4      28mil (0.701mm)                                           Round             6         PTH        0.40inch (10.24mm)
+T5      32mil (0.8mm)                                             Round             3         PTH        1.86inch (47.31mm)
+T6      35mil (0.899mm)                                           Round             1         PTH        0.00inch (0.00mm)
+T7      55mil (1.4mm)                                             Round             4         PTH        0.60inch (15.24mm)
+T8      59mil (1.501mm)                                           Round             2         PTH        0.50inch (12.74mm)
+T9      67mil (1.699mm)                                           Round             4         PTH        0.60inch (15.24mm)
+T10     98mil (2.499mm)                                           Round             8         PTH        8.03inch (204.00mm)
+T11     57mil (1.45mm)                                            Round             8         NPTH       6.65inch (168.80mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              1088
+
+Total Processing Time (hh:mm:ss) : 00:00:02
