@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\ZdunekPC\Documents\Spektrop2\Spektrop2_Combined_Proc_CMV4000_V1\PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc
-Date     : 25-Jan-18
-Time     : 2:23:15 AM
+Date     : 27-Jan-18
+Time     : 1:31:45 AM
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(All)
 Rule Violations :0
@@ -31,8 +31,8 @@ Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net P3V3 Between Via (39.999mm,34.217mm) from TOP to BTM And Via (48.299mm,29.25mm) from TOP to BTM 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (40.15mm,15.075mm) from TOP to BTM And Via (48.301mm,14.746mm) from TOP to BTM 
+   Violation between Un-Routed Net Constraint: Net P3V3 Between Via (39.999mm,34.217mm) from TOP to BTM And Via (49.299mm,29.25mm) from TOP to BTM 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (40.15mm,15.075mm) from TOP to BTM And Via (49.301mm,14.746mm) from TOP to BTM 
 Rule Violations :2
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
@@ -112,4 +112,4 @@ Rule Violations :0
 
 Violations Detected : 4
 Waived Violations : 0
-Time Elapsed        : 00:01:08
+Time Elapsed        : 00:01:48
