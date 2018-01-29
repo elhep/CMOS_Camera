@@ -1,38 +1,38 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\ZdunekPC\Documents\Spektrop2\Spektrop2_Combined_Proc_CMV4000_V1\PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc
-Date     : 27-Jan-18
-Time     : 1:31:45 AM
-
-Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(All)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.3mm) (InNetClass('75OHM')),(All)
-Rule Violations :0
+Date     : 30-Jan-18
+Time     : 12:26:24 AM
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(InNetClass('PWR'))
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.5mm) (IsDifferentialPair),(IsDifferentialPair)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.1mm) (WithinRoom('BGA')),(All)
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.2mm) (InNetClass('DIFF100')),(All)
 Rule Violations :0
 
+Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(All)
+Rule Violations :0
+
 Processing Rule : Clearance Constraint (Gap=0.125mm) (All),(All)
 Rule Violations :0
 
+Processing Rule : Clearance Constraint (Gap=0.5mm) (IsDifferentialPair),(IsDifferentialPair)
+Rule Violations :0
+
 Processing Rule : Clearance Constraint (Gap=0.2mm) (InNetClass('FPGA_BANK34_HSTL_IN_IO[25..0]')),(InNetClass('FPGA_BANK34_HSTL_IN_IO[25..0]'))
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.3mm) (InNetClass('75OHM')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.1mm) (WithinRoom('BGA')),(All)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
 Rule Violations :0
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
-   Violation between Un-Routed Net Constraint: Net P3V3 Between Via (39.999mm,34.217mm) from TOP to BTM And Via (49.299mm,29.25mm) from TOP to BTM 
    Violation between Un-Routed Net Constraint: Net GND Between Via (40.15mm,15.075mm) from TOP to BTM And Via (49.301mm,14.746mm) from TOP to BTM 
+   Violation between Un-Routed Net Constraint: Net P3V3 Between Via (39.999mm,34.217mm) from TOP to BTM And Via (49.299mm,29.25mm) from TOP to BTM 
 Rule Violations :2
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
@@ -41,22 +41,25 @@ Rule Violations :0
 Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (All)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('JTAG'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.1mm) (Max=0.2mm) (Preferred=0.12mm) (InNetClass('SE50'))
-Rule Violations :0
-
 Processing Rule : Width Constraint (Min=0.15mm) (Max=5mm) (Preferred=0.3mm) (InNetClass('PWR'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=1mm) (InNetClass('75OHM'))
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('JTAG'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('CTRL'))
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (WithinRoom('BGA'))
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('CTRL'))
+Processing Rule : Width Constraint (Min=0.1mm) (Max=0.2mm) (Preferred=0.12mm) (InNetClass('SE50'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=1mm) (InNetClass('75OHM'))
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.2mm) (Conductor Width=0.25mm) (Air Gap=0.2mm) (Entries=4) ((HasFootprint('AMPHENOL_282139-75') OR HasFootprint('AMPHENOL_34-1030-12G')))
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.381mm) (Air Gap=0.381mm) (Entries=4) (All)
@@ -112,4 +115,4 @@ Rule Violations :0
 
 Violations Detected : 4
 Waived Violations : 0
-Time Elapsed        : 00:01:48
+Time Elapsed        : 00:01:02
