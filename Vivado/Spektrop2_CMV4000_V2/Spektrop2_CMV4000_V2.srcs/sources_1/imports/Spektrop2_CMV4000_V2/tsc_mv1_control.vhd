@@ -21,8 +21,8 @@ entity tsc_mv1_control is
     -- CONTROL & REGISTER INPUTS
 
     -- INPUTS
-	cmd_grab_frame		: in std_logic;
-    training_done       : in std_logic;
+	cmd_grab_frame		:	in	std_logic;
+    training_done       : in  std_logic;
     fval                : in std_logic;
     --uruchamia licznik spowalniając rejestrację klatek do ok. 1-2 na s do podglądu
     prev_en             : in std_logic;
@@ -46,10 +46,10 @@ architecture rtl of tsc_mv1_control is
    signal state_reg		: t_control_state:= s_INIT;
    --signal state_next	: t_control_state:= s_INIT;
    --signal cnt_reset        : unsigned (5 downto 0) := (others => '1');
-   signal cnt_reg   : unsigned(22 downto 0);
-   signal cnt_next  : unsigned(22 downto 0);
-   signal rst_cnt   : std_logic;
-   signal cnt_down  : std_logic;
+   signal cnt_reg : unsigned(22 downto 0);
+   signal cnt_next : unsigned(22 downto 0);
+   signal rst_cnt  : std_logic;
+   signal cnt_down : std_logic;
    --signal n_clk_sys : std_logic;
    signal state_no_reg : std_logic_vector(3 downto 0);
    

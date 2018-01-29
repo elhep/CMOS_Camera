@@ -20,9 +20,7 @@ entity tsc_mv1_top is
   port (
     -- EXTERNAL CONTROL
 	rst_n               : in std_logic;
---	clk_100m			: in std_logic;
-    clk_200m_p           : in std_logic;
-    clk_200m_n           : in std_logic;
+	clk_100m			: in std_logic;
 --	clk_400m			: in std_logic;
 --	clk_idelay			: in std_logic;
 --	clk_locked			: in std_logic;
@@ -107,7 +105,7 @@ architecture rtl of tsc_mv1_top is
 
   -- FIFO FOR REGISTER READBACK
   signal  fifo_wen                : std_logic := '0';
-  signal  fifo_din                : unsigned ( 7 downto 0 ) := (others => '0');
+  signal  fifo_din                : unsigned ( 7 downto 0) := (others => '0');
 
   -- REGISTERS
   signal  reg_read_training       : std_logic := '0';
@@ -130,20 +128,19 @@ architecture rtl of tsc_mv1_top is
   component tsc_mv1_clocking is
   port (
     -- CLOCK/RESET INPUTS
-    rst_n                : in  std_logic;
- --   clk_100m			 : in std_logic;
-    clk_200m_p           : in std_logic;
-    clk_200m_n           : in std_logic;   
+    rst_n               : in  std_logic;
+    clk_100m			: in std_logic;
+    
         -- EXTERNAL CLOCK
-      clk_rx_p           : in std_logic;
-      clk_rx_n           : in std_logic;
+      clk_rx_p            : in std_logic;
+      clk_rx_n            : in std_logic;
 
     -- REGISTERS
-    reg_10bit            : in std_logic;
+    reg_10bit           : in std_logic;
 
     -- MONITOR OUTPUTS
-    monitor_locked       : out std_logic;
-    monitor_clk_rx       : out std_logic;
+    monitor_locked      : out std_logic;
+    monitor_clk_rx      : out std_logic;
 
     -- CLOCK/RESET OUTPUTS
     out_clk_rx_h        : out std_logic;
@@ -259,9 +256,7 @@ begin
   inst_clocking: tsc_mv1_clocking
   port map (
     rst_n               => rst_n,
---    clk_100m			=> clk_100m,
-    clk_200m_p          => clk_200m_p,
-    clk_200m_n          => clk_200m_n,
+    clk_100m			=> clk_100m,
     clk_rx_p            => clk_rx_p,
     clk_rx_n            => clk_rx_n,
     reg_10bit           => reg_10bit,
@@ -337,7 +332,7 @@ begin
     cmd_start_training  => cmd_start_training,
     sen_reset_n         => sen_reset_n,
     frame_req           => frame_req,
-    data_valid          => data_valid,
+    data_valid           => data_valid,
     state_no            => state_no
     );
 

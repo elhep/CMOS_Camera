@@ -17,9 +17,7 @@ entity tsc_mv1_clocking is
   port (
     -- CLOCK/RESET INPUTS
     rst_n               : in  std_logic;
---	clk_100m			: in std_logic;
-	clk_200m_p           : in std_logic;
-	clk_200m_n           : in std_logic;
+	clk_100m			: in std_logic;
 	
     -- EXTERNAL CLOCK
    clk_rx_p            : in std_logic;
@@ -75,37 +73,22 @@ architecture rtl of tsc_mv1_clocking is
   signal pll0_locked                : std_logic;
 --  signal pll1_locked                : std_logic;
   
---  component clk_wiz_v3_6_0
---  port
---   (-- Clock in ports
---    CLK_IN1           : in     std_logic;
---    -- Clock out ports
---    CLK_OUT1          : out    std_logic; -- 400Mhz
---    CLK_OUT2          : out    std_logic; -- 200 MHz
---    CLK_OUT3          : out    std_logic; -- 200 MHz idelay
---    CLK_OUT4            : out std_logic; -- 40 MHz sys_clk
---    CLK_OUT5            : out std_logic; -- 40 MHz n_clk_sys
---    -- Status and control signals
---    RESET             : in     std_logic;
---    LOCKED            : out    std_logic
---   );
---  end component;
-   component clk_wiz_v3_6_0 
+  component clk_wiz_v3_6_0
   port
    (-- Clock in ports
-    CLK_IN1_P         : in     std_logic;
-    CLK_IN1_N         : in     std_logic;
+    CLK_IN1           : in     std_logic;
     -- Clock out ports
-    CLK_OUT1          : out    std_logic;
-    CLK_OUT2          : out    std_logic;
-    CLK_OUT3          : out    std_logic;
-    CLK_OUT4          : out    std_logic;
-    CLK_OUT5          : out    std_logic;
+    CLK_OUT1          : out    std_logic; -- 400Mhz
+    CLK_OUT2          : out    std_logic; -- 200 MHz
+    CLK_OUT3          : out    std_logic; -- 200 MHz idelay
+    CLK_OUT4            : out std_logic; -- 40 MHz sys_clk
+    CLK_OUT5            : out std_logic; -- 40 MHz n_clk_sys
     -- Status and control signals
     RESET             : in     std_logic;
     LOCKED            : out    std_logic
    );
   end component;
+  
   --pll służący do przesuwania zegara wejściowego LVDS
 --  component clk_wiz_v3_6_1
 --  port
@@ -151,35 +134,21 @@ begin
   clk_locked <= pll0_locked;
   monitor_locked    <= pll0_locked; --and pll1_locked;
 
---  clk_gen0_inst : clk_wiz_v3_6_0
---    port map
---    (-- Clock in ports
---        CLK_IN1 => clk_100m,
---        -- Clock out ports
---        CLK_OUT1 => clk_400m, --480 MHz
---        CLK_OUT2 => clk_200m, --240 MHz
---        CLK_OUT3 => clk_idelay, --200 MHz (zegar dla idelay)
---        CLK_OUT4 => clk_sys, -- 40 MHz sys_clk
---        CLK_OUT5 => n_clk_sys, -- 40 MHz n_clk_sys
---        -- Status and control signals
---        RESET  => pll_rst,
---        LOCKED => pll0_locked
---    );
   clk_gen0_inst : clk_wiz_v3_6_0
-  port map
-  (-- Clock in ports
-      CLK_IN1_P => clk_200m_p,
-      CLK_IN1_N => clk_200m_n,
-      -- Clock out ports
-      CLK_OUT1 => clk_400m, --480 MHz
-      CLK_OUT2 => clk_200m, --240 MHz
-      CLK_OUT3 => clk_idelay, --200 MHz (zegar dla idelay)
-      CLK_OUT4 => clk_sys, -- 40 MHz sys_clk
-      CLK_OUT5 => n_clk_sys, -- 40 MHz n_clk_sys
-      -- Status and control signals
-      RESET  => pll_rst,
-      LOCKED => pll0_locked
-  );
+    port map
+    (-- Clock in ports
+        CLK_IN1 => clk_100m,
+        -- Clock out ports
+        CLK_OUT1 => clk_400m, --480 MHz
+        CLK_OUT2 => clk_200m, --240 MHz
+        CLK_OUT3 => clk_idelay, --200 MHz (zegar dla idelay)
+        CLK_OUT4 => clk_sys, -- 40 MHz sys_clk
+        CLK_OUT5 => n_clk_sys, -- 40 MHz n_clk_sys
+        -- Status and control signals
+        RESET  => pll_rst,
+        LOCKED => pll0_locked
+    );
+    
 --  clk_gen1_inst : clk_wiz_v3_6_1
 --  port map
 --   (-- Clock in ports

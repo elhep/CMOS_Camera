@@ -1,4 +1,4 @@
-Altium Designer Pick and Place Locations
+   C    Altium Designer Pick and Place Locations
 C:\Users\ZdunekPC\Documents\Spektrop2\Spektrop2_Combined_Proc_CMV4000_V1\ProjectOutputsDefault\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
 
 ========================================================================================================================
