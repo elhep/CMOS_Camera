@@ -1,7 +1,7 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\ZdunekPC\Documents\Spektrop2\Spektrop2_Combined_Proc_CMV4000_V1\PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc
 Date     : 30-Jan-18
-Time     : 12:26:24 AM
+Time     : 11:45:28 PM
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(InNetClass('PWR'))
 Rule Violations :0
@@ -115,4 +115,4 @@ Rule Violations :0
 
 Violations Detected : 4
 Waived Violations : 0
-Time Elapsed        : 00:01:02
+Time Elapsed        : 00:00:56
