@@ -1,30 +1,30 @@
 Protel Design System Design Rule Check
 PCB File : C:\Users\ZdunekPC\Documents\Spektrop2\Spektrop2_Combined_Proc_CMV4000_V1\PCB-Layout\Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc
-Date     : 30-Jan-18
-Time     : 11:45:28 PM
+Date     : 01-Feb-18
+Time     : 1:48:43 AM
+
+Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(All)
+Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(InNetClass('PWR'))
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=0.2mm) (InNetClass('DIFF100')),(All)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.125mm) (InPolygon),(All)
+Processing Rule : Clearance Constraint (Gap=0.2mm) (InNetClass('FPGA_BANK34_HSTL_IN_IO[25..0]')),(InNetClass('FPGA_BANK34_HSTL_IN_IO[25..0]'))
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (All),(All)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=0.5mm) (IsDifferentialPair),(IsDifferentialPair)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.2mm) (InNetClass('FPGA_BANK34_HSTL_IN_IO[25..0]')),(InNetClass('FPGA_BANK34_HSTL_IN_IO[25..0]'))
+Processing Rule : Clearance Constraint (Gap=0.2mm) (InNetClass('DIFF100')),(All)
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.3mm) (InNetClass('75OHM')),(All)
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.1mm) (WithinRoom('BGA')),(All)
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.5mm) (IsDifferentialPair),(IsDifferentialPair)
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
@@ -38,31 +38,37 @@ Rule Violations :2
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
 
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (All)
-Rule Violations :0
-
 Processing Rule : Width Constraint (Min=0.15mm) (Max=5mm) (Preferred=0.3mm) (InNetClass('PWR'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('JTAG'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('CTRL'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (WithinRoom('BGA'))
-Rule Violations :0
-
-Processing Rule : Width Constraint (Min=0.1mm) (Max=0.2mm) (Preferred=0.12mm) (InNetClass('SE50'))
 Rule Violations :0
 
 Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=1mm) (InNetClass('75OHM'))
 Rule Violations :0
 
-Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.2mm) (Conductor Width=0.25mm) (Air Gap=0.2mm) (Entries=4) ((HasFootprint('AMPHENOL_282139-75') OR HasFootprint('AMPHENOL_34-1030-12G')))
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (WithinRoom('BGA'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('CTRL'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=0.2mm) (Preferred=0.12mm) (InNetClass('SE50'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.1mm) (InNetClass('JTAG'))
 Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Direct Connect )(Expansion=0.508mm) (Conductor Width=0.381mm) (Air Gap=0.381mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.15mm) (Conductor Width=0.25mm) (Air Gap=0.15mm) (Entries=4) ((HasFootprint('AMPHENOL_282139-75') OR HasFootprint('AMPHENOL_34-1030-12G')))
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.15mm) (All)
+Rule Violations :0
+
+Processing Rule : Minimum Annular Ring (Minimum=0.1mm) (IsVia)
 Rule Violations :0
 
 Processing Rule : Acute Angle Constraint (Minimum=60.000) (All)
@@ -88,22 +94,22 @@ Rule Violations :0
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
 Rule Violations :0
 
-Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
-Rule Violations :0
-
 Processing Rule : Board Clearance Constraint (Gap=0mm) ((IsTrack or IsArc) and OnLayer('Top Overlay'))
 Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mm) (OnLayer('L4-PWR') or OnLayer('L3-1V8'))
 Rule Violations :0
 
+Processing Rule : Board Clearance Constraint (Gap=0mm) (All)
+Rule Violations :0
+
 Processing Rule : Parallel Segment Constraint (Gap=0.125mm ) (Limit=5mm) (InNetClass('DIFF100')),(InNetClass('DIFF100'))
 Rule Violations :0
 
-Processing Rule : Matched Lengths(Tolerance=0.3mm) (Disabled)(InDifferentialPairClass('All Differential Pairs'))
+Processing Rule : Matched Lengths(Tolerance=0.1mm) (Disabled)(InNetClass('MGT'))
 Rule Violations :0
 
-Processing Rule : Matched Lengths(Tolerance=0.1mm) (Disabled)(InNetClass('MGT'))
+Processing Rule : Matched Lengths(Tolerance=0.3mm) (Disabled)(InDifferentialPairClass('All Differential Pairs'))
 Rule Violations :0
 
 Processing Rule : Room BGA (Bounding Region = (37.85mm, 39.1mm, 55.3mm, 59.9mm) (WithinRoom('BGA'))
@@ -115,4 +121,4 @@ Rule Violations :0
 
 Violations Detected : 4
 Waived Violations : 0
-Time Elapsed        : 00:00:56
+Time Elapsed        : 00:01:08

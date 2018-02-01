@@ -16,3 +16,5 @@ RuleKind=Width|RuleName=Width_BGA|Scope=Board|Minimum=3.94
 RuleKind=Clearance|RuleName=Clearance_75OHM|Scope=Board|Minimum=11.81
 RuleKind=Clearance|RuleName=Clearance_DIFF100|Scope=Board|Minimum=7.87
 RuleKind=Clearance|RuleName=Clearance_HSTL|Scope=Board|Minimum=7.87
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing|Scope=Board|Minimum=3.94
+RuleKind=MinimumAnnularRing|RuleName=MinimumAnnularRing_THD|Scope=Board|Minimum=5.91
