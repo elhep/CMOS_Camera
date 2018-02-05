@@ -63,8 +63,8 @@ entity spektrop2_cmv4000_top is
     --main reset of the CMV4000 IP
     rst_n           : in std_logic;
     --sensor data
-    data_in_p       : in unsigned (15 downto 0);
-    data_in_n       : in unsigned (15 downto 0);
+    --data_in_p       : in unsigned (15 downto 0);
+    --data_in_n       : in unsigned (15 downto 0);
     --data clock
     clk_in_p        : in std_logic;
     clk_in_n        : in std_logic;
@@ -111,7 +111,7 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
   
   
   component tsc_ms1_top is
-  port {
+  port (
           -- EXTERNAL CONTROL
       rst_n               : in std_logic;
       clk_100m            : in std_logic;
@@ -173,23 +173,127 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
       monitor_clk_rx      : out std_logic;
       rst_sys_dbg         : out std_logic;
       state_no             : out std_logic_vector(3 downto 0)
-  };
-  
+  );
+  end component;
+    
   component proc_sys is
-  port {
+  port (
       FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
       FIXED_IO_ps_clk : inout STD_LOGIC;
       FIXED_IO_ps_porb : inout STD_LOGIC;
       FIXED_IO_ps_srstb : inout STD_LOGIC
   
-  };
+  );
+  end component;
   
+  component vid_sig_formatter is
+  port 
+  (
+      pix_clk   : in std_logic;        
+      dval      : in std_logic;
+      fval      : in std_logic;
+      data0     : in std_logic_vector(63 downto 0);
+      data1     : in std_logic_vector(63 downto 0);
+      data2     : in std_logic_vector(63 downto 0);
+      data3     : in std_logic_vector(63 downto 0);
+
+      dval_out  : out std_logic;
+      fval_out  : out std_logic;
+      data0_out : out std_logic_vector(63 downto 0);
+      data1_out : out std_logic_vector(63 downto 0);
+      data2_out : out std_logic_vector(63 downto 0);
+      data3_out : out std_logic_vector(63 downto 0)
+  );
+  end component;
+  
+--  signal rst_n  : std_logic;
+  signal led0_o : std_logic;
+  signal led1_o : std_logic;
+  
+  signal dval           : std_logic; --data valid
+  signal lval           : std_logic; --line valid
+  signal fval           : std_logic;  --frame valid
+  signal ctrl_par       : unsigned (11 downto 0);
+  signal pix_clk_sig    : std_logic;
+  
+  signal dval_shft  : std_logic;
+  signal fval_shft  : std_logic;
+  
+  signal vid_data0  : std_logic_vector(63 downto 0);
+  signal vid_data1  : std_logic_vector(63 downto 0);
+  signal vid_data2  : std_logic_vector(63 downto 0);
+  signal vid_data3  : std_logic_vector(63 downto 0);
+  
+  signal data0_shft : std_logic_vector(63 downto 0);
+  signal data1_shft : std_logic_vector(63 downto 0);
+  signal data2_shft : std_logic_vector(63 downto 0);
+  signal data3_shft : std_logic_vector(63 downto 0);
+  
+  signal data00   : unsigned (11 downto 0);
+  signal data01   : unsigned (11 downto 0);
+  signal data02   : unsigned (11 downto 0);
+  signal data03   : unsigned (11 downto 0);
+  signal data04   : unsigned (11 downto 0);
+  signal data05   : unsigned (11 downto 0);
+  signal data06   : unsigned (11 downto 0);
+  signal data07   : unsigned (11 downto 0);
+  signal data08   : unsigned (11 downto 0);
+  signal data09   : unsigned (11 downto 0);
+  signal data10   : unsigned (11 downto 0);
+  signal data11   : unsigned (11 downto 0);
+  signal data12   : unsigned (11 downto 0);
+  signal data13   : unsigned (11 downto 0);
+  signal data14   : unsigned (11 downto 0);
+  signal data15   : unsigned (11 downto 0);
+  signal data_valid : std_logic;
+  
+--  signal sen_clk  :   std_logic;
+--  signal clk_loop_unbuf : std_logic;
+  
+--  signal spi_SCK_sig        : std_logic;
+--  signal spi_MISO_sig       : std_logic;
+--  signal spi_MOSI_sig       : std_logic;
+  
+--  signal spi_SS_sig         : std_logic;
+--  signal spi_SS_I_sig       : std_logic;
+--  signal spi_SS_O_sig       : std_logic;
+--  signal spi_SS_O_sig_inv   : std_logic; -- CMV4000 wymaga odwrotnego SS
+--  signal spi_SS_T_sig       : std_logic;
+
+  signal control_data       : std_logic_vector(31 downto 0);
+  
+--  signal clk_ser : std_logic; --zegar s?u??cy do taktowania deserializer?w LVDS (zegar z sensora przesuni?ty o 90 stopni)
+--  signal clk_ser_locked : std_logic;
+  
+  signal ctrl_data_reg      : std_logic_vector(11 downto 0);
+  signal ctrl_data_next     : std_logic_vector(11 downto 0);
+
+  signal cmd_grab_frame_sig : std_logic;
+  signal rst_n_sig          : std_logic;
+  
+  signal ps_50m_clk             : std_logic;
+  signal led_counter            : unsigned(31 downto 0);
+  constant LED_COUNTER_MAX      : natural := 50000000;
 begin
 
+  led_blink: process (ps_50m_clk)
+   begin
+   if (rising_edge(ps_50m_clk)) then
+      if led_counter < LED_COUNTER_MAX  then
+         led_counter <= led_counter + 1;
+         led0_o <= '0';
+         led1_o <= '1';
+      else
+         led_counter <= (others => '0');
+         led0_o <= '1';
+         led1_o <= '0';
+      end if;
+   end if;
+end process;
 
 
   CLK_MGT1_IBUFDS_GTE2: unisim.vcomponents.IBUFDS_GTE2
-    port map (
+    port map (  
       I => CLK_MGT1_P,
       IB => CLK_MGT1_N,
       O => CLK_MGT1_IBUFDS_GTE2_O
