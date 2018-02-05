@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Jan 29 02:08:44 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Feb  6 00:08:53 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z015" NAME="system" PACKAGE="clg485" SPEEDGRADE="-3"/>
 
@@ -8,6 +8,11 @@
     <PORT DIR="IO" NAME="FIXED_IO_ps_srstb" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_clk" SIGIS="undef"/>
     <PORT DIR="IO" NAME="FIXED_IO_ps_porb" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_50M_CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -1053,8 +1058,9 @@
         <PORT DIR="I" LEFT="5" NAME="S_AXI_GP0_WID" RIGHT="0" SIGIS="undef"/>
         <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_CLK0" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="FCLK_50M_CLK"/>
             <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_GP0_ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" NAME="FCLK_RESET0_N" SIGIS="rst"/>

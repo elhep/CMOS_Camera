@@ -1,0 +1,35 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Feb  6 00:26:48 2018
+| Host         : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
+| Command      : report_drc -file spektrop2_cmv4000_top_drc_routed.rpt -pb spektrop2_cmv4000_top_drc_routed.pb -rpx spektrop2_cmv4000_top_drc_routed.rpx
+| Design       : spektrop2_cmv4000_top
+| Device       : xc7z015clg485-3
+| Speed File   : -3
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_spektrop2_cmv4000_top
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 0
++------+----------+-------------+------------+
+| Rule | Severity | Description | Violations |
++------+----------+-------------+------------+
++------+----------+-------------+------------+
+
+2. REPORT DETAILS
+-----------------
+

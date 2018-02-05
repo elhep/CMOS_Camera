@@ -3,7 +3,8 @@
    guistr: "# # String gsaved with Nlview 6.6.11  2017-06-12 bk=1.3860 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
 preplace port FIXED_IO -pg 1 -y -160 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 1 -y -90 -defaultsOSRD
+preplace port FCLK_50M_CLK -pg 1 -y 0 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 1 -y -50 -defaultsOSRD
 preplace netloc processing_system7_0_FIXED_IO 1 1 1 420
 preplace netloc processing_system7_0_FCLK_CLK0 1 0 2 10 -170 410
 levelinfo -pg 1 -10 210 440 -top -220 -bot 180

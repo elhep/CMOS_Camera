@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Feb  6 00:25:09 2018
+# Process ID: 5812
+# Current directory: C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V2/Spektrop2_CMV4000_V2.runs/impl_1
+# Command line: vivado.exe -log spektrop2_cmv4000_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source spektrop2_cmv4000_top.tcl -notrace
+# Log file: C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V2/Spektrop2_CMV4000_V2.runs/impl_1/spektrop2_cmv4000_top.vdi
+# Journal file: C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V2/Spektrop2_CMV4000_V2.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source spektrop2_cmv4000_top.tcl -notrace
