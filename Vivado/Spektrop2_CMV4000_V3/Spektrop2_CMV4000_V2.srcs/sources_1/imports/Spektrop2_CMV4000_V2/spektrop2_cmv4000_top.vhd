@@ -109,6 +109,8 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
   signal MGT_TX1_OBUFDS_I : STD_LOGIC;
   signal MGT_TX2_OBUFDS_I : STD_LOGIC;
   
+  signal ps_100m_clk : std_logic;
+  
   
   component tsc_ms1_top is
   port (
@@ -176,14 +178,15 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
   );
   end component;
     
-  component proc_sys is
-  port (
+component system_wrapper is
+    port (
+      FCLK_100M_CLK : out STD_LOGIC;
+      FCLK_50M_CLK : out STD_LOGIC;
       FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
       FIXED_IO_ps_clk : inout STD_LOGIC;
       FIXED_IO_ps_porb : inout STD_LOGIC;
       FIXED_IO_ps_srstb : inout STD_LOGIC
-  
-  );
+    );
   end component;
   
 --  component vid_sig_formatter is
@@ -269,13 +272,89 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
   signal ctrl_data_next     : std_logic_vector(11 downto 0);
 
   signal cmd_grab_frame_sig : std_logic;
-  signal rst_n_sig          : std_logic;
+  signal rst_n          : std_logic;
   
   signal ps_50m_clk             : std_logic;
   signal led_counter            : unsigned(31 downto 0);
   constant LED_COUNTER_MAX      : natural := 50000000;
   
 begin
+
+   system_wrapper_i: system_wrapper
+   port map (
+         FCLK_100M_CLK => ps_100m_clk,
+         FCLK_50M_CLK => ps_50m_clk,
+         FIXED_IO_mio => FIXED_IO_mio,
+         FIXED_IO_ps_clk => FIXED_IO_ps_clk,
+         FIXED_IO_ps_porb => FIXED_IO_ps_porb,
+         FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+   );
+   
+   tsc_ms1_top_i: tsc_ms1_top
+   port map(
+           -- EXTERNAL CONTROL
+       rst_n               => rst_n,
+       clk_100m            => ps_100m_clk,
+     --    clk_400m            : in std_logic;
+     --    clk_idelay            : in std_logic;
+     --    clk_locked            : in std_logic;
+     --    clk_rst                : out std_logic;
+       cmd_grab_frame        : in std_logic;
+     --    clk_ser             : in std_logic;
+     --    clk_ser_locked        : in std_logic;
+       prev_en : in std_logic;
+       
+       -- SENSOR CLOCK AND RESET
+       sen_clk_in        : out std_logic;
+       sen_reset_n       : out std_logic;
+     
+       -- CONTROL OUTPUTS TO SENSOR
+       frame_req         : out std_logic;
+     
+       -- LVDS DATA TO/FROM SENSOR
+       data_rx_p         : in unsigned (15 downto 0);
+       data_rx_n         : in unsigned (15 downto 0);
+     
+       ctrl_rx_p         : in std_logic;
+       ctrl_rx_n         : in std_logic;
+       
+       clk_rx_p          : in std_logic;
+       clk_rx_n          : in std_logic;
+     
+       clk_byp_p         : out std_logic;
+       clk_byp_n         : out std_logic;
+       
+       -- DESERIALIZED OUTPUT
+       data00   : out unsigned (11 downto 0);
+       data01   : out unsigned (11 downto 0);
+       data02   : out unsigned (11 downto 0);
+       data03   : out unsigned (11 downto 0);
+       data04   : out unsigned (11 downto 0);
+       data05   : out unsigned (11 downto 0);
+       data06   : out unsigned (11 downto 0);
+       data07   : out unsigned (11 downto 0);
+       data08   : out unsigned (11 downto 0);
+       data09   : out unsigned (11 downto 0);
+       data10   : out unsigned (11 downto 0);
+       data11   : out unsigned (11 downto 0);
+       data12   : out unsigned (11 downto 0);
+       data13   : out unsigned (11 downto 0);
+       data14   : out unsigned (11 downto 0);
+       data15   : out unsigned (11 downto 0);
+       
+       ctrl_par : out unsigned (11 downto 0);
+       
+       pix_clk             : out std_logic;
+       data_valid          : out std_logic;
+       
+       --DEBUG
+       training_active     : out std_logic;
+       monitor_locked      : out std_logic;
+       monitor_clk_rx      : out std_logic;
+       rst_sys_dbg         : out std_logic;
+       state_no             : out std_logic_vector(3 downto 0)
+   );
+     
 
   led_blink: process (ps_50m_clk)
    begin

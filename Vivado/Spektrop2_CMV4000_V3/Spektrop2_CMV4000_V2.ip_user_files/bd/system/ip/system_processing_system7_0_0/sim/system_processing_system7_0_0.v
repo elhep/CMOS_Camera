@@ -135,6 +135,7 @@ S_AXI_GP0_ARID,
 S_AXI_GP0_AWID, 
 S_AXI_GP0_WID, 
 FCLK_CLK0, 
+FCLK_CLK1, 
 FCLK_RESET0_N, 
 MIO, 
 PS_SRSTB, 
@@ -220,6 +221,7 @@ input [5 : 0] S_AXI_GP0_ARID;
 input [5 : 0] S_AXI_GP0_AWID;
 input [5 : 0] S_AXI_GP0_WID;
 output FCLK_CLK0;
+output FCLK_CLK1;
 output FCLK_RESET0_N;
 input [53 : 0] MIO;
 input PS_SRSTB;
@@ -242,7 +244,7 @@ input PS_PORB;
     .C_S_AXI_HP3_DATA_WIDTH(64),
     .C_HIGH_OCM_EN(0),
     .C_FCLK_CLK0_FREQ(50.0),
-    .C_FCLK_CLK1_FREQ(10.0),
+    .C_FCLK_CLK1_FREQ(100.0),
     .C_FCLK_CLK2_FREQ(10.0),
     .C_FCLK_CLK3_FREQ(10.0),
 	.C_M_AXI_GP0_ENABLE_STATIC_REMAP(0),
@@ -605,7 +607,7 @@ input PS_PORB;
     .S_AXI_HP3_WSTRB(8'B0),
     .FCLK_CLK0(FCLK_CLK0),
 	
-    .FCLK_CLK1(),
+    .FCLK_CLK1(FCLK_CLK1),
 	
     .FCLK_CLK2(),
 	
