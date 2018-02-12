@@ -1,0 +1,39 @@
+\documentclass[10pt,a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\author{Piotr Zdunek Paweł Zienkiewicz}
+\title{NEOSTEL Zynq System Specification}
+\maketitle
+\begin{document}
+\section{Glossary}
+\begin{itemize}
+\item{PL} Programmable Logic
+\item{PS} Programmable System
+\item{OCM} On-chip memory
+\end{itemize}
+\section{Introduction}
+\section{Specification}
+\begin{itemize}
+\item Linux runs on one ARM Core (CPU0)
+\item Baremetal application runs on CPU1 (it is handling exceptions from PL)
+\item PTP timestamp is being placed in OCM memory
+\item CCD driver is made in PL
+\item Shutter driver is made in PL
+\end{itemize}
+\section{Technical assumptions}
+
+\section{Bibliography}
+\begin{itemize}
+\item XAPP1078 \url{http://www.wiki.xilinx.com/XAPP1078+Latest+Information}
+\item XAPP1079 \url{http://www.wiki.xilinx.com/XAPP1079+Latest+Information}
+\item PTP on Zynq \url{http://www.wiki.xilinx.com/Zynq+Emacps+Linux+Driver}
+\url{http://goo.gl/FlMKKu}
+\end{itemize}
+
+\section{Known issues}
+
+\end{document}

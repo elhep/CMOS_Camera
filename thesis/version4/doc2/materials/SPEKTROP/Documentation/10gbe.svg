@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="4212.9922"
+   height="2979.9211"
+   id="svg5657"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="10gbe.svg">
+  <defs
+     id="defs5659">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;">
+      <path
+         id="path6674"
+         style="fill-rule:evenodd;stroke-width:0.62500000;stroke-linejoin:round;"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lstart"
+       style="overflow:visible">
+      <path
+         id="path6653"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Lend"
+       style="overflow:visible;">
+      <path
+         id="path6656"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1.0pt;"
+         transform="scale(0.8) rotate(180) translate(12.5,0)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="2041.2359"
+     inkscape:cy="2073.8"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     inkscape:window-x="-30720"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid6637"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata5662">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,1927.559)">
+    <rect
+       style="fill:#afe9c6;fill-opacity:1;stroke:#000000;stroke-width:1.46613371;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect6559"
+       width="2719.6475"
+       height="1693.0496"
+       x="718.92877"
+       y="-1673.0464"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot6561"
+       style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(94.387268,-1927.559)"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021"><flowRegion
+         id="flowRegion6563"><rect
+           id="rect6565"
+           width="1402.0917"
+           height="167.68532"
+           x="1280.8734"
+           y="284.83417" /></flowRegion><flowPara
+         id="flowPara6567"
+         style="font-size:72px;text-align:center;text-anchor:middle">Programmable Logic</flowPara></flowRoot>  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="L1">
+    <rect
+       style="fill:#d0e7f5;fill-opacity:1;stroke:#000000;stroke-width:1.434394;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect5665"
+       width="865.27979"
+       height="1350.9941"
+       x="888.78864"
+       y="468.70981"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot5667"
+       style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       transform="translate(675.34454,-525.86515)"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021"><flowRegion
+         id="flowRegion5669"><rect
+           id="rect5671"
+           width="448.57144"
+           height="348.57144"
+           x="485.71429"
+           y="1125.6354" /></flowRegion><flowPara
+         id="flowPara5673"
+         style="font-size:72px">Cortex A9</flowPara></flowRoot>    <g
+       id="g6599"
+       transform="translate(-6.5511233,-144.64856)"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021">
+      <rect
+         y="1134.1992"
+         x="1974.278"
+         height="274.30103"
+         width="545.72955"
+         id="rect6453"
+         style="fill:#37c871;fill-opacity:1;stroke:#000000;stroke-width:0.98469508;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         transform="translate(919.57443,-291.5245)"
+         style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot6455"
+         xml:space="preserve"><flowRegion
+           id="flowRegion6457"><rect
+             y="1528.4926"
+             x="1234.2858"
+             height="185.71428"
+             width="365.71429"
+             id="rect6459" /></flowRegion><flowPara
+           style="font-size:72px"
+           id="flowPara6461">EMIO</flowPara></flowRoot>    </g>
+    <g
+       id="g6613"
+       transform="translate(-8.5714286,-65.964233)"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021">
+      <rect
+         y="1508.4926"
+         x="2837.1428"
+         height="317.14285"
+         width="554.28571"
+         id="rect6463-1"
+         style="fill:#d0e7f5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         transform="translate(989.7681,82.739186)"
+         style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot6465-8"
+         xml:space="preserve"><flowRegion
+           id="flowRegion6467-2"><rect
+             y="1554.2069"
+             x="2048.5715"
+             height="231.42857"
+             width="428.57144"
+             id="rect6469-6" /></flowRegion><flowPara
+           style="font-size:72px"
+           id="flowPara6471-6">GTX </flowPara></flowRoot>    </g>
+    <g
+       transform="translate(4.0406102,1808.361)"
+       id="g6516"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021">
+      <rect
+         y="-807.23969"
+         x="1051.3325"
+         height="262.47272"
+         width="553.90131"
+         id="rect6443"
+         style="fill:#2c89a0;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         transform="translate(379.01445,-1908.282)"
+         style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot6445"
+         xml:space="preserve"><flowRegion
+           id="flowRegion6447"><rect
+             y="1151.3497"
+             x="700"
+             height="234.28572"
+             width="485.71429"
+             id="rect6449" /></flowRegion><flowPara
+           style="font-size:72px;text-align:center;text-anchor:middle"
+           id="flowPara6451">1 GbE Ethernet MAC</flowPara></flowRoot>      <rect
+         y="-924.11786"
+         x="1051.3571"
+         height="117.17827"
+         width="554.06921"
+         id="rect6506"
+         style="fill:#2c89a0;fill-opacity:1;stroke:#000000;stroke-width:1.49966085;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         transform="translate(-812.16265,-1565.9244)"
+         style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot6508"
+         xml:space="preserve"><flowRegion
+           id="flowRegion6510"><rect
+             y="661.62103"
+             x="2010.2036"
+             height="82.832512"
+             width="258.59906"
+             id="rect6512" /></flowRegion><flowPara
+           style="font-size:72px;text-align:center;text-anchor:middle"
+           id="flowPara6514">DMA</flowPara></flowRoot>    </g>
+    <g
+       id="g6606"
+       transform="translate(0,-65.964233)"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021">
+      <rect
+         y="1508.4926"
+         x="1971.4285"
+         height="317.14285"
+         width="554.28571"
+         id="rect6463"
+         style="fill:#d0e7f5;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         transform="translate(31.540176,78.453445)"
+         style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot6465"
+         xml:space="preserve"><flowRegion
+           id="flowRegion6467"><rect
+             y="1554.2069"
+             x="2048.5715"
+             height="231.42857"
+             width="428.57144"
+             id="rect6469" /></flowRegion><flowPara
+           style="font-size:72px"
+           id="flowPara6471">10 GbE IP</flowPara></flowRoot>    </g>
+    <g
+       id="g6630"
+       transform="translate(0,18.321426)"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021">
+      <rect
+         y="1442.7783"
+         x="1060"
+         height="280"
+         width="548.57141"
+         id="rect6620"
+         style="fill:#2c89a0;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         transform="translate(101.72906,22.761561)"
+         style="font-size:9px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot6622"
+         xml:space="preserve"><flowRegion
+           id="flowRegion6624"><rect
+             y="1525.6354"
+             x="1117.1428"
+             height="165.71428"
+             width="460"
+             id="rect6626" /></flowRegion><flowPara
+           style="font-size:72px"
+           id="flowPara6628">Control</flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="m 1620,1119.9211 340,0"
+       id="path6639"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="m 2240,1259.9211 0,180"
+       id="path6641"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="m 1620,1599.9211 340,0"
+       id="path6643"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="m 2540,1599.9211 280,0"
+       id="path6645"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#Arrow1Lstart);marker-end:url(#Arrow1Lend)"
+       d="m 1320,1459.9211 0,-200"
+       id="path6647"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="Z:\Dropbox\ppmgr\10gbe.png"
+       inkscape:export-xdpi="13.921021"
+       inkscape:export-ydpi="13.921021" />
+  </g>
+</svg>

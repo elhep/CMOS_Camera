@@ -1,0 +1,100 @@
+
+%TODO
+%Testy pamięci i peryferiów muszą być zrobione przed uruchomieniem systemów operacyjnych, więc to nie jest miejsce do ich opisu
+
+\subsection{Firmware overview}
+As was previously decided, direct control over all camera subsystems is realised by firmware running on FreeRTOS. Task on FreeRTOS (slave) is receiving and executing commands issued by process on Linux (master). FreeRTOS acts as intermediary between various camera subsystems and Epics control system implemented on Linux.
+
+\subsubsection{FreeRTOS settings}
+Version of FreeRTOS system used in project is 8.2.0. 
+
+\begin{itemize}
+\item Tick rate: 100 Hz.
+\item Minimal stack size: 4096 bytes
+\item Total heap size: 1MB
+\item Settings may change if necessary after further tests
+\end{itemize}
+
+In selected AMP configuration, Linux OS is master of all shared system resources. According to that CPU0 with Linux has control over L2 cache and using it by other core running RTOS without some additional communication interface would lead to cache coherence problems. It was decided then, that L2 cache will be disabled in CPU1 MMU. L1 instruction and data caches will be enabled with the exception of on-chip memory region, where L1 data cache will be disabled as well. OCM memory is implemented as SRAM, so it is much faster than DRAM memory and disabling cache doesn't result in dramatic decrease of performance, while it improves access timing consistence.
+
+%\subsection{FreeRTOS memory map}
+
+\subsection{RTOS diagnostic mechanisms}
+RTOS runs low-level diagnostic tests of all camera submodules. Every submodule specifies way it should be tested. Every test ends with either fail or success, optionally error code and debug information may be provided. Higher level diagnostics, parameters monitoring and decision process is implemented by camera control framework on Linux. For description of diagnostic routines for every submodule of camera refer to section \ref{chap:diag}.
+
+\subsubsection{Inter-processor communication}
+
+\begin{description}
+\item \textbf{Command \& response FIFOs test} \hfill \\
+Command and response FIFOs are tested by putting through them a sequence of pseudo random numbers. Pseudo random number is generated and written as command to queue. Testing routine then expects to get response in response queue containing the same number in both response fields, before deadline passes. The process is repeated for set number of iterations. If all of them succeed, then test is passed.
+
+\item \textbf{FreeRTOS logging queue test} \hfill \\
+Logging queue test is conducted on the similar basis as Command \& Response queues test. Logging queue is written with pseudo-random number sequence with known seed, which is then read and verified.
+\end{description}
+
+\subsection{FreeRTOS tasks}
+
+\subsubsection{Introduction}
+FreeRTOS firmware is divided into several concurrent tasks. Each of tasks is responsible for different camera functionality. Tasks functionality is described in following subsections.
+
+\begin{description}
+
+\item \textbf{Main task} \hfill \\
+Main task implements basic system hardware setup and is reponsible for launching other tasks within FreeRTOS framework.
+
+\item \textbf{Camera control task} \hfill \\
+Camera control task implements FSM, which realises direct camera control and stores camera state.
+
+\item \textbf{Command receive task} \hfill \\
+Command receive task is responsible for communication with Linux Camera Control Master process. Command queue is read and response queue is written as well as commands are interpreted and executed.
+
+\item \textbf{Sensors data logging} \hfill \\
+Sensor data logger is implemented as a separate task within FreeRTOS, periodically gathering measurements from various sensors, converting them into 32-bit float format numbers and writing to triple buffer in shared memory. Linux processes can then access that information and use it to monitor camera health status.
+
+\item \textbf{Peltier cooling} \hfill \\
+Control task of Peltier cooler is responsible for CCD temperature regulation. It implements Peltier module temperature monitoring and control algorithms. Task communicates with Peltier control IP core which in turn directly operates Peltier module.
+
+\end{description}
+
+%\section{Tasks priorities}
+%
+%Idle task priority: 0. Max task priority: 7.
+%
+%\begin{table}[H]
+%\begin{center}
+%    \begin{tabular}{ | l || l  |}
+%    \hline
+%    Task name 				& Priority 	\\ \hline
+%	Main					& N/A 		\\ \hline
+%	Sensors data logger 	& 1 		\\ \hline
+%	Heartbeat generator 	& 1 		\\ \hline
+%	Command Client			& 2 		\\ \hline
+%    \end{tabular}
+%    \end{center}
+%    \caption{Task priorities table}
+%	\label{table:tasks_prio}
+%\end{table}
+
+\subsection{FreeRTOS tasks synchronization}
+All task are synchronised by standard built-in FreeRTOS mechanisms such as \emph{xSemaphore} or \emph{xTaskNotify} where applicable.
+
+%\subsection{Submodules handling code}
+%
+%\subsection{ADC interface}
+%
+%\subsubsection{Pattern generator programming}
+%Pattern generator state machine needs to be programmed in order to generate correct control and synchronization signals for CCD and ADC interface. State machine program is kept in system address mapped BRAM. Programming procedure is following:
+%\begin{enumerate}
+%\item Stop ADC interface
+%\item Write program into BRAM
+%\item Restart ADC interface
+%\end{enumerate}
+%
+%\subsubsection{Video frame generator core programming}
+%
+%Video frame generator consists of state machines generating synchronization signals for ADC data needed by Video DMA engine. These state machines need to be programmed with correct video frame size before starting operation.
+%
+%\subsubsection{Video DMA engine programming}
+%Video DMA needs to be programmed with frame buffer addresses, frame size and line stride, interrupt policy and frame counter before starting operation.
+%
+%\subsubsection{Shutter}

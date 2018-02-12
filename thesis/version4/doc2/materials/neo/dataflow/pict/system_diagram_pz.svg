@@ -1,0 +1,1353 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="2979.9211"
+   height="4212.9922"
+   id="svg16851"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="system_diagram_pz.svg"
+   inkscape:export-filename="/home/robota/Projekty/neostel/dok/neostel-documentation/dataflow/pict/system_diagram_pz.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs16853">
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Mstart"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6342"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6363"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17848"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17850"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mstart"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6360"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6,0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17854"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17856"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17858"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17860"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17862"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17864"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17866"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17868"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17870"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17872"
+         d="M 0,0 5,-5 -12.5,0 5,5 0,0 z"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt"
+         transform="matrix(0.4,0,0,0.4,4,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17874"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17876"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6,0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17878"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17880"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6,0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17882"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17884"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mstart"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17886"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17888"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(0.6,0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17890"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17892"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17894"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17896"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="marker17898"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path17900"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow2Mend-3"
+       style="overflow:visible">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6363-7"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         d="M 8.7185878,4.0337352 -2.2072895,0.01601326 8.7185884,-4.0017078 c -1.7454984,2.3720609 -1.7354408,5.6174519 -6e-7,8.035443 z"
+         transform="scale(-0.6,-0.6)" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497476"
+     inkscape:cx="1292.007"
+     inkscape:cy="1910.9803"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1920"
+     inkscape:window-height="1026"
+     inkscape:window-x="-4"
+     inkscape:window-y="-4"
+     inkscape:window-maximized="1"
+     inkscape:snap-global="false">
+    <inkscape:grid
+       type="xygrid"
+       id="grid9497" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata16856">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,3160.6299)">
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:9.94553947;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9-6-9-1-1-5"
+       width="2711.3638"
+       height="1657.7611"
+       x="175.74678"
+       y="-1734.218"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.3161675px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1375.9544,-1217.0838 0,-31.6168"
+       id="path9548"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,573.20315,-2056.4095)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-3-2-5"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-44-9-8"><rect
+           y="1062.8572"
+           x="2320"
+           height="452.91293"
+           width="1415.9873"
+           id="rect20877-11-5-8" /></flowRegion><flowPara
+         style="font-size:137.5px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara65263-0-8">Neostel Camera</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:4.7425127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 1375.9544,-1255.0239 0,37.9401"
+       id="path11472"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <rect
+       style="fill:#ececec;stroke:#000000;stroke-width:8.05901527;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9-6-9-1-1"
+       width="1921.5405"
+       height="1535.9149"
+       x="915.02087"
+       y="-1658.3756"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <g
+       id="g9552"
+       transform="matrix(0.3161675,0,0,0.3161675,-550.16755,129.41121)"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         y="-4129.3481"
+         x="4792.9541"
+         height="1317.6104"
+         width="1129.0388"
+         id="rect9904-7-7-1-9-6"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:11.26990604;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <rect
+         y="-3761.165"
+         x="4942.1167"
+         height="835.44647"
+         width="835.44647"
+         id="rect9904-7-0"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:7.71953106;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <g
+         inkscape:export-ydpi="30"
+         inkscape:export-xdpi="30"
+         inkscape:export-filename="/home/zdun/Projects/UXFC_AGH/Design_Files/doc/Specification/Raport/pic/system_diagram.png"
+         transform="matrix(0.91011144,0,0,1.0456439,2848.424,-1121.5678)"
+         id="g4126-0-2-6-8">
+        <g
+           transform="translate(-148.03007,14.549913)"
+           id="g6789-6-4-9">
+          <rect
+             inkscape:export-ydpi="13.921021"
+             inkscape:export-xdpi="13.921021"
+             inkscape:export-filename="/home/pzdunek/Projects/SPEKTROP/Documentation/systembnw2.png"
+             y="-2438.1157"
+             x="2563.3811"
+             height="597.36017"
+             width="688.21765"
+             id="rect3106-3-9-9-7-7-3-2-6-6"
+             style="fill:#cccccc;stroke:#4d4d4d;stroke-width:12.75313473;stroke-miterlimit:4;stroke-dasharray:none;display:inline" />
+          <flowRoot
+             inkscape:export-ydpi="13.921021"
+             inkscape:export-xdpi="13.921021"
+             inkscape:export-filename="/home/pzdunek/Projects/SPEKTROP/Documentation/systembnw2.png"
+             transform="matrix(1.1590577,0,0,1.1590577,-1303.1909,-4816.3711)"
+             style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+             id="flowRoot4221-84-9-4-8-7-4"
+             xml:space="preserve"><flowRegion
+               id="flowRegion4223-2-6-65-6-8-8"><rect
+                 y="2230.957"
+                 x="3386.1357"
+                 height="277.14337"
+                 width="493.73645"
+                 id="rect4225-2-9-6-6-8-0" /></flowRegion><flowPara
+               id="flowPara3969-5-9-6-4"
+               style="font-size:124.23885345px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">CCD</flowPara><flowPara
+               style="font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+               id="flowPara6787-6-5-2" /></flowRoot>        </g>
+      </g>
+      <flowRoot
+         inkscape:export-ydpi="50"
+         inkscape:export-xdpi="50"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku/initial_spec/pic/system_diagram.png"
+         transform="matrix(0.91564275,0,0,0.91564275,-1878.0262,-9565.9706)"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         id="flowRoot9945-3-3"
+         xml:space="preserve"><flowRegion
+           id="flowRegion9947-7-1"><rect
+             y="6354.2856"
+             x="7668.5713"
+             height="182.85715"
+             width="837.14288"
+             id="rect9949-7-0" /></flowRegion><flowPara
+           style="font-size:80px;font-weight:bold;-inkscape-font-specification:Sans Bold"
+           id="flowPara9951-2-3">CCD Board</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-5"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(2326.1232,-5118.6452)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku/initial_spec/pic/system_diagram.png"
+         inkscape:export-xdpi="50"
+         inkscape:export-ydpi="50"><flowRegion
+           id="flowRegion20875-4-9-6-9"><rect
+             id="rect20877-1-3-9-5"
+             width="1422.8572"
+             height="262.85715"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara9519-5">Chamber</flowPara><flowPara
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara9574" /></flowRoot>    </g>
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,893.14259,-1980.5293)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-3-2-5-2"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-44-9-8-2"><rect
+           y="1062.8572"
+           x="2320"
+           height="452.91293"
+           width="1415.9873"
+           id="rect20877-11-5-8-7" /></flowRegion><flowPara
+         style="font-size:137.5px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara65263-0-8-4">Chassis</flowPara><flowPara
+         style="font-size:137.5px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara11062" /></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:0.3161675px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 1375.9544,-964.14982 0,0"
+       id="path11417"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,204.85319,-820.31116)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       id="flowRoot20873-8-8-5-2"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-5"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-1"
+           style="font-size:85px;font-weight:normal;-inkscape-font-specification:Sans" /></flowRegion><flowPara
+         id="flowPara9519-9"
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans">Control signals, RS485, I2C</flowPara><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara3579"> </flowPara></flowRoot>    <g
+       id="g6193"
+       transform="matrix(0.3161675,0,0,0.3161675,-32.873194,2076.0665)"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-11618.438"
+         x="8428.3018"
+         height="557.039"
+         width="771.47852"
+         id="rect9904-7-7-1-9-0-0"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:6.05727196;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1-2"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(5769.8789,-12590.157)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0-7"><rect
+             id="rect20877-1-3-9-8-4"
+             width="1448.8047"
+             height="419.66183"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara9625-9"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">Cooling</flowPara><flowPara
+           id="flowPara9717"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">sys. fluid</flowPara><flowPara
+           id="flowPara9719"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">connsectors</flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.72533846;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:18.90135314, 4.72533828;stroke-dashoffset:0"
+       d="m 1261.5897,-1506.9942 1368.5244,0"
+       id="path9665"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,689.7135,-1876.9197)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-25"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-3"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-8-3"
+           style="font-size:85px" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara9625-0">cooling fluid lines</flowPara></flowRoot>    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,689.7135,-1827.8666)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-25-1"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-3-1"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-8-3-4"
+           style="font-size:85px" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara9625-0-9">control signals &amp; current feedback</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:4.7425127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:14.2275375, 14.2275375;stroke-dashoffset:0"
+       d="m 1142.2826,-1181.2737 0,-211.9002"
+       id="path9550-0"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <g
+       id="g7922"
+       transform="matrix(0.3161675,0,0,0.3161675,-761.73325,99.768583)"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-5307.3691"
+         x="5655.2969"
+         height="625.37067"
+         width="742.6673"
+         id="rect9904-7-7-1-9-0"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:6.29706573;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(2989.528,-6240.206)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0"><rect
+             id="rect20877-1-3-9-8"
+             width="1429.4563"
+             height="467.64996"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara9607"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">Cooling </flowPara><flowPara
+           id="flowPara9625"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">system</flowPara><flowPara
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara16116">(TEC)</flowPara><flowPara
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara16118" /></flowRoot>    </g>
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,282.21149,-1625.1989)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-25-1-5"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-3-1-8"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-8-3-4-4"
+           style="font-size:85px" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara9625-0-9-0">heat transfer</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:7.09152365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 1319.3364,-975.83278 189.7005,0"
+       id="path65265-7-2-4"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,462.0729,-1344.3297)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       id="flowRoot20873-8-8-5-2-3-8-5"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-5-9-1-51"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-1-5-7-7"
+           style="font-size:85px;font-weight:normal;-inkscape-font-specification:Sans" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara6152-1-2">data</flowPara></flowRoot>    <g
+       id="g14080"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50"
+       transform="matrix(0.3161675,0,0,0.3161675,-906.48282,107.87445)">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-4764.7944"
+         x="7683.5356"
+         height="537.1582"
+         width="637.90942"
+         id="rect9904-7-7-1-9-0-1"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:12.88415527;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1-4"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(4970.6046,-5669.9116)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0-2"><rect
+             id="rect20877-1-3-9-8-32"
+             width="1422.8572"
+             height="262.85715"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara9625-1"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">AFE</flowPara><flowPara
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara4229">Board</flowPara></flowRoot>    </g>
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:4.7425127;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1"
+       width="411.30759"
+       height="398.3736"
+       x="1506.5817"
+       y="-1174.2744"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.5205432,0,0,0.5041742,55.413373,-1366.5862)"
+       style="font-size:78.08026886px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3"
+           style="font-size:78.08026886px" /></flowRegion><flowPara
+         style="font-size:78.08026886px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara20879-4-4">Mainboard</flowPara><flowPara
+         id="flowPara20881-8-8"
+         style="font-size:78.08026886px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold" /><flowPara
+         style="font-size:78.08026886px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara20883-6-3" /></flowRoot>    <g
+       id="g6306"
+       transform="matrix(0.3161675,0,0,0.3161675,-792.9827,172.46902)"
+       style="stroke-width:15;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-3983.3311"
+         x="7721.0127"
+         height="391.3898"
+         width="476.40302"
+         id="rect9904-7-7-1-9-0-1-7"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:15;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1-4-9"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="matrix(0.48118837,0,0,0.48118837,6435.8207,-4376.2335)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0-2-5"><rect
+             id="rect20877-1-3-9-8-32-4"
+             width="1684.1151"
+             height="595.36725"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           style="font-size:145.47317505px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara4229-1">ADCs</flowPara><flowPara
+           id="flowPara4333"
+           style="font-size:145.47317505px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">readout</flowPara></flowRoot>    </g>
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:2.83558464;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-2-6-2"
+       width="328.78629"
+       height="286.43558"
+       x="2106.8586"
+       y="-1099.734"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,1313.2778,-1332.0405)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-5-8-7"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-5-6-7"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-9-2-9" /></flowRegion><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara20879-4-6-8-3">Communication</flowPara><flowPara
+         id="flowPara65148-7-1"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">Board</flowPara><flowPara
+         id="flowPara20881-8-1-2-9"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold" /><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara20883-6-4-9-8" /></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:6.83095789;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:url(#Arrow2Mend-3);display:inline"
+       d="m 1923.7468,-937.89251 175.5593,0"
+       id="path65265-7-2-6"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,1056.4678,-1306.3896)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       id="flowRoot20873-8-8-5-2-3-8-50"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-5-9-1-2"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-1-5-7-86"
+           style="font-size:85px;font-weight:normal;-inkscape-font-specification:Sans" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara6152-1-4">control</flowPara></flowRoot>    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,1571.9125,-1321.2324)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       id="flowRoot20873-8-8-5-2-3-8-7-6"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-5-9-1-5-5"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-1-5-7-8-0"
+           style="font-size:85px;font-weight:normal;-inkscape-font-specification:Sans" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara5551">interfaces</flowPara></flowRoot>    <rect
+       style="fill:#ffffff;stroke:#333333;stroke-width:4.6787591;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect13057"
+       width="531.16138"
+       height="790.59991"
+       x="282.30701"
+       y="-1344.8932"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:2.50933504;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9"
+       width="271.57285"
+       height="271.57285"
+       x="412.10135"
+       y="-1077.2968"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,-411.32901,-1298.5046)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9" /></flowRegion><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara20883-6-3-7">Shutter</flowPara><flowPara
+         id="flowPara9519"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold" /></flowRoot>    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:1.56505358;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9-5"
+       width="250.59645"
+       height="107.49691"
+       x="332.8938"
+       y="-1209.7966"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,-499.97482,-1530.4835)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-9"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-1"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-3" /></flowRegion><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara20883-6-3-7-8">Shutter</flowPara><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara4971">electronics</flowPara><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara4973" /><flowPara
+         id="flowPara9519-3"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold" /></flowRoot>    <flowRoot
+       transform="matrix(0.3161675,0,0,0.3161675,245.04907,-1504.9326)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot5171-2-2-1-2"
+       xml:space="preserve"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50"><flowRegion
+         id="flowRegion5173-9-3-6-4"><rect
+           y="605.71429"
+           x="485.71429"
+           height="343.79669"
+           width="936.48248"
+           id="rect5175-7-6-1-2" /></flowRegion><flowPara
+         style="font-size:90px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara44982-4-4-6">Replacable shutter module</flowPara></flowRoot>    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:1.55510879;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9-0-1-9"
+       width="131.9185"
+       height="107.49691"
+       x="645.89966"
+       y="-1209.7966"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,-247.90592,-1505.4317)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-4-3"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-2-4"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-8-32-46" /></flowRegion><flowPara
+         id="flowPara4229-6"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">Motors</flowPara></flowRoot>    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:1.85172427;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9-5-7"
+       width="250.59645"
+       height="160.26292"
+       x="422.58951"
+       y="-765.14282"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,-410.98597,-1075.6635)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-9-3"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-1-4"><rect
+           y="1062.8572"
+           x="2320"
+           height="458.32907"
+           width="1426.8707"
+           id="rect20877-1-3-9-3-9" /></flowRegion><flowPara
+         id="flowPara9519-3-0"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">Shutter blades</flowPara><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara6275">position</flowPara><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara6277">sensors</flowPara></flowRoot>    <g
+       id="g14088"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50"
+       transform="matrix(0.31283889,0,0,0.3161675,-907.84177,109.30302)">
+      <path
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:connector-curvature="0"
+         inkscape:connector-type="polyline"
+         id="path65265-7-2-6-9"
+         d="m 9038.5317,-3592.1548 573.894,0"
+         style="fill:none;stroke:#000000;stroke-width:21.82048035;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend);display:inline" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-2-3-8-50-9"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+         transform="translate(6208.5781,-4773.1481)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-5-9-1-2-2"><rect
+             style="font-weight:normal;-inkscape-font-specification:Sans"
+             id="rect20877-1-3-9-1-5-7-86-5"
+             width="1422.8572"
+             height="262.85715"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara6152-1-4-5"
+           style="font-size:75px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans">data</flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:2.82324934;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow1Mstart);marker-end:none;display:inline"
+       d="m 329.94377,-1152.8866 -98.24189,0"
+       id="path9605"
+       inkscape:connector-type="orthogonal"
+       inkscape:connector-curvature="3"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <g
+       id="g10984"
+       transform="matrix(0.3161675,0,0,0.3161675,-1012.9541,946.32471)"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-6562.3188"
+         x="11534.017"
+         height="557.039"
+         width="771.47852"
+         id="rect9904-7-7-1-9-0-0-2"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:6.05727196;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1-2-2"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(8875.374,-7466.8215)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0-7-8"><rect
+             id="rect20877-1-3-9-8-4-2"
+             width="1448.8047"
+             height="419.66183"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara9719-0"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">SFP+</flowPara><flowPara
+           id="flowPara10982"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">(ethernet)</flowPara></flowRoot>    </g>
+    <g
+       id="g11108"
+       transform="matrix(0.3161675,0,0,0.3161675,-835.96984,-6.2298215)"
+       inkscape:connector-avoid="true"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-2949.5349"
+         x="10974.236"
+         height="557.039"
+         width="771.47852"
+         id="rect9904-7-7-1-9-0-0-2-4"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:6.05727196;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1-2-2-2"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(8315.5938,-3854.0375)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0-7-8-58"><rect
+             id="rect20877-1-3-9-8-4-2-6"
+             width="1448.8047"
+             height="419.66183"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara10982-6"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">UART</flowPara><flowPara
+           id="flowPara11106"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">(diagnostics)</flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.16167498;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:9.485025, 3.161675;stroke-dashoffset:0;marker-start:url(#Arrow1Mstart)"
+       d="m 1622.8572,-1228.7668 0,290.87412 290.8741,0"
+       id="path11915"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.16167498;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:9.485025, 3.161675;stroke-dashoffset:0;marker-start:url(#Arrow2Mstart);marker-end:none"
+       d="m 1572.2704,-1228.7668 0,252.93402 -63.2335,0"
+       id="path11917"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
+       d="m 1266.2318,-1458.6509 554.3681,0 0,277.7782"
+       id="path13267"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:7.09152365;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;display:inline"
+       d="m 1319.3364,-937.89268 189.7005,0"
+       id="path65265-7-2-4-5"
+       inkscape:connector-type="polyline"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,462.0729,-1306.3896)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       id="flowRoot20873-8-8-5-2-3-8-5-3"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-5-9-1-51-9"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-1-5-7-7-2"
+           style="font-size:85px;font-weight:normal;-inkscape-font-specification:Sans" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara6152-1-2-4">clk &amp; ctrl</flowPara><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara13304" /></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:3.16167498;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:9.485025, 3.161675;stroke-dashoffset:0;marker-start:url(#Arrow2Mstart);marker-end:none"
+       d="m 1509.0369,-937.89268 113.8203,0"
+       id="path13306"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.16167498;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:9.485025, 3.161675;stroke-dashoffset:0;marker-end:url(#Arrow2Mend)"
+       d="m 1686.0907,-1228.7668 0,139.1137"
+       id="path14076"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.16167498;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:9.485025, 3.161675;stroke-dashoffset:0;marker-end:url(#Arrow2Mend)"
+       d="m 1799.911,-1026.4196 113.8203,0"
+       id="path14078"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.7425127;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 231.72018,-1152.8866 0,708.21522"
+       id="path14711"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.12532949;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 583.77259,-1152.8866 61.78804,0"
+       id="path14882"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.20320177;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 371.35972,-1103.101 0,428.72816 50.54528,0"
+       id="path14884"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,-344.02301,-1520.1109)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-25-1-5-9"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-3-1-8-5"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-8-3-4-4-3"
+           style="font-size:85px" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara9625-0-9-0-2">ctrl</flowPara></flowRoot>    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,-615.85655,-1036.6841)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-25-1-5-9-5"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-3-1-8-5-2"><rect
+           y="1062.8572"
+           x="2320"
+           height="262.85715"
+           width="1422.8572"
+           id="rect20877-1-3-9-8-3-4-4-3-5"
+           style="font-size:85px" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara9625-0-9-0-2-8">ctrl</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:4.9283886;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#marker17898)"
+       d="m 231.15515,-447.54446 1586.52365,0 0,-322.17396"
+       id="path9499"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4.8110404;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-start:url(#marker17886);marker-end:url(#marker17898)"
+       d="m 2630.8745,-944.70927 -190.7832,0"
+       id="path10323"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <rect
+       style="fill:#f9f9f9;stroke:#000000;stroke-width:1.9151125;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       id="rect9904-7-7-1-9-0-0-2-4-3"
+       width="243.91643"
+       height="176.11763"
+       x="2635.2065"
+       y="-540.02289"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,1800.3366,-857.01971)"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="flowRoot20873-8-8-5-1-2-2-2-4"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-0-7-8-58-4"><rect
+           y="1062.8572"
+           x="2320"
+           height="419.66183"
+           width="1448.8047"
+           id="rect20877-1-3-9-8-4-2-6-5" /></flowRegion><flowPara
+         id="flowPara12483"
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">TRIGGER</flowPara><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara12238">INPUTS</flowPara><flowPara
+         style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+         id="flowPara12240">(optocoupled)</flowPara></flowRoot>    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       x="1262.8571"
+       y="2705.8494"
+       id="text8586"
+       sodipodi:linespacing="125%"
+       transform="translate(0,-3160.6299)"><tspan
+         sodipodi:role="line"
+         id="tspan8588"
+         x="1262.8571"
+         y="2705.8494" /></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:8,4;stroke-dashoffset:0"
+       d="m 1862.7213,-938.64842 0,163.6448"
+       id="path8592"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3.24581504;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6.49163015, 3.24581507;stroke-dashoffset:0"
+       d="m 1817.7695,-939.2175 0,162.61396"
+       id="path8592-0"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:13.3582592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 1862.2162,-932.34302 0,-11.09548"
+       id="path8592-04"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <g
+       id="g11108-4-0"
+       transform="matrix(0.3161675,0,0,0.3161675,-835.0206,581.48841)"
+       inkscape:connector-avoid="true"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50">
+      <rect
+         inkscape:export-ydpi="100"
+         inkscape:export-xdpi="100"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         y="-2949.5349"
+         x="10974.236"
+         height="557.039"
+         width="771.47852"
+         id="rect9904-7-7-1-9-0-0-2-4-3-7"
+         style="fill:#f9f9f9;stroke:#000000;stroke-width:6.05727196;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <flowRoot
+         xml:space="preserve"
+         id="flowRoot20873-8-8-5-1-2-2-2-4-9"
+         style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+         transform="translate(8315.5938,-3854.0375)"
+         inkscape:export-filename="/home/zdun/Projects/Neostel/doc/neostel-doku2/system_diagram.png"
+         inkscape:export-xdpi="100"
+         inkscape:export-ydpi="100"><flowRegion
+           id="flowRegion20875-4-9-6-0-7-8-58-4-0"><rect
+             id="rect20877-1-3-9-8-4-2-6-5-4"
+             width="1448.8047"
+             height="419.66183"
+             x="2320"
+             y="1062.8572" /></flowRegion><flowPara
+           id="flowPara11106-5-4"
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold">Power</flowPara><flowPara
+           style="font-size:100px;font-weight:bold;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans Bold"
+           id="flowPara12483-7">12/24 V</flowPara></flowRoot>    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:5.4821434;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;marker-end:url(#Arrow2Mend-3)"
+       d="m 2639.5441,-449.17546 -777.6226,0 0,-320.91837"
+       id="path12261"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+    <flowRoot
+       inkscape:export-ydpi="50"
+       inkscape:export-xdpi="50"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       transform="matrix(0.3161675,0,0,0.3161675,1235.6583,-825.73826)"
+       style="font-size:85px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       id="flowRoot20873-8-8-5-2-3-8-7-6-9"
+       xml:space="preserve"><flowRegion
+         id="flowRegion20875-4-9-6-5-9-1-5-5-7"><rect
+           y="1062.8572"
+           x="2320"
+           height="259.6622"
+           width="1793.4762"
+           id="rect20877-1-3-9-1-5-7-8-0-6"
+           style="font-size:85px;font-weight:normal;-inkscape-font-specification:Sans" /></flowRegion><flowPara
+         style="font-size:85px;font-weight:normal;text-align:center;text-anchor:middle;-inkscape-font-specification:Sans"
+         id="flowPara5551-9">TRIG, ARM, OPEN/CLOSE BLADES #1 #2</flowPara></flowRoot>    <path
+       style="fill:none;stroke:#000000;stroke-width:13.3582592;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
+       d="m 1817.7695,-932.34296 0,-11.0955"
+       id="path8592-04-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/zdun/Projects/Neostel/doc/docu2/sys.png"
+       inkscape:export-xdpi="50"
+       inkscape:export-ydpi="50" />
+  </g>
+</svg>

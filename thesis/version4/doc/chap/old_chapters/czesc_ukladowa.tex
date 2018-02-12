@@ -1,0 +1,645 @@
+% TeX encoding = utf8
+% TeX spellcheck = pl_PL
+
+Niniejszy rozdział zawiera opis projektów elektrycznych poszczególnych modułów akceleratora obliczeniowego. Głównymi modułami w projektowanym urządzeniu są moduły akceleracji sprzętowej, jednostek przetwarzania i przełączania interfejsów. Pozostałe moduły tj. system generacji sygnałów zegarowych, IPMI, sekcji zasilania zapewniają poprawną pracę całego urządzenia. 
+
+
+\section{Moduł akceleracji sprzętowej}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Układ FPGA XC7A200T}
+Moduł akceleracji sprzętowej oparty jest o układ FPGA firmy Xilinx \cite{COMPANY:Xilinx} z serii 7 - Artix 7 XC7A200T w obudowie FFG1156, posiadający 16 transceiver'ów GTP, 215 tys. komórek logicznych oraz 10 banków udostępniających 600 wejść/wyjść (IO) dla projektanta. Zdecydowano się na ten układ ze względu na doświadczenia przy pracy z nim w innych projektach w laboratorium PERG. Układy z serii Artix odznaczają się niskim poborem mocy oraz niską ceną. Wybrany został układ w obudowie FFG1156, bo jako jedyny z serii posiada wystarczającą ilość transceiver'ów GTP.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{grafika/xc7a200t_banks.png}
+\caption{Rozmieszczenie banków w układzie FPGA XC7A200T}
+\label{ARTIX_BANKS}
+\end{figure}
+
+Projekt schematów elektrycznych został wykonany w oparciu o projekt \textit{AMC FMC Carrier} gdzie został wykorzystany ten sam układ. Projekt jest dostępny na \textit{Open Hardware Repository} \cite{OHWR}.
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Konfiguracja układu FPGA}
+Układy Xilinx FPGA z serii 7 konfigurują się poprzez załadownie programu do wewnętrznej pamięci po doprowadzeniu zasilania. Źródłem programu może być zewnętrzna pamięć nieulotna bądź inny układ scalony np. mikrokontroler lub procesor DSP. Tryb konfiguracji jest zależy od stanu pinów \textbf{M[2:0]} znajdujących się w banku 0, który ustala się poprzez rezystory podciągające do zasilania albo masy (\textit{ang. pull-up, pull-down}).
+
+Układ FPGA w akceleratorze jest uruchamiany w trybie \textit{Slave-serial} gdy piny \textbf{M[2:0]} są podciągnięte do zasilania 3.3 V (\textbf{M[2:0] = 111}). W tym stanie wymagane jest doprowadzenie zewnętrznego zegara \textbf{CCLK}, w akceleratorze obliczeniowym jest on doprowadzony z mikrokontrolera zarządzającego, układu LPC1764, który steruje załadowaniem programu do układu FPGA z pamięci FLASH. Wykorzystane zostały dwa układy pamięci nieulotnej firmy Micron \cite{COMPANY:MICRON} M25P128 \cite{M25P128} w obudowie DFN8, zawierające po 16 MB pamięci typu NOR FLASH i komunikujących się poprzez interfejs SPI. Zastosowano dwa układy pamięci aby mieć dostęp do niej zarówno z FPGA jak i mikrokontrolera oraz w celu umieszczenia tam danych konfiguracyjnych np. tablic kalibracyjnych. Istnieje również możliwość wykorzystania drugiej pamięci jako pamięci konfiguracyjnej FPGA fail-safe. W wypadku gdy program zapisany na jednej kości ulegnie uszkodzeniu, istnieje możliwość załadowania programu z drugiej kości, bez potrzeby ingerencji w obwód drukowany. Dodano również alternatywny footprint w razie problemów z dostępnością pamięci w obudowie DFN8. Układ FPGA jest dołączony do pamięci poprzez piny z banku 14: \textbf{MOSI}, \textbf{DIN}, \textbf{D2}, \textbf{D3} i \textbf{FCS\_B}.
+
+
+Załadowanie pamięci programu FPGA w trybie Slave-Serial jest wykonywane przy pomocy mikrokontrolera (LPC1764), który przesyła sygnał zegarowy CCLK do FPGA. Pamięć programu jest załadowana bit po bit'cie zgodnie z narastającym zboczem CCLK. 
+
+Pin \textbf{CFGBVS} (\textit{ang. Configuration Banks Voltage Select Pin}) w banku 0 jest ustawiony w stan wysoki, co determinuje dozwolone napięcia zasilania banków 0 oraz 14 i 15 gdzie znajdują się dodatkowe piny konfiguracyjne. Gdy \textbf{CFGBVS} jest w stanie wysokim, dozwolone napięcia to 3.3 V oraz 2.5 V; gdy w niskim odpowiednio 1.8 V oraz 1.5 V. W projekcie bank 0 oraz 14 są zasilane z 3.3 V, natomiast bank 15 z napięcia 2.5 V.
+
+Dodatkowo układ FPGA można zaprogramować (załadować pamięć programu) poprzez interfejs JTAG za pomocą programatora i komputera PC z odpowiednim oprogramowaniem. Interfejs JTAG składa się z wejść/wyjść: \textbf{TMS}, \textbf{TCK}, \textbf{TDI} oraz \textbf{TDO} (opcjonalnie \textbf{TRST}). 
+
+Piny \textbf{PROGRAM\_B} oraz \textbf{INIT\_B} są, zgodnie z dokumentacją, dołączone do zasilania poprzez rezystory 4.7 k$\Omega$. Dodatkowo \textbf{INIT\_B} jest dołączony do mikrokontrolera w celu możliwości wykonania ponownego załadowania programu bez konieczności resetowania całego urządzenia. Pin \textbf{DONE} jest dołączony do rezystora podciągającego 330 $\Omega$ oraz do obwodu diody LED indykującego poprawną aktualizację zawartości pamięci flash z konfiguracją FPGA.
+
+Pin \textbf{PUDC\_B} jest dołączony do masy przez 10k$\Omega$ rezystor, pin ten uruchamia wewnętrzne podciągnięcie do zasilania pinów (\textit{SelectIOs}) po dołączeniu zasilania i podczas konfiguracji.
+
+Bank 0 zawiera również piny \textbf{DXP}, \textbf{DXN} które są wyjściami czujnika temperatury. Dołączone zostały do układu firmy Maxim \cite{COMPANY:MAXIM}, MAX6642ATT90 \cite{MAX6642ATT90} kontrolowanego przez mikrokontroler LPC1764 poprzez interfejs I2C.
+
+Więcej informacji dotyczących konfiguracji układów FPGA firmy Xilinx z serii 7 można znaleźć w dokumentacji producenta \cite{FPGA:UG470}.
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Opis połączeń banków 14, 15, 17, 34}
+
+ \paragraph{Bank 14}
+Bank 14 jest zasilany z napięcia 3.3 V i dołączono do niego następujące peryferia:
+\begin{itemize}
+\item
+interfejs komunikacyjny ze złącz miniSAS
+\item
+MLVDS
+\item
+I2C (dwa oddzielne interfesy dla pamięci flash i LPC1764)
+\item
+diody LED
+\end{itemize}
+
+ \paragraph{Bank 15}
+Bank 15 jest zasilany z napięcia 2.5V i dołączone są do niego sygnały kontrolne z układu przełącznika PCIe PEX8616  \cite{PEX8616} firmy PLX \cite{COMPANY:PLX}. 
+
+ \paragraph{Bank 17 i 34}
+Banki 17 i 34 służą do komunikacji z procesorami DSP. Banki są zasilane z napięcia 1.8 V. Dołączone interfejsy to:
+ \begin{itemize}
+\item
+Piny GPIO sterujące trybem uruchomienia procesora
+\item
+Piny resetu
+\item
+Timer
+\item
+SPI
+\end{itemize}
+
+\begin{figure}[here]
+\begin{center}
+\includegraphics[width=12cm]{grafika/banks_fpga.png}
+\end{center}
+\caption{Połączenia banków układu FPGA z peryferiami}
+\label{FPGA_BANKS_CONN}
+\end{figure}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Połączenia transceiverów GTP}
+Układ XC7A200T w obudowie FFG1156 zawiera 4 tzw. GTP Quads \cite{FPGA:GTP} 113, 116, 213 oraz 216 każdy zawierający po 4 linie szybkich interfejsów szeregowych \textbf{GTP} (\textit{Gigabit Transceiver Port}). Do Quadów dołączone są interfejsy szeregowe SAS, SRIO i PCIe oraz sygnały zegarowe. 
+\begin{itemize}
+\item
+Quad 113 - SRIO
+\item
+Quad 213 - PCIe Gen. 2
+\item
+Quad 216 - SAS
+\item
+Quad 116 - SAS
+
+\end{itemize}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Sygnały zegarowe}
+Układ FPGA potrzebuje do poprawnej pracy 9 sygnałów zegarowych:
+\begin{itemize}
+\item
+sygnał zegarowy PCIe dołączony do GTP Quad 213
+\item
+2 sygnały zegarowe do interfejsu SAS dołączone do GTP Quad 216 i 116
+\item
+sygnał zegarowy interfejsu SRIO dołączony do GTP Quad 213
+\item
+2 sygnały zegarowe dla kontrolerów pamięci SDRAM
+\item
+zegar CCLK (tylko podczas konfiguracji)
+\end{itemize}
+Sygnały zegarowe są wygenerowane przez układy CDCUN1208 \cite{CDCUN1208} oraz AD9522 \cite{AD9522}.
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Zasilanie}
+Układ Xilinx Artix 7 jest zasilany z napięć 1.0 V, 1.2 V, 1.8 V, 2.5 V oraz 3.3 V, gdzie napięcia 1.0 V, 1.2 V i 3.3 V służą do zasilania wewnętrznych systemów układu, a pozostałe zasilają poszczególne banki \cite{FPGA:DS181}. 
+% \begin{figure}[here]
+%\begin{center}
+%\includegraphics[width=15cm]{grafika/dc_table_fpga.png}
+%\end{center}
+%\caption{Napięcia zasilania układu FPGA \cite{DS181}}
+%\label{FPGA_SUPPLY}
+%\end{figure}
+
+
+\begin{table}[h]
+	\caption{Napięcia zasilające i pobór prądu przez układ FPGA }
+    \begin{tabular}{c p{7.5cm} c c}
+	\toprule
+    \textbf{Linia} & \textbf{Opis} & \textbf{Napięcie [V]} & \textbf{Prąd [A]}\\
+    \midrule
+   VCCINT & 		Internal supply voltage 						&	1.0			&	2.926\\
+    VCCAUX & 	Auxiliary supply voltage 						& 	1.8			&	0.303\\		
+    VCCBRAM & 	Block RAM supply voltage 						& 	1.0			&	0.043\\
+    VCCO & 		Supply voltage for 3.3 V HR I/O banks 				& 	3.3 			&	0.003\\
+    VIN & 		Input voltage 							&	 (-0.2, VCCO+0.2)	&	0.003\\
+    VCCBATT & 	Battery voltage 							& 	1.8			&	BD\\
+    VMGTAVCC & 	Analog supply voltage for GTP transceivers			& 	1.0			&	1.116\\
+    VMGTAVTT & 	Analog supply voltage for GTP termination			& 	1.2			&	0.952\\
+    VDCADC & 	XADC supply relative to GNDADC 				&	1.8			&	0.025\\
+    VREFP & 		Externally supplied reference voltage 				& 	1.25			&	BD\\
+    \toprule
+    \end{tabular}
+
+	\label{tbl:fpga_power}
+\end{table}
+Wrażliwe napięcia zostały oddzielone przez zastosowanie filtrów. Ilość i wielkość kondensatorów blokujących jest zgodna z zaleceniami producenta \cite{UG483}. 
+
+W tabeli [\ref{tbl:fpga_power}] znajduje się zestawienie wszystkich linii zasilających układ FPGA oraz estymowany pobór prądu wyliczony za pomocą arkusza kalkulacyjnego dostarczonego przez producenta \textit{Xilinx Power Estimator} \cite{XPE} \cite{XPE:UG1} \cite{XPE:UG2}. Wyliczenia zostały przeprowadzone dla typowego wykorzystania jednostek logicznych (70\%), 16 działających transceiver'ów GTP (3.3 Gbps) oraz dwóch kontrolerów pamięci SDRAM. Arkusz dołączono na płycie CD [\ref{CDROM}].
+
+\subsubsection{Nieużywane banki}
+Banki 16, 35, 36 nie zostały wykorzystane w projekcie.
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Pamięć SDRAM}
+Pamięć SDRAM o wspólnych liniach adresowych jest nazywana (\textit{rank}). Do układu FPGA dołączone zostały dwa ranki synchronicznej pamięci dynamicznej SDRAM DDR3-1600, każda po 4 kości firmy Micron MT41J512M8RA-125:D \cite{MT41}. Szerokość szyny adresowej to 16 bitów, a szyny danych to 32 bity (po 8 bitów na kość), częstotliwość pracy to 800 MHz. Każdy rank obsługiwany jest przez dwa banki. Na bankach znajdują się tzw. \textit{Byte Groups} do których należy dołączyć sygnały danych, oraz strobe z poszczególnych kości. Nie można pamięci dołączyć w dowolny sposób. Jeden bank obsługuje sygnały kontrolne (\textit{Control}), poleceń (\textit{Command}), sygnał zegarowy, oraz sygnały adresowe. Do drugiego natomiast dołączone są sygnały danych z pamięci. 
+
+Banki obsługujące pamięci pracują w standardzie sygnałowym SSTL. Wymagane jest, aby piny VREF były dołączone do napięcia referencyjnego.  Maksymalnie do układu można dołączyć 8 GB pamięci. Cztery kości dołączone są do banków 12 i 13, następne cztery do 32 i 33.
+
+\begin{figure}[here]
+\begin{center}
+\includegraphics[width=12cm]{grafika/sdram_block.png}
+\end{center}
+\caption{Sposób dołączenia pamięci SDRAM do układu FPGA}
+\label{FPGA_SDRAM_BLOCK}
+\end{figure}
+
+
+
+%##################################################################################
+\section{Moduły przetwarzania danych}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Procesor DSP}
+Sercem jednostek przetwarzania jest układ \textit{Texas Instruments} TMS320C6678. Jest to ośmiordzeniowy procesor DSP pracujący na częstotliwości 1250 MHz. Układ posiada wiele interfejsów komunikacyjnych takich jak Hyperlink, SRIO, PCIe Gen. 2.0 , SGMII, TSIP. Główną zaletą tego układu jest bardzo duża moc obliczeniowa, która wynosi teoretycznie 160 GFLOPs przy niskim poborze mocy wynoszącym około 10 W. Pod tym względem układ nie ma sobie równych na rynku dlatego zdecydowano się na zastosowanie go w tym projekcie. 
+
+Zadaniem procesorów jest przetwarzanie danych odebranych od układu FPGA \cite{DATASHEET:TMS}. Projekt schematów jest oparty o referencyjny projekt modułu ewaluacyjnego wykonany przez firmę Advantech \cite{TMDXEVM6678L} oraz o dokumentację producenta \cite{DSP:HDG}.  
+
+\subsubsection{PCIe}
+Procesor zawiera dwie linie \textit{PCIe Gen. 2.0}. Oba dołączone są do układu PEX8616. Połączenie ma sprzężenie pojemnościowe. Interfejs jest bardzo popularny w systemach wbudowanych jako ewolucja magistrali  równoległej PCI. Maksymalna przepustowość interfejsu to 2.5 Gbps na linię. 
+
+\subsubsection{Serial Rapid IO}
+Układ posiada 4 interfejsy SRIO (\textit{Serial Rapid IO}), które są dołączone do układu przełącznika gigabitowego  firmy Analog Devices \cite{COMPANY:ANALOG}, układu ADN4604 \cite{ADN4604}. SRIO jest to szybki interfejs szeregowy pozwalający na przesył danych z prędkością \textit{5 Gbps} na linię, czyli sumarycznie \textit{20 Gbps}. 
+
+\subsubsection{Gigabit Ethernet}
+Procesor dysponuje dwoma interfejsami SGMII, które pozwalają na komunikację w sieciach lokalnych z prędkością 1 Gbps. Jeden interfejs jest dołączony do gniazda RJ45 poprzez PHY firmy Vitesse \cite{COMPANY:VITESSE} układ VSC8221 \cite{VSC8221}. Pozwala to na komunikację  z procesorami DSP bezpośrednio poprzez sieć lokalną. Drugi jest dołączony bezpośrednio do złącza krawędziowego.
+\subsubsection{Hyperlink}
+Hyperlink jest szybkim interfejsem szeregowym obsługiwanym przez procesory DSP firmy \textit{Texas Instruments}. Przepustowość tego interfejsu to aż 12.5 Gbps na linię. Zgodnie ze specyfikacją \cite{DSP:HDG} interfejs ten ma sprzężenie DC, jednak według informacji umieszczonej na oficjalnym forum \textit{Texas Instruments}  \url{http://e2e.ti.com/} \cite{HYPERLINK_AC} interfejs może również pracować ze sprzężeniem AC. Hyperlink w akceleratorze obliczeniowym służy do przesyłu danych pomiędzy procesorami, maksymalna przepustowość to 50 Gbps (4 x 12.5 Gbps). Przydatną właściwością interfejsu jest możliwość dowolnego zamieniania linii oraz par różnicowych w celu ułatwienia prowadzenia połączeń na PCB. 
+Poza liniami przesyłającymi dane, interfejs zawiera dodatkowe linie dedykowane specjalnemu protokołowi komunikacyjnemu. 
+
+\subsubsection{Pozostałe interfejsy}
+Procesor posiada ponadto interfejsy TSIP, AIF, I2C, SPI, oraz liczniki. TSIP oraz AIF nie są wykorzystane w projekcie. Wyprowadzenia pozostałych interfejsów zostały dołączone bezpośrednio do układu FPGA.
+\subsubsection{SPI}
+DSP komunikuje się z pamięcią NOR oraz FPGA za pomocą interfejsu SPI. Sygnał zegara jest rozdzielony za pomocą bufora SN74AUC2G07 \cite{SN74AUC2G07}. Sygnał zegarowy do układu FPGA jest dołączony do wejścia MRCC, które jest dedykowanym wejściem zegarowym \cite{FPGA:UG472}. Schemat połączeń pozwala na uruchomienie DSP z pamięci NOR (\textit{Second Level Bootloader}) oraz na komunikację z FPGA poprzez interfejs SPI. 
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Sygnały zegarowe}
+Procesor DSP TMS320C6678 potrzebuje do pracy, w zależności od wykorzystywanych peryferiów, 6 sygnałów zegarowych.
+\begin{table}[h]
+\ra{1.3}
+\centering
+	\caption{Sygnały zegarowe procesora DSP}
+    \begin{tabular}{p{3cm}  p{7.5cm}  c}
+	\toprule
+    \textbf{Sygnał} & \textbf{Opis} & \textbf{Czestotliwość [MHz]}\\
+    \midrule
+    CORECLK & 		sygnał zegarowy rdzenia procesora & 											100\\
+    DDRCLK & 		sygnał zegarowy kontrolera pamięci DDR3 & 										66.67 \\
+    SRIOSGMIICLK & 	sygnał zegarowy kontrolera interfejsów SGMII oraz SRIO & 							312.5\\
+    PCIECLK & 		sygnał zegarowy dla kontrolera magistrali PCI Express Gen 2 & 							100\\
+    MCMCLK & 		sygnał zegarowy magistrali Hyperlink &											312.5\\
+    PASSCLK & 		sygnał zegarowy dla koprocesora sieciowego & 									100\\
+	\toprule
+    \end{tabular}
+
+	\label{tbl:dsp_clocks}
+\end{table}
+
+Wszystkie sygnały zegarowe są typu LVDS o sprzężeniu pojemnościowym. Możliwe jest też dołączenie zegarów HCSL przy zastosowaniu odpowiedniej terminacji. Sygnały zegarowe są generowane przez system dystrybucji zegara, a dokładniej przez układy CDCM6208 \cite{CDCM6208} i 5V41068A \cite{5V41068A}. Dokładny opis wejść zegarowych procesora DSP można znaleźć w dokumentacji producenta \cite{DSP:CLOCK}.
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsubsection{Zasilanie}
+Do pracy procesor DSP TMS320C6678 wymaga 4 podstawowych napięć zasilających oraz dodatkowych wymagających filtracji.
+
+\begin{table}[h]
+\ra{1.3}
+\centering
+	\caption{Napięcia zasilające i pobór prądu przez procesor DSP}
+    \begin{tabular}{p{3cm} p{7cm} c c}
+	\toprule
+    \textbf{Linia} & \textbf{Opis} & \textbf{Napięcie [V]} & \textbf{Prąd [A]}\\
+    \midrule
+    CVDD & 		core logic adjustable supply & 			(0.9 - 1.05)	&	7.3\\
+    CVDD1 & 		fixed internal supply & 				1.0		&	1.5\\
+    VDDTn& 		filtered SerDes termination voltage & 		1.0		&	BD\\
+    DVDD18 & 	LVCMOS buffers and PLL supply & 		1.8		&	0.021\\
+    AVDDAn & 	filtered PLL supply &				1.8		&	BD\\
+    DVDD15& 		DDR3 buffers supply & 				1.5		&	0.414\\
+    VDDRn & 		filtered SerDes supply & 				1.5		&	BD\\
+    VTT & 		DDR3 termination supply &			0.75		&	BD\\
+    VREF & 		DDR3 reference supply &				0.75		&	BD\\
+	\toprule
+    \end{tabular}
+
+	\label{tbl:dsp_voltages}
+\end{table}
+
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=10cm]{grafika/dsp_power_hdg.png}
+\end{center}
+\caption{Schemat napięć zasilających procesora DSP}
+\label{DSP_POWER}
+\end{figure}
+
+
+\subsubsection{Smartreflex}   
+Napięcie rdzenia procesora DSP wykorzystuje specjalny interfejs \textbf{SmartReflex} typu C, który reguluje napięcie rdzenia po wyjściu procesora ze stanu resetu. W przypadku procesorów TMS320C6678 napięcie rdzenia jest uzależnione od procesu produkcji i może zawierać się w przedziale od 0.9 V do 1.05 V. Stan pinów VID[0:3] określa napięcie rdzenia. Do obsługi tego interfejsu zostały wyprodukowane dedykowane układy kontrolerów przetwornic oraz samych tranzystorów przełączających z serii UCD92xx oraz UCD72xx. W akceleratorze zastosowano te same układy jak w module ewaluacyjnym z tą różnicą iż oba wyjścia UCD7242 \cite{UCD7242} generują napięcie regulowane rdzenia (\textit{adjustable core voltage supply}) do każdego z procesorów (w module ewaluacyjnym UCD7242 generuje napięcie CVDD i CVDD1). Ponieważ układ UCD9222 \cite{UCD9222} pracuje z napięciem zasilania 3.3 V, a procesor DSP 1.8 V wymagany jest translator poziomów. Zastosowano układ firmy \textit{Texas Instruments} SN74AVC4T \cite{SN74AVC4T}. CVDD1 w projekcie akceleratora obliczeniowego odpowiada linii P1V0.
+\subsubsection{Pamieci flash procesora DSP}
+Każdy z procesorów DSP posiada dostęp do trzech układów pamięci nieulotnej FLASH: EEPROM, NOR i NAND. Dostęp do pamięci EEPROM jest zapewniony poprzez interfejs I2C, do NOR poprzez SPI, a NAND wykorzystuje specjalny interfejs komunikacyjny EMIF16. Konfiguracja pamięci została zaadaptowana z modułu ewaluacyjnego TMS320C6678. Dodatkowo piny \textbf{WRITE\_PROTECT} są dołączone do układu FPGA w celu zabezpieczenia zmiany pamięci nieulotnej. Taka konfiguracja pozwala na uruchamianie procesora w różnych trybach pracy, jak również na uruchomienie systemu operacyjnego Linux z pamięci NANDa \cite{DSP:BOOT}.
+\subsubsection{Pamięć SPI NOR FLASH}
+Pamięcią NOR jest układ N25Q128 \cite{N25Q128} o pojemności 16 MB. Układ komunikuje się z procesorem za pomocą interfejsu SPI.
+\subsubsection{Pamięć EEPROM}
+Zastosowana pamięć EEPROM jest to układ M24M01 \cite{M24M01} firmy STMicroelectronics \cite{STM}. Układ wykorzystuje interfejs I2C do komunikacji z procesorem DSP.
+\subsubsection{Pamięć NAND FLASH }
+Zastosowano pamięć NAND FLASH MT29F2G16 \cite{MT29F2G16} o pojemności 64 MB. Różni się ona od tej zastosowanej w module ewaluacyjnym szerokością szyny danych (16 linii zamiast 8). Taka zmiana będzie wymagała modyfikacji kodu uruchamiającego procesor z EMIF16 udostępnionego przez producenta. Powodem zmiany był brak kompatybilnej pamięci o 8 liniach danych na rynku. 
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Pamięć SDRAM }
+Procesor DSP ma możliwość zapisu danych na szybkiej pamięci dynamicznej SDRAM-1333 o częstotliwości pracy 667 MHz. Szyna adresowa ma 16 bitów, natomiast szyna danych 64 bity. Istnieje możliwość dołączenia piątej kości w celu dodania funkcji ECC. 
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Interfejs Gigabit Ethernet}
+\subsubsection{PHY Vitesse VSC8221}
+Układ Vitesse VSC8221 \cite{VSC8221} jest tzw. PHY (\textit{ang. OSI PHYsical layer}) interfejsu Gigabit Ethernet. Układ łączy warstwę MAC procesora DSP ze światem zewnętrznym poprzez złącze RJ45. Komunikacja między procesorem DSP a układem realizującym warstwę fizyczną odbywa się przez interfejs SGMII (\textit{Serial Gigabit Media Independent Interface}) wraz z dodatkowymi informacjami przesyłanymi liniami \textbf{MDI, MDO}. 
+
+Zdecydowano się na ten układ ze względu na kompaktową obudowę i mały pobór mocy (\textless 700 mW). Dodatkowym czynnikiem była dostępność układu wykorzystanego w module ewaluacyjnym procesora TMS320C6678,  88E1111 \cite{88E1111} firmy Marvell \cite{COMPANY:MARVELL}, którego zamówienie w małej ilości jest problematyczne. 
+
+Układ jest zasilany z napięcia 3.3 V i posiada wewnętrzne stabilizatory generujące napięcie 1.2 V eliminując tym samym konieczność podłączenia kolejnego obciążenia do linii 1.2 V akceleratora. Istnieje możliwość dołączenia nieulotnej pamięci EEPROM, którą przewidziano w projekcie jako opcjonalną. Układ jest skonfigurowany do pracy w trybie SGMII bez sygnału zegara referencyjnego; tryb jest ustalany za pomocą pinów \textbf{CMODE[0:3]}. Dodatkowo w celu kontroli pracy układu piny \textbf{MODEDEF0}, \textbf{SIGDET} i \textbf{SRESETz} zostały dołączone do mikrokontrolera LPC1764. 
+
+ Pin \textbf{MODEDEF0} jest pinem wyjściowym sygnalizującym poprawną inicjalizację układu, \textbf{SIGED} jest sygnałem wyjściowym indykującym stan transmisji. \textbf{SRESET} natomiast resetuje PHY z zachowaniem konfiguracji rejestrów wewnętrznych. 
+
+%##################################################################################
+\section{Moduł przełączania interfejsów}
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Układ przełącznika interfejsu \textit{Serial Rapid IO} }
+Istnieje możliwość modyfikacji połączeń pomiędzy jednostkami przetwarzania, akceleracji sprzętowej i \textit{Backplane} dzięki zastosowaniu w akceleratorze przełącznika gigabitowego (\textit{gigabit crosspoint switch}), układu ADN4604 \cite{ADN4604}. Przełącznik posiada 16 wejść i wyjść różnicowych, pomiędzy którymi można się przełączać na zasadzie każdy z każdym oraz jeden do wszystkich. Układ jest zasilany z napięcia 3.3 V, przełączanie jest sterowane za pomocą mikrokontrolera LPC1764 poprzez interfejs I2C. 
+
+Procesory DSP sa dołączone do ADN4604 za pomoca interfejsu SRIO (4 linie), natomiast FPGA wykorzystuje 4 linie GTP, które również obsługują interfejs SRIO. Do przełącznika jest ponadto dołączona magistrala Fat Pipe 2 ze złącza AMC. Fat Pipe jest grupą portów na złączu AMC służąca połączeniu wielo-liniowych interfejsów, takich jak np. PCIe czy SRIO [patrz \ref{AMC_CON}]. Na złączu AMC znajdują się dwie grupy Fat Pipe po cztery linie Tx/Rx. Taka sieć połączeń pozwala na elastyczną komunikację o dużej przepustowości miedzy układami. 
+
+Przykładowym scenariuszem pracy może być sytuacja kiedy FPGA przetwarza wstępnie dane otrzymane z interfejsu SAS i przesyła je do jednej jednostki przetwarzania za pomocą wszystkich linii, gdyż wymagane przetwarzanie potrzebuje dużej przepustowości (4 linie SRIO), z drugiej strony może zdarzyć się sytuacja kiedy przepustowość nie będzie istotna a moc obliczeniowa będzie kluczowym parametrem. Wtedy jednostka akwizycji ma możliwość przesłania danych do obu procesorów DSP, jak również jednocześnie do DSP i płyty matki. Zastosowanie tego układu zwiększa elastyczność i uniwersalność akceleratora.
+
+
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\subsection{Układ przełącznika interfejsu \textit{PCI Express 2.0}}
+
+Inteligentny przełącznik PCI Express (\textit{PCIe Switch}) to układ PEX8616 \cite{PEX8616}, który posiada 4 porty \textit{PCIe Gen 2.0}, co pozwala na dołączenie do niego obu procesorów DSP, układu FPGA i złącza AMC.  Układ TMS320C6678 przesyła dane do przełącznika za pomocą dwóch linii, FPGA za pomocą 4 portów GTP, które mogą być skonfigurowane do pracy w interfejsie \textit{PCIe}. Czwarty port jest podłączony do złącza AMC, do portu Fat Pipe 1. Na złączu krawędziowym znajdują się cztery linie interfejsu \textit{PCIe}. Układ pozwala na transparentną transmisję danych między portami.
+
+
+Schematy przełącznika zostały zaprojektowane w oparciu o referencyjny moduł ewaluacyjny \textbf{PEX8616 RDK} oraz o projekt OHWR \textit{Beam Position Monitor, Digital Back End} \cite{BPMDBM} gdzie został wykorzystany podobny układ jednak o większej ilości portów.
+
+Porty są skonfigurowane jako 4 liniowe, za pomocą rezystorów podciągających dołączonych do pinów \textbf{STRAP\_STN0\_PORTCFG1}, \textbf{STRAP\_STN1\_PORTCFG0}. Mimo tego że DSP są dołączone za pomocą dwóch linii do przełącznika, układ PEX8616 dzięki funkcji autonegocjacji sam zmniejszy ilość pracujących linii. Funkcja ta przydatna jest również podczas prowadzenia połączeń na PCB gdyż kolejność linii oraz polaryzacja par różnicowych może być dowolna. 
+
+Układy DSP, FPGA oraz złącze AMC są węzłami typu \textit{End Point}, a PEX8616 jest węzłem typu \textit{Root Complex}. Do układu jest doprowadzony referencyjny sygnał zegarowy o częstotliwości $f_{clk}=100MHz$ z układu CDCUN1208LP. 
+
+Istnieje możliwość konfiguracji wewnętrznych rejestrów układu poprzez interfejs I2C (z FPGA) oraz zapis konfiguracji w opcjonalnie montowanej pamięci nieulotnej. Zaawansowane funkcje układu są dostępne jedynie poprzez EEPROM. Układ będzie spełniał swoją funkcję bez konfiguracji jednak warto mieć możliwość rozszerzenia funkcjonalności.
+
+Układ, ponadto, pozwala na obsługę funkcji \textit{Hot Plug} pozwalającej na dołączanie oraz odłączanie układów do niego dołączonych podczas pracy. Ta funkcja może być szczególnie przydatna, gdy wystąpi konieczność aktualizacji oprogramowania, nie będzie wtedy konieczny reset systemu operacyjnego kontrolera karty.
+
+
+%##################################################################################
+\section{System dystrybucji sygnałów zegarowych}
+%%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+% 
+Dystrybucja i generacja sygnałów zegarowych na karcie jest wykonana za pomocą szeregu układów dedykowanych takim zastosowaniom. Sygnały zegarowe są krytyczne dla poprawnej pracy układów scalonych, dlatego zastosowano sprawdzone i wcześniej wykorzystywane w innych projektach układy aby zapewnić poprawność działania systemu. Zamieszczony diagram przedstawia system dystrybucji sygnałów zegarowych na akceleratorze obliczeniowym. 
+ \begin{figure}[here]
+\begin{center}
+\includegraphics[width=12cm]{grafika/clock_distribution_detail.png}
+\caption{Szczegółowy schemat blokowy systemu dystrybucji sygnałów zegarowych}
+\end{center}
+\end{figure}
+
+Sygnały zegarowe można podzielić na te dedykowane interfejsowi PCIe, układowi FPGA i procesorom DSP.  
+
+\subsection{Generacja sygnałów zegarowych interfejsu \textit{PCI Express 2.0}} 
+
+Sygnały zegarowe interfejsu PCIe są generowane z jednego źródła, aby umożliwić pracę układów w trybie \textit{common refclk} zsynchronizowanego z sygnałem zegarowym MCH. Standard PCIe specyfikuje również sposób dystrybucji sygnału zegarowego \textit{separate refclk} oraz \textit{data clocked refclk}. Pierwszy występuje wtedy, kiedy układy posiadają lokalne źródło sygnału zegara PCIe; korzysta się w tym przypadku z faktu, że standard PCIe specyfikuje iż przesunięcie między sygnałami zegarowymi może zawierać się w przedziale $+/- 300 ppm$. Minusem tego rozwiązania jest brak możliwości korzystania z \textit{SSC} (\textit{Spread Spectrum Clocking}). Ostatni tryb, jak sama nazwa wskazuje, zaszywa zegar w przesyłanych danych. Częstotliwość sygnału zegarowego PCIe to $100 MHz$.
+
+SSC jest to metoda zmniejszania generowanych zakłóceń elektromagnetycznych z linii zegarowej (EMI) oraz redukcji wpływu szumów na linię poprzez modulację sygnału zegara wokół częstotliwości nośnej. Częstotliwość modulacji jest niska (33 kHz).
+
+ \begin{figure}[here]
+\begin{center}
+\includegraphics[width=12cm]{grafika/pcie_clk_distr.png}
+\caption{Rodzaje dystrybucji sygnału zegarowego interfejsu \textit{PCI Express 2.0}}
+\end{center}
+\end{figure}
+
+Warunkiem poprawnej pracy systemu dystrybucji \textit{common refclk} jest dopasowanie sygnałów zegarowych do 12 ns przesunięcia (\textit{skew}) \cite{PCIE_REF_CLK} między liniami. W przypadku modułu AMC trudno jest nie spełnić tego wymogu, ze względu na małe wymiary mechaniczne.
+
+Dedykowanym wyjściem zegarowym dla interfejsu PCIe na złączu AMC jest wyjście FCLK \cite{AMC_BASE}. Zegar ten (typu HCSL lub LVDS \cite{AMC_BASE}) dołączony jest do bufora 1:8 układu CDCUN1208, który powiela sygnał zegarowy do wszystkich układów obsługujących interfejs PCIe. Do układu FPGA i przełącznika PCIe zegary są dołączone bezpośrednio, natomiast do procesorów DSP poprzez przełącznik (multiplekser) zegarowy 2:1 interfejsu PCIe układ 5V41068A sterowany za pomocą mikrokontrolera LPC1764. Pozostałe zegary zostały wyprowadzone na panel przedni modułu AMC do złącz HDMI i służą jako wyjście nieużywanych sygnałów zegarowych.  Sygnał zegarowy dołączony do przełącznika PCIe jest typu HCSL i dlatego należało zastosować odpowiednią terminację.
+
+Układ CDCUN1208, jest konfigurowany za pomocą pinów wejściowych:
+\begin{itemize}
+\item
+\textbf{OE} - uruchomienie wyjść, stan wysoki, wyjścia uruchomione
+\item
+\textbf{MODE} - tryb programowania, stan open drain, tryb pracy układu \textit{pin programming mode}
+\item
+\textbf{DIVIDE} - dzielnik częstotliwości na wyjściu, stan open drain, dzielnik $= 1$
+\item
+\textbf{ERC} - szybkość narastania zboczy sygnałów wyjściowych, stan open drain, tryb \textit{FAST}
+\item
+\textbf{ITTP} - rodzaj wejścia zegara referencyjnego, stan wysoki, wejście \textbf{HCSL}
+\item
+\textbf{INSEL} - wybór wejścia referencyjnego, stan niski, wejście \textbf{IN1} aktywne
+\item
+\textbf{OTTP} - tryb pracy wyjść, stan niski, wyjścia typu \textbf{LVDS}
+\end{itemize}
+
+\subsection{Generacja sygnałów zegarowych dla układu FPGA}
+Złącze AMC poza wyjściem zegarowym FCLK posiada cztery wejścia/wyjścia zegarowe TCLK[0:3]. Zgodnie ze specyfikacją standardu AMC \cite{AMC_BASE} są to sygnały zegarowe o niskiej częstotliwości, które mogą służyć jako zegary referencyjne bądź \textit{wyjściowe} tj. generowane na module i przesyłane do \textit{MCH}. Oryginalnym zastosowaniem tych sygnałów jest synchronizacja w systemach telekomunikacyjnych. W przypadku akceleratora obliczeniowego zegary TCLK[0:3] uznane zostały za wyjściowe i dołączone do multiplexera 4:1 układu SY89544U \cite{DATASHEET:SY89544U} firmy \textit{Micrel Inc.} \cite{COMPANY:MICREL}, którego wyjście zostało dołączone do jednego z wejść referencyjnych układu AD9522 \cite{AD9522}. Wyjście układu SY89544U jest sterowane za pomocą mikrokontrolera.
+ 
+ Układ AD9522 generuje sygnały zegarowe wymagane przez układ FPGA. Dodatkowo aby uniezależnić się od parametrów zegarów TCLK, do układu dołączono oscylator TCXO 10 MHz. Konieczne było również dodanie filtru pętli PLL. Filtr zaprojektowano za pomocą oprogramowania udostępnionego przez producenta ADIsimCLK. Ustalono maksymalną częstotliwość wyjściową na 600 MHz (\textit{maximum bandwidth}), taka jest maksymalna częstotliwość pracy wejść zegarowych transceiver'ów GTP układu XC7A200T.  
+ 
+
+ \begin{figure}[here]
+\begin{center}
+\includegraphics[width=12cm]{grafika/adisimclk.png}
+\caption{Projekt pętli sprzężenia zwrotnego PLL układu AD9522}
+\end{center}
+\end{figure}
+  
+ 
+ Sygnały zegarowe generowane przez układ to:
+ \begin{itemize}
+\item
+6 zegarów do transceiverów GTP układu XC7A200T
+\item
+2 zegary kontrolerów pamięci SDRAM FPGA
+\item
+4 zegary wyjściowe dołączone do gniazd HDMI
+\end{itemize}
+ 
+  Wyjścia/wejścia kontrolne \textbf{STATUS}, \textbf{SYNC} i \textbf{RESET}, zostały dołączone do układu LPC1764.
+
+\subsection{Generacja sygnałów zegarowych procesora DSP}
+Procesor DSP wymaga do poprawnej pracy 6 sygnałów zegarowych [patrz \ref{tbl:dsp_clocks}]; do ich generacji w module zastosowano układy CDCM6208 oraz 5V41068A. 
+
+
+\subsubsection{Dobór układu generującego sygnały zegarowe}
+
+Dedykowanymi układami dystrybucji zegara dla procesorów DSP z rodziny TMS320C66x są układy CDCE6205, CDCL6010 i CDCM6208. Zdecydowano się na wykorzystanie układu CDCM6208 gdyż pozwala on na generację wszystkich potrzebnych sygnałów zegarowych do DSP.  Dla porównania, moduł ewaluacyjny TMDXEVM6678L \cite{TMDXEVM6678L} posiada system generacji sygnałów zegarowych zbudowany na dwóch układach CDCE62005 oraz zewnętrznym multiplekserze sygnałów zegarowych PCIe 2:1 ICS557. Wykorzystanie układu CDCM6208 pozwala uprościć ten system. Generuje on 6 sygnałów zegarowych, z czego 5 doprowadzonych jest bezpośrednio do procesora DSP, a jeden PCIECLK do multipleksera sygnału zegarowego interfejsu PCIe układu 5V41068A (dedykowanego PCIe Gen. 2.0). 
+
+\subsubsection{Schemat elektryczny układu dystrybucji sygnałów zegarowych CDCM6208}
+
+Układ jest zasilany z napięcia 1.8 V. Źródłem referencyjnym sygnału zegara jest oscylator kwarcowy 25 MHz dołączony do wejścia \textbf{PRI\_REFP/N} (wejście różnicowe),  wybierany pinem \textbf{REF\_SEL} (stan niski). Pin \textbf{SYNCN} jest ustawiony w stan wysoki, aby wyjścia były aktywne. Funkcja wyłączenia układu nie jest wykorzystywana, dlatego \textbf{PDN} jest ustawiony w stan wysoki. Zgodnie z zaleceniami producenta dołączono kondensator opóźniający uruchomienie układu (aby wewnętrzne PLL ustabilizowało się).  Do pinu resetu układu dołączono układ opóźniający RC, reset układów zegarowych jest \textbf{oddzielony} od resetu pozostałych układów.  
+
+Konfiguracja odbywa się poprzez interfejs I2C. Ponieważ w akceleratorze znajdują się dwa układy generacji zegara dla procesorów DSP, różne są ustawienia pinów \textbf{AD[0:1]} które ustalają adres urządzenia.
+
+
+\begin{itemize}
+\item
+adres CDCM6208 DSP0 0x54 
+\item
+adres CDCM6208 DSP1 0x55
+\end{itemize}
+
+
+
+Producent udostępnia specjalne oprogramowanie, dzięki któremu można wygenerować odpowiednie wartości wewnętrznych rejestrów oraz elementów pętli sprzężenia zwrotnego. Układ został skonfigurowany w trybie \textit{Synthesiser Mode} i pozwala na generację zegarów typu LVDS o częstotliwościach wymaganych przez procesor DSP. 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=10cm]{grafika/cdcm6208v2.jpg}
+\caption{Konfiguracja częstotliwości i typów wyjść zegarowych układu CDCM6208}
+\end{figure}
+
+Pętla sprzężenia zwrotnego układu CDCM6208 jest przedstawiona na rysunku [\ref{fig:cdcm6208_loop}].
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=10cm]{grafika/cdcm6208v2_loop_filter.jpg}
+\caption{Konfiguracja filtru pętli sprzężenia zwrotnego układu CDCM6208}
+\label{fig:cdcm6208_loop}
+\end{figure}
+
+Projekt pętli został wykonany w oparciu o dokumentację producenta  \cite{CDCM6208:INFO1} \cite{CDCM6208:INFO2}. 
+
+\paragraph{Multiplekser sygnału zegarowego PCIe Gen. 2.0 5V41068A}
+
+
+Układ 5V41068A pełni taką samą rolę jak ICS557 w module ewaluacyjnym procesora TMS320C6678. Zasilany jest z napięcia 3.3 V odseparowanego od linii \textbf{P3V3} filtrem typu CLC.  Zdecydowano się na zmianę układu gdyż ten jest dedykowany interfejsowi \textit{PCIe Gen. 2.0} a taki obsługuje procesor DSP. Układ pełni rolę przełącznika sygnału zegarowego interfejsu PCIe do DSP sterowanego z mikrokontrolera LPC1764 poprzez piny \textbf{PD}, \textbf{OE}, \textbf{SEL}. Takie rozwiązanie jest konieczne, aby zapewnić synchronizację we wcześniej wspomnianym systemie dystrybucji zegara \textit{common refclk}. %Terminacje zostały zaadaptowane z modułu ewaluacyjnego.
+
+
+%~\\*
+%
+%Wszystkie wyjscia ukladu sa typu LVDS o sprzezeniu AC.
+%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+
+%%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\section{IPMI i zarządzanie peryferiami}
+Moduł akceleratora obliczeniowego jest wyposażony w mikrokontroler LPC1764, którego zadaniem jest obsługa standardu IPMI \cite{IPMI} \cite{LPC1764}, sterowanie wejściami i interfejsami konfiguracyjnymi układów. Jest to mikrokontroler firmy NXP w obudowie LQFP100 z rdzeniem Cortex-M3. Układ jest zasilany z linii P3V3\_MP,  dedykowanej tylko IPMI zgodnie ze standardem AMC \cite[4.22]{AMC_BASE}. Do układu dołączona jest bezpośrednio pamięć EEPROM - układ AT24MAC602 \cite{AT24MAC602} firmy Atmel \cite{ATMEL} oraz układ RTC MCP79410 \cite{MCP79410} firmy Microchip.
+
+%\subsection{IPMI}
+%IPMI \textit{Intelligent Platform Management Interface} jest interfejsem zarządzającym urządzeniami w systemach telekomunikacyjnych. Standard MTCA wymaga by karta AMC wpinana w kratę obsługiwała ten protokół komunikacyjny, w celu np. przesyłu informacji na temat zapotrzebowania na pobieraną moc (\textit{payload}). Obsługa tego standardu została napisana w języku C przez zespół PERG. 
+
+\subsection{I2C - konfiguracja układów}
+Jedną z funkcji mikrokontrolera jest obsługa interfejsów I2C. LPC1764 zawiera 4 linie I2C pełniące następujące funkcje:
+\begin{itemize}
+\item
+komunikacja z \textit{MCH}
+\item
+obsługa czujników temperatury i RTC
+\item
+konfiguracja układów CDCM6208 (1.8V)
+\item
+konfiguracja układów ADN4604, CDCUN1208, AD9522
+\end{itemize}
+
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{grafika/lpc_i2c.png}
+\caption{Schemat blokowy połączeń interfejsu I2C}
+\label{I2C_BLOCK}
+\end{figure}
+
+Linia konfigurująca układy zegarowe CDCM6208 jest dołączona do nich przez translator poziomów układ PCA9306DCTR \cite{PCA9306DCTR} gdyż są one zasilane z napięcia 1.8 V. Dodatkowo dwie linie interfejsów zostały wyprowadzone na panel przedni do złącz HDMI w celach diagnostycznych. 
+
+\subsection{Zarządzanie peryferiami}
+Moduł akceleratora obliczeniowego jest wyposażony w mikrokontroler, który zajmuje się uruchomieniem całego urządzenia i zarządzaniem innymi układami. Do funkcji tego układu należy: 
+\begin{itemize} 
+\item konfiguracją rejestrów wewnętrznych CDCM6208 
+\item sterowanie wejściami konfiguracyjnymi układów VSC8221, SY8544U i AD95222 
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{grafika/lpc_control.png}
+\caption{Schemat blokowy połączeń sygnałów sterujących układu LPC1764}
+\end{figure}
+
+Pozostałymi funkcjami jakie pełni układ LPC1764 jest obsługa przycisku RESETu znajdującego się na panelu przednim akceleratora. Zarządzaniem ładowaniem pamięci programu układu FPGA z pamięci FLASH poprzez interfejs SPI, zgodnie ze scenariuszem \textit{Slave-Serial}. Ponadto układ steruje sygnałami \textbf{GA[0:2]} ustalającymi adres I2C modułu w skrzyni MTCA. 
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{grafika/lpc_control2.png}
+\caption{Schemat blokowy połączeń pozostałych sygnałów sterujących układu LPC1764}
+\end{figure}
+%
+%\subsection{Obsługa resetu}
+%Mikrokontroler LPC1764 zajmuje się obsługą resetu całego systemu. Po naciśnięciu przycisku na panelu przednim wyłącza wszystkie linie zasilające w odpowiedniej kolejności. 
+
+\section{Złącza wejść/wyjść}
+
+\subsection{miniSAS}
+Dane do urządzenia są przekazywane za pomocą dwóch złącz miniSAS firmy MOLEX \cite{MINISAS} umieszczonych na panelu przednim. Każde ze złącz zawiera 4 linie RX/TX i interfejs komunikacyjny. Głównym zastosowaniem złącz SAS są centra danych. W porównaniu do złącz SATA, standard SAS jest wytrzymalszy mechanicznie i pozwala na łączenie urządzeń dłuższym przewodem. Maksymalna przepustowość danych w tym złączu to 4 x 12.0 Gbps czyli sumarycznie 48 Gbps.
+
+ \begin{figure}[here]
+\begin{center}
+\includegraphics[width=5cm]{grafika/sas.jpg}
+\end{center}
+\caption{Złącze miniSAS firmy MOLEX}
+\label{SAS}
+\end{figure}
+
+
+\subsection{RJ45}
+Gniazdo RJ45 \textit{SI-61001-F} z wbudowaną izolacją magnetyczną dołączone jest do PHY VSC8221. Schemat połączeń i terminacji został zaadaptowany z projektu modułu ewaluacyjnego procesora TMS320C6678.  
+
+
+\subsection{HDMI}
+Niewykorzystane wyjścia zegarowe w układach AD9522 i CDCUN1208 wyprowadzono na panel przedni z wykorzystaniem złącz HDMI typu D. Dodatkowo do złącz doprowadzone są interfejsy I2C i sygnał OVERTEMP. Sygnały zostały zabezpieczone przed ESD/EMI poprzez dołączenie dedykowanych układów TPD12S016 \cite{TPD12S016}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=10cm]{grafika/hdmi.png}
+\caption{Schemat blokowy połączeń złącz HDMI}
+\end{figure}
+
+
+
+%
+%Vbatt
+%Wewnetrzna pamiec nieulotna jest dodatkowo zasilana z baterii.
+%
+%Projekt zasilania
+%Wsjo z afc i evalboardu.
+%
+%projekt pcb
+%
+%W ninejszym rozdziale opisano projekt obwodow drukowanych akceleratora wykonanego w programie altium designer.
+%
+%W pierwszej czesci opisany zostal standard mechaniczny AMC oraz projekt warstw pcb. Nastepnie opisano sposob rozmieszczenia elementow i zasady prowadzenia połączeń.
+%
+%Standard amc
+%
+%Projekt warstw 
+%Przy projektowaniu bardzo skomplikowanych urzadzen elektronicznych zawierajacych duze uklady w obudowie bga konieczne jest zastosowanie wielowarstwowego obwodu drukowanego.
+%
+%Projekt
+%%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\section{MLVDS}
+Złącze AMC zawiera interfejs komunikacyjny MLVDS służacy do dystrybucji sygnałów zegarowych, jak również \textit{triggerów} i \textit{interlocków}. Linie różnicowe MLVDS wychodzące ze złącza AMC są dołączone do układów tansceiverów MLVDS \textit{SN65MLVD040} \cite{SN65MLVD040} których wyjścia są dołączone do FPGA. 
+%%------------------------------------------------------------------------------------------------------------------------------------------------------------------%
+\section{JTAG}
+Protokół JTAG układu FPGA jest doprowadzony do złącza AMC oraz równolegle do złącza goldpin w celu ułatwienia uruchomienia urządzenia. 
+
+Protokoły JTAG procesorów DSP są połączone w łańcuch tzw. \textit{Daisy Chain} zgodnie z zaleceniami producenta \cite{DSP:HDG} \cite{WIKI:TI_XDS}. Dodano również bufor SN74ALVC125PW \cite{SN74ALVC125} na poszczególne sygnały aby zapewnić poprawną pracę protokołu. Procesor DSP TMS320C6678 poza standardowym protokołem JTAG wspiera również dodatkowe protokoły \textit{HS\_RTDX} oraz \textit{Trace} które pozwalają na szybsze programowanie i dokładniejszą analizę oprogramowania i pracy procesora. Złącze programatora w module ewaluacyjnym ma aż 60 sygnałów. W przypadku projektu akceleratora obliczeniowego nie potrzebujemy aż tak dokładnego protokołu programowania dlatego zdecydowano się na złącze 20 pinowe, które dodatkowo zajmuje najmniej miejsca na PCB (w porównaniu do np. złącza 14-pinowego) i wspiera część dodatkowego interfejsu programatora dla procesorów DSP. 
+
+Programowanie mikrokontrolera LPC1764 odbywa się poprzez standardowe złącze JTAG.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{grafika/jtag.png}
+\caption{Schemat blokowy połączeń protokołu JTAG}
+\end{figure}
+
+\section{Zasilanie}
+Sekcja zasilania w module składa się z sześciu przetwornic impulsowych oraz dwóch stabilizatorów LDO (\textit{Low Dropout Regulator}) generujących wszystkie wymagane napięcia. Schemat blokowy [\ref{POWER_BLOCK}] przedstawia system zasilający akceleratora obliczeniowego. 
+
+Przetwornice impulsowe posiadają wysoką sprawność zmiany napięcia wynoszącą typowo ok. 80\%. Dlatego wykorzystane są do generacji napięć wymagających dużego prądu. Wadą przetwornic jest generacja zakłóceń na częstotliwości pracy układu przełączającego, które potrafią zakłócić pracę działania układów.
+
+  LDO wykorzystuje się w sytuacjach gdy pobór prądu przez obciążenie jest dostatecznie mały. Sprawność LDO jest niska, ale dzięki swojej zasadzie działa nie generuje żadnych zakłóceń. LDO zostały wykorzystane w projekcie do generacji napięć referencyjnych i napięcia terminacji pamięci SDRAM. Jednym z wymogów napięcia terminacji pamięci SDRAM jest to aby zmiana napięcia podążała za zmianą napięcia zasilania pamięci tj. 1.5V. Aby spełnić te wymagania zastosowano dedykowane układy (TPS51200), które śledzą napięcie 1.5 V i względem niego ustalają napięcie wyjściowe 0.75 V.  
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{grafika/power.png}
+\caption{Schemat blokowy sekcji zasilania akceleratora obliczeniowego}
+\label{POWER_BLOCK}
+\end{figure}
+
+\subsection{Estymacja poboru mocy}
+Estymację  poboru mocy przez poszczególne układy wykonano poprzez analizę danych z not katalogowych oraz wykorzystując specjalnie przygotowane przez producentów arkusze kalkulacyjne. Dla układu FPGA jest to dokument \textit{Xilinx Power Estimator}, szczegółowo opisany w dokumentacji \cite{XPE}  \cite{XPE:UG1} \cite{XPE:UG2}. Dla układu DSP  również wykorzystano arkusz kalkulacyjny obliczający pobór mocy \textit{C6678 Power Consumption Model (Rev. C)} \cite{DSP:POWER}. Zestawienie poboru prądu przez poszczególne układy znajduje się w tabeli [\ref{tbl:dsp_power}].
+
+  \begin{sidewaystable}
+
+  \centering
+	\caption{Estymacja pobieranej mocy przez akcelerator obliczeniowy}
+    \begin{tabular}{| c| c| c | c | c | c | c | c | c}
+    \hline
+    \textbf{Linia} & \textbf{Układ} & \textbf{Napięcie [V]} & \textbf{Prąd [A]} & \textbf{Ilość}  & \textbf{Sumar. prąd} [A] &   \textbf{Moc [W]} &  \textbf{Komentarz}\\
+    \hline
+    \hline
+
+    CVDD DSP0  	& 				& 	1 	&	8	& 		& 	7.3 	& 	7.3 	& 	UCD9222+UC7242		\\
+         \hline
+    			& 	TMS320C6678 	& 		& 	7.3	&	1	& 	7.3 	& 	7.3 	& 	1000 MHz, 50 C		\\
+     \hline
+    CVDD DSP1  	& 				& 	1 	&	8	& 		& 	7.3 	& 	7.3	& 					\\
+         \hline
+    		   	& 	TMS320C6678 	& 		& 	7.3 	&	1	& 	7.3 	& 	7.3 	& 	1000 MHz, 50 C 		\\
+     \hline
+    P1V0		& 				&	1	&	14	&		& 	10.2	& 	10.2	& 	TPS53353DQPT		\\
+     \hline
+			& 	TMS320C6678	&		& 	1.5 	&	2 	&	3	&	3	&					\\
+			& 	XC7A200T 		&		& 	3 	&	1	&	3	&	3	&					\\
+			& 	PEX8616		&		& 	4.2 	&	1 	&	4.2	&	4.2	&	WORST CASE, 1.7W TYP.	\\
+     \hline
+    P1V2		& 				&	1.2	&	3	&		& 	1	& 	1.2	& 	NCP3170ADR2G		\\
+     \hline
+			& 	XC7A200T 		&		& 	1 	&	1	&	1	&	1.2	&					\\
+     \hline
+    P1V5		& 				&	1.5	&	11	&		& 	6.11	& 	9.165	& 	TPS53126RGET		\\
+     \hline
+			& 	TMS320C6678	&		& 	0.4 	&	2 	&	0.8	&	1.2	&					\\
+			& 	K4B2G1646		&		& 	0.24 	&	10 	&	2.4	&	3.6	&					\\
+			& 	MT4J512M8RA-125	&		& 	0.33 	&	8 	&	2.64	&	3.96	&					\\
+			& 	XC7A200T 		&		& 	0.27	&	1 	&	0.27	&	0.405	&					\\
+\hline
+     VTT		&				&     0.75	&	2	&		&	0.9	&	0.675	&	TPS51200DRCT		\\
+     \hline
+			&	K4B2G1646		&    		&	0.05	&	10	&	0.5	&	0.375	&					\\
+			&	MT4J512M8RA	&    		&	0.05	&	8	&	0.4	&	0.3	&					\\
+     \hline
+    P1V8		& 				&	1.8	&	3	&		& 	0.88	& 	1.584	& 	NCP3170ADR2G		\\
+     \hline
+			& 	TMS320C6678	&		& 	0.02 	&	2 	&	0.04	&	0.072	&					\\
+			& 	XC7A200T 		&		& 	0.3 	&	1	&	0.3	&	0.54	&					\\
+			& 	CDCM6208		&		& 	0.27 	&	2 	&	0.54	&	0.972	&					\\
+     \hline
+    P2V5		& 				&	2.5	&	3	&		& 	0.61	& 	1.525	& 	NCP3170ADR2G		\\
+     \hline
+			& 	PEX8616		&		& 	0.5 	&	1 	&	0.5	&	1.25	&					\\
+			& 	XC7A200T		&		& 	0.11 	&	1 	&	0.11	&	0.275	&					\\
+     \hline
+    P3V3		& 				&	3.3	&	3	&		& 	0.85	& 	2.805	& 	TPS53126RGET		\\
+     \hline
+			& 	XC7A200T		&		& 	0.05 	&	1 	&	0.11	&	0.275	&					\\
+			& 	ADN4604		&		& 	0.54	&	1 	&	0.54	&	1.782	&					\\
+			& 	CDCUN1208		&		& 	0.2 	&	1 	&	0.2	&	0.66	&					\\
+     \hline
+     \hline
+    Moc sumaryczna		& 			&	12 	&	3.443 &		& 	   	& 	41.316	& 		\\
+     \hline
+    \end{tabular}
+
+	\label{tbl:dsp_power}
+\end{sidewaystable}
+
+\subsection{Linie zasilania P1V0, P1V2, P1V8, P1V5, P3V3, VTT}
+Projekty przetwornic linii \textit{P1V0, P1V2, P1V8, P1V5, P3V3, VTT} zostały zaadaptowane z projektu \textbf{AFC} \cite{AFC}. Spełniają one wymagania prądowe do tego projektu. Dodane zostały zworki na wyjściach w celach testowych. 
+
+Przy projekcie linii napięcia terminacji pamięci SDRAM zastosowano dwa stabilizatory LDO zlokalizowane po dwóch stronach PCB, aby uniezależnić się od spadku napięcia wynikającego z przepływu prądu po znacznej odległości w module. 
+
+\subsection{Linia zasilania P2V5}
+Napięcie +2.5V jest wymagane dla układu PEX8616 \cite{PEX8616} firmy PLX Technology \cite{COMPANY:PLX}. Projekt przetwornicy został wykonany wykorzystując układ NCP3170 \cite{NCP3170} firmy \textit{ON Semiconductor} \cite{COMPANY:ON}, taki sam jaki został wykorzystany do generacji napięć  1.2V oraz 1.8V. Dobór elementów do otrzymania przetwornicy o odpowiednich parametrach został wykonany przy wykorzystaniu arkusza kalkulacyjnego udostępnionego przez producenta oraz sprawdzony wykorzystując znaną teorię projektowania przetwornic impulsowych typu \textit{Step-Down}. Zgodnie z przewidywanym poborem dla linii \textit{P2V5}, możemy się spodziewać bardzo małego poboru mocy; typowy pobór mocy przez przełącznik PEX8616 wynosi ok. 0.5A. Jednak nie bierzemy tu pod uwagę prądu pobieranego przez bank układu FPGA. Przetwornica jest zaprojektowana na maksymalny pobór prądu 3A zgodnie z tabelą dostępną w dokumentacji układu \cite[str. 19]{NCP3170}. Na schematach został opcjonalnie umieszczony liniowy regulator LDO, który można zamienić z przetwornicą w przyszłych rewizjach projektu jeśli pobór prądu przez układ FPGA dla tej linii również będzie mały.
+
+\subsection{Regulowane napięcie zasilania rdzenia procesora DSP - CVDD}
+Projekt sekcji zasilającej napięcia rdzenia procesorów DSP  oparty jest o układy zalecane przez producenta \cite{DSP:HDG} tj. UCD9222 oraz UCD7242 które są układami specjalizowanymi do zasilania procesorów TI z rodziny TMS320C66x. Zgodnie z wymaganiami każdy procesor musi mieć oddzielną linię zasilania CVDD. Projekt zasilania został zaadaptowany z modułu referencyjnego TMDXEVM6678L, z tą różnicą iż zmieniono wyjście CVDD1 na CVDD dla drugiego procesora DSP (CVDD1 to stałe napięcie 1V, a CVDD to napięcie regulowane). Konfiguracja przetwornicy odbywa się za pomocą interfesju PMBus, która może być wykonana zarówno za pomocą układu LPC1764, który został przystosowany do obsługi tego interfejsu, jak i poprzez programator USB-TO-GPIO \cite{GPIO}.
+
+

@@ -1,0 +1,154 @@
+
+
+Camera design technology exists since the discovery of bla bla bla
+The following thesis is divided into 6 chapters. The first chapter describes thescientific camera design, the theory and
+current state of technology and alsothe reasons for doing this work as well as the basic requirements. Secondchapter
+presents the concept phase of the project, where the informationregarding possible ways of achieving the requirements is
+presented. After theconcept chapter, the realisation is described in chapter 4.
+
+\section{Camera design theory}
+
+    This section introduces the topic of scientific camera design. Reasons to do this work are presented as well as 
+    the today's state of knowledge regarding camera design.  
+
+    \subsection{Camera parameters}
+
+      \subsubsection{Frames per second}
+      $ fps = \frac{n}{T} $ 
+    \subsection{Mechanics}
+      \subsubsection{Chasis}
+      \subsubsection{Shutter}
+      \subsubsection{Optics}
+         \paragraph{Lens parameters}
+         \paragraph{Mounts}
+
+    \subsection{Electronics}
+       \subsubsection{Main control units}
+         \paragraph{FPGA}
+         \paragraph{SoC}
+         \paragraph{Application processor}
+         \paragraph{ASICs}
+         \paragraph{Microcontroller}
+
+     \subsubsection{Video data storage}
+         \paragraph{SSD}
+         \paragraph{HDD}
+         \paragraph{SD Card}
+         \paragraph{Flash}
+
+    \subsection{Firmware}
+      Firmware in a camera is responsible for numerous functions of the device. Most cameras incorporate application
+      processors, SoC or more advanced microcontrollers which run program usually written in C. Those who doesn't are usually
+      specialised cameras which use ASIC to acquire an image and control the functions of the device. Frequently, firmware
+      is highly complicated and incorporate digital system (HDL), low level drivers, high level operating systems like
+      embedded Linux, Android or Windows CE.  
+
+       \subsubsection{Embedded Linux camera specific firmware}
+         Linux operating system provides many tools and programs which can be used in a camera.
+        
+         Embedded camera systems which runs Linux operating system can benefit from a number of libraries available for
+         this Operating System. 
+
+         The following list provides some of the most popular programs. 
+       
+         \begin{itemize}
+           \item video4linux
+             %TODO add description
+           \item gstreamer 
+             %TODO add description
+           \item ohc/evcusb 
+             %TODO add description
+           \item Qt
+             %TODO add description
+           \item Wayland 
+             %TODO add description
+           \item OpenCV 
+             %TODO add description
+          \end{itemize}
+
+
+  %  \subsection{Software}
+  %    Usually with the camera as a system for acquiring a video there is some way to control it using a PC or any other
+  %    device like a smartphone for example. 
+
+    \subsection{Sensors}
+       \subsubsection{CMOS}
+          %TODO add description
+       \subsubsection{CCD}
+          %TODO add description
+       \subsubsection{Other}
+     
+       \subsection{Interface}
+          \subsubsection{Wire based interfaces}
+            \paragraph{USB}
+                %TODO add description
+            \paragraph{Camera Link}
+                %TODO add description
+            \paragraph{ThunderBolt}
+                %TODO add description
+            \paragraph{FireWire}
+                %TODO add description
+            \paragraph{Ethernet}
+                %TODO add description
+          \subsubsection{Wireless}
+            \paragraph{Bluetooth}
+                %TODO add description
+            \paragraph{WiFi}
+                %TODO add description
+          \subsubsection{Optical}
+
+  
+ 
+  \section{Scientific camera design theory}
+  
+  \subsection{Features}
+            \paragraph{Extremely low noise}
+                %TODO add description
+            \paragraph{Binning}
+                %TODO add description
+            \paragraph{Throughput}
+                %TODO add description
+            \paragraph{Ethernet}
+                %TODO add description
+
+    \subsubsection{Existing devices on the market}
+      \paragraph{Elphel camera}
+          %TODO add description
+      \paragraph{Creotech K20 Camera}
+          %TODO add description
+      \paragraph{IoT camera}
+          %TODO add description
+      \paragraph{Other}
+          %TODO add description
+  
+  \subsection{Summary}
+
+\section{Reasons to do this project}
+          %TODO add description
+ Universal open, camera design architecture 
+One cannot deny the fact that, novelty is the  in today's hightech electronics market the most important aspect of the
+product is time-to-market. Sometimes even a worse product can win on the market just due to the fact that it was
+released eariler.  In specialised markets where COTS (Custom - Off - The - Shelf) components are being used by
+customers, the possibility to quickly adjust the parameters of a specific system given suited to the customers need is a
+key to success.  Another
+
+Scientific applications for camera systems are, undoubtedly broad.
+
+\section{Requirements}
+          %TODO add description
+The following list provides basic parameters for the designed camera framework.    
+high processing performance - for support of high resolutions
+ease of adding a support for a different sensor
+Secure and versatile OS
+RTOS capability
+Future proof
+high speed communication - to send high amounts of data live
+multichannel operation - astronomical as well as medical applications require it
+As described in previous sections, mechanics, casing, envirionment related design choices are different for
+each camera project. This is why this work doesn't consist of design of optics and other mechanical aspects of
+camera design. This project goal is to address the intersection of all camera problems provide a framework that
+will allow for faster development.
+
+\section{Summary}
+
+

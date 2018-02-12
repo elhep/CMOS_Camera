@@ -1,4 +1,9 @@
 vhdl xil_defaultlib  \
 "../../../bd/system/sim/system.vhd" \
+"../../../bd/system/ipshared/e791/hdl/register_v1_0_S00_AXI.vhd" \
+"../../../bd/system/ipshared/e791/hdl/register_v1_0.vhd" \
+"../../../bd/system/ip/system_register_0_0/sim/system_register_0_0.vhd" \
+"../../../bd/system/ip/system_rst_ps7_0_50M_1/sim/system_rst_ps7_0_50M_1.vhd" \
+"../../../bd/system/ip/system_axi_quad_spi_0_0/sim/system_axi_quad_spi_0_0.vhd" \
 
 nosort

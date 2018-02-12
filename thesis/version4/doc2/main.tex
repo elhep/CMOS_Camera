@@ -1,0 +1,213 @@
+% Piotr Zdunek Master Thesis
+% Faculty of Electronics and Computer Science
+% Warsaw University of Technology
+% Institute of Electronics Systems
+% Prepared on the basis of MIT Master thesis template
+% Link : 
+
+% -*- Mode:TeX -*-
+
+%% IMPORTANT: The official thesis specifications are available at:
+%%            http://libraries.mit.edu/archives/thesis-specs/
+%%
+%%            Please verify your thesis' formatting and copyright
+%%            assignment before submission.  If you notice any
+%%            discrepancies between these templates and the 
+%%            MIT Libraries' specs, please let us know
+%%            by e-mailing thesis@mit.edu
+
+%% The documentclass options along with the pagestyle can be used to generate
+%% a technical report, a draft copy, or a regular thesis.  You may need to
+%% re-specify the pagestyle after you \include  cover.tex.  For more
+%% information, see the first few lines of mitthesis.cls. 
+
+%\documentclass[12pt,vi,twoside]{mitthesis}
+%%
+%%  If you want your thesis copyright to you instead of MIT, use the
+%%  ``vi'' option, as above.
+%%
+%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%%
+%% If you want blank pages before new chapters to be labelled ``This
+%% Page Intentionally Left Blank'', use the ``leftblank'' option, as
+%% above. 
+\documentclass[a4paper,12pt,twoside]{mitthesis}
+%\usepackage[sorting=none]{biblatex}
+\usepackage{lgrind}
+%% These have been added at the request of the MIT Libraries, because
+%% some PDF conversions mess up the ligatures.  -LB, 1/22/2014
+\usepackage{cmap}
+%\usepackage{siunit}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\DeclareUnicodeCharacter{00A0}{ }
+%\usepackage[utf8]{inputenc}
+%\pagestyle{plain}
+\usepackage{setspace}% http://ctan.org/pkg/setspace
+% Piotr Zdunek packages
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{courier}
+\usepackage{color}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{pdfpages}
+\usetikzlibrary{arrows,automata}
+%colors for the listings
+\definecolor{sh_comment}{rgb}{0.12, 0.38, 0.18 } %adjusted, in Eclipse: {0.25, 0.42, 0.30 } = #3F6A4D
+\definecolor{sh_keyword}{rgb}{0.37, 0.08, 0.25}  % #5F1441
+\definecolor{sh_string}{rgb}{0.06, 0.10, 0.98} % #101AF9
+
+\usepackage{listings}
+\lstset {
+    basicstyle=\ttfamily,
+    numberstyle=\tiny,numbers=left,
+    breaklines=true
+}
+
+%\lstset {
+%    frame=shadowbox,
+%    rulesepcolor=\color{black},
+%    showspaces=false,showtabs=false,tabsize=2,
+%    numberstyle=\tiny,numbers=left,
+%    basicstyle= \footnotesize\ttfamily,
+%    stringstyle=\color{sh_string},
+%    keywordstyle = \color{sh_keyword}\bfseries,
+%    commentstyle=\color{sh_comment}\itshape,
+%    captionpos=b,
+%    xleftmargin=0.7cm, xrightmargin=0.5cm,
+%    lineskip=-0.3em,
+%    breaklines=true
+%}
+%
+%compact enumerations
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\usepackage{float}
+\usepackage{tabularx}
+\def\tabularxcolumn#1{m{#1}}
+\usepackage{footnote}
+
+%no borders around hyperlinks
+\usepackage{hyperref}
+\hypersetup{%
+    pdfborder = {0 0 0},
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{xcolor}
+\lstset{
+    frame=single,
+    basicstyle=\scriptsize,
+    showstringspaces=false,
+    commentstyle=\color{red},
+    keywordstyle=\color{blue}
+}
+
+\usepackage{acronym}
+\usepackage[nonumberlist,nopostdot]{glossaries}
+\renewcommand{\glossarypreamble}{\scriptsize}
+\newcommand{\dictentry}[2]{%
+    \newglossaryentry{#1}{name=#1,description={#2}}%
+    \glslink{#1}{}%
+    \glsgroupskip
+}
+\makeglossaries
+
+%% This bit allows you to either specify only the files which you wish to
+%% process, or `all' to process all files which you \include.
+%% Krishna Sethuraman (1990).
+
+%This produces a bug (pzdunek)
+%\typein [\files]{all}
+%{Enter file names to process, (chap1,chap2 ...), or `all' to
+%process all files:}
+%\def\all{all}
+%\ifx\files\all \typeout{Including all files.} \else \typeout{Including only %\files.} \includeonly{\files} \fi
+
+%Panowie, nie jest tak zle jak to wygląda- poniżej zalaczam mail o Tarapaty.
+%Może Piotrze skupisz się na samej wielokanalowosci i synchronizacji?
+%Wymagaloby to przepisania samej koncepcji i w realizacji dopisania kawalka
+%skupiającego się na wybranym temacie.
+%
+
+%We wstępie wygladaloby to tak:
+%Wychodzisz z tematu kamer, dalej go zawężasz do kamer naukowych (scientific
+%grade) następnie dalej zawężasz temt do kamer obrazujących w zakresie X.
+%I tutaj sa w zasadzie 2 mozliwosci - kamery ze scyntylatorem, gdzie nie ma
+%możliwości dykryminacji energii fotonu oraz bazujące na detektorach GEM i
+%krzemowych.
+
+%O GEMach pisales w pracy inz, wiec możesz si sam zacytować, skupiasz się na
+%detektorach krzemowych. Wywalasz oczywiste obrazki mowiace o np. ISO.
+%Na rynku w zasadzie sa 2 czy 3 w tym Medpix. Dalej piszesz ze bierzesz
+%udział w projekcie budowy takiej kamery z partnerem naukowym gdzie jesteś
+%odpowiedzialny za opracowanie firmware i HDL. I tutaj pojawiają się
+%konkretne wymagania dla czujnika X. Podkreslasz ze opracowana kamera będzie
+%miała romzmiar pozwalający skladac z kawalkow. Piszesz ze czujnik X jest w
+%opracowywaniu wiec tworzysz model firmware na  czujniku z podobnym
+%interfejsem -CMV4000 i tutaj opisujesz co robiles. Dalej, w następnym
+%rozdziale  piszesz już ogólniej o integracji i testach z czujnikiem X.
+%Potem piszesz o sposobach w jaki można przechwycić sygnal z czujnika i dalej
+%go wysylac w swiat, czyli to co masz.
+
+%Potem pojawia się koncepcja w której opisujesz konkretna realizacje ze
+%szczgolowym podzialem na bloki. Bez podawania schmatow ideowych.
+%- układ deserializera
+%- układ sekwencera
+%- układ video DMA z buforami
+%- układ generacji napiec i biasow
+%- system Linuxowy i jego rola
+%- interfejsy komunikacyjne. O SATA tylko wspominasz ze uruchomiles dla celów
+%diagnostycznych.
+%- oprogramowanie sterujace
+%
+%Jaki masz wkład naukowy?
+%- opracowanie metody weryfikacji sprzętu bez dostępnego czujnika poprzez
+%uzycie czujnika o podobnym interfejsie. Dzieki blokowej architekturze
+%(frameworku) da się potem latwo podmienić czujnik.
+%- opracowanie sposobu synchronizacji wielu kamer od strony sprzętowej i
+%programowej
+%- deserializacja sygnalu z interfejsow szeregowych czujnika ze sledzeniem
+%fazy sygnalu. Przeciez w CMV to robiles.
+%- weryfikacja oprogramowania i sprzętu metoda drobnych kroczków, czyli to co
+%AGH na nas wymuszal. Testowanie wszystkich blokow a na samym końcu czujnika.
+%
+%Dalej przy testach oczywiście pokazujesz sygnal z czujnika CMV pisząc ze
+%czujnik X nie był jeszcze gotowy do integracji bo w zasadzie nie był gdyż
+%AGH nie pozwolil nam tego robic.
+%Opisujesz metody testowania pamięci, Ethernetu, serializerow i
+%deserializerow. Mase czasu nad tym spedziles. Podlaczenie czujnika to potem
+%formalnosc
+
+
+\begin{document}
+
+\input{./chap/cover}
+%
+\input{./chap/abstract_pl}
+\input{./chap/abstract}
+%
+\input{./chap/contents}
+\input{./chap/introduction}
+\input{./chap/genesis}
+\input{./chap/requirements}
+%\input{./chap/mywork}
+\input{./chap/concept}
+\input{./chap/realisation}
+\input{./chap/summary}
+\input{./chap/biblio}
+\input{./chap/glossary}
+\input{./chap/contents_end}
+\appendix
+\include{./chap/appendix}
+%\include{./chap/appa}
+%\include{./chap/appb}
+\end{document}
+

@@ -1,0 +1,54 @@
+
+\chapter{Genesis}
+
+Photonics and Web Engineering Group at the Institute of Electronics Systems had an immensely significant contribution to
+X-ray based measurement scientific research throughout many years (references). %TODO: references
+Having a scientific cooperation with another Polish university, there was a need to develop hardware and firmware for novel extremely high-speed,
+multichannel, X-ray silicon based camera. My work in this project was to develop firmware and to design digital system.
+This project is undergoing a patent application, and for this reason the detailed description of the project cannot be
+included in this thesis. 
+
+\section{X-band silicon sensor description}
+Description
+
+
+\section{Thesis problem}
+The main thesis problem is the X-band counting silicon sensor data acquisition. 
+This problem is not solvable by existing solutions and a custom one has to be designed. The main aspects of the X-band 
+counting silicon sensor acquisition are:
+\begin{itemize}
+    \item high throughput interface 8x differential lines with maximum throughput of 5 Gbps per line
+    \item independent of data deterministic control of the sensor with a configuration shift register
+\end{itemize}
+
+Another aspect of the thesis are the system level requirements, such as: multichannel operation and high speed interface
+for sensor data transfer. 
+
+%Dalej piszesz ze bierzesz
+%udział w projekcie budowy takiej kamery z partnerem naukowym gdzie jesteś
+%odpowiedzialny za opracowanie firmware i HDL. 
+
+%The multitude and variety of sensors, interfaces, as well as requirements regarding specific camera projects make the design
+%immensely difficult. Given the parameters for a specific application camera, the firmware, data acquisition and data
+%transmission has to be designed specifically for each design. This poses a troublesome aspect of camera design that
+%needs to be addressed.
+
+\section{Solution}
+The solution of the thesis problem is to design the readout from the sensor in FPGA fabric along with firmware to
+facilitate other requirements. 
+
+%
+%The purpose of my thesis is to address the issue of the scientific camera design. One cannot deny the fact that 
+%\textbf{there is no framework for camera designs}. All designs are custom, and what is needed is a system which
+%would allow for a faster time-to-market, less error prone development and high throughput connectivity. Also, an easy way
+%of adding support for different sensors is essential. 
+%
+%\textbf{The thesis addresses this problem} by providing a scalable framework which can be used as a basis for high speed
+%camera designs. 
+
+
+\section{Goals}
+To provide a method for acquiring the data from the X-band counting silicon sensor.
+
+\section{Limitations}
+This project does not consist of hardware, mechanical or optics design.  

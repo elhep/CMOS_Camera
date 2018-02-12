@@ -1,0 +1,111 @@
+% TeX encoding = utf8
+% TeX spellcheck = pl_PL
+
+% KONCEPCJA
+Poniższy rozdział przedstawia koncepcję konstrukcji akceleratora obliczeniowego. Zawarto w nim opis funkcjonalny projektowanego urządzenia wraz wyszczególnieniem poszczególnych modułów.  
+
+\section{Opis funkcjonalny akceleratora obliczeniowego}
+
+Akcelerator obliczeniowy można podzielić na szereg modułów. Rysunek [\ref{BLOCK_SYSTEM}] przedstawia blokowy schemat funkcjonalny projektowanego urządzenia. 
+
+\begin{figure}[!ht]
+\begin{center}
+\includegraphics[width=11cm]{grafika/system_block_diagram2.png}
+\end{center}
+\caption{Schemat blokowy akceleratora obliczeniowego}
+\label{BLOCK_SYSTEM}
+\end{figure}
+
+Lista poszczególnych modułów, w projektowanej karcie:
+\begin{itemize}
+\item \textbf{Moduł akceleracji sprzętowej} akwizycja i wstępne przetwarzanie danych pomiarowych
+\item \textbf{Moduł przetwarzania} - przetwarzanie danych pomiarowych wymagające dużej mocy obliczeniowej
+\item \textbf{Moduł przełączania interfejsów} przełączanie interfejsów szeregowych pomiędzy układami i \textit{Backplane/MCH}
+\item \textbf{Układ dystrybucji sygnałów zegarowych} generacja i dystrybucja sygnałów zegarowych 
+\item \textbf{Zasilanie} - generacja odpowiednich napięć
+\item \textbf{IPMI} obsługa standardu IPMI i zarządzanie sygnałami kontrolnymi
+\item \textbf{JTAG} programowanie i testowanie układów scalonych
+\end{itemize} 
+
+
+
+%\subsection{Zasada działania}
+%Akcelerator obliczeniowy jest kartą w formacie AMC działającą w systemie MTCA. Moduł \textbf{akceleracji sprzętowej} zajmuje się akwizycją i wstępnym przetwarzaniem danych. Dane mogą być przesłane poprzez \textit{Backplane} lub poprzez złącza na panelu przednim. 
+%
+% Następnie przesyła dane do \textbf{jednostek przetwarzania}, w których następuje dalsza obróbka sygnałów. Przetworzone dane mogą zostać przesłane do \textit{Backplane} znajdującego się w kracie MTCA.
+%
+%Komunikacja między układami i kratą odbywa się za pomocą szybkich interfejsów szeregowych. Zastosowane zostały inteligentne przełączniki, aby umożliwić możliwość rekonfiguracji połączeń pomiędzy układami.
+% 
+%System dystrybucji zegara, IPMI, JTAG oraz sekcja zasilania zapewniają poprawną pracę urządzenia. 
+%
+%Standard AMC, w którym projektowano kartę opisano szczegółowo w Dodatku B [\ref{AMC_APP}].
+
+%##################################################################################
+\section{Koncepcja konstrukcji modułu akceleracji sprzętowej}
+Moduł akceleracji sprzętowej składa się z układu FPGA oraz szybkiej pamięci SDRAM. Zastosowanie nowoczesnego układu FPGA daje możliwość komunikacji za pomocą wielu interfejsów szeregowych. Do modułu dołączono bezpośrednio złącza miniSAS oraz moduł przełączania interfejsów, co pozwala na komunikację ze światem zewnętrznym za pomocą interfejsów SAS, PCIe i SRIO. Zebrane dane mogą zostać zapisane na dołączonej pamięci podręcznej i poddane przetwarzaniu. Dane mogą być przekazywane dalej do jednostek przetwarzania lub do \textit{Backplane}. 
+%Współczesne układy FPGA idealnie nadają się do zbierania danych ponieważ posiadają wiele transceiverów szybkich interfejsów szeregowych. 
+\begin{figure}[!h]
+\centering
+\includegraphics[width=5cm]{grafika/acquis_block_diagram.png}
+\caption{Schemat blokowy modułu akceleracji sprzętowej}
+\label{BLOCK_ACKQUIS}
+\end{figure}
+%%##################################################################################
+\section{Koncepcja modułów przetwarzania}
+%Sercem modułu przetwarzania jest procesor DSP \textit{Texas Instruments} \cite{COMPANY:TEXAS} TMS320C6678 \cite{DEV:C6678}, jest to 8 rdzeniowy układ dedykowany do aplikacji wymagających dużej mocy obliczeniowej. Do procesora dołączony jest 1 GB pamięci dynamicznej SDRAM, jak również PHY interfejsu Gigabit Ethernet, co daje możliwość komunikacji z światem zewnętrznym bezpośrednio z procesora. Dodatkowo procesor wyposażony jest w szereg pamięci, które pozwalają na uruchomienie oprogramowania przygotowanego przez producenta, przykładem jest dedykowany system operacyjny Linux OS \cite{LINUX_TMS}. Razem z układem FPGA znajdującym się w jednostce akwizycji danych moduły przetwarzania tworzą system pozwalający na bardzo elastyczne podejście do przetwarzania danych i posiadają wystarczającą moc obliczeniową do zaawansowanych obliczeń w czasie rzeczywistym. W akceleratorze znajdują się dwa takie moduły połączone ze sobą szybkim interfejsem \textit{Hyperlink} posiadającym przepustowość do 50Gbps.
+Projektowana karta zawiera dwa bliźniacze moduły przetwarzania, których sercem jest procesor DSP. Każdy z procesorów  jest wyposażony w pamięć dynamiczną SDRAM, jak również PHY interfejsu Gigabit Ethernet. Dodatkowo procesory wyposażono w szereg pamięci nieulotnych, które pozwalają na uruchomienie oprogramowania przygotowanego przez producenta; przykładem jest dedykowany system operacyjny Linux OS \cite{SOFT:LINUX}. 
+
+Razem z układem FPGA znajdującym się w jednostce akceleracji sprzętowej moduły przetwarzania tworzą system pozwalający na elastyczne podejście do przetwarzania sygnałów i posiadają wystarczającą moc obliczeniową do zaawansowanych obliczeń w czasie rzeczywistym. 
+
+Moduły połączone ze sobą interfejsem \textit{Hyperlink} \cite{HYPER} o przepustowości 50 Gbps.
+\begin{figure}[here]
+\begin{center}
+\includegraphics[width=14cm]{grafika/processing_unit.png}
+\end{center}
+\caption{Schemat blokowy modułów przetwarzania}
+\label{BLOCK_PROCESS}
+\end{figure}
+%##################################################################################
+\section{Koncepcja modułu przełączania interfejsów szeregowych} 
+Moduły akceleracji sprzętowej i przetwarzania oraz \textit{Backplane} są połączone ze sobą dwoma przełącznikami interfejsów szeregowych, statycznym SRIO oraz inteligentnym PCIe. Dzięki takiemu rozwiązaniu możliwa jest transparentna transmisja pomiędzy układami jak i \textit{Backplane}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=9cm]{grafika/switch_unit.png}
+\end{center}
+\caption{Schemat blokowy modułu przełączania interfejsów szeregowych}
+\label{BLOCK_SWITCH}
+\end{figure}
+
+\section{Pozostałe moduły i peryferia}
+System dystrybucji sygnałów zegarowych generuje sygnały zegarowe o odpowiedniej częstotliwości wymagane do poprawnej pracy układów znajdujących się na karcie. Zarządzaniem sygnałami sterującymi zajmuje się mikrokontroler, który również obsługuje standard IPMI wymagany do pracy karty w systemie MTCA. 
+
+Komunikacja ze światem zewnętrznym odbywa się poprzez złącza znajdujące się na panelu przednim oraz za pomocą złącza krawędziowego.
+
+Jak każde urządzenie elektroniczne akcelerator obliczeniowy zawiera układy zasilające generujące odpowiednie napięcia. Programowanie procesorów DSP, układu FPGA i mikrokontrolera wykonuje się poprzez zewnętrzny programator dołączony do złącz JTAG znajdujących się na układzie. 
+
+%\section{Koncepcja systemu dystrybucji zegara}
+%System dystrybucji zegara powinien pozwalać na pracę modułu \textit{ang. standalone} oraz na synchronizację z CB. Zdecydowano się na połączenie układów bufurujących i multipleksujących zegary wraz z dedykowanymi syntezerami zegara. Szczególną kwestią jest zegar interfejsu PCIe, którego jednym z trybów pracy jest tryb wspólnego zegara \textit{ang. system synchronous}, ten zegar ma oddzielny system dystrybucji na module.  
+%\begin{figure}[here]
+%\begin{center}
+%\includegraphics[width=8cm]{grafika/clock_distribution.png}
+%\end{center}
+%\caption{Schemat blokowy systemu dystrybucji zegara}
+%\label{BLOCK_CLK}
+%\end{figure}
+%
+%\section{Koncepcja obsługi standardu IPMI}
+%Standard IPMI jest obsługiwany przez mikrokontroler, który komunikuje się z CB w skrzyni \textit{$\mu$icroTCA}. Dodatkowo układ ten steruje sygnałami kontrolnymi oraz interfejsami konfigurującymi I2C.
+%\begin{figure}[here]
+%\begin{center}
+%\includegraphics[width=8cm]{grafika/BLOCK_IPMI.png}
+%\end{center}
+%\caption{Schemat blokowy obsługi standardu IPMI}
+%\label{BLOCK_IPMI}
+%\end{figure}
+%
+%\section{Koncepcja modułu programowania układów}
+%Procesory DSP, układ FPGA oraz mikrokontroler są programowane za pomocą złącz JTAG umieszczonych na module. Dwa procesory DSP są połączone ze sobą w tzw. \textit{ang. daisy-chain}. Poza złączem JTAG dla układu FPGA, sygnały tego standardu zostały dołączone do złącza AMC.  
+%
+%\section{Koncepcja sekcji zasilania}
+%Na złączu zasilania znajdują się dwa źródła napięcia 12V i 3.3V. Niższe napięcie jest dedykowane zasileniu systemu standardu IPMI. 12V źródło napięcia musi zostać przekształcone w niższe napięcia wymagane przez poszczególne układy. Źródła napięciowe które charakteryzują się dużymi wymaganiami na prąd są przekształcone za pomocą przetwornic impulsowych, natomiast te które nie wymagają dużej wydajności prądowej są przekształcone za pomocą dedykowanych liniowych regulatorów. 

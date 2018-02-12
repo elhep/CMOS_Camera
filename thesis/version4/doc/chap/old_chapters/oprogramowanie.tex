@@ -1,0 +1,71 @@
+
+
+\section{Wstęp}
+Poniższy rozdział zawiera opis oprogramowania uruchamiającego akcelerator obliczeniowy.W pierwszej części opisano sterowanie przetwornicami, a następnie opis konfiguracji poszczególnych układów.  Oprogramowanie zawiera się w dwóch plikach: \textbf{adsp.c}, \textbf{adsp.h} i dodaje funkcję obsługi akceleratora obliczeniowego do istniejącego software'u wykorzystywanego w modułach AMC w laboratorium PERG. 
+
+
+\section{Opis mikrokontrolera LPC1764}
+
+Układ LPC1764 jest 32 bitowym mikrokontrolerem z rdzeniem Cortex-M3 firmy NXP. Jest to rozbudowany układ, który posiada wiele sprzętowych peryferiów takich jak kontrolery interfejsów I2C, CAN czy przetwornik analogowo cyfrowy. Główną jego funkcją jest sterowanie procesem załadowania pamięci programu do układu FPGA oraz obsługa standardu IPMI. Poza tym układ zajmuje się sterowaniem pinów konfiguracyjnych poszczególnych układów oraz konfiguracją ich rejestrów wewnętrznych. Na rysunku [\ref{I2C_BLOCK}] przedstawiona jest struktura połączeń interfejsu I2C w projekcie akceleratora obliczeniowego. 
+
+\subsection{Środowisko programistyczne}
+Producent, firma NXP \cite{COMPANY:NXP} udostępnia środowisko programistyczne \textit{LPCXpresso} oparte o znane IDE (\textit{Integrated Developement Environment}) Eclipse \cite{ECLIPSE}. Producent udostępnia do układu kompilator ANSI C oraz podstawowe biblioteki do obsługi peryferiów.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{grafika/lpcxpresso.png}
+\caption{Środowisko programistyczne LPCXpresso}
+\end{figure}
+
+\section{Uruchomienie linii zasilających}
+
+Zarówno procesor DSP jak i FPGA wymagają aby poszczególne napięcia były uruchamiane sekwencyjnie. Procesor DSP ma dwa scenariusze uruchamiania zasilania \textit{Core before IO} i \textit{IO before Core} natomiast FPGA ma jeden, który jak się okazuje w praktyce nie ma większego znaczenia \cite{DATASHEET:TMS} \cite{FPGA:DS181}. Poniższy schemat prezentuje proces uruchamiania napięć zasilających tak, aby spełnić wymagania dla wszystkich układów.
+
+
+ \begin{figure}[!ht]
+\centering
+\includegraphics[width=8cm]{grafika/power_sequence.png}
+\caption{Sekwencja uruchamiania linii zasilających}
+\end{figure}
+
+ 
+Pierwszą linią zasilania uruchamianą na module jest napięcie 3.3V, ze względu na to że jest to napięcie wymagane przez kontroler przetwornicy układ UCD9222 do pracy. Następnie uruchamiane jest regulowane napięcie rdzenia procesorów DSP (linie CVDD\_DSP0 i CVDD\_DSP1). Kolejnym krokiem jest uruchomienie napięcia 1.0V, 1.2V, 1.8V.  W tym momencie konieczna jest konfiguracja układów generacji sygnału zegarowego tak aby procesory DSP poprawnie się uruchomiły. Po konfiguracji uruchamiana jest linia 1.5V, w tym momencie procesory DSP są poprawnie zasilone i czekają na zmianę stanu pinu \textbf{RESETn}, który rozpocznie proces ładowania \textit{bootloadera} pierwszego poziomu. Ta operacja jest wykonywana przez FPGA, które do pełnego uruchomienia potrzebuje jeszcze napięć 2.5V.  Układ FPGA kontroluje również piny konfiguracyjne \textit{GPIO} procesorów DSP, które ustalają ich tryb pracy. 
+
+\section{Konfiguracja poszczególnych układów}
+
+\subsection{CDCM6208}
+Układy generacji sygnału zegarowego CDCM6208 są konfigurowane poprzez interfejs I2C i pracują w trybie \textit{Slave}. Ich adresy to kolejno: \textit{0x54} i \textit{0x55}. Po uruchomieniu linii zasilania \textbf{P1V8} odbywa się konfiguracja wewnętrznych rejestrów układów. Wartości rejestrów zostały wygenerowane za pomocą programu dostarczonego przez producenta \textbf{CDCM6208} \cite{CDCM6208:INFO2}.  Adresy ukladu są 16 bitowe, ale wypełnianie ich odbywa się poprzez wysłanie dwóch słów 8 bitowych.
+
+
+ \begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{grafika/cdcm6208_conf.png}
+\caption{Proces programowania układu CDCM6208}
+\end{figure}
+
+%\subsection{AD9522}
+
+%\subsection{ADN4604}
+%Przełącznik interfejsu 
+
+
+\subsection{UCD9222}
+
+Napięcie regulowane rdzenia procesorów DSP jest kontrolowane przez układ UCD9222, który do poprawnej pracy wymaga konfiguracji poprzez interfejs PMBus. Wykorzystując oprogramowanie producenta \textit{Fusion Digital Power Designer} \cite{FUSION} oraz przykładowy plik konfiguracyjny z modułu ewaluacyjnego \cite{UCD9222_EVM} przygotowano konfigurację generującą odpowiednie napięcia dla obu procesorów DSP. 
+
+ \begin{figure}[!ht]
+\centering
+\includegraphics[width=12cm]{grafika/ucd9222.png}
+\caption{Konfiguracja programu Fusion Digital Power Designer}
+\end{figure}
+
+Konfiguracja układu może odbywać się za pomocą zewnętrznego programatora lub poprzez mikrokontroler LPC1764, jednak ta funkcjonalność jest opcjonalna. Kontroler przetwornicy zawiera w sobię pamięć nieulotną FLASH, na której zapisuje konfigurację rejestrów i nie potrzebna jest jej aktualizacja podczas uruchamiania układu. 
+
+\section{Podsumowanie}
+
+Przygotowane oprogramowanie pozwala na uruchomienie akceleratora obliczeniowego do momentu programowania układu FPGA.  
+
+
+%Inicjalizacja pinów mikrokontrolera
+%Uruchomienie SPI FPGA
+%

@@ -1,0 +1,16 @@
+*.aux
+*.gz
+*.log
+*.toc
+*.4og
+*.out
+*.pdf
+*.4ct
+*.4tc
+*.dvi
+*.idv
+*.lg
+*.odt
+*.tmp
+*.xref
+*.tdo

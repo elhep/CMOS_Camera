@@ -1,0 +1,810 @@
+\ifglsentryexists{BGA}{}%
+{%
+\gls@defglossaryentry{BGA}%
+{%
+name={BGA},%
+sort={BGA},%
+type={main},%
+first={BGA},%
+firstplural={BGAs},%
+text={BGA},%
+plural={BGAs},%
+description={Ball Grid Array},%
+descriptionplural={Ball Grid Array},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{CMOS}{}%
+{%
+\gls@defglossaryentry{CMOS}%
+{%
+name={CMOS},%
+sort={CMOS},%
+type={main},%
+first={CMOS},%
+firstplural={CMOSs},%
+text={CMOS},%
+plural={CMOSs},%
+description={Complementary Metal-Oxide Semiconductor},%
+descriptionplural={Complementary Metal-Oxide Semiconductor},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PCIe}{}%
+{%
+\gls@defglossaryentry{PCIe}%
+{%
+name={PCIe},%
+sort={PCIe},%
+type={main},%
+first={PCIe},%
+firstplural={PCIes},%
+text={PCIe},%
+plural={PCIes},%
+description={Peripherial Component Interconnect Express},%
+descriptionplural={Peripherial Component Interconnect Express},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GTP}{}%
+{%
+\gls@defglossaryentry{GTP}%
+{%
+name={GTP},%
+sort={GTP},%
+type={main},%
+first={GTP},%
+firstplural={GTPs},%
+text={GTP},%
+plural={GTPs},%
+description={Gigabit Transceiver Port},%
+descriptionplural={Gigabit Transceiver Port},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{AC}{}%
+{%
+\gls@defglossaryentry{AC}%
+{%
+name={AC},%
+sort={AC},%
+type={main},%
+first={AC},%
+firstplural={ACs},%
+text={AC},%
+plural={ACs},%
+description={Alternating Current},%
+descriptionplural={Alternating Current},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DC}{}%
+{%
+\gls@defglossaryentry{DC}%
+{%
+name={DC},%
+sort={DC},%
+type={main},%
+first={DC},%
+firstplural={DCs},%
+text={DC},%
+plural={DCs},%
+description={Direct Current},%
+descriptionplural={Direct Current},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{FPGA}{}%
+{%
+\gls@defglossaryentry{FPGA}%
+{%
+name={FPGA},%
+sort={FPGA},%
+type={main},%
+first={FPGA},%
+firstplural={FPGAs},%
+text={FPGA},%
+plural={FPGAs},%
+description={Field Programmable Gate Array},%
+descriptionplural={Field Programmable Gate Array},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{IC}{}%
+{%
+\gls@defglossaryentry{IC}%
+{%
+name={IC},%
+sort={IC},%
+type={main},%
+first={IC},%
+firstplural={ICs},%
+text={IC},%
+plural={ICs},%
+description={Integrated Circuit},%
+descriptionplural={Integrated Circuit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{JTAG}{}%
+{%
+\gls@defglossaryentry{JTAG}%
+{%
+name={JTAG},%
+sort={JTAG},%
+type={main},%
+first={JTAG},%
+firstplural={JTAGs},%
+text={JTAG},%
+plural={JTAGs},%
+description={Joint Test Action Group},%
+descriptionplural={Joint Test Action Group},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{DDR}{}%
+{%
+\gls@defglossaryentry{DDR}%
+{%
+name={DDR},%
+sort={DDR},%
+type={main},%
+first={DDR},%
+firstplural={DDRs},%
+text={DDR},%
+plural={DDRs},%
+description={Double Data Rate},%
+descriptionplural={Double Data Rate},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PCB}{}%
+{%
+\gls@defglossaryentry{PCB}%
+{%
+name={PCB},%
+sort={PCB},%
+type={main},%
+first={PCB},%
+firstplural={PCBs},%
+text={PCB},%
+plural={PCBs},%
+description={Printed Circuit Board},%
+descriptionplural={Printed Circuit Board},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PERG}{}%
+{%
+\gls@defglossaryentry{PERG}%
+{%
+name={PERG},%
+sort={PERG},%
+type={main},%
+first={PERG},%
+firstplural={PERGs},%
+text={PERG},%
+plural={PERGs},%
+description={Photonics and Web Engineering Group},%
+descriptionplural={Photonics and Web Engineering Group},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SFP+}{}%
+{%
+\gls@defglossaryentry{SFP+}%
+{%
+name={SFP+},%
+sort={SFP+},%
+type={main},%
+first={SFP+},%
+firstplural={SFP+s},%
+text={SFP+},%
+plural={SFP+s},%
+description={Small form-factor pluggable transceiver},%
+descriptionplural={Small form-factor pluggable transceiver},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{Gbps}{}%
+{%
+\gls@defglossaryentry{Gbps}%
+{%
+name={Gbps},%
+sort={Gbps},%
+type={main},%
+first={Gbps},%
+firstplural={Gbpss},%
+text={Gbps},%
+plural={Gbpss},%
+description={Gigabits per second},%
+descriptionplural={Gigabits per second},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GFLOPs}{}%
+{%
+\gls@defglossaryentry{GFLOPs}%
+{%
+name={GFLOPs},%
+sort={GFLOPs},%
+type={main},%
+first={GFLOPs},%
+firstplural={GFLOPss},%
+text={GFLOPs},%
+plural={GFLOPss},%
+description={Giga Floating Point Operations Per Second},%
+descriptionplural={Giga Floating Point Operations Per Second},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SPI}{}%
+{%
+\gls@defglossaryentry{SPI}%
+{%
+name={SPI},%
+sort={SPI},%
+type={main},%
+first={SPI},%
+firstplural={SPIs},%
+text={SPI},%
+plural={SPIs},%
+description={Serial Peripherial Interconnect},%
+descriptionplural={Serial Peripherial Interconnect},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{I2C}{}%
+{%
+\gls@defglossaryentry{I2C}%
+{%
+name={I2C},%
+sort={I2C},%
+type={main},%
+first={I2C},%
+firstplural={I2Cs},%
+text={I2C},%
+plural={I2Cs},%
+description={Inter Integrated Circuit},%
+descriptionplural={Inter Integrated Circuit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{ppm}{}%
+{%
+\gls@defglossaryentry{ppm}%
+{%
+name={ppm},%
+sort={ppm},%
+type={main},%
+first={ppm},%
+firstplural={ppms},%
+text={ppm},%
+plural={ppms},%
+description={points per milion},%
+descriptionplural={points per milion},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{LVDS}{}%
+{%
+\gls@defglossaryentry{LVDS}%
+{%
+name={LVDS},%
+sort={LVDS},%
+type={main},%
+first={LVDS},%
+firstplural={LVDSs},%
+text={LVDS},%
+plural={LVDSs},%
+description={Low Voltage Differential Signaling},%
+descriptionplural={Low Voltage Differential Signaling},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GB}{}%
+{%
+\gls@defglossaryentry{GB}%
+{%
+name={GB},%
+sort={GB},%
+type={main},%
+first={GB},%
+firstplural={GBs},%
+text={GB},%
+plural={GBs},%
+description={Gigabyte},%
+descriptionplural={Gigabyte},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{EDA}{}%
+{%
+\gls@defglossaryentry{EDA}%
+{%
+name={EDA},%
+sort={EDA},%
+type={main},%
+first={EDA},%
+firstplural={EDAs},%
+text={EDA},%
+plural={EDAs},%
+description={Electronic Design Automation},%
+descriptionplural={Electronic Design Automation},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{OHWR}{}%
+{%
+\gls@defglossaryentry{OHWR}%
+{%
+name={OHWR},%
+sort={OHWR},%
+type={main},%
+first={OHWR},%
+firstplural={OHWRs},%
+text={OHWR},%
+plural={OHWRs},%
+description={Open Hardware Repository},%
+descriptionplural={Open Hardware Repository},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{TTM}{}%
+{%
+\gls@defglossaryentry{TTM}%
+{%
+name={TTM},%
+sort={TTM},%
+type={main},%
+first={TTM},%
+firstplural={TTMs},%
+text={TTM},%
+plural={TTMs},%
+description={Time To Market},%
+descriptionplural={Time To Market},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{SoC}{}%
+{%
+\gls@defglossaryentry{SoC}%
+{%
+name={SoC},%
+sort={SoC},%
+type={main},%
+first={SoC},%
+firstplural={SoCs},%
+text={SoC},%
+plural={SoCs},%
+description={System-On-Chip},%
+descriptionplural={System-On-Chip},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{PC}{}%
+{%
+\gls@defglossaryentry{PC}%
+{%
+name={PC},%
+sort={PC},%
+type={main},%
+first={PC},%
+firstplural={PCs},%
+text={PC},%
+plural={PCs},%
+description={Personal Computer},%
+descriptionplural={Personal Computer},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GPU}{}%
+{%
+\gls@defglossaryentry{GPU}%
+{%
+name={GPU},%
+sort={GPU},%
+type={main},%
+first={GPU},%
+firstplural={GPUs},%
+text={GPU},%
+plural={GPUs},%
+description={Graphics Processing Unit},%
+descriptionplural={Graphics Processing Unit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{GPGPU}{}%
+{%
+\gls@defglossaryentry{GPGPU}%
+{%
+name={GPGPU},%
+sort={GPGPU},%
+type={main},%
+first={GPGPU},%
+firstplural={GPGPUs},%
+text={GPGPU},%
+plural={GPGPUs},%
+description={General Purpose Graphics Processing Unit},%
+descriptionplural={General Purpose Graphics Processing Unit},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

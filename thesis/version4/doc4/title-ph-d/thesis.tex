@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\include{thesis.preamble}
+
+%Additional packages
+\usepackage{pdfpages}
+
+
+\begin{document}
+
+\title{\LARGE {\bf Compact embedded camera design and evaluation of high speed interfaces for hyper-spectral imaging applications}\\
+ \vspace*{6mm}
+}
+
+\author{Piotr Zdunek}
+\submitdate{Warsaw, 2017}
+
+\normallinespacing
+%\maketitle
+
+%TODO list of figures and tables needs to go at the end
+%TODO put the numbers of pages on the sides  
+%TODO change the font to times new roman
+\preface
+\input{titlepage/titlepage}
+\input{abstract/abstract} %summary
+%oświadczenie
+%toc
+\cleardoublepage
+\includepdf[pages=-]{./titlepage/osw.pdf}
+\pagestyle{empty}
+
+\body
+\input{introduction/introduction}
+%\input{genesis/genesis}
+\input{concept/concept}
+%\input{requirements/requirements}
+\input{realisation/realisation}
+\input{evaluation/evaluation}
+\input{summary/summary}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{bibliography/bibliography}
+
+%glossary
+%table of pictures 
+%list of appendices
+
+\appendix
+% appendices come here
+
+
+
+
+\end{document}

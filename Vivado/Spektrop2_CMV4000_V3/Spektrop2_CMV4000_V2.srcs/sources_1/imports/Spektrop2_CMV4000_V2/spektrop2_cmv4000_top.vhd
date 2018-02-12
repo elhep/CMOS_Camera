@@ -28,19 +28,17 @@ entity spektrop2_cmv4000_top is
     FPGA_BANK35_DIFF_P : in STD_LOGIC_VECTOR(15 downto 0);
     FPGA_BANK35_DIFF_N : in STD_LOGIC_VECTOR(15 downto 0);   
     FPGA_BANK13_IO : in STD_LOGIC_VECTOR ( 10 downto 0 );
-    --Not used FPGA_BANK34_HSTL_IN_IO : in STD_LOGIC_VECTOR ( 25 downto 0 );
-    --Not used FPGA_BANK34_HSTL_IO0 : out STD_LOGIC_VECTOR ( 3 downto 0 );
     CLK_MGT1_P : in STD_LOGIC;
     CLK_MGT1_N : in STD_LOGIC;
     CLK_MGT0_P : in STD_LOGIC;
     CLK_MGT0_N : in STD_LOGIC;
     COAXPRESS_UPLINK_I : in STD_LOGIC;
-    SI5340_SDA : inout STD_LOGIC;
     SI5340_LOS_XAXBb : in STD_LOGIC;
     SI5340_nINTR : in STD_LOGIC;
     SI5340_LOL : in STD_LOGIC;
     SI5340_nRST : out STD_LOGIC;
-    SI5340_SCL : out STD_LOGIC;
+    SI5340_SCL : inout STD_LOGIC;
+    SI5340_SDA : inout STD_LOGIC;
     LED0 : out STD_LOGIC;
     LED1 : out STD_LOGIC;
     MGT_RX0_P : in STD_LOGIC;
@@ -54,9 +52,9 @@ entity spektrop2_cmv4000_top is
     RS485_RX : in STD_LOGIC;
     RS485_TX : out STD_LOGIC;
     GS12281_nCS : out STD_LOGIC;
-    GS12281_SCLK : out STD_LOGIC;
-    GS12281_SDIN : in STD_LOGIC;
-    GS12281_SDOUT : out STD_LOGIC;
+    GS12281_SCLK : inout STD_LOGIC;
+    GS12281_SDIN : inout STD_LOGIC;
+    GS12281_SDOUT : inout STD_LOGIC;
     GS12281_GPIO : inout STD_LOGIC_VECTOR ( 4 downto 1 );
     
 -- CMV4000 signals   
@@ -66,11 +64,11 @@ entity spektrop2_cmv4000_top is
     --data_in_p       : in unsigned (15 downto 0);
     --data_in_n       : in unsigned (15 downto 0);
     --data clock
-    clk_in_p        : in std_logic;
-    clk_in_n        : in std_logic;
+--    clk_in_p        : in std_logic;
+--    clk_in_n        : in std_logic;
     --control signal
-    cntrl_in_p      : in std_logic;
-    cntrl_in_n      : in std_logic;
+--    cntrl_in_p      : in std_logic;
+--    cntrl_in_n      : in std_logic;
            
     --trigger
     frame_req       : out std_logic;
@@ -80,25 +78,30 @@ entity spektrop2_cmv4000_top is
     sen_reset_n     : out std_logic;
           
     --fast sensor clock 480 MHz
-    CLK_LVDS_OUT_P  : out std_logic;
-    CLK_LVDS_OUT_N  : out std_logic;
+--    CLK_LVDS_OUT_P  : out std_logic;
+--    CLK_LVDS_OUT_N  : out std_logic;
           
     cmd_grab_frame        : in std_logic;
           
     fvalid_led            : out std_logic;
-    --control_led           : out std_logic;
-    --monitor_locked_led    : out std_logic;
-    --rst_sys_dbg_led       : out std_logic;
-    --state_no_led          : out std_logic_vector(3 downto 0);
-    
-    
+     --control_led           : out std_logic;
+     --monitor_locked_led    : out std_logic;
+     --rst_sys_dbg_led       : out std_logic;
+     --state_no_led          : out std_logic_vector(3 downto 0);
+    SPI_CMV4000_MISO_io : inout STD_LOGIC;
+    SPI_CMV4000_MOSI_io : inout STD_LOGIC;
+    SPI_CMV4000_SCK_io : inout STD_LOGIC;
+    SPI_CMV4000_CS: inout STD_LOGIC;
+
+
 -- Zynq Processing System signals
     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    FIXED_IO_ps_srstb : inout STD_LOGIC
+    FIXED_IO_ps_srstb : inout STD_LOGIC;
+    UART_rxd : in STD_LOGIC;
+    UART_txd : out STD_LOGIC
   );
-
 end spektrop2_cmv4000_top;
 
 architecture STRUCTURE of spektrop2_cmv4000_top is
@@ -110,7 +113,6 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
   signal MGT_TX2_OBUFDS_I : STD_LOGIC;
   
   signal ps_100m_clk : std_logic;
-  
   
   component tsc_ms1_top is
   port (
@@ -180,12 +182,21 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
     
 component system_wrapper is
     port (
-      FCLK_100M_CLK : out STD_LOGIC;
-      FCLK_50M_CLK : out STD_LOGIC;
-      FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-      FIXED_IO_ps_clk : inout STD_LOGIC;
-      FIXED_IO_ps_porb : inout STD_LOGIC;
-      FIXED_IO_ps_srstb : inout STD_LOGIC
+        FCLK_100M_CLK : out STD_LOGIC;
+        FCLK_50M_CLK : out STD_LOGIC;
+        FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+        FIXED_IO_ps_clk : inout STD_LOGIC;
+        FIXED_IO_ps_porb : inout STD_LOGIC;
+        FIXED_IO_ps_srstb : inout STD_LOGIC;
+        I2C_scl_io : inout STD_LOGIC;
+        I2C_sda_io : inout STD_LOGIC;
+        SPI_io0_io : inout STD_LOGIC;
+        SPI_io1_io : inout STD_LOGIC;
+        SPI_sck_io : inout STD_LOGIC;
+        SPI_ss_io : inout STD_LOGIC_VECTOR ( 1 downto 0 );
+        UART_rxd : in STD_LOGIC;
+        UART_txd : out STD_LOGIC;
+        control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
     );
   end component;
   
@@ -273,10 +284,16 @@ component system_wrapper is
 
   signal cmd_grab_frame_sig : std_logic;
   signal rst_n          : std_logic;
+  signal control_reg0_o : std_logic_vector(31 downto 0);
   
   signal ps_50m_clk             : std_logic;
   signal led_counter            : unsigned(31 downto 0);
   constant LED_COUNTER_MAX      : natural := 50000000;
+
+  signal spi_mosi : std_logic;
+  signal spi_miso : std_logic;
+  signal spi_clk : std_logic;
+  signal spi_ss : std_logic;
   
 begin
 
@@ -287,9 +304,28 @@ begin
          FIXED_IO_mio => FIXED_IO_mio,
          FIXED_IO_ps_clk => FIXED_IO_ps_clk,
          FIXED_IO_ps_porb => FIXED_IO_ps_porb,
-         FIXED_IO_ps_srstb => FIXED_IO_ps_srstb
+         FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+         I2C_scl_io => SI5340_SCL,
+         I2C_sda_io => SI5340_SDA,
+         SPI_io0_io => spi_miso,
+         SPI_io1_io => spi_mosi,
+         SPI_sck_io => spi_clk,
+         SPI_ss_io => spi_ss,
+         UART_rxd => RS485_RX,
+         UART_txd => RS485_TX,
+         control_reg0_o => control_reg0_o
    );
-   
+
+   spi_cmv4000_miso_io <= spi_miso;
+   spi_cmv4000_mosi_io <= spi_mosi;
+   spi_cmv4000_sck_io <= spi_clk;
+   spi_cmv4000_cs <= spi_ss(0);
+
+   GS12281_SDOUT <= spi_miso;
+   GS12281_SDIN <= spi_mosi;
+   GS12281_SCLK <= spi_clk;
+   GS12281_nCS <= spi_ss(1);
+
    tsc_ms1_top_i: tsc_ms1_top
    port map(
            -- EXTERNAL CONTROL
@@ -299,25 +335,25 @@ begin
      --    clk_idelay            : in std_logic;
      --    clk_locked            : in std_logic;
      --    clk_rst                : out std_logic;
-       cmd_grab_frame        : in std_logic;
-     --    clk_ser             : in std_logic;
+       cmd_grab_frame       => control_reg0_o(0),
+        --    clk_ser             : in std_logic;
      --    clk_ser_locked        : in std_logic;
-       prev_en : in std_logic;
+       prev_en => control_reg0_o(1), 
        
        -- SENSOR CLOCK AND RESET
-       sen_clk_in        : out std_logic;
-       sen_reset_n       : out std_logic;
-     
+       sen_clk_in        => sen_clk,
+       sen_reset_n       => sen_reset_n,     
+
        -- CONTROL OUTPUTS TO SENSOR
-       frame_req         : out std_logic;
+       frame_req        => frame_req, 
      
        -- LVDS DATA TO/FROM SENSOR
-       data_rx_p         : in unsigned (15 downto 0);
-       data_rx_n         : in unsigned (15 downto 0);
+       data_rx_p        => cmv4000_data_p, 
+       data_rx_n        => cmv4000_data_n, 
      
-       ctrl_rx_p         : in std_logic;
-       ctrl_rx_n         : in std_logic;
-       
+       ctrl_rx_p        
+       ctrl_rx_n              
+
        clk_rx_p          : in std_logic;
        clk_rx_n          : in std_logic;
      

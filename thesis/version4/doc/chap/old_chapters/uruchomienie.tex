@@ -1,0 +1,101 @@
+% TeX encoding = utf8
+% TeX spellcheck = pl_PL
+
+%Uruchomienie i testowanie
+
+\section{Wstęp}
+Poniższy rozdział przedstawia proces uruchomienia i testów elektrycznych zaprojektowanego urządzenia. Zawarto w nim opis oprogramowania uruchamiającego napisanego na mikrokontroler LPC1764 oraz przebieg testów uruchomieniowych poszczególnych układów.
+
+\section{IPMI}
+
+\section{Uruchomienie zasilania}
+
+Układ LPC1769 ma za zadanie uruchomić poszczególne linie zasilania poprzez wysterowanie linii \textbf{enable} przetwornic i sprawdzenie linii \textbf{Power OK}. Procesory DSP jak i układ FPGA wymagają określonej sekwencji uruchamiania linii zasilających. Aby uruchomić poprawnie zarówno DSP jak i FPGA sekwencja zasilania przebiega według scenariusza \textit{Core before IO} \cite[page=129]{TMS}. 
+
+\begin{center}
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+    text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=5em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=3cm,
+    minimum height=2em]
+    
+\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    \node [block] (cvdd0_en) {Enable DSP0 CVDD};
+    \node [cloud, left of=cvdd0_en] (section_init) {Init Power};
+    
+    \node [block,below of=cvdd0_en,] (cvdd1_en) {Enable DSP1 CVDD};
+    
+    \node [block,below of=cvdd1_en,] (p1v0_en) {Enable P1V0};    
+    
+     \node [block,below of=p1v0_en,] (p1v2_en) {Enable P1V2}; 
+         
+     \node [block,below of=p1v2_en,] (p1v8_en) {Enable P1V8};          
+    
+     \node [block,below of=p1v8_en,] (p3v3_en) {Enable P3V3};         
+       
+     \node [block,below of=p3v3_en,] (p1v5_en) {Enable P1V5}; 
+     \node [decision, below of=p1v5_en,node distance=3cm] (p1v5_ok) {is power good?};
+      
+      \node [block, right of=p1v5_ok,node distance=4cm,fill=red!20] (error) {Error};  
+      
+      \node [block,fill=green!20,below of=p1v5_ok,node distance=3cm] (init_comp) {Init complete}; 
+       
+       \node [block, right of=error,node distance=3cm,fill=red!20] (reset) {Reset};  
+    % Draw edges
+    \path [line] (section_init) -- (cvdd0_en);
+    
+    \path [line] (cvdd0_en) -- (cvdd1_en);
+    
+    \path [line] (cvdd1_en) -- (p1v0_en);
+    
+    \path [line] (p1v0_en) -- (p1v2_en);
+    
+    \path [line] (p1v2_en) -- (p1v8_en);	
+    
+    \path [line] (p1v8_en) -- (p3v3_en);	
+    
+    \path [line] (p3v3_en) -- (p1v5_en);	
+    
+    \path [line] (p1v5_en) -- (p1v5_ok);
+    
+    \path [line] (p1v5_ok) -- node [near start] {no} (error);
+    
+    \path [line] (p1v5_ok) -- node [near start]{yes}(init_comp);
+    
+    \path [line] (error) -- (reset);	
+         
+         
+\end{tikzpicture}
+
+\end{center}
+
+Napisane oprogramowanie wykonuje powyższą funkcjonalność. Sygnały Power Good linii 1.0V, 1.2V, 1.5V, 1.8V i 3.3V są zwarte ze sobą. 
+
+
+\section{Konfiguracja układów}
+
+\subsection{UCD9222}
+\subsection{CDCM6208}
+\subsection{AD9522}
+\subsection{ADN4604}
+\subsection{CDCUN1208}
+
+\section{Oprogramowanie FPGA}
+W tej części zawarto opis oprogramowania na układ XC7A200T, które służy do poprawnego uruchomienia procesorów DSP.
+\subsection{Założenia}
+\subsection{Opis oprogramowania}
+
+\section{Uruchomienie DSP}
+
+\section{Testy elektryczne}
+
+\section{Podsumowanie}
+
+
+
+
+

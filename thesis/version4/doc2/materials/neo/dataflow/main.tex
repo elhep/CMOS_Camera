@@ -1,0 +1,125 @@
+
+\documentclass[10pt,a4paper]{report}
+\usepackage{titlesec}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}    % prettier fonts - corrects rendering
+\usepackage[utf8]{inputenc}
+%\usepackage{babel}
+\usepackage{float}
+\pagestyle{plain}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{caption}
+\usepackage{gensymb}
+%\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage[toc,page]{appendix}
+
+\usepackage{relsize}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{svg}
+\usepackage{footnote}
+\usepackage[textwidth=40]{todonotes}
+
+\setsvg{inkscape = inkscape -z -D}
+\graphicspath{{./},{./img/}}
+\newcommand{\figref}{Rys.~\ref}
+
+\setcounter{chapter}{4}
+\setcounter{secnumdepth}{4}
+
+\setlength\evensidemargin{0in}
+\setlength\oddsidemargin{0in}
+\setlength\textwidth{6.5in}
+\setlength\textheight{9in}
+\setlength\topmargin{0in}
+\setlength\headheight{0in}
+\setlength\headsep{.2in}
+
+\renewcommand{\bibname}{References}
+
+%zaczynaj każdą sekcję na nowej stronie
+%\let\oldsection\section
+%\renewcommand\section{\clearpage\oldsection}
+
+%\title{Data flow in NEOSTEL camera \textcolor{red} {\\DRAFT \\ FOR INTERNAL USE ONLY}}
+%\author{Creotech}
+%\date{\today}
+
+\begin{document}
+\input{tex/title.tex}
+%\maketitle
+\listoftodos
+\tableofcontents
+
+\chapter{Camera detailed description}
+
+\section{Mechanical description DUMMY}
+
+%TODO
+%       ESA REMARKS:
+%       Please revise document for the next major milestone (CDR?)
+%       - Please describe in a top-level overview the logic of where the different functional blocks physically reside (what is central in a rack, what is on each PCB within the camera, etc.)
+%       - Please describe the individual functional blocks in their logical / data flow order:
+%       i) overall control of exposure sequence: camera reset, shutter, camera clocking, camera readout
+%       ii) generation of top level CCD control signals; which voltages (clocks, etc.) are programmable at what level)
+%       iii) generation of low-level clocking waveforms
+%       iv) analog path of pixel read-out
+%       v) digitized path of pixel read-out
+%       vi) low-level processing of sampled pixel value (CDS, oversampling)
+%       vii) "assembly" of pix values into image and data flow of image
+%       - please use consistently:
+%       i) exposure instead of exposition
+%       ii) "housekeeping" (voltage, temp. etc.) sensors versus CCD detector chip
+%TEST
+
+%TODO Mechanizm sterowania kamerą oraz IPC skonsultować z Jackiem
+
+%TODO - Please describe in a top-level overview the logic of where the different functional blocks physically reside (what is central in a rack, what is on each PCB within the camera, etc.)
+\section{Camera Electronics - Architectural Overview and Subsystem Decomposition}
+%Jeśli opisujemy w stylu report tzn. jako rozdziały i sekcje
+%to warto dawać wstęp na poczatku każdego rozdziału  Piotr Zdunek
+%Może jednak zrobimy same sekcje, bez rozdziałów?
+
+\input{tex/func_blocks.tex}
+
+\section{Camera video frame acquisition flow description}
+
+\input{tex/dataflow.tex}
+
+\section{Linux - FreeRTOS IPC}
+\label{chap:ipc}
+
+\input{tex/linux_freertos_ipc.tex}
+
+\section{Firmware on FreeRTOS}
+
+\input{tex/freertos_system.tex}
+
+\section{Software on Linux}
+
+%TODO PZien
+\input{tex/linux_system.tex}
+
+\section{Camera diagnostic capabilities}
+\label{chap:diag}
+
+\input{tex/diagnostic.tex}
+
+\begin{thebibliography}{1}
+
+\bibitem{e2v} CCD203-84,Back Illuminated 4096x4096 Scientific CCD Sensor datasheet, e2v technologies 2013
+
+\bibitem{mt-001} ,,Taking the Mystery out of the Infamous Formula,
+SNR = 6.02N + 1.76dB, and Why You Should Care'', Walt Kester (2009)
+\end{thebibliography}
+
+\begin{appendix}
+
+\input{tex/appendix.tex}
+
+\end{appendix}
+
+\end{document}

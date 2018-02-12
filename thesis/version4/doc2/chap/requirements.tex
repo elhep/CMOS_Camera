@@ -1,0 +1,165 @@
+
+\chapter{Requirements}\label{ch2:req}
+% I tutaj pojawiają się
+%konkretne wymagania dla czujnika X. Podkreslasz ze opracowana kamera będzie
+%miała romzmiar pozwalający skladac z kawalkow. Piszesz ze czujnik X jest w
+%opracowywaniu wiec tworzysz model firmware na  czujniku z podobnym
+%interfejsem -CMV4000 i tutaj opisujesz co robiles. Dalej, w następnym
+%rozdziale  piszesz już ogólniej o integracji i testach z czujnikiem X.
+%Potem piszesz o sposobach w jaki można przechwycić sygnal z czujnika i dalej
+%go wysylac w swiat, czyli to co masz.
+
+%\section{X-band silicon sensor}
+%%description of the sensor
+%
+
+\begin{enumerate}
+    \item high throughput multiple serial data acuqisition - 16 differential pairs with up to 5 Gbps per line
+    \item online and offline sensor data transfer and buffering
+    \item multichannel operation, possiblity to trigger multiple cameras with high precision (~1 ns)
+\end{enumerate}
+
+%This chapter presents the requirements for the camera framework. 
+
+%This chapter presents the genesis and requirements for the designed camera framework. Firstly, the genesis of the
+%project is shown, then general requirements are stated which present the main goals to be achieved by the project. 
+%Finally, the requirement analysis is performed and assumptions are presented. 
+%
+%\section{Project genesis}
+%\label{ch2:genesis}
+%
+%The multitude and variety of sensors, interfaces, as well as requirements regarding specific camera projects make the design
+%immensely difficult. Given the parameters for a specific application camera, the firmware, data acquisition and data
+%transmission has to be designed specifically for each design. This poses a troublesome aspect of camera design that
+%needs to be addressed.
+%
+%The purpose of my thesis is to address the issue of the scientific camera design. One cannot deny the fact that 
+%\textbf{there is no framework for camera designs}. All designs are custom, and what is needed is a system which
+%would allow for a faster time-to-market, less error prone development and high throughput connectivity. Also, an easy way
+%of adding support for different sensors is essential. 
+%
+%\textbf{The thesis addresses this problem} by providing a scalable framework which can be used as a basis for high speed
+%camera designs. 
+%
+%%Moreover, in Chapter 2 where \textit{Concept of design}  of the project is stated the main decisions are made.
+%%These decisions have an influence on the possible margins of the requirements parameters values. In the end of concept 
+%%phase the requirements will be revisited and a \emph{measurable} parameters will be provided for the project. 
+%
+% 
+%
+%
+%\section{Requirements analysis}
+%
+%The main requirement of the camera framework is to make the development process of the prototype of a camera system
+%easier. In order to do that, already tested subsystems can be used or analysed so that the development can be more
+%straightforward.  
+%
+%It is essential in any engineering design to define the requirements, so that they are \emph{measurable}. 
+%It might be difficult to define the exact values for each requirement
+%at an early stage of the project, nevertheless some assumptions have to be made. What is more, this also relates to the
+%design methodology - one cannot design a system right the first time, as any engineering design process is an iterative
+%one where achievable parameter values are adjusted at each iteration. 
+%
+%The values stated here are gathered based on existing camera systems and available hardware. It is worth noting that none
+%of the available open source cameras~\ref{ch1:existing} have all of those features and are in a  mature enough state to
+%use them at all.  
+%
+%
+%The requirements for the camera framework subsystems are listed below:
+%
+%\begin{enumerate}
+%    \item \textbf{High processing performance} - data acquisition from the sensor
+%        \begin{itemize}
+%            \item  input datapath throughput equal to 600 MB/s which corresponds to 4 MP (2048 x 2048 px) at frame rate 100 fps, 12 bits per pixel   
+%        \end{itemize}
+%
+%    \item \textbf{Ease of adding support for a different sensor} - the framework has to be designed this way so that the
+%        designer can easily add support for a different type of sensor
+%
+%    \item \textbf{High speed communication} - so that it is possible to transfer the acquired data with high throughput
+%        \begin{itemize}
+%            \item 3 Gbps Serial ATA 
+%            \item 1 Gbps Ethernet 
+%            \item \textit{possible future upgrade} 10 Gbps Ethernet 
+%        \end{itemize}
+%
+%    \item \textbf{Multichannel operation} - in order to support multiple cameras at the same time
+%        \begin{itemize}
+%            \item PTP Ethernet synchronisation - for synchronisation - using 1 Gbps Ethernet
+%            \item \textit{possible future upgrade} MLVDS bus synchronisation for IP Cores controlling the sensor - short range
+%            \item \textit{possible future upgrade} White Rabbit synchronisation - for subnanosecond (up to 10 km) synchronisation 
+%        \end{itemize}
+%
+%    \item \textbf{Real time capability} - in order to perform real time tasks
+%    \item \textbf{Versatile OS} - which supports high level languages and has got a lot of support
+%        \begin{itemize}
+%            \item GNU/Linux 
+%            \item possibility to use a certified OS
+%        \end{itemize}
+%\end{enumerate}
+%
+%\section{Assumptions}
+%As already described, the mechanics and enclosure choices are different for each camera project. 
+%That is why this project does not consist of of optics design or other mechanical aspects of camera design. The
+%goal of this project is to address the intersection of all camera problems from an embedded system design point of view.
+%
+%
+%
+
+%\subsection{Requirement analysis}\label{ch2:req_analysis}
+%
+% It is essential in any engineering design 
+%to define the requirements, so that they are \emph{measurable}. It might be difficult to define the exact values for each requirement
+%at an early stage of the project, nevertheless some assumptions have to be made. What is more, this also relates to the
+%design methodology - one cannot design a system right the first time, as any engineering design process is an iterative
+%one where achievable parameter values are adjusted at each iteration. 
+%%~\ref{fig:pres_bottom_up_design_proc}. 
+%
+%%More information regarding the approach to project design is presented in section~\ref{ch2:methodology}.
+%
+%This section presents the requirements in their final form. The designed system will be confronted with the values
+%specified here in the chapter~\ref{ch6:tests}. 
+%
+%The values stated here are gathered based on existing camera systems and available hardware. It is worth noting that none
+%of the available open source cameras~\ref{ch1:existing} have all of those features and are in a  mature enough state to
+%use them at all.  
+
+%      \textbf{Requirements:}
+%          \begin{enumerate}
+%              \item \textbf{High data acquisition} - input datapath throughput equal to 600 MB/s\\
+%                    which conforms to 4 MP (2048 x 2048 px) at frame rate 100 fps, 12 bits per pixel   
+%                \item \textbf{Ease of adding a support for a different sensor} - use of an FPGA integrated circuit for
+%                    sensor data acquisition 
+%
+%                \item \textbf{High speed communication} 
+%                 \begin{enumerate}
+%                   \item 3 Gbps Serial ATA 
+%                   \item 1 Gbps Ethernet 
+%                   \item \textit{possible future upgrade} 10 Gbps Ethernet 
+%               \end{enumerate}
+%             \item \textbf{Multichannel operation} 
+%                 \begin{enumerate}
+%                  \item PTP Ethernet synchronisation - for synchronisation - using 1 Gbps Ethernet
+%                  \item \textit{possible future upgrade} MLVDS bus synchronisation for IP Cores controlling the sensor - short range
+%                  \item \textit{possible future upgrade} White Rabbit synchronisation - for subnanosecond (up to 10 km) synchronisation 
+%                \end{enumerate}
+%            \item \textbf{Real time capability} - soft real time system - 1 ms interrupt and process switching time   
+%            \item \textbf{Versatile OS}
+%                \begin{enumerate}
+%                  \item GNU/Linux 
+%                  \item possibility to use a certified OS
+%                \end{enumerate}
+%
+%          \end{enumerate}
+% 
+%
+%\section{Acknowledgements}
+
+%Due to the fact that the design of the camera framework was a multidisciplinary project, some parts of it were designed by
+%students and associates of The Institute of Electronics Systems, Photonics and Web Engineering Group and Division of
+%Television, Institute Radioelectronics and Multimedia Technology at Warsaw University of 
+%Technology. 
+%
+%%People who greatly helped me during the development are those mentioned: Grzegorz Kasprowicz, Damian Krystkiewicz,
+%%Maciej Trochimiuk, Andrzej Abramowski, Bartłomiej Juszczyk, Adrian Byszuk oraz Krzysztof Sielewicz. 
+%

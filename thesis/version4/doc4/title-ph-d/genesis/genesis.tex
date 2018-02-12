@@ -1,0 +1,44 @@
+\chapter{Genesis}
+
+In this master thesis an implementation of Precision-Time-Protocol Timestamping Unit in FPGA fabric for scientific
+camera systems is presented. The project was completed at Photonics and Web Engineering Group at the Institute of 
+Electronics Systems which has a significant contribution to X-ray measurement research (TODO publikacje).  Having a scientific cooperation with
+another Polish university, there was a need to develop hardware and firmware for novel extremely high-speed,
+multichannel, X-ray silicon based camera. This project is undergoing a patent application, and for this reason the 
+detailed description of the project cannot be included in this thesis. 
+
+Specifically, a time synchronisation system providing an accurate UTC time was required in order to correctly control
+the exposure time between the systems' channels.  This master thesis focuses on that aspect of the project.   
+
+
+\section{Problem statement}
+Providing an accurate timestamping for modern scientific grade camera system is a \textbf{complicated engineering
+problem}. The designed hardware for the camera system used Xilinx Zynq SoC\cite{XIL:ZYNQ} which has built
+in timestamping capability in the Media Access Controller (MAC). Nevertheless, the timestamping register is not available for
+to be read by the operating system and programmable logic \cite[16.4.2]{XIL:ZYNQ_TRM} and the provided functionality of timestamping from
+Xilinx is limited and provides low accuracy \cite[16.2.7]{XIL:ZYNQ_TRM} and significant jitter \cite{XIL:PTP_TESTS}. 
+Xilinx User Guide Number 585 - Technical Rerence Manual explicitly mentions the fact that the Timestamping Unit can be 
+implemented in hardware (programmable logic) in order to achieve better accuracy. This has not been done before and 
+this thesis provides the solution to the mentioned problem. 
+
+\section{Solution}
+The solution for the problem is to design a Timestamping Unit (TSU) in digital system in FPGA fabric for the Zynq SoC
+and use the MAC's built in PTP filtering capability to use this IP Core as a replacement for the internal built in TSU.
+What is more, an Ethernet driver modification is required to exchange the TSU and an external oscillator has to be added
+to the system in order to precisely run the counters in the TSU. 
+
+\section{Statement of Originality}
+
+This solution provides a way to perform PTP based time synchronisation using Zynq SoC. There are
+other methods which provide time synchronisation of different precision such as:
+\begin{itemize}
+    \item GPS
+    \item NTP - precision of up to
+    \item PTP (by standard) - sub-milisecond precision 
+    \item White Rabbit - sub-nanosecond precision 
+\end{itemize}
+
+Nevertheless, the solution provided in this master thesis is \textbf{original}. Standard PTP in the
+Zynq SoC does not function properly and in order to be able to use PTP on Zynq with high precision and low jitter,
+TSU needs to be implemented in digital fabric.  
+
