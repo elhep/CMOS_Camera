@@ -73,7 +73,7 @@ architecture rtl of tsc_mv1_clocking is
   signal pll0_locked                : std_logic;
 --  signal pll1_locked                : std_logic;
   
-  component clk_wiz_v3_6_0
+  component clk_wiz_0
   port
    (-- Clock in ports
     CLK_IN1           : in     std_logic;
@@ -134,7 +134,7 @@ begin
   clk_locked <= pll0_locked;
   monitor_locked    <= pll0_locked; --and pll1_locked;
 
-  clk_gen0_inst : clk_wiz_v3_6_0
+  clk_gen0_inst : clk_wiz_0
     port map
     (-- Clock in ports
         CLK_IN1 => clk_100m,

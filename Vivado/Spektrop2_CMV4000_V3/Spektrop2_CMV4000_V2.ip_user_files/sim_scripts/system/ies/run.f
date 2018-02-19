@@ -87,6 +87,9 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/system/ip/system_xbar_0/sim/system_xbar_0.v" \
 -endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_axi_quad_spi_0_1/sim/system_axi_quad_spi_0_1.vhd" \
+-endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_15 \
   "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib

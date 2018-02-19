@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Wed Feb  7 01:58:45 2018
+-- Date        : Thu Feb  8 00:26:48 2018
 -- Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim
 --               C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0_sim_netlist.vhdl
@@ -817,7 +817,7 @@ entity system_processing_system7_0_0_processing_system7_v5_5_processing_system7 
   attribute ORIG_REF_NAME : string;
   attribute ORIG_REF_NAME of system_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "processing_system7_v5_5_processing_system7";
   attribute POWER : string;
-  attribute POWER of system_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={} dataWidth={} clockFreq={533.333} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={2000.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={2000.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>";
+  attribute POWER of system_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={} dataWidth={} clockFreq={533.333} readRate={0.5} writeRate={0.5} /><IO interface={I2C} ioStandard={} bidis={1} ioBank={} clockFreq={111.111115} usageRate={0.5} /><IO interface={UART} ioStandard={} bidis={0} ioBank={} clockFreq={100.000000} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={2000.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={2000.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of system_processing_system7_0_0_processing_system7_v5_5_processing_system7 : entity is 0;
 end system_processing_system7_0_0_processing_system7_v5_5_processing_system7;
@@ -3364,6 +3364,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity system_processing_system7_0_0 is
   port (
+    I2C0_SDA_I : in STD_LOGIC;
+    I2C0_SDA_O : out STD_LOGIC;
+    I2C0_SDA_T : out STD_LOGIC;
+    I2C0_SCL_I : in STD_LOGIC;
+    I2C0_SCL_O : out STD_LOGIC;
+    I2C0_SCL_T : out STD_LOGIC;
+    UART1_TX : out STD_LOGIC;
+    UART1_RX : in STD_LOGIC;
     M_AXI_GP0_ARVALID : out STD_LOGIC;
     M_AXI_GP0_AWVALID : out STD_LOGIC;
     M_AXI_GP0_BREADY : out STD_LOGIC;
@@ -3530,10 +3538,6 @@ architecture STRUCTURE of system_processing_system7_0_0 is
   signal NLW_inst_FTMT_P2F_TRIG_1_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_FTMT_P2F_TRIG_2_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_FTMT_P2F_TRIG_3_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_I2C0_SCL_O_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_I2C0_SCL_T_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_I2C0_SDA_O_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_I2C0_SDA_T_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_I2C1_SCL_O_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_I2C1_SCL_T_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_I2C1_SDA_O_UNCONNECTED : STD_LOGIC;
@@ -3662,7 +3666,6 @@ architecture STRUCTURE of system_processing_system7_0_0 is
   signal NLW_inst_UART0_TX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_DTRN_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_UART1_RTSN_UNCONNECTED : STD_LOGIC;
-  signal NLW_inst_UART1_TX_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_USB0_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_USB1_VBUS_PWRSELECT_UNCONNECTED : STD_LOGIC;
   signal NLW_inst_WDT_RST_OUT_UNCONNECTED : STD_LOGIC;
@@ -3872,7 +3875,7 @@ architecture STRUCTURE of system_processing_system7_0_0 is
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of inst : label is "system_processing_system7_0_0.hwdef";
   attribute POWER : string;
-  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={} dataWidth={} clockFreq={533.333} readRate={0.5} writeRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={2000.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={2000.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>";
+  attribute POWER of inst : label is "<PROCESSOR name={system} numA9Cores={2} clockFreq={666.666666} load={0.5} /><MEMORY name={code} memType={} dataWidth={} clockFreq={533.333} readRate={0.5} writeRate={0.5} /><IO interface={I2C} ioStandard={} bidis={1} ioBank={} clockFreq={111.111115} usageRate={0.5} /><IO interface={UART} ioStandard={} bidis={0} ioBank={} clockFreq={100.000000} usageRate={0.5} /><IO interface={UART} ioStandard={LVCMOS18} bidis={2} ioBank={Vcco_p0} clockFreq={100.000000} usageRate={0.5} /><IO interface={QSPI} ioStandard={LVCMOS18} bidis={6} ioBank={Vcco_p0} clockFreq={200} usageRate={0.5} /><PLL domain={Processor} vco={2000.000} /><PLL domain={Memory} vco={1066.667} /><PLL domain={IO} vco={2000.000} /><AXI interface={S_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} /><AXI interface={M_AXI_GP0} dataWidth={32} clockFreq={50} usageRate={0.5} />/>";
   attribute USE_TRACE_DATA_EDGE_DETECTOR : integer;
   attribute USE_TRACE_DATA_EDGE_DETECTOR of inst : label is 0;
   attribute X_INTERFACE_INFO : string;
@@ -3883,6 +3886,12 @@ architecture STRUCTURE of system_processing_system7_0_0 is
   attribute X_INTERFACE_PARAMETER of FCLK_CLK1 : signal is "XIL_INTERFACENAME FCLK_CLK1, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1";
   attribute X_INTERFACE_INFO of FCLK_RESET0_N : signal is "xilinx.com:signal:reset:1.0 FCLK_RESET0_N RST";
   attribute X_INTERFACE_PARAMETER of FCLK_RESET0_N : signal is "XIL_INTERFACENAME FCLK_RESET0_N, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of I2C0_SCL_I : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_I";
+  attribute X_INTERFACE_INFO of I2C0_SCL_O : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_O";
+  attribute X_INTERFACE_INFO of I2C0_SCL_T : signal is "xilinx.com:interface:iic:1.0 IIC_0 SCL_T";
+  attribute X_INTERFACE_INFO of I2C0_SDA_I : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_I";
+  attribute X_INTERFACE_INFO of I2C0_SDA_O : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_O";
+  attribute X_INTERFACE_INFO of I2C0_SDA_T : signal is "xilinx.com:interface:iic:1.0 IIC_0 SDA_T";
   attribute X_INTERFACE_INFO of M_AXI_GP0_ACLK : signal is "xilinx.com:signal:clock:1.0 M_AXI_GP0_ACLK CLK";
   attribute X_INTERFACE_PARAMETER of M_AXI_GP0_ACLK : signal is "XIL_INTERFACENAME M_AXI_GP0_ACLK, ASSOCIATED_BUSIF M_AXI_GP0, FREQ_HZ 50000000, PHASE 0.000, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0";
   attribute X_INTERFACE_INFO of M_AXI_GP0_ARREADY : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARREADY";
@@ -3915,6 +3924,8 @@ architecture STRUCTURE of system_processing_system7_0_0 is
   attribute X_INTERFACE_INFO of S_AXI_GP0_WLAST : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WLAST";
   attribute X_INTERFACE_INFO of S_AXI_GP0_WREADY : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WREADY";
   attribute X_INTERFACE_INFO of S_AXI_GP0_WVALID : signal is "xilinx.com:interface:aximm:1.0 S_AXI_GP0 WVALID";
+  attribute X_INTERFACE_INFO of UART1_RX : signal is "xilinx.com:interface:uart:1.0 UART_1 RxD";
+  attribute X_INTERFACE_INFO of UART1_TX : signal is "xilinx.com:interface:uart:1.0 UART_1 TxD";
   attribute X_INTERFACE_INFO of MIO : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
   attribute X_INTERFACE_INFO of M_AXI_GP0_ARADDR : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARADDR";
   attribute X_INTERFACE_INFO of M_AXI_GP0_ARBURST : signal is "xilinx.com:interface:aximm:1.0 M_AXI_GP0 ARBURST";
@@ -4127,12 +4138,12 @@ inst: entity work.system_processing_system7_0_0_processing_system7_v5_5_processi
       GPIO_I(63 downto 0) => B"0000000000000000000000000000000000000000000000000000000000000000",
       GPIO_O(63 downto 0) => NLW_inst_GPIO_O_UNCONNECTED(63 downto 0),
       GPIO_T(63 downto 0) => NLW_inst_GPIO_T_UNCONNECTED(63 downto 0),
-      I2C0_SCL_I => '0',
-      I2C0_SCL_O => NLW_inst_I2C0_SCL_O_UNCONNECTED,
-      I2C0_SCL_T => NLW_inst_I2C0_SCL_T_UNCONNECTED,
-      I2C0_SDA_I => '0',
-      I2C0_SDA_O => NLW_inst_I2C0_SDA_O_UNCONNECTED,
-      I2C0_SDA_T => NLW_inst_I2C0_SDA_T_UNCONNECTED,
+      I2C0_SCL_I => I2C0_SCL_I,
+      I2C0_SCL_O => I2C0_SCL_O,
+      I2C0_SCL_T => I2C0_SCL_T,
+      I2C0_SDA_I => I2C0_SDA_I,
+      I2C0_SDA_O => I2C0_SDA_O,
+      I2C0_SDA_T => I2C0_SDA_T,
       I2C1_SCL_I => '0',
       I2C1_SCL_O => NLW_inst_I2C1_SCL_O_UNCONNECTED,
       I2C1_SCL_T => NLW_inst_I2C1_SCL_T_UNCONNECTED,
@@ -4648,8 +4659,8 @@ inst: entity work.system_processing_system7_0_0_processing_system7_v5_5_processi
       UART1_DTRN => NLW_inst_UART1_DTRN_UNCONNECTED,
       UART1_RIN => '0',
       UART1_RTSN => NLW_inst_UART1_RTSN_UNCONNECTED,
-      UART1_RX => '1',
-      UART1_TX => NLW_inst_UART1_TX_UNCONNECTED,
+      UART1_RX => UART1_RX,
+      UART1_TX => UART1_TX,
       USB0_PORT_INDCTL(1 downto 0) => NLW_inst_USB0_PORT_INDCTL_UNCONNECTED(1 downto 0),
       USB0_VBUS_PWRFAULT => '0',
       USB0_VBUS_PWRSELECT => NLW_inst_USB0_VBUS_PWRSELECT_UNCONNECTED,
