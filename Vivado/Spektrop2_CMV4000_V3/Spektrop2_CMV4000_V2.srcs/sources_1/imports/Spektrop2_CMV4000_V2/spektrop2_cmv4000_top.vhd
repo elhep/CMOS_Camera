@@ -51,7 +51,7 @@ entity spektrop2_cmv4000_top is
 		     MGT_TX2_N : out STD_LOGIC;
 		     RS485_RX : in STD_LOGIC;
 		     RS485_TX : out STD_LOGIC;
-		     GS12281_nCS : out STD_LOGIC;
+		     GS12281_nCS : inout STD_LOGIC;
 		     GS12281_SCLK : inout STD_LOGIC;
 		     GS12281_SDIN : inout STD_LOGIC;
 		     GS12281_SDOUT : inout STD_LOGIC;
@@ -93,9 +93,9 @@ entity spektrop2_cmv4000_top is
 		     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
 		     FIXED_IO_ps_clk : inout STD_LOGIC;
 		     FIXED_IO_ps_porb : inout STD_LOGIC;
-		     FIXED_IO_ps_srstb : inout STD_LOGIC;
-		     UART_rxd : in STD_LOGIC;
-		     UART_txd : out STD_LOGIC
+		     FIXED_IO_ps_srstb : inout STD_LOGIC
+		    -- UART_rxd : in STD_LOGIC;
+		    -- UART_txd : out STD_LOGIC
 	     );
 end spektrop2_cmv4000_top;
 
@@ -185,10 +185,14 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 			     FIXED_IO_ps_srstb : inout STD_LOGIC;
 			     I2C_scl_io : inout STD_LOGIC;
 			     I2C_sda_io : inout STD_LOGIC;
-			     SPI_io0_io : inout STD_LOGIC;
-			     SPI_io1_io : inout STD_LOGIC;
-			     SPI_sck_io : inout STD_LOGIC;
-			     SPI_ss_io : inout STD_LOGIC_VECTOR ( 1 downto 0 );
+			     SPI0_io0_io : inout STD_LOGIC;
+			     SPI0_io1_io : inout STD_LOGIC;
+			     SPI0_sck_io : inout STD_LOGIC;
+			     SPI0_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+			     SPI1_io0_io : inout STD_LOGIC;
+			     SPI1_io1_io : inout STD_LOGIC;
+			     SPI1_sck_io : inout STD_LOGIC;
+			     SPI1_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
 			     UART_rxd : in STD_LOGIC;
 			     UART_txd : out STD_LOGIC;
 			     control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
@@ -285,14 +289,18 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 	signal led_counter            : unsigned(31 downto 0);
 	constant LED_COUNTER_MAX      : natural := 50000000;
 
-	signal spi_mosi : std_logic;
-	signal spi_miso : std_logic;
-	signal spi_clk : std_logic;
-	signal spi_ss : std_logic_vector(1 downto 0);
+	signal spi_cmv4000_mosi : std_logic;
+	signal spi_cmv4000_miso : std_logic;
+	signal spi_cmv4000_sck : std_logic;
+	signal spi_cmv4000_ss : std_logic_vector(0 downto 0);
+
+	signal spi_gs12281_mosi : std_logic;
+	signal spi_gs12281_miso : std_logic;
+	signal spi_gs12281_sck : std_logic;
+	signal spi_gs12281_ss : std_logic_vector(0 downto 0);
 
 	signal cmv4000_data_p : unsigned(16 downto 1);
 	signal cmv4000_data_n : unsigned(16 downto 1);
-
 
 	signal pix_clk             : std_logic;
 	signal data_valid          : std_logic;
@@ -317,10 +325,14 @@ begin
 			 FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
 			 I2C_scl_io => SI5340_SCL,
 			 I2C_sda_io => SI5340_SDA,
-			 SPI_io0_io => spi_miso,
-			 SPI_io1_io => spi_mosi,
-			 SPI_sck_io => spi_clk,
-			 SPI_ss_io => spi_ss,
+			 SPI0_io0_io => spi_cmv4000_miso,
+			 SPI0_io1_io => spi_cmv4000_mosi,
+			 SPI0_sck_io => spi_cmv4000_sck,			 
+			 SPI0_ss_io  => spi_cmv4000_ss, 
+			 SPI1_io0_io => spi_gs12281_miso,
+			 SPI1_io1_io => spi_gs12281_mosi,
+			 SPI1_sck_io => spi_gs12281_sck,			 
+			 SPI1_ss_io  => spi_gs12281_ss, 
 			 UART_rxd => RS485_RX,
 			 UART_txd => RS485_TX,
 			 control_reg0_o => control_reg0_o
@@ -447,16 +459,16 @@ begin
 	FPGA_BANK13_IO(3) <= sen_clk; 
 
    -- sensor SPI
-	FPGA_BANK13_IO(10) <= spi_miso; 
-	FPGA_BANK13_IO(6) <= spi_mosi; 
-	FPGA_BANK13_IO(4) <= spi_clk; 
-	FPGA_BANK13_IO(2) <= spi_ss(0); 
+	FPGA_BANK13_IO(10) <= spi_cmv4000_miso; 
+	FPGA_BANK13_IO(6) <=  spi_cmv4000_mosi; 
+	FPGA_BANK13_IO(4) <=  spi_cmv4000_sck; 
+	FPGA_BANK13_IO(2) <=  spi_cmv4000_ss(0); 
 
    -- GS12281 SPI 
-	GS12281_SDOUT <= spi_miso;
-	GS12281_SDIN	 <= spi_mosi;
-	GS12281_SCLK	 <= spi_clk;
-	GS12281_nCS 	 <= spi_ss(1);
+	GS12281_SDOUT 	 <= spi_gs12281_miso;
+	GS12281_SDIN	 <= spi_gs12281_mosi;
+	GS12281_SCLK	 <= spi_gs12281_sck;
+	GS12281_nCS 	 <= spi_gs12281_ss(0);
 
    -- control of the CMV4000 IP reset
 	rst_n <= control_reg0_o(3);

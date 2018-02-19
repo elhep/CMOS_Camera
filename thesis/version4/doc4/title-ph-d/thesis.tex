@@ -13,7 +13,7 @@
 }
 
 \author{Piotr Zdunek}
-\submitdate{Warsaw, 2017}
+\submitdate{Warsaw, 2018}
 
 \normallinespacing
 %\maketitle
@@ -22,22 +22,31 @@
 %TODO put the numbers of pages on the sides  
 %TODO change the font to times new roman
 \preface
+
 \input{titlepage/titlepage}
+\cleardoublepage
 \input{abstract/abstract} %summary
-%oświadczenie
-%toc
 \cleardoublepage
 \includepdf[pages=-]{./titlepage/osw.pdf}
 \pagestyle{empty}
+\cleardoublepage
+\tableofcontents
+\newpage
 
 \body
 \input{introduction/introduction}
+%Here the whole genesis and the requirements of the projects are stated and defined. 
+%After reading this chapter, the reader must understand what is going to be designed. 
 %\input{genesis/genesis}
 \input{concept/concept}
+%How are we going to design it and what do we want to test
 %\input{requirements/requirements}
 \input{realisation/realisation}
+%The development of the camera. 
 \input{evaluation/evaluation}
+%The tests of high speed interfaces.
 \input{summary/summary}
+%What is the outcome?
 
 \addcontentsline{toc}{chapter}{Bibliography}
 \bibliographystyle{alpha}

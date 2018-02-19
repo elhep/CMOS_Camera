@@ -1,26 +1,4 @@
-\chapter{Realisation}
-
-\section{Digital system design}
-\subsection{Zynq MAC PTP filter}
-Xilinx Zynq SoC has an integrated Media Access Controller for 10/100/1000 Mbps Ethernet. MAC supports
-IEEE1588\cite[16.2.7]{XIL:UG585}, but it's Timestamping Unit is limitted as mentioned before. Nevertheless,
-the MAC PTP packet filter can be used to implement custom TSU. 
-\subsubsection{Zynq MAC PTP signal test}
-In order to validate the signals coming out from the PTP a simple test was performed
-\subsection{Zynq Processing System Configuration}
-\subsection{Timestamping Unit Implementation}
-
-\section{Firmware implementation}
-\subsection{MAC driver}
-\subsection{MAC driver}
-\subsection{Linux PTP driver}
-\subsection{PTP driver}
-\subsection{PTPd program}
+\chapter{Camera development}
 
 
 
-Done
-- basic digital system with ptp signals connected to chipscope
-- added register connected to axi to test whether it can be added through uio to xemacps
-- run qemu on host for zc706
-- modified the petalinux device tree to support phy
