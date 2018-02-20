@@ -1,0 +1,1089 @@
+
+*** Running vivado
+    with args -log spektrop2_cmv4000_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source spektrop2_cmv4000_top.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source spektrop2_cmv4000_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/ZdunekPC/Documents/Spektrop2/Vivado/ip_repo/register_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2017.4/data/ip'.
+Command: synth_design -top spektrop2_cmv4000_top -part xc7z015clg485-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z015'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z015'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13060 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 390.789 ; gain = 102.527
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'spektrop2_cmv4000_top' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:102]
+INFO: [Synth 8-3491] module 'system_wrapper' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:14' bound to instance 'system_wrapper_i' of component 'system_wrapper' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:318]
+INFO: [Synth 8-638] synthesizing module 'system_wrapper' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:38]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'I2C_scl_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:123]
+INFO: [Synth 8-638] synthesizing module 'IOBUF' [E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-256] done synthesizing module 'IOBUF' (1#1) [E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'I2C_sda_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:130]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI0_io0_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:137]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI0_io1_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:144]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI0_sck_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:151]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI0_ss_iobuf_0' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:158]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI1_io0_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:165]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI1_io1_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:172]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI1_sck_iobuf' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:179]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_comp.v:22655' bound to instance 'SPI1_ss_iobuf_0' of component 'IOBUF' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:186]
+INFO: [Synth 8-3491] module 'system' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1346' bound to instance 'system_i' of component 'system' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:193]
+INFO: [Synth 8-638] synthesizing module 'system' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1394]
+INFO: [Synth 8-3491] module 'system_axi_quad_spi_0_0' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_axi_quad_spi_0_0_stub.vhdl:5' bound to instance 'axi_quad_spi_0' of component 'system_axi_quad_spi_0_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1834]
+INFO: [Synth 8-638] synthesizing module 'system_axi_quad_spi_0_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_axi_quad_spi_0_0_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'system_axi_quad_spi_0_1' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_axi_quad_spi_0_1_stub.vhdl:5' bound to instance 'axi_quad_spi_1' of component 'system_axi_quad_spi_0_1' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1870]
+INFO: [Synth 8-638] synthesizing module 'system_axi_quad_spi_0_1' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_axi_quad_spi_0_1_stub.vhdl:44]
+INFO: [Synth 8-3491] module 'system_processing_system7_0_0' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_processing_system7_0_0_stub.vhdl:5' bound to instance 'processing_system7_0' of component 'system_processing_system7_0_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1906]
+INFO: [Synth 8-638] synthesizing module 'system_processing_system7_0_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_processing_system7_0_0_stub.vhdl:104]
+INFO: [Synth 8-638] synthesizing module 'system_ps7_0_axi_periph_1' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:749]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_1H7AUOX' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_1H7AUOX' (2#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:61]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_4Y7TYO' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:168]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_4Y7TYO' (3#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:168]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_FKL2TE' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:269]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_FKL2TE' (4#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:269]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_11SE3QO' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:393]
+INFO: [Synth 8-3491] module 'system_auto_pc_0' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'system_auto_pc_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:576]
+INFO: [Synth 8-638] synthesizing module 'system_auto_pc_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_auto_pc_0_stub.vhdl:70]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_11SE3QO' (5#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:393]
+INFO: [Synth 8-3491] module 'system_xbar_0' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'system_xbar_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1262]
+INFO: [Synth 8-638] synthesizing module 'system_xbar_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'system_ps7_0_axi_periph_1' (6#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:749]
+INFO: [Synth 8-3491] module 'system_register_0_0' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_register_0_0_stub.vhdl:5' bound to instance 'register_0' of component 'system_register_0_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:2106]
+INFO: [Synth 8-638] synthesizing module 'system_register_0_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_register_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'system_rst_ps7_0_50M_1' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_rst_ps7_0_50M_1_stub.vhdl:5' bound to instance 'rst_ps7_0_50M' of component 'system_rst_ps7_0_50M_1' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:2131]
+INFO: [Synth 8-638] synthesizing module 'system_rst_ps7_0_50M_1' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/system_rst_ps7_0_50M_1_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'system' (7#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/synth/system.vhd:1394]
+INFO: [Synth 8-256] done synthesizing module 'system_wrapper' (8#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/hdl/system_wrapper.vhd:38]
+INFO: [Synth 8-3491] module 'tsc_mv1_top' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_top.vhd:19' bound to instance 'tsc_ms1_top_i' of component 'tsc_mv1_top' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:341]
+INFO: [Synth 8-638] synthesizing module 'tsc_mv1_top' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_top.vhd:86]
+INFO: [Synth 8-3491] module 'tsc_mv1_clocking' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:16' bound to instance 'inst_clocking' of component 'tsc_mv1_clocking' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_top.vhd:256]
+INFO: [Synth 8-638] synthesizing module 'tsc_mv1_clocking' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:49]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: 1 - type: bool 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
+INFO: [Synth 8-113] binding component instance 'inst_clk_ibufds' to cell 'IBUFDS' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:123]
+INFO: [Synth 8-113] binding component instance 'inst_bufg_rx' to cell 'BUFG' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:128]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'inst_obufds' to cell 'OBUFDS' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:130]
+INFO: [Synth 8-3491] module 'clk_wiz_0' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/clk_wiz_0_stub.vhdl:5' bound to instance 'clk_gen0_inst' of component 'clk_wiz_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:137]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_0' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/realtime/clk_wiz_0_stub.vhdl:19]
+INFO: [Synth 8-256] done synthesizing module 'tsc_mv1_clocking' (9#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_clocking.vhd:49]
+INFO: [Synth 8-3491] module 'tsc_mv1_datapath' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_datapath.vhd:14' bound to instance 'inst_datapath' of component 'tsc_mv1_datapath' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_top.vhd:279]
+INFO: [Synth 8-638] synthesizing module 'tsc_mv1_datapath' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_datapath.vhd:68]
+	Parameter g_NR_CHAN bound to: 16 - type: integer 
+	Parameter g_DATA_INV_MASK bound to: 16'b1111111111111111 
+	Parameter g_CTRL_INV_MASK bound to: 1'b1 
+INFO: [Synth 8-3491] module 'tsc_mv1_rx' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:17' bound to instance 'inst_rx' of component 'tsc_mv1_rx' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_datapath.vhd:143]
+INFO: [Synth 8-638] synthesizing module 'tsc_mv1_rx' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:75]
+	Parameter g_NR_CHAN bound to: 16 - type: integer 
+	Parameter g_DATA_INV_MASK bound to: 16'b1111111111111111 
+	Parameter g_CTRL_INV_MASK bound to: 1'b1 
+	Parameter SIM_DEVICE bound to: 7SERIES - type: string 
+INFO: [Synth 8-113] binding component instance 'inst_idelayctrl' to cell 'IDELAYCTRL' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:170]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:47]
+	Parameter CAPACITANCE bound to: DONT_CARE - type: string 
+	Parameter DIFF_TERM bound to: 1 - type: bool 
+	Parameter DQS_BIAS bound to: FALSE - type: string 
+	Parameter IBUF_DELAY_VALUE bound to: 0 - type: string 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IFD_DELAY_VALUE bound to: AUTO - type: string 
+	Parameter IOSTANDARD bound to: LVDS_25 - type: string 
+INFO: [Synth 8-113] binding component instance 'inst_ibufds' to cell 'IBUFDS' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:75]
+	Parameter IOBDELAY_TYPE bound to: VARIABLE - type: string 
+	Parameter IOBDELAY_VALUE bound to: 0 - type: integer 
+INFO: [Synth 8-113] binding component instance 'inst_idelay' to cell 'IDELAY' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:90]
+	Parameter DDR_CLK_EDGE bound to: SAME_EDGE_PIPELINED - type: string 
+	Parameter INIT_Q1 bound to: 1'b0 
+	Parameter INIT_Q2 bound to: 1'b0 
+	Parameter IS_C_INVERTED bound to: 1'b0 
+	Parameter IS_D_INVERTED bound to: 1'b0 
+	Parameter SRTYPE bound to: SYNC - type: string 
+INFO: [Synth 8-113] binding component instance 'inst_iddr' to cell 'IDDR' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:107]
+INFO: [Synth 8-256] done synthesizing module 'tsc_mv1_ser2par' (10#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:47]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+INFO: [Synth 8-3491] module 'tsc_mv1_ser2par' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_ser2par.vhd:23' bound to instance 'inst_ser2par' of component 'tsc_mv1_ser2par' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:184]
+WARNING: [Synth 8-6014] Unused sequential element iserdes_sr_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:330]
+WARNING: [Synth 8-6014] Unused sequential element sum_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:477]
+INFO: [Synth 8-256] done synthesizing module 'tsc_mv1_rx' (11#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_rx.vhd:75]
+INFO: [Synth 8-256] done synthesizing module 'tsc_mv1_datapath' (12#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_datapath.vhd:68]
+INFO: [Synth 8-3491] module 'tsc_mv1_control' declared at 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:14' bound to instance 'inst_control' of component 'tsc_mv1_control' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_top.vhd:323]
+INFO: [Synth 8-638] synthesizing module 'tsc_mv1_control' [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:43]
+WARNING: [Synth 8-614] signal 'rst_cnt' is read in the process but is not in the sensitivity list [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:71]
+INFO: [Synth 8-226] default block is never used [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:168]
+INFO: [Synth 8-256] done synthesizing module 'tsc_mv1_control' (13#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'tsc_mv1_top' (14#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_top.vhd:86]
+WARNING: [Synth 8-3848] Net cmv4000_data_p in module/entity spektrop2_cmv4000_top does not have driver. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:302]
+WARNING: [Synth 8-3848] Net cmv4000_data_n in module/entity spektrop2_cmv4000_top does not have driver. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:303]
+WARNING: [Synth 8-3848] Net SI5340_nRST in module/entity spektrop2_cmv4000_top does not have driver. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:39]
+WARNING: [Synth 8-3848] Net LED0 in module/entity spektrop2_cmv4000_top does not have driver. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:42]
+WARNING: [Synth 8-3848] Net LED1 in module/entity spektrop2_cmv4000_top does not have driver. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'spektrop2_cmv4000_top' (15#1) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:102]
+WARNING: [Synth 8-3331] design tsc_mv1_clocking has unconnected port reg_10bit
+WARNING: [Synth 8-3331] design s00_couplers_imp_11SE3QO has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_11SE3QO has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_FKL2TE has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_FKL2TE has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_FKL2TE has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_FKL2TE has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_4Y7TYO has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_4Y7TYO has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_4Y7TYO has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_4Y7TYO has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_1H7AUOX has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1H7AUOX has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_1H7AUOX has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_1H7AUOX has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_nRST
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port LED0
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port LED1
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[8]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[7]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[1]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[0]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[4]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[3]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[2]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[1]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port COAXPRESS_UPLINK_I
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_LOS_XAXBb
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_nINTR
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_LOL
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 445.199 ; gain = 156.938
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:10 . Memory (MB): peak = 445.199 ; gain = 156.938
+---------------------------------------------------------------------------------
+INFO: [Netlist 29-17] Analyzing 63 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Device 21-403] Loading part xc7z015clg485-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/processing_system7_0'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/processing_system7_0'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp9/system_register_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/register_0'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp9/system_register_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/register_0'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp10/system_rst_ps7_0_50M_1_in_context.xdc] for cell 'system_wrapper_i/system_i/rst_ps7_0_50M'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp10/system_rst_ps7_0_50M_1_in_context.xdc] for cell 'system_wrapper_i/system_i/rst_ps7_0_50M'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp11/system_axi_quad_spi_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/axi_quad_spi_0'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp11/system_axi_quad_spi_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/axi_quad_spi_0'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp12/system_xbar_0_in_context.xdc] for cell 'system_wrapper_i/system_i/ps7_0_axi_periph/xbar'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp12/system_xbar_0_in_context.xdc] for cell 'system_wrapper_i/system_i/ps7_0_axi_periph/xbar'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp13/system_axi_quad_spi_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/axi_quad_spi_1'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp13/system_axi_quad_spi_0_0_in_context.xdc] for cell 'system_wrapper_i/system_i/axi_quad_spi_1'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp14/system_auto_pc_0_in_context.xdc] for cell 'system_wrapper_i/system_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp14/system_auto_pc_0_in_context.xdc] for cell 'system_wrapper_i/system_i/ps7_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp15/clk_wiz_0_in_context.xdc] for cell 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst'
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp15/clk_wiz_0_in_context.xdc] for cell 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst'
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[0]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:13]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[3]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:16]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:19]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[3]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[3]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:22]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[4]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[4]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[5]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:25]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[5]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[6]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[6]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:28]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[7]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[7]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[8]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:31]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[8]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[9]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[9]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:34]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[10]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[10]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[11]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:37]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[11]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[12]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[12]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:40]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[13]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[13]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[14]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:43]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[14]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[15]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[15]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[16]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:47]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[16]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:48]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[17]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:49]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[17]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:50]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[18]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:51]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[18]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:52]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[19]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[19]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:54]
+WARNING: [Vivado 12-584] No ports matched 'MGT_TX0'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:71]
+WARNING: [Vivado 12-584] No ports matched 'MGT_TX1'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:72]
+WARNING: [Vivado 12-584] No ports matched 'MGT_TX2'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:73]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:90]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:91]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:92]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:93]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF[14]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:94]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_DIFF_N[14]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:95]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[0]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:98]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:99]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:100]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[3]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:101]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[4]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:102]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[5]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:103]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[6]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:104]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[7]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:105]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[8]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:106]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[9]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:107]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[10]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:108]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[11]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:109]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[12]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:110]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[13]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:111]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[14]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:112]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[15]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:113]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[16]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:114]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[17]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:115]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[18]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:116]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[19]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:117]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[20]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:118]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[21]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:119]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[22]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:120]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[23]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:121]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[24]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:122]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[25]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:123]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[0]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:124]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:125]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:126]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IO0[3]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:127]
+WARNING: [Vivado 12-584] No ports matched 'UART0_RX'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:143]
+WARNING: [Vivado 12-584] No ports matched 'UART0_RX'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:144]
+WARNING: [Vivado 12-584] No ports matched 'UART0_TX'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:145]
+WARNING: [Vivado 12-584] No ports matched 'UART0_TX'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:146]
+WARNING: [Vivado 12-584] No ports matched 'UART0_TX'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:147]
+WARNING: [Vivado 12-584] No ports matched 'UART0_TX'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:148]
+WARNING: [Vivado 12-584] No ports matched 'CLK_MGT0'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:149]
+WARNING: [Vivado 12-584] No ports matched 'CLK_MGT1'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:150]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[0]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:154]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[1]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:155]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[2]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:156]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[3]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:157]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[4]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:158]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[5]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:159]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[6]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:160]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[7]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:161]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[8]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:162]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[9]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:163]
+WARNING: [Vivado 12-584] No ports matched 'FPGA_BANK34_HSTL_IN_IO[10]'. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:164]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc:164]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/spektrop2_cmv4000_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/constrs_1/new/spektrop2_cmv4000.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/spektrop2_cmv4000_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/spektrop2_cmv4000_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 27 instances were transformed.
+  IDELAY => IDELAYE2: 17 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 10 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 818.145 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z015clg485-3
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[0]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[10]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[11]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[12]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[13]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[14]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[15]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 17).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[16]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 18).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 19).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[17]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 20).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 21).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[18]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 22).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 23).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[19]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 24).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 25).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[1]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 26).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 27).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[20]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 28).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 29).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[21]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 30).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 31).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[22]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 32).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 33).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[23]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 34).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 35).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[24]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 36).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 37).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[25]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 38).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 39).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[26]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 40).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 41).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[27]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 42).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 43).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[28]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 44).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 45).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[29]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 46).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 47).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[2]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 48).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 49).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[30]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 50).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 51).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[31]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 52).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 53).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[32]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 54).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 55).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[33]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 56).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 57).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[34]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 58).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 59).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[35]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 60).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 61).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[36]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 62).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 63).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[37]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 64).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 65).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[38]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 66).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 67).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[39]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 68).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 69).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[3]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 70).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 71).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[40]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 72).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 73).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[41]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 74).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 75).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[42]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 76).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 77).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[43]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 78).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 79).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[44]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 80).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 81).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[45]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 82).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 83).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[46]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 84).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 85).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[47]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 86).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 87).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[48]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 88).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 89).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[49]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 90).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 91).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[4]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 92).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 93).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[50]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 94).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 95).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[51]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 96).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 97).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[52]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 98).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 99).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[53]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 100).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 101).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[5]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 102).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 103).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[6]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 104).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 105).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[7]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 106).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 107).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[8]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 108).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 109).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_mio[9]. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 110).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 111).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_clk. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 112).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 113).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_porb. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 114).
+Applied set_property IO_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 115).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for FIXED_IO_ps_srstb. (constraint file  C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/.Xil/Vivado-12136-DESKTOP-C5LKN8N/dcp8/system_processing_system7_0_0_in_context.xdc, line 116).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/axi_quad_spi_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/axi_quad_spi_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/processing_system7_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/ps7_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/ps7_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/ps7_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/register_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for system_wrapper_i/system_i/rst_ps7_0_50M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for tsc_ms1_top_i/inst_clocking/clk_gen0_inst. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "load_parallel" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'fsm_align_reg' in module 'tsc_mv1_rx'
+INFO: [Synth 8-5546] ROM "training_done" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "training_word" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_align" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "fsm_align" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_align" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "fsm_align" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "cnt_align" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cnt_align" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "cnt_align" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cnt_samples" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "chan_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "chan_sel" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "fsm_align" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "fsm_align" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'tsc_mv1_control'
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cnt_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "data_valid" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "cnt_down" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "rst_cnt" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state_no_reg" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "sen_reset_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "state_reg" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element cnt_reg_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:74]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_idle |                             0000 |                             0000
+               s_reset_1 |                             0001 |                             0001
+            s_eye_sample |                             0010 |                             0101
+             s_eye_delay |                             0011 |                             0111
+             s_eye_check |                             0100 |                             0110
+              s_eye_calc |                             0101 |                             1000
+               s_reset_2 |                             0110 |                             0010
+            s_eye_center |                             0111 |                             1001
+            s_word_align |                             1000 |                             0011
+           s_write_start |                             1001 |                             1010
+             s_write_mid |                             1010 |                             1011
+             s_write_end |                             1011 |                             1100
+            s_write_word |                             1100 |                             1101
+              s_write_ok |                             1101 |                             1110
+                s_finish |                             1110 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'fsm_align_reg' using encoding 'sequential' in module 'tsc_mv1_rx'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  s_init |                              000 |                              000
+                 s_reset |                              001 |                              010
+                  s_idle |                              010 |                              001
+              s_training |                              011 |                              011
+                 s_grab0 |                              100 |                              100
+                 s_grab1 |                              101 |                              101
+                 s_grab2 |                              110 |                              110
+                 s_grab3 |                              111 |                              111
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'sequential' in module 'tsc_mv1_control'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:33 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 34    
++---Registers : 
+	               24 Bit    Registers := 1     
+	               17 Bit    Registers := 3     
+	               12 Bit    Registers := 36    
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 6     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 18    
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 167   
++---Muxes : 
+	   8 Input     24 Bit        Muxes := 1     
+	   2 Input     17 Bit        Muxes := 4     
+	  15 Input     17 Bit        Muxes := 3     
+	   2 Input     12 Bit        Muxes := 34    
+	   3 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  15 Input      8 Bit        Muxes := 5     
+	   2 Input      5 Bit        Muxes := 85    
+	   3 Input      5 Bit        Muxes := 17    
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 2     
+	  23 Input      4 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	  15 Input      3 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	  15 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 213   
+	   3 Input      1 Bit        Muxes := 35    
+	   4 Input      1 Bit        Muxes := 8     
+	  15 Input      1 Bit        Muxes := 19    
+	   8 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module tsc_mv1_clocking 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 2     
+Module tsc_mv1_ser2par 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               12 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     12 Bit        Muxes := 2     
+	   2 Input      5 Bit        Muxes := 5     
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 2     
+Module tsc_mv1_rx 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 3     
+	               12 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                8 Bit    Registers := 6     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 4     
+	  15 Input     17 Bit        Muxes := 3     
+	   3 Input     10 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	  15 Input      8 Bit        Muxes := 5     
+	   4 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	  15 Input      4 Bit        Muxes := 2     
+	  23 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 4     
+	  15 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 2     
+	  15 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 24    
+	   3 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 8     
+	  15 Input      1 Bit        Muxes := 19    
+Module tsc_mv1_control 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     24 Bit       Adders := 1     
++---Registers : 
+	               24 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   8 Input     24 Bit        Muxes := 1     
+	   8 Input      4 Bit        Muxes := 1     
+	   9 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2     
+	   8 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 160 (col length:60)
+BRAMs: 190 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "fsm_align" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "cnt_align" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element tsc_ms1_top_i/inst_control/frame_req_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:161]
+WARNING: [Synth 8-6014] Unused sequential element tsc_ms1_top_i/inst_control/data_valid_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:166]
+WARNING: [Synth 8-6014] Unused sequential element tsc_ms1_top_i/inst_control/state_no_reg_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:83]
+INFO: [Synth 8-5546] ROM "tsc_ms1_top_i/inst_control/cnt_prev" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "tsc_ms1_top_i/inst_control/state_reg" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-6014] Unused sequential element tsc_ms1_top_i/inst_control/cnt_reg_reg was removed.  [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/tsc_mv1_control.vhd:74]
+WARNING: [Synth 8-3331] design system_ps7_0_axi_periph_1 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design system_ps7_0_axi_periph_1 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design system_ps7_0_axi_periph_1 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design system_ps7_0_axi_periph_1 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design system_ps7_0_axi_periph_1 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design system_ps7_0_axi_periph_1 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_nRST
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port LED0
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port LED1
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[8]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[7]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[1]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port FPGA_BANK13_IO[0]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[4]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[3]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[2]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port GS12281_GPIO[1]
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port COAXPRESS_UPLINK_I
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_LOS_XAXBb
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_nINTR
+WARNING: [Synth 8-3331] design spektrop2_cmv4000_top has unconnected port SI5340_LOL
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/rst_sync_reg' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/rst_sync_reg'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[0]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[2]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[1]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[8]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[2]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[4]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/data_par_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/data_par_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/data_par_reg[11] )
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[3]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[8]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[4]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[6]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[5]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[8]'
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[7]' (FD) to 'tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[8] )
+INFO: [Synth 8-3886] merging instance 'tsc_ms1_top_i/inst_datapath/inst_rx/data_prev_reg[10]' (FDRE) to 'tsc_ms1_top_i/inst_datapath/inst_rx/data_prev_reg[11]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tsc_ms1_top_i/inst_datapath/inst_rx/data_prev_reg[11] )
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[16].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[15].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[14].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[13].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[12].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[11].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[10].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[9].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[8].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[7].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[6].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[5].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[4].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[3].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[2].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[1].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/shift_data_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/shift_data_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/gen_ser2par[0].inst_ser2par/data_par_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/training_word_reg[8]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/data_curr_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/data_curr_reg[10]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_end_reg[7]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_end_reg[6]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_start_reg[7]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_start_reg[6]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/data_prev_reg[11]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[7]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[6]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[5]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[4]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[3]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[2]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_eye_mid_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[7]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[6]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[5]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[4]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[3]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[2]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_word_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_ok_reg) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/loc_nok_reg) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/training_active_reg) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_wen_reg) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[7]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[6]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[5]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[4]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[3]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[2]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[1]) is unused and will be removed from module spektrop2_cmv4000_top.
+WARNING: [Synth 8-3332] Sequential element (tsc_ms1_top_i/inst_datapath/inst_rx/fifo_din_reg[0]) is unused and will be removed from module spektrop2_cmv4000_top.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:39 ; elapsed = 00:00:40 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5578] Moved timing constraint from pin 'system_wrapper_i/system_i/processing_system7_0/FCLK_CLK0' to pin 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK0/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'system_wrapper_i/system_i/processing_system7_0/FCLK_CLK1' to pin 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' to pin 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_out1' to pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/bbstub_clk_out1/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' to 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_out2' to pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/bbstub_clk_out2/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' to 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_out3' to pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/bbstub_clk_out3/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' to 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_out4' to pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/bbstub_clk_out4/O'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' to 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5578] Moved timing constraint from pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_out5' to pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/bbstub_clk_out5/O {FPGA_BANK13_IO[3]}'
+INFO: [Synth 8-5783] Moving clock source from hierarchical pin 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' to 'system_wrapper_i/system_i/processing_system7_0/bbstub_FCLK_CLK1/O'
+INFO: [Synth 8-5819] Moved 8 constraints on hierarchical pins to their respective driving/loading pins
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 818.145 ; gain = 529.883
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:00:54 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+------------------------------+----------+
+|      |BlackBox name                 |Instances |
++------+------------------------------+----------+
+|1     |system_xbar_0                 |         1|
+|2     |system_auto_pc_0              |         1|
+|3     |system_axi_quad_spi_0_0       |         1|
+|4     |system_axi_quad_spi_0_1       |         1|
+|5     |system_processing_system7_0_0 |         1|
+|6     |system_register_0_0           |         1|
+|7     |system_rst_ps7_0_50M_1        |         1|
+|8     |clk_wiz_0                     |         1|
++------+------------------------------+----------+
+
+Report Cell Usage: 
++------+-------------------------------------+------+
+|      |Cell                                 |Count |
++------+-------------------------------------+------+
+|1     |clk_wiz_0_bbox_7                     |     1|
+|2     |system_auto_pc_0_bbox_3              |     1|
+|3     |system_axi_quad_spi_0_0_bbox_0       |     1|
+|4     |system_axi_quad_spi_0_1_bbox_1       |     1|
+|5     |system_processing_system7_0_0_bbox_2 |     1|
+|6     |system_register_0_0_bbox_5           |     1|
+|7     |system_rst_ps7_0_50M_1_bbox_6        |     1|
+|8     |system_xbar_0_bbox_4                 |     1|
+|9     |BUFG                                 |     1|
+|10    |CARRY4                               |    16|
+|11    |IDDR                                 |    17|
+|12    |IDELAY                               |    17|
+|13    |IDELAYCTRL                           |     1|
+|14    |LUT1                                 |    81|
+|15    |LUT2                                 |    77|
+|16    |LUT3                                 |    97|
+|17    |LUT4                                 |    80|
+|18    |LUT5                                 |    86|
+|19    |LUT6                                 |   141|
+|20    |MUXF7                                |    20|
+|21    |FDCE                                 |     3|
+|22    |FDPE                                 |    35|
+|23    |FDRE                                 |   609|
+|24    |FDSE                                 |   102|
+|25    |IBUF                                 |     1|
+|26    |IBUFDS                               |    18|
+|27    |IOBUF                                |    10|
+|28    |OBUF                                 |     4|
+|29    |OBUFDS                               |     1|
+|30    |OBUFT                                |     3|
++------+-------------------------------------+------+
+
+Report Instance Areas: 
++------+---------------------------------------+--------------------------+------+
+|      |Instance                               |Module                    |Cells |
++------+---------------------------------------+--------------------------+------+
+|1     |top                                    |                          |  2403|
+|2     |  system_wrapper_i                     |system_wrapper            |   988|
+|3     |    system_i                           |system                    |   977|
+|4     |      ps7_0_axi_periph                 |system_ps7_0_axi_periph_1 |   551|
+|5     |        s00_couplers                   |s00_couplers_imp_11SE3QO  |   177|
+|6     |  tsc_ms1_top_i                        |tsc_mv1_top               |  1407|
+|7     |    inst_clocking                      |tsc_mv1_clocking          |    22|
+|8     |    inst_control                       |tsc_mv1_control           |   162|
+|9     |    inst_datapath                      |tsc_mv1_datapath          |  1223|
+|10    |      inst_rx                          |tsc_mv1_rx                |  1223|
+|11    |        \gen_ser2par[0].inst_ser2par   |tsc_mv1_ser2par           |    49|
+|12    |        \gen_ser2par[10].inst_ser2par  |tsc_mv1_ser2par_0         |    49|
+|13    |        \gen_ser2par[11].inst_ser2par  |tsc_mv1_ser2par_1         |    69|
+|14    |        \gen_ser2par[12].inst_ser2par  |tsc_mv1_ser2par_2         |    49|
+|15    |        \gen_ser2par[13].inst_ser2par  |tsc_mv1_ser2par_3         |    49|
+|16    |        \gen_ser2par[14].inst_ser2par  |tsc_mv1_ser2par_4         |    49|
+|17    |        \gen_ser2par[15].inst_ser2par  |tsc_mv1_ser2par_5         |    59|
+|18    |        \gen_ser2par[16].inst_ser2par  |tsc_mv1_ser2par_6         |    60|
+|19    |        \gen_ser2par[1].inst_ser2par   |tsc_mv1_ser2par_7         |    49|
+|20    |        \gen_ser2par[2].inst_ser2par   |tsc_mv1_ser2par_8         |    49|
+|21    |        \gen_ser2par[3].inst_ser2par   |tsc_mv1_ser2par_9         |    69|
+|22    |        \gen_ser2par[4].inst_ser2par   |tsc_mv1_ser2par_10        |    49|
+|23    |        \gen_ser2par[5].inst_ser2par   |tsc_mv1_ser2par_11        |    49|
+|24    |        \gen_ser2par[6].inst_ser2par   |tsc_mv1_ser2par_12        |    49|
+|25    |        \gen_ser2par[7].inst_ser2par   |tsc_mv1_ser2par_13        |    59|
+|26    |        \gen_ser2par[8].inst_ser2par   |tsc_mv1_ser2par_14        |    49|
+|27    |        \gen_ser2par[9].inst_ser2par   |tsc_mv1_ser2par_15        |    49|
++------+---------------------------------------+--------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 113 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:32 ; elapsed = 00:00:43 . Memory (MB): peak = 834.516 ; gain = 173.309
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:55 . Memory (MB): peak = 834.516 ; gain = 546.254
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 27 instances were transformed.
+  IDELAY => IDELAYE2: 17 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 10 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+211 Infos, 253 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:56 ; elapsed = 00:01:01 . Memory (MB): peak = 834.516 ; gain = 553.168
+INFO: [Common 17-1381] The checkpoint 'C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/synth_1/spektrop2_cmv4000_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file spektrop2_cmv4000_top_utilization_synth.rpt -pb spektrop2_cmv4000_top_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 834.516 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 20 01:22:48 2018...
