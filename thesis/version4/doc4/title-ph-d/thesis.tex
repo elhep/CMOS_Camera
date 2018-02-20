@@ -6,7 +6,7 @@
 \usepackage{pdfpages}
 \usepackage{lipsum}
 \usepackage{fontspec}
-\setmainfont[Ligatures=TeX]{Verdana}
+\setmainfont[Ligatures=TeX]{Arial}
 
 \begin{document}
 
@@ -19,12 +19,13 @@
 
 %\normallinespacing
 \linespread{1.15}
+\pagenumbering{arabic}
 %\maketitle
 
 %TODO list of figures and tables needs to go at the end
 %TODO put the numbers of pages on the sides  
 %TODO change the font to times new roman
-\preface
+%\preface
 
 \input{titlepage/titlepage}
 \cleardoublepage
@@ -36,7 +37,7 @@
 \tableofcontents
 \newpage
 
-\body
+%\body
 \input{introduction/introduction}
 %Here the whole genesis and the requirements of the projects are stated and defined. 
 %After reading this chapter, the reader must understand what is going to be designed. 
