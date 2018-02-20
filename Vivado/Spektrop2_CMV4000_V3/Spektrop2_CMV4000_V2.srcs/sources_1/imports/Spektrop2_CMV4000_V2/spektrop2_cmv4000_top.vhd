@@ -28,10 +28,10 @@ entity spektrop2_cmv4000_top is
 		     FPGA_BANK35_DIFF_P : inout STD_LOGIC_VECTOR(19 downto 1);
 		     FPGA_BANK35_DIFF_N : inout STD_LOGIC_VECTOR(19 downto 1);   
 		     FPGA_BANK13_IO : inout STD_LOGIC_VECTOR ( 10 downto 0 );
-		     CLK_MGT1_P : in STD_LOGIC;
-		     CLK_MGT1_N : in STD_LOGIC;
-		     CLK_MGT0_P : in STD_LOGIC;
-		     CLK_MGT0_N : in STD_LOGIC;
+		  --   CLK_MGT1_P : in STD_LOGIC;
+		  --   CLK_MGT1_N : in STD_LOGIC;
+		  --   CLK_MGT0_P : in STD_LOGIC;
+		  --  CLK_MGT0_N : in STD_LOGIC;
 		     COAXPRESS_UPLINK_I : in STD_LOGIC;
 		     SI5340_LOS_XAXBb : in STD_LOGIC;
 		     SI5340_nINTR : in STD_LOGIC;
@@ -41,14 +41,14 @@ entity spektrop2_cmv4000_top is
 		     SI5340_SDA : inout STD_LOGIC;
 		     LED0 : out STD_LOGIC;
 		     LED1 : out STD_LOGIC;
-		     MGT_RX0_P : in STD_LOGIC;
-		     MGT_RX0_N : in STD_LOGIC;
-		     MGT_TX0_P : out STD_LOGIC;
-		     MGT_TX0_N : out STD_LOGIC;
-		     MGT_TX1_P : out STD_LOGIC;
-		     MGT_TX1_N : out STD_LOGIC;
-		     MGT_TX2_P : out STD_LOGIC;
-		     MGT_TX2_N : out STD_LOGIC;
+		--     MGT_RX0_P : in STD_LOGIC;
+--		     MGT_RX0_N : in STD_LOGIC;
+--		     MGT_TX0_P : out STD_LOGIC;
+--		     MGT_TX0_N : out STD_LOGIC;
+--		     MGT_TX1_P : out STD_LOGIC;
+--		     MGT_TX1_N : out STD_LOGIC;
+--		     MGT_TX2_P : out STD_LOGIC;
+--		     MGT_TX2_N : out STD_LOGIC;
 		     RS485_RX : in STD_LOGIC;
 		     RS485_TX : out STD_LOGIC;
 		     GS12281_nCS : inout STD_LOGIC;
@@ -94,8 +94,8 @@ entity spektrop2_cmv4000_top is
 		     FIXED_IO_ps_clk : inout STD_LOGIC;
 		     FIXED_IO_ps_porb : inout STD_LOGIC;
 		     FIXED_IO_ps_srstb : inout STD_LOGIC
-		    -- UART_rxd : in STD_LOGIC;
-		    -- UART_txd : out STD_LOGIC
+		 --    UART_rxd : in STD_LOGIC;
+		 --    UART_txd : out STD_LOGIC
 	     );
 end spektrop2_cmv4000_top;
 

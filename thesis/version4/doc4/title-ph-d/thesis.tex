@@ -1,10 +1,12 @@
-\documentclass[a4paper,12pt,twoside]{report}
-\usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm]{geometry}
+\documentclass[a4paper,11pt,twoside]{report}
+\usepackage[left=3cm,right=2cm,top=2.5cm,bottom=2.5cm]{geometry}
 \include{thesis.preamble}
 
 %Additional packages
 \usepackage{pdfpages}
-
+\usepackage{lipsum}
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX]{Verdana}
 
 \begin{document}
 
@@ -15,7 +17,8 @@
 \author{Piotr Zdunek}
 \submitdate{Warsaw, 2018}
 
-\normallinespacing
+%\normallinespacing
+\linespread{1.15}
 %\maketitle
 
 %TODO list of figures and tables needs to go at the end
