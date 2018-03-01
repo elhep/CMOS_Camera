@@ -3,6 +3,30 @@
 \usepackage{latexsym}
 \usepackage{mathchars}
 \usepackage{setspace}
+%compact enumerations
+\usepackage{enumitem}
+\setitemize{noitemsep,topsep=0pt,parsep=0pt,partopsep=0pt}
+
+\usepackage{float}
+\usepackage{tabularx}
+\def\tabularxcolumn#1{m{#1}}
+\usepackage{footnote}
+
+\usepackage{hyperref}
+\hypersetup{%
+    pdfborder = {0 0 0},
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{xcolor}
+
+
+
+%no borders around hyperlinks
+
 
 \input{blocked.sty}
 \input{uhead.sty}
@@ -79,7 +103,7 @@
 \newcommand{\symbolfootnote}{\renewcommand{\thefootnote}{\fnsymbol{footnote}}}
 % now add \symbolfootnote to the beginning of the document...
 
-\newcommand{\normallinespacing}{\renewcommand{\baselinestretch}{1.5} \normalsize}
+\newcommand{\normallinespacing}{\renewcommand{\baselinestretch}{1.15} \normalsize}
 \newcommand{\mediumlinespacing}{\renewcommand{\baselinestretch}{1.2} \normalsize}
 \newcommand{\narrowlinespacing}{\renewcommand{\baselinestretch}{1.0} \normalsize}
 \newcommand{\bump}{\noalign{\vspace*{\doublerulesep}}}

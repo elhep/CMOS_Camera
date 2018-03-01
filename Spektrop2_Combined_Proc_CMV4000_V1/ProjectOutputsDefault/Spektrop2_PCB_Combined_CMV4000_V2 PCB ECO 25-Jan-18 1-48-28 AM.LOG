@@ -1,0 +1,53 @@
+Removed Pin From Net: NetName=VDD33 Pin=IC1-G10
+Removed Member From Class: ClassName=U_Zynq_MGT Member=C4
+Removed Member From Class: ClassName=U_Zynq_MGT Member=C5
+Removed Member From Class: ClassName=U_Zynq_PS Member=J3
+Removed Member From Class: ClassName=U_Zynq_PS Member=J4
+Removed Member From Class: ClassName=U_Zynq_FPGA_Bank34 Member=LD3
+Removed Member From Class: ClassName=CTRL Member=PS_CLK
+Removed Member From Class: ClassName=CTRL Member=PS_SRST_B
+Change component parameters: Designator = "IC4"; Footprint = "BGA25C127P5X5_625X625X262"; UniqueID = "\DGNDMQHA\LWGJCMNM\YNOCFKKR"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Author"; Value = "CERN DEM MR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Bonding"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case"; Value = "BGA25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentHeight"; Value = "2.62mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CreateDate"; Value = "29-Sep-17"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device"; Value = "LTM4622AEY#PBF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "HelpURL"; Value = "\\cern.ch\dfs\Applications\Altium\Datasheets\LTM4622AEY#PBF.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "29-Sep-17"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "LINEAR TECHNOLOGY"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "LTM4622AEY#PBF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounted"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "BGA, 1.27mm Pitch, Square; 25 Pin, 5 Columns X 5 Rows, 6.25mm X 6.25mm X 2.62mm H"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Description"; Value = "3.6V-20V To 1.5V-12V, Dual 2A or Single 4A  Ultrathin Step-Down DC/DC µModule Regulator"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "LTM4622AEY#PBF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PressFit"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Sense"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SMD"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Socket"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters: Designator = "IC5"; Footprint = "BGA25C127P5X5_625X625X262"; UniqueID = "\DGNDMQHA\LWGJCMNM\IVJQETJL"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "Author"; Value = "CERN DEM MR"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Bonding"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Case"; Value = "BGA25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "ComponentHeight"; Value = "2.62mm"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Component Type"; Value = "Standard"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "CreateDate"; Value = "29-Sep-17"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Device"; Value = "LTM4622AEY#PBF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "HelpURL"; Value = "\\cern.ch\dfs\Applications\Altium\Datasheets\LTM4622AEY#PBF.pdf"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "LatestRevisionDate"; Value = "29-Sep-17"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer"; Value = "LINEAR TECHNOLOGY"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Manufacturer Part Number"; Value = "LTM4622AEY#PBF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Mounted"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PackageDescription"; Value = "BGA, 1.27mm Pitch, Square; 25 Pin, 5 Columns X 5 Rows, 6.25mm X 6.25mm X 2.62mm H"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Description"; Value = "3.6V-20V To 1.5V-12V, Dual 2A or Single 4A  Ultrathin Step-Down DC/DC µModule Regulator"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Part Number"; Value = "LTM4622AEY#PBF"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Pin Count"; Value = "25"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "PressFit"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Sense"; Value = "No"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "SMD"; Value = "Yes"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Socket"; Value = "No"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetC17_2 Pin=IC1-G10

@@ -1,0 +1,10 @@
+Output: Pick and place
+Type  : Pick Place
+From  : Variant [Default] of PCB Document [Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc]
+   Generated File[Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 11:22:04 PM On 01-Feb-18

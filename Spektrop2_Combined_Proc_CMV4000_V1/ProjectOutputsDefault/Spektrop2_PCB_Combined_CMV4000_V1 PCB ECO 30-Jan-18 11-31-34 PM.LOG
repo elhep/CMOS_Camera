@@ -1,0 +1,80 @@
+Added Component: Designator=TP19(C100)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Author"; Value = "CERN DEM JLC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentHeight"; Value = "0mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CreateDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "Undefined"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounted"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Description"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "SMD_PAD_D1MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sense"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SMD"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Socket"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Status"; Value = "None"; VariantName = "[No Variations]"
+Added Component: Designator=TP20(C100)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Author"; Value = "CERN DEM JLC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentHeight"; Value = "0mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CreateDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "Undefined"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounted"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Description"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "SMD_PAD_D1MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sense"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SMD"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Socket"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Status"; Value = "None"; VariantName = "[No Variations]"
+Added Component: Designator=TP21(C100)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Author"; Value = "CERN DEM JLC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentHeight"; Value = "0mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CreateDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "Undefined"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounted"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Description"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "SMD_PAD_D1MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sense"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SMD"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Socket"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Status"; Value = "None"; VariantName = "[No Variations]"
+Added Component: Designator=TP22(C100)
+Add component. Clean all parameters for all variants
+Add component (AddParameter): Name = "Author"; Value = "CERN DEM JLC"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentHeight"; Value = "0mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Component Type"; Value = "Standard (No BOM)"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "CreateDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Family"; Value = "SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "HelpURL"; Value = "Undefined"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "LatestRevisionDate"; Value = "10-Oct-17"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Mounted"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "PackageDescription"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Description"; Value = "1mm Diameter SMD Pad"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Part Number"; Value = "SMD_PAD_D1MM"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Pin Count"; Value = "1"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Sense"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "SMD"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Socket"; Value = "No"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Status"; Value = "None"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GS12281_nCS Pin=TP19-1
+Added Pin To Net: NetName=GS12281_SCLK Pin=TP20-1
+Added Pin To Net: NetName=GS12281_SDIN Pin=TP21-1
+Added Pin To Net: NetName=GS12281_SDOUT Pin=TP22-1
+Added Member To Class: ClassName=U_UHD_SDI Member=Component TP19 SMD Pad
+Added Member To Class: ClassName=U_UHD_SDI Member=Component TP20 SMD Pad
+Added Member To Class: ClassName=U_UHD_SDI Member=Component TP21 SMD Pad
+Added Member To Class: ClassName=U_UHD_SDI Member=Component TP22 SMD Pad
