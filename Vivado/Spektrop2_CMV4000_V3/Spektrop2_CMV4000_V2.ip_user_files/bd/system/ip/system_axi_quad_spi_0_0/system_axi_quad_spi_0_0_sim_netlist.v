@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
-// Date        : Thu Feb  8 00:31:09 2018
+// Date        : Mon Feb 19 01:16:17 2018
 // Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ip/system_axi_quad_spi_0_0/system_axi_quad_spi_0_0_sim_netlist.v
@@ -77,8 +77,8 @@ module system_axi_quad_spi_0_0
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_I" *) input sck_i;
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_O" *) output sck_o;
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SCK_T" *) output sck_t;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input [1:0]ss_i;
-  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output [1:0]ss_o;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_I" *) input [0:0]ss_i;
+  (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_O" *) output [0:0]ss_o;
   (* x_interface_info = "xilinx.com:interface:spi:1.0 SPI_0 SS_T" *) output ss_t;
   (* x_interface_info = "xilinx.com:signal:interrupt:1.0 interrupt INTERRUPT" *) (* x_interface_parameter = "XIL_INTERFACENAME interrupt, SENSITIVITY EDGE_RISING, PortWidth 1" *) output ip2intc_irpt;
 
@@ -112,8 +112,8 @@ module system_axi_quad_spi_0_0
   wire sck_i;
   wire sck_o;
   wire sck_t;
-  wire [1:0]ss_i;
-  wire [1:0]ss_o;
+  wire [0:0]ss_i;
+  wire [0:0]ss_o;
   wire ss_t;
   wire NLW_U0_cfgclk_UNCONNECTED;
   wire NLW_U0_cfgmclk_UNCONNECTED;
@@ -151,7 +151,7 @@ module system_axi_quad_spi_0_0
   (* C_FIFO_DEPTH = "16" *) 
   (* C_INSTANCE = "axi_quad_spi_inst" *) 
   (* C_LSB_STUP = "0" *) 
-  (* C_NUM_SS_BITS = "2" *) 
+  (* C_NUM_SS_BITS = "1" *) 
   (* C_NUM_TRANSFER_BITS = "8" *) 
   (* C_SCK_RATIO = "16" *) 
   (* C_SELECT_XPM = "0" *) 
@@ -282,176 +282,193 @@ endmodule
 
 (* ORIG_REF_NAME = "address_decoder" *) 
 module system_axi_quad_spi_0_0_address_decoder
-   (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ,
+   (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ,
     Receive_ip2bus_error_reg,
     Transmit_ip2bus_error_reg,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
+    \SPICR_data_int_reg[0] ,
     ipif_glbl_irpt_enable_reg_reg,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ,
-    eqOp__4,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ,
+    ip2Bus_WrAck_intr_reg_hole_d1_reg,
+    s_axi_arready,
+    s_axi_wready,
+    \gaf.ram_almost_full_i_reg ,
     SPICR_data_int_reg0,
-    wr_ce_or_reduce_core_cmb,
     bus2ip_wrce_int,
     intr2bus_rdack0,
     irpt_rdack,
     D,
-    p_15_in,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ,
-    bus2ip_rdce_int,
-    interrupt_wrce_strb,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ,
     irpt_wrack,
+    interrupt_wrce_strb,
     E,
-    rd_ce_or_reduce_core_cmb,
+    modf_reg,
+    ram_empty_i_reg,
     Transmit_ip2bus_error0,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ,
     IP2Bus_Error_1,
-    p_5_in_0,
+    \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ,
     reset_trig0,
     sw_rst_cond,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ,
+    ip2Bus_WrAck_intr_reg_hole0,
     ip2Bus_RdAck_intr_reg_hole0,
     intr_controller_rd_ce_or_reduce,
-    ip2Bus_WrAck_intr_reg_hole0,
-    intr_controller_wr_ce_or_reduce,
-    p_39_out__0,
+    rd_ce_or_reduce_core_cmb,
+    \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ,
     ipif_glbl_irpt_enable_reg_reg_0,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ,
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
-    \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ,
-    \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ,
+    \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ,
     Q,
     s_axi_aclk,
-    \bus2ip_addr_i_reg[6] ,
-    ip2Bus_WrAck_core_reg_d1,
-    is_write_reg,
-    p_16_out,
-    is_read,
-    p_15_out,
-    s_axi_aresetn,
-    \INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] ,
-    ip2Bus_WrAck_core_reg_1,
-    bus2ip_be_int,
-    irpt_rdack_d1,
     bus2ip_rnw_i_reg,
     s_axi_wstrb,
-    \goreg_dm.dout_i_reg[7] ,
+    ip2Bus_RdAck_core_reg,
+    tx_fifo_full,
+    \bus2ip_addr_i_reg[6] ,
+    s_axi_aresetn,
+    p_16_out,
+    \INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] ,
+    is_write_reg,
+    p_15_out,
+    is_read,
+    ip2Bus_WrAck_core_reg_1,
+    irpt_rdack_d1,
+    ipif_glbl_irpt_enable_reg,
+    \ip_irpt_enable_reg_reg[8] ,
+    rx_fifo_count,
+    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
+    SPISSR_frm_axi_clk,
+    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ,
+    p_1_in35_in,
+    p_1_in32_in,
+    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ,
+    p_1_in29_in,
+    p_1_in26_in,
     p_1_in23_in,
-    \ip_irpt_enable_reg_reg[7] ,
     p_1_in20_in,
     p_1_in17_in,
+    p_1_in14_in,
+    spicr_8_tr_inhibit_frm_axi_clk,
+    irpt_wrack_d1,
+    \goreg_dm.dout_i_reg[7] ,
+    spicr_7_ss_frm_axi_clk,
+    spicr_6_rxfifo_rst_frm_axi_clk,
     spisel_d1_reg_to_axi_clk,
     spicr_5_txfifo_rst_frm_axi_clk,
-    ipif_glbl_irpt_enable_reg,
-    irpt_wrack_d1,
-    ip2Bus_RdAck_core_reg,
-    spicr_6_rxfifo_rst_frm_axi_clk,
-    spicr_7_ss_frm_axi_clk,
+    sr_3_MODF_int,
+    spicr_4_cpha_frm_axi_clk,
     Tx_FIFO_Full_int,
-    spicr_9_lsb_frm_axi_clk,
+    spicr_3_cpol_frm_axi_clk,
     out,
+    scndry_out,
+    spicr_1_spe_frm_axi_clk,
     Tx_FIFO_Empty_SPISR_to_axi_clk,
-    data_is_non_reset_match__4,
-    p_4_in_1,
+    tx_fifo_count,
+    rx_fifo_empty_i,
+    spicr_0_loop_frm_axi_clk,
+    spicr_2_mst_n_slv_frm_axi_clk,
+    spicr_9_lsb_frm_axi_clk,
+    bus2ip_rnw_i_reg_0,
     Receive_ip2bus_error_reg_0,
+    p_4_in,
     sw_rst_cond_d1,
-    tx_fifo_full,
-    ip2Bus_RdAck_intr_reg_hole_d1,
+    ip2Bus_WrAck_core_reg_d1,
     ip2Bus_WrAck_intr_reg_hole_d1,
-    s_axi_wdata,
-    reset2ip_reset_int,
-    SPISSR_frm_axi_clk);
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
+    ip2Bus_RdAck_intr_reg_hole_d1,
+    s_axi_wdata);
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
   output Receive_ip2bus_error_reg;
   output Transmit_ip2bus_error_reg;
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
-  output \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
+  output \SPICR_data_int_reg[0] ;
   output ipif_glbl_irpt_enable_reg_reg;
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ;
-  output eqOp__4;
+  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
+  output ip2Bus_WrAck_intr_reg_hole_d1_reg;
+  output s_axi_arready;
+  output s_axi_wready;
+  output \gaf.ram_almost_full_i_reg ;
   output SPICR_data_int_reg0;
-  output wr_ce_or_reduce_core_cmb;
   output [0:0]bus2ip_wrce_int;
   output intr2bus_rdack0;
   output irpt_rdack;
-  output [4:0]D;
-  output p_15_in;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ;
-  output [1:0]bus2ip_rdce_int;
-  output interrupt_wrce_strb;
+  output [10:0]D;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ;
   output irpt_wrack;
+  output interrupt_wrce_strb;
   output [0:0]E;
-  output rd_ce_or_reduce_core_cmb;
+  output modf_reg;
+  output ram_empty_i_reg;
   output Transmit_ip2bus_error0;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ;
   output IP2Bus_Error_1;
-  output p_5_in_0;
+  output \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ;
   output reset_trig0;
   output sw_rst_cond;
+  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
+  output ip2Bus_WrAck_intr_reg_hole0;
   output ip2Bus_RdAck_intr_reg_hole0;
   output intr_controller_rd_ce_or_reduce;
-  output ip2Bus_WrAck_intr_reg_hole0;
-  output intr_controller_wr_ce_or_reduce;
-  output p_39_out__0;
+  output rd_ce_or_reduce_core_cmb;
+  output \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   output ipif_glbl_irpt_enable_reg_reg_0;
-  output \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
-  output \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ;
-  output \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ;
+  output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
   input Q;
   input s_axi_aclk;
-  input [4:0]\bus2ip_addr_i_reg[6] ;
-  input ip2Bus_WrAck_core_reg_d1;
-  input is_write_reg;
-  input p_16_out;
-  input is_read;
-  input p_15_out;
-  input s_axi_aresetn;
-  input [5:0]\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] ;
-  input ip2Bus_WrAck_core_reg_1;
-  input [0:0]bus2ip_be_int;
-  input irpt_rdack_d1;
   input bus2ip_rnw_i_reg;
   input [0:0]s_axi_wstrb;
-  input [2:0]\goreg_dm.dout_i_reg[7] ;
+  input ip2Bus_RdAck_core_reg;
+  input tx_fifo_full;
+  input [4:0]\bus2ip_addr_i_reg[6] ;
+  input s_axi_aresetn;
+  input p_16_out;
+  input [5:0]\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] ;
+  input is_write_reg;
+  input p_15_out;
+  input is_read;
+  input ip2Bus_WrAck_core_reg_1;
+  input irpt_rdack_d1;
+  input ipif_glbl_irpt_enable_reg;
+  input [8:0]\ip_irpt_enable_reg_reg[8] ;
+  input [1:0]rx_fifo_count;
+  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  input SPISSR_frm_axi_clk;
+  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
+  input p_1_in35_in;
+  input p_1_in32_in;
+  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
+  input p_1_in29_in;
+  input p_1_in26_in;
   input p_1_in23_in;
-  input [2:0]\ip_irpt_enable_reg_reg[7] ;
   input p_1_in20_in;
   input p_1_in17_in;
+  input p_1_in14_in;
+  input spicr_8_tr_inhibit_frm_axi_clk;
+  input irpt_wrack_d1;
+  input [7:0]\goreg_dm.dout_i_reg[7] ;
+  input spicr_7_ss_frm_axi_clk;
+  input spicr_6_rxfifo_rst_frm_axi_clk;
   input spisel_d1_reg_to_axi_clk;
   input spicr_5_txfifo_rst_frm_axi_clk;
-  input ipif_glbl_irpt_enable_reg;
-  input irpt_wrack_d1;
-  input ip2Bus_RdAck_core_reg;
-  input spicr_6_rxfifo_rst_frm_axi_clk;
-  input spicr_7_ss_frm_axi_clk;
+  input sr_3_MODF_int;
+  input spicr_4_cpha_frm_axi_clk;
   input Tx_FIFO_Full_int;
-  input spicr_9_lsb_frm_axi_clk;
+  input spicr_3_cpol_frm_axi_clk;
   input out;
+  input scndry_out;
+  input spicr_1_spe_frm_axi_clk;
   input Tx_FIFO_Empty_SPISR_to_axi_clk;
-  input data_is_non_reset_match__4;
-  input p_4_in_1;
+  input [1:0]tx_fifo_count;
+  input rx_fifo_empty_i;
+  input spicr_0_loop_frm_axi_clk;
+  input spicr_2_mst_n_slv_frm_axi_clk;
+  input spicr_9_lsb_frm_axi_clk;
+  input bus2ip_rnw_i_reg_0;
   input Receive_ip2bus_error_reg_0;
+  input p_4_in;
   input sw_rst_cond_d1;
-  input tx_fifo_full;
-  input ip2Bus_RdAck_intr_reg_hole_d1;
+  input ip2Bus_WrAck_core_reg_d1;
   input ip2Bus_WrAck_intr_reg_hole_d1;
-  input [4:0]s_axi_wdata;
-  input reset2ip_reset_int;
-  input [0:1]SPISSR_frm_axi_clk;
+  input ip2Bus_RdAck_intr_reg_hole_d1;
+  input [1:0]s_axi_wdata;
 
   wire Bus_RNW_reg_i_1_n_0;
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
-  wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  wire [4:0]D;
+  wire [10:0]D;
   wire [0:0]E;
   wire \GEN_BKEND_CE_REGISTERS[15].ce_out_i[15]_i_1_n_0 ;
   wire \GEN_BKEND_CE_REGISTERS[16].ce_out_i[16]_i_1_n_0 ;
@@ -466,24 +483,37 @@ module system_axi_quad_spi_0_0_address_decoder
   wire \GEN_BKEND_CE_REGISTERS[29].ce_out_i[29]_i_1_n_0 ;
   wire \GEN_BKEND_CE_REGISTERS[31].ce_out_i[31]_i_2_n_0 ;
   wire \GEN_BKEND_CE_REGISTERS[31].ce_out_i_reg_n_0_[31] ;
+  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  wire \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   wire [5:0]\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] ;
   wire IP2Bus_Error_1;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_2_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ;
   wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[24]_i_2_n_0 ;
   wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[25]_i_2_n_0 ;
   wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2_n_0 ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_3_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_2_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_3_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_4_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_3_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_5_n_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_4_n_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_2_n_0 ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_3_n_0 ;
+  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
+  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
   wire \MEM_DECODE_GEN[0].PER_CE_GEN[0].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ;
   wire \MEM_DECODE_GEN[1].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ;
   wire \MEM_DECODE_GEN[1].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ;
@@ -493,27 +523,24 @@ module system_axi_quad_spi_0_0_address_decoder
   wire Receive_ip2bus_error_reg;
   wire Receive_ip2bus_error_reg_0;
   wire SPICR_data_int_reg0;
+  wire \SPICR_data_int_reg[0] ;
   wire \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
-  wire \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ;
-  wire \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ;
-  wire [0:1]SPISSR_frm_axi_clk;
+  wire SPISSR_frm_axi_clk;
   wire Transmit_ip2bus_error0;
   wire Transmit_ip2bus_error_reg;
   wire Tx_FIFO_Empty_SPISR_to_axi_clk;
   wire Tx_FIFO_Full_int;
   wire [4:0]\bus2ip_addr_i_reg[6] ;
-  wire [0:0]bus2ip_be_int;
-  wire [1:0]bus2ip_rdce_int;
   wire bus2ip_rnw_i_reg;
+  wire bus2ip_rnw_i_reg_0;
   wire [0:0]bus2ip_wrce_int;
   wire cs_ce_clr;
-  wire data_is_non_reset_match__4;
-  wire eqOp__4;
-  wire [2:0]\goreg_dm.dout_i_reg[7] ;
+  wire \gaf.ram_almost_full_i_reg ;
+  wire [7:0]\goreg_dm.dout_i_reg[7] ;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
+  wire intr2bus_wrack_i_2_n_0;
   wire intr_controller_rd_ce_or_reduce;
-  wire intr_controller_wr_ce_or_reduce;
   wire ip2Bus_RdAck_core_reg;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
@@ -523,7 +550,9 @@ module system_axi_quad_spi_0_0_address_decoder
   wire ip2Bus_WrAck_intr_reg_hole_d1;
   wire ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0;
   wire ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0;
-  wire [2:0]\ip_irpt_enable_reg_reg[7] ;
+  wire ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0;
+  wire ip2Bus_WrAck_intr_reg_hole_d1_reg;
+  wire [8:0]\ip_irpt_enable_reg_reg[8] ;
   wire ipif_glbl_irpt_enable_reg;
   wire ipif_glbl_irpt_enable_reg_reg;
   wire ipif_glbl_irpt_enable_reg_reg_0;
@@ -533,6 +562,7 @@ module system_axi_quad_spi_0_0_address_decoder
   wire irpt_wrack_d1;
   wire is_read;
   wire is_write_reg;
+  wire modf_reg;
   wire out;
   wire p_10_in;
   wire p_10_out;
@@ -545,7 +575,6 @@ module system_axi_quad_spi_0_0_address_decoder
   wire p_14_in;
   wire p_14_out;
   wire p_15_in;
-  wire p_15_in_0;
   wire p_15_out;
   wire p_15_out_1;
   wire p_16_in;
@@ -553,9 +582,14 @@ module system_axi_quad_spi_0_0_address_decoder
   wire p_17_in;
   wire p_18_in;
   wire p_19_in;
+  wire p_1_in14_in;
   wire p_1_in17_in;
   wire p_1_in20_in;
   wire p_1_in23_in;
+  wire p_1_in26_in;
+  wire p_1_in29_in;
+  wire p_1_in32_in;
+  wire p_1_in35_in;
   wire p_1_out;
   wire p_20_in;
   wire p_21_in;
@@ -567,39 +601,53 @@ module system_axi_quad_spi_0_0_address_decoder
   wire p_27_in;
   wire p_28_in;
   wire p_29_in;
+  wire p_2_in;
   wire p_2_out;
   wire p_30_in;
   wire p_31_in;
   wire p_32_in;
-  wire p_39_out__0;
   wire p_3_out;
-  wire p_4_in_1;
+  wire p_4_in;
+  wire p_4_in_0;
   wire p_4_out;
-  wire p_5_in_0;
   wire p_5_out;
   wire p_6_out;
+  wire p_7_in;
   wire p_7_out;
   wire p_8_out;
   wire p_9_in;
   wire p_9_out;
+  wire ram_empty_i_reg;
   wire rd_ce_or_reduce_core_cmb;
-  wire reset2ip_reset_int;
   wire reset_trig0;
+  wire [1:0]rx_fifo_count;
+  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire s_axi_aresetn;
-  wire [4:0]s_axi_wdata;
+  wire s_axi_arready;
+  wire [1:0]s_axi_wdata;
+  wire s_axi_wready;
+  wire s_axi_wready_INST_0_i_1_n_0;
   wire [0:0]s_axi_wstrb;
+  wire scndry_out;
+  wire spicr_0_loop_frm_axi_clk;
+  wire spicr_1_spe_frm_axi_clk;
+  wire spicr_2_mst_n_slv_frm_axi_clk;
+  wire spicr_3_cpol_frm_axi_clk;
+  wire spicr_4_cpha_frm_axi_clk;
   wire spicr_5_txfifo_rst_frm_axi_clk;
   wire spicr_6_rxfifo_rst_frm_axi_clk;
   wire spicr_7_ss_frm_axi_clk;
+  wire spicr_8_tr_inhibit_frm_axi_clk;
   wire spicr_9_lsb_frm_axi_clk;
   wire spisel_d1_reg_to_axi_clk;
+  wire sr_3_MODF_int;
   wire sw_rst_cond;
   wire sw_rst_cond_d1;
+  wire [1:0]tx_fifo_count;
   wire tx_fifo_full;
-  wire wr_ce_or_reduce_core_cmb;
 
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     Bus_RNW_reg_i_1
@@ -613,33 +661,13 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(Bus_RNW_reg_i_1_n_0),
         .Q(ipif_glbl_irpt_enable_reg_reg),
         .R(1'b0));
-  LUT6 #(
-    .INIT(64'h000000000000E200)) 
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int[3]_i_1 
-       (.I0(spicr_6_rxfifo_rst_frm_axi_clk),
-        .I1(ip2Bus_WrAck_core_reg_1),
-        .I2(s_axi_wdata[3]),
-        .I3(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I4(ipif_glbl_irpt_enable_reg_reg),
-        .I5(reset2ip_reset_int),
-        .O(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ));
-  LUT6 #(
-    .INIT(64'h000000000000E200)) 
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int[4]_i_1 
-       (.I0(spicr_5_txfifo_rst_frm_axi_clk),
-        .I1(ip2Bus_WrAck_core_reg_1),
-        .I2(s_axi_wdata[2]),
-        .I3(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I4(ipif_glbl_irpt_enable_reg_reg),
-        .I5(reset2ip_reset_int),
-        .O(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT3 #(
     .INIT(8'h20)) 
     \CONTROL_REG_5_9_GENERATE[9].SPICR_data_int[9]_i_1 
-       (.I0(ip2Bus_WrAck_core_reg_1),
+       (.I0(\SPICR_data_int_reg[0] ),
         .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .I2(ip2Bus_WrAck_core_reg_1),
         .O(SPICR_data_int_reg0));
   FDRE \GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] 
        (.C(s_axi_aclk),
@@ -677,7 +705,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(p_1_out),
         .Q(p_18_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h00800000)) 
     \GEN_BKEND_CE_REGISTERS[15].ce_out_i[15]_i_1 
@@ -693,7 +721,6 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\GEN_BKEND_CE_REGISTERS[15].ce_out_i[15]_i_1_n_0 ),
         .Q(p_17_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h00000100)) 
     \GEN_BKEND_CE_REGISTERS[16].ce_out_i[16]_i_1 
@@ -709,7 +736,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\GEN_BKEND_CE_REGISTERS[16].ce_out_i[16]_i_1_n_0 ),
         .Q(p_16_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h00100000)) 
     \GEN_BKEND_CE_REGISTERS[17].ce_out_i[17]_i_1 
@@ -723,7 +750,7 @@ module system_axi_quad_spi_0_0_address_decoder
        (.C(s_axi_aclk),
         .CE(Q),
         .D(\GEN_BKEND_CE_REGISTERS[17].ce_out_i[17]_i_1_n_0 ),
-        .Q(p_15_in_0),
+        .Q(p_15_in),
         .R(cs_ce_clr));
   FDRE \GEN_BKEND_CE_REGISTERS[18].ce_out_i_reg[18] 
        (.C(s_axi_aclk),
@@ -731,6 +758,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\MEM_DECODE_GEN[1].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ),
         .Q(p_14_in),
         .R(cs_ce_clr));
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h04000000)) 
     \GEN_BKEND_CE_REGISTERS[19].ce_out_i[19]_i_1 
@@ -752,7 +780,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(p_14_out),
         .Q(p_31_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h01000000)) 
     \GEN_BKEND_CE_REGISTERS[20].ce_out_i[20]_i_1 
@@ -768,7 +796,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\GEN_BKEND_CE_REGISTERS[20].ce_out_i[20]_i_1_n_0 ),
         .Q(p_12_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h00200000)) 
     \GEN_BKEND_CE_REGISTERS[21].ce_out_i[21]_i_1 
@@ -790,7 +818,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\MEM_DECODE_GEN[1].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ),
         .Q(p_10_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h40000000)) 
     \GEN_BKEND_CE_REGISTERS[23].ce_out_i[23]_i_1 
@@ -806,7 +834,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(p_15_out_1),
         .Q(p_9_in),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h00001000)) 
     \GEN_BKEND_CE_REGISTERS[24].ce_out_i[24]_i_1 
@@ -820,9 +848,9 @@ module system_axi_quad_spi_0_0_address_decoder
        (.C(s_axi_aclk),
         .CE(Q),
         .D(\GEN_BKEND_CE_REGISTERS[24].ce_out_i[24]_i_1_n_0 ),
-        .Q(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .Q(\SPICR_data_int_reg[0] ),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \GEN_BKEND_CE_REGISTERS[25].ce_out_i[25]_i_1 
@@ -836,7 +864,7 @@ module system_axi_quad_spi_0_0_address_decoder
        (.C(s_axi_aclk),
         .CE(Q),
         .D(\GEN_BKEND_CE_REGISTERS[25].ce_out_i[25]_i_1_n_0 ),
-        .Q(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
+        .Q(p_7_in),
         .R(cs_ce_clr));
   FDRE \GEN_BKEND_CE_REGISTERS[26].ce_out_i_reg[26] 
        (.C(s_axi_aclk),
@@ -844,7 +872,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\MEM_DECODE_GEN[2].PER_CE_GEN[2].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ),
         .Q(Transmit_ip2bus_error_reg),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h08000000)) 
     \GEN_BKEND_CE_REGISTERS[27].ce_out_i[27]_i_1 
@@ -860,7 +888,7 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(\GEN_BKEND_CE_REGISTERS[27].ce_out_i[27]_i_1_n_0 ),
         .Q(Receive_ip2bus_error_reg),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h10000000)) 
     \GEN_BKEND_CE_REGISTERS[28].ce_out_i[28]_i_1 
@@ -874,9 +902,9 @@ module system_axi_quad_spi_0_0_address_decoder
        (.C(s_axi_aclk),
         .CE(Q),
         .D(\GEN_BKEND_CE_REGISTERS[28].ce_out_i[28]_i_1_n_0 ),
-        .Q(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
+        .Q(p_4_in_0),
         .R(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h20000000)) 
     \GEN_BKEND_CE_REGISTERS[29].ce_out_i[29]_i_1 
@@ -890,7 +918,7 @@ module system_axi_quad_spi_0_0_address_decoder
        (.C(s_axi_aclk),
         .CE(Q),
         .D(\GEN_BKEND_CE_REGISTERS[29].ce_out_i[29]_i_1_n_0 ),
-        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
         .R(cs_ce_clr));
   FDRE \GEN_BKEND_CE_REGISTERS[2].ce_out_i_reg[2] 
        (.C(s_axi_aclk),
@@ -902,19 +930,16 @@ module system_axi_quad_spi_0_0_address_decoder
        (.C(s_axi_aclk),
         .CE(Q),
         .D(\MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ),
-        .Q(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
+        .Q(p_2_in),
         .R(cs_ce_clr));
-  LUT6 #(
-    .INIT(64'hFFFFFCF8FFFFFFFF)) 
+  LUT3 #(
+    .INIT(8'hFB)) 
     \GEN_BKEND_CE_REGISTERS[31].ce_out_i[31]_i_1 
-       (.I0(is_write_reg),
-        .I1(eqOp__4),
-        .I2(p_16_out),
-        .I3(is_read),
-        .I4(p_15_out),
-        .I5(s_axi_aresetn),
+       (.I0(s_axi_arready),
+        .I1(s_axi_aresetn),
+        .I2(s_axi_wready),
         .O(cs_ce_clr));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \GEN_BKEND_CE_REGISTERS[31].ce_out_i[31]_i_2 
@@ -972,243 +997,359 @@ module system_axi_quad_spi_0_0_address_decoder
         .D(p_6_out),
         .Q(p_23_in),
         .R(cs_ce_clr));
-  LUT4 #(
-    .INIT(16'h1000)) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT3 #(
+    .INIT(8'hFD)) 
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_2 
-       (.I0(irpt_wrack_d1),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(bus2ip_be_int),
-        .I3(p_24_in),
-        .O(p_39_out__0));
-  LUT6 #(
-    .INIT(64'h1000000000000000)) 
+       (.I0(p_24_in),
+        .I1(intr2bus_wrack_i_2_n_0),
+        .I2(irpt_wrack_d1),
+        .O(\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ));
+  LUT5 #(
+    .INIT(32'h00100000)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_1 
-       (.I0(p_22_in),
-        .I1(p_24_in),
-        .I2(ipif_glbl_irpt_enable_reg),
-        .I3(ipif_glbl_irpt_enable_reg_reg),
-        .I4(p_25_in),
-        .I5(bus2ip_be_int),
-        .O(D[4]));
+       (.I0(p_24_in),
+        .I1(p_22_in),
+        .I2(p_25_in),
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_2_n_0 ),
+        .I4(ipif_glbl_irpt_enable_reg),
+        .O(D[10]));
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  LUT3 #(
+    .INIT(8'h1F)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_2 
+       (.I0(bus2ip_rnw_i_reg),
+        .I1(s_axi_wstrb),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_2_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[22]_i_1 
        (.I0(spicr_9_lsb_frm_axi_clk),
         .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .O(D[3]));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
+        .I2(\SPICR_data_int_reg[0] ),
+        .O(D[9]));
+  LUT6 #(
+    .INIT(64'h44F444F4FFFF44F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_1 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [8]),
+        .I2(p_1_in14_in),
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .I4(spicr_8_tr_inhibit_frm_axi_clk),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ),
+        .O(D[8]));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT5 #(
+    .INIT(32'hBBBFFFFF)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2 
-       (.I0(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .O(bus2ip_rdce_int[1]));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+       (.I0(p_24_in),
+        .I1(p_22_in),
+        .I2(bus2ip_rnw_i_reg),
+        .I3(s_axi_wstrb),
+        .I4(ipif_glbl_irpt_enable_reg_reg),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
-    .INIT(16'h8880)) 
+    .INIT(16'h57FF)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3 
        (.I0(ipif_glbl_irpt_enable_reg_reg),
-        .I1(p_24_in),
-        .I2(s_axi_wstrb),
-        .I3(bus2ip_rnw_i_reg),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT5 #(
-    .INIT(32'h00A80000)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4 
-       (.I0(p_22_in),
-        .I1(bus2ip_rnw_i_reg),
-        .I2(s_axi_wstrb),
+        .I1(s_axi_wstrb),
+        .I2(bus2ip_rnw_i_reg),
         .I3(p_24_in),
-        .I4(ipif_glbl_irpt_enable_reg_reg),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ));
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4 
+       (.I0(\SPICR_data_int_reg[0] ),
+        .I1(ipif_glbl_irpt_enable_reg_reg),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ));
   LUT5 #(
-    .INIT(32'hFFFFF888)) 
+    .INIT(32'hF4F4FFF4)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[24]_i_1 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ),
-        .I1(\ip_irpt_enable_reg_reg[7] [2]),
-        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ),
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [7]),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[24]_i_2_n_0 ),
         .I3(p_1_in17_in),
-        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[24]_i_2_n_0 ),
-        .O(D[2]));
+        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[7]));
   LUT6 #(
     .INIT(64'hFF80000080800000)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[24]_i_2 
        (.I0(Receive_ip2bus_error_reg),
         .I1(ip2Bus_RdAck_core_reg),
-        .I2(\goreg_dm.dout_i_reg[7] [2]),
-        .I3(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .I2(\goreg_dm.dout_i_reg[7] [7]),
+        .I3(\SPICR_data_int_reg[0] ),
         .I4(ipif_glbl_irpt_enable_reg_reg),
         .I5(spicr_7_ss_frm_axi_clk),
         .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[24]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFFFF888)) 
+    .INIT(32'hF4F4FFF4)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[25]_i_1 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ),
-        .I1(\ip_irpt_enable_reg_reg[7] [1]),
-        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ),
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [6]),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[25]_i_2_n_0 ),
         .I3(p_1_in20_in),
-        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[25]_i_2_n_0 ),
-        .O(D[1]));
+        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[6]));
   LUT6 #(
-    .INIT(64'hFF80808000000000)) 
+    .INIT(64'hF800880088008800)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[25]_i_2 
-       (.I0(Receive_ip2bus_error_reg),
-        .I1(ip2Bus_RdAck_core_reg),
-        .I2(\goreg_dm.dout_i_reg[7] [1]),
-        .I3(spicr_6_rxfifo_rst_frm_axi_clk),
-        .I4(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I5(ipif_glbl_irpt_enable_reg_reg),
+       (.I0(\SPICR_data_int_reg[0] ),
+        .I1(spicr_6_rxfifo_rst_frm_axi_clk),
+        .I2(Receive_ip2bus_error_reg),
+        .I3(ipif_glbl_irpt_enable_reg_reg),
+        .I4(ip2Bus_RdAck_core_reg),
+        .I5(\goreg_dm.dout_i_reg[7] [6]),
         .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[25]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hFFEAEAEA)) 
+    .INIT(32'hF4F4FFF4)) 
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_1 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2_n_0 ),
-        .I1(\goreg_dm.dout_i_reg[7] [0]),
-        .I2(p_15_in),
-        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ),
-        .I4(p_1_in23_in),
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [5]),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2_n_0 ),
+        .I3(p_1_in23_in),
+        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[5]));
+  LUT6 #(
+    .INIT(64'h44F444F4FFFF44F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ),
+        .I1(\goreg_dm.dout_i_reg[7] [5]),
+        .I2(spisel_d1_reg_to_axi_clk),
+        .I3(modf_reg),
+        .I4(spicr_5_txfifo_rst_frm_axi_clk),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT3 #(
+    .INIT(8'h7F)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3 
+       (.I0(Receive_ip2bus_error_reg),
+        .I1(ipif_glbl_irpt_enable_reg_reg),
+        .I2(ip2Bus_RdAck_core_reg),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ));
+  LUT5 #(
+    .INIT(32'hF4F4FFF4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_1 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [4]),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2_n_0 ),
+        .I3(p_1_in26_in),
+        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[4]));
+  LUT6 #(
+    .INIT(64'h44F444F4FFFF44F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ),
+        .I1(\goreg_dm.dout_i_reg[7] [4]),
+        .I2(sr_3_MODF_int),
+        .I3(modf_reg),
+        .I4(spicr_4_cpha_frm_axi_clk),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFF4FFF4FFFFFFF4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_1 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [3]),
+        .I2(\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ),
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_3_n_0 ),
+        .I4(p_1_in29_in),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[3]));
+  LUT6 #(
+    .INIT(64'h44F444F4FFFF44F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_3 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ),
+        .I1(\goreg_dm.dout_i_reg[7] [3]),
+        .I2(Tx_FIFO_Full_int),
+        .I3(modf_reg),
+        .I4(spicr_3_cpol_frm_axi_clk),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFF4FFF4FFFFFFF4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_1 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [2]),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_2_n_0 ),
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_3_n_0 ),
+        .I4(p_1_in32_in),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[2]));
+  LUT6 #(
+    .INIT(64'h4F44444444444444)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_2 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ),
+        .I1(\goreg_dm.dout_i_reg[7] [2]),
+        .I2(out),
+        .I3(p_2_in),
+        .I4(ipif_glbl_irpt_enable_reg_reg),
+        .I5(rx_fifo_count[1]),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_2_n_0 ));
+  LUT6 #(
+    .INIT(64'h44F444F4FFFF44F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_3 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_4_n_0 ),
+        .I1(tx_fifo_count[1]),
+        .I2(Tx_FIFO_Empty_SPISR_to_axi_clk),
+        .I3(modf_reg),
+        .I4(spicr_2_mst_n_slv_frm_axi_clk),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT3 #(
+    .INIT(8'hBF)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_4 
+       (.I0(Tx_FIFO_Empty_SPISR_to_axi_clk),
+        .I1(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFF4FFF4FFFFFFF4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_1 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [1]),
+        .I2(\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ),
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_3_n_0 ),
+        .I4(p_1_in35_in),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .O(D[1]));
+  LUT6 #(
+    .INIT(64'h44F444F4FFFF44F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_3 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ),
+        .I1(\goreg_dm.dout_i_reg[7] [1]),
+        .I2(scndry_out),
+        .I3(modf_reg),
+        .I4(spicr_1_spe_frm_axi_clk),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_4_n_0 ),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFF4FFF4F4)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_1 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_2_n_0 ),
+        .I1(\ip_irpt_enable_reg_reg[8] [0]),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2_n_0 ),
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ),
+        .I4(rx_fifo_count[0]),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4_n_0 ),
         .O(D[0]));
   LUT6 #(
-    .INIT(64'hFFFFF888F888F888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2 
-       (.I0(bus2ip_rdce_int[0]),
-        .I1(spisel_d1_reg_to_axi_clk),
-        .I2(bus2ip_rdce_int[1]),
-        .I3(spicr_5_txfifo_rst_frm_axi_clk),
-        .I4(\ip_irpt_enable_reg_reg[7] [0]),
-        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+    .INIT(64'hFFFFFFFFF4444444)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_3_n_0 ),
+        .I1(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
+        .I3(SPISSR_frm_axi_clk),
+        .I4(p_4_in_0),
+        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_5_n_0 ),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT3 #(
-    .INIT(8'h80)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3 
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
-        .I1(Receive_ip2bus_error_reg),
-        .I2(ip2Bus_RdAck_core_reg),
-        .O(p_15_in));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
-  LUT2 #(
-    .INIT(4'h8)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_2 
-       (.I0(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .O(bus2ip_rdce_int[0]));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'h08)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_5 
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
-        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
-        .I2(out),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
-  LUT3 #(
-    .INIT(8'h08)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_2 
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
-        .I1(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+    .INIT(8'hBF)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_3 
+       (.I0(out),
+        .I1(p_2_in),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ));
+  LUT6 #(
+    .INIT(64'h4F44444444444444)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4 
+       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[26]_i_3_n_0 ),
+        .I1(\goreg_dm.dout_i_reg[7] [0]),
         .I2(Tx_FIFO_Empty_SPISR_to_axi_clk),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+        .I3(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
+        .I4(ipif_glbl_irpt_enable_reg_reg),
+        .I5(tx_fifo_count[0]),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFA80000A8A80000)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_5 
+       (.I0(p_7_in),
+        .I1(out),
+        .I2(rx_fifo_empty_i),
+        .I3(\SPICR_data_int_reg[0] ),
+        .I4(ipif_glbl_irpt_enable_reg_reg),
+        .I5(spicr_0_loop_frm_axi_clk),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_5_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
-    .INIT(32'hFFFFFF40)) 
+    .INIT(32'hFFFFFF04)) 
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_i_1 
        (.I0(ipif_glbl_irpt_enable_reg_reg),
         .I1(p_16_in),
-        .I2(data_is_non_reset_match__4),
-        .I3(p_4_in_1),
-        .I4(Receive_ip2bus_error_reg_0),
+        .I2(bus2ip_rnw_i_reg_0),
+        .I3(Receive_ip2bus_error_reg_0),
+        .I4(p_4_in),
         .O(IP2Bus_Error_1));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h04)) 
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_i_2 
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
+       (.I0(bus2ip_rnw_i_reg_0),
         .I1(p_16_in),
-        .I2(data_is_non_reset_match__4),
-        .O(p_5_in_0));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+        .I2(ipif_glbl_irpt_enable_reg_reg),
+        .O(\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ));
   LUT5 #(
-    .INIT(32'hFFFFFF32)) 
+    .INIT(32'h44545555)) 
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_1 
-       (.I0(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ),
-        .I3(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ),
-        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_4_n_0 ),
-        .O(wr_ce_or_reduce_core_cmb));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ),
+        .I2(Transmit_ip2bus_error_reg),
+        .I3(tx_fifo_full),
+        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ),
+        .O(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2 
-       (.I0(p_12_in),
-        .I1(p_15_in_0),
-        .I2(p_9_in),
-        .I3(\GEN_BKEND_CE_REGISTERS[31].ce_out_i_reg_n_0_[31] ),
-        .I4(p_10_in),
-        .I5(p_14_in),
+       (.I0(p_7_in),
+        .I1(\SPICR_data_int_reg[0] ),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
+        .I3(p_2_in),
         .O(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
-    .INIT(32'h00FF00FE)) 
+    .INIT(32'h00000001)) 
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3 
-       (.I0(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I1(Receive_ip2bus_error_reg),
-        .I2(p_13_in),
-        .I3(ipif_glbl_irpt_enable_reg_reg),
-        .I4(p_11_in),
+       (.I0(\GEN_BKEND_CE_REGISTERS[31].ce_out_i_reg_n_0_[31] ),
+        .I1(p_11_in),
+        .I2(p_4_in_0),
+        .I3(p_10_in),
+        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_4_n_0 ),
         .O(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h0F0F0F0F0E0E0F0E)) 
+    .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_4 
-       (.I0(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
-        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
-        .I2(ipif_glbl_irpt_enable_reg_reg),
-        .I3(Transmit_ip2bus_error_reg),
-        .I4(tx_fifo_full),
-        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+       (.I0(p_13_in),
+        .I1(Receive_ip2bus_error_reg),
+        .I2(p_15_in),
+        .I3(p_14_in),
+        .I4(p_12_in),
+        .I5(p_9_in),
         .O(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'h00000000FFFFFF32)) 
+    .INIT(64'h000000000000FF75)) 
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_i_1 
-       (.I0(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ),
-        .I3(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ),
-        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_4_n_0 ),
-        .I5(ip2Bus_WrAck_core_reg_d1),
-        .O(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFF0E0)) 
-    \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_1 
-       (.I0(p_13_in),
-        .I1(p_11_in),
-        .I2(ipif_glbl_irpt_enable_reg_reg),
+       (.I0(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ),
+        .I1(tx_fifo_full),
+        .I2(Transmit_ip2bus_error_reg),
         .I3(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ),
-        .I4(\LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_2_n_0 ),
-        .I5(\LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_3_n_0 ),
+        .I4(ipif_glbl_irpt_enable_reg_reg),
+        .I5(ip2Bus_WrAck_core_reg_d1),
+        .O(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ));
+  LUT5 #(
+    .INIT(32'hAAA8AAAA)) 
+    \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_1 
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_2_n_0 ),
+        .I2(p_16_in),
+        .I3(Transmit_ip2bus_error_reg),
+        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_i_3_n_0 ),
         .O(rd_ce_or_reduce_core_cmb));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
-  LUT5 #(
-    .INIT(32'hFF00FE00)) 
-    \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_2 
-       (.I0(Receive_ip2bus_error_reg),
-        .I1(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
-        .I2(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
-        .I3(ipif_glbl_irpt_enable_reg_reg),
-        .I4(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .O(\LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hFF00FE00)) 
-    \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_3 
-       (.I0(Transmit_ip2bus_error_reg),
-        .I1(p_16_in),
-        .I2(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
-        .I3(ipif_glbl_irpt_enable_reg_reg),
-        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
-        .O(\LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_srl4___NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_4_reg_r_i_3_n_0 ));
   system_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized0 \MEM_DECODE_GEN[0].PER_CE_GEN[0].MULTIPLE_CES_THIS_CS_GEN.CE_I 
        (.\GEN_BKEND_CE_REGISTERS[0].ce_out_i_reg[0] (\MEM_DECODE_GEN[0].PER_CE_GEN[0].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ),
         .\bus2ip_addr_i_reg[6] (\bus2ip_addr_i_reg[6] ));
@@ -1266,224 +1407,260 @@ module system_axi_quad_spi_0_0_address_decoder
   system_axi_quad_spi_0_0_axi_lite_ipif_v3_0_4_pselect_f__parameterized23_12 \MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I 
        (.\GEN_BKEND_CE_REGISTERS[30].ce_out_i_reg[30] (\MEM_DECODE_GEN[2].PER_CE_GEN[6].MULTIPLE_CES_THIS_CS_GEN.CE_I_n_0 ),
         .\bus2ip_addr_i_reg[6] (\bus2ip_addr_i_reg[6] ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \SPICR_REG_78_GENERATE[7].SPI_TRISTATE_CONTROL_I_i_1 
-       (.I0(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+       (.I0(\SPICR_data_int_reg[0] ),
         .I1(ipif_glbl_irpt_enable_reg_reg),
         .O(bus2ip_wrce_int));
   LUT5 #(
-    .INIT(32'hEFFF2000)) 
+    .INIT(32'hFBFF0800)) 
     \SPISSR_WR_GEN[0].SPISSR_Data_reg[0]_i_1 
-       (.I0(s_axi_wdata[1]),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(ip2Bus_WrAck_core_reg_1),
-        .I3(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
-        .I4(SPISSR_frm_axi_clk[0]),
-        .O(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ));
-  LUT5 #(
-    .INIT(32'hEFFF2000)) 
-    \SPISSR_WR_GEN[1].SPISSR_Data_reg[1]_i_1 
        (.I0(s_axi_wdata[0]),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(ip2Bus_WrAck_core_reg_1),
-        .I3(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
-        .I4(SPISSR_frm_axi_clk[1]),
-        .O(\SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+        .I1(p_4_in_0),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
+        .I3(ip2Bus_WrAck_core_reg_1),
+        .I4(SPISSR_frm_axi_clk),
+        .O(\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ));
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT3 #(
-    .INIT(8'h40)) 
+    .INIT(8'h08)) 
     Transmit_ip2bus_error_i_1
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
+       (.I0(Transmit_ip2bus_error_reg),
         .I1(Tx_FIFO_Full_int),
-        .I2(Transmit_ip2bus_error_reg),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
         .O(Transmit_ip2bus_error0));
-  LUT6 #(
-    .INIT(64'h00000000A0A0A080)) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  LUT4 #(
+    .INIT(16'h0080)) 
+    \gc1.count_d1[3]_i_2 
+       (.I0(Receive_ip2bus_error_reg),
+        .I1(ipif_glbl_irpt_enable_reg_reg),
+        .I2(ip2Bus_RdAck_core_reg),
+        .I3(out),
+        .O(ram_empty_i_reg));
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  LUT4 #(
+    .INIT(16'h0040)) 
+    \icount_out[3]_i_3 
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(ip2Bus_WrAck_core_reg_1),
+        .I2(Transmit_ip2bus_error_reg),
+        .I3(tx_fifo_full),
+        .O(\gaf.ram_almost_full_i_reg ));
+  LUT5 #(
+    .INIT(32'h05050504)) 
     intr2bus_rdack_i_1
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
-        .I1(p_24_in),
-        .I2(bus2ip_be_int),
+       (.I0(irpt_rdack_d1),
+        .I1(p_25_in),
+        .I2(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_2_n_0 ),
         .I3(p_22_in),
-        .I4(p_25_in),
-        .I5(irpt_rdack_d1),
+        .I4(p_24_in),
         .O(intr2bus_rdack0));
-  LUT6 #(
-    .INIT(64'h0000000050505040)) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  LUT5 #(
+    .INIT(32'h05050504)) 
     intr2bus_wrack_i_1
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
+       (.I0(irpt_wrack_d1),
         .I1(p_22_in),
-        .I2(bus2ip_be_int),
+        .I2(intr2bus_wrack_i_2_n_0),
         .I3(p_24_in),
         .I4(p_25_in),
-        .I5(irpt_wrack_d1),
         .O(interrupt_wrce_strb));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'hFF00FE00)) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  LUT3 #(
+    .INIT(8'hAB)) 
+    intr2bus_wrack_i_2
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(bus2ip_rnw_i_reg),
+        .I2(s_axi_wstrb),
+        .O(intr2bus_wrack_i_2_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  LUT2 #(
+    .INIT(4'h2)) 
     ip2Bus_RdAck_intr_reg_hole_d1_i_1
-       (.I0(p_17_in),
-        .I1(p_28_in),
-        .I2(p_30_in),
-        .I3(ipif_glbl_irpt_enable_reg_reg),
-        .I4(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0),
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0),
         .O(intr_controller_rd_ce_or_reduce));
-  LUT6 #(
-    .INIT(64'h00000000CCCCCCC8)) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT3 #(
+    .INIT(8'h04)) 
     ip2Bus_RdAck_intr_reg_hole_i_1
        (.I0(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0),
         .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(p_30_in),
-        .I3(p_28_in),
-        .I4(p_17_in),
-        .I5(ip2Bus_RdAck_intr_reg_hole_d1),
+        .I2(ip2Bus_RdAck_intr_reg_hole_d1),
         .O(ip2Bus_RdAck_intr_reg_hole0));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
-  LUT5 #(
-    .INIT(32'h00FF00FE)) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  LUT2 #(
+    .INIT(4'h1)) 
     ip2Bus_WrAck_intr_reg_hole_d1_i_1
-       (.I0(p_17_in),
-        .I1(p_28_in),
-        .I2(p_30_in),
-        .I3(ipif_glbl_irpt_enable_reg_reg),
-        .I4(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0),
-        .O(intr_controller_wr_ce_or_reduce));
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0),
+        .O(ip2Bus_WrAck_intr_reg_hole_d1_reg));
   LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
+    .INIT(32'h00000002)) 
     ip2Bus_WrAck_intr_reg_hole_d1_i_2
        (.I0(ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0),
-        .I1(p_20_in),
-        .I2(p_19_in),
-        .I3(p_26_in),
-        .I4(p_23_in),
+        .I1(ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0),
+        .I2(p_27_in),
+        .I3(p_23_in),
+        .I4(p_26_in),
         .O(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFFFE)) 
+    .INIT(64'h0000000000000001)) 
     ip2Bus_WrAck_intr_reg_hole_d1_i_3
        (.I0(p_29_in),
         .I1(p_32_in),
-        .I2(p_18_in),
+        .I2(p_31_in),
         .I3(p_21_in),
-        .I4(p_27_in),
-        .I5(p_31_in),
+        .I4(p_18_in),
+        .I5(p_20_in),
         .O(ip2Bus_WrAck_intr_reg_hole_d1_i_3_n_0));
-  LUT6 #(
-    .INIT(64'h0000000033333332)) 
+  LUT4 #(
+    .INIT(16'hFFFE)) 
+    ip2Bus_WrAck_intr_reg_hole_d1_i_4
+       (.I0(p_28_in),
+        .I1(p_17_in),
+        .I2(p_19_in),
+        .I3(p_30_in),
+        .O(ip2Bus_WrAck_intr_reg_hole_d1_i_4_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  LUT3 #(
+    .INIT(8'h01)) 
     ip2Bus_WrAck_intr_reg_hole_i_1
        (.I0(ip2Bus_WrAck_intr_reg_hole_d1_i_2_n_0),
         .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(p_30_in),
-        .I3(p_28_in),
-        .I4(p_17_in),
-        .I5(ip2Bus_WrAck_intr_reg_hole_d1),
+        .I2(ip2Bus_WrAck_intr_reg_hole_d1),
         .O(ip2Bus_WrAck_intr_reg_hole0));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
-    .INIT(16'h4440)) 
+    .INIT(16'h00A8)) 
     \ip_irpt_enable_reg[8]_i_1 
-       (.I0(ipif_glbl_irpt_enable_reg_reg),
-        .I1(p_22_in),
-        .I2(s_axi_wstrb),
-        .I3(bus2ip_rnw_i_reg),
+       (.I0(p_22_in),
+        .I1(s_axi_wstrb),
+        .I2(bus2ip_rnw_i_reg),
+        .I3(ipif_glbl_irpt_enable_reg_reg),
         .O(E));
   LUT6 #(
-    .INIT(64'hEFEFEFFF20202000)) 
+    .INIT(64'hFFFFBBBF00008880)) 
     ipif_glbl_irpt_enable_reg_i_1
-       (.I0(s_axi_wdata[4]),
-        .I1(ipif_glbl_irpt_enable_reg_reg),
-        .I2(p_25_in),
-        .I3(s_axi_wstrb),
-        .I4(bus2ip_rnw_i_reg),
+       (.I0(s_axi_wdata[1]),
+        .I1(p_25_in),
+        .I2(s_axi_wstrb),
+        .I3(bus2ip_rnw_i_reg),
+        .I4(ipif_glbl_irpt_enable_reg_reg),
         .I5(ipif_glbl_irpt_enable_reg),
         .O(ipif_glbl_irpt_enable_reg_reg_0));
   LUT6 #(
-    .INIT(64'hFFF0EEE000000000)) 
+    .INIT(64'hCCC0CCC0CCC08880)) 
     irpt_rdack_d1_i_1
        (.I0(p_25_in),
-        .I1(p_22_in),
+        .I1(ipif_glbl_irpt_enable_reg_reg),
+        .I2(s_axi_wstrb),
+        .I3(bus2ip_rnw_i_reg),
+        .I4(p_22_in),
+        .I5(p_24_in),
+        .O(irpt_rdack));
+  LUT6 #(
+    .INIT(64'h3330333033302220)) 
+    irpt_wrack_d1_i_1
+       (.I0(p_22_in),
+        .I1(ipif_glbl_irpt_enable_reg_reg),
         .I2(bus2ip_rnw_i_reg),
         .I3(s_axi_wstrb),
         .I4(p_24_in),
-        .I5(ipif_glbl_irpt_enable_reg_reg),
-        .O(irpt_rdack));
-  LUT6 #(
-    .INIT(64'h00000000FFF0EEE0)) 
-    irpt_wrack_d1_i_1
-       (.I0(p_25_in),
-        .I1(p_24_in),
-        .I2(bus2ip_rnw_i_reg),
-        .I3(s_axi_wstrb),
-        .I4(p_22_in),
-        .I5(ipif_glbl_irpt_enable_reg_reg),
+        .I5(p_25_in),
         .O(irpt_wrack));
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  LUT2 #(
+    .INIT(4'h7)) 
+    modf_i_2
+       (.I0(ipif_glbl_irpt_enable_reg_reg),
+        .I1(p_7_in),
+        .O(modf_reg));
   (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
-    .INIT(16'h0004)) 
+    .INIT(16'h0040)) 
     reset_trig_i_1
-       (.I0(data_is_non_reset_match__4),
-        .I1(p_16_in),
-        .I2(ipif_glbl_irpt_enable_reg_reg),
-        .I3(sw_rst_cond_d1),
-        .O(reset_trig0));
-  LUT6 #(
-    .INIT(64'h0000000200000000)) 
-    s_axi_wready_INST_0_i_1
-       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [2]),
-        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [3]),
-        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [0]),
-        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [1]),
-        .I4(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [5]),
-        .I5(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [4]),
-        .O(eqOp__4));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
-  LUT3 #(
-    .INIT(8'h04)) 
-    sw_rst_cond_d1_i_1
        (.I0(ipif_glbl_irpt_enable_reg_reg),
         .I1(p_16_in),
-        .I2(data_is_non_reset_match__4),
+        .I2(bus2ip_rnw_i_reg_0),
+        .I3(sw_rst_cond_d1),
+        .O(reset_trig0));
+  LUT5 #(
+    .INIT(32'hABAAAAAA)) 
+    s_axi_arready_INST_0
+       (.I0(p_15_out),
+        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [0]),
+        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [1]),
+        .I3(is_read),
+        .I4(s_axi_wready_INST_0_i_1_n_0),
+        .O(s_axi_arready));
+  LUT5 #(
+    .INIT(32'hABAAAAAA)) 
+    s_axi_wready_INST_0
+       (.I0(p_16_out),
+        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [0]),
+        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [1]),
+        .I3(is_write_reg),
+        .I4(s_axi_wready_INST_0_i_1_n_0),
+        .O(s_axi_wready));
+  LUT4 #(
+    .INIT(16'h0008)) 
+    s_axi_wready_INST_0_i_1
+       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [4]),
+        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [2]),
+        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [5]),
+        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] [3]),
+        .O(s_axi_wready_INST_0_i_1_n_0));
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  LUT3 #(
+    .INIT(8'h08)) 
+    sw_rst_cond_d1_i_1
+       (.I0(bus2ip_rnw_i_reg_0),
+        .I1(p_16_in),
+        .I2(ipif_glbl_irpt_enable_reg_reg),
         .O(sw_rst_cond));
 endmodule
 
 (* ORIG_REF_NAME = "async_fifo_fg" *) 
 module system_axi_quad_spi_0_0_async_fifo_fg
    (out,
-    \gic0.gc1.count_reg[0] ,
-    IP2Bus_WrAck_transmit_enable__0,
+    tx_fifo_full,
     \OTHER_RATIO_GENERATE.Serial_Dout_reg ,
     Q,
     src_arst,
     s_axi_aclk,
     ext_spi_clk,
     spisel_d1_reg__0,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    Bus_RNW_reg,
     p_6_in,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    Bus_RNW_reg_reg,
     spicr_9_lsb_to_spi_clk,
     s_axi_wdata);
   output out;
-  output \gic0.gc1.count_reg[0] ;
-  output IP2Bus_WrAck_transmit_enable__0;
+  output tx_fifo_full;
   output \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   output [7:0]Q;
   input src_arst;
   input s_axi_aclk;
   input ext_spi_clk;
   input spisel_d1_reg__0;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input Bus_RNW_reg;
   input p_6_in;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input Bus_RNW_reg_reg;
   input spicr_9_lsb_to_spi_clk;
   input [7:0]s_axi_wdata;
 
   wire Bus_RNW_reg;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire Bus_RNW_reg_reg;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   wire [7:0]Q;
   wire ext_spi_clk;
-  wire \gic0.gc1.count_reg[0] ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire p_6_in;
   wire s_axi_aclk;
@@ -1491,22 +1668,23 @@ module system_axi_quad_spi_0_0_async_fifo_fg
   wire spicr_9_lsb_to_spi_clk;
   wire spisel_d1_reg__0;
   wire src_arst;
+  wire tx_fifo_full;
 
   system_axi_quad_spi_0_0_fifo_generator_v13_2_1 \lib_fifo_instance.USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
         .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\OTHER_RATIO_GENERATE.Serial_Dout_reg ),
         .Q(Q),
         .ext_spi_clk(ext_spi_clk),
-        .\gic0.gc1.count_reg[0] (\gic0.gc1.count_reg[0] ),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(out),
         .p_6_in(p_6_in),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
         .spisel_d1_reg__0(spisel_d1_reg__0),
-        .src_arst(src_arst));
+        .src_arst(src_arst),
+        .tx_fifo_full(tx_fifo_full));
 endmodule
 
 (* ORIG_REF_NAME = "async_fifo_fg" *) 
@@ -1514,382 +1692,312 @@ module system_axi_quad_spi_0_0_async_fifo_fg__xdcDup__1
    (out,
     \gaf.ram_almost_full_i_reg ,
     Rx_FIFO_Full_Fifo_org,
-    IP2Bus_RdAck_receive_enable__1,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
-    D,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    Q,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
     Receive_ip2bus_error0,
     Rx_FIFO_Full_Fifo,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ,
     src_arst,
     ext_spi_clk,
     s_axi_aclk,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     spiXfer_done_int,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    p_15_in,
-    bus2ip_rdce_int,
-    spicr_2_mst_n_slv_frm_axi_clk,
-    p_1_in32_in,
-    spicr_3_cpol_frm_axi_clk,
-    p_1_in29_in,
-    rx_fifo_empty_i,
-    p_7_in,
-    Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
     p_5_in,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ,
+    Bus_RNW_reg,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
+    scndry_out,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] );
+    Q);
   output out;
   output \gaf.ram_almost_full_i_reg ;
   output Rx_FIFO_Full_Fifo_org;
-  output IP2Bus_RdAck_receive_enable__1;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  output [0:0]D;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output [5:0]Q;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
   output Receive_ip2bus_error0;
   output Rx_FIFO_Full_Fifo;
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   input src_arst;
   input ext_spi_clk;
   input s_axi_aclk;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input spiXfer_done_int;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input p_15_in;
-  input [0:0]bus2ip_rdce_int;
-  input spicr_2_mst_n_slv_frm_axi_clk;
-  input p_1_in32_in;
-  input spicr_3_cpol_frm_axi_clk;
-  input p_1_in29_in;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input p_5_in;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  input scndry_out;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  wire IP2Bus_RdAck_receive_enable__1;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire [5:0]Q;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  wire [7:0]Q;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Full_Fifo;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
   wire Rx_FIFO_Full_Fifo_org;
-  wire [0:0]bus2ip_rdce_int;
   wire ext_spi_clk;
   wire \gaf.ram_almost_full_i_reg ;
-  wire \goreg_dm.dout_i_reg[0] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
   wire out;
-  wire p_15_in;
-  wire p_1_in29_in;
-  wire p_1_in32_in;
   wire p_5_in;
-  wire p_7_in;
-  wire reset2ip_reset_int;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire scndry_out;
   wire spiXfer_done_int;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
-  wire spicr_3_cpol_frm_axi_clk;
   wire src_arst;
-  wire [0:0]tx_fifo_count;
 
   system_axi_quad_spi_0_0_fifo_generator_v13_2_1__xdcDup__1 \lib_fifo_instance.USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .D(D),
         .E(E),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (IP2Bus_RdAck_receive_enable__1),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .Q(Q),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] (\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
         .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .ext_spi_clk(ext_spi_clk),
         .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
-        .\goreg_dm.dout_i_reg[0] (\goreg_dm.dout_i_reg[0] ),
-        .\ip_irpt_enable_reg_reg[0] (\ip_irpt_enable_reg_reg[0] ),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .out(out),
-        .p_15_in(p_15_in),
-        .p_1_in29_in(p_1_in29_in),
-        .p_1_in32_in(p_1_in32_in),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .scndry_out(scndry_out),
         .spiXfer_done_int(spiXfer_done_int),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
-        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
-        .src_arst(src_arst),
-        .tx_fifo_count(tx_fifo_count));
+        .src_arst(src_arst));
 endmodule
 
 (* ORIG_REF_NAME = "axi_lite_ipif" *) 
 module system_axi_quad_spi_0_0_axi_lite_ipif
    (bus2ip_reset_ipif_inverted,
-    p_2_in,
     p_3_in,
-    p_4_in,
     p_5_in,
     p_6_in,
-    p_7_in,
     p_8_in,
     s_axi_rresp,
     Bus_RNW_reg,
     s_axi_rvalid,
     s_axi_bvalid,
     s_axi_bresp,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ,
-    s_axi_wready,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ,
+    ip2Bus_WrAck_intr_reg_hole_d1_reg,
     s_axi_arready,
+    s_axi_wready,
+    \gaf.ram_almost_full_i_reg ,
     SPICR_data_int_reg0,
-    wr_ce_or_reduce_core_cmb,
     bus2ip_wrce_int,
-    reset2ip_reset_int,
     intr2bus_rdack0,
     irpt_rdack,
     D,
-    p_15_in,
-    irpt_rdack144_out,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ,
-    bus2ip_rdce_int,
-    interrupt_wrce_strb,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ,
     irpt_wrack,
+    interrupt_wrce_strb,
     E,
-    rd_ce_or_reduce_core_cmb,
+    modf_reg,
+    ram_empty_i_reg,
     Transmit_ip2bus_error0,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
     IP2Bus_Error_1,
-    p_5_in_0,
+    \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ,
     reset_trig0,
     sw_rst_cond,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ,
+    ip2Bus_WrAck_intr_reg_hole0,
     ip2Bus_RdAck_intr_reg_hole0,
     intr_controller_rd_ce_or_reduce,
-    ip2Bus_WrAck_intr_reg_hole0,
-    intr_controller_wr_ce_or_reduce,
-    p_39_out__0,
+    rd_ce_or_reduce_core_cmb,
+    \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ,
     ipif_glbl_irpt_enable_reg_reg,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
     \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ,
-    \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ,
     s_axi_rdata,
     s_axi_aclk,
     IP2Bus_Error,
     s_axi_arvalid,
-    ip2Bus_WrAck_core_reg_d1,
-    p_16_out,
-    p_15_out,
-    s_axi_aresetn,
-    s_axi_awvalid,
-    s_axi_wvalid,
     s_axi_rready,
     s_axi_bready,
-    ip2Bus_WrAck_core_reg_1,
-    \RESET_FLOPS[15].RST_FLOPS ,
-    irpt_rdack_d1,
     s_axi_wstrb,
+    ip2Bus_RdAck_core_reg,
+    tx_fifo_full,
+    s_axi_aresetn,
+    p_16_out,
+    p_15_out,
+    s_axi_wvalid,
+    s_axi_awvalid,
+    ip2Bus_WrAck_core_reg_1,
+    irpt_rdack_d1,
+    ipif_glbl_irpt_enable_reg,
     Q,
+    rx_fifo_count,
+    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
+    SPISSR_frm_axi_clk,
+    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ,
+    p_1_in35_in,
+    p_1_in32_in,
+    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ,
+    p_1_in29_in,
+    p_1_in26_in,
     p_1_in23_in,
-    \ip_irpt_enable_reg_reg[7] ,
     p_1_in20_in,
     p_1_in17_in,
+    p_1_in14_in,
+    spicr_8_tr_inhibit_frm_axi_clk,
+    irpt_wrack_d1,
+    \goreg_dm.dout_i_reg[7] ,
+    spicr_7_ss_frm_axi_clk,
+    spicr_6_rxfifo_rst_frm_axi_clk,
     spisel_d1_reg_to_axi_clk,
     spicr_5_txfifo_rst_frm_axi_clk,
-    ipif_glbl_irpt_enable_reg,
-    irpt_wrack_d1,
-    ip2Bus_RdAck_core_reg,
-    spicr_6_rxfifo_rst_frm_axi_clk,
-    spicr_7_ss_frm_axi_clk,
+    sr_3_MODF_int,
+    spicr_4_cpha_frm_axi_clk,
     Tx_FIFO_Full_int,
-    spicr_9_lsb_frm_axi_clk,
+    spicr_3_cpol_frm_axi_clk,
     out,
+    scndry_out,
+    spicr_1_spe_frm_axi_clk,
     Tx_FIFO_Empty_SPISR_to_axi_clk,
-    p_4_in_1,
+    tx_fifo_count,
+    rx_fifo_empty_i,
+    spicr_0_loop_frm_axi_clk,
+    spicr_2_mst_n_slv_frm_axi_clk,
+    spicr_9_lsb_frm_axi_clk,
     Receive_ip2bus_error_reg,
+    p_4_in,
     sw_rst_cond_d1,
     s_axi_wdata,
-    tx_fifo_full,
-    ip2Bus_RdAck_intr_reg_hole_d1,
+    ip2Bus_WrAck_core_reg_d1,
     ip2Bus_WrAck_intr_reg_hole_d1,
+    ip2Bus_RdAck_intr_reg_hole_d1,
     s_axi_araddr,
     s_axi_awaddr,
-    SPISSR_frm_axi_clk,
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] );
   output bus2ip_reset_ipif_inverted;
-  output p_2_in;
   output p_3_in;
-  output p_4_in;
   output p_5_in;
   output p_6_in;
-  output p_7_in;
   output p_8_in;
   output [0:0]s_axi_rresp;
   output Bus_RNW_reg;
   output s_axi_rvalid;
   output s_axi_bvalid;
   output [0:0]s_axi_bresp;
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
-  output s_axi_wready;
+  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
+  output ip2Bus_WrAck_intr_reg_hole_d1_reg;
   output s_axi_arready;
+  output s_axi_wready;
+  output \gaf.ram_almost_full_i_reg ;
   output SPICR_data_int_reg0;
-  output wr_ce_or_reduce_core_cmb;
   output [0:0]bus2ip_wrce_int;
-  output reset2ip_reset_int;
   output intr2bus_rdack0;
   output irpt_rdack;
-  output [4:0]D;
-  output p_15_in;
-  output irpt_rdack144_out;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ;
-  output [1:0]bus2ip_rdce_int;
-  output interrupt_wrce_strb;
+  output [10:0]D;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
   output irpt_wrack;
+  output interrupt_wrce_strb;
   output [0:0]E;
-  output rd_ce_or_reduce_core_cmb;
+  output modf_reg;
+  output ram_empty_i_reg;
   output Transmit_ip2bus_error0;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
   output IP2Bus_Error_1;
-  output p_5_in_0;
+  output \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ;
   output reset_trig0;
   output sw_rst_cond;
+  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
+  output ip2Bus_WrAck_intr_reg_hole0;
   output ip2Bus_RdAck_intr_reg_hole0;
   output intr_controller_rd_ce_or_reduce;
-  output ip2Bus_WrAck_intr_reg_hole0;
-  output intr_controller_wr_ce_or_reduce;
-  output p_39_out__0;
+  output rd_ce_or_reduce_core_cmb;
+  output \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   output ipif_glbl_irpt_enable_reg_reg;
-  output \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  output \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
   output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
-  output \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ;
   output [10:0]s_axi_rdata;
   input s_axi_aclk;
   input IP2Bus_Error;
   input s_axi_arvalid;
-  input ip2Bus_WrAck_core_reg_d1;
-  input p_16_out;
-  input p_15_out;
-  input s_axi_aresetn;
-  input s_axi_awvalid;
-  input s_axi_wvalid;
   input s_axi_rready;
   input s_axi_bready;
-  input ip2Bus_WrAck_core_reg_1;
-  input \RESET_FLOPS[15].RST_FLOPS ;
-  input irpt_rdack_d1;
   input [1:0]s_axi_wstrb;
-  input [2:0]Q;
+  input ip2Bus_RdAck_core_reg;
+  input tx_fifo_full;
+  input s_axi_aresetn;
+  input p_16_out;
+  input p_15_out;
+  input s_axi_wvalid;
+  input s_axi_awvalid;
+  input ip2Bus_WrAck_core_reg_1;
+  input irpt_rdack_d1;
+  input ipif_glbl_irpt_enable_reg;
+  input [8:0]Q;
+  input [1:0]rx_fifo_count;
+  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  input SPISSR_frm_axi_clk;
+  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
+  input p_1_in35_in;
+  input p_1_in32_in;
+  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
+  input p_1_in29_in;
+  input p_1_in26_in;
   input p_1_in23_in;
-  input [2:0]\ip_irpt_enable_reg_reg[7] ;
   input p_1_in20_in;
   input p_1_in17_in;
+  input p_1_in14_in;
+  input spicr_8_tr_inhibit_frm_axi_clk;
+  input irpt_wrack_d1;
+  input [7:0]\goreg_dm.dout_i_reg[7] ;
+  input spicr_7_ss_frm_axi_clk;
+  input spicr_6_rxfifo_rst_frm_axi_clk;
   input spisel_d1_reg_to_axi_clk;
   input spicr_5_txfifo_rst_frm_axi_clk;
-  input ipif_glbl_irpt_enable_reg;
-  input irpt_wrack_d1;
-  input ip2Bus_RdAck_core_reg;
-  input spicr_6_rxfifo_rst_frm_axi_clk;
-  input spicr_7_ss_frm_axi_clk;
+  input sr_3_MODF_int;
+  input spicr_4_cpha_frm_axi_clk;
   input Tx_FIFO_Full_int;
-  input spicr_9_lsb_frm_axi_clk;
+  input spicr_3_cpol_frm_axi_clk;
   input out;
+  input scndry_out;
+  input spicr_1_spe_frm_axi_clk;
   input Tx_FIFO_Empty_SPISR_to_axi_clk;
-  input p_4_in_1;
+  input [1:0]tx_fifo_count;
+  input rx_fifo_empty_i;
+  input spicr_0_loop_frm_axi_clk;
+  input spicr_2_mst_n_slv_frm_axi_clk;
+  input spicr_9_lsb_frm_axi_clk;
   input Receive_ip2bus_error_reg;
+  input p_4_in;
   input sw_rst_cond_d1;
-  input [6:0]s_axi_wdata;
-  input tx_fifo_full;
-  input ip2Bus_RdAck_intr_reg_hole_d1;
+  input [4:0]s_axi_wdata;
+  input ip2Bus_WrAck_core_reg_d1;
   input ip2Bus_WrAck_intr_reg_hole_d1;
+  input ip2Bus_RdAck_intr_reg_hole_d1;
   input [4:0]s_axi_araddr;
   input [4:0]s_axi_awaddr;
-  input [0:1]SPISSR_frm_axi_clk;
   input [10:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] ;
 
   wire Bus_RNW_reg;
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  wire [4:0]D;
+  wire [10:0]D;
   wire [0:0]E;
+  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  wire \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   wire IP2Bus_Error;
   wire IP2Bus_Error_1;
   wire [10:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
-  wire [2:0]Q;
-  wire \RESET_FLOPS[15].RST_FLOPS ;
+  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
+  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
+  wire [8:0]Q;
   wire Receive_ip2bus_error_reg;
   wire SPICR_data_int_reg0;
   wire \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
-  wire \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ;
-  wire [0:1]SPISSR_frm_axi_clk;
+  wire SPISSR_frm_axi_clk;
   wire Transmit_ip2bus_error0;
   wire Tx_FIFO_Empty_SPISR_to_axi_clk;
   wire Tx_FIFO_Full_int;
-  wire [1:0]bus2ip_rdce_int;
   wire bus2ip_reset_ipif_inverted;
   wire [0:0]bus2ip_wrce_int;
+  wire \gaf.ram_almost_full_i_reg ;
+  wire [7:0]\goreg_dm.dout_i_reg[7] ;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
   wire intr_controller_rd_ce_or_reduce;
-  wire intr_controller_wr_ce_or_reduce;
   wire ip2Bus_RdAck_core_reg;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
@@ -1897,34 +2005,35 @@ module system_axi_quad_spi_0_0_axi_lite_ipif
   wire ip2Bus_WrAck_core_reg_d1;
   wire ip2Bus_WrAck_intr_reg_hole0;
   wire ip2Bus_WrAck_intr_reg_hole_d1;
-  wire [2:0]\ip_irpt_enable_reg_reg[7] ;
+  wire ip2Bus_WrAck_intr_reg_hole_d1_reg;
   wire ipif_glbl_irpt_enable_reg;
   wire ipif_glbl_irpt_enable_reg_reg;
   wire irpt_rdack;
-  wire irpt_rdack144_out;
   wire irpt_rdack_d1;
   wire irpt_wrack;
   wire irpt_wrack_d1;
+  wire modf_reg;
   wire out;
-  wire p_15_in;
   wire p_15_out;
   wire p_16_out;
+  wire p_1_in14_in;
   wire p_1_in17_in;
   wire p_1_in20_in;
   wire p_1_in23_in;
-  wire p_2_in;
-  wire p_39_out__0;
+  wire p_1_in26_in;
+  wire p_1_in29_in;
+  wire p_1_in32_in;
+  wire p_1_in35_in;
   wire p_3_in;
   wire p_4_in;
-  wire p_4_in_1;
   wire p_5_in;
-  wire p_5_in_0;
   wire p_6_in;
-  wire p_7_in;
   wire p_8_in;
+  wire ram_empty_i_reg;
   wire rd_ce_or_reduce_core_cmb;
-  wire reset2ip_reset_int;
   wire reset_trig0;
+  wire [1:0]rx_fifo_count;
+  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire [4:0]s_axi_araddr;
   wire s_axi_aresetn;
@@ -1939,57 +2048,61 @@ module system_axi_quad_spi_0_0_axi_lite_ipif
   wire s_axi_rready;
   wire [0:0]s_axi_rresp;
   wire s_axi_rvalid;
-  wire [6:0]s_axi_wdata;
+  wire [4:0]s_axi_wdata;
   wire s_axi_wready;
   wire [1:0]s_axi_wstrb;
   wire s_axi_wvalid;
+  wire scndry_out;
+  wire spicr_0_loop_frm_axi_clk;
+  wire spicr_1_spe_frm_axi_clk;
+  wire spicr_2_mst_n_slv_frm_axi_clk;
+  wire spicr_3_cpol_frm_axi_clk;
+  wire spicr_4_cpha_frm_axi_clk;
   wire spicr_5_txfifo_rst_frm_axi_clk;
   wire spicr_6_rxfifo_rst_frm_axi_clk;
   wire spicr_7_ss_frm_axi_clk;
+  wire spicr_8_tr_inhibit_frm_axi_clk;
   wire spicr_9_lsb_frm_axi_clk;
   wire spisel_d1_reg_to_axi_clk;
+  wire sr_3_MODF_int;
   wire sw_rst_cond;
   wire sw_rst_cond_d1;
+  wire [1:0]tx_fifo_count;
   wire tx_fifo_full;
-  wire wr_ce_or_reduce_core_cmb;
 
   system_axi_quad_spi_0_0_slave_attachment I_SLAVE_ATTACHMENT
-       (.\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (p_8_in),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 (\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .D(D),
+       (.D(D),
         .E(E),
+        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
+        .\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] (\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ),
         .IP2Bus_Error(IP2Bus_Error),
         .IP2Bus_Error_1(IP2Bus_Error_1),
         .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] (irpt_rdack144_out),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (p_3_in),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg (p_7_in),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg (p_2_in),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] (p_3_in),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg (\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
+        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 (\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ),
+        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 (\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ),
         .Q(Q),
-        .\RESET_FLOPS[15].RST_FLOPS (\RESET_FLOPS[15].RST_FLOPS ),
         .Receive_ip2bus_error_reg(p_5_in),
         .Receive_ip2bus_error_reg_0(Receive_ip2bus_error_reg),
         .SPICR_data_int_reg0(SPICR_data_int_reg0),
-        .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] (p_4_in),
-        .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 (\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
-        .\SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] (\SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ),
+        .\SPICR_data_int_reg[0] (p_8_in),
+        .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] (\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
         .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
         .SR(bus2ip_reset_ipif_inverted),
         .Transmit_ip2bus_error0(Transmit_ip2bus_error0),
         .Transmit_ip2bus_error_reg(p_6_in),
         .Tx_FIFO_Empty_SPISR_to_axi_clk(Tx_FIFO_Empty_SPISR_to_axi_clk),
         .Tx_FIFO_Full_int(Tx_FIFO_Full_int),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .bus2ip_wrce_int(bus2ip_wrce_int),
+        .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
+        .\goreg_dm.dout_i_reg[7] (\goreg_dm.dout_i_reg[7] ),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack0(intr2bus_rdack0),
         .intr_controller_rd_ce_or_reduce(intr_controller_rd_ce_or_reduce),
-        .intr_controller_wr_ce_or_reduce(intr_controller_wr_ce_or_reduce),
         .ip2Bus_RdAck_core_reg(ip2Bus_RdAck_core_reg),
         .ip2Bus_RdAck_intr_reg_hole0(ip2Bus_RdAck_intr_reg_hole0),
         .ip2Bus_RdAck_intr_reg_hole_d1(ip2Bus_RdAck_intr_reg_hole_d1),
@@ -1997,7 +2110,7 @@ module system_axi_quad_spi_0_0_axi_lite_ipif
         .ip2Bus_WrAck_core_reg_d1(ip2Bus_WrAck_core_reg_d1),
         .ip2Bus_WrAck_intr_reg_hole0(ip2Bus_WrAck_intr_reg_hole0),
         .ip2Bus_WrAck_intr_reg_hole_d1(ip2Bus_WrAck_intr_reg_hole_d1),
-        .\ip_irpt_enable_reg_reg[7] (\ip_irpt_enable_reg_reg[7] ),
+        .ip2Bus_WrAck_intr_reg_hole_d1_reg(ip2Bus_WrAck_intr_reg_hole_d1_reg),
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
         .ipif_glbl_irpt_enable_reg_reg(Bus_RNW_reg),
         .ipif_glbl_irpt_enable_reg_reg_0(ipif_glbl_irpt_enable_reg_reg),
@@ -2005,19 +2118,24 @@ module system_axi_quad_spi_0_0_axi_lite_ipif
         .irpt_rdack_d1(irpt_rdack_d1),
         .irpt_wrack(irpt_wrack),
         .irpt_wrack_d1(irpt_wrack_d1),
+        .modf_reg(modf_reg),
         .out(out),
-        .p_15_in(p_15_in),
         .p_15_out(p_15_out),
         .p_16_out(p_16_out),
+        .p_1_in14_in(p_1_in14_in),
         .p_1_in17_in(p_1_in17_in),
         .p_1_in20_in(p_1_in20_in),
         .p_1_in23_in(p_1_in23_in),
-        .p_39_out__0(p_39_out__0),
-        .p_4_in_1(p_4_in_1),
-        .p_5_in_0(p_5_in_0),
+        .p_1_in26_in(p_1_in26_in),
+        .p_1_in29_in(p_1_in29_in),
+        .p_1_in32_in(p_1_in32_in),
+        .p_1_in35_in(p_1_in35_in),
+        .p_4_in(p_4_in),
+        .ram_empty_i_reg(ram_empty_i_reg),
         .rd_ce_or_reduce_core_cmb(rd_ce_or_reduce_core_cmb),
-        .reset2ip_reset_int(reset2ip_reset_int),
         .reset_trig0(reset_trig0),
+        .rx_fifo_count(rx_fifo_count),
+        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr(s_axi_araddr),
         .s_axi_aresetn(s_axi_aresetn),
@@ -2036,15 +2154,23 @@ module system_axi_quad_spi_0_0_axi_lite_ipif
         .s_axi_wready(s_axi_wready),
         .s_axi_wstrb(s_axi_wstrb),
         .s_axi_wvalid(s_axi_wvalid),
+        .scndry_out(scndry_out),
+        .spicr_0_loop_frm_axi_clk(spicr_0_loop_frm_axi_clk),
+        .spicr_1_spe_frm_axi_clk(spicr_1_spe_frm_axi_clk),
+        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
+        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
+        .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .spicr_5_txfifo_rst_frm_axi_clk(spicr_5_txfifo_rst_frm_axi_clk),
         .spicr_6_rxfifo_rst_frm_axi_clk(spicr_6_rxfifo_rst_frm_axi_clk),
         .spicr_7_ss_frm_axi_clk(spicr_7_ss_frm_axi_clk),
+        .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .spicr_9_lsb_frm_axi_clk(spicr_9_lsb_frm_axi_clk),
         .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk),
+        .sr_3_MODF_int(sr_3_MODF_int),
         .sw_rst_cond(sw_rst_cond),
         .sw_rst_cond_d1(sw_rst_cond_d1),
-        .tx_fifo_full(tx_fifo_full),
-        .wr_ce_or_reduce_core_cmb(wr_ce_or_reduce_core_cmb));
+        .tx_fifo_count(tx_fifo_count),
+        .tx_fifo_full(tx_fifo_full));
 endmodule
 
 (* ORIG_REF_NAME = "axi_lite_ipif_v3_0_4_pselect_f" *) 
@@ -2448,7 +2574,7 @@ endmodule
 
 (* Async_Clk = "0" *) (* C_DUAL_QUAD_MODE = "0" *) (* C_FAMILY = "zynq" *) 
 (* C_FIFO_DEPTH = "16" *) (* C_INSTANCE = "axi_quad_spi_inst" *) (* C_LSB_STUP = "0" *) 
-(* C_NUM_SS_BITS = "2" *) (* C_NUM_TRANSFER_BITS = "8" *) (* C_SCK_RATIO = "16" *) 
+(* C_NUM_SS_BITS = "1" *) (* C_NUM_TRANSFER_BITS = "8" *) (* C_SCK_RATIO = "16" *) 
 (* C_SELECT_XPM = "0" *) (* C_SHARED_STARTUP = "0" *) (* C_SPI_MEMORY = "1" *) 
 (* C_SPI_MEM_ADDR_BITS = "24" *) (* C_SPI_MODE = "0" *) (* C_SUB_FAMILY = "zynq" *) 
 (* C_S_AXI4_ADDR_WIDTH = "24" *) (* C_S_AXI4_BASEADDR = "-1" *) (* C_S_AXI4_DATA_WIDTH = "32" *) 
@@ -2646,8 +2772,8 @@ module system_axi_quad_spi_0_0_axi_quad_spi
   input sck_i;
   output sck_o;
   output sck_t;
-  input [1:0]ss_i;
-  output [1:0]ss_o;
+  input [0:0]ss_i;
+  output [0:0]ss_o;
   output ss_t;
   input ss_1_i;
   output ss_1_o;
@@ -2699,7 +2825,7 @@ module system_axi_quad_spi_0_0_axi_quad_spi
   wire sck_o;
   wire sck_t;
   wire spisel;
-  wire [1:0]ss_o;
+  wire [0:0]ss_o;
   wire ss_t;
 
   assign cfgclk = \<const0> ;
@@ -2835,22 +2961,25 @@ endmodule
 
 (* ORIG_REF_NAME = "axi_quad_spi_top" *) 
 module system_axi_quad_spi_0_0_axi_quad_spi_top
-   (sck_t,
+   (s_axi_rvalid,
+    s_axi_bvalid,
+    sck_t,
     io0_t,
     ss_t,
     io1_t,
     sck_o,
     s_axi_rdata,
     s_axi_rresp,
-    ss_o,
-    s_axi_wready,
     s_axi_arready,
-    s_axi_rvalid,
-    s_axi_bvalid,
+    s_axi_wready,
     ip2intc_irpt,
     io1_o,
     s_axi_bresp,
+    ss_o,
     s_axi_aclk,
+    s_axi_rready,
+    s_axi_bready,
+    s_axi_wstrb,
     ext_spi_clk,
     s_axi_wdata,
     spisel,
@@ -2859,15 +2988,14 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
     io1_i,
     s_axi4_aclk,
     s_axi4_aresetn,
-    s_axi_awvalid,
     s_axi_wvalid,
+    s_axi_awvalid,
     s_axi_arvalid,
     s_axi_aresetn,
-    s_axi_rready,
-    s_axi_bready,
-    s_axi_wstrb,
     s_axi_araddr,
     s_axi_awaddr);
+  output s_axi_rvalid;
+  output s_axi_bvalid;
   output sck_t;
   output io0_t;
   output ss_t;
@@ -2875,15 +3003,16 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
   output sck_o;
   output [10:0]s_axi_rdata;
   output [0:0]s_axi_rresp;
-  output [1:0]ss_o;
-  output s_axi_wready;
   output s_axi_arready;
-  output s_axi_rvalid;
-  output s_axi_bvalid;
+  output s_axi_wready;
   output ip2intc_irpt;
   output io1_o;
   output [0:0]s_axi_bresp;
+  output [0:0]ss_o;
   input s_axi_aclk;
+  input s_axi_rready;
+  input s_axi_bready;
+  input [1:0]s_axi_wstrb;
   input ext_spi_clk;
   input [10:0]s_axi_wdata;
   input spisel;
@@ -2892,72 +3021,77 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
   input io1_i;
   input s_axi4_aclk;
   input s_axi4_aresetn;
-  input s_axi_awvalid;
   input s_axi_wvalid;
+  input s_axi_awvalid;
   input s_axi_arvalid;
   input s_axi_aresetn;
-  input s_axi_rready;
-  input s_axi_bready;
-  input [1:0]s_axi_wstrb;
   input [4:0]s_axi_araddr;
   input [4:0]s_axi_awaddr;
 
   wire \CONTROL_REG_I/SPICR_data_int_reg0 ;
   wire \FIFO_EXISTS.FIFO_IF_MODULE_I/Transmit_ip2bus_error0 ;
-  wire \FIFO_EXISTS.FIFO_IF_MODULE_I/p_15_in ;
   wire \INTERRUPT_CONTROL_I/interrupt_wrce_strb ;
   wire \INTERRUPT_CONTROL_I/intr2bus_rdack0 ;
   wire \INTERRUPT_CONTROL_I/ipif_glbl_irpt_enable_reg ;
   wire \INTERRUPT_CONTROL_I/irpt_rdack ;
-  wire \INTERRUPT_CONTROL_I/irpt_rdack144_out ;
   wire \INTERRUPT_CONTROL_I/irpt_rdack_d1 ;
   wire \INTERRUPT_CONTROL_I/irpt_wrack ;
   wire \INTERRUPT_CONTROL_I/irpt_wrack_d1 ;
   wire \INTERRUPT_CONTROL_I/irpt_wrack_d11 ;
+  wire \INTERRUPT_CONTROL_I/p_0_in ;
   wire \INTERRUPT_CONTROL_I/p_0_in10_in ;
   wire \INTERRUPT_CONTROL_I/p_0_in13_in ;
   wire \INTERRUPT_CONTROL_I/p_0_in16_in ;
+  wire \INTERRUPT_CONTROL_I/p_0_in19_in ;
+  wire \INTERRUPT_CONTROL_I/p_0_in1_in ;
+  wire \INTERRUPT_CONTROL_I/p_0_in4_in ;
+  wire \INTERRUPT_CONTROL_I/p_0_in7_in ;
+  wire \INTERRUPT_CONTROL_I/p_1_in14_in ;
   wire \INTERRUPT_CONTROL_I/p_1_in17_in ;
   wire \INTERRUPT_CONTROL_I/p_1_in20_in ;
   wire \INTERRUPT_CONTROL_I/p_1_in23_in ;
-  wire \INTERRUPT_CONTROL_I/p_39_out__0 ;
+  wire \INTERRUPT_CONTROL_I/p_1_in26_in ;
+  wire \INTERRUPT_CONTROL_I/p_1_in29_in ;
+  wire \INTERRUPT_CONTROL_I/p_1_in32_in ;
+  wire \INTERRUPT_CONTROL_I/p_1_in35_in ;
   wire [0:31]IP2Bus_Data;
   wire IP2Bus_Error;
   wire IP2Bus_Error_1;
   wire [0:0]IP2Bus_SPICR_Data_int;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ;
-  wire \I_SLAVE_ATTACHMENT/I_DECODER/p_2_in ;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/p_3_in ;
-  wire \I_SLAVE_ATTACHMENT/I_DECODER/p_4_in ;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/p_5_in ;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/p_6_in ;
-  wire \I_SLAVE_ATTACHMENT/I_DECODER/p_7_in ;
   wire \I_SLAVE_ATTACHMENT/I_DECODER/p_8_in ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_13 ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_29 ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_37 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_10 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_11 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_14 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_30 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_34 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_35 ;
   wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_38 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_41 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_46 ;
+  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_47 ;
   wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_48 ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_49 ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_50 ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_51 ;
-  wire \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_52 ;
-  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_19 ;
-  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_28 ;
+  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_21 ;
+  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_31 ;
+  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_53 ;
+  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_54 ;
+  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_64 ;
   wire Rx_FIFO_Empty;
+  wire Rx_FIFO_Full_Fifo_d1_synced;
   wire \SOFT_RESET_I/reset_trig0 ;
   wire \SOFT_RESET_I/sw_rst_cond ;
   wire \SOFT_RESET_I/sw_rst_cond_d1 ;
-  wire [0:1]SPISSR_frm_axi_clk;
+  wire SPISSR_frm_axi_clk;
   wire Tx_FIFO_Empty_SPISR_to_axi_clk;
   wire Tx_FIFO_Full_int;
-  wire [7:6]bus2ip_rdce_int;
   wire bus2ip_reset_ipif_inverted;
   wire [7:7]bus2ip_wrce_int;
-  wire [0:2]data_from_rx_fifo;
+  wire [0:7]data_from_rx_fifo;
   wire ext_spi_clk;
   wire intr_controller_rd_ce_or_reduce;
-  wire intr_controller_wr_ce_or_reduce;
   wire [0:0]intr_ip2bus_data;
   wire io0_i;
   wire io0_i_sync;
@@ -2966,7 +3100,7 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
   wire io1_i_sync;
   wire io1_o;
   wire io1_t;
-  wire [24:26]ip2Bus_Data_1;
+  wire [23:31]ip2Bus_Data_1;
   wire ip2Bus_RdAck_core_reg;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
@@ -2978,9 +3112,9 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
   wire p_15_out;
   wire p_16_out;
   wire p_4_in;
-  wire p_5_in;
   wire rd_ce_or_reduce_core_cmb;
-  wire reset2ip_reset_int;
+  wire [2:0]rx_fifo_count;
+  wire rx_fifo_empty_i;
   (* MAX_FANOUT = "10000" *) (* RTL_MAX_FANOUT = "found" *) wire s_axi4_aclk;
   (* MAX_FANOUT = "10000" *) (* RTL_MAX_FANOUT = "found" *) wire s_axi4_aresetn;
   wire s_axi_aclk;
@@ -3004,16 +3138,23 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
   wire sck_i;
   wire sck_o;
   wire sck_t;
+  wire spicr_0_loop_frm_axi_clk;
+  wire spicr_1_spe_frm_axi_clk;
+  wire spicr_2_mst_n_slv_frm_axi_clk;
+  wire spicr_3_cpol_frm_axi_clk;
+  wire spicr_4_cpha_frm_axi_clk;
   wire spicr_5_txfifo_rst_frm_axi_clk;
   wire spicr_6_rxfifo_rst_frm_axi_clk;
   wire spicr_7_ss_frm_axi_clk;
+  wire spicr_8_tr_inhibit_frm_axi_clk;
   wire spicr_9_lsb_frm_axi_clk;
   wire spisel;
   wire spisel_d1_reg_to_axi_clk;
-  wire [1:0]ss_o;
+  wire sr_3_MODF_int;
+  wire [0:0]ss_o;
   wire ss_t;
+  wire [2:0]tx_fifo_count;
   wire tx_fifo_full;
-  wire wr_ce_or_reduce_core_cmb;
 
   (* XILINX_LEGACY_PRIM = "FD" *) 
   (* box_type = "PRIMITIVE" *) 
@@ -3037,34 +3178,34 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
         .R(1'b0));
   system_axi_quad_spi_0_0_axi_lite_ipif \QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I 
        (.Bus_RNW_reg(\I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_49 ),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_50 ),
-        .D({intr_ip2bus_data,IP2Bus_SPICR_Data_int,ip2Bus_Data_1[24],ip2Bus_Data_1[25],ip2Bus_Data_1[26]}),
+        .D({intr_ip2bus_data,IP2Bus_SPICR_Data_int,ip2Bus_Data_1[23],ip2Bus_Data_1[24],ip2Bus_Data_1[25],ip2Bus_Data_1[26],ip2Bus_Data_1[27],ip2Bus_Data_1[28],ip2Bus_Data_1[29],ip2Bus_Data_1[30],ip2Bus_Data_1[31]}),
         .E(\INTERRUPT_CONTROL_I/irpt_wrack_d11 ),
+        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_21 ),
+        .\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_46 ),
         .IP2Bus_Error(IP2Bus_Error),
         .IP2Bus_Error_1(IP2Bus_Error_1),
         .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] ({IP2Bus_Data[0],IP2Bus_Data[22],IP2Bus_Data[23],IP2Bus_Data[24],IP2Bus_Data[25],IP2Bus_Data[26],IP2Bus_Data[27],IP2Bus_Data[28],IP2Bus_Data[29],IP2Bus_Data[30],IP2Bus_Data[31]}),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_29 ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_37 ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_38 ),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_13 ),
-        .Q({data_from_rx_fifo[0],data_from_rx_fifo[1],data_from_rx_fifo[2]}),
-        .\RESET_FLOPS[15].RST_FLOPS (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_28 ),
-        .Receive_ip2bus_error_reg(\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_19 ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_30 ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_38 ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_10 ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_41 ),
+        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_53 ),
+        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_54 ),
+        .Q({\INTERRUPT_CONTROL_I/p_0_in19_in ,\INTERRUPT_CONTROL_I/p_0_in16_in ,\INTERRUPT_CONTROL_I/p_0_in13_in ,\INTERRUPT_CONTROL_I/p_0_in10_in ,\INTERRUPT_CONTROL_I/p_0_in7_in ,\INTERRUPT_CONTROL_I/p_0_in4_in ,\INTERRUPT_CONTROL_I/p_0_in1_in ,\INTERRUPT_CONTROL_I/p_0_in ,\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_64 }),
+        .Receive_ip2bus_error_reg(\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_31 ),
         .SPICR_data_int_reg0(\CONTROL_REG_I/SPICR_data_int_reg0 ),
-        .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_51 ),
-        .\SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_52 ),
+        .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_48 ),
         .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
         .Transmit_ip2bus_error0(\FIFO_EXISTS.FIFO_IF_MODULE_I/Transmit_ip2bus_error0 ),
         .Tx_FIFO_Empty_SPISR_to_axi_clk(Tx_FIFO_Empty_SPISR_to_axi_clk),
         .Tx_FIFO_Full_int(Tx_FIFO_Full_int),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
         .bus2ip_wrce_int(bus2ip_wrce_int),
+        .\gaf.ram_almost_full_i_reg (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_14 ),
+        .\goreg_dm.dout_i_reg[7] ({data_from_rx_fifo[0],data_from_rx_fifo[1],data_from_rx_fifo[2],data_from_rx_fifo[3],data_from_rx_fifo[4],data_from_rx_fifo[5],data_from_rx_fifo[6],data_from_rx_fifo[7]}),
         .interrupt_wrce_strb(\INTERRUPT_CONTROL_I/interrupt_wrce_strb ),
         .intr2bus_rdack0(\INTERRUPT_CONTROL_I/intr2bus_rdack0 ),
         .intr_controller_rd_ce_or_reduce(intr_controller_rd_ce_or_reduce),
-        .intr_controller_wr_ce_or_reduce(intr_controller_wr_ce_or_reduce),
         .ip2Bus_RdAck_core_reg(ip2Bus_RdAck_core_reg),
         .ip2Bus_RdAck_intr_reg_hole0(ip2Bus_RdAck_intr_reg_hole0),
         .ip2Bus_RdAck_intr_reg_hole_d1(ip2Bus_RdAck_intr_reg_hole_d1),
@@ -3072,34 +3213,35 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
         .ip2Bus_WrAck_core_reg_d1(ip2Bus_WrAck_core_reg_d1),
         .ip2Bus_WrAck_intr_reg_hole0(ip2Bus_WrAck_intr_reg_hole0),
         .ip2Bus_WrAck_intr_reg_hole_d1(ip2Bus_WrAck_intr_reg_hole_d1),
-        .\ip_irpt_enable_reg_reg[7] ({\INTERRUPT_CONTROL_I/p_0_in16_in ,\INTERRUPT_CONTROL_I/p_0_in13_in ,\INTERRUPT_CONTROL_I/p_0_in10_in }),
+        .ip2Bus_WrAck_intr_reg_hole_d1_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_11 ),
         .ipif_glbl_irpt_enable_reg(\INTERRUPT_CONTROL_I/ipif_glbl_irpt_enable_reg ),
-        .ipif_glbl_irpt_enable_reg_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_48 ),
+        .ipif_glbl_irpt_enable_reg_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_47 ),
         .irpt_rdack(\INTERRUPT_CONTROL_I/irpt_rdack ),
-        .irpt_rdack144_out(\INTERRUPT_CONTROL_I/irpt_rdack144_out ),
         .irpt_rdack_d1(\INTERRUPT_CONTROL_I/irpt_rdack_d1 ),
         .irpt_wrack(\INTERRUPT_CONTROL_I/irpt_wrack ),
         .irpt_wrack_d1(\INTERRUPT_CONTROL_I/irpt_wrack_d1 ),
+        .modf_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_34 ),
         .out(Rx_FIFO_Empty),
-        .p_15_in(\FIFO_EXISTS.FIFO_IF_MODULE_I/p_15_in ),
         .p_15_out(p_15_out),
         .p_16_out(p_16_out),
+        .p_1_in14_in(\INTERRUPT_CONTROL_I/p_1_in14_in ),
         .p_1_in17_in(\INTERRUPT_CONTROL_I/p_1_in17_in ),
         .p_1_in20_in(\INTERRUPT_CONTROL_I/p_1_in20_in ),
         .p_1_in23_in(\INTERRUPT_CONTROL_I/p_1_in23_in ),
-        .p_2_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_2_in ),
-        .p_39_out__0(\INTERRUPT_CONTROL_I/p_39_out__0 ),
+        .p_1_in26_in(\INTERRUPT_CONTROL_I/p_1_in26_in ),
+        .p_1_in29_in(\INTERRUPT_CONTROL_I/p_1_in29_in ),
+        .p_1_in32_in(\INTERRUPT_CONTROL_I/p_1_in32_in ),
+        .p_1_in35_in(\INTERRUPT_CONTROL_I/p_1_in35_in ),
         .p_3_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_3_in ),
-        .p_4_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_4_in ),
-        .p_4_in_1(p_4_in),
+        .p_4_in(p_4_in),
         .p_5_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_5_in ),
-        .p_5_in_0(p_5_in),
         .p_6_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_6_in ),
-        .p_7_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_7_in ),
         .p_8_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_8_in ),
+        .ram_empty_i_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_35 ),
         .rd_ce_or_reduce_core_cmb(rd_ce_or_reduce_core_cmb),
-        .reset2ip_reset_int(reset2ip_reset_int),
         .reset_trig0(\SOFT_RESET_I/reset_trig0 ),
+        .rx_fifo_count({rx_fifo_count[2],rx_fifo_count[0]}),
+        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr(s_axi_araddr),
         .s_axi_aresetn(s_axi_aresetn),
@@ -3114,51 +3256,63 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
         .s_axi_rready(s_axi_rready),
         .s_axi_rresp(s_axi_rresp),
         .s_axi_rvalid(s_axi_rvalid),
-        .s_axi_wdata({s_axi_wdata[10],s_axi_wdata[6:5],s_axi_wdata[3:0]}),
+        .s_axi_wdata({s_axi_wdata[10],s_axi_wdata[3:0]}),
         .s_axi_wready(s_axi_wready),
         .s_axi_wstrb(s_axi_wstrb),
         .s_axi_wvalid(s_axi_wvalid),
+        .scndry_out(Rx_FIFO_Full_Fifo_d1_synced),
+        .spicr_0_loop_frm_axi_clk(spicr_0_loop_frm_axi_clk),
+        .spicr_1_spe_frm_axi_clk(spicr_1_spe_frm_axi_clk),
+        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
+        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
+        .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .spicr_5_txfifo_rst_frm_axi_clk(spicr_5_txfifo_rst_frm_axi_clk),
         .spicr_6_rxfifo_rst_frm_axi_clk(spicr_6_rxfifo_rst_frm_axi_clk),
         .spicr_7_ss_frm_axi_clk(spicr_7_ss_frm_axi_clk),
+        .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .spicr_9_lsb_frm_axi_clk(spicr_9_lsb_frm_axi_clk),
         .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk),
+        .sr_3_MODF_int(sr_3_MODF_int),
         .sw_rst_cond(\SOFT_RESET_I/sw_rst_cond ),
         .sw_rst_cond_d1(\SOFT_RESET_I/sw_rst_cond_d1 ),
-        .tx_fifo_full(tx_fifo_full),
-        .wr_ce_or_reduce_core_cmb(wr_ce_or_reduce_core_cmb));
+        .tx_fifo_count({tx_fifo_count[2],tx_fifo_count[0]}),
+        .tx_fifo_full(tx_fifo_full));
   system_axi_quad_spi_0_0_qspi_core_interface \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I 
        (.Bus_RNW_reg(\I_SLAVE_ATTACHMENT/I_DECODER/Bus_RNW_reg ),
-        .Bus_RNW_reg_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_48 ),
-        .Bus_RNW_reg_reg_0(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_52 ),
-        .Bus_RNW_reg_reg_1(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_51 ),
-        .Bus_RNW_reg_reg_2(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_38 ),
-        .Bus_RNW_reg_reg_3(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_37 ),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_49 ),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_50 ),
-        .D({intr_ip2bus_data,IP2Bus_SPICR_Data_int,ip2Bus_Data_1[24],ip2Bus_Data_1[25],ip2Bus_Data_1[26]}),
+        .Bus_RNW_reg_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_11 ),
+        .Bus_RNW_reg_reg_0(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_10 ),
+        .Bus_RNW_reg_reg_1(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_14 ),
+        .Bus_RNW_reg_reg_2(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_34 ),
+        .D({intr_ip2bus_data,IP2Bus_SPICR_Data_int,ip2Bus_Data_1[23],ip2Bus_Data_1[24],ip2Bus_Data_1[25],ip2Bus_Data_1[26],ip2Bus_Data_1[27],ip2Bus_Data_1[28],ip2Bus_Data_1[29],ip2Bus_Data_1[30],ip2Bus_Data_1[31]}),
         .E(\INTERRUPT_CONTROL_I/irpt_wrack_d11 ),
-        .FF_WRACK(\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_28 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_29 ),
-        .\GEN_BKEND_CE_REGISTERS[25].ce_out_i_reg[25] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_13 ),
+        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 ({tx_fifo_count[2],tx_fifo_count[0]}),
+        .\GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_38 ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_35 ),
+        .\GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_48 ),
+        .\GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_47 ),
+        .\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_46 ),
+        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_21 ),
         .IP2Bus_Error(IP2Bus_Error),
         .IP2Bus_Error_1(IP2Bus_Error_1),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ({\INTERRUPT_CONTROL_I/p_0_in16_in ,\INTERRUPT_CONTROL_I/p_0_in13_in ,\INTERRUPT_CONTROL_I/p_0_in10_in }),
-        .\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg_0 (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_19 ),
-        .Q({data_from_rx_fifo[0],data_from_rx_fifo[1],data_from_rx_fifo[2]}),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ({data_from_rx_fifo[0],data_from_rx_fifo[1],data_from_rx_fifo[2],data_from_rx_fifo[3],data_from_rx_fifo[4],data_from_rx_fifo[5],data_from_rx_fifo[6],data_from_rx_fifo[7]}),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28]_0 (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_54 ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30]_0 (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_53 ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg_0 (\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_31 ),
+        .Q({\INTERRUPT_CONTROL_I/p_0_in19_in ,\INTERRUPT_CONTROL_I/p_0_in16_in ,\INTERRUPT_CONTROL_I/p_0_in13_in ,\INTERRUPT_CONTROL_I/p_0_in10_in ,\INTERRUPT_CONTROL_I/p_0_in7_in ,\INTERRUPT_CONTROL_I/p_0_in4_in ,\INTERRUPT_CONTROL_I/p_0_in1_in ,\INTERRUPT_CONTROL_I/p_0_in ,\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_n_64 }),
         .SPICR_data_int_reg0(\CONTROL_REG_I/SPICR_data_int_reg0 ),
         .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
         .Transmit_ip2bus_error0(\FIFO_EXISTS.FIFO_IF_MODULE_I/Transmit_ip2bus_error0 ),
         .Tx_FIFO_Empty_SPISR_to_axi_clk(Tx_FIFO_Empty_SPISR_to_axi_clk),
         .Tx_FIFO_Full_int(Tx_FIFO_Full_int),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
         .bus2ip_wrce_int(bus2ip_wrce_int),
+        .empty_fwft_i_reg(\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_30 ),
         .ext_spi_clk(ext_spi_clk),
+        .\gaf.ram_almost_full_i_reg (\QSPI_LEGACY_MD_GEN.AXI_LITE_IPIF_I_n_41 ),
+        .\icount_out_reg[2] ({rx_fifo_count[2],rx_fifo_count[0]}),
         .interrupt_wrce_strb(\INTERRUPT_CONTROL_I/interrupt_wrce_strb ),
         .intr2bus_rdack0(\INTERRUPT_CONTROL_I/intr2bus_rdack0 ),
         .intr_controller_rd_ce_or_reduce(intr_controller_rd_ce_or_reduce),
-        .intr_controller_wr_ce_or_reduce(intr_controller_wr_ce_or_reduce),
         .io0_i_sync(io0_i_sync),
         .io0_t(io0_t),
         .io1_i_sync(io1_i_sync),
@@ -3174,48 +3328,53 @@ module system_axi_quad_spi_0_0_axi_quad_spi_top
         .ip2intc_irpt(ip2intc_irpt),
         .ipif_glbl_irpt_enable_reg(\INTERRUPT_CONTROL_I/ipif_glbl_irpt_enable_reg ),
         .irpt_rdack(\INTERRUPT_CONTROL_I/irpt_rdack ),
-        .irpt_rdack144_out(\INTERRUPT_CONTROL_I/irpt_rdack144_out ),
         .irpt_rdack_d1(\INTERRUPT_CONTROL_I/irpt_rdack_d1 ),
         .irpt_wrack(\INTERRUPT_CONTROL_I/irpt_wrack ),
         .irpt_wrack_d1(\INTERRUPT_CONTROL_I/irpt_wrack_d1 ),
         .out(Rx_FIFO_Empty),
-        .p_15_in(\FIFO_EXISTS.FIFO_IF_MODULE_I/p_15_in ),
         .p_15_out(p_15_out),
         .p_16_out(p_16_out),
+        .p_1_in14_in(\INTERRUPT_CONTROL_I/p_1_in14_in ),
         .p_1_in17_in(\INTERRUPT_CONTROL_I/p_1_in17_in ),
         .p_1_in20_in(\INTERRUPT_CONTROL_I/p_1_in20_in ),
         .p_1_in23_in(\INTERRUPT_CONTROL_I/p_1_in23_in ),
-        .p_2_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_2_in ),
-        .p_39_out__0(\INTERRUPT_CONTROL_I/p_39_out__0 ),
+        .p_1_in26_in(\INTERRUPT_CONTROL_I/p_1_in26_in ),
+        .p_1_in29_in(\INTERRUPT_CONTROL_I/p_1_in29_in ),
+        .p_1_in32_in(\INTERRUPT_CONTROL_I/p_1_in32_in ),
+        .p_1_in35_in(\INTERRUPT_CONTROL_I/p_1_in35_in ),
         .p_3_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_3_in ),
         .p_4_in(p_4_in),
-        .p_4_in_0(\I_SLAVE_ATTACHMENT/I_DECODER/p_4_in ),
         .p_5_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_5_in ),
-        .p_5_in_1(p_5_in),
         .p_6_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_6_in ),
-        .p_7_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_7_in ),
         .p_8_in(\I_SLAVE_ATTACHMENT/I_DECODER/p_8_in ),
         .rd_ce_or_reduce_core_cmb(rd_ce_or_reduce_core_cmb),
-        .reset2ip_reset_int(reset2ip_reset_int),
         .reset_trig0(\SOFT_RESET_I/reset_trig0 ),
+        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .\s_axi_rdata_i_reg[31] ({IP2Bus_Data[0],IP2Bus_Data[22],IP2Bus_Data[23],IP2Bus_Data[24],IP2Bus_Data[25],IP2Bus_Data[26],IP2Bus_Data[27],IP2Bus_Data[28],IP2Bus_Data[29],IP2Bus_Data[30],IP2Bus_Data[31]}),
         .s_axi_wdata(s_axi_wdata[9:0]),
         .sck_i(sck_i),
         .sck_o(sck_o),
         .sck_t(sck_t),
+        .scndry_out(Rx_FIFO_Full_Fifo_d1_synced),
+        .spicr_0_loop_frm_axi_clk(spicr_0_loop_frm_axi_clk),
+        .spicr_1_spe_frm_axi_clk(spicr_1_spe_frm_axi_clk),
+        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
+        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
+        .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .spicr_5_txfifo_rst_frm_axi_clk(spicr_5_txfifo_rst_frm_axi_clk),
         .spicr_6_rxfifo_rst_frm_axi_clk(spicr_6_rxfifo_rst_frm_axi_clk),
         .spicr_7_ss_frm_axi_clk(spicr_7_ss_frm_axi_clk),
+        .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .spicr_9_lsb_frm_axi_clk(spicr_9_lsb_frm_axi_clk),
         .spisel(spisel),
         .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk),
+        .sr_3_MODF_int(sr_3_MODF_int),
         .ss_o(ss_o),
         .ss_t(ss_t),
         .sw_rst_cond(\SOFT_RESET_I/sw_rst_cond ),
         .sw_rst_cond_d1(\SOFT_RESET_I/sw_rst_cond_d1 ),
-        .tx_fifo_full(tx_fifo_full),
-        .wr_ce_or_reduce_core_cmb(wr_ce_or_reduce_core_cmb));
+        .tx_fifo_full(tx_fifo_full));
 endmodule
 
 (* ORIG_REF_NAME = "cdc_sync" *) 
@@ -3258,52 +3417,49 @@ endmodule
 
 (* ORIG_REF_NAME = "cdc_sync" *) 
 module system_axi_quad_spi_0_0_cdc_sync_0
-   (Rx_FIFO_Full_Fifo_d1_synced_i,
+   (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
     scndry_out,
-    \icount_out_reg[3] ,
+    Rx_FIFO_Full_Fifo_d1_synced_i,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
+    Rx_FIFO_Full_Fifo_d1_flag,
     out,
     Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    IP2Bus_RdAck_receive_enable__1,
-    spiXfer_done_to_axi_1,
-    Rx_FIFO_Full_int,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
-    bus2ip_reset_ipif_inverted,
-    \RESET_FLOPS[15].RST_FLOPS ,
+    reset2ip_reset_int,
     prmry_in,
     s_axi_aclk);
-  output Rx_FIFO_Full_Fifo_d1_synced_i;
+  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
   output scndry_out;
-  output \icount_out_reg[3] ;
+  output Rx_FIFO_Full_Fifo_d1_synced_i;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  input Rx_FIFO_Full_Fifo_d1_flag;
   input out;
   input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input IP2Bus_RdAck_receive_enable__1;
-  input spiXfer_done_to_axi_1;
-  input Rx_FIFO_Full_int;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  input bus2ip_reset_ipif_inverted;
-  input \RESET_FLOPS[15].RST_FLOPS ;
+  input reset2ip_reset_int;
   input prmry_in;
   input s_axi_aclk;
 
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  wire IP2Bus_RdAck_receive_enable__1;
-  wire \RESET_FLOPS[15].RST_FLOPS ;
+  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   wire Rx_FIFO_Full_Fifo_d1_flag;
   wire Rx_FIFO_Full_Fifo_d1_sig;
   wire Rx_FIFO_Full_Fifo_d1_synced_i;
-  wire Rx_FIFO_Full_int;
-  wire bus2ip_reset_ipif_inverted;
-  wire \icount_out_reg[3] ;
   wire out;
   wire prmry_in;
+  wire reset2ip_reset_int;
   wire s_axi_aclk;
   wire s_level_out_d1_cdc_to;
   wire scndry_out;
-  wire spiXfer_done_to_axi_1;
-  wire updown_cnt_en_rx__2;
 
+  LUT6 #(
+    .INIT(64'h000000005F5F0010)) 
+    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_i_1 
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I1(Rx_FIFO_Full_Fifo_d1_flag),
+        .I2(scndry_out),
+        .I3(out),
+        .I4(Rx_FIFO_Full_Fifo_d1_sig),
+        .I5(reset2ip_reset_int),
+        .O(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ));
   (* ASYNC_REG *) 
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
@@ -3326,24 +3482,6 @@ module system_axi_quad_spi_0_0_cdc_sync_0
         .D(s_level_out_d1_cdc_to),
         .Q(scndry_out),
         .R(1'b0));
-  LUT4 #(
-    .INIT(16'hFFFE)) 
-    \icount_out[3]_i_1__0 
-       (.I0(updown_cnt_en_rx__2),
-        .I1(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I2(bus2ip_reset_ipif_inverted),
-        .I3(\RESET_FLOPS[15].RST_FLOPS ),
-        .O(\icount_out_reg[3] ));
-  LUT6 #(
-    .INIT(64'h0000510000515100)) 
-    \icount_out[3]_i_3 
-       (.I0(Rx_FIFO_Full_Fifo_d1_sig),
-        .I1(scndry_out),
-        .I2(Rx_FIFO_Full_Fifo_d1_flag),
-        .I3(IP2Bus_RdAck_receive_enable__1),
-        .I4(spiXfer_done_to_axi_1),
-        .I5(Rx_FIFO_Full_int),
-        .O(updown_cnt_en_rx__2));
   LUT2 #(
     .INIT(4'h2)) 
     rc_FIFO_Full_d1_i_1
@@ -3354,390 +3492,259 @@ endmodule
 
 (* ORIG_REF_NAME = "counter_f" *) 
 module system_axi_quad_spi_0_0_counter_f
-   (\icount_out_reg[3]_0 ,
-    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg ,
+   (\icount_out_reg[2]_0 ,
+    rx_fifo_count,
+    \icount_out_reg[0]_0 ,
+    RX_one_less_than_full,
+    \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ,
+    reset2ip_reset_int,
     \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
+    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ,
     bus2ip_reset_ipif_inverted,
     \RESET_FLOPS[15].RST_FLOPS ,
-    reset2ip_reset_int,
-    reset_RcFIFO_ptr_frm_axi_clk,
-    Rx_FIFO_Full_int,
-    Rx_FIFO_Full_i,
     spiXfer_done_d2,
     spiXfer_done_d3,
-    Q,
-    p_15_in,
-    spicr_0_loop_frm_axi_clk,
-    Bus_RNW_reg,
-    p_8_in,
-    spicr_1_spe_frm_axi_clk,
-    p_2_in,
-    out,
-    p_4_in_0,
-    SPISSR_frm_axi_clk,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ,
-    s_axi_aclk,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_1 );
-  output [2:0]\icount_out_reg[3]_0 ;
-  output \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ;
-  input \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg ;
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ,
+    s_axi_aclk);
+  output \icount_out_reg[2]_0 ;
+  output [1:0]rx_fifo_count;
+  output \icount_out_reg[0]_0 ;
+  output RX_one_less_than_full;
+  input \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ;
+  input reset2ip_reset_int;
   input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
+  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
   input bus2ip_reset_ipif_inverted;
   input \RESET_FLOPS[15].RST_FLOPS ;
-  input reset2ip_reset_int;
-  input reset_RcFIFO_ptr_frm_axi_clk;
-  input Rx_FIFO_Full_int;
-  input Rx_FIFO_Full_i;
   input spiXfer_done_d2;
   input spiXfer_done_d3;
-  input [1:0]Q;
-  input p_15_in;
-  input spicr_0_loop_frm_axi_clk;
-  input Bus_RNW_reg;
-  input p_8_in;
-  input spicr_1_spe_frm_axi_clk;
-  input p_2_in;
-  input out;
-  input p_4_in_0;
-  input [0:1]SPISSR_frm_axi_clk;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ;
   input s_axi_aclk;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_1 ;
 
-  wire Bus_RNW_reg;
   wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
   wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_1 ;
-  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_4_n_0 ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4_n_0 ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
-  wire [1:0]Q;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ;
+  wire \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ;
   wire \RESET_FLOPS[15].RST_FLOPS ;
   wire RX_one_less_than_full;
-  wire Rx_FIFO_Full_i;
-  wire Rx_FIFO_Full_int;
-  wire [0:1]SPISSR_frm_axi_clk;
   wire bus2ip_reset_ipif_inverted;
+  wire \icount_out[0]_i_1_n_0 ;
   wire \icount_out[1]_i_1_n_0 ;
-  wire \icount_out[2]_i_1_n_0 ;
-  wire \icount_out[3]_i_2_n_0 ;
-  wire [2:0]\icount_out_reg[3]_0 ;
-  wire out;
-  wire p_15_in;
-  wire p_2_in;
-  wire p_4_in_0;
-  wire p_8_in;
+  wire \icount_out[2]_i_1__0_n_0 ;
+  wire \icount_out[3]_i_2__0_n_0 ;
+  wire \icount_out_reg[0]_0 ;
+  wire \icount_out_reg[2]_0 ;
   wire reset2ip_reset_int;
-  wire reset_RcFIFO_ptr_frm_axi_clk;
-  wire [1:1]rx_fifo_count;
+  wire [1:0]rx_fifo_count;
   wire s_axi_aclk;
   wire spiXfer_done_d2;
   wire spiXfer_done_d3;
-  wire spicr_0_loop_frm_axi_clk;
-  wire spicr_1_spe_frm_axi_clk;
 
   LUT6 #(
-    .INIT(64'h0000000000000054)) 
-    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_i_1 
-       (.I0(Rx_FIFO_Full_int),
-        .I1(RX_one_less_than_full),
-        .I2(Rx_FIFO_Full_i),
-        .I3(bus2ip_reset_ipif_inverted),
-        .I4(\RESET_FLOPS[15].RST_FLOPS ),
-        .I5(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .O(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ));
-  LUT6 #(
-    .INIT(64'h0000000060000000)) 
+    .INIT(64'h0000600000000000)) 
     \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_i_2 
        (.I0(spiXfer_done_d2),
         .I1(spiXfer_done_d3),
-        .I2(\icount_out_reg[3]_0 [1]),
-        .I3(\icount_out_reg[3]_0 [2]),
-        .I4(rx_fifo_count),
-        .I5(\icount_out_reg[3]_0 [0]),
+        .I2(rx_fifo_count[1]),
+        .I3(\icount_out_reg[2]_0 ),
+        .I4(\icount_out_reg[0]_0 ),
+        .I5(rx_fifo_count[0]),
         .O(RX_one_less_than_full));
-  LUT6 #(
-    .INIT(64'hFFEAEAEAEAEAEAEA)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_3 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_4_n_0 ),
-        .I1(Q[1]),
-        .I2(p_15_in),
-        .I3(spicr_1_spe_frm_axi_clk),
-        .I4(Bus_RNW_reg),
-        .I5(p_8_in),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ));
-  LUT6 #(
-    .INIT(64'hFF08000008080000)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_4 
-       (.I0(rx_fifo_count),
-        .I1(p_2_in),
-        .I2(out),
-        .I3(p_4_in_0),
-        .I4(Bus_RNW_reg),
-        .I5(SPISSR_frm_axi_clk[0]),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFEAEAEAEAEAEAEA)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_3 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4_n_0 ),
-        .I1(Q[0]),
-        .I2(p_15_in),
-        .I3(spicr_0_loop_frm_axi_clk),
-        .I4(Bus_RNW_reg),
-        .I5(p_8_in),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ));
-  LUT6 #(
-    .INIT(64'hFF08000008080000)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4 
-       (.I0(\icount_out_reg[3]_0 [0]),
-        .I1(p_2_in),
-        .I2(out),
-        .I3(p_4_in_0),
-        .I4(Bus_RNW_reg),
-        .I5(SPISSR_frm_axi_clk[1]),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_4_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFF96)) 
-    \icount_out[1]_i_1 
-       (.I0(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg ),
-        .I1(rx_fifo_count),
-        .I2(\icount_out_reg[3]_0 [0]),
+  LUT4 #(
+    .INIT(16'hFFFD)) 
+    \icount_out[0]_i_1 
+       (.I0(\icount_out_reg[0]_0 ),
+        .I1(\RESET_FLOPS[15].RST_FLOPS ),
+        .I2(bus2ip_reset_ipif_inverted),
         .I3(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I4(bus2ip_reset_ipif_inverted),
-        .I5(\RESET_FLOPS[15].RST_FLOPS ),
+        .O(\icount_out[0]_i_1_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFEFEFFFEFFFFFE)) 
+    \icount_out[1]_i_1 
+       (.I0(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .I1(bus2ip_reset_ipif_inverted),
+        .I2(\RESET_FLOPS[15].RST_FLOPS ),
+        .I3(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ),
+        .I4(\icount_out_reg[0]_0 ),
+        .I5(rx_fifo_count[0]),
         .O(\icount_out[1]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFC69C)) 
-    \icount_out[2]_i_1 
-       (.I0(rx_fifo_count),
-        .I1(\icount_out_reg[3]_0 [1]),
-        .I2(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg ),
-        .I3(\icount_out_reg[3]_0 [0]),
-        .I4(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I5(reset2ip_reset_int),
-        .O(\icount_out[2]_i_1_n_0 ));
+    .INIT(64'hFFFFFFFFFFFFA96A)) 
+    \icount_out[2]_i_1__0 
+       (.I0(\icount_out_reg[2]_0 ),
+        .I1(rx_fifo_count[0]),
+        .I2(\icount_out_reg[0]_0 ),
+        .I3(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ),
+        .I4(reset2ip_reset_int),
+        .I5(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .O(\icount_out[2]_i_1__0_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFC6CCCC9C)) 
-    \icount_out[3]_i_2 
-       (.I0(\icount_out_reg[3]_0 [1]),
-        .I1(\icount_out_reg[3]_0 [2]),
-        .I2(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg ),
-        .I3(\icount_out_reg[3]_0 [0]),
-        .I4(rx_fifo_count),
-        .I5(reset_RcFIFO_ptr_frm_axi_clk),
-        .O(\icount_out[3]_i_2_n_0 ));
+    .INIT(64'hDFFFFFF77555555D)) 
+    \icount_out[3]_i_2__0 
+       (.I0(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
+        .I1(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ),
+        .I2(rx_fifo_count[0]),
+        .I3(\icount_out_reg[0]_0 ),
+        .I4(\icount_out_reg[2]_0 ),
+        .I5(rx_fifo_count[1]),
+        .O(\icount_out[3]_i_2__0_n_0 ));
   FDRE \icount_out_reg[0] 
        (.C(s_axi_aclk),
-        .CE(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
-        .D(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_1 ),
-        .Q(\icount_out_reg[3]_0 [0]),
+        .CE(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
+        .D(\icount_out[0]_i_1_n_0 ),
+        .Q(\icount_out_reg[0]_0 ),
         .R(1'b0));
   FDRE \icount_out_reg[1] 
        (.C(s_axi_aclk),
-        .CE(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
+        .CE(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
         .D(\icount_out[1]_i_1_n_0 ),
-        .Q(rx_fifo_count),
+        .Q(rx_fifo_count[0]),
         .R(1'b0));
   FDRE \icount_out_reg[2] 
        (.C(s_axi_aclk),
-        .CE(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
-        .D(\icount_out[2]_i_1_n_0 ),
-        .Q(\icount_out_reg[3]_0 [1]),
+        .CE(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
+        .D(\icount_out[2]_i_1__0_n_0 ),
+        .Q(\icount_out_reg[2]_0 ),
         .R(1'b0));
   FDRE \icount_out_reg[3] 
        (.C(s_axi_aclk),
-        .CE(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
-        .D(\icount_out[3]_i_2_n_0 ),
-        .Q(\icount_out_reg[3]_0 [2]),
+        .CE(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
+        .D(\icount_out[3]_i_2__0_n_0 ),
+        .Q(rx_fifo_count[1]),
         .R(1'b0));
 endmodule
 
 (* ORIG_REF_NAME = "counter_f" *) 
 module system_axi_quad_spi_0_0_counter_f_1
-   (\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ,
-    tx_fifo_count,
+   (tx_fifo_count,
     D,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
-    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ,
+    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ,
+    spiXfer_done_d2,
+    spiXfer_done_d3,
+    Bus_RNW_reg_reg,
     \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
+    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ,
     bus2ip_reset_ipif_inverted,
     \RESET_FLOPS[15].RST_FLOPS ,
-    \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ,
-    src_arst,
     reset2ip_reset_int,
-    Bus_RNW_reg_reg,
-    Q,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ,
-    \goreg_dm.dout_i_reg[2] ,
-    Bus_RNW_reg,
-    p_3_in,
-    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ,
-    \icount_out_reg[3]_0 ,
-    Bus_RNW_reg_reg_0,
-    IP2Bus_WrAck_transmit_enable__0,
     Tx_FIFO_Full_i,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    s_axi_aclk,
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 );
+    \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ,
+    s_axi_aclk);
+  output [1:0]tx_fifo_count;
+  output [1:0]D;
   output \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ;
-  output [3:0]tx_fifo_count;
-  output [0:0]D;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  input \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ;
+  input spiXfer_done_d2;
+  input spiXfer_done_d3;
+  input Bus_RNW_reg_reg;
   input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
+  input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ;
   input bus2ip_reset_ipif_inverted;
   input \RESET_FLOPS[15].RST_FLOPS ;
-  input \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ;
-  input src_arst;
   input reset2ip_reset_int;
-  input Bus_RNW_reg_reg;
-  input [0:0]Q;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
-  input \goreg_dm.dout_i_reg[2] ;
-  input Bus_RNW_reg;
-  input p_3_in;
-  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
-  input [0:0]\icount_out_reg[3]_0 ;
-  input Bus_RNW_reg_reg_0;
-  input IP2Bus_WrAck_transmit_enable__0;
   input Tx_FIFO_Full_i;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  input \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ;
   input s_axi_aclk;
-  input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ;
 
-  wire Bus_RNW_reg;
   wire Bus_RNW_reg_reg;
-  wire Bus_RNW_reg_reg_0;
   wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
   wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ;
-  wire [0:0]D;
-  wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_2_n_0 ;
+  wire [1:0]D;
   wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ;
-  wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  wire \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ;
-  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
-  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
-  wire [0:0]Q;
+  wire \LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ;
   wire \RESET_FLOPS[15].RST_FLOPS ;
   wire Tx_FIFO_Full_i;
   wire bus2ip_reset_ipif_inverted;
-  wire \goreg_dm.dout_i_reg[2] ;
+  wire \icount_out[0]_i_1__0_n_0 ;
   wire \icount_out[1]_i_1__0_n_0 ;
-  wire \icount_out[2]_i_1__0_n_0 ;
-  wire \icount_out[3]_i_2__0_n_0 ;
-  wire [0:0]\icount_out_reg[3]_0 ;
-  wire p_3_in;
+  wire \icount_out[2]_i_1_n_0 ;
+  wire \icount_out[3]_i_2_n_0 ;
+  wire \icount_out[3]_i_4_n_0 ;
   wire reset2ip_reset_int;
   wire s_axi_aclk;
-  wire src_arst;
-  wire [3:0]tx_fifo_count;
+  wire spiXfer_done_d2;
+  wire spiXfer_done_d3;
+  wire [1:0]tx_fifo_count;
 
-  LUT5 #(
-    .INIT(32'h00000002)) 
-    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_1 
-       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_2_n_0 ),
-        .I1(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ),
-        .I2(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .I3(bus2ip_reset_ipif_inverted),
-        .I4(\RESET_FLOPS[15].RST_FLOPS ),
-        .O(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00008000)) 
+    .INIT(64'hFFFFFFFF20000000)) 
     \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_2 
-       (.I0(IP2Bus_WrAck_transmit_enable__0),
-        .I1(tx_fifo_count[3]),
-        .I2(tx_fifo_count[2]),
+       (.I0(tx_fifo_count[0]),
+        .I1(D[0]),
+        .I2(D[1]),
         .I3(tx_fifo_count[1]),
-        .I4(tx_fifo_count[0]),
+        .I4(Bus_RNW_reg_reg),
         .I5(Tx_FIFO_Full_i),
-        .O(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_2_n_0 ));
+        .O(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ));
+  LUT4 #(
+    .INIT(16'hFFFD)) 
+    \icount_out[0]_i_1__0 
+       (.I0(D[0]),
+        .I1(\RESET_FLOPS[15].RST_FLOPS ),
+        .I2(bus2ip_reset_ipif_inverted),
+        .I3(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
+        .O(\icount_out[0]_i_1__0_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFF008000800080)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_3 
-       (.I0(tx_fifo_count[3]),
-        .I1(Bus_RNW_reg),
-        .I2(p_3_in),
-        .I3(\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ),
-        .I4(\icount_out_reg[3]_0 ),
-        .I5(Bus_RNW_reg_reg_0),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFF888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_1 
-       (.I0(tx_fifo_count[2]),
-        .I1(Bus_RNW_reg_reg),
-        .I2(Q),
-        .I3(\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .I4(\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ),
-        .I5(\goreg_dm.dout_i_reg[2] ),
-        .O(D));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFFF96)) 
+    .INIT(64'h66666996FFFFFFFF)) 
     \icount_out[1]_i_1__0 
-       (.I0(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ),
-        .I1(tx_fifo_count[1]),
-        .I2(tx_fifo_count[0]),
-        .I3(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .I4(bus2ip_reset_ipif_inverted),
-        .I5(\RESET_FLOPS[15].RST_FLOPS ),
+       (.I0(tx_fifo_count[0]),
+        .I1(D[0]),
+        .I2(spiXfer_done_d2),
+        .I3(spiXfer_done_d3),
+        .I4(Bus_RNW_reg_reg),
+        .I5(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
         .O(\icount_out[1]_i_1__0_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFC69C)) 
-    \icount_out[2]_i_1__0 
-       (.I0(tx_fifo_count[1]),
-        .I1(tx_fifo_count[2]),
-        .I2(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ),
-        .I3(tx_fifo_count[0]),
-        .I4(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .I5(reset2ip_reset_int),
-        .O(\icount_out[2]_i_1__0_n_0 ));
+    .INIT(64'hFEFFFFFEFFFEFEFF)) 
+    \icount_out[2]_i_1 
+       (.I0(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
+        .I1(bus2ip_reset_ipif_inverted),
+        .I2(\RESET_FLOPS[15].RST_FLOPS ),
+        .I3(D[1]),
+        .I4(tx_fifo_count[0]),
+        .I5(\icount_out[3]_i_4_n_0 ),
+        .O(\icount_out[2]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFC6CCCC9C)) 
-    \icount_out[3]_i_2__0 
-       (.I0(tx_fifo_count[2]),
-        .I1(tx_fifo_count[3]),
-        .I2(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 ),
-        .I3(tx_fifo_count[0]),
-        .I4(tx_fifo_count[1]),
-        .I5(src_arst),
-        .O(\icount_out[3]_i_2__0_n_0 ));
+    .INIT(64'hEFFFFFFEFEEEEEEF)) 
+    \icount_out[3]_i_2 
+       (.I0(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
+        .I1(reset2ip_reset_int),
+        .I2(tx_fifo_count[0]),
+        .I3(\icount_out[3]_i_4_n_0 ),
+        .I4(D[1]),
+        .I5(tx_fifo_count[1]),
+        .O(\icount_out[3]_i_2_n_0 ));
+  LUT5 #(
+    .INIT(32'hBBBBB22B)) 
+    \icount_out[3]_i_4 
+       (.I0(D[0]),
+        .I1(tx_fifo_count[0]),
+        .I2(spiXfer_done_d2),
+        .I3(spiXfer_done_d3),
+        .I4(Bus_RNW_reg_reg),
+        .O(\icount_out[3]_i_4_n_0 ));
   FDRE \icount_out_reg[0] 
        (.C(s_axi_aclk),
-        .CE(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
-        .D(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
-        .Q(tx_fifo_count[0]),
+        .CE(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ),
+        .D(\icount_out[0]_i_1__0_n_0 ),
+        .Q(D[0]),
         .R(1'b0));
   FDRE \icount_out_reg[1] 
        (.C(s_axi_aclk),
-        .CE(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .CE(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ),
         .D(\icount_out[1]_i_1__0_n_0 ),
-        .Q(tx_fifo_count[1]),
+        .Q(tx_fifo_count[0]),
         .R(1'b0));
   FDRE \icount_out_reg[2] 
        (.C(s_axi_aclk),
-        .CE(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
-        .D(\icount_out[2]_i_1__0_n_0 ),
-        .Q(tx_fifo_count[2]),
+        .CE(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ),
+        .D(\icount_out[2]_i_1_n_0 ),
+        .Q(D[1]),
         .R(1'b0));
   FDRE \icount_out_reg[3] 
        (.C(s_axi_aclk),
-        .CE(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
-        .D(\icount_out[3]_i_2__0_n_0 ),
-        .Q(tx_fifo_count[3]),
+        .CE(\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 ),
+        .D(\icount_out[3]_i_2_n_0 ),
+        .Q(tx_fifo_count[1]),
         .R(1'b0));
 endmodule
 
@@ -3747,7 +3754,6 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     \LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_1_CDC_0 ,
     \LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_1_CDC_0 ,
     tx_FIFO_Occpncy_MSB_d1_reg,
-    \LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC_0 ,
     spiXfer_done_d2,
     spiXfer_done_d3,
     dtr_underrun_to_axi_clk,
@@ -3756,33 +3762,36 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     SPICR_2_MST_N_SLV_to_spi_clk,
     spicr_3_cpol_to_spi_clk,
     spicr_4_cpha_to_spi_clk,
-    spicr_7_ss_to_spi_clk,
     spicr_9_lsb_to_spi_clk,
     register_Data_slvsel_int,
+    \icount_out_reg[0] ,
     Allow_Slave_MODF_Strobe_reg,
+    \icount_out_reg[3] ,
     \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
     \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ,
     modf_reg,
     \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] ,
+    \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg_reg[6] ,
     \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5] ,
     \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] ,
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
     Tx_FIFO_Empty_intr,
     tx_occ_msb,
-    \icount_out_reg[3] ,
+    D,
+    \icount_out_reg[3]_0 ,
     spiXfer_done_to_axi_1,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \icount_out_reg[1] ,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
     R,
     transfer_start_reg,
     Slave_MODF_strobe0,
     MODF_strobe0,
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ,
-    D,
+    \OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ,
     \OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7] ,
     \OTHER_RATIO_GENERATE.sck_o_int_reg ,
-    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_reg ,
     src_arst,
+    \SS_O_reg[0] ,
     D_0,
     SPI_TRISTATE_CONTROL_V,
     reset2ip_reset_int,
@@ -3803,50 +3812,52 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     sr_3_MODF_int,
     spicr_bits_7_8_frm_axi_clk,
     SPISSR_frm_axi_clk,
-    SPICR_RX_FIFO_Rst_en,
     \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 ,
     p_7_out,
-    Allow_Slave_MODF_Strobe,
-    bus2ip_reset_ipif_inverted,
+    Bus_RNW_reg_reg,
     \RESET_FLOPS[15].RST_FLOPS ,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
-    rx_fifo_empty_i,
-    Tx_FIFO_Full_i,
-    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg_0 ,
+    bus2ip_reset_ipif_inverted,
     \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
+    Allow_Slave_MODF_Strobe,
+    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
+    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ,
+    Rx_FIFO_Full_int,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg_0 ,
+    Tx_FIFO_Full_i,
+    Tx_FIFO_Full_int,
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
-    bus2ip_rdce_int,
-    p_39_out__0,
-    p_1_in17_in,
+    Bus_RNW_reg_reg_0,
     s_axi_wdata,
+    \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ,
+    p_1_in17_in,
+    tx_occ_msb_4,
+    tx_FIFO_Occpncy_MSB_d1,
+    p_1_in20_in,
     p_1_in23_in,
     p_1_in35_in,
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ,
     tx_fifo_count_d2,
     spiXfer_done_to_axi_d1,
-    tx_occ_msb_4,
-    \gaf.ram_almost_full_i_reg ,
-    p_6_in,
-    Bus_RNW_reg,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    p_7_in,
-    rx_fifo_count,
-    p_2_in,
-    prmry_in,
-    IP2Bus_RdAck_receive_enable__1,
+    Rx_FIFO_Full_Fifo_d1_sig,
     Rx_FIFO_Full_Fifo_d1_flag,
     scndry_out,
-    Rx_FIFO_Full_Fifo_d1_sig,
+    p_3_in,
+    Bus_RNW_reg,
+    tx_fifo_count,
+    empty_fwft_i_reg,
+    rx_fifo_count,
     modf_strobe_int,
     spiXfer_done_int,
     drr_Overrun_int,
-    stop_clock51_in,
+    stop_clock52_in,
     Allow_MODF_Strobe,
     Count_trigger,
     \OTHER_RATIO_GENERATE.Ratio_Count_reg[0] ,
     \OTHER_RATIO_GENERATE.Count_reg[1] ,
     SPIXfer_done_int_d1_reg,
     Q,
+    transfer_start_d1,
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ,
     serial_dout_int,
     io1_i_sync,
@@ -3856,7 +3867,6 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   output \LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_1_CDC_0 ;
   output \LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_1_CDC_0 ;
   output tx_FIFO_Occpncy_MSB_d1_reg;
-  output \LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC_0 ;
   output spiXfer_done_d2;
   output spiXfer_done_d3;
   output dtr_underrun_to_axi_clk;
@@ -3865,33 +3875,36 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   output SPICR_2_MST_N_SLV_to_spi_clk;
   output spicr_3_cpol_to_spi_clk;
   output spicr_4_cpha_to_spi_clk;
-  output spicr_7_ss_to_spi_clk;
   output spicr_9_lsb_to_spi_clk;
-  output [0:1]register_Data_slvsel_int;
+  output register_Data_slvsel_int;
+  output \icount_out_reg[0] ;
   output Allow_Slave_MODF_Strobe_reg;
+  output \icount_out_reg[3] ;
   output \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
   output \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ;
   output modf_reg;
   output \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] ;
+  output \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg_reg[6] ;
   output \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5] ;
   output \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] ;
   output \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
   output Tx_FIFO_Empty_intr;
   output tx_occ_msb;
-  output \icount_out_reg[3] ;
+  output [0:0]D;
+  output \icount_out_reg[3]_0 ;
   output spiXfer_done_to_axi_1;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \icount_out_reg[1] ;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
   output R;
   output transfer_start_reg;
   output Slave_MODF_strobe0;
   output MODF_strobe0;
   output \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ;
-  output [0:0]D;
+  output [0:0]\OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ;
   output [0:0]\OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7] ;
   output \OTHER_RATIO_GENERATE.sck_o_int_reg ;
-  output \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_reg ;
   output src_arst;
+  output \SS_O_reg[0] ;
   output D_0;
   output SPI_TRISTATE_CONTROL_V;
   input reset2ip_reset_int;
@@ -3911,51 +3924,53 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   input spicr_9_lsb_frm_axi_clk;
   input sr_3_MODF_int;
   input [1:0]spicr_bits_7_8_frm_axi_clk;
-  input [0:1]SPISSR_frm_axi_clk;
-  input SPICR_RX_FIFO_Rst_en;
+  input SPISSR_frm_axi_clk;
   input \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 ;
   input p_7_out;
-  input Allow_Slave_MODF_Strobe;
-  input bus2ip_reset_ipif_inverted;
+  input Bus_RNW_reg_reg;
   input \RESET_FLOPS[15].RST_FLOPS ;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  input rx_fifo_empty_i;
-  input Tx_FIFO_Full_i;
-  input \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg_0 ;
+  input bus2ip_reset_ipif_inverted;
   input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
+  input Allow_Slave_MODF_Strobe;
+  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
+  input Rx_FIFO_Full_int;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg_0 ;
+  input Tx_FIFO_Full_i;
+  input Tx_FIFO_Full_int;
   input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  input [0:0]bus2ip_rdce_int;
-  input p_39_out__0;
+  input Bus_RNW_reg_reg_0;
+  input [5:0]s_axi_wdata;
+  input \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
   input p_1_in17_in;
-  input [3:0]s_axi_wdata;
+  input tx_occ_msb_4;
+  input tx_FIFO_Occpncy_MSB_d1;
+  input p_1_in20_in;
   input p_1_in23_in;
   input p_1_in35_in;
   input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ;
   input [3:0]tx_fifo_count_d2;
   input spiXfer_done_to_axi_d1;
-  input tx_occ_msb_4;
-  input \gaf.ram_almost_full_i_reg ;
-  input p_6_in;
-  input Bus_RNW_reg;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input p_7_in;
-  input [0:0]rx_fifo_count;
-  input p_2_in;
-  input prmry_in;
-  input IP2Bus_RdAck_receive_enable__1;
+  input Rx_FIFO_Full_Fifo_d1_sig;
   input Rx_FIFO_Full_Fifo_d1_flag;
   input scndry_out;
-  input Rx_FIFO_Full_Fifo_d1_sig;
+  input p_3_in;
+  input Bus_RNW_reg;
+  input [1:0]tx_fifo_count;
+  input empty_fwft_i_reg;
+  input [1:0]rx_fifo_count;
   input modf_strobe_int;
   input spiXfer_done_int;
   input drr_Overrun_int;
-  input stop_clock51_in;
+  input stop_clock52_in;
   input Allow_MODF_Strobe;
   input Count_trigger;
   input \OTHER_RATIO_GENERATE.Ratio_Count_reg[0] ;
   input \OTHER_RATIO_GENERATE.Count_reg[1] ;
   input SPIXfer_done_int_d1_reg;
   input [1:0]Q;
+  input transfer_start_d1;
   input \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ;
   input serial_dout_int;
   input io1_i_sync;
@@ -3966,26 +3981,31 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire Allow_Slave_MODF_Strobe;
   wire Allow_Slave_MODF_Strobe_reg;
   wire Bus_RNW_reg;
+  wire Bus_RNW_reg_reg;
+  wire Bus_RNW_reg_reg_0;
   wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
+  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
   wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
   wire Count_trigger;
   wire [0:0]D;
   wire D_0;
   wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg_0 ;
   wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ;
-  wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg_0 ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
   wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
   wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ;
   wire \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] ;
   wire \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5] ;
+  wire \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg_reg[6] ;
   wire \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] ;
-  wire IP2Bus_RdAck_receive_enable__1;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  wire \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_reg ;
-  wire \LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC_0 ;
   wire \LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_1_CDC_0 ;
+  wire \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_i_1_n_0 ;
+  wire \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_n_0 ;
   wire \LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_1_CDC_0 ;
   wire \LOGIC_GENERATION_FDR.drr_Overrun_int_cdc_from_spi_int_2_reg_n_0 ;
   wire \LOGIC_GENERATION_FDR.modf_strobe_cdc_from_spi_int_2_reg_n_0 ;
@@ -3994,9 +4014,11 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire MODF_strobe0;
   wire \OTHER_RATIO_GENERATE.Count_reg[1] ;
   wire \OTHER_RATIO_GENERATE.Ratio_Count_reg[0] ;
+  wire [0:0]\OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ;
   wire [0:0]\OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7] ;
   wire \OTHER_RATIO_GENERATE.sck_o_int_reg ;
   wire [1:0]Q;
+  wire Q_0;
   wire R;
   wire \RESET_FLOPS[15].RST_FLOPS ;
   wire \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg ;
@@ -4004,6 +4026,7 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire Rst_to_spi;
   wire Rx_FIFO_Full_Fifo_d1_flag;
   wire Rx_FIFO_Full_Fifo_d1_sig;
+  wire Rx_FIFO_Full_int;
   wire SPICR_0_LOOP_cdc_from_axi_d1;
   wire SPICR_1_SPE_cdc_from_axi_d1;
   wire SPICR_2_MST_N_SLV_cdc_from_axi_d1;
@@ -4013,21 +4036,19 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire SPICR_7_SS_cdc_from_axi_d1;
   wire SPICR_8_TR_INHIBIT_cdc_from_axi_d1;
   wire SPICR_9_LSB_cdc_from_axi_d1;
-  wire SPICR_RX_FIFO_Rst_en;
   wire SPICR_bits_7_8_cdc_from_axi_d1_0;
   wire SPICR_bits_7_8_cdc_from_axi_d1_1;
   wire SPISEL_sync;
-  wire SPISSR_cdc_from_axi_d1_0;
-  wire SPISSR_cdc_from_axi_d1_1;
-  wire [0:1]SPISSR_frm_axi_clk;
+  wire SPISSR_frm_axi_clk;
   wire SPIXfer_done_int_d1_reg;
   wire SPI_TRISTATE_CONTROL_V;
   wire SR_3_modf_cdc_from_axi_d1;
+  wire \SS_O_reg[0] ;
   wire Slave_MODF_strobe0;
   wire Tx_FIFO_Empty_SPISR_cdc_from_spi_d1;
   wire Tx_FIFO_Empty_intr;
   wire Tx_FIFO_Full_i;
-  wire [0:0]bus2ip_rdce_int;
+  wire Tx_FIFO_Full_int;
   wire bus2ip_reset_ipif_inverted;
   wire drr_Overrun_int;
   wire drr_Overrun_int_cdc_from_spi_d1;
@@ -4036,10 +4057,12 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire dtr_underrun_cdc_from_spi_d1;
   wire dtr_underrun_int;
   wire dtr_underrun_to_axi_clk;
+  wire empty_fwft_i_reg;
   wire ext_spi_clk;
-  wire \gaf.ram_almost_full_i_reg ;
-  wire \icount_out_reg[1] ;
+  wire \icount_out[3]_i_4__0_n_0 ;
+  wire \icount_out_reg[0] ;
   wire \icount_out_reg[3] ;
+  wire \icount_out_reg[3]_0 ;
   wire io0_i_sync;
   wire io1_i_sync;
   wire modf_reg;
@@ -4050,24 +4073,20 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire out;
   wire p_0_out;
   wire p_1_in17_in;
+  wire p_1_in20_in;
   wire p_1_in23_in;
   wire p_1_in35_in;
-  wire p_2_in;
   wire p_2_out;
-  wire p_39_out__0;
+  wire p_3_in;
   wire p_5_out;
-  wire p_6_in;
-  wire p_7_in;
   wire p_7_out;
-  wire prmry_in;
-  wire [0:1]register_Data_slvsel_int;
+  wire register_Data_slvsel_int;
   wire reset2ip_reset_int;
   wire reset_RcFIFO_ptr_cdc_from_axi_d1;
   wire reset_RcFIFO_ptr_cdc_from_axi_d2;
-  wire [0:0]rx_fifo_count;
-  wire rx_fifo_empty_i;
+  wire [1:0]rx_fifo_count;
   wire s_axi_aclk;
-  wire [3:0]s_axi_wdata;
+  wire [5:0]s_axi_wdata;
   wire scndry_out;
   wire serial_dout_int;
   wire slave_MODF_strobe_cdc_from_spi_d1;
@@ -4105,10 +4124,13 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   wire sr_3_MODF_int;
   wire sr_3_modf_to_spi_clk;
   wire src_arst;
-  wire stop_clock51_in;
+  wire stop_clock52_in;
+  wire transfer_start_d1;
   wire transfer_start_i_2_n_0;
   wire transfer_start_reg;
+  wire tx_FIFO_Occpncy_MSB_d1;
   wire tx_FIFO_Occpncy_MSB_d1_reg;
+  wire [1:0]tx_fifo_count;
   wire [3:0]tx_fifo_count_d2;
   wire tx_occ_msb;
   wire tx_occ_msb_4;
@@ -4122,83 +4144,97 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
         .I2(Allow_Slave_MODF_Strobe),
         .O(Allow_Slave_MODF_Strobe_reg));
   LUT6 #(
-    .INIT(64'hFFFEFEFFFEFEFEFE)) 
+    .INIT(64'hFFFFFFFFFFFFFF90)) 
     \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_i_1 
-       (.I0(bus2ip_reset_ipif_inverted),
-        .I1(\RESET_FLOPS[15].RST_FLOPS ),
-        .I2(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .I3(spiXfer_done_d2),
-        .I4(spiXfer_done_d3),
-        .I5(rx_fifo_empty_i),
+       (.I0(spiXfer_done_d3),
+        .I1(spiXfer_done_d2),
+        .I2(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg_0 ),
+        .I3(\RESET_FLOPS[15].RST_FLOPS ),
+        .I4(bus2ip_reset_ipif_inverted),
+        .I5(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
         .O(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ));
   LUT6 #(
-    .INIT(64'h000000000000C3AA)) 
+    .INIT(64'h00090009000F0000)) 
     \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_i_1 
-       (.I0(Tx_FIFO_Full_i),
-        .I1(spiXfer_done_d3),
-        .I2(spiXfer_done_d2),
-        .I3(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg_0 ),
-        .I4(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .I5(reset2ip_reset_int),
+       (.I0(spiXfer_done_d3),
+        .I1(spiXfer_done_d2),
+        .I2(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
+        .I3(reset2ip_reset_int),
+        .I4(Tx_FIFO_Full_i),
+        .I5(Tx_FIFO_Full_int),
         .O(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ));
   LUT2 #(
     .INIT(4'h6)) 
     \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.spiXfer_done_to_axi_d1_i_1 
-       (.I0(spiXfer_done_d2),
-        .I1(spiXfer_done_d3),
+       (.I0(spiXfer_done_d3),
+        .I1(spiXfer_done_d2),
         .O(spiXfer_done_to_axi_1));
   LUT5 #(
-    .INIT(32'h6CFFFF6C)) 
+    .INIT(32'hFF6F66F6)) 
     \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg[0]_i_1 
-       (.I0(p_39_out__0),
-        .I1(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
+       (.I0(modf_strobe_cdc_from_spi_d3),
+        .I1(modf_strobe_cdc_from_spi_d2),
         .I2(s_axi_wdata[0]),
-        .I3(modf_strobe_cdc_from_spi_d2),
-        .I4(modf_strobe_cdc_from_spi_d3),
+        .I3(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I4(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
         .O(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ));
   LUT5 #(
-    .INIT(32'h6CFFFF6C)) 
+    .INIT(32'hFF6F66F6)) 
     \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg[1]_i_1 
-       (.I0(p_39_out__0),
-        .I1(p_1_in35_in),
+       (.I0(slave_MODF_strobe_cdc_from_spi_d3),
+        .I1(slave_MODF_strobe_cdc_from_spi_d2),
         .I2(s_axi_wdata[1]),
-        .I3(slave_MODF_strobe_cdc_from_spi_d2),
-        .I4(slave_MODF_strobe_cdc_from_spi_d3),
+        .I3(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I4(p_1_in35_in),
         .O(\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] ));
   LUT5 #(
-    .INIT(32'h6CFFFF6C)) 
+    .INIT(32'hFF6F66F6)) 
     \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg[5]_i_1 
-       (.I0(p_39_out__0),
-        .I1(p_1_in23_in),
+       (.I0(drr_Overrun_int_cdc_from_spi_d3),
+        .I1(drr_Overrun_int_cdc_from_spi_d2),
         .I2(s_axi_wdata[2]),
-        .I3(drr_Overrun_int_cdc_from_spi_d2),
-        .I4(drr_Overrun_int_cdc_from_spi_d3),
+        .I3(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I4(p_1_in23_in),
         .O(\GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5] ));
+  LUT6 #(
+    .INIT(64'hFFFFD0FFD0D0FFD0)) 
+    \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg[6]_i_1 
+       (.I0(tx_occ_msb_4),
+        .I1(tx_FIFO_Occpncy_MSB_d1_reg),
+        .I2(tx_FIFO_Occpncy_MSB_d1),
+        .I3(s_axi_wdata[3]),
+        .I4(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I5(p_1_in20_in),
+        .O(\GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg_reg[6] ));
   LUT5 #(
-    .INIT(32'h6CFFFF6C)) 
+    .INIT(32'hFF6F66F6)) 
     \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg[7]_i_1 
-       (.I0(p_39_out__0),
-        .I1(p_1_in17_in),
-        .I2(s_axi_wdata[3]),
-        .I3(spisel_pulse_cdc_from_spi_d2),
-        .I4(spisel_pulse_cdc_from_spi_d3),
+       (.I0(spisel_pulse_cdc_from_spi_d3),
+        .I1(spisel_pulse_cdc_from_spi_d2),
+        .I2(s_axi_wdata[4]),
+        .I3(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I4(p_1_in17_in),
         .O(\GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] ));
   LUT6 #(
-    .INIT(64'h88008800F8008800)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_3 
+    .INIT(64'h4000FFFF40004000)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_2 
        (.I0(tx_FIFO_Occpncy_MSB_d1_reg),
-        .I1(p_7_in),
-        .I2(rx_fifo_count),
-        .I3(Bus_RNW_reg),
-        .I4(p_2_in),
-        .I5(prmry_in),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ));
-  LUT2 #(
-    .INIT(4'h8)) 
-    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_5 
-       (.I0(register_Data_slvsel_int[0]),
-        .I1(register_Data_slvsel_int[1]),
-        .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_reg ));
+        .I1(p_3_in),
+        .I2(Bus_RNW_reg),
+        .I3(tx_fifo_count[1]),
+        .I4(empty_fwft_i_reg),
+        .I5(rx_fifo_count[1]),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ));
+  LUT6 #(
+    .INIT(64'h4000FFFF40004000)) 
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_2 
+       (.I0(tx_FIFO_Occpncy_MSB_d1_reg),
+        .I1(p_3_in),
+        .I2(Bus_RNW_reg),
+        .I3(tx_fifo_count[0]),
+        .I4(empty_fwft_i_reg),
+        .I5(rx_fifo_count[0]),
+        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] ));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
@@ -4286,7 +4322,7 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     \LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(\LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC_0 ),
+        .D(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_n_0 ),
         .Q(reset_RcFIFO_ptr_cdc_from_axi_d1),
         .R(Rst_to_spi));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
@@ -4531,11 +4567,17 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
         .D(SPICR_bits_7_8_cdc_from_axi_d1_1),
         .Q(spicr_bits_7_8_to_spi_clk[0]),
         .R(Rst_to_spi));
+  LUT2 #(
+    .INIT(4'h6)) 
+    \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_i_1 
+       (.I0(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_n_0 ),
+        .I1(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .O(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_i_1_n_0 ));
   FDRE \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(SPICR_RX_FIFO_Rst_en),
-        .Q(\LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC_0 ),
+        .D(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_i_1_n_0 ),
+        .Q(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_n_0 ),
         .R(reset2ip_reset_int));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
@@ -4595,8 +4637,8 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_AX2S_1_CDC 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(SPISSR_frm_axi_clk[0]),
-        .Q(SPISSR_cdc_from_axi_d1_1),
+        .D(SPISSR_frm_axi_clk),
+        .Q(Q_0),
         .R(Rst_to_spi));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
@@ -4605,29 +4647,8 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
     \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(SPISSR_cdc_from_axi_d1_1),
-        .Q(register_Data_slvsel_int[0]),
-        .R(Rst_to_spi));
-  (* ASYNC_REG *) 
-  (* XILINX_LEGACY_PRIM = "FDR" *) 
-  (* box_type = "PRIMITIVE" *) 
-  FDRE #(
-    .INIT(1'b1)) 
-    \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[1].SPISSR_AX2S_1_CDC 
-       (.C(ext_spi_clk),
-        .CE(1'b1),
-        .D(SPISSR_frm_axi_clk[1]),
-        .Q(SPISSR_cdc_from_axi_d1_0),
-        .R(Rst_to_spi));
-  (* XILINX_LEGACY_PRIM = "FDR" *) 
-  (* box_type = "PRIMITIVE" *) 
-  FDRE #(
-    .INIT(1'b1)) 
-    \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[1].SPISSR_SYNC_AXI_2_SPI_2 
-       (.C(ext_spi_clk),
-        .CE(1'b1),
-        .D(SPISSR_cdc_from_axi_d1_0),
-        .Q(register_Data_slvsel_int[1]),
+        .D(Q_0),
+        .Q(register_Data_slvsel_int),
         .R(Rst_to_spi));
   (* XILINX_LEGACY_PRIM = "FDR" *) 
   (* box_type = "PRIMITIVE" *) 
@@ -4761,7 +4782,7 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
         .I2(Q[1]),
         .I3(spicr_9_lsb_to_spi_clk),
         .I4(Q[0]),
-        .O(D));
+        .O(\OTHER_RATIO_GENERATE.Shift_Reg_reg[7] ));
   LUT5 #(
     .INIT(32'hB8FFB800)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_s[7]_i_1 
@@ -4809,6 +4830,15 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
         .I2(spicr_bits_7_8_to_spi_clk[0]),
         .I3(SPISEL_sync),
         .O(SPI_TRISTATE_CONTROL_V));
+  LUT5 #(
+    .INIT(32'hFFFFFF45)) 
+    \SS_O[0]_i_1 
+       (.I0(spicr_7_ss_to_spi_clk),
+        .I1(stop_clock52_in),
+        .I2(transfer_start_d1),
+        .I3(register_Data_slvsel_int),
+        .I4(Rst_to_spi),
+        .O(\SS_O_reg[0] ));
   (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT3 #(
     .INIT(8'h02)) 
@@ -4818,33 +4848,61 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
         .I2(SPICR_2_MST_N_SLV_to_spi_clk),
         .O(Slave_MODF_strobe0));
   LUT6 #(
-    .INIT(64'h6666606666666666)) 
-    \icount_out[3]_i_3__0 
+    .INIT(64'h33333333BBBFBFBB)) 
+    \icount_out[3]_i_1 
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I1(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
+        .I2(Rx_FIFO_Full_int),
+        .I3(spiXfer_done_d3),
+        .I4(spiXfer_done_d2),
+        .I5(\icount_out[3]_i_4__0_n_0 ),
+        .O(\icount_out_reg[3] ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFFFFF96)) 
+    \icount_out[3]_i_1__0 
+       (.I0(Bus_RNW_reg_reg),
+        .I1(spiXfer_done_d3),
+        .I2(spiXfer_done_d2),
+        .I3(\RESET_FLOPS[15].RST_FLOPS ),
+        .I4(bus2ip_reset_ipif_inverted),
+        .I5(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
+        .O(\icount_out_reg[0] ));
+  LUT6 #(
+    .INIT(64'hF2F2FFF2FFF2F2F2)) 
+    \icount_out[3]_i_4__0 
+       (.I0(scndry_out),
+        .I1(Rx_FIFO_Full_Fifo_d1_flag),
+        .I2(Rx_FIFO_Full_Fifo_d1_sig),
+        .I3(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I4(spiXfer_done_d3),
+        .I5(spiXfer_done_d2),
+        .O(\icount_out[3]_i_4__0_n_0 ));
+  LUT6 #(
+    .INIT(64'h0090000000900090)) 
+    \icount_out[3]_i_5 
        (.I0(spiXfer_done_d2),
         .I1(spiXfer_done_d3),
-        .I2(\gaf.ram_almost_full_i_reg ),
-        .I3(p_6_in),
-        .I4(Bus_RNW_reg),
-        .I5(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
-        .O(\icount_out_reg[3] ));
-  LUT5 #(
-    .INIT(32'h00004044)) 
-    \icount_out[3]_i_4 
-       (.I0(spiXfer_done_to_axi_1),
-        .I1(IP2Bus_RdAck_receive_enable__1),
-        .I2(Rx_FIFO_Full_Fifo_d1_flag),
-        .I3(scndry_out),
-        .I4(Rx_FIFO_Full_Fifo_d1_sig),
-        .O(\icount_out_reg[1] ));
+        .I2(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I3(Rx_FIFO_Full_Fifo_d1_sig),
+        .I4(Rx_FIFO_Full_Fifo_d1_flag),
+        .I5(scndry_out),
+        .O(\icount_out_reg[3]_0 ));
+  LUT3 #(
+    .INIT(8'h2A)) 
+    \ip_irpt_enable_reg[8]_i_2 
+       (.I0(s_axi_wdata[5]),
+        .I1(spisel_d1_reg_to_axi_clk),
+        .I2(spicr_2_mst_n_slv_frm_axi_clk),
+        .O(D));
   LUT6 #(
-    .INIT(64'h000000BE00BE00BE)) 
+    .INIT(64'h00000000DDDD0DD0)) 
     modf_i_1
-       (.I0(sr_3_MODF_int),
-        .I1(modf_strobe_cdc_from_spi_d3),
-        .I2(modf_strobe_cdc_from_spi_d2),
-        .I3(reset2ip_reset_int),
-        .I4(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
-        .I5(bus2ip_rdce_int),
+       (.I0(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
+        .I1(Bus_RNW_reg_reg_0),
+        .I2(modf_strobe_cdc_from_spi_d3),
+        .I3(modf_strobe_cdc_from_spi_d2),
+        .I4(sr_3_MODF_int),
+        .I5(reset2ip_reset_int),
         .O(modf_reg));
   LUT3 #(
     .INIT(8'hBE)) 
@@ -4856,30 +4914,30 @@ module system_axi_quad_spi_0_0_cross_clk_sync_fifo_1
   LUT5 #(
     .INIT(32'h00001F10)) 
     transfer_start_i_1
-       (.I0(stop_clock51_in),
+       (.I0(stop_clock52_in),
         .I1(transfer_start_i_2_n_0),
         .I2(SPICR_2_MST_N_SLV_to_spi_clk),
         .I3(spicr_1_spe_to_spi_clk),
         .I4(Rst_to_spi),
         .O(transfer_start_reg));
   LUT5 #(
-    .INIT(32'hFFF8FFFF)) 
+    .INIT(32'hFFFFF8FF)) 
     transfer_start_i_2
        (.I0(out),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ),
-        .I2(sr_3_modf_to_spi_clk),
-        .I3(spicr_8_tr_inhibit_to_spi_clk),
-        .I4(spicr_1_spe_to_spi_clk),
+        .I2(spicr_8_tr_inhibit_to_spi_clk),
+        .I3(spicr_1_spe_to_spi_clk),
+        .I4(sr_3_modf_to_spi_clk),
         .O(transfer_start_i_2_n_0));
   LUT6 #(
     .INIT(64'h0001000000000000)) 
     tx_FIFO_Empty_d1_i_1
-       (.I0(tx_fifo_count_d2[2]),
-        .I1(tx_fifo_count_d2[3]),
-        .I2(tx_fifo_count_d2[0]),
-        .I3(tx_fifo_count_d2[1]),
-        .I4(tx_FIFO_Occpncy_MSB_d1_reg),
-        .I5(spiXfer_done_to_axi_d1),
+       (.I0(tx_fifo_count_d2[0]),
+        .I1(tx_fifo_count_d2[1]),
+        .I2(tx_fifo_count_d2[2]),
+        .I3(tx_fifo_count_d2[3]),
+        .I4(spiXfer_done_to_axi_d1),
+        .I5(tx_FIFO_Occpncy_MSB_d1_reg),
         .O(Tx_FIFO_Empty_intr));
   LUT2 #(
     .INIT(4'h2)) 
@@ -4892,7 +4950,7 @@ endmodule
 (* ORIG_REF_NAME = "interrupt_control" *) 
 module system_axi_quad_spi_0_0_interrupt_control
    (irpt_wrack_d1,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ,
+    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ,
     p_1_in35_in,
     p_1_in32_in,
     p_1_in29_in,
@@ -4901,51 +4959,38 @@ module system_axi_quad_spi_0_0_interrupt_control
     p_1_in20_in,
     p_1_in17_in,
     p_1_in14_in,
-    p_2_in_0,
     irpt_rdack_d1,
     ipif_glbl_irpt_enable_reg,
-    D,
+    IP2Bus_WrAck_1,
     ip2intc_irpt,
     Q,
     IP2Bus_RdAck_1,
     reset2ip_reset_int,
     irpt_wrack,
     s_axi_aclk,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ,
-    \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ,
+    \LOGIC_GENERATION_FDR.MODF_STROBE_S2AX_3 ,
+    \LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_3 ,
     tx_FIFO_Empty_d1_reg,
     dtr_underrun_d1_reg,
-    \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5]_0 ,
-    \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7]_0 ,
-    \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0 ,
+    rc_FIFO_Full_d1_reg,
+    \LOGIC_GENERATION_FDR.DRR_OVERRUN_S2AX_3 ,
+    \FIFO_EXISTS.tx_occ_msb_4_reg ,
+    \LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_3 ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
     interrupt_wrce_strb,
     irpt_rdack,
     intr2bus_rdack0,
-    Bus_RNW_reg_reg,
-    scndry_out,
-    bus2ip_rdce_int,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \goreg_dm.dout_i_reg[1] ,
-    irpt_rdack144_out,
-    \icount_out_reg[1] ,
-    Bus_RNW_reg,
-    p_3_in,
-    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ,
-    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ,
-    \icount_out_reg[3] ,
-    \goreg_dm.dout_i_reg[3] ,
-    spicr_8_tr_inhibit_frm_axi_clk,
-    p_39_out__0,
-    \CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] ,
-    tx_FIFO_Occpncy_MSB_d1,
-    tx_occ_msb_4,
-    rc_FIFO_Full_d1,
-    out,
+    \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ,
+    \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ,
+    ip2Bus_WrAck_intr_reg_hole,
+    ip2Bus_WrAck_core_reg,
+    wrack,
     ip2Bus_RdAck_intr_reg_hole,
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
-    E);
+    E,
+    D);
   output irpt_wrack_d1;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
+  output \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ;
   output p_1_in35_in;
   output p_1_in32_in;
   output p_1_in29_in;
@@ -4954,79 +4999,58 @@ module system_axi_quad_spi_0_0_interrupt_control
   output p_1_in20_in;
   output p_1_in17_in;
   output p_1_in14_in;
-  output p_2_in_0;
   output irpt_rdack_d1;
   output ipif_glbl_irpt_enable_reg;
-  output [2:0]D;
+  output IP2Bus_WrAck_1;
   output ip2intc_irpt;
-  output [5:0]Q;
+  output [8:0]Q;
   output IP2Bus_RdAck_1;
   input reset2ip_reset_int;
   input irpt_wrack;
   input s_axi_aclk;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ;
-  input \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ;
+  input \LOGIC_GENERATION_FDR.MODF_STROBE_S2AX_3 ;
+  input \LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_3 ;
   input tx_FIFO_Empty_d1_reg;
   input dtr_underrun_d1_reg;
-  input \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5]_0 ;
-  input \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7]_0 ;
-  input \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0 ;
+  input rc_FIFO_Full_d1_reg;
+  input \LOGIC_GENERATION_FDR.DRR_OVERRUN_S2AX_3 ;
+  input \FIFO_EXISTS.tx_occ_msb_4_reg ;
+  input \LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_3 ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
   input interrupt_wrce_strb;
   input irpt_rdack;
   input intr2bus_rdack0;
-  input Bus_RNW_reg_reg;
-  input scndry_out;
-  input [1:0]bus2ip_rdce_int;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \goreg_dm.dout_i_reg[1] ;
-  input irpt_rdack144_out;
-  input [0:0]\icount_out_reg[1] ;
-  input Bus_RNW_reg;
-  input p_3_in;
-  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
-  input \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ;
-  input \icount_out_reg[3] ;
-  input \goreg_dm.dout_i_reg[3] ;
-  input spicr_8_tr_inhibit_frm_axi_clk;
-  input p_39_out__0;
-  input [8:0]\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] ;
-  input tx_FIFO_Occpncy_MSB_d1;
-  input tx_occ_msb_4;
-  input rc_FIFO_Full_d1;
-  input out;
+  input \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ;
+  input \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ;
+  input ip2Bus_WrAck_intr_reg_hole;
+  input ip2Bus_WrAck_core_reg;
+  input wrack;
   input ip2Bus_RdAck_intr_reg_hole;
   input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input [0:0]E;
+  input [8:0]D;
 
-  wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [8:0]\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] ;
-  wire [2:0]D;
+  wire [8:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \FIFO_EXISTS.tx_occ_msb_4_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ;
+  wire \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ;
   wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ;
-  wire \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ;
-  wire \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg[4]_i_1_n_0 ;
-  wire \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5]_0 ;
-  wire \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg[6]_i_1_n_0 ;
-  wire \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7]_0 ;
-  wire \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0 ;
   wire IP2Bus_RdAck_1;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_2_n_0 ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
+  wire IP2Bus_WrAck_1;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
-  wire [5:0]Q;
-  wire [1:0]bus2ip_rdce_int;
+  wire \LOGIC_GENERATION_FDR.DRR_OVERRUN_S2AX_3 ;
+  wire \LOGIC_GENERATION_FDR.MODF_STROBE_S2AX_3 ;
+  wire \LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_3 ;
+  wire \LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_3 ;
+  wire [8:0]Q;
   wire dtr_underrun_d1_reg;
-  wire \goreg_dm.dout_i_reg[1] ;
-  wire \goreg_dm.dout_i_reg[3] ;
-  wire [0:0]\icount_out_reg[1] ;
-  wire \icount_out_reg[3] ;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
   wire ip2Bus_RdAck_intr_reg_hole;
+  wire ip2Bus_WrAck_core_reg;
+  wire ip2Bus_WrAck_intr_reg_hole;
   wire ip2intc_irpt;
   wire ip2intc_irpt_INST_0_i_1_n_0;
   wire ip2intc_irpt_INST_0_i_2_n_0;
@@ -5034,15 +5058,10 @@ module system_axi_quad_spi_0_0_interrupt_control
   wire ip2intc_irpt_INST_0_i_4_n_0;
   wire ipif_glbl_irpt_enable_reg;
   wire irpt_rdack;
-  wire irpt_rdack144_out;
   wire irpt_rdack_d1;
   wire irpt_wrack;
   wire irpt_wrack_d1;
-  wire out;
   wire p_0_in;
-  wire p_0_in19_in;
-  wire p_0_in4_in;
-  wire p_0_in_0;
   wire p_1_in14_in;
   wire p_1_in17_in;
   wire p_1_in20_in;
@@ -5051,28 +5070,23 @@ module system_axi_quad_spi_0_0_interrupt_control
   wire p_1_in29_in;
   wire p_1_in32_in;
   wire p_1_in35_in;
-  wire p_2_in_0;
-  wire p_39_out__0;
-  wire p_3_in;
-  wire rc_FIFO_Full_d1;
+  wire p_2_in;
+  wire rc_FIFO_Full_d1_reg;
   wire reset2ip_reset_int;
   wire s_axi_aclk;
-  wire scndry_out;
-  wire spicr_8_tr_inhibit_frm_axi_clk;
   wire tx_FIFO_Empty_d1_reg;
-  wire tx_FIFO_Occpncy_MSB_d1;
-  wire tx_occ_msb_4;
+  wire wrack;
 
   FDRE \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
-        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
+        .D(\LOGIC_GENERATION_FDR.MODF_STROBE_S2AX_3 ),
+        .Q(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
         .R(reset2ip_reset_int));
   FDRE \GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 ),
+        .D(\LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_3 ),
         .Q(p_1_in35_in),
         .R(reset2ip_reset_int));
   FDRE \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] 
@@ -5087,103 +5101,52 @@ module system_axi_quad_spi_0_0_interrupt_control
         .D(dtr_underrun_d1_reg),
         .Q(p_1_in29_in),
         .R(reset2ip_reset_int));
-  LUT6 #(
-    .INIT(64'h6C6C6C6C6CFF6C6C)) 
-    \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg[4]_i_1 
-       (.I0(p_39_out__0),
-        .I1(p_1_in26_in),
-        .I2(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [4]),
-        .I3(rc_FIFO_Full_d1),
-        .I4(scndry_out),
-        .I5(out),
-        .O(\GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg[4]_i_1_n_0 ));
   FDRE \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg_reg[4] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg[4]_i_1_n_0 ),
+        .D(rc_FIFO_Full_d1_reg),
         .Q(p_1_in26_in),
         .R(reset2ip_reset_int));
   FDRE \GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5]_0 ),
+        .D(\LOGIC_GENERATION_FDR.DRR_OVERRUN_S2AX_3 ),
         .Q(p_1_in23_in),
         .R(reset2ip_reset_int));
-  LUT6 #(
-    .INIT(64'hFF6C6C6CFF6CFF6C)) 
-    \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg[6]_i_1 
-       (.I0(p_39_out__0),
-        .I1(p_1_in20_in),
-        .I2(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [6]),
-        .I3(tx_FIFO_Occpncy_MSB_d1),
-        .I4(\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ),
-        .I5(tx_occ_msb_4),
-        .O(\GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg[6]_i_1_n_0 ));
   FDRE \GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg_reg[6] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg[6]_i_1_n_0 ),
+        .D(\FIFO_EXISTS.tx_occ_msb_4_reg ),
         .Q(p_1_in20_in),
         .R(reset2ip_reset_int));
   FDRE \GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7]_0 ),
+        .D(\LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_3 ),
         .Q(p_1_in17_in),
         .R(reset2ip_reset_int));
   FDRE \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0 ),
+        .D(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
         .Q(p_1_in14_in),
         .R(reset2ip_reset_int));
-  LUT6 #(
-    .INIT(64'hFFFFF888F888F888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[23]_i_1 
-       (.I0(spicr_8_tr_inhibit_frm_axi_clk),
-        .I1(bus2ip_rdce_int[1]),
-        .I2(irpt_rdack144_out),
-        .I3(p_1_in14_in),
-        .I4(p_0_in19_in),
-        .I5(\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .O(D[2]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFF888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_1 
-       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg ),
-        .I1(bus2ip_rdce_int[0]),
-        .I2(p_0_in4_in),
-        .I3(\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .I4(\icount_out_reg[3] ),
-        .I5(\goreg_dm.dout_i_reg[3] ),
-        .O(D[1]));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFFFF888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_1 
-       (.I0(scndry_out),
-        .I1(bus2ip_rdce_int[0]),
-        .I2(p_0_in_0),
-        .I3(\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .I4(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_2_n_0 ),
-        .I5(\goreg_dm.dout_i_reg[1] ),
-        .O(D[0]));
-  LUT6 #(
-    .INIT(64'h88888888F8888888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_2 
-       (.I0(p_1_in35_in),
-        .I1(irpt_rdack144_out),
-        .I2(\icount_out_reg[1] ),
-        .I3(Bus_RNW_reg),
-        .I4(p_3_in),
-        .I5(\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[30]_i_2_n_0 ));
   LUT3 #(
     .INIT(8'hFE)) 
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_RdAck_i_1 
-       (.I0(p_0_in),
-        .I1(ip2Bus_RdAck_intr_reg_hole),
+       (.I0(ip2Bus_RdAck_intr_reg_hole),
+        .I1(p_0_in),
         .I2(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .O(IP2Bus_RdAck_1));
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_i_1 
+       (.I0(\GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ),
+        .I1(p_2_in),
+        .I2(ip2Bus_WrAck_intr_reg_hole),
+        .I3(ip2Bus_WrAck_core_reg),
+        .I4(wrack),
+        .O(IP2Bus_WrAck_1));
   FDRE intr2bus_rdack_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -5194,10 +5157,10 @@ module system_axi_quad_spi_0_0_interrupt_control
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(interrupt_wrce_strb),
-        .Q(p_2_in_0),
+        .Q(p_2_in),
         .R(reset2ip_reset_int));
   LUT5 #(
-    .INIT(32'hAAAAAAA8)) 
+    .INIT(32'hAAA8AAAA)) 
     ip2intc_irpt_INST_0
        (.I0(ipif_glbl_irpt_enable_reg),
         .I1(ip2intc_irpt_INST_0_i_1_n_0),
@@ -5208,95 +5171,95 @@ module system_axi_quad_spi_0_0_interrupt_control
   LUT4 #(
     .INIT(16'hF888)) 
     ip2intc_irpt_INST_0_i_1
-       (.I0(Q[4]),
-        .I1(p_1_in20_in),
-        .I2(Q[3]),
-        .I3(p_1_in23_in),
+       (.I0(Q[3]),
+        .I1(p_1_in29_in),
+        .I2(Q[6]),
+        .I3(p_1_in20_in),
         .O(ip2intc_irpt_INST_0_i_1_n_0));
   LUT4 #(
     .INIT(16'hF888)) 
     ip2intc_irpt_INST_0_i_2
-       (.I0(Q[2]),
+       (.I0(Q[4]),
         .I1(p_1_in26_in),
-        .I2(p_0_in4_in),
-        .I3(p_1_in29_in),
+        .I2(Q[1]),
+        .I3(p_1_in35_in),
         .O(ip2intc_irpt_INST_0_i_2_n_0));
-  LUT6 #(
-    .INIT(64'hFFFFF888F888F888)) 
-    ip2intc_irpt_INST_0_i_3
-       (.I0(p_1_in32_in),
-        .I1(Q[1]),
-        .I2(p_1_in35_in),
-        .I3(p_0_in_0),
-        .I4(Q[0]),
-        .I5(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
-        .O(ip2intc_irpt_INST_0_i_3_n_0));
   LUT4 #(
     .INIT(16'hF888)) 
-    ip2intc_irpt_INST_0_i_4
-       (.I0(p_0_in19_in),
+    ip2intc_irpt_INST_0_i_3
+       (.I0(Q[8]),
         .I1(p_1_in14_in),
-        .I2(Q[5]),
-        .I3(p_1_in17_in),
+        .I2(Q[0]),
+        .I3(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 ),
+        .O(ip2intc_irpt_INST_0_i_3_n_0));
+  LUT6 #(
+    .INIT(64'h0000077707770777)) 
+    ip2intc_irpt_INST_0_i_4
+       (.I0(Q[2]),
+        .I1(p_1_in32_in),
+        .I2(p_1_in17_in),
+        .I3(Q[7]),
+        .I4(p_1_in23_in),
+        .I5(Q[5]),
         .O(ip2intc_irpt_INST_0_i_4_n_0));
   FDRE \ip_irpt_enable_reg_reg[0] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [0]),
+        .D(D[0]),
         .Q(Q[0]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[1] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [1]),
-        .Q(p_0_in_0),
+        .D(D[1]),
+        .Q(Q[1]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[2] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [2]),
-        .Q(Q[1]),
+        .D(D[2]),
+        .Q(Q[2]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[3] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [3]),
-        .Q(p_0_in4_in),
+        .D(D[3]),
+        .Q(Q[3]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[4] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [4]),
-        .Q(Q[2]),
+        .D(D[4]),
+        .Q(Q[4]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[5] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [5]),
-        .Q(Q[3]),
+        .D(D[5]),
+        .Q(Q[5]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[6] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [6]),
-        .Q(Q[4]),
+        .D(D[6]),
+        .Q(Q[6]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[7] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [7]),
-        .Q(Q[5]),
+        .D(D[7]),
+        .Q(Q[7]),
         .R(reset2ip_reset_int));
   FDRE \ip_irpt_enable_reg_reg[8] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] [8]),
-        .Q(p_0_in19_in),
+        .D(D[8]),
+        .Q(Q[8]),
         .R(reset2ip_reset_int));
   FDRE ipif_glbl_irpt_enable_reg_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(Bus_RNW_reg_reg),
+        .D(\GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ),
         .Q(ipif_glbl_irpt_enable_reg),
         .R(reset2ip_reset_int));
   FDRE irpt_rdack_d1_reg
@@ -5318,140 +5281,150 @@ module system_axi_quad_spi_0_0_qspi_cntrl_reg
    (spicr_bits_7_8_frm_axi_clk,
     spicr_0_loop_frm_axi_clk,
     spicr_1_spe_frm_axi_clk,
-    spicr_2_mst_n_slv_frm_axi_clk,
+    \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_1_CDC ,
     spicr_3_cpol_frm_axi_clk,
     spicr_4_cpha_frm_axi_clk,
     spicr_7_ss_frm_axi_clk,
     spicr_8_tr_inhibit_frm_axi_clk,
     spicr_9_lsb_frm_axi_clk,
-    \icount_out_reg[0] ,
-    \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ,
-    \icount_out_reg[0]_0 ,
+    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ,
     \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ,
-    \icount_out_reg[0]_1 ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg_0 ,
+    \icount_out_reg[3] ,
+    \icount_out_reg[1] ,
     \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] ,
-    D,
-    SPICR_RX_FIFO_Rst_en,
     reset2ip_reset_int,
     bus2ip_wrce_int,
     s_axi_wdata,
     s_axi_aclk,
     SPICR_data_int_reg0,
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     bus2ip_reset_ipif_inverted,
     \RESET_FLOPS[15].RST_FLOPS ,
-    rx_fifo_count,
     Rx_FIFO_Full_i,
-    IP2Bus_RdAck_receive_enable__1,
     Rx_FIFO_Full_int,
-    tx_fifo_count,
-    p_39_out__0,
-    p_1_in14_in,
-    \LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 ,
-    rx_fifo_empty_i,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
     data_Exists_RcFIFO_int_d1,
-    \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_0 );
+    \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ,
+    p_1_in14_in,
+    spisel_d1_reg_to_axi_clk,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
+    p_8_in,
+    Bus_RNW_reg);
   output [1:0]spicr_bits_7_8_frm_axi_clk;
   output spicr_0_loop_frm_axi_clk;
   output spicr_1_spe_frm_axi_clk;
-  output spicr_2_mst_n_slv_frm_axi_clk;
+  output \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_1_CDC ;
   output spicr_3_cpol_frm_axi_clk;
   output spicr_4_cpha_frm_axi_clk;
   output spicr_7_ss_frm_axi_clk;
   output spicr_8_tr_inhibit_frm_axi_clk;
   output spicr_9_lsb_frm_axi_clk;
-  output \icount_out_reg[0] ;
-  output \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ;
-  output \icount_out_reg[0]_0 ;
+  output \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ;
   output \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ;
-  output \icount_out_reg[0]_1 ;
+  output \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg_0 ;
+  output \icount_out_reg[3] ;
+  output \icount_out_reg[1] ;
   output \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] ;
-  output [0:0]D;
-  output SPICR_RX_FIFO_Rst_en;
   input reset2ip_reset_int;
   input [0:0]bus2ip_wrce_int;
-  input [7:0]s_axi_wdata;
+  input [9:0]s_axi_wdata;
   input s_axi_aclk;
   input SPICR_data_int_reg0;
-  input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input bus2ip_reset_ipif_inverted;
   input \RESET_FLOPS[15].RST_FLOPS ;
-  input [0:0]rx_fifo_count;
   input Rx_FIFO_Full_i;
-  input IP2Bus_RdAck_receive_enable__1;
   input Rx_FIFO_Full_int;
-  input [0:0]tx_fifo_count;
-  input p_39_out__0;
-  input p_1_in14_in;
-  input \LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 ;
-  input rx_fifo_empty_i;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
   input data_Exists_RcFIFO_int_d1;
-  input \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_0 ;
+  input \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
+  input p_1_in14_in;
+  input spisel_d1_reg_to_axi_clk;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  input p_8_in;
+  input Bus_RNW_reg;
 
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
+  wire Bus_RNW_reg;
+  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int[3]_i_1_n_0 ;
+  wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int[4]_i_1_n_0 ;
   wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ;
-  wire [0:0]D;
   wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg_0 ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
+  wire \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg[8]_i_2_n_0 ;
   wire \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] ;
-  wire IP2Bus_RdAck_receive_enable__1;
-  wire \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ;
-  wire \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_0 ;
-  wire \LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_1_CDC ;
   wire \RESET_FLOPS[15].RST_FLOPS ;
   wire Rx_FIFO_Full_i;
   wire Rx_FIFO_Full_int;
-  wire SPICR_RX_FIFO_Rst_en;
   wire SPICR_data_int_reg0;
   wire bus2ip_reset_ipif_inverted;
   wire [0:0]bus2ip_wrce_int;
   wire data_Exists_RcFIFO_int_d1;
-  wire \icount_out_reg[0] ;
-  wire \icount_out_reg[0]_0 ;
-  wire \icount_out_reg[0]_1 ;
-  wire [8:8]ip2Bus_IntrEvent_int;
+  wire \icount_out_reg[1] ;
+  wire \icount_out_reg[3] ;
   wire p_1_in14_in;
-  wire p_39_out__0;
+  wire p_8_in;
   wire reset2ip_reset_int;
-  wire [0:0]rx_fifo_count;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
-  wire [7:0]s_axi_wdata;
+  wire [9:0]s_axi_wdata;
   wire spicr_0_loop_frm_axi_clk;
   wire spicr_1_spe_frm_axi_clk;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
   wire spicr_3_cpol_frm_axi_clk;
   wire spicr_4_cpha_frm_axi_clk;
   wire spicr_7_ss_frm_axi_clk;
   wire spicr_8_tr_inhibit_frm_axi_clk;
   wire spicr_9_lsb_frm_axi_clk;
   wire [1:0]spicr_bits_7_8_frm_axi_clk;
-  wire [0:0]tx_fifo_count;
+  wire spisel_d1_reg_to_axi_clk;
 
   FDSE \CONTROL_REG_1_2_GENERATE[1].SPICR_data_int_reg[1] 
        (.C(s_axi_aclk),
         .CE(SPICR_data_int_reg0),
-        .D(s_axi_wdata[6]),
+        .D(s_axi_wdata[8]),
         .Q(spicr_8_tr_inhibit_frm_axi_clk),
         .S(reset2ip_reset_int));
   FDSE \CONTROL_REG_1_2_GENERATE[2].SPICR_data_int_reg[2] 
        (.C(s_axi_aclk),
         .CE(SPICR_data_int_reg0),
-        .D(s_axi_wdata[5]),
+        .D(s_axi_wdata[7]),
         .Q(spicr_7_ss_frm_axi_clk),
         .S(reset2ip_reset_int));
+  LUT6 #(
+    .INIT(64'h000000000000E200)) 
+    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int[3]_i_1 
+       (.I0(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
+        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .I2(s_axi_wdata[6]),
+        .I3(p_8_in),
+        .I4(Bus_RNW_reg),
+        .I5(reset2ip_reset_int),
+        .O(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int[3]_i_1_n_0 ));
   FDRE \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
-        .Q(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ),
+        .D(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int[3]_i_1_n_0 ),
+        .Q(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
         .R(1'b0));
+  LUT6 #(
+    .INIT(64'h000000000000E200)) 
+    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int[4]_i_1 
+       (.I0(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
+        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .I2(s_axi_wdata[5]),
+        .I3(p_8_in),
+        .I4(Bus_RNW_reg),
+        .I5(reset2ip_reset_int),
+        .O(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int[4]_i_1_n_0 ));
   FDRE \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
-        .Q(\icount_out_reg[0] ),
+        .D(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int[4]_i_1_n_0 ),
+        .Q(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
         .R(1'b0));
   FDRE \CONTROL_REG_5_9_GENERATE[5].SPICR_data_int_reg[5] 
        (.C(s_axi_aclk),
@@ -5469,7 +5442,7 @@ module system_axi_quad_spi_0_0_qspi_cntrl_reg
        (.C(s_axi_aclk),
         .CE(SPICR_data_int_reg0),
         .D(s_axi_wdata[2]),
-        .Q(spicr_2_mst_n_slv_frm_axi_clk),
+        .Q(\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_1_CDC ),
         .R(reset2ip_reset_int));
   FDRE \CONTROL_REG_5_9_GENERATE[8].SPICR_data_int_reg[8] 
        (.C(s_axi_aclk),
@@ -5484,41 +5457,31 @@ module system_axi_quad_spi_0_0_qspi_cntrl_reg
         .Q(spicr_0_loop_frm_axi_clk),
         .R(reset2ip_reset_int));
   LUT6 #(
-    .INIT(64'h0000000300020002)) 
+    .INIT(64'h0001000100030000)) 
     \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_i_1 
-       (.I0(Rx_FIFO_Full_i),
-        .I1(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ),
-        .I2(\RESET_FLOPS[15].RST_FLOPS ),
-        .I3(bus2ip_reset_ipif_inverted),
-        .I4(IP2Bus_RdAck_receive_enable__1),
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I1(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
+        .I2(bus2ip_reset_ipif_inverted),
+        .I3(\RESET_FLOPS[15].RST_FLOPS ),
+        .I4(Rx_FIFO_Full_i),
         .I5(Rx_FIFO_Full_int),
-        .O(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ));
+        .O(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg_0 ));
   LUT6 #(
-    .INIT(64'hFFFFFFFFC666CCCC)) 
+    .INIT(64'hFFFFF1FF01010F01)) 
     \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg[8]_i_1 
-       (.I0(p_39_out__0),
-        .I1(p_1_in14_in),
-        .I2(spicr_2_mst_n_slv_frm_axi_clk),
-        .I3(\LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 ),
-        .I4(s_axi_wdata[6]),
-        .I5(ip2Bus_IntrEvent_int),
-        .O(\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
-  LUT4 #(
-    .INIT(16'h0111)) 
-    \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg[8]_i_2 
-       (.I0(rx_fifo_empty_i),
+       (.I0(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
         .I1(data_Exists_RcFIFO_int_d1),
-        .I2(spicr_2_mst_n_slv_frm_axi_clk),
-        .I3(\LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 ),
-        .O(ip2Bus_IntrEvent_int));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+        .I2(\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg[8]_i_2_n_0 ),
+        .I3(s_axi_wdata[8]),
+        .I4(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I5(p_1_in14_in),
+        .O(\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] ));
   LUT2 #(
-    .INIT(4'h6)) 
-    \LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_i_1 
-       (.I0(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ),
-        .I1(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_0 ),
-        .O(SPICR_RX_FIFO_Rst_en));
+    .INIT(4'h8)) 
+    \GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg[8]_i_2 
+       (.I0(\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_1_CDC ),
+        .I1(spisel_d1_reg_to_axi_clk),
+        .O(\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg[8]_i_2_n_0 ));
   (* box_type = "PRIMITIVE" *) 
   FDRE #(
     .INIT(1'b0),
@@ -5546,42 +5509,40 @@ module system_axi_quad_spi_0_0_qspi_cntrl_reg
   FDRE \SPICR_data_int_reg[0] 
        (.C(s_axi_aclk),
         .CE(SPICR_data_int_reg0),
-        .D(s_axi_wdata[7]),
+        .D(s_axi_wdata[9]),
         .Q(spicr_9_lsb_frm_axi_clk),
         .R(reset2ip_reset_int));
   (* SOFT_HLUTNM = "soft_lutpair25" *) 
-  LUT4 #(
-    .INIT(16'hFEFF)) 
-    \icount_out[0]_i_1 
-       (.I0(\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg ),
-        .I1(bus2ip_reset_ipif_inverted),
-        .I2(\RESET_FLOPS[15].RST_FLOPS ),
-        .I3(rx_fifo_count),
-        .O(\icount_out_reg[0]_0 ));
-  LUT4 #(
-    .INIT(16'hFEFF)) 
-    \icount_out[0]_i_1__0 
-       (.I0(\icount_out_reg[0] ),
-        .I1(bus2ip_reset_ipif_inverted),
-        .I2(\RESET_FLOPS[15].RST_FLOPS ),
-        .I3(tx_fifo_count),
-        .O(\icount_out_reg[0]_1 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
-    .INIT(8'h70)) 
-    \ip_irpt_enable_reg[8]_i_2 
-       (.I0(spicr_2_mst_n_slv_frm_axi_clk),
-        .I1(\LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 ),
-        .I2(s_axi_wdata[6]),
-        .O(D));
+    .INIT(8'h01)) 
+    \icount_out[1]_i_2 
+       (.I0(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 ),
+        .I1(bus2ip_reset_ipif_inverted),
+        .I2(\RESET_FLOPS[15].RST_FLOPS ),
+        .O(\icount_out_reg[1] ));
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  LUT3 #(
+    .INIT(8'h01)) 
+    \icount_out[3]_i_3__0 
+       (.I0(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg ),
+        .I1(bus2ip_reset_ipif_inverted),
+        .I2(\RESET_FLOPS[15].RST_FLOPS ),
+        .O(\icount_out_reg[3] ));
 endmodule
 
 (* ORIG_REF_NAME = "qspi_core_interface" *) 
 module system_axi_quad_spi_0_0_qspi_core_interface
    (spisel_d1_reg_to_axi_clk,
     Tx_FIFO_Empty_SPISR_to_axi_clk,
+    spicr_0_loop_frm_axi_clk,
+    spicr_1_spe_frm_axi_clk,
+    spicr_2_mst_n_slv_frm_axi_clk,
+    spicr_3_cpol_frm_axi_clk,
+    spicr_4_cpha_frm_axi_clk,
     spicr_7_ss_frm_axi_clk,
+    spicr_8_tr_inhibit_frm_axi_clk,
     spicr_9_lsb_frm_axi_clk,
+    sr_3_MODF_int,
     SPISSR_frm_axi_clk,
     out,
     sck_t,
@@ -5592,9 +5553,15 @@ module system_axi_quad_spi_0_0_qspi_core_interface
     IP2Bus_Error,
     sw_rst_cond_d1,
     irpt_wrack_d1,
+    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
+    p_1_in35_in,
+    p_1_in32_in,
+    p_1_in29_in,
+    p_1_in26_in,
     p_1_in23_in,
     p_1_in20_in,
     p_1_in17_in,
+    p_1_in14_in,
     irpt_rdack_d1,
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg_0 ,
     p_4_in,
@@ -5605,19 +5572,23 @@ module system_axi_quad_spi_0_0_qspi_core_interface
     ip2Bus_RdAck_core_reg,
     p_15_out,
     ip2Bus_WrAck_core_reg_1,
-    FF_WRACK,
+    scndry_out,
+    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 ,
     spicr_5_txfifo_rst_frm_axi_clk,
     spicr_6_rxfifo_rst_frm_axi_clk,
     ipif_glbl_irpt_enable_reg,
     tx_fifo_full,
     io1_o,
-    Tx_FIFO_Full_int,
-    Q,
-    ip2intc_irpt,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ,
-    \s_axi_rdata_i_reg[31] ,
     ss_o,
-    reset2ip_reset_int,
+    Tx_FIFO_Full_int,
+    rx_fifo_empty_i,
+    \icount_out_reg[2] ,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30]_0 ,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28]_0 ,
+    ip2intc_irpt,
+    Q,
+    \s_axi_rdata_i_reg[31] ,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ,
     s_axi_aclk,
     rd_ce_or_reduce_core_cmb,
     bus2ip_wrce_int,
@@ -5635,42 +5606,41 @@ module system_axi_quad_spi_0_0_qspi_core_interface
     irpt_rdack,
     intr2bus_rdack0,
     Transmit_ip2bus_error0,
-    intr_controller_wr_ce_or_reduce,
+    Bus_RNW_reg_reg,
     ip2Bus_WrAck_intr_reg_hole0,
-    wr_ce_or_reduce_core_cmb,
-    \GEN_BKEND_CE_REGISTERS[25].ce_out_i_reg[25] ,
+    Bus_RNW_reg_reg_0,
+    \gaf.ram_almost_full_i_reg ,
     intr_controller_rd_ce_or_reduce,
     ip2Bus_RdAck_intr_reg_hole0,
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
-    Bus_RNW_reg_reg,
-    Bus_RNW_reg_reg_0,
+    \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ,
+    \GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ,
     Bus_RNW_reg_reg_1,
-    Bus_RNW_reg,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     p_6_in,
-    bus2ip_rdce_int,
-    D,
-    irpt_rdack144_out,
+    Bus_RNW_reg,
     Bus_RNW_reg_reg_2,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    p_3_in,
-    p_15_in,
-    p_7_in,
-    p_39_out__0,
-    p_8_in,
+    \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ,
     p_5_in,
-    p_2_in,
-    p_4_in_0,
-    Bus_RNW_reg_reg_3,
-    p_5_in_1,
+    p_3_in,
+    empty_fwft_i_reg,
+    \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ,
+    p_8_in,
+    D,
     E,
     io1_i_sync,
     io0_i_sync);
   output spisel_d1_reg_to_axi_clk;
   output Tx_FIFO_Empty_SPISR_to_axi_clk;
+  output spicr_0_loop_frm_axi_clk;
+  output spicr_1_spe_frm_axi_clk;
+  output spicr_2_mst_n_slv_frm_axi_clk;
+  output spicr_3_cpol_frm_axi_clk;
+  output spicr_4_cpha_frm_axi_clk;
   output spicr_7_ss_frm_axi_clk;
+  output spicr_8_tr_inhibit_frm_axi_clk;
   output spicr_9_lsb_frm_axi_clk;
-  output [0:1]SPISSR_frm_axi_clk;
+  output sr_3_MODF_int;
+  output SPISSR_frm_axi_clk;
   output out;
   output sck_t;
   output io0_t;
@@ -5680,9 +5650,15 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   output IP2Bus_Error;
   output sw_rst_cond_d1;
   output irpt_wrack_d1;
+  output \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  output p_1_in35_in;
+  output p_1_in32_in;
+  output p_1_in29_in;
+  output p_1_in26_in;
   output p_1_in23_in;
   output p_1_in20_in;
   output p_1_in17_in;
+  output p_1_in14_in;
   output irpt_rdack_d1;
   output \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg_0 ;
   output p_4_in;
@@ -5693,19 +5669,23 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   output ip2Bus_RdAck_core_reg;
   output p_15_out;
   output ip2Bus_WrAck_core_reg_1;
-  output FF_WRACK;
+  output scndry_out;
+  output [1:0]\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 ;
   output spicr_5_txfifo_rst_frm_axi_clk;
   output spicr_6_rxfifo_rst_frm_axi_clk;
   output ipif_glbl_irpt_enable_reg;
   output tx_fifo_full;
   output io1_o;
+  output [0:0]ss_o;
   output Tx_FIFO_Full_int;
-  output [2:0]Q;
+  output rx_fifo_empty_i;
+  output [1:0]\icount_out_reg[2] ;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30]_0 ;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28]_0 ;
   output ip2intc_irpt;
-  output [2:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ;
+  output [8:0]Q;
   output [10:0]\s_axi_rdata_i_reg[31] ;
-  output [1:0]ss_o;
-  input reset2ip_reset_int;
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ;
   input s_axi_aclk;
   input rd_ce_or_reduce_core_cmb;
   input [0:0]bus2ip_wrce_int;
@@ -5723,34 +5703,26 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   input irpt_rdack;
   input intr2bus_rdack0;
   input Transmit_ip2bus_error0;
-  input intr_controller_wr_ce_or_reduce;
+  input Bus_RNW_reg_reg;
   input ip2Bus_WrAck_intr_reg_hole0;
-  input wr_ce_or_reduce_core_cmb;
-  input \GEN_BKEND_CE_REGISTERS[25].ce_out_i_reg[25] ;
+  input Bus_RNW_reg_reg_0;
+  input \gaf.ram_almost_full_i_reg ;
   input intr_controller_rd_ce_or_reduce;
   input ip2Bus_RdAck_intr_reg_hole0;
-  input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  input Bus_RNW_reg_reg;
-  input Bus_RNW_reg_reg_0;
+  input \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ;
+  input \GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ;
   input Bus_RNW_reg_reg_1;
-  input Bus_RNW_reg;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input p_6_in;
-  input [1:0]bus2ip_rdce_int;
-  input [4:0]D;
-  input irpt_rdack144_out;
+  input Bus_RNW_reg;
   input Bus_RNW_reg_reg_2;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input p_3_in;
-  input p_15_in;
-  input p_7_in;
-  input p_39_out__0;
-  input p_8_in;
+  input \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
   input p_5_in;
-  input p_2_in;
-  input p_4_in_0;
-  input Bus_RNW_reg_reg_3;
-  input p_5_in_1;
+  input p_3_in;
+  input empty_fwft_i_reg;
+  input \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ;
+  input p_8_in;
+  input [10:0]D;
   input [0:0]E;
   input io1_i_sync;
   input io0_i_sync;
@@ -5762,19 +5734,18 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire Bus_RNW_reg_reg_0;
   wire Bus_RNW_reg_reg_1;
   wire Bus_RNW_reg_reg_2;
-  wire Bus_RNW_reg_reg_3;
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
   wire CONTROL_REG_I_n_12;
   wire CONTROL_REG_I_n_13;
   wire CONTROL_REG_I_n_14;
   wire CONTROL_REG_I_n_15;
   wire Count_trigger;
-  wire [4:0]D;
+  wire [10:0]D;
   wire D_0;
   wire [0:0]E;
-  wire FF_WRACK;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_1 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_14 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_15 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_16 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_17 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_18 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_19 ;
@@ -5784,40 +5755,34 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire \FIFO_EXISTS.CLK_CROSS_I_n_22 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_23 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_24 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_27 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_29 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_30 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_32 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_35 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_28 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_33 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_36 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_38 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_37 ;
   wire \FIFO_EXISTS.CLK_CROSS_I_n_39 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_4 ;
-  wire \FIFO_EXISTS.CLK_CROSS_I_n_42 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_41 ;
+  wire \FIFO_EXISTS.CLK_CROSS_I_n_43 ;
+  wire \FIFO_EXISTS.FIFO_IF_MODULE_I_n_3 ;
   wire \FIFO_EXISTS.FIFO_IF_MODULE_I_n_4 ;
   wire \FIFO_EXISTS.FIFO_IF_MODULE_I_n_5 ;
-  wire \FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_3 ;
-  wire \FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_4 ;
-  wire \FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_5 ;
-  wire \FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC_n_2 ;
+  wire \FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC_n_0 ;
   wire \FIFO_EXISTS.RX_FIFO_II_n_1 ;
-  wire \FIFO_EXISTS.RX_FIFO_II_n_13 ;
-  wire \FIFO_EXISTS.RX_FIFO_II_n_4 ;
-  wire \FIFO_EXISTS.RX_FIFO_II_n_6 ;
-  wire \FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_0 ;
-  wire \FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_6 ;
-  wire \FIFO_EXISTS.TX_FIFO_II_n_3 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_BKEND_CE_REGISTERS[25].ce_out_i_reg[25] ;
-  wire INTERRUPT_CONTROL_I_n_1;
-  wire INTERRUPT_CONTROL_I_n_22;
+  wire \FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_4 ;
+  wire \FIFO_EXISTS.TX_FIFO_II_n_2 ;
+  wire [1:0]\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 ;
+  wire \GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire \GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ;
+  wire \GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ;
+  wire \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
+  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
   wire IP2Bus_Error;
   wire IP2Bus_Error_1;
   wire IP2Bus_RdAck_1;
-  wire IP2Bus_RdAck_receive_enable__1;
   wire IP2Bus_WrAck_1;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire [2:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28]_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30]_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_i_1_n_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_1_reg_r_n_0 ;
@@ -5828,34 +5793,35 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_5_reg_NO_DUAL_QUAD_MODE.QSPI_NORMAL_QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I_LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_5_reg_r_n_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_5_reg_gate_n_0 ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_5_reg_r_n_0 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_11 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_19 ;
+  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_12 ;
   wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_21 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_22 ;
   wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_23 ;
   wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_24 ;
-  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_9 ;
+  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_25 ;
+  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_26 ;
+  wire \LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_8 ;
   wire MODF_strobe0;
-  wire [2:0]Q;
+  wire [8:0]Q;
   wire R;
   wire RESET_SYNC_AXI_SPI_CLK_INST_n_0;
+  wire RX_one_less_than_full;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Empty_Synced_in_SPI_domain;
   wire Rx_FIFO_Full_Fifo;
   wire Rx_FIFO_Full_Fifo_d1;
   wire Rx_FIFO_Full_Fifo_d1_flag;
   wire Rx_FIFO_Full_Fifo_d1_sig;
-  wire Rx_FIFO_Full_Fifo_d1_synced;
   wire Rx_FIFO_Full_Fifo_d1_synced_i;
   wire Rx_FIFO_Full_Fifo_org;
   wire Rx_FIFO_Full_i;
   wire Rx_FIFO_Full_int;
+  wire SOFT_RESET_I_n_2;
   wire SOFT_RESET_I_n_3;
+  wire SOFT_RESET_I_n_4;
   wire SPICR_2_MST_N_SLV_to_spi_clk;
-  wire SPICR_RX_FIFO_Rst_en;
   wire SPICR_data_int_reg0;
   wire SPISEL_sync;
-  wire [0:1]SPISSR_frm_axi_clk;
+  wire SPISSR_frm_axi_clk;
   wire Slave_MODF_strobe0;
   wire Transmit_ip2bus_error0;
   wire Tx_FIFO_Empty_SPISR_to_axi_clk;
@@ -5863,28 +5829,27 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire Tx_FIFO_Full_i;
   wire Tx_FIFO_Full_int;
   wire [23:23]bus2IP_Data_for_interrupt_core;
-  wire [1:0]bus2ip_rdce_int;
   wire bus2ip_reset_ipif_inverted;
   wire [0:0]bus2ip_wrce_int;
   wire data_Exists_RcFIFO_int_d1;
   wire data_Exists_RcFIFO_pulse041_in;
-  wire [3:7]data_from_rx_fifo;
   wire [0:7]data_from_txfifo;
   wire data_in;
   wire drr_Overrun_int;
   wire dtr_underrun_int;
   wire dtr_underrun_to_axi_clk;
+  wire empty_fwft_i_reg;
   wire ext_spi_clk;
+  wire \gaf.ram_almost_full_i_reg ;
+  wire [1:0]\icount_out_reg[2] ;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
   wire intr_controller_rd_ce_or_reduce;
-  wire intr_controller_wr_ce_or_reduce;
   wire io0_i_sync;
   wire io0_t;
   wire io1_i_sync;
   wire io1_o;
   wire io1_t;
-  wire [23:31]ip2Bus_Data_1;
   wire ip2Bus_RdAck_core_reg;
   wire ip2Bus_RdAck_intr_reg_hole;
   wire ip2Bus_RdAck_intr_reg_hole0;
@@ -5898,16 +5863,12 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire ip2intc_irpt;
   wire ipif_glbl_irpt_enable_reg;
   wire irpt_rdack;
-  wire irpt_rdack144_out;
   wire irpt_rdack_d1;
   wire irpt_wrack;
   wire irpt_wrack_d1;
   wire \lib_fifo_instance.USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/p_20_out ;
   wire modf_strobe_int;
   wire out;
-  wire p_0_in1_in;
-  wire p_0_in7_in;
-  wire p_15_in;
   wire p_15_out;
   wire p_16_out;
   wire p_1_in14_in;
@@ -5918,31 +5879,23 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire p_1_in29_in;
   wire p_1_in32_in;
   wire p_1_in35_in;
-  wire p_2_in;
-  wire p_2_in_0;
-  wire p_39_out__0;
   wire p_3_in;
   wire p_4_in;
-  wire p_4_in_0;
   wire p_5_in;
-  wire p_5_in_1;
   wire p_6_in;
   wire p_6_out;
-  wire p_7_in;
   wire p_7_out;
   wire p_8_in;
-  wire rc_FIFO_Full_d1;
   wire rd_ce_or_reduce_core_cmb;
   wire read_ack_delay_6;
   wire read_ack_delay_7;
   wire [0:7]receive_Data_int;
-  wire [0:1]register_Data_slvsel_int;
+  wire register_Data_slvsel_int;
   wire reset2ip_reset_int;
-  wire reset_RcFIFO_ptr_frm_axi_clk;
   wire reset_TxFIFO_ptr_int;
   wire reset_trig0;
   wire rst_to_spi_int;
-  wire [3:0]rx_fifo_count;
+  wire [3:1]rx_fifo_count;
   wire rx_fifo_empty_i;
   wire rx_fifo_reset;
   wire s_axi_aclk;
@@ -5951,6 +5904,7 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire sck_i;
   wire sck_o;
   wire sck_t;
+  wire scndry_out;
   wire serial_dout_int;
   wire spiXfer_done_d2;
   wire spiXfer_done_d3;
@@ -5969,7 +5923,6 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire spicr_5_txfifo_rst_frm_axi_clk;
   wire spicr_6_rxfifo_rst_frm_axi_clk;
   wire spicr_7_ss_frm_axi_clk;
-  wire spicr_7_ss_to_spi_clk;
   wire spicr_8_tr_inhibit_frm_axi_clk;
   wire spicr_9_lsb_frm_axi_clk;
   wire spicr_9_lsb_to_spi_clk;
@@ -5978,138 +5931,137 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   wire spisel_d1_reg;
   wire spisel_d1_reg_to_axi_clk;
   wire sr_3_MODF_int;
-  wire [1:0]ss_o;
+  wire [0:0]ss_o;
   wire ss_t;
-  wire stop_clock51_in;
+  wire stop_clock52_in;
   wire sw_rst_cond;
   wire sw_rst_cond_d1;
+  wire transfer_start_d1;
   wire tx_FIFO_Occpncy_MSB_d1;
-  wire [3:0]tx_fifo_count;
+  wire [3:1]tx_fifo_count;
   wire [3:0]tx_fifo_count_d1;
   wire [3:0]tx_fifo_count_d2;
   wire tx_fifo_empty;
   wire tx_fifo_full;
   wire tx_occ_msb;
   wire tx_occ_msb_4;
-  wire wr_ce_or_reduce_core_cmb;
+  wire wrack;
 
   system_axi_quad_spi_0_0_qspi_cntrl_reg CONTROL_REG_I
-       (.\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 (\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 (\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .D(bus2IP_Data_for_interrupt_core),
-        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg (CONTROL_REG_I_n_13),
+       (.Bus_RNW_reg(Bus_RNW_reg),
+        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 (spicr_5_txfifo_rst_frm_axi_clk),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg (spicr_6_rxfifo_rst_frm_axi_clk),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg_0 (CONTROL_REG_I_n_12),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (rx_fifo_empty_i),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] (\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
         .\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8] (CONTROL_REG_I_n_15),
-        .IP2Bus_RdAck_receive_enable__1(IP2Bus_RdAck_receive_enable__1),
-        .\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg (spicr_6_rxfifo_rst_frm_axi_clk),
-        .\LOGIC_GENERATION_FDR.SPICR_RX_FIFO_Rst_en_d1_reg_0 (\FIFO_EXISTS.CLK_CROSS_I_n_4 ),
-        .\LOGIC_GENERATION_FDR.SPISEL_D1_REG_S2AX_2 (spisel_d1_reg_to_axi_clk),
-        .\RESET_FLOPS[15].RST_FLOPS (FF_WRACK),
+        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (ip2Bus_WrAck_core_reg_1),
+        .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_1_CDC (spicr_2_mst_n_slv_frm_axi_clk),
+        .\RESET_FLOPS[15].RST_FLOPS (SOFT_RESET_I_n_2),
         .Rx_FIFO_Full_i(Rx_FIFO_Full_i),
         .Rx_FIFO_Full_int(Rx_FIFO_Full_int),
-        .SPICR_RX_FIFO_Rst_en(SPICR_RX_FIFO_Rst_en),
         .SPICR_data_int_reg0(SPICR_data_int_reg0),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
         .bus2ip_wrce_int(bus2ip_wrce_int),
         .data_Exists_RcFIFO_int_d1(data_Exists_RcFIFO_int_d1),
-        .\icount_out_reg[0] (spicr_5_txfifo_rst_frm_axi_clk),
-        .\icount_out_reg[0]_0 (CONTROL_REG_I_n_12),
-        .\icount_out_reg[0]_1 (CONTROL_REG_I_n_14),
+        .\icount_out_reg[1] (CONTROL_REG_I_n_14),
+        .\icount_out_reg[3] (CONTROL_REG_I_n_13),
         .p_1_in14_in(p_1_in14_in),
-        .p_39_out__0(p_39_out__0),
+        .p_8_in(p_8_in),
         .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_count(rx_fifo_count[0]),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
-        .s_axi_wdata({s_axi_wdata[9:7],s_axi_wdata[4:0]}),
+        .s_axi_wdata(s_axi_wdata),
         .spicr_0_loop_frm_axi_clk(spicr_0_loop_frm_axi_clk),
         .spicr_1_spe_frm_axi_clk(spicr_1_spe_frm_axi_clk),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
         .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
         .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .spicr_7_ss_frm_axi_clk(spicr_7_ss_frm_axi_clk),
         .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .spicr_9_lsb_frm_axi_clk(spicr_9_lsb_frm_axi_clk),
         .spicr_bits_7_8_frm_axi_clk(spicr_bits_7_8_frm_axi_clk),
-        .tx_fifo_count(tx_fifo_count[0]));
+        .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk));
   system_axi_quad_spi_0_0_cross_clk_sync_fifo_1 \FIFO_EXISTS.CLK_CROSS_I 
        (.Allow_MODF_Strobe(Allow_MODF_Strobe),
         .Allow_Slave_MODF_Strobe(Allow_Slave_MODF_Strobe),
-        .Allow_Slave_MODF_Strobe_reg(\FIFO_EXISTS.CLK_CROSS_I_n_17 ),
+        .Allow_Slave_MODF_Strobe_reg(\FIFO_EXISTS.CLK_CROSS_I_n_15 ),
         .Bus_RNW_reg(Bus_RNW_reg),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg_1),
+        .Bus_RNW_reg_reg_0(Bus_RNW_reg_reg_2),
         .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (spicr_6_rxfifo_rst_frm_axi_clk),
+        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 (CONTROL_REG_I_n_13),
         .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (spicr_5_txfifo_rst_frm_axi_clk),
         .Count_trigger(Count_trigger),
-        .D(\FIFO_EXISTS.CLK_CROSS_I_n_36 ),
+        .D(bus2IP_Data_for_interrupt_core),
         .D_0(D_0),
-        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.CLK_CROSS_I_n_18 ),
-        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_19 ),
-        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg_0 (Tx_FIFO_Full_int),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.CLK_CROSS_I_n_17 ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg_0 (rx_fifo_empty_i),
+        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_18 ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] (\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
         .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\FIFO_EXISTS.CLK_CROSS_I_n_24 ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 (INTERRUPT_CONTROL_I_n_1),
+        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
         .\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1] (\FIFO_EXISTS.CLK_CROSS_I_n_23 ),
         .\GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5] (\FIFO_EXISTS.CLK_CROSS_I_n_22 ),
-        .\GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] (\FIFO_EXISTS.CLK_CROSS_I_n_21 ),
-        .IP2Bus_RdAck_receive_enable__1(IP2Bus_RdAck_receive_enable__1),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\FIFO_EXISTS.CLK_CROSS_I_n_29 ),
+        .\GEN_IP_IRPT_STATUS_REG[6].GEN_REG_STATUS.ip_irpt_status_reg_reg[6] (\FIFO_EXISTS.CLK_CROSS_I_n_21 ),
+        .\GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7] (\FIFO_EXISTS.CLK_CROSS_I_n_20 ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28]_0 ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30]_0 ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (ip2Bus_RdAck_core_reg),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (ip2Bus_WrAck_core_reg_1),
-        .\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_reg (\FIFO_EXISTS.CLK_CROSS_I_n_39 ),
-        .\LOGIC_GENERATION_FDR.RX_FIFO_RST_AX2S_1_CDC_0 (\FIFO_EXISTS.CLK_CROSS_I_n_4 ),
         .\LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_1_CDC_0 (\FIFO_EXISTS.CLK_CROSS_I_n_2 ),
         .\LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_1_CDC_0 (\FIFO_EXISTS.CLK_CROSS_I_n_1 ),
-        .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_19 ),
+        .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_21 ),
         .MODF_strobe0(MODF_strobe0),
-        .\OTHER_RATIO_GENERATE.Count_reg[1] (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_24 ),
-        .\OTHER_RATIO_GENERATE.Ratio_Count_reg[0] (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_23 ),
+        .\OTHER_RATIO_GENERATE.Count_reg[1] (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_26 ),
+        .\OTHER_RATIO_GENERATE.Ratio_Count_reg[0] (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_25 ),
+        .\OTHER_RATIO_GENERATE.Shift_Reg_reg[7] (\FIFO_EXISTS.CLK_CROSS_I_n_37 ),
         .\OTHER_RATIO_GENERATE.rx_shft_reg_s_reg[7] (data_in),
-        .\OTHER_RATIO_GENERATE.sck_o_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_38 ),
+        .\OTHER_RATIO_GENERATE.sck_o_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_39 ),
         .Q({data_from_txfifo[0],data_from_txfifo[7]}),
         .R(R),
-        .\RESET_FLOPS[15].RST_FLOPS (FF_WRACK),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_35 ),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_9 ),
+        .\RESET_FLOPS[15].RST_FLOPS (SOFT_RESET_I_n_2),
+        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_36 ),
+        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_8 ),
         .Rst_to_spi(rst_to_spi_int),
         .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
         .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
+        .Rx_FIFO_Full_int(Rx_FIFO_Full_int),
         .SPICR_2_MST_N_SLV_to_spi_clk(SPICR_2_MST_N_SLV_to_spi_clk),
-        .SPICR_RX_FIFO_Rst_en(SPICR_RX_FIFO_Rst_en),
         .SPISEL_sync(SPISEL_sync),
         .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
-        .SPIXfer_done_int_d1_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_21 ),
-        .SPI_TRISTATE_CONTROL_V(\FIFO_EXISTS.CLK_CROSS_I_n_42 ),
+        .SPIXfer_done_int_d1_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_23 ),
+        .SPI_TRISTATE_CONTROL_V(\FIFO_EXISTS.CLK_CROSS_I_n_43 ),
+        .\SS_O_reg[0] (\FIFO_EXISTS.CLK_CROSS_I_n_41 ),
         .Slave_MODF_strobe0(Slave_MODF_strobe0),
         .Tx_FIFO_Empty_intr(Tx_FIFO_Empty_intr),
         .Tx_FIFO_Full_i(Tx_FIFO_Full_i),
-        .bus2ip_rdce_int(bus2ip_rdce_int[0]),
+        .Tx_FIFO_Full_int(Tx_FIFO_Full_int),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
         .drr_Overrun_int(drr_Overrun_int),
         .dtr_underrun_int(dtr_underrun_int),
         .dtr_underrun_to_axi_clk(dtr_underrun_to_axi_clk),
+        .empty_fwft_i_reg(empty_fwft_i_reg),
         .ext_spi_clk(ext_spi_clk),
-        .\gaf.ram_almost_full_i_reg (tx_fifo_full),
-        .\icount_out_reg[1] (\FIFO_EXISTS.CLK_CROSS_I_n_30 ),
-        .\icount_out_reg[3] (\FIFO_EXISTS.CLK_CROSS_I_n_27 ),
+        .\icount_out_reg[0] (\FIFO_EXISTS.CLK_CROSS_I_n_14 ),
+        .\icount_out_reg[3] (\FIFO_EXISTS.CLK_CROSS_I_n_16 ),
+        .\icount_out_reg[3]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_28 ),
         .io0_i_sync(io0_i_sync),
         .io1_i_sync(io1_i_sync),
-        .modf_reg(\FIFO_EXISTS.CLK_CROSS_I_n_20 ),
+        .modf_reg(\FIFO_EXISTS.CLK_CROSS_I_n_19 ),
         .modf_strobe_int(modf_strobe_int),
         .out(tx_fifo_empty),
         .p_1_in17_in(p_1_in17_in),
+        .p_1_in20_in(p_1_in20_in),
         .p_1_in23_in(p_1_in23_in),
         .p_1_in35_in(p_1_in35_in),
-        .p_2_in(p_2_in),
-        .p_39_out__0(p_39_out__0),
-        .p_6_in(p_6_in),
-        .p_7_in(p_7_in),
+        .p_3_in(p_3_in),
         .p_7_out(p_7_out),
-        .prmry_in(out),
         .register_Data_slvsel_int(register_Data_slvsel_int),
         .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_count(rx_fifo_count[2]),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
+        .rx_fifo_count({rx_fifo_count[3],rx_fifo_count[1]}),
         .s_axi_aclk(s_axi_aclk),
-        .s_axi_wdata({s_axi_wdata[7],s_axi_wdata[5],s_axi_wdata[1:0]}),
-        .scndry_out(Rx_FIFO_Full_Fifo_d1_synced),
+        .s_axi_wdata({s_axi_wdata[8:5],s_axi_wdata[1:0]}),
+        .scndry_out(scndry_out),
         .serial_dout_int(serial_dout_int),
         .spiXfer_done_d2(spiXfer_done_d2),
         .spiXfer_done_d3(spiXfer_done_d3),
@@ -6126,7 +6078,6 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .spicr_4_cpha_to_spi_clk(spicr_4_cpha_to_spi_clk),
         .spicr_7_ss_frm_axi_clk(spicr_7_ss_frm_axi_clk),
-        .spicr_7_ss_to_spi_clk(spicr_7_ss_to_spi_clk),
         .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .spicr_9_lsb_frm_axi_clk(spicr_9_lsb_frm_axi_clk),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
@@ -6135,29 +6086,35 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk),
         .sr_3_MODF_int(sr_3_MODF_int),
         .src_arst(rx_fifo_reset),
-        .stop_clock51_in(stop_clock51_in),
-        .transfer_start_reg(\FIFO_EXISTS.CLK_CROSS_I_n_32 ),
+        .stop_clock52_in(stop_clock52_in),
+        .transfer_start_d1(transfer_start_d1),
+        .transfer_start_reg(\FIFO_EXISTS.CLK_CROSS_I_n_33 ),
+        .tx_FIFO_Occpncy_MSB_d1(tx_FIFO_Occpncy_MSB_d1),
         .tx_FIFO_Occpncy_MSB_d1_reg(Tx_FIFO_Empty_SPISR_to_axi_clk),
+        .tx_fifo_count({tx_fifo_count[3],tx_fifo_count[1]}),
         .tx_fifo_count_d2(tx_fifo_count_d2),
         .tx_occ_msb(tx_occ_msb),
         .tx_occ_msb_4(tx_occ_msb_4));
   system_axi_quad_spi_0_0_qspi_fifo_ifmodule \FIFO_EXISTS.FIFO_IF_MODULE_I 
-       (.\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] (\FIFO_EXISTS.FIFO_IF_MODULE_I_n_5 ),
+       (.\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] (\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] (\FIFO_EXISTS.FIFO_IF_MODULE_I_n_5 ),
         .\GEN_IP_IRPT_STATUS_REG[3].GEN_REG_STATUS.ip_irpt_status_reg_reg[3] (\FIFO_EXISTS.FIFO_IF_MODULE_I_n_4 ),
+        .\GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg_reg[4] (\FIFO_EXISTS.FIFO_IF_MODULE_I_n_3 ),
         .\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg (\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg_0 ),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
         .Rx_FIFO_Full_Fifo_d1_synced_i(Rx_FIFO_Full_Fifo_d1_synced_i),
         .Transmit_ip2bus_error0(Transmit_ip2bus_error0),
         .Tx_FIFO_Empty_intr(Tx_FIFO_Empty_intr),
         .dtr_underrun_to_axi_clk(dtr_underrun_to_axi_clk),
+        .p_1_in26_in(p_1_in26_in),
         .p_1_in29_in(p_1_in29_in),
         .p_1_in32_in(p_1_in32_in),
-        .p_39_out__0(p_39_out__0),
         .p_4_in(p_4_in),
-        .rc_FIFO_Full_d1(rc_FIFO_Full_d1),
+        .prmry_in(out),
         .reset2ip_reset_int(reset2ip_reset_int),
         .s_axi_aclk(s_axi_aclk),
-        .s_axi_wdata(s_axi_wdata[3:2]),
+        .s_axi_wdata(s_axi_wdata[4:2]),
+        .scndry_out(scndry_out),
         .tx_FIFO_Occpncy_MSB_d1(tx_FIFO_Occpncy_MSB_d1),
         .tx_occ_msb(tx_occ_msb));
   system_axi_quad_spi_0_0_cdc_sync \FIFO_EXISTS.RX_FIFO_EMPTY_SYNC_AXI_2_SPI_CDC 
@@ -6165,111 +6122,72 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .prmry_in(out),
         .scndry_out(Rx_FIFO_Empty_Synced_in_SPI_domain));
   system_axi_quad_spi_0_0_counter_f \FIFO_EXISTS.RX_FIFO_FULL_CNTR_I 
-       (.Bus_RNW_reg(Bus_RNW_reg),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (spicr_6_rxfifo_rst_frm_axi_clk),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 (\FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC_n_2 ),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_1 (CONTROL_REG_I_n_12),
-        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg (\FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_3 ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg (\FIFO_EXISTS.CLK_CROSS_I_n_30 ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] (\FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_5 ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] (\FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_4 ),
-        .Q({data_from_rx_fifo[6],data_from_rx_fifo[7]}),
-        .\RESET_FLOPS[15].RST_FLOPS (FF_WRACK),
-        .Rx_FIFO_Full_i(Rx_FIFO_Full_i),
-        .Rx_FIFO_Full_int(Rx_FIFO_Full_int),
-        .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
+       (.\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (spicr_6_rxfifo_rst_frm_axi_clk),
+        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 (CONTROL_REG_I_n_13),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg (\FIFO_EXISTS.CLK_CROSS_I_n_16 ),
+        .\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 (\FIFO_EXISTS.CLK_CROSS_I_n_28 ),
+        .\RESET_FLOPS[15].RST_FLOPS (SOFT_RESET_I_n_2),
+        .RX_one_less_than_full(RX_one_less_than_full),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
-        .\icount_out_reg[3]_0 ({rx_fifo_count[3:2],rx_fifo_count[0]}),
-        .out(out),
-        .p_15_in(p_15_in),
-        .p_2_in(p_2_in),
-        .p_4_in_0(p_4_in_0),
-        .p_8_in(p_8_in),
+        .\icount_out_reg[0]_0 (\icount_out_reg[2] [0]),
+        .\icount_out_reg[2]_0 (\icount_out_reg[2] [1]),
         .reset2ip_reset_int(reset2ip_reset_int),
-        .reset_RcFIFO_ptr_frm_axi_clk(reset_RcFIFO_ptr_frm_axi_clk),
+        .rx_fifo_count({rx_fifo_count[3],rx_fifo_count[1]}),
         .s_axi_aclk(s_axi_aclk),
         .spiXfer_done_d2(spiXfer_done_d2),
-        .spiXfer_done_d3(spiXfer_done_d3),
-        .spicr_0_loop_frm_axi_clk(spicr_0_loop_frm_axi_clk),
-        .spicr_1_spe_frm_axi_clk(spicr_1_spe_frm_axi_clk));
+        .spiXfer_done_d3(spiXfer_done_d3));
   system_axi_quad_spi_0_0_cdc_sync_0 \FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC 
-       (.\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (spicr_6_rxfifo_rst_frm_axi_clk),
-        .IP2Bus_RdAck_receive_enable__1(IP2Bus_RdAck_receive_enable__1),
-        .\RESET_FLOPS[15].RST_FLOPS (FF_WRACK),
+       (.\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC_n_0 ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
         .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
         .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
         .Rx_FIFO_Full_Fifo_d1_synced_i(Rx_FIFO_Full_Fifo_d1_synced_i),
-        .Rx_FIFO_Full_int(Rx_FIFO_Full_int),
-        .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
-        .\icount_out_reg[3] (\FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC_n_2 ),
         .out(out),
         .prmry_in(Rx_FIFO_Full_Fifo_d1),
+        .reset2ip_reset_int(reset2ip_reset_int),
         .s_axi_aclk(s_axi_aclk),
-        .scndry_out(Rx_FIFO_Full_Fifo_d1_synced),
-        .spiXfer_done_to_axi_1(spiXfer_done_to_axi_1));
+        .scndry_out(scndry_out));
   system_axi_quad_spi_0_0_async_fifo_fg__xdcDup__1 \FIFO_EXISTS.RX_FIFO_II 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg_2),
-        .D(ip2Bus_Data_1[31]),
         .E(\lib_fifo_instance.USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/p_20_out ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.RX_FIFO_II_n_4 ),
-        .\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (Rx_FIFO_Empty_Synced_in_SPI_domain),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (INTERRUPT_CONTROL_I_n_1),
-        .IP2Bus_RdAck_receive_enable__1(IP2Bus_RdAck_receive_enable__1),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\FIFO_EXISTS.RX_FIFO_II_n_13 ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\FIFO_EXISTS.RX_FIFO_II_n_6 ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (rx_fifo_empty_i),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (ip2Bus_RdAck_core_reg),
-        .Q({Q,data_from_rx_fifo[3],data_from_rx_fifo[6],data_from_rx_fifo[7]}),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ({receive_Data_int[0],receive_Data_int[1],receive_Data_int[2],receive_Data_int[3],receive_Data_int[4],receive_Data_int[5],receive_Data_int[6],receive_Data_int[7]}),
+        .Q({receive_Data_int[0],receive_Data_int[1],receive_Data_int[2],receive_Data_int[3],receive_Data_int[4],receive_Data_int[5],receive_Data_int[6],receive_Data_int[7]}),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
         .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
-        .bus2ip_rdce_int(bus2ip_rdce_int[1]),
         .ext_spi_clk(ext_spi_clk),
         .\gaf.ram_almost_full_i_reg (\FIFO_EXISTS.RX_FIFO_II_n_1 ),
-        .\goreg_dm.dout_i_reg[0] (\FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_4 ),
-        .\ip_irpt_enable_reg_reg[0] (INTERRUPT_CONTROL_I_n_22),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .out(out),
-        .p_15_in(p_15_in),
-        .p_1_in29_in(p_1_in29_in),
-        .p_1_in32_in(p_1_in32_in),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
-        .scndry_out(Rx_FIFO_Full_Fifo_d1_synced),
+        .scndry_out(Rx_FIFO_Empty_Synced_in_SPI_domain),
         .spiXfer_done_int(spiXfer_done_int),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
-        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
-        .src_arst(rx_fifo_reset),
-        .tx_fifo_count(tx_fifo_count[0]));
+        .src_arst(rx_fifo_reset));
   FDRE \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_3 ),
+        .D(SOFT_RESET_I_n_4),
         .Q(Rx_FIFO_Full_i),
         .R(1'b0));
   FDRE \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_int_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(CONTROL_REG_I_n_13),
+        .D(CONTROL_REG_I_n_12),
         .Q(Rx_FIFO_Full_int),
         .R(1'b0));
   FDRE \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FIFO_EXISTS.CLK_CROSS_I_n_18 ),
+        .D(\FIFO_EXISTS.CLK_CROSS_I_n_17 ),
         .Q(rx_fifo_empty_i),
         .R(1'b0));
   FDRE \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_flag_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(Rx_FIFO_Full_Fifo_d1_synced),
+        .D(scndry_out),
         .Q(Rx_FIFO_Full_Fifo_d1_flag),
         .R(reset2ip_reset_int));
   FDRE \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_reg 
@@ -6281,61 +6199,49 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   FDRE \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FIFO_EXISTS.RX_FIFO_II_n_4 ),
+        .D(\FIFO_EXISTS.RX_FIFO_FULL_SYNCED_SPI_2_AXI_CDC_n_0 ),
         .Q(Rx_FIFO_Full_Fifo_d1_sig),
         .R(1'b0));
   system_axi_quad_spi_0_0_counter_f_1 \FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I 
-       (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg_2),
-        .Bus_RNW_reg_reg_0(Bus_RNW_reg_reg_3),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (spicr_5_txfifo_rst_frm_axi_clk),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 (CONTROL_REG_I_n_14),
-        .D(ip2Bus_Data_1[29]),
-        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg (\FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_0 ),
-        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg (Tx_FIFO_Full_int),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_6 ),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (SOFT_RESET_I_n_3),
-        .\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_2 (\FIFO_EXISTS.CLK_CROSS_I_n_27 ),
-        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 (\FIFO_EXISTS.CLK_CROSS_I_n_29 ),
-        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 (Tx_FIFO_Empty_SPISR_to_axi_clk),
-        .Q(p_0_in1_in),
-        .\RESET_FLOPS[15].RST_FLOPS (FF_WRACK),
+       (.Bus_RNW_reg_reg(Bus_RNW_reg_reg_1),
+        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (CONTROL_REG_I_n_14),
+        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4]_0 (spicr_5_txfifo_rst_frm_axi_clk),
+        .D(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 ),
+        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg (\FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_4 ),
+        .\LOGIC_GENERATION_FDR.SYNC_SPIXFER_DONE_S2AX_3 (\FIFO_EXISTS.CLK_CROSS_I_n_14 ),
+        .\RESET_FLOPS[15].RST_FLOPS (SOFT_RESET_I_n_2),
         .Tx_FIFO_Full_i(Tx_FIFO_Full_i),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
-        .\goreg_dm.dout_i_reg[2] (\FIFO_EXISTS.RX_FIFO_II_n_6 ),
-        .\icount_out_reg[3]_0 (rx_fifo_count[3]),
-        .p_3_in(p_3_in),
         .reset2ip_reset_int(reset2ip_reset_int),
         .s_axi_aclk(s_axi_aclk),
-        .src_arst(reset_TxFIFO_ptr_int),
-        .tx_fifo_count(tx_fifo_count));
+        .spiXfer_done_d2(spiXfer_done_d2),
+        .spiXfer_done_d3(spiXfer_done_d3),
+        .tx_fifo_count({tx_fifo_count[3],tx_fifo_count[1]}));
   system_axi_quad_spi_0_0_async_fifo_fg \FIFO_EXISTS.TX_FIFO_II 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (ip2Bus_WrAck_core_reg_1),
-        .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\FIFO_EXISTS.TX_FIFO_II_n_3 ),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg_1),
+        .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\FIFO_EXISTS.TX_FIFO_II_n_2 ),
         .Q({data_from_txfifo[0],data_from_txfifo[1],data_from_txfifo[2],data_from_txfifo[3],data_from_txfifo[4],data_from_txfifo[5],data_from_txfifo[6],data_from_txfifo[7]}),
         .ext_spi_clk(ext_spi_clk),
-        .\gic0.gc1.count_reg[0] (tx_fifo_full),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(tx_fifo_empty),
         .p_6_in(p_6_in),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata[7:0]),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
-        .spisel_d1_reg__0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_22 ),
-        .src_arst(reset_TxFIFO_ptr_int));
+        .spisel_d1_reg__0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_24 ),
+        .src_arst(reset_TxFIFO_ptr_int),
+        .tx_fifo_full(tx_fifo_full));
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_0 ),
+        .D(SOFT_RESET_I_n_3),
         .Q(Tx_FIFO_Full_i),
         .R(1'b0));
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\FIFO_EXISTS.CLK_CROSS_I_n_19 ),
+        .D(\FIFO_EXISTS.CLK_CROSS_I_n_18 ),
         .Q(Tx_FIFO_Full_int),
         .R(1'b0));
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.spiXfer_done_to_axi_d1_reg 
@@ -6347,7 +6253,7 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(tx_fifo_count[0]),
+        .D(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 [0]),
         .Q(tx_fifo_count_d1[0]),
         .R(reset2ip_reset_int));
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[1] 
@@ -6359,7 +6265,7 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(tx_fifo_count[2]),
+        .D(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[2]_0 [1]),
         .Q(tx_fifo_count_d1[2]),
         .R(reset2ip_reset_int));
   FDRE \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.tx_fifo_count_d1_reg[3] 
@@ -6410,40 +6316,33 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .Q(tx_occ_msb_4),
         .R(reset2ip_reset_int));
   system_axi_quad_spi_0_0_interrupt_control INTERRUPT_CONTROL_I
-       (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .\CONTROL_REG_5_9_GENERATE[7].SPICR_data_int_reg[7] ({bus2IP_Data_for_interrupt_core,s_axi_wdata[7:0]}),
-        .D({ip2Bus_Data_1[23],ip2Bus_Data_1[28],ip2Bus_Data_1[30]}),
+       (.D({bus2IP_Data_for_interrupt_core,s_axi_wdata[7:0]}),
         .E(E),
-        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_int_reg (Tx_FIFO_Full_int),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_24 ),
-        .\GEN_IP_IRPT_STATUS_REG[1].GEN_REG_STATUS.ip_irpt_status_reg_reg[1]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_23 ),
-        .\GEN_IP_IRPT_STATUS_REG[5].GEN_REG_STATUS.ip_irpt_status_reg_reg[5]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_22 ),
-        .\GEN_IP_IRPT_STATUS_REG[7].GEN_REG_STATUS.ip_irpt_status_reg_reg[7]_0 (\FIFO_EXISTS.CLK_CROSS_I_n_21 ),
-        .\GEN_IP_IRPT_STATUS_REG[8].GEN_REG_STATUS.ip_irpt_status_reg_reg[8]_0 (CONTROL_REG_I_n_15),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (CONTROL_REG_I_n_15),
+        .\FIFO_EXISTS.tx_occ_msb_4_reg (\FIFO_EXISTS.CLK_CROSS_I_n_21 ),
+        .\GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] (\GEN_BKEND_CE_REGISTERS[16].ce_out_i_reg[16] ),
+        .\GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] (\GEN_BKEND_CE_REGISTERS[7].ce_out_i_reg[7] ),
+        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0]_0 (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
         .IP2Bus_RdAck_1(IP2Bus_RdAck_1),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] (INTERRUPT_CONTROL_I_n_1),
+        .IP2Bus_WrAck_1(IP2Bus_WrAck_1),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (ip2Bus_RdAck_core_reg),
-        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 (Tx_FIFO_Empty_SPISR_to_axi_clk),
-        .Q({\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24]_0 ,p_0_in7_in,p_0_in1_in,INTERRUPT_CONTROL_I_n_22}),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
+        .\LOGIC_GENERATION_FDR.DRR_OVERRUN_S2AX_3 (\FIFO_EXISTS.CLK_CROSS_I_n_22 ),
+        .\LOGIC_GENERATION_FDR.MODF_STROBE_S2AX_3 (\FIFO_EXISTS.CLK_CROSS_I_n_24 ),
+        .\LOGIC_GENERATION_FDR.SLV_MODF_STRB_S2AX_3 (\FIFO_EXISTS.CLK_CROSS_I_n_23 ),
+        .\LOGIC_GENERATION_FDR.SPISEL_PULSE_S2AX_3 (\FIFO_EXISTS.CLK_CROSS_I_n_20 ),
+        .Q(Q),
         .dtr_underrun_d1_reg(\FIFO_EXISTS.FIFO_IF_MODULE_I_n_4 ),
-        .\goreg_dm.dout_i_reg[1] (\FIFO_EXISTS.RX_FIFO_FULL_CNTR_I_n_5 ),
-        .\goreg_dm.dout_i_reg[3] (\FIFO_EXISTS.RX_FIFO_II_n_13 ),
-        .\icount_out_reg[1] (tx_fifo_count[1]),
-        .\icount_out_reg[3] (\FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_6 ),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack0(intr2bus_rdack0),
         .ip2Bus_RdAck_intr_reg_hole(ip2Bus_RdAck_intr_reg_hole),
+        .ip2Bus_WrAck_core_reg(ip2Bus_WrAck_core_reg),
+        .ip2Bus_WrAck_intr_reg_hole(ip2Bus_WrAck_intr_reg_hole),
         .ip2intc_irpt(ip2intc_irpt),
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
         .irpt_rdack(irpt_rdack),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .irpt_rdack_d1(irpt_rdack_d1),
         .irpt_wrack(irpt_wrack),
         .irpt_wrack_d1(irpt_wrack_d1),
-        .out(out),
         .p_1_in14_in(p_1_in14_in),
         .p_1_in17_in(p_1_in17_in),
         .p_1_in20_in(p_1_in20_in),
@@ -6452,81 +6351,75 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .p_1_in29_in(p_1_in29_in),
         .p_1_in32_in(p_1_in32_in),
         .p_1_in35_in(p_1_in35_in),
-        .p_2_in_0(p_2_in_0),
-        .p_39_out__0(p_39_out__0),
-        .p_3_in(p_3_in),
-        .rc_FIFO_Full_d1(rc_FIFO_Full_d1),
+        .rc_FIFO_Full_d1_reg(\FIFO_EXISTS.FIFO_IF_MODULE_I_n_3 ),
         .reset2ip_reset_int(reset2ip_reset_int),
         .s_axi_aclk(s_axi_aclk),
-        .scndry_out(Rx_FIFO_Full_Fifo_d1_synced),
-        .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .tx_FIFO_Empty_d1_reg(\FIFO_EXISTS.FIFO_IF_MODULE_I_n_5 ),
-        .tx_FIFO_Occpncy_MSB_d1(tx_FIFO_Occpncy_MSB_d1),
-        .tx_occ_msb_4(tx_occ_msb_4));
+        .wrack(wrack));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[4]),
+        .D(D[10]),
         .Q(\s_axi_rdata_i_reg[31] [10]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[22] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[3]),
+        .D(D[9]),
         .Q(\s_axi_rdata_i_reg[31] [9]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[23] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(ip2Bus_Data_1[23]),
+        .D(D[8]),
         .Q(\s_axi_rdata_i_reg[31] [8]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[2]),
+        .D(D[7]),
         .Q(\s_axi_rdata_i_reg[31] [7]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[1]),
+        .D(D[6]),
         .Q(\s_axi_rdata_i_reg[31] [6]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(D[0]),
+        .D(D[5]),
         .Q(\s_axi_rdata_i_reg[31] [5]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[27] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(ip2Bus_Data_1[27]),
+        .D(D[4]),
         .Q(\s_axi_rdata_i_reg[31] [4]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(ip2Bus_Data_1[28]),
+        .D(D[3]),
         .Q(\s_axi_rdata_i_reg[31] [3]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(ip2Bus_Data_1[29]),
+        .D(D[2]),
         .Q(\s_axi_rdata_i_reg[31] [2]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[30] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(ip2Bus_Data_1[30]),
+        .D(D[1]),
         .Q(\s_axi_rdata_i_reg[31] [1]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(ip2Bus_Data_1[31]),
+        .D(D[0]),
         .Q(\s_axi_rdata_i_reg[31] [0]),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg 
@@ -6568,13 +6461,13 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   FDRE \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(wr_ce_or_reduce_core_cmb),
+        .D(Bus_RNW_reg_reg_0),
         .Q(ip2Bus_WrAck_core_reg_d1),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\GEN_BKEND_CE_REGISTERS[25].ce_out_i_reg[25] ),
+        .D(\gaf.ram_almost_full_i_reg ),
         .Q(ip2Bus_WrAck_core_reg),
         .R(reset2ip_reset_int));
   FDRE \LEGACY_MD_WR_RD_ACK_GEN.read_ack_delay_1_reg_r 
@@ -6648,34 +6541,34 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .D(data_in),
         .D_0(D_0),
         .E(\lib_fifo_instance.USE_2N_DEPTH.V6_S6_AND_LATER.I_ASYNC_FIFO_BRAM/inst_fifo_gen/gconvfifo.rf/grf.rf/p_20_out ),
-        .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_17 ),
-        .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_32 ),
-        .\LOGIC_GENERATION_FDR.SPICR_4_CPHA_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_38 ),
-        .\LOGIC_GENERATION_FDR.SPICR_4_CPHA_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_35 ),
-        .\LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_42 ),
-        .\LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2 (\FIFO_EXISTS.CLK_CROSS_I_n_39 ),
+        .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_15 ),
+        .\LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_33 ),
+        .\LOGIC_GENERATION_FDR.SPICR_4_CPHA_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_39 ),
+        .\LOGIC_GENERATION_FDR.SPICR_4_CPHA_AX2S_2_0 (\FIFO_EXISTS.CLK_CROSS_I_n_36 ),
+        .\LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_41 ),
+        .\LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2 (\FIFO_EXISTS.CLK_CROSS_I_n_43 ),
         .\LOGIC_GENERATION_FDR.Slave_MODF_strobe_cdc_from_spi_int_2_reg (\FIFO_EXISTS.CLK_CROSS_I_n_2 ),
-        .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_19 ),
+        .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_21 ),
         .\LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 (\FIFO_EXISTS.CLK_CROSS_I_n_1 ),
         .MODF_strobe0(MODF_strobe0),
-        .\OTHER_RATIO_GENERATE.Serial_Dout_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_21 ),
+        .\OTHER_RATIO_GENERATE.Serial_Dout_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_23 ),
         .Q({data_from_txfifo[0],data_from_txfifo[1],data_from_txfifo[2],data_from_txfifo[3],data_from_txfifo[4],data_from_txfifo[5],data_from_txfifo[6],data_from_txfifo[7]}),
         .R(R),
         .RESET_SYNC_AX2S_2(RESET_SYNC_AXI_SPI_CLK_INST_n_0),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_23 ),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_24 ),
+        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_25 ),
+        .\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 (\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_26 ),
         .Rst_to_spi(rst_to_spi_int),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
         .SPICR_2_MST_N_SLV_to_spi_clk(SPICR_2_MST_N_SLV_to_spi_clk),
         .SPISEL_sync(SPISEL_sync),
-        .SPIXfer_done_int_d1_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_9 ),
+        .SPIXfer_done_int_d1_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_8 ),
         .Slave_MODF_strobe0(Slave_MODF_strobe0),
         .drr_Overrun_int(drr_Overrun_int),
         .dtr_underrun_int(dtr_underrun_int),
-        .empty_fwft_fb_o_i_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_22 ),
+        .empty_fwft_fb_o_i_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_24 ),
         .ext_spi_clk(ext_spi_clk),
-        .\goreg_dm.dout_i_reg[0] (\FIFO_EXISTS.TX_FIFO_II_n_3 ),
-        .\goreg_dm.dout_i_reg[7] (\FIFO_EXISTS.CLK_CROSS_I_n_36 ),
+        .\goreg_dm.dout_i_reg[0] (\FIFO_EXISTS.TX_FIFO_II_n_2 ),
+        .\goreg_dm.dout_i_reg[7] (\FIFO_EXISTS.CLK_CROSS_I_n_37 ),
         .\gpr1.dout_i_reg[7] ({receive_Data_int[0],receive_Data_int[1],receive_Data_int[2],receive_Data_int[3],receive_Data_int[4],receive_Data_int[5],receive_Data_int[6],receive_Data_int[7]}),
         .io0_t(io0_t),
         .io1_o(io1_o),
@@ -6696,14 +6589,14 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .spicr_1_spe_to_spi_clk(spicr_1_spe_to_spi_clk),
         .spicr_3_cpol_to_spi_clk(spicr_3_cpol_to_spi_clk),
         .spicr_4_cpha_to_spi_clk(spicr_4_cpha_to_spi_clk),
-        .spicr_7_ss_to_spi_clk(spicr_7_ss_to_spi_clk),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
         .spisel(spisel),
         .spisel_d1_reg(spisel_d1_reg),
         .ss_o(ss_o),
         .ss_t(ss_t),
-        .stop_clock51_in(stop_clock51_in),
-        .transfer_start_d1_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_11 ));
+        .stop_clock52_in(stop_clock52_in),
+        .transfer_start_d1(transfer_start_d1),
+        .transfer_start_d1_reg_0(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_12 ));
   system_axi_quad_spi_0_0_reset_sync_module RESET_SYNC_AXI_SPI_CLK_INST
        (.Allow_MODF_Strobe_reg(RESET_SYNC_AXI_SPI_CLK_INST_n_0),
         .Rst_to_spi(rst_to_spi_int),
@@ -6711,45 +6604,32 @@ module system_axi_quad_spi_0_0_qspi_core_interface
         .ext_spi_clk(ext_spi_clk),
         .p_6_out(p_6_out),
         .reset2ip_reset_int(reset2ip_reset_int),
-        .transfer_start_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_11 ));
+        .transfer_start_reg(\LOGIC_FOR_MD_0_GEN.SPI_MODULE_I_n_12 ));
   system_axi_quad_spi_0_0_soft_reset SOFT_RESET_I
-       (.Bus_RNW_reg(Bus_RNW_reg),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (spicr_6_rxfifo_rst_frm_axi_clk),
+       (.\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (spicr_6_rxfifo_rst_frm_axi_clk),
         .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (spicr_5_txfifo_rst_frm_axi_clk),
-        .FF_WRACK_0(FF_WRACK),
-        .IP2Bus_WrAck_1(IP2Bus_WrAck_1),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (ip2Bus_WrAck_core_reg_1),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg (SOFT_RESET_I_n_4),
+        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg (SOFT_RESET_I_n_2),
+        .\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg_0 (SOFT_RESET_I_n_3),
+        .RX_one_less_than_full(RX_one_less_than_full),
+        .Rx_FIFO_Full_i(Rx_FIFO_Full_i),
+        .Rx_FIFO_Full_int(Rx_FIFO_Full_int),
+        .Tx_FIFO_Full_int(Tx_FIFO_Full_int),
         .bus2ip_reset_ipif_inverted(bus2ip_reset_ipif_inverted),
-        .\icount_out_reg[3] (SOFT_RESET_I_n_3),
-        .ip2Bus_WrAck_core_reg(ip2Bus_WrAck_core_reg),
-        .ip2Bus_WrAck_intr_reg_hole(ip2Bus_WrAck_intr_reg_hole),
-        .p_2_in_0(p_2_in_0),
-        .p_5_in_1(p_5_in_1),
-        .p_6_in(p_6_in),
-        .reset_RcFIFO_ptr_frm_axi_clk(reset_RcFIFO_ptr_frm_axi_clk),
+        .\icount_out_reg[1] (\FIFO_EXISTS.TX_FIFO_EMPTY_CNTR_I_n_4 ),
+        .reset2ip_reset_int(reset2ip_reset_int),
         .reset_trig0(reset_trig0),
         .s_axi_aclk(s_axi_aclk),
-        .spiXfer_done_to_axi_1(spiXfer_done_to_axi_1),
         .src_arst(reset_TxFIFO_ptr_int),
         .sw_rst_cond(sw_rst_cond),
         .sw_rst_cond_d1(sw_rst_cond_d1),
-        .tx_fifo_full(tx_fifo_full));
+        .wrack(wrack));
   system_axi_quad_spi_0_0_qspi_status_slave_sel_reg \STATUS_REG_MODE_0_GEN.STATUS_SLAVE_SEL_REG_I 
-       (.Bus_RNW_reg_reg(Bus_RNW_reg_reg_0),
-        .Bus_RNW_reg_reg_0(Bus_RNW_reg_reg_1),
-        .D(ip2Bus_Data_1[27]),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .Q(data_from_rx_fifo[3]),
+       (.\GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] (\GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\FIFO_EXISTS.CLK_CROSS_I_n_19 ),
         .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
-        .\ip_irpt_enable_reg_reg[4] (p_0_in7_in),
-        .irpt_rdack144_out(irpt_rdack144_out),
-        .modf_reg_0(\FIFO_EXISTS.CLK_CROSS_I_n_20 ),
-        .p_15_in(p_15_in),
-        .p_1_in26_in(p_1_in26_in),
         .reset2ip_reset_int(reset2ip_reset_int),
         .s_axi_aclk(s_axi_aclk),
-        .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .sr_3_MODF_int(sr_3_MODF_int));
   FDRE ip2Bus_RdAck_intr_reg_hole_d1_reg
        (.C(s_axi_aclk),
@@ -6766,7 +6646,7 @@ module system_axi_quad_spi_0_0_qspi_core_interface
   FDRE ip2Bus_WrAck_intr_reg_hole_d1_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(intr_controller_wr_ce_or_reduce),
+        .D(Bus_RNW_reg_reg),
         .Q(ip2Bus_WrAck_intr_reg_hole_d1),
         .R(reset2ip_reset_int));
   FDRE ip2Bus_WrAck_intr_reg_hole_reg
@@ -6779,10 +6659,10 @@ endmodule
 
 (* ORIG_REF_NAME = "qspi_fifo_ifmodule" *) 
 module system_axi_quad_spi_0_0_qspi_fifo_ifmodule
-   (rc_FIFO_Full_d1,
-    \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg ,
+   (\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg ,
     p_4_in,
     tx_FIFO_Occpncy_MSB_d1,
+    \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg_reg[4] ,
     \GEN_IP_IRPT_STATUS_REG[3].GEN_REG_STATUS.ip_irpt_status_reg_reg[3] ,
     \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ,
     reset2ip_reset_int,
@@ -6793,14 +6673,17 @@ module system_axi_quad_spi_0_0_qspi_fifo_ifmodule
     Transmit_ip2bus_error0,
     tx_occ_msb,
     dtr_underrun_to_axi_clk,
-    p_39_out__0,
-    p_1_in29_in,
+    scndry_out,
+    prmry_in,
     s_axi_wdata,
+    \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ,
+    p_1_in26_in,
+    p_1_in29_in,
     p_1_in32_in);
-  output rc_FIFO_Full_d1;
   output \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg ;
   output p_4_in;
   output tx_FIFO_Occpncy_MSB_d1;
+  output \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg_reg[4] ;
   output \GEN_IP_IRPT_STATUS_REG[3].GEN_REG_STATUS.ip_irpt_status_reg_reg[3] ;
   output \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   input reset2ip_reset_int;
@@ -6811,13 +6694,18 @@ module system_axi_quad_spi_0_0_qspi_fifo_ifmodule
   input Transmit_ip2bus_error0;
   input tx_occ_msb;
   input dtr_underrun_to_axi_clk;
-  input p_39_out__0;
+  input scndry_out;
+  input prmry_in;
+  input [2:0]s_axi_wdata;
+  input \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
+  input p_1_in26_in;
   input p_1_in29_in;
-  input [1:0]s_axi_wdata;
   input p_1_in32_in;
 
+  wire \GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ;
   wire \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   wire \GEN_IP_IRPT_STATUS_REG[3].GEN_REG_STATUS.ip_irpt_status_reg_reg[3] ;
+  wire \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg_reg[4] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_reg ;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Full_Fifo_d1_synced_i;
@@ -6825,36 +6713,48 @@ module system_axi_quad_spi_0_0_qspi_fifo_ifmodule
   wire Tx_FIFO_Empty_intr;
   wire dtr_underrun_d1;
   wire dtr_underrun_to_axi_clk;
+  wire p_1_in26_in;
   wire p_1_in29_in;
   wire p_1_in32_in;
-  wire p_39_out__0;
   wire p_4_in;
+  wire prmry_in;
   wire rc_FIFO_Full_d1;
   wire reset2ip_reset_int;
   wire s_axi_aclk;
-  wire [1:0]s_axi_wdata;
+  wire [2:0]s_axi_wdata;
+  wire scndry_out;
   wire tx_FIFO_Empty_d1;
   wire tx_FIFO_Occpncy_MSB_d1;
   wire tx_occ_msb;
 
   LUT5 #(
-    .INIT(32'h75BAFF30)) 
+    .INIT(32'hFF4F44F4)) 
     \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg[2]_i_1 
-       (.I0(p_39_out__0),
-        .I1(tx_FIFO_Empty_d1),
-        .I2(Tx_FIFO_Empty_intr),
-        .I3(p_1_in32_in),
-        .I4(s_axi_wdata[0]),
+       (.I0(tx_FIFO_Empty_d1),
+        .I1(Tx_FIFO_Empty_intr),
+        .I2(s_axi_wdata[0]),
+        .I3(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I4(p_1_in32_in),
         .O(\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ));
   LUT5 #(
-    .INIT(32'h75BAFF30)) 
+    .INIT(32'hFF4F44F4)) 
     \GEN_IP_IRPT_STATUS_REG[3].GEN_REG_STATUS.ip_irpt_status_reg[3]_i_1 
-       (.I0(p_39_out__0),
-        .I1(dtr_underrun_d1),
-        .I2(dtr_underrun_to_axi_clk),
-        .I3(p_1_in29_in),
-        .I4(s_axi_wdata[1]),
+       (.I0(dtr_underrun_d1),
+        .I1(dtr_underrun_to_axi_clk),
+        .I2(s_axi_wdata[1]),
+        .I3(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I4(p_1_in29_in),
         .O(\GEN_IP_IRPT_STATUS_REG[3].GEN_REG_STATUS.ip_irpt_status_reg_reg[3] ));
+  LUT6 #(
+    .INIT(64'hFFFF04FF0404FF04)) 
+    \GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg[4]_i_1 
+       (.I0(rc_FIFO_Full_d1),
+        .I1(scndry_out),
+        .I2(prmry_in),
+        .I3(s_axi_wdata[2]),
+        .I4(\GEN_BKEND_CE_REGISTERS[8].ce_out_i_reg[8] ),
+        .I5(p_1_in26_in),
+        .O(\GEN_IP_IRPT_STATUS_REG[4].GEN_REG_STATUS.ip_irpt_status_reg_reg[4] ));
   FDRE Receive_ip2bus_error_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -6903,9 +6803,10 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     sck_o,
     modf_strobe_int,
     spisel_d1_reg,
-    spiXfer_done_int,
     SPIXfer_done_int_d1_reg_0,
-    stop_clock51_in,
+    spiXfer_done_int,
+    stop_clock52_in,
+    transfer_start_d1,
     transfer_start_d1_reg_0,
     drr_Overrun_int,
     Allow_Slave_MODF_Strobe,
@@ -6914,6 +6815,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     io1_o,
     serial_dout_int,
     dtr_underrun_int,
+    ss_o,
     \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg ,
     p_7_out,
     \OTHER_RATIO_GENERATE.Serial_Dout_reg_0 ,
@@ -6922,7 +6824,6 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 ,
     E,
     \gpr1.dout_i_reg[7] ,
-    ss_o,
     D_0,
     ext_spi_clk,
     \LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2 ,
@@ -6936,6 +6837,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     out,
     \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2 ,
     \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 ,
+    \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2 ,
     \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 ,
     SPICR_2_MST_N_SLV_to_spi_clk,
     \LOGIC_GENERATION_FDR.Slave_MODF_strobe_cdc_from_spi_int_2_reg ,
@@ -6948,15 +6850,13 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     spicr_3_cpol_to_spi_clk,
     Q,
     spicr_9_lsb_to_spi_clk,
-    \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2 ,
     spicr_0_loop_to_spi_clk,
     register_Data_slvsel_int,
     ram_full_fb_i_reg,
     scndry_out,
     Rx_FIFO_Full_Fifo_org,
     D,
-    \goreg_dm.dout_i_reg[7] ,
-    spicr_7_ss_to_spi_clk);
+    \goreg_dm.dout_i_reg[7] );
   output sck_t;
   output io0_t;
   output ss_t;
@@ -6965,9 +6865,10 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   output sck_o;
   output modf_strobe_int;
   output spisel_d1_reg;
-  output spiXfer_done_int;
   output SPIXfer_done_int_d1_reg_0;
-  output stop_clock51_in;
+  output spiXfer_done_int;
+  output stop_clock52_in;
+  output transfer_start_d1;
   output transfer_start_d1_reg_0;
   output drr_Overrun_int;
   output Allow_Slave_MODF_Strobe;
@@ -6976,6 +6877,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   output io1_o;
   output serial_dout_int;
   output dtr_underrun_int;
+  output [0:0]ss_o;
   output \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg ;
   output p_7_out;
   output \OTHER_RATIO_GENERATE.Serial_Dout_reg_0 ;
@@ -6984,7 +6886,6 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   output \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_1 ;
   output [0:0]E;
   output [7:0]\gpr1.dout_i_reg[7] ;
-  output [1:0]ss_o;
   input D_0;
   input ext_spi_clk;
   input \LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2 ;
@@ -6998,6 +6899,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   input out;
   input \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2 ;
   input \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 ;
+  input \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2 ;
   input \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 ;
   input SPICR_2_MST_N_SLV_to_spi_clk;
   input \LOGIC_GENERATION_FDR.Slave_MODF_strobe_cdc_from_spi_int_2_reg ;
@@ -7010,15 +6912,13 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   input spicr_3_cpol_to_spi_clk;
   input [7:0]Q;
   input spicr_9_lsb_to_spi_clk;
-  input \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2 ;
   input spicr_0_loop_to_spi_clk;
-  input [0:1]register_Data_slvsel_int;
+  input register_Data_slvsel_int;
   input ram_full_fb_i_reg;
   input scndry_out;
   input Rx_FIFO_Full_Fifo_org;
   input [0:0]D;
   input [0:0]\goreg_dm.dout_i_reg[7] ;
-  input spicr_7_ss_to_spi_clk;
 
   wire Allow_MODF_Strobe;
   wire Allow_MODF_Strobe_i_1_n_0;
@@ -7037,13 +6937,12 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   wire \LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_2_n_0 ;
   wire \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2_n_0 ;
   wire \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3_n_0 ;
-  wire \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_4_n_0 ;
   wire \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2 ;
   wire \LOGIC_GENERATION_FDR.SPICR_2_MST_N_SLV_AX2S_2_0 ;
   wire \LOGIC_GENERATION_FDR.SPICR_4_CPHA_AX2S_2 ;
   wire \LOGIC_GENERATION_FDR.SPICR_4_CPHA_AX2S_2_0 ;
+  wire \LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2 ;
   wire \LOGIC_GENERATION_FDR.SPICR_BITS_7_8_SYNC_GEN[0].SPICR_BITS_7_8_AX2S_2 ;
-  wire \LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2 ;
   wire \LOGIC_GENERATION_FDR.Slave_MODF_strobe_cdc_from_spi_int_2_reg ;
   wire \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg ;
   wire \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_reg_0 ;
@@ -7083,7 +6982,6 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   wire \OTHER_RATIO_GENERATE.Shift_Reg_reg_n_0_[5] ;
   wire \OTHER_RATIO_GENERATE.Shift_Reg_reg_n_0_[6] ;
   wire \OTHER_RATIO_GENERATE.Shift_Reg_reg_n_0_[7] ;
-  wire \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ;
   wire \OTHER_RATIO_GENERATE.rx_shft_reg_s[0]_i_1_n_0 ;
   wire \OTHER_RATIO_GENERATE.rx_shft_reg_s[0]_i_2_n_0 ;
   wire \OTHER_RATIO_GENERATE.sck_o_int_i_1_n_0 ;
@@ -7127,8 +7025,6 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   wire SR_5_Tx_Empty_d1;
   wire SR_5_Tx_comeplete_Empty;
   wire SR_5_Tx_comeplete_Empty_i_1_n_0;
-  wire \SS_O[0]_i_1_n_0 ;
-  wire \SS_O[1]_i_1_n_0 ;
   wire Slave_MODF_strobe0;
   wire drr_Overrun_int;
   wire dtr_underrun_int;
@@ -7143,13 +7039,14 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   wire load;
   wire modf_strobe_int;
   wire out;
-  wire p_18_out;
-  wire p_35_out;
+  wire p_17_out;
+  wire p_19_out20_out;
+  wire p_37_out;
   wire p_3_in;
   wire p_6_out;
   wire p_7_out;
   wire ram_full_fb_i_reg;
-  wire [0:1]register_Data_slvsel_int;
+  wire register_Data_slvsel_int;
   wire [0:7]rx_shft_reg_mode_0011;
   wire [0:7]rx_shft_reg_mode_0110;
   wire [0:7]rx_shft_reg_s;
@@ -7169,16 +7066,15 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   wire spicr_1_spe_to_spi_clk;
   wire spicr_3_cpol_to_spi_clk;
   wire spicr_4_cpha_to_spi_clk;
-  wire spicr_7_ss_to_spi_clk;
   wire spicr_9_lsb_to_spi_clk;
   wire spisel;
   wire spisel_d1;
   wire spisel_d1_reg;
   wire spisel_once_1;
   wire spisel_once_1_i_1_n_0;
-  wire [1:0]ss_o;
+  wire [0:0]ss_o;
   wire ss_t;
-  wire stop_clock51_in;
+  wire stop_clock52_in;
   wire stop_clock_reg;
   wire transfer_start_d1;
   wire transfer_start_d1_reg_0;
@@ -7211,7 +7107,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(dtr_underrun_int),
         .I5(SPICR_2_MST_N_SLV_to_spi_clk),
         .O(\DTR_UNDERRUN_FIFO_EXIST_GEN.DTR_underrun_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \DTR_UNDERRUN_FIFO_EXIST_GEN.DTR_underrun_i_2 
@@ -7231,38 +7127,37 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I1(Rx_FIFO_Full_Fifo_org),
         .I2(spiXfer_done_int),
         .I3(drr_Overrun_int),
-        .O(p_35_out));
+        .O(p_37_out));
   FDRE \LOCAL_TX_EMPTY_FIFO_12_GEN.DRR_Overrun_reg_int_reg 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(p_35_out),
+        .D(p_37_out),
         .Q(drr_Overrun_int),
         .R(Rst_to_spi));
   LUT6 #(
-    .INIT(64'h0353035003500350)) 
+    .INIT(64'h111111110000FCCC)) 
     \LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_1 
        (.I0(SR_5_Tx_comeplete_Empty),
-        .I1(out),
-        .I2(spi_cntrl_ps[1]),
-        .I3(spi_cntrl_ps[0]),
-        .I4(SPICR_2_MST_N_SLV_to_spi_clk),
-        .I5(\LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_2_n_0 ),
+        .I1(spi_cntrl_ps[0]),
+        .I2(SPICR_2_MST_N_SLV_to_spi_clk),
+        .I3(\LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_2_n_0 ),
+        .I4(out),
+        .I5(spi_cntrl_ps[1]),
         .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_2 
        (.I0(transfer_start_d1_reg_0),
         .I1(transfer_start_d1),
         .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[0]_i_2_n_0 ));
-  LUT5 #(
-    .INIT(32'hA8AAAAAA)) 
+  LUT4 #(
+    .INIT(16'hAA8A)) 
     \LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_1 
        (.I0(\LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_2_n_0 ),
         .I1(spiXfer_done_int),
-        .I2(spi_cntrl_ps[0]),
-        .I3(register_Data_slvsel_int[0]),
-        .I4(register_Data_slvsel_int[1]),
+        .I2(register_Data_slvsel_int),
+        .I3(spi_cntrl_ps[0]),
         .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.spi_cntrl_ps[1]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'h000022AA3F000000)) 
@@ -7287,47 +7182,36 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .Q(spi_cntrl_ps[1]),
         .R(Rst_to_spi));
   LUT6 #(
-    .INIT(64'hFFAEFFAEFFAEEEAE)) 
+    .INIT(64'hFFFFFFFFFCAC0000)) 
     \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_1 
-       (.I0(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2_n_0 ),
-        .I1(stop_clock_reg),
-        .I2(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3_n_0 ),
-        .I3(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_4_n_0 ),
-        .I4(\LOGIC_GENERATION_FDR.SPISSR_SYNC_GEN[0].SPISSR_SYNC_AXI_2_SPI_2 ),
-        .I5(spiXfer_done_int),
-        .O(stop_clock51_in));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
-  LUT5 #(
-    .INIT(32'h44040404)) 
-    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2 
-       (.I0(spi_cntrl_ps[1]),
-        .I1(out),
-        .I2(spi_cntrl_ps[0]),
-        .I3(spiXfer_done_int),
-        .I4(SR_5_Tx_comeplete_Empty),
-        .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+       (.I0(spicr_0_loop_to_spi_clk),
+        .I1(register_Data_slvsel_int),
+        .I2(spiXfer_done_int),
+        .I3(out),
+        .I4(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2_n_0 ),
+        .I5(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3_n_0 ),
+        .O(stop_clock52_in));
   LUT3 #(
-    .INIT(8'hFB)) 
-    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3 
+    .INIT(8'h08)) 
+    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2 
        (.I0(SR_5_Tx_comeplete_Empty),
         .I1(spi_cntrl_ps[1]),
         .I2(spi_cntrl_ps[0]),
-        .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3_n_0 ));
+        .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h4040404040004040)) 
-    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_4 
-       (.I0(spi_cntrl_ps[0]),
-        .I1(spi_cntrl_ps[1]),
-        .I2(SR_5_Tx_comeplete_Empty),
-        .I3(out),
-        .I4(spiXfer_done_int),
-        .I5(spicr_0_loop_to_spi_clk),
-        .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_4_n_0 ));
+    .INIT(64'h0A0A320232023202)) 
+    \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3 
+       (.I0(out),
+        .I1(spi_cntrl_ps[0]),
+        .I2(spi_cntrl_ps[1]),
+        .I3(stop_clock_reg),
+        .I4(SR_5_Tx_comeplete_Empty),
+        .I5(spiXfer_done_int),
+        .O(\LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_i_3_n_0 ));
   FDRE \LOCAL_TX_EMPTY_FIFO_12_GEN.stop_clock_reg_reg 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(stop_clock51_in),
+        .D(stop_clock52_in),
         .Q(stop_clock_reg),
         .R(Rst_to_spi));
   LUT2 #(
@@ -7336,7 +7220,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
        (.I0(slave_MODF_strobe_int),
         .I1(\LOGIC_GENERATION_FDR.Slave_MODF_strobe_cdc_from_spi_int_2_reg ),
         .O(p_7_out));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT3 #(
     .INIT(8'hA6)) 
     \LOGIC_GENERATION_FDR.spisel_pulse_cdc_from_spi_int_2_i_1 
@@ -7356,7 +7240,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
        (.I0(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I1(load),
         .O(Count[0]));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT3 #(
     .INIT(8'h06)) 
     \OTHER_RATIO_GENERATE.Count[1]_i_1 
@@ -7364,7 +7248,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I1(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I2(load),
         .O(Count[1]));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT4 #(
     .INIT(16'h1540)) 
     \OTHER_RATIO_GENERATE.Count[2]_i_1 
@@ -7373,7 +7257,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I2(\OTHER_RATIO_GENERATE.Count_reg_n_0_[1] ),
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[2] ),
         .O(\OTHER_RATIO_GENERATE.Count[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT5 #(
     .INIT(32'h15554000)) 
     \OTHER_RATIO_GENERATE.Count[3]_i_1 
@@ -7402,7 +7286,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(sck_i_d1),
         .I5(SPISEL_sync),
         .O(\OTHER_RATIO_GENERATE.Count[4]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT5 #(
     .INIT(32'h40000000)) 
     \OTHER_RATIO_GENERATE.Count[4]_i_3 
@@ -7412,7 +7296,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[0] ),
         .I4(\OTHER_RATIO_GENERATE.Count_reg_n_0_[1] ),
         .O(\OTHER_RATIO_GENERATE.Count[4]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \OTHER_RATIO_GENERATE.Count[4]_i_4 
@@ -7459,7 +7343,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\OTHER_RATIO_GENERATE.Count[4]_i_3_n_0 ),
         .Q(load),
         .R(\OTHER_RATIO_GENERATE.Count[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \OTHER_RATIO_GENERATE.Count_trigger_d1_i_1 
@@ -7489,7 +7373,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\OTHER_RATIO_GENERATE.Count_trigger_i_1_n_0 ),
         .Q(Count_trigger),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT5 #(
     .INIT(32'hFFA9FFFF)) 
     \OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1 
@@ -7499,7 +7383,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I3(Rst_to_spi),
         .I4(transfer_start_d1_reg_0),
         .O(\OTHER_RATIO_GENERATE.Ratio_Count[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'hF9FF)) 
     \OTHER_RATIO_GENERATE.Ratio_Count[1]_i_1 
@@ -7508,7 +7392,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I2(Rst_to_spi),
         .I3(transfer_start_d1_reg_0),
         .O(\OTHER_RATIO_GENERATE.Ratio_Count[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT3 #(
     .INIT(8'hDF)) 
     \OTHER_RATIO_GENERATE.Ratio_Count[2]_i_1 
@@ -7713,12 +7597,12 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
        (.I0(sck_d1),
         .I1(transfer_start_d1_reg_0),
         .I2(sck_d2),
-        .O(p_18_out));
+        .O(p_19_out20_out));
   FDRE #(
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[0] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[1]),
         .Q(rx_shft_reg_mode_0011[0]),
         .R(Rst_to_spi));
@@ -7726,7 +7610,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[1] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[2]),
         .Q(rx_shft_reg_mode_0011[1]),
         .R(Rst_to_spi));
@@ -7734,7 +7618,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[2] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[3]),
         .Q(rx_shft_reg_mode_0011[2]),
         .R(Rst_to_spi));
@@ -7742,7 +7626,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[3] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[4]),
         .Q(rx_shft_reg_mode_0011[3]),
         .R(Rst_to_spi));
@@ -7750,7 +7634,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[4] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[5]),
         .Q(rx_shft_reg_mode_0011[4]),
         .R(Rst_to_spi));
@@ -7758,7 +7642,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[5] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[6]),
         .Q(rx_shft_reg_mode_0011[5]),
         .R(Rst_to_spi));
@@ -7766,7 +7650,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[6] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(rx_shft_reg_mode_0011[7]),
         .Q(rx_shft_reg_mode_0011[6]),
         .R(Rst_to_spi));
@@ -7774,7 +7658,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0011_reg[7] 
        (.C(ext_spi_clk),
-        .CE(p_18_out),
+        .CE(p_19_out20_out),
         .D(D),
         .Q(rx_shft_reg_mode_0011[7]),
         .R(Rst_to_spi));
@@ -7784,12 +7668,12 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
        (.I0(sck_d2),
         .I1(transfer_start_d1_reg_0),
         .I2(sck_d1),
-        .O(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ));
+        .O(p_17_out));
   FDRE #(
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[0] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[1]),
         .Q(rx_shft_reg_mode_0110[0]),
         .R(Rst_to_spi));
@@ -7797,7 +7681,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[1] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[2]),
         .Q(rx_shft_reg_mode_0110[1]),
         .R(Rst_to_spi));
@@ -7805,7 +7689,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[2] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[3]),
         .Q(rx_shft_reg_mode_0110[2]),
         .R(Rst_to_spi));
@@ -7813,7 +7697,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[3] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[4]),
         .Q(rx_shft_reg_mode_0110[3]),
         .R(Rst_to_spi));
@@ -7821,7 +7705,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[4] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[5]),
         .Q(rx_shft_reg_mode_0110[4]),
         .R(Rst_to_spi));
@@ -7829,7 +7713,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[5] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[6]),
         .Q(rx_shft_reg_mode_0110[5]),
         .R(Rst_to_spi));
@@ -7837,7 +7721,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[6] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(rx_shft_reg_mode_0110[7]),
         .Q(rx_shft_reg_mode_0110[6]),
         .R(Rst_to_spi));
@@ -7845,7 +7729,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
     .INIT(1'b0)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110_reg[7] 
        (.C(ext_spi_clk),
-        .CE(\OTHER_RATIO_GENERATE.rx_shft_reg_mode_0110[0]_i_1_n_0 ),
+        .CE(p_17_out),
         .D(D),
         .Q(rx_shft_reg_mode_0110[7]),
         .R(Rst_to_spi));
@@ -7978,7 +7862,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\OTHER_RATIO_GENERATE.sck_o_int_i_1_n_0 ),
         .Q(sck_o_int),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT3 #(
     .INIT(8'h08)) 
     \OTHER_RATIO_GENERATE.serial_dout_int_i_1 
@@ -8005,7 +7889,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(\RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST_i_2_n_0 ),
         .Q(sck_o),
         .R(R));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT5 #(
     .INIT(32'hBAAA8AAA)) 
     \RATIO_NOT_EQUAL_4_GENERATE.SCK_O_NQ_4_NO_STARTUP_USED.SCK_O_NE_4_FDRE_INST_i_2 
@@ -8025,7 +7909,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I4(SPIXfer_done_int_d1_reg_0),
         .I5(Rst_to_spi),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_3 
@@ -8034,7 +7918,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I2(\OTHER_RATIO_GENERATE.Count_reg_n_0_[2] ),
         .I3(\OTHER_RATIO_GENERATE.Count_reg_n_0_[3] ),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_4 
@@ -8042,7 +7926,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I1(Ratio_Count[1]),
         .I2(Ratio_Count[2]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_reg_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT4 #(
     .INIT(16'h7FFF)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.FIFO_PRESENT_GEN.SPIXfer_done_int_i_5 
@@ -8136,7 +8020,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I3(rx_shft_reg_mode_0011[2]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[2]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3_n_0 ),
@@ -8148,21 +8032,21 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
   LUT4 #(
     .INIT(16'h14D7)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2 
-       (.I0(rx_shft_reg_mode_0110[3]),
-        .I1(spicr_4_cpha_to_spi_clk),
-        .I2(spicr_3_cpol_to_spi_clk),
-        .I3(rx_shft_reg_mode_0011[3]),
-        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ));
-  LUT4 #(
-    .INIT(16'h14D7)) 
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3 
        (.I0(rx_shft_reg_mode_0110[4]),
         .I1(spicr_4_cpha_to_spi_clk),
         .I2(spicr_3_cpol_to_spi_clk),
         .I3(rx_shft_reg_mode_0011[4]),
+        .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ));
+  LUT4 #(
+    .INIT(16'h14D7)) 
+    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3 
+       (.I0(rx_shft_reg_mode_0110[3]),
+        .I1(spicr_4_cpha_to_spi_clk),
+        .I2(spicr_3_cpol_to_spi_clk),
+        .I3(rx_shft_reg_mode_0011[3]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3_n_0 ));
   LUT6 #(
-    .INIT(64'h3F305F5F3F305050)) 
+    .INIT(64'h5F503F3F5F503030)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[4]_i_1 
        (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_3_n_0 ),
         .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[3]_i_2_n_0 ),
@@ -8192,10 +8076,10 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .I5(rx_shft_reg_s[6]),
         .O(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[6]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h5F503F3F5F503030)) 
+    .INIT(64'h3F305F5F3F305050)) 
     \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[7]_i_1 
-       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ),
-        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ),
+       (.I0(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_2_n_0 ),
+        .I1(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int[0]_i_3_n_0 ),
         .I2(SPICR_2_MST_N_SLV_to_spi_clk),
         .I3(rx_shft_reg_s[0]),
         .I4(spicr_9_lsb_to_spi_clk),
@@ -8291,7 +8175,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(SPIXfer_done_int_d1_reg_0),
         .Q(SPIXfer_done_int_d1),
         .R(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h2)) 
     SPIXfer_done_int_pulse_d1_i_1
@@ -8356,7 +8240,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(out),
         .Q(SR_5_Tx_Empty_d1),
         .R(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT4 #(
     .INIT(16'hAE00)) 
     SR_5_Tx_comeplete_Empty_i_1
@@ -8371,35 +8255,11 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(SR_5_Tx_comeplete_Empty_i_1_n_0),
         .Q(SR_5_Tx_comeplete_Empty),
         .R(1'b0));
-  LUT5 #(
-    .INIT(32'hFFFFAAFB)) 
-    \SS_O[0]_i_1 
-       (.I0(register_Data_slvsel_int[1]),
-        .I1(transfer_start_d1),
-        .I2(stop_clock51_in),
-        .I3(spicr_7_ss_to_spi_clk),
-        .I4(Rst_to_spi),
-        .O(\SS_O[0]_i_1_n_0 ));
-  LUT5 #(
-    .INIT(32'hFFFFAAFB)) 
-    \SS_O[1]_i_1 
-       (.I0(register_Data_slvsel_int[0]),
-        .I1(transfer_start_d1),
-        .I2(stop_clock51_in),
-        .I3(spicr_7_ss_to_spi_clk),
-        .I4(Rst_to_spi),
-        .O(\SS_O[1]_i_1_n_0 ));
   FDRE \SS_O_reg[0] 
        (.C(ext_spi_clk),
         .CE(1'b1),
-        .D(\SS_O[0]_i_1_n_0 ),
-        .Q(ss_o[0]),
-        .R(1'b0));
-  FDRE \SS_O_reg[1] 
-       (.C(ext_spi_clk),
-        .CE(1'b1),
-        .D(\SS_O[1]_i_1_n_0 ),
-        .Q(ss_o[1]),
+        .D(\LOGIC_GENERATION_FDR.SPICR_7_SS_AX2S_2 ),
+        .Q(ss_o),
         .R(1'b0));
   FDRE Slave_MODF_strobe_reg
        (.C(ext_spi_clk),
@@ -8441,7 +8301,7 @@ module system_axi_quad_spi_0_0_qspi_mode_0_module
         .D(spisel_d1),
         .Q(spisel_d1_reg),
         .S(Rst_to_spi));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT3 #(
     .INIT(8'h8A)) 
     spisel_once_1_i_1
@@ -8473,90 +8333,34 @@ endmodule
 module system_axi_quad_spi_0_0_qspi_status_slave_sel_reg
    (sr_3_MODF_int,
     SPISSR_frm_axi_clk,
-    D,
-    modf_reg_0,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
     s_axi_aclk,
     reset2ip_reset_int,
-    Bus_RNW_reg_reg,
-    Bus_RNW_reg_reg_0,
-    Q,
-    p_15_in,
-    irpt_rdack144_out,
-    p_1_in26_in,
-    bus2ip_rdce_int,
-    spicr_4_cpha_frm_axi_clk,
-    \ip_irpt_enable_reg_reg[4] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] );
+    \GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] );
   output sr_3_MODF_int;
-  output [0:1]SPISSR_frm_axi_clk;
-  output [0:0]D;
-  input modf_reg_0;
+  output SPISSR_frm_axi_clk;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input s_axi_aclk;
   input reset2ip_reset_int;
-  input Bus_RNW_reg_reg;
-  input Bus_RNW_reg_reg_0;
-  input [0:0]Q;
-  input p_15_in;
-  input irpt_rdack144_out;
-  input p_1_in26_in;
-  input [1:0]bus2ip_rdce_int;
-  input spicr_4_cpha_frm_axi_clk;
-  input [0:0]\ip_irpt_enable_reg_reg[4] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
+  input \GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ;
 
-  wire Bus_RNW_reg_reg;
-  wire Bus_RNW_reg_reg_0;
-  wire [0:0]D;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2_n_0 ;
-  wire [0:0]Q;
-  wire [0:1]SPISSR_frm_axi_clk;
-  wire [1:0]bus2ip_rdce_int;
-  wire [0:0]\ip_irpt_enable_reg_reg[4] ;
-  wire irpt_rdack144_out;
-  wire modf_reg_0;
-  wire p_15_in;
-  wire p_1_in26_in;
+  wire \GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  wire SPISSR_frm_axi_clk;
   wire reset2ip_reset_int;
   wire s_axi_aclk;
-  wire spicr_4_cpha_frm_axi_clk;
   wire sr_3_MODF_int;
 
-  LUT5 #(
-    .INIT(32'hFFEAEAEA)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_1 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2_n_0 ),
-        .I1(Q),
-        .I2(p_15_in),
-        .I3(irpt_rdack144_out),
-        .I4(p_1_in26_in),
-        .O(D));
-  LUT6 #(
-    .INIT(64'hFFFFF888F888F888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2 
-       (.I0(sr_3_MODF_int),
-        .I1(bus2ip_rdce_int[0]),
-        .I2(spicr_4_cpha_frm_axi_clk),
-        .I3(bus2ip_rdce_int[1]),
-        .I4(\ip_irpt_enable_reg_reg[4] ),
-        .I5(\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[27]_i_2_n_0 ));
   FDSE \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] 
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(Bus_RNW_reg_reg_0),
-        .Q(SPISSR_frm_axi_clk[0]),
-        .S(reset2ip_reset_int));
-  FDSE \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] 
-       (.C(s_axi_aclk),
-        .CE(1'b1),
-        .D(Bus_RNW_reg_reg),
-        .Q(SPISSR_frm_axi_clk[1]),
+        .D(\GEN_BKEND_CE_REGISTERS[28].ce_out_i_reg[28] ),
+        .Q(SPISSR_frm_axi_clk),
         .S(reset2ip_reset_int));
   FDRE modf_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(modf_reg_0),
+        .D(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .Q(sr_3_MODF_int),
         .R(1'b0));
 endmodule
@@ -8587,7 +8391,7 @@ module system_axi_quad_spi_0_0_reset_sync_module
   wire reset2ip_reset_int;
   wire transfer_start_reg;
 
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \OTHER_RATIO_GENERATE.rx_shft_reg_s[0]_i_3 
@@ -8616,7 +8420,7 @@ module system_axi_quad_spi_0_0_reset_sync_module
         .D(Soft_Reset_frm_axi_d1),
         .Q(Rst_to_spi),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT2 #(
     .INIT(4'hE)) 
     Slave_MODF_strobe_i_1
@@ -8628,216 +8432,230 @@ endmodule
 (* ORIG_REF_NAME = "slave_attachment" *) 
 module system_axi_quad_spi_0_0_slave_attachment
    (SR,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ,
     Receive_ip2bus_error_reg,
     Transmit_ip2bus_error_reg,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
+    \SPICR_data_int_reg[0] ,
     s_axi_rresp,
     ipif_glbl_irpt_enable_reg_reg,
     s_axi_rvalid,
     s_axi_bvalid,
     s_axi_bresp,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ,
-    s_axi_wready,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ,
+    ip2Bus_WrAck_intr_reg_hole_d1_reg,
     s_axi_arready,
+    s_axi_wready,
+    \gaf.ram_almost_full_i_reg ,
     SPICR_data_int_reg0,
-    wr_ce_or_reduce_core_cmb,
     bus2ip_wrce_int,
-    reset2ip_reset_int,
     intr2bus_rdack0,
     irpt_rdack,
     D,
-    p_15_in,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ,
-    bus2ip_rdce_int,
-    interrupt_wrce_strb,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ,
     irpt_wrack,
+    interrupt_wrce_strb,
     E,
-    rd_ce_or_reduce_core_cmb,
+    modf_reg,
+    ram_empty_i_reg,
     Transmit_ip2bus_error0,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ,
     IP2Bus_Error_1,
-    p_5_in_0,
+    \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ,
     reset_trig0,
     sw_rst_cond,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ,
+    ip2Bus_WrAck_intr_reg_hole0,
     ip2Bus_RdAck_intr_reg_hole0,
     intr_controller_rd_ce_or_reduce,
-    ip2Bus_WrAck_intr_reg_hole0,
-    intr_controller_wr_ce_or_reduce,
-    p_39_out__0,
+    rd_ce_or_reduce_core_cmb,
+    \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ,
     ipif_glbl_irpt_enable_reg_reg_0,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ,
-    \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
-    \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ,
-    \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ,
+    \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ,
     s_axi_rdata,
     s_axi_aclk,
     IP2Bus_Error,
     s_axi_arvalid,
-    ip2Bus_WrAck_core_reg_d1,
-    p_16_out,
-    p_15_out,
-    s_axi_aresetn,
-    s_axi_awvalid,
-    s_axi_wvalid,
     s_axi_rready,
     s_axi_bready,
-    ip2Bus_WrAck_core_reg_1,
-    \RESET_FLOPS[15].RST_FLOPS ,
-    irpt_rdack_d1,
     s_axi_wstrb,
+    ip2Bus_RdAck_core_reg,
+    tx_fifo_full,
+    s_axi_aresetn,
+    p_16_out,
+    p_15_out,
+    s_axi_wvalid,
+    s_axi_awvalid,
+    ip2Bus_WrAck_core_reg_1,
+    irpt_rdack_d1,
+    ipif_glbl_irpt_enable_reg,
     Q,
+    rx_fifo_count,
+    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
+    SPISSR_frm_axi_clk,
+    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ,
+    p_1_in35_in,
+    p_1_in32_in,
+    \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ,
+    p_1_in29_in,
+    p_1_in26_in,
     p_1_in23_in,
-    \ip_irpt_enable_reg_reg[7] ,
     p_1_in20_in,
     p_1_in17_in,
+    p_1_in14_in,
+    spicr_8_tr_inhibit_frm_axi_clk,
+    irpt_wrack_d1,
+    \goreg_dm.dout_i_reg[7] ,
+    spicr_7_ss_frm_axi_clk,
+    spicr_6_rxfifo_rst_frm_axi_clk,
     spisel_d1_reg_to_axi_clk,
     spicr_5_txfifo_rst_frm_axi_clk,
-    ipif_glbl_irpt_enable_reg,
-    irpt_wrack_d1,
-    ip2Bus_RdAck_core_reg,
-    spicr_6_rxfifo_rst_frm_axi_clk,
-    spicr_7_ss_frm_axi_clk,
+    sr_3_MODF_int,
+    spicr_4_cpha_frm_axi_clk,
     Tx_FIFO_Full_int,
-    spicr_9_lsb_frm_axi_clk,
+    spicr_3_cpol_frm_axi_clk,
     out,
+    scndry_out,
+    spicr_1_spe_frm_axi_clk,
     Tx_FIFO_Empty_SPISR_to_axi_clk,
-    p_4_in_1,
+    tx_fifo_count,
+    rx_fifo_empty_i,
+    spicr_0_loop_frm_axi_clk,
+    spicr_2_mst_n_slv_frm_axi_clk,
+    spicr_9_lsb_frm_axi_clk,
     Receive_ip2bus_error_reg_0,
+    p_4_in,
     sw_rst_cond_d1,
     s_axi_wdata,
-    tx_fifo_full,
-    ip2Bus_RdAck_intr_reg_hole_d1,
+    ip2Bus_WrAck_core_reg_d1,
     ip2Bus_WrAck_intr_reg_hole_d1,
+    ip2Bus_RdAck_intr_reg_hole_d1,
     s_axi_araddr,
     s_axi_awaddr,
-    SPISSR_frm_axi_clk,
     \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] );
   output SR;
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
   output Receive_ip2bus_error_reg;
   output Transmit_ip2bus_error_reg;
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
-  output \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
+  output \SPICR_data_int_reg[0] ;
   output [0:0]s_axi_rresp;
   output ipif_glbl_irpt_enable_reg_reg;
   output s_axi_rvalid;
   output s_axi_bvalid;
   output [0:0]s_axi_bresp;
-  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ;
-  output s_axi_wready;
+  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
+  output ip2Bus_WrAck_intr_reg_hole_d1_reg;
   output s_axi_arready;
+  output s_axi_wready;
+  output \gaf.ram_almost_full_i_reg ;
   output SPICR_data_int_reg0;
-  output wr_ce_or_reduce_core_cmb;
   output [0:0]bus2ip_wrce_int;
-  output reset2ip_reset_int;
   output intr2bus_rdack0;
   output irpt_rdack;
-  output [4:0]D;
-  output p_15_in;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ;
-  output [1:0]bus2ip_rdce_int;
-  output interrupt_wrce_strb;
+  output [10:0]D;
+  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ;
   output irpt_wrack;
+  output interrupt_wrce_strb;
   output [0:0]E;
-  output rd_ce_or_reduce_core_cmb;
+  output modf_reg;
+  output ram_empty_i_reg;
   output Transmit_ip2bus_error0;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ;
   output IP2Bus_Error_1;
-  output p_5_in_0;
+  output \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ;
   output reset_trig0;
   output sw_rst_cond;
+  output \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
+  output ip2Bus_WrAck_intr_reg_hole0;
   output ip2Bus_RdAck_intr_reg_hole0;
   output intr_controller_rd_ce_or_reduce;
-  output ip2Bus_WrAck_intr_reg_hole0;
-  output intr_controller_wr_ce_or_reduce;
-  output p_39_out__0;
+  output rd_ce_or_reduce_core_cmb;
+  output \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   output ipif_glbl_irpt_enable_reg_reg_0;
-  output \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
-  output \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ;
-  output \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ;
+  output \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
   output [10:0]s_axi_rdata;
   input s_axi_aclk;
   input IP2Bus_Error;
   input s_axi_arvalid;
-  input ip2Bus_WrAck_core_reg_d1;
-  input p_16_out;
-  input p_15_out;
-  input s_axi_aresetn;
-  input s_axi_awvalid;
-  input s_axi_wvalid;
   input s_axi_rready;
   input s_axi_bready;
-  input ip2Bus_WrAck_core_reg_1;
-  input \RESET_FLOPS[15].RST_FLOPS ;
-  input irpt_rdack_d1;
   input [1:0]s_axi_wstrb;
-  input [2:0]Q;
+  input ip2Bus_RdAck_core_reg;
+  input tx_fifo_full;
+  input s_axi_aresetn;
+  input p_16_out;
+  input p_15_out;
+  input s_axi_wvalid;
+  input s_axi_awvalid;
+  input ip2Bus_WrAck_core_reg_1;
+  input irpt_rdack_d1;
+  input ipif_glbl_irpt_enable_reg;
+  input [8:0]Q;
+  input [1:0]rx_fifo_count;
+  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  input SPISSR_frm_axi_clk;
+  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
+  input p_1_in35_in;
+  input p_1_in32_in;
+  input \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
+  input p_1_in29_in;
+  input p_1_in26_in;
   input p_1_in23_in;
-  input [2:0]\ip_irpt_enable_reg_reg[7] ;
   input p_1_in20_in;
   input p_1_in17_in;
+  input p_1_in14_in;
+  input spicr_8_tr_inhibit_frm_axi_clk;
+  input irpt_wrack_d1;
+  input [7:0]\goreg_dm.dout_i_reg[7] ;
+  input spicr_7_ss_frm_axi_clk;
+  input spicr_6_rxfifo_rst_frm_axi_clk;
   input spisel_d1_reg_to_axi_clk;
   input spicr_5_txfifo_rst_frm_axi_clk;
-  input ipif_glbl_irpt_enable_reg;
-  input irpt_wrack_d1;
-  input ip2Bus_RdAck_core_reg;
-  input spicr_6_rxfifo_rst_frm_axi_clk;
-  input spicr_7_ss_frm_axi_clk;
+  input sr_3_MODF_int;
+  input spicr_4_cpha_frm_axi_clk;
   input Tx_FIFO_Full_int;
-  input spicr_9_lsb_frm_axi_clk;
+  input spicr_3_cpol_frm_axi_clk;
   input out;
+  input scndry_out;
+  input spicr_1_spe_frm_axi_clk;
   input Tx_FIFO_Empty_SPISR_to_axi_clk;
-  input p_4_in_1;
+  input [1:0]tx_fifo_count;
+  input rx_fifo_empty_i;
+  input spicr_0_loop_frm_axi_clk;
+  input spicr_2_mst_n_slv_frm_axi_clk;
+  input spicr_9_lsb_frm_axi_clk;
   input Receive_ip2bus_error_reg_0;
+  input p_4_in;
   input sw_rst_cond_d1;
-  input [6:0]s_axi_wdata;
-  input tx_fifo_full;
-  input ip2Bus_RdAck_intr_reg_hole_d1;
+  input [4:0]s_axi_wdata;
+  input ip2Bus_WrAck_core_reg_d1;
   input ip2Bus_WrAck_intr_reg_hole_d1;
+  input ip2Bus_RdAck_intr_reg_hole_d1;
   input [4:0]s_axi_araddr;
   input [4:0]s_axi_awaddr;
-  input [0:1]SPISSR_frm_axi_clk;
   input [10:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] ;
 
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ;
-  wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  wire [4:0]D;
+  wire [10:0]D;
   wire [0:0]E;
+  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  wire \GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ;
   wire \INCLUDE_DPHASE_TIMER.dpto_cnt[5]_i_1_n_0 ;
   wire [5:0]\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 ;
   wire IP2Bus_Error;
   wire IP2Bus_Error_1;
   wire [10:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ;
+  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_i_2_n_0 ;
+  wire \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ;
-  wire [2:0]Q;
-  wire \QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/SOFT_RESET_I/data_is_non_reset_match__4 ;
-  wire \RESET_FLOPS[15].RST_FLOPS ;
+  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ;
+  wire \LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ;
+  wire [8:0]Q;
   wire Receive_ip2bus_error_reg;
   wire Receive_ip2bus_error_reg_0;
   wire SPICR_data_int_reg0;
+  wire \SPICR_data_int_reg[0] ;
   wire \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ;
-  wire \SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ;
-  wire \SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ;
-  wire [0:1]SPISSR_frm_axi_clk;
+  wire SPISSR_frm_axi_clk;
   wire SR;
   wire Transmit_ip2bus_error0;
   wire Transmit_ip2bus_error_reg;
@@ -8854,15 +8672,13 @@ module system_axi_quad_spi_0_0_slave_attachment
   wire \bus2ip_addr_i_reg_n_0_[4] ;
   wire \bus2ip_addr_i_reg_n_0_[5] ;
   wire \bus2ip_addr_i_reg_n_0_[6] ;
-  wire [3:3]bus2ip_be_int;
-  wire [1:0]bus2ip_rdce_int;
   wire bus2ip_rnw_i_reg_n_0;
   wire [0:0]bus2ip_wrce_int;
-  wire eqOp__4;
+  wire \gaf.ram_almost_full_i_reg ;
+  wire [7:0]\goreg_dm.dout_i_reg[7] ;
   wire interrupt_wrce_strb;
   wire intr2bus_rdack0;
   wire intr_controller_rd_ce_or_reduce;
-  wire intr_controller_wr_ce_or_reduce;
   wire ip2Bus_RdAck_core_reg;
   wire ip2Bus_RdAck_intr_reg_hole0;
   wire ip2Bus_RdAck_intr_reg_hole_d1;
@@ -8870,7 +8686,7 @@ module system_axi_quad_spi_0_0_slave_attachment
   wire ip2Bus_WrAck_core_reg_d1;
   wire ip2Bus_WrAck_intr_reg_hole0;
   wire ip2Bus_WrAck_intr_reg_hole_d1;
-  wire [2:0]\ip_irpt_enable_reg_reg[7] ;
+  wire ip2Bus_WrAck_intr_reg_hole_d1_reg;
   wire ipif_glbl_irpt_enable_reg;
   wire ipif_glbl_irpt_enable_reg_reg;
   wire ipif_glbl_irpt_enable_reg_reg_0;
@@ -8880,25 +8696,30 @@ module system_axi_quad_spi_0_0_slave_attachment
   wire irpt_wrack_d1;
   wire is_read;
   wire is_read_i_1_n_0;
-  wire is_write;
+  wire is_read_i_2_n_0;
   wire is_write_i_1_n_0;
   wire is_write_reg_n_0;
+  wire modf_reg;
   wire out;
   wire [1:0]p_0_out;
-  wire p_15_in;
   wire p_15_out;
   wire p_16_out;
+  wire p_1_in14_in;
   wire p_1_in17_in;
   wire p_1_in20_in;
   wire p_1_in23_in;
-  wire p_39_out__0;
-  wire p_4_in_1;
-  wire p_5_in_0;
+  wire p_1_in26_in;
+  wire p_1_in29_in;
+  wire p_1_in32_in;
+  wire p_1_in35_in;
+  wire p_4_in;
   wire [5:0]plusOp;
+  wire ram_empty_i_reg;
   wire rd_ce_or_reduce_core_cmb;
-  wire reset2ip_reset_int;
   wire reset_trig0;
   wire rst_i_1_n_0;
+  wire [1:0]rx_fifo_count;
+  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire [4:0]s_axi_araddr;
   wire s_axi_aresetn;
@@ -8916,65 +8737,73 @@ module system_axi_quad_spi_0_0_slave_attachment
   wire s_axi_rready;
   wire [0:0]s_axi_rresp;
   wire s_axi_rvalid;
-  wire s_axi_rvalid_i0;
   wire s_axi_rvalid_i_i_1_n_0;
-  wire [6:0]s_axi_wdata;
+  wire [4:0]s_axi_wdata;
   wire s_axi_wready;
   wire [1:0]s_axi_wstrb;
   wire s_axi_wvalid;
+  wire scndry_out;
+  wire spicr_0_loop_frm_axi_clk;
+  wire spicr_1_spe_frm_axi_clk;
+  wire spicr_2_mst_n_slv_frm_axi_clk;
+  wire spicr_3_cpol_frm_axi_clk;
+  wire spicr_4_cpha_frm_axi_clk;
   wire spicr_5_txfifo_rst_frm_axi_clk;
   wire spicr_6_rxfifo_rst_frm_axi_clk;
   wire spicr_7_ss_frm_axi_clk;
+  wire spicr_8_tr_inhibit_frm_axi_clk;
   wire spicr_9_lsb_frm_axi_clk;
   wire spisel_d1_reg_to_axi_clk;
+  wire sr_3_MODF_int;
   wire start2;
   wire start2_i_1_n_0;
   wire [1:0]state;
-  wire state1__2;
+  wire \state[0]_i_2_n_0 ;
+  wire \state[1]_i_2_n_0 ;
   wire \state[1]_i_3_n_0 ;
   wire sw_rst_cond;
   wire sw_rst_cond_d1;
+  wire [1:0]tx_fifo_count;
   wire tx_fifo_full;
-  wire wr_ce_or_reduce_core_cmb;
 
   LUT1 #(
     .INIT(2'h1)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[0]_i_1 
        (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
         .O(plusOp[0]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[1]_i_1 
-       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
-        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
-        .O(plusOp[1]));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
-  LUT3 #(
-    .INIT(8'h78)) 
-    \INCLUDE_DPHASE_TIMER.dpto_cnt[2]_i_1 
-       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
-        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
-        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
-        .O(plusOp[2]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT4 #(
-    .INIT(16'h7F80)) 
-    \INCLUDE_DPHASE_TIMER.dpto_cnt[3]_i_1 
        (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
         .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
-        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
-        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [3]),
-        .O(plusOp[3]));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
-  LUT5 #(
-    .INIT(32'h7FFF8000)) 
-    \INCLUDE_DPHASE_TIMER.dpto_cnt[4]_i_1 
+        .O(plusOp[1]));
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  LUT3 #(
+    .INIT(8'h6A)) 
+    \INCLUDE_DPHASE_TIMER.dpto_cnt[2]_i_1 
        (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
         .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
         .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
-        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [3]),
-        .I4(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [4]),
+        .O(plusOp[2]));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT4 #(
+    .INIT(16'h6AAA)) 
+    \INCLUDE_DPHASE_TIMER.dpto_cnt[3]_i_1 
+       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [3]),
+        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
+        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
+        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
+        .O(plusOp[3]));
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  LUT5 #(
+    .INIT(32'h6AAAAAAA)) 
+    \INCLUDE_DPHASE_TIMER.dpto_cnt[4]_i_1 
+       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [4]),
+        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
+        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
+        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
+        .I4(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [3]),
         .O(plusOp[4]));
   LUT2 #(
     .INIT(4'h9)) 
@@ -8983,14 +8812,14 @@ module system_axi_quad_spi_0_0_slave_attachment
         .I1(state[1]),
         .O(\INCLUDE_DPHASE_TIMER.dpto_cnt[5]_i_1_n_0 ));
   LUT6 #(
-    .INIT(64'h7FFFFFFF80000000)) 
+    .INIT(64'h6AAAAAAAAAAAAAAA)) 
     \INCLUDE_DPHASE_TIMER.dpto_cnt[5]_i_2 
-       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [3]),
-        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
-        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
-        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
-        .I4(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [4]),
-        .I5(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [5]),
+       (.I0(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [5]),
+        .I1(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [3]),
+        .I2(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [1]),
+        .I3(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [0]),
+        .I4(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [2]),
+        .I5(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [4]),
         .O(plusOp[5]));
   FDRE \INCLUDE_DPHASE_TIMER.dpto_cnt_reg[0] 
        (.C(s_axi_aclk),
@@ -9029,45 +8858,39 @@ module system_axi_quad_spi_0_0_slave_attachment
         .Q(\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 [5]),
         .R(\INCLUDE_DPHASE_TIMER.dpto_cnt[5]_i_1_n_0 ));
   system_axi_quad_spi_0_0_address_decoder I_DECODER
-       (.\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] (\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 (\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3]_0 ),
-        .\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] (\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
-        .D(D),
+       (.D(D),
         .E(E),
+        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
+        .\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] (\GEN_IP_IRPT_STATUS_REG[2].GEN_REG_STATUS.ip_irpt_status_reg_reg[2] ),
         .\INCLUDE_DPHASE_TIMER.dpto_cnt_reg[5] (\INCLUDE_DPHASE_TIMER.dpto_cnt_reg__0 ),
         .IP2Bus_Error_1(IP2Bus_Error_1),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[25] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[26] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29]_0 ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[31]_0 ),
+        .\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg (\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_reg ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_d1_reg ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg ),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_reg_0 ),
+        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 (\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2 ),
+        .\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 (\LOGIC_GENERATION_FDR.TX_EMPT_4_SPISR_S2AX_2_0 ),
         .Q(start2),
         .Receive_ip2bus_error_reg(Receive_ip2bus_error_reg),
         .Receive_ip2bus_error_reg_0(Receive_ip2bus_error_reg_0),
         .SPICR_data_int_reg0(SPICR_data_int_reg0),
+        .\SPICR_data_int_reg[0] (\SPICR_data_int_reg[0] ),
         .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] (\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0] ),
-        .\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 (\SPISSR_WR_GEN[0].SPISSR_Data_reg_reg[0]_0 ),
-        .\SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] (\SPISSR_WR_GEN[1].SPISSR_Data_reg_reg[1] ),
         .SPISSR_frm_axi_clk(SPISSR_frm_axi_clk),
         .Transmit_ip2bus_error0(Transmit_ip2bus_error0),
         .Transmit_ip2bus_error_reg(Transmit_ip2bus_error_reg),
         .Tx_FIFO_Empty_SPISR_to_axi_clk(Tx_FIFO_Empty_SPISR_to_axi_clk),
         .Tx_FIFO_Full_int(Tx_FIFO_Full_int),
         .\bus2ip_addr_i_reg[6] ({\bus2ip_addr_i_reg_n_0_[6] ,\bus2ip_addr_i_reg_n_0_[5] ,\bus2ip_addr_i_reg_n_0_[4] ,\bus2ip_addr_i_reg_n_0_[3] ,\bus2ip_addr_i_reg_n_0_[2] }),
-        .bus2ip_be_int(bus2ip_be_int),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .bus2ip_rnw_i_reg(bus2ip_rnw_i_reg_n_0),
+        .bus2ip_rnw_i_reg_0(\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_i_2_n_0 ),
         .bus2ip_wrce_int(bus2ip_wrce_int),
-        .data_is_non_reset_match__4(\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/SOFT_RESET_I/data_is_non_reset_match__4 ),
-        .eqOp__4(eqOp__4),
-        .\goreg_dm.dout_i_reg[7] (Q),
+        .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
+        .\goreg_dm.dout_i_reg[7] (\goreg_dm.dout_i_reg[7] ),
         .interrupt_wrce_strb(interrupt_wrce_strb),
         .intr2bus_rdack0(intr2bus_rdack0),
         .intr_controller_rd_ce_or_reduce(intr_controller_rd_ce_or_reduce),
-        .intr_controller_wr_ce_or_reduce(intr_controller_wr_ce_or_reduce),
         .ip2Bus_RdAck_core_reg(ip2Bus_RdAck_core_reg),
         .ip2Bus_RdAck_intr_reg_hole0(ip2Bus_RdAck_intr_reg_hole0),
         .ip2Bus_RdAck_intr_reg_hole_d1(ip2Bus_RdAck_intr_reg_hole_d1),
@@ -9075,7 +8898,8 @@ module system_axi_quad_spi_0_0_slave_attachment
         .ip2Bus_WrAck_core_reg_d1(ip2Bus_WrAck_core_reg_d1),
         .ip2Bus_WrAck_intr_reg_hole0(ip2Bus_WrAck_intr_reg_hole0),
         .ip2Bus_WrAck_intr_reg_hole_d1(ip2Bus_WrAck_intr_reg_hole_d1),
-        .\ip_irpt_enable_reg_reg[7] (\ip_irpt_enable_reg_reg[7] ),
+        .ip2Bus_WrAck_intr_reg_hole_d1_reg(ip2Bus_WrAck_intr_reg_hole_d1_reg),
+        .\ip_irpt_enable_reg_reg[8] (Q),
         .ipif_glbl_irpt_enable_reg(ipif_glbl_irpt_enable_reg),
         .ipif_glbl_irpt_enable_reg_reg(ipif_glbl_irpt_enable_reg_reg),
         .ipif_glbl_irpt_enable_reg_reg_0(ipif_glbl_irpt_enable_reg_reg_0),
@@ -9085,55 +8909,57 @@ module system_axi_quad_spi_0_0_slave_attachment
         .irpt_wrack_d1(irpt_wrack_d1),
         .is_read(is_read),
         .is_write_reg(is_write_reg_n_0),
+        .modf_reg(modf_reg),
         .out(out),
-        .p_15_in(p_15_in),
         .p_15_out(p_15_out),
         .p_16_out(p_16_out),
+        .p_1_in14_in(p_1_in14_in),
         .p_1_in17_in(p_1_in17_in),
         .p_1_in20_in(p_1_in20_in),
         .p_1_in23_in(p_1_in23_in),
-        .p_39_out__0(p_39_out__0),
-        .p_4_in_1(p_4_in_1),
-        .p_5_in_0(p_5_in_0),
+        .p_1_in26_in(p_1_in26_in),
+        .p_1_in29_in(p_1_in29_in),
+        .p_1_in32_in(p_1_in32_in),
+        .p_1_in35_in(p_1_in35_in),
+        .p_4_in(p_4_in),
+        .ram_empty_i_reg(ram_empty_i_reg),
         .rd_ce_or_reduce_core_cmb(rd_ce_or_reduce_core_cmb),
-        .reset2ip_reset_int(reset2ip_reset_int),
         .reset_trig0(reset_trig0),
+        .rx_fifo_count(rx_fifo_count),
+        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_aresetn(s_axi_aresetn),
-        .s_axi_wdata({s_axi_wdata[6:4],s_axi_wdata[1:0]}),
+        .s_axi_arready(s_axi_arready),
+        .s_axi_wdata({s_axi_wdata[4],s_axi_wdata[0]}),
+        .s_axi_wready(s_axi_wready),
         .s_axi_wstrb(s_axi_wstrb[1]),
+        .scndry_out(scndry_out),
+        .spicr_0_loop_frm_axi_clk(spicr_0_loop_frm_axi_clk),
+        .spicr_1_spe_frm_axi_clk(spicr_1_spe_frm_axi_clk),
+        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
+        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
+        .spicr_4_cpha_frm_axi_clk(spicr_4_cpha_frm_axi_clk),
         .spicr_5_txfifo_rst_frm_axi_clk(spicr_5_txfifo_rst_frm_axi_clk),
         .spicr_6_rxfifo_rst_frm_axi_clk(spicr_6_rxfifo_rst_frm_axi_clk),
         .spicr_7_ss_frm_axi_clk(spicr_7_ss_frm_axi_clk),
+        .spicr_8_tr_inhibit_frm_axi_clk(spicr_8_tr_inhibit_frm_axi_clk),
         .spicr_9_lsb_frm_axi_clk(spicr_9_lsb_frm_axi_clk),
         .spisel_d1_reg_to_axi_clk(spisel_d1_reg_to_axi_clk),
+        .sr_3_MODF_int(sr_3_MODF_int),
         .sw_rst_cond(sw_rst_cond),
         .sw_rst_cond_d1(sw_rst_cond_d1),
-        .tx_fifo_full(tx_fifo_full),
-        .wr_ce_or_reduce_core_cmb(wr_ce_or_reduce_core_cmb));
-  LUT2 #(
-    .INIT(4'hE)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[0]_i_2 
-       (.I0(bus2ip_rnw_i_reg_n_0),
-        .I1(s_axi_wstrb[1]),
-        .O(bus2ip_be_int));
+        .tx_fifo_count(tx_fifo_count),
+        .tx_fifo_full(tx_fifo_full));
   LUT6 #(
-    .INIT(64'hFFFFFFFFF1FFFFFF)) 
+    .INIT(64'h00000E0000000000)) 
     \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_i_2 
-       (.I0(bus2ip_rnw_i_reg_n_0),
-        .I1(s_axi_wstrb[0]),
+       (.I0(s_axi_wstrb[0]),
+        .I1(bus2ip_rnw_i_reg_n_0),
         .I2(s_axi_wdata[2]),
         .I3(s_axi_wdata[3]),
-        .I4(s_axi_wdata[1]),
-        .I5(s_axi_wdata[0]),
-        .O(\QSPI_LEGACY_MD_GEN.QSPI_CORE_INTERFACE_I/SOFT_RESET_I/data_is_non_reset_match__4 ));
-  LUT2 #(
-    .INIT(4'hE)) 
-    RESET_SYNC_AX2S_1_i_1
-       (.I0(SR),
-        .I1(\RESET_FLOPS[15].RST_FLOPS ),
-        .O(reset2ip_reset_int));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+        .I4(s_axi_wdata[0]),
+        .I5(s_axi_wdata[1]),
+        .O(\LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_Error_i_2_n_0 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \bus2ip_addr_i[2]_i_1 
@@ -9141,7 +8967,7 @@ module system_axi_quad_spi_0_0_slave_attachment
         .I1(s_axi_arvalid),
         .I2(s_axi_awaddr[0]),
         .O(\bus2ip_addr_i[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bus2ip_addr_i[3]_i_1 
@@ -9149,6 +8975,7 @@ module system_axi_quad_spi_0_0_slave_attachment
         .I1(s_axi_arvalid),
         .I2(s_axi_awaddr[1]),
         .O(\bus2ip_addr_i[3]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bus2ip_addr_i[4]_i_1 
@@ -9165,15 +8992,15 @@ module system_axi_quad_spi_0_0_slave_attachment
         .I2(s_axi_awaddr[3]),
         .O(\bus2ip_addr_i[5]_i_1_n_0 ));
   LUT5 #(
-    .INIT(32'h03020202)) 
+    .INIT(32'h000000EA)) 
     \bus2ip_addr_i[6]_i_1 
        (.I0(s_axi_arvalid),
-        .I1(state[1]),
-        .I2(state[0]),
-        .I3(s_axi_awvalid),
-        .I4(s_axi_wvalid),
+        .I1(s_axi_wvalid),
+        .I2(s_axi_awvalid),
+        .I3(state[0]),
+        .I4(state[1]),
         .O(\bus2ip_addr_i[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT3 #(
     .INIT(8'hB8)) 
     \bus2ip_addr_i[6]_i_2 
@@ -9217,15 +9044,24 @@ module system_axi_quad_spi_0_0_slave_attachment
         .D(s_axi_arvalid),
         .Q(bus2ip_rnw_i_reg_n_0),
         .R(SR));
-  LUT5 #(
-    .INIT(32'h3FFA000A)) 
+  LUT4 #(
+    .INIT(16'h2F20)) 
     is_read_i_1
        (.I0(s_axi_arvalid),
-        .I1(state1__2),
-        .I2(state[0]),
-        .I3(state[1]),
-        .I4(is_read),
+        .I1(state[1]),
+        .I2(is_read_i_2_n_0),
+        .I3(is_read),
         .O(is_read_i_1_n_0));
+  LUT6 #(
+    .INIT(64'hAA80808055555555)) 
+    is_read_i_2
+       (.I0(state[0]),
+        .I1(s_axi_rready),
+        .I2(s_axi_rvalid),
+        .I3(s_axi_bready),
+        .I4(s_axi_bvalid),
+        .I5(state[1]),
+        .O(is_read_i_2_n_0));
   FDRE is_read_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -9235,23 +9071,13 @@ module system_axi_quad_spi_0_0_slave_attachment
   LUT6 #(
     .INIT(64'h0040FFFF00400000)) 
     is_write_i_1
-       (.I0(s_axi_arvalid),
-        .I1(s_axi_awvalid),
-        .I2(s_axi_wvalid),
-        .I3(state[1]),
-        .I4(is_write),
+       (.I0(state[1]),
+        .I1(s_axi_wvalid),
+        .I2(s_axi_awvalid),
+        .I3(s_axi_arvalid),
+        .I4(is_read_i_2_n_0),
         .I5(is_write_reg_n_0),
         .O(is_write_i_1_n_0));
-  LUT6 #(
-    .INIT(64'hF88800000000FFFF)) 
-    is_write_i_2
-       (.I0(s_axi_rready),
-        .I1(s_axi_rvalid),
-        .I2(s_axi_bready),
-        .I3(s_axi_bvalid),
-        .I4(state[0]),
-        .I5(state[1]),
-        .O(is_write));
   FDRE is_write_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
@@ -9269,14 +9095,6 @@ module system_axi_quad_spi_0_0_slave_attachment
         .D(rst_i_1_n_0),
         .Q(SR),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
-  LUT3 #(
-    .INIT(8'hF8)) 
-    s_axi_arready_INST_0
-       (.I0(is_read),
-        .I1(eqOp__4),
-        .I2(p_15_out),
-        .O(s_axi_arready));
   LUT4 #(
     .INIT(16'hFB08)) 
     \s_axi_bresp_i[1]_i_1 
@@ -9294,12 +9112,12 @@ module system_axi_quad_spi_0_0_slave_attachment
         .Q(s_axi_bresp),
         .R(SR));
   LUT5 #(
-    .INIT(32'h08FF0808)) 
+    .INIT(32'h5D550C00)) 
     s_axi_bvalid_i_i_1
-       (.I0(s_axi_wready),
+       (.I0(s_axi_bready),
         .I1(state[1]),
         .I2(state[0]),
-        .I3(s_axi_bready),
+        .I3(s_axi_wready),
         .I4(s_axi_bvalid),
         .O(s_axi_bvalid_i_i_1_n_0));
   FDRE #(
@@ -9412,24 +9230,15 @@ module system_axi_quad_spi_0_0_slave_attachment
         .D(IP2Bus_Error),
         .Q(s_axi_rresp),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
-  LUT3 #(
-    .INIT(8'hBA)) 
-    s_axi_rvalid_i_i_1
-       (.I0(s_axi_rvalid_i0),
-        .I1(s_axi_rready),
-        .I2(s_axi_rvalid),
-        .O(s_axi_rvalid_i_i_1_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
-    .INIT(32'h44404040)) 
-    s_axi_rvalid_i_i_2
-       (.I0(state[1]),
+    .INIT(32'h5D550C00)) 
+    s_axi_rvalid_i_i_1
+       (.I0(s_axi_rready),
         .I1(state[0]),
-        .I2(p_15_out),
-        .I3(eqOp__4),
-        .I4(is_read),
-        .O(s_axi_rvalid_i0));
+        .I2(state[1]),
+        .I3(s_axi_arready),
+        .I4(s_axi_rvalid),
+        .O(s_axi_rvalid_i_i_1_n_0));
   FDRE #(
     .INIT(1'b0)) 
     s_axi_rvalid_i_reg
@@ -9438,22 +9247,15 @@ module system_axi_quad_spi_0_0_slave_attachment
         .D(s_axi_rvalid_i_i_1_n_0),
         .Q(s_axi_rvalid),
         .R(SR));
-  LUT3 #(
-    .INIT(8'hF8)) 
-    s_axi_wready_INST_0
-       (.I0(is_write_reg_n_0),
-        .I1(eqOp__4),
-        .I2(p_16_out),
-        .O(s_axi_wready));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
-    .INIT(32'h000F0008)) 
+    .INIT(32'h00000F08)) 
     start2_i_1
-       (.I0(s_axi_awvalid),
-        .I1(s_axi_wvalid),
-        .I2(state[1]),
-        .I3(state[0]),
-        .I4(s_axi_arvalid),
+       (.I0(s_axi_wvalid),
+        .I1(s_axi_awvalid),
+        .I2(state[0]),
+        .I3(s_axi_arvalid),
+        .I4(state[1]),
         .O(start2_i_1_n_0));
   FDRE start2_reg
        (.C(s_axi_aclk),
@@ -9462,39 +9264,48 @@ module system_axi_quad_spi_0_0_slave_attachment
         .Q(start2),
         .R(SR));
   LUT5 #(
-    .INIT(32'h55FFE4E4)) 
+    .INIT(32'hF4F4FFF0)) 
     \state[0]_i_1 
-       (.I0(state[1]),
-        .I1(s_axi_arvalid),
-        .I2(s_axi_wready),
-        .I3(state1__2),
-        .I4(state[0]),
+       (.I0(state[0]),
+        .I1(s_axi_wready),
+        .I2(\state[0]_i_2_n_0 ),
+        .I3(s_axi_arvalid),
+        .I4(state[1]),
         .O(p_0_out[0]));
+  LUT6 #(
+    .INIT(64'h557F7F7F00000000)) 
+    \state[0]_i_2 
+       (.I0(state[1]),
+        .I1(s_axi_bvalid),
+        .I2(s_axi_bready),
+        .I3(s_axi_rvalid),
+        .I4(s_axi_rready),
+        .I5(state[0]),
+        .O(\state[0]_i_2_n_0 ));
   LUT5 #(
-    .INIT(32'hBAFFBAFA)) 
+    .INIT(32'h22CFEECF)) 
     \state[1]_i_1 
-       (.I0(s_axi_rvalid_i0),
-        .I1(state1__2),
-        .I2(state[1]),
+       (.I0(s_axi_arready),
+        .I1(state[1]),
+        .I2(\state[1]_i_2_n_0 ),
         .I3(state[0]),
         .I4(\state[1]_i_3_n_0 ),
         .O(p_0_out[1]));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  LUT3 #(
+    .INIT(8'hBF)) 
+    \state[1]_i_2 
+       (.I0(s_axi_arvalid),
+        .I1(s_axi_awvalid),
+        .I2(s_axi_wvalid),
+        .O(\state[1]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'hF888)) 
-    \state[1]_i_2 
-       (.I0(s_axi_rready),
-        .I1(s_axi_rvalid),
-        .I2(s_axi_bready),
-        .I3(s_axi_bvalid),
-        .O(state1__2));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
-  LUT3 #(
-    .INIT(8'h08)) 
     \state[1]_i_3 
-       (.I0(s_axi_wvalid),
-        .I1(s_axi_awvalid),
-        .I2(s_axi_arvalid),
+       (.I0(s_axi_bvalid),
+        .I1(s_axi_bready),
+        .I2(s_axi_rvalid),
+        .I3(s_axi_rready),
         .O(\state[1]_i_3_n_0 ));
   FDRE \state_reg[0] 
        (.C(s_axi_aclk),
@@ -9513,55 +9324,48 @@ endmodule
 (* ORIG_REF_NAME = "soft_reset" *) 
 module system_axi_quad_spi_0_0_soft_reset
    (sw_rst_cond_d1,
-    FF_WRACK_0,
-    reset_RcFIFO_ptr_frm_axi_clk,
-    \icount_out_reg[3] ,
+    wrack,
+    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ,
+    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg_0 ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ,
     src_arst,
-    IP2Bus_WrAck_1,
+    reset2ip_reset_int,
     bus2ip_reset_ipif_inverted,
     sw_rst_cond,
     s_axi_aclk,
     reset_trig0,
-    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    Bus_RNW_reg,
-    p_6_in,
-    tx_fifo_full,
-    spiXfer_done_to_axi_1,
     \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ,
-    ip2Bus_WrAck_core_reg,
-    ip2Bus_WrAck_intr_reg_hole,
-    p_5_in_1,
-    p_2_in_0);
+    \icount_out_reg[1] ,
+    Tx_FIFO_Full_int,
+    \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ,
+    RX_one_less_than_full,
+    Rx_FIFO_Full_i,
+    Rx_FIFO_Full_int);
   output sw_rst_cond_d1;
-  output FF_WRACK_0;
-  output reset_RcFIFO_ptr_frm_axi_clk;
-  output \icount_out_reg[3] ;
+  output wrack;
+  output \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ;
+  output \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg_0 ;
+  output \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ;
   output src_arst;
-  output IP2Bus_WrAck_1;
+  output reset2ip_reset_int;
   input bus2ip_reset_ipif_inverted;
   input sw_rst_cond;
   input s_axi_aclk;
   input reset_trig0;
-  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input Bus_RNW_reg;
-  input p_6_in;
-  input tx_fifo_full;
-  input spiXfer_done_to_axi_1;
   input \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  input ip2Bus_WrAck_core_reg;
-  input ip2Bus_WrAck_intr_reg_hole;
-  input p_5_in_1;
-  input p_2_in_0;
+  input \icount_out_reg[1] ;
+  input Tx_FIFO_Full_int;
+  input \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
+  input RX_one_less_than_full;
+  input Rx_FIFO_Full_i;
+  input Rx_FIFO_Full_int;
 
-  wire Bus_RNW_reg;
   wire \CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ;
   wire \CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ;
-  wire FF_WRACK_0;
   wire FF_WRACK_i_1_n_0;
-  wire IP2Bus_WrAck_1;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ;
+  wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ;
+  wire \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg_0 ;
   wire \RESET_FLOPS[10].RST_FLOPS_i_1_n_0 ;
   wire \RESET_FLOPS[11].RST_FLOPS_i_1_n_0 ;
   wire \RESET_FLOPS[12].RST_FLOPS_i_1_n_0 ;
@@ -9577,23 +9381,20 @@ module system_axi_quad_spi_0_0_soft_reset
   wire \RESET_FLOPS[7].RST_FLOPS_i_1_n_0 ;
   wire \RESET_FLOPS[8].RST_FLOPS_i_1_n_0 ;
   wire \RESET_FLOPS[9].RST_FLOPS_i_1_n_0 ;
+  wire RX_one_less_than_full;
+  wire Rx_FIFO_Full_i;
+  wire Rx_FIFO_Full_int;
   wire S;
+  wire Tx_FIFO_Full_int;
   wire bus2ip_reset_ipif_inverted;
   wire [1:15]flop_q_chain;
-  wire \icount_out_reg[3] ;
-  wire ip2Bus_WrAck_core_reg;
-  wire ip2Bus_WrAck_intr_reg_hole;
-  wire p_2_in_0;
-  wire p_5_in_1;
-  wire p_6_in;
-  wire reset_RcFIFO_ptr_frm_axi_clk;
+  wire \icount_out_reg[1] ;
+  wire reset2ip_reset_int;
   wire reset_trig0;
   wire s_axi_aclk;
-  wire spiXfer_done_to_axi_1;
   wire src_arst;
   wire sw_rst_cond;
   wire sw_rst_cond_d1;
-  wire tx_fifo_full;
   wire wrack;
 
   (* IS_CE_INVERTED = "1'b0" *) 
@@ -9614,18 +9415,29 @@ module system_axi_quad_spi_0_0_soft_reset
   LUT2 #(
     .INIT(4'h2)) 
     FF_WRACK_i_1
-       (.I0(FF_WRACK_0),
+       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ),
         .I1(flop_q_chain[15]),
         .O(FF_WRACK_i_1_n_0));
+  LUT6 #(
+    .INIT(64'h0000000001010100)) 
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_i_1 
+       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ),
+        .I1(bus2ip_reset_ipif_inverted),
+        .I2(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
+        .I3(RX_one_less_than_full),
+        .I4(Rx_FIFO_Full_i),
+        .I5(Rx_FIFO_Full_int),
+        .O(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.Rx_FIFO_Full_i_reg ));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT5 #(
-    .INIT(32'hFFFFFFFE)) 
-    \LEGACY_MD_WR_RD_ACK_GEN.IP2Bus_WrAck_i_1 
-       (.I0(ip2Bus_WrAck_core_reg),
-        .I1(ip2Bus_WrAck_intr_reg_hole),
-        .I2(wrack),
-        .I3(p_5_in_1),
-        .I4(p_2_in_0),
-        .O(IP2Bus_WrAck_1));
+    .INIT(32'h00000100)) 
+    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_1 
+       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ),
+        .I1(bus2ip_reset_ipif_inverted),
+        .I2(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
+        .I3(\icount_out_reg[1] ),
+        .I4(Tx_FIFO_Full_int),
+        .O(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg_0 ));
   (* IS_CE_INVERTED = "1'b0" *) 
   (* IS_S_INVERTED = "1'b0" *) 
   (* box_type = "PRIMITIVE" *) 
@@ -9654,7 +9466,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[10].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[11]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[10].RST_FLOPS_i_1 
@@ -9675,7 +9487,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[11].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[12]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[11].RST_FLOPS_i_1 
@@ -9696,7 +9508,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[12].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[13]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair57" *) 
+  (* SOFT_HLUTNM = "soft_lutpair56" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[12].RST_FLOPS_i_1 
@@ -9717,7 +9529,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[13].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[14]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[13].RST_FLOPS_i_1 
@@ -9738,7 +9550,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[14].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[15]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair57" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[14].RST_FLOPS_i_1 
@@ -9757,9 +9569,8 @@ module system_axi_quad_spi_0_0_soft_reset
        (.C(s_axi_aclk),
         .CE(1'b1),
         .D(\RESET_FLOPS[15].RST_FLOPS_i_1_n_0 ),
-        .Q(FF_WRACK_0),
+        .Q(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[15].RST_FLOPS_i_1 
@@ -9780,7 +9591,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[1].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[2]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[1].RST_FLOPS_i_1 
@@ -9801,7 +9612,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[2].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[3]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[2].RST_FLOPS_i_1 
@@ -9822,7 +9633,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[3].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[4]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[3].RST_FLOPS_i_1 
@@ -9843,7 +9654,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[4].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[5]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[4].RST_FLOPS_i_1 
@@ -9864,7 +9675,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[5].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[6]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[5].RST_FLOPS_i_1 
@@ -9885,7 +9696,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[6].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[7]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[6].RST_FLOPS_i_1 
@@ -9906,7 +9717,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[7].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[8]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[7].RST_FLOPS_i_1 
@@ -9927,7 +9738,7 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[8].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[9]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[8].RST_FLOPS_i_1 
@@ -9948,36 +9759,25 @@ module system_axi_quad_spi_0_0_soft_reset
         .D(\RESET_FLOPS[9].RST_FLOPS_i_1_n_0 ),
         .Q(flop_q_chain[10]),
         .R(bus2ip_reset_ipif_inverted));
-  (* SOFT_HLUTNM = "soft_lutpair56" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT2 #(
     .INIT(4'hE)) 
     \RESET_FLOPS[9].RST_FLOPS_i_1 
        (.I0(S),
         .I1(flop_q_chain[9]),
         .O(\RESET_FLOPS[9].RST_FLOPS_i_1_n_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFBFFAAAAAEAA)) 
-    \icount_out[3]_i_1 
-       (.I0(src_arst),
-        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
-        .I2(Bus_RNW_reg),
-        .I3(p_6_in),
-        .I4(tx_fifo_full),
-        .I5(spiXfer_done_to_axi_1),
-        .O(\icount_out_reg[3] ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
-  LUT3 #(
-    .INIT(8'hFE)) 
-    \icount_out[3]_i_5 
-       (.I0(FF_WRACK_0),
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    RESET_SYNC_AX2S_1_i_1
+       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ),
         .I1(bus2ip_reset_ipif_inverted),
-        .I2(\CONTROL_REG_3_4_GENERATE[3].SPICR_data_int_reg[3] ),
-        .O(reset_RcFIFO_ptr_frm_axi_clk));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+        .O(reset2ip_reset_int));
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT3 #(
     .INIT(8'hFE)) 
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.rst_wr_reg2_inst_i_1 
-       (.I0(FF_WRACK_0),
+       (.I0(\FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_reg ),
         .I1(bus2ip_reset_ipif_inverted),
         .I2(\CONTROL_REG_3_4_GENERATE[4].SPICR_data_int_reg[4] ),
         .O(src_arst));
@@ -11073,106 +10873,50 @@ endmodule
 
 (* ORIG_REF_NAME = "clk_x_pntrs" *) 
 module system_axi_quad_spi_0_0_clk_x_pntrs
-   (ram_full_fb_i_reg,
-    ram_full_fb_i_reg_0,
+   (\gaf.ram_almost_full_i_reg ,
     RD_PNTR_WR,
-    \gaf.ram_almost_full_i_reg ,
     WR_PNTR_RD,
-    E,
     Q,
-    out,
-    \gic0.gc1.count_d1_reg[3] ,
-    \gic0.gc1.count_reg[1] ,
     s_axi_aclk,
     \gic0.gc1.count_d3_reg[3] ,
     ext_spi_clk,
     \gc1.count_d2_reg[3] );
-  output ram_full_fb_i_reg;
-  output ram_full_fb_i_reg_0;
-  output [1:0]RD_PNTR_WR;
   output \gaf.ram_almost_full_i_reg ;
+  output [3:0]RD_PNTR_WR;
   output [3:0]WR_PNTR_RD;
-  input [0:0]E;
   input [3:0]Q;
-  input out;
-  input [3:0]\gic0.gc1.count_d1_reg[3] ;
-  input [1:0]\gic0.gc1.count_reg[1] ;
   input s_axi_aclk;
   input [3:0]\gic0.gc1.count_d3_reg[3] ;
   input ext_spi_clk;
   input [3:0]\gc1.count_d2_reg[3] ;
 
-  wire [0:0]E;
   wire [3:0]Q;
-  wire [1:0]RD_PNTR_WR;
+  wire [3:0]RD_PNTR_WR;
   wire [3:0]WR_PNTR_RD;
   wire ext_spi_clk;
+  wire \gaf.ram_almost_full_i_i_3_n_0 ;
   wire \gaf.ram_almost_full_i_reg ;
   wire [3:0]\gc1.count_d2_reg[3] ;
-  wire [3:0]\gic0.gc1.count_d1_reg[3] ;
   wire [3:0]\gic0.gc1.count_d3_reg[3] ;
-  wire [1:0]\gic0.gc1.count_reg[1] ;
-  wire out;
-  wire [1:0]p_25_out;
-  wire ram_full_fb_i_reg;
-  wire ram_full_fb_i_reg_0;
-  wire ram_full_i_i_3_n_0;
-  wire ram_full_i_i_4_n_0;
-  wire ram_full_i_i_5_n_0;
   wire s_axi_aclk;
 
   LUT5 #(
-    .INIT(32'h00009009)) 
-    \gaf.ram_almost_full_i_i_3 
-       (.I0(p_25_out[1]),
-        .I1(\gic0.gc1.count_reg[1] [1]),
-        .I2(p_25_out[0]),
-        .I3(\gic0.gc1.count_reg[1] [0]),
-        .I4(out),
+    .INIT(32'hFFFF6FF6)) 
+    \gaf.ram_almost_full_i_i_2 
+       (.I0(Q[0]),
+        .I1(RD_PNTR_WR[0]),
+        .I2(Q[1]),
+        .I3(RD_PNTR_WR[1]),
+        .I4(\gaf.ram_almost_full_i_i_3_n_0 ),
         .O(\gaf.ram_almost_full_i_reg ));
-  LUT3 #(
-    .INIT(8'hF8)) 
-    ram_full_i_i_1
-       (.I0(E),
-        .I1(ram_full_fb_i_reg_0),
-        .I2(ram_full_i_i_3_n_0),
-        .O(ram_full_fb_i_reg));
-  LUT5 #(
-    .INIT(32'h82000082)) 
-    ram_full_i_i_2
-       (.I0(ram_full_i_i_4_n_0),
-        .I1(RD_PNTR_WR[0]),
-        .I2(\gic0.gc1.count_d1_reg[3] [2]),
-        .I3(RD_PNTR_WR[1]),
-        .I4(\gic0.gc1.count_d1_reg[3] [3]),
-        .O(ram_full_fb_i_reg_0));
-  LUT5 #(
-    .INIT(32'h82000082)) 
-    ram_full_i_i_3
-       (.I0(ram_full_i_i_5_n_0),
-        .I1(RD_PNTR_WR[0]),
-        .I2(Q[2]),
-        .I3(RD_PNTR_WR[1]),
-        .I4(Q[3]),
-        .O(ram_full_i_i_3_n_0));
-  LUT5 #(
-    .INIT(32'h00009009)) 
-    ram_full_i_i_4
-       (.I0(p_25_out[1]),
-        .I1(\gic0.gc1.count_d1_reg[3] [1]),
-        .I2(p_25_out[0]),
-        .I3(\gic0.gc1.count_d1_reg[3] [0]),
-        .I4(out),
-        .O(ram_full_i_i_4_n_0));
-  LUT5 #(
-    .INIT(32'h00009009)) 
-    ram_full_i_i_5
-       (.I0(p_25_out[1]),
-        .I1(Q[1]),
-        .I2(p_25_out[0]),
-        .I3(Q[0]),
-        .I4(out),
-        .O(ram_full_i_i_5_n_0));
+  LUT4 #(
+    .INIT(16'h6FF6)) 
+    \gaf.ram_almost_full_i_i_3 
+       (.I0(RD_PNTR_WR[2]),
+        .I1(Q[2]),
+        .I2(RD_PNTR_WR[3]),
+        .I3(Q[3]),
+        .O(\gaf.ram_almost_full_i_i_3_n_0 ));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "0" *) 
   (* REG_OUTPUT = "1" *) 
@@ -11184,7 +10928,7 @@ module system_axi_quad_spi_0_0_clk_x_pntrs
   (* XPM_MODULE = "TRUE" *) 
   system_axi_quad_spi_0_0_xpm_cdc_gray rd_pntr_cdc_inst
        (.dest_clk(s_axi_aclk),
-        .dest_out_bin({RD_PNTR_WR,p_25_out}),
+        .dest_out_bin(RD_PNTR_WR),
         .src_clk(ext_spi_clk),
         .src_in_bin(\gc1.count_d2_reg[3] ));
   (* DEST_SYNC_FF = "2" *) 
@@ -11205,45 +10949,36 @@ endmodule
 
 (* ORIG_REF_NAME = "clk_x_pntrs" *) 
 module system_axi_quad_spi_0_0_clk_x_pntrs__xdcDup__1
-   (ram_empty_i_reg,
-    ram_empty_i_reg_0,
-    ram_full_fb_i_reg,
+   (ram_full_fb_i_reg,
     RD_PNTR_WR,
     \gaf.ram_almost_full_i_reg ,
+    WR_PNTR_RD,
     Q,
-    \gc1.count_d1_reg[3] ,
-    \gic0.gc1.count_d2_reg[3] ,
     \gic0.gc1.count_reg[3] ,
     ext_spi_clk,
     \gic0.gc1.count_d3_reg[3] ,
-    s_axi_aclk);
-  output ram_empty_i_reg;
-  output ram_empty_i_reg_0;
+    s_axi_aclk,
+    \gc1.count_d2_reg[3] );
   output ram_full_fb_i_reg;
   output [3:0]RD_PNTR_WR;
   output \gaf.ram_almost_full_i_reg ;
+  output [3:0]WR_PNTR_RD;
   input [3:0]Q;
-  input [3:0]\gc1.count_d1_reg[3] ;
-  input [3:0]\gic0.gc1.count_d2_reg[3] ;
   input [3:0]\gic0.gc1.count_reg[3] ;
   input ext_spi_clk;
   input [3:0]\gic0.gc1.count_d3_reg[3] ;
   input s_axi_aclk;
+  input [3:0]\gc1.count_d2_reg[3] ;
 
   wire [3:0]Q;
   wire [3:0]RD_PNTR_WR;
+  wire [3:0]WR_PNTR_RD;
   wire ext_spi_clk;
   wire \gaf.ram_almost_full_i_i_3__0_n_0 ;
   wire \gaf.ram_almost_full_i_reg ;
-  wire [3:0]\gc1.count_d1_reg[3] ;
-  wire [3:0]\gic0.gc1.count_d2_reg[3] ;
+  wire [3:0]\gc1.count_d2_reg[3] ;
   wire [3:0]\gic0.gc1.count_d3_reg[3] ;
   wire [3:0]\gic0.gc1.count_reg[3] ;
-  wire [3:0]p_24_out;
-  wire ram_empty_i_i_4_n_0;
-  wire ram_empty_i_i_5_n_0;
-  wire ram_empty_i_reg;
-  wire ram_empty_i_reg_0;
   wire ram_full_fb_i_reg;
   wire ram_full_i_i_4__0_n_0;
   wire s_axi_aclk;
@@ -11267,44 +11002,10 @@ module system_axi_quad_spi_0_0_clk_x_pntrs__xdcDup__1
         .O(\gaf.ram_almost_full_i_i_3__0_n_0 ));
   LUT5 #(
     .INIT(32'h00009009)) 
-    ram_empty_i_i_2
-       (.I0(\gc1.count_d1_reg[3] [2]),
-        .I1(p_24_out[2]),
-        .I2(\gc1.count_d1_reg[3] [3]),
-        .I3(p_24_out[3]),
-        .I4(ram_empty_i_i_4_n_0),
-        .O(ram_empty_i_reg_0));
-  LUT5 #(
-    .INIT(32'h00009009)) 
-    ram_empty_i_i_3
-       (.I0(Q[2]),
-        .I1(p_24_out[2]),
-        .I2(Q[3]),
-        .I3(p_24_out[3]),
-        .I4(ram_empty_i_i_5_n_0),
-        .O(ram_empty_i_reg));
-  LUT4 #(
-    .INIT(16'h6FF6)) 
-    ram_empty_i_i_4
-       (.I0(p_24_out[0]),
-        .I1(\gc1.count_d1_reg[3] [0]),
-        .I2(p_24_out[1]),
-        .I3(\gc1.count_d1_reg[3] [1]),
-        .O(ram_empty_i_i_4_n_0));
-  LUT4 #(
-    .INIT(16'h6FF6)) 
-    ram_empty_i_i_5
-       (.I0(p_24_out[0]),
-        .I1(Q[0]),
-        .I2(p_24_out[1]),
-        .I3(Q[1]),
-        .O(ram_empty_i_i_5_n_0));
-  LUT5 #(
-    .INIT(32'h00009009)) 
     ram_full_i_i_2__0
-       (.I0(\gic0.gc1.count_d2_reg[3] [3]),
+       (.I0(Q[3]),
         .I1(RD_PNTR_WR[3]),
-        .I2(\gic0.gc1.count_d2_reg[3] [0]),
+        .I2(Q[0]),
         .I3(RD_PNTR_WR[0]),
         .I4(ram_full_i_i_4__0_n_0),
         .O(ram_full_fb_i_reg));
@@ -11312,9 +11013,9 @@ module system_axi_quad_spi_0_0_clk_x_pntrs__xdcDup__1
     .INIT(16'h6FF6)) 
     ram_full_i_i_4__0
        (.I0(RD_PNTR_WR[1]),
-        .I1(\gic0.gc1.count_d2_reg[3] [1]),
+        .I1(Q[1]),
         .I2(RD_PNTR_WR[2]),
-        .I3(\gic0.gc1.count_d2_reg[3] [2]),
+        .I3(Q[2]),
         .O(ram_full_i_i_4__0_n_0));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "0" *) 
@@ -11329,7 +11030,7 @@ module system_axi_quad_spi_0_0_clk_x_pntrs__xdcDup__1
        (.dest_clk(ext_spi_clk),
         .dest_out_bin(RD_PNTR_WR),
         .src_clk(s_axi_aclk),
-        .src_in_bin(Q));
+        .src_in_bin(\gc1.count_d2_reg[3] ));
   (* DEST_SYNC_FF = "2" *) 
   (* INIT_SYNC_FF = "0" *) 
   (* REG_OUTPUT = "1" *) 
@@ -11341,7 +11042,7 @@ module system_axi_quad_spi_0_0_clk_x_pntrs__xdcDup__1
   (* XPM_MODULE = "TRUE" *) 
   system_axi_quad_spi_0_0_xpm_cdc_gray__2 wr_pntr_cdc_inst
        (.dest_clk(s_axi_aclk),
-        .dest_out_bin(p_24_out),
+        .dest_out_bin(WR_PNTR_RD),
         .src_clk(ext_spi_clk),
         .src_in_bin(\gic0.gc1.count_d3_reg[3] ));
 endmodule
@@ -11350,7 +11051,7 @@ endmodule
 module system_axi_quad_spi_0_0_dmem
    (Q,
     s_axi_aclk,
-    I75,
+    I74,
     s_axi_wdata,
     \gc1.count_d2_reg[3] ,
     L,
@@ -11359,7 +11060,7 @@ module system_axi_quad_spi_0_0_dmem
     AR);
   output [7:0]Q;
   input s_axi_aclk;
-  input I75;
+  input I74;
   input [7:0]s_axi_wdata;
   input [3:0]\gc1.count_d2_reg[3] ;
   input [3:0]L;
@@ -11369,7 +11070,7 @@ module system_axi_quad_spi_0_0_dmem
 
   wire [0:0]AR;
   wire [0:0]E;
-  wire I75;
+  wire I74;
   wire [3:0]L;
   wire [7:0]Q;
   wire RAM_reg_0_15_0_5_n_0;
@@ -11404,7 +11105,7 @@ module system_axi_quad_spi_0_0_dmem
         .DOC({RAM_reg_0_15_0_5_n_4,RAM_reg_0_15_0_5_n_5}),
         .DOD(NLW_RAM_reg_0_15_0_5_DOD_UNCONNECTED[1:0]),
         .WCLK(s_axi_aclk),
-        .WE(I75));
+        .WE(I74));
   (* METHODOLOGY_DRC_VIOS = "" *) 
   RAM32M RAM_reg_0_15_6_7
        (.ADDRA({1'b0,\gc1.count_d2_reg[3] }),
@@ -11420,7 +11121,7 @@ module system_axi_quad_spi_0_0_dmem
         .DOC(NLW_RAM_reg_0_15_6_7_DOC_UNCONNECTED[1:0]),
         .DOD(NLW_RAM_reg_0_15_6_7_DOD_UNCONNECTED[1:0]),
         .WCLK(s_axi_aclk),
-        .WE(I75));
+        .WE(I74));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[0] 
@@ -11489,22 +11190,22 @@ endmodule
 
 (* ORIG_REF_NAME = "dmem" *) 
 module system_axi_quad_spi_0_0_dmem_5
-   (Q,
+   (\goreg_dm.dout_i_reg[7] ,
     ext_spi_clk,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ,
+    Q,
     \gc1.count_d2_reg[3] ,
     L,
-    \gpregsm1.curr_fwft_state_reg[1] ,
+    ram_empty_fb_i_reg,
     s_axi_aclk,
     AR);
-  output [7:0]Q;
+  output [7:0]\goreg_dm.dout_i_reg[7] ;
   input ext_spi_clk;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
   input [3:0]\gc1.count_d2_reg[3] ;
   input [3:0]L;
-  input [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
+  input [0:0]ram_empty_fb_i_reg;
   input s_axi_aclk;
   input [0:0]AR;
 
@@ -11520,10 +11221,10 @@ module system_axi_quad_spi_0_0_dmem_5
   wire RAM_reg_0_15_0_5_n_5;
   wire RAM_reg_0_15_6_7_n_0;
   wire RAM_reg_0_15_6_7_n_1;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
   wire ext_spi_clk;
   wire [3:0]\gc1.count_d2_reg[3] ;
-  wire [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
+  wire [7:0]\goreg_dm.dout_i_reg[7] ;
+  wire [0:0]ram_empty_fb_i_reg;
   wire s_axi_aclk;
   wire [1:0]NLW_RAM_reg_0_15_0_5_DOD_UNCONNECTED;
   wire [1:0]NLW_RAM_reg_0_15_6_7_DOB_UNCONNECTED;
@@ -11536,9 +11237,9 @@ module system_axi_quad_spi_0_0_dmem_5
         .ADDRB({1'b0,\gc1.count_d2_reg[3] }),
         .ADDRC({1'b0,\gc1.count_d2_reg[3] }),
         .ADDRD({1'b0,L}),
-        .DIA(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] [1:0]),
-        .DIB(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] [3:2]),
-        .DIC(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] [5:4]),
+        .DIA(Q[1:0]),
+        .DIB(Q[3:2]),
+        .DIC(Q[5:4]),
         .DID({1'b0,1'b0}),
         .DOA({RAM_reg_0_15_0_5_n_0,RAM_reg_0_15_0_5_n_1}),
         .DOB({RAM_reg_0_15_0_5_n_2,RAM_reg_0_15_0_5_n_3}),
@@ -11552,7 +11253,7 @@ module system_axi_quad_spi_0_0_dmem_5
         .ADDRB({1'b0,\gc1.count_d2_reg[3] }),
         .ADDRC({1'b0,\gc1.count_d2_reg[3] }),
         .ADDRD({1'b0,L}),
-        .DIA(\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] [7:6]),
+        .DIA(Q[7:6]),
         .DIB({1'b0,1'b0}),
         .DIC({1'b0,1'b0}),
         .DID({1'b0,1'b0}),
@@ -11566,117 +11267,113 @@ module system_axi_quad_spi_0_0_dmem_5
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[0] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_0_5_n_1),
-        .Q(Q[0]));
+        .Q(\goreg_dm.dout_i_reg[7] [0]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[1] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_0_5_n_0),
-        .Q(Q[1]));
+        .Q(\goreg_dm.dout_i_reg[7] [1]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[2] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_0_5_n_3),
-        .Q(Q[2]));
+        .Q(\goreg_dm.dout_i_reg[7] [2]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[3] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_0_5_n_2),
-        .Q(Q[3]));
+        .Q(\goreg_dm.dout_i_reg[7] [3]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[4] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_0_5_n_5),
-        .Q(Q[4]));
+        .Q(\goreg_dm.dout_i_reg[7] [4]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[5] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_0_5_n_4),
-        .Q(Q[5]));
+        .Q(\goreg_dm.dout_i_reg[7] [5]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[6] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_6_7_n_1),
-        .Q(Q[6]));
+        .Q(\goreg_dm.dout_i_reg[7] [6]));
   FDCE #(
     .INIT(1'b0)) 
     \gpr1.dout_i_reg[7] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
+        .CE(ram_empty_fb_i_reg),
         .CLR(AR),
         .D(RAM_reg_0_15_6_7_n_0),
-        .Q(Q[7]));
+        .Q(\goreg_dm.dout_i_reg[7] [7]));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_ramfifo" *) 
 module system_axi_quad_spi_0_0_fifo_generator_ramfifo
    (out,
-    \gic0.gc1.count_reg[0] ,
-    IP2Bus_WrAck_transmit_enable__0,
+    tx_fifo_full,
     \OTHER_RATIO_GENERATE.Serial_Dout_reg ,
     Q,
     src_arst,
     s_axi_aclk,
     ext_spi_clk,
     spisel_d1_reg__0,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    Bus_RNW_reg,
     p_6_in,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    Bus_RNW_reg_reg,
     spicr_9_lsb_to_spi_clk,
     s_axi_wdata);
   output out;
-  output \gic0.gc1.count_reg[0] ;
-  output IP2Bus_WrAck_transmit_enable__0;
+  output tx_fifo_full;
   output \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   output [7:0]Q;
   input src_arst;
   input s_axi_aclk;
   input ext_spi_clk;
   input spisel_d1_reg__0;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input Bus_RNW_reg;
   input p_6_in;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input Bus_RNW_reg_reg;
   input spicr_9_lsb_to_spi_clk;
   input [7:0]s_axi_wdata;
 
   wire Bus_RNW_reg;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire Bus_RNW_reg_reg;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   wire [7:0]Q;
   wire ext_spi_clk;
-  wire \gic0.gc1.count_reg[0] ;
   wire \gntv_or_sync_fifo.gcx.clkx_n_0 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_1 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_4 ;
   wire \gntv_or_sync_fifo.gl0.rd_n_1 ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire [3:0]p_0_out;
   wire [3:0]p_13_out;
-  wire [3:0]p_14_out;
   wire p_20_out;
   wire [3:0]p_24_out;
-  wire [3:2]p_25_out;
+  wire [3:0]p_25_out;
   wire p_6_in;
   wire p_6_out;
   wire rst_full_ff_i;
@@ -11688,23 +11385,17 @@ module system_axi_quad_spi_0_0_fifo_generator_ramfifo
   wire spicr_9_lsb_to_spi_clk;
   wire spisel_d1_reg__0;
   wire src_arst;
-  wire [3:0]wr_pntr_plus2;
-  wire [1:0]wr_pntr_plus3;
+  wire tx_fifo_full;
+  wire [3:0]wr_pntr_plus3;
 
   system_axi_quad_spi_0_0_clk_x_pntrs \gntv_or_sync_fifo.gcx.clkx 
-       (.E(p_20_out),
-        .Q(p_14_out),
+       (.Q(wr_pntr_plus3),
         .RD_PNTR_WR(p_25_out),
         .WR_PNTR_RD(p_24_out),
         .ext_spi_clk(ext_spi_clk),
-        .\gaf.ram_almost_full_i_reg (\gntv_or_sync_fifo.gcx.clkx_n_4 ),
+        .\gaf.ram_almost_full_i_reg (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
         .\gc1.count_d2_reg[3] (p_0_out),
-        .\gic0.gc1.count_d1_reg[3] (wr_pntr_plus2),
         .\gic0.gc1.count_d3_reg[3] (p_13_out),
-        .\gic0.gc1.count_reg[1] (wr_pntr_plus3),
-        .out(rst_full_gen_i),
-        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gcx.clkx_n_0 ),
-        .ram_full_fb_i_reg_0(\gntv_or_sync_fifo.gcx.clkx_n_1 ),
         .s_axi_aclk(s_axi_aclk));
   system_axi_quad_spi_0_0_rd_logic \gntv_or_sync_fifo.gl0.rd 
        (.E(\gntv_or_sync_fifo.gl0.rd_n_1 ),
@@ -11718,26 +11409,22 @@ module system_axi_quad_spi_0_0_fifo_generator_ramfifo
   system_axi_quad_spi_0_0_wr_logic \gntv_or_sync_fifo.gl0.wr 
        (.AR(rstblk_n_0),
         .Bus_RNW_reg(Bus_RNW_reg),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
         .E(p_20_out),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
         .Q(wr_pntr_plus3),
         .RD_PNTR_WR(p_25_out),
-        .\dest_out_bin_ff_reg[1] (\gntv_or_sync_fifo.gcx.clkx_n_4 ),
-        .\dest_out_bin_ff_reg[2] (\gntv_or_sync_fifo.gcx.clkx_n_1 ),
-        .\gic0.gc1.count_d2_reg[3] (wr_pntr_plus2),
-        .\gic0.gc1.count_d3_reg[3] (p_14_out),
-        .\gic0.gc1.count_reg[0] (\gic0.gc1.count_reg[0] ),
+        .\gic0.gc1.count_reg[0] (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
         .\grstd1.grst_full.grst_f.rst_d3_reg (rst_full_gen_i),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(rst_full_ff_i),
         .p_6_in(p_6_in),
         .s_axi_aclk(s_axi_aclk),
-        .\src_gray_ff_reg[3] (p_13_out));
+        .\src_gray_ff_reg[3] (p_13_out),
+        .tx_fifo_full(tx_fifo_full));
   system_axi_quad_spi_0_0_memory \gntv_or_sync_fifo.mem 
        (.AR(rstblk_n_1),
         .E(\gntv_or_sync_fifo.gl0.rd_n_1 ),
-        .I75(p_20_out),
+        .I74(p_20_out),
         .L(p_13_out),
         .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\OTHER_RATIO_GENERATE.Serial_Dout_reg ),
         .Q(Q),
@@ -11762,221 +11449,126 @@ module system_axi_quad_spi_0_0_fifo_generator_ramfifo__xdcDup__1
    (out,
     \gaf.ram_almost_full_i_reg ,
     Rx_FIFO_Full_Fifo_org,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ,
-    D,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
     Receive_ip2bus_error0,
     Rx_FIFO_Full_Fifo,
-    Q,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ,
     src_arst,
     ext_spi_clk,
     s_axi_aclk,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     spiXfer_done_int,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    p_15_in,
-    bus2ip_rdce_int,
-    spicr_2_mst_n_slv_frm_axi_clk,
-    p_1_in32_in,
-    spicr_3_cpol_frm_axi_clk,
-    p_1_in29_in,
-    rx_fifo_empty_i,
-    p_7_in,
-    Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
     p_5_in,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ,
+    Bus_RNW_reg,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
+    scndry_out,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] );
+    Q);
   output out;
   output \gaf.ram_almost_full_i_reg ;
   output Rx_FIFO_Full_Fifo_org;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  output [0:0]D;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
   output Receive_ip2bus_error0;
   output Rx_FIFO_Full_Fifo;
-  output [5:0]Q;
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   input src_arst;
   input ext_spi_clk;
   input s_axi_aclk;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input spiXfer_done_int;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input p_15_in;
-  input [0:0]bus2ip_rdce_int;
-  input spicr_2_mst_n_slv_frm_axi_clk;
-  input p_1_in32_in;
-  input spicr_3_cpol_frm_axi_clk;
-  input p_1_in29_in;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input p_5_in;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  input scndry_out;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire [5:0]Q;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  wire [7:0]Q;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Full_Fifo;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
   wire Rx_FIFO_Full_Fifo_org;
-  wire [0:0]bus2ip_rdce_int;
   wire ext_spi_clk;
   wire \gaf.ram_almost_full_i_reg ;
   wire \gntv_or_sync_fifo.gcx.clkx_n_0 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_1 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_2 ;
-  wire \gntv_or_sync_fifo.gcx.clkx_n_7 ;
-  wire \goreg_dm.dout_i_reg[0] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
+  wire \gntv_or_sync_fifo.gcx.clkx_n_5 ;
+  wire \gntv_or_sync_fifo.gl0.rd_n_1 ;
   wire out;
   wire [3:0]p_0_out;
   wire [3:0]p_13_out;
   wire [3:0]p_14_out;
-  wire p_15_in;
-  wire p_1_in29_in;
-  wire p_1_in32_in;
+  wire [3:0]p_24_out;
   wire [3:0]p_25_out;
   wire p_5_in;
   wire p_6_out;
-  wire p_7_in;
-  wire ram_rd_en_i;
-  wire [3:0]rd_pntr_plus1;
-  wire reset2ip_reset_int;
   wire rst_full_ff_i;
   wire rst_full_gen_i;
   wire rstblk_n_0;
   wire rstblk_n_1;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire scndry_out;
   wire spiXfer_done_int;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
-  wire spicr_3_cpol_frm_axi_clk;
   wire src_arst;
-  wire [0:0]tx_fifo_count;
   wire [3:0]wr_pntr_plus3;
 
   system_axi_quad_spi_0_0_clk_x_pntrs__xdcDup__1 \gntv_or_sync_fifo.gcx.clkx 
-       (.Q(p_0_out),
+       (.Q(p_14_out),
         .RD_PNTR_WR(p_25_out),
+        .WR_PNTR_RD(p_24_out),
         .ext_spi_clk(ext_spi_clk),
-        .\gaf.ram_almost_full_i_reg (\gntv_or_sync_fifo.gcx.clkx_n_7 ),
-        .\gc1.count_d1_reg[3] (rd_pntr_plus1),
-        .\gic0.gc1.count_d2_reg[3] (p_14_out),
+        .\gaf.ram_almost_full_i_reg (\gntv_or_sync_fifo.gcx.clkx_n_5 ),
+        .\gc1.count_d2_reg[3] (p_0_out),
         .\gic0.gc1.count_d3_reg[3] (p_13_out),
         .\gic0.gc1.count_reg[3] (wr_pntr_plus3),
-        .ram_empty_i_reg(\gntv_or_sync_fifo.gcx.clkx_n_0 ),
-        .ram_empty_i_reg_0(\gntv_or_sync_fifo.gcx.clkx_n_1 ),
-        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gcx.clkx_n_2 ),
+        .ram_full_fb_i_reg(\gntv_or_sync_fifo.gcx.clkx_n_0 ),
         .s_axi_aclk(s_axi_aclk));
   system_axi_quad_spi_0_0_rd_logic_2 \gntv_or_sync_fifo.gl0.rd 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .D(D),
-        .E(ram_rd_en_i),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
+        .E(\gntv_or_sync_fifo.gl0.rd_n_1 ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
-        .Q(rd_pntr_plus1),
+        .Q(p_0_out),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
-        .\gc1.count_d1_reg[2] (\gntv_or_sync_fifo.gcx.clkx_n_1 ),
-        .\gc1.count_d2_reg[2] (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
-        .\goreg_dm.dout_i_reg[0] (\goreg_dm.dout_i_reg[0] ),
+        .WR_PNTR_RD(p_24_out),
         .\goreg_dm.dout_i_reg[7] (p_6_out),
-        .\ip_irpt_enable_reg_reg[0] (\ip_irpt_enable_reg_reg[0] ),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (rstblk_n_1),
         .out(out),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
-        .s_axi_aclk(s_axi_aclk),
-        .scndry_out(scndry_out),
-        .\src_gray_ff_reg[3] (p_0_out),
-        .tx_fifo_count(tx_fifo_count));
+        .s_axi_aclk(s_axi_aclk));
   system_axi_quad_spi_0_0_wr_logic_3 \gntv_or_sync_fifo.gl0.wr 
        (.AR(rstblk_n_0),
         .E(E),
-        .\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
         .Q(wr_pntr_plus3),
         .RD_PNTR_WR(p_25_out),
         .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
         .ext_spi_clk(ext_spi_clk),
         .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
-        .\gic0.gc1.count_d2_reg[3] (\gntv_or_sync_fifo.gcx.clkx_n_2 ),
+        .\gic0.gc1.count_d2_reg[3] (\gntv_or_sync_fifo.gcx.clkx_n_0 ),
         .\gic0.gc1.count_d3_reg[3] (p_14_out),
-        .\gic0.gc1.count_reg[0] (\gntv_or_sync_fifo.gcx.clkx_n_7 ),
+        .\gic0.gc1.count_reg[0] (\gntv_or_sync_fifo.gcx.clkx_n_5 ),
         .\grstd1.grst_full.grst_f.rst_d3_reg (rst_full_gen_i),
         .out(rst_full_ff_i),
+        .scndry_out(scndry_out),
         .spiXfer_done_int(spiXfer_done_int),
         .\src_gray_ff_reg[3] (p_13_out));
   system_axi_quad_spi_0_0_memory_4 \gntv_or_sync_fifo.mem 
        (.AR(rstblk_n_1),
         .E(E),
         .L(p_13_out),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ),
         .Q(Q),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] (\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .ext_spi_clk(ext_spi_clk),
         .\gc1.count_d2_reg[3] (p_0_out),
-        .\gpregsm1.curr_fwft_state_reg[0] (p_6_out),
-        .\gpregsm1.curr_fwft_state_reg[1] (ram_rd_en_i),
-        .irpt_rdack144_out(irpt_rdack144_out),
-        .p_15_in(p_15_in),
-        .p_1_in29_in(p_1_in29_in),
-        .p_1_in32_in(p_1_in32_in),
-        .s_axi_aclk(s_axi_aclk),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
-        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk));
+        .\gpregsm1.curr_fwft_state_reg[1] (p_6_out),
+        .ram_empty_fb_i_reg(\gntv_or_sync_fifo.gl0.rd_n_1 ),
+        .s_axi_aclk(s_axi_aclk));
   system_axi_quad_spi_0_0_reset_blk_ramfifo__xdcDup__1 rstblk
        (.AR(rstblk_n_0),
         .ext_spi_clk(ext_spi_clk),
@@ -11990,41 +11582,40 @@ endmodule
 (* ORIG_REF_NAME = "fifo_generator_top" *) 
 module system_axi_quad_spi_0_0_fifo_generator_top
    (out,
-    \gic0.gc1.count_reg[0] ,
-    IP2Bus_WrAck_transmit_enable__0,
+    tx_fifo_full,
     \OTHER_RATIO_GENERATE.Serial_Dout_reg ,
     Q,
     src_arst,
     s_axi_aclk,
     ext_spi_clk,
     spisel_d1_reg__0,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    Bus_RNW_reg,
     p_6_in,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    Bus_RNW_reg_reg,
     spicr_9_lsb_to_spi_clk,
     s_axi_wdata);
   output out;
-  output \gic0.gc1.count_reg[0] ;
-  output IP2Bus_WrAck_transmit_enable__0;
+  output tx_fifo_full;
   output \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   output [7:0]Q;
   input src_arst;
   input s_axi_aclk;
   input ext_spi_clk;
   input spisel_d1_reg__0;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input Bus_RNW_reg;
   input p_6_in;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input Bus_RNW_reg_reg;
   input spicr_9_lsb_to_spi_clk;
   input [7:0]s_axi_wdata;
 
   wire Bus_RNW_reg;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire Bus_RNW_reg_reg;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   wire [7:0]Q;
   wire ext_spi_clk;
-  wire \gic0.gc1.count_reg[0] ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire p_6_in;
   wire s_axi_aclk;
@@ -12032,22 +11623,23 @@ module system_axi_quad_spi_0_0_fifo_generator_top
   wire spicr_9_lsb_to_spi_clk;
   wire spisel_d1_reg__0;
   wire src_arst;
+  wire tx_fifo_full;
 
   system_axi_quad_spi_0_0_fifo_generator_ramfifo \grf.rf 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
         .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\OTHER_RATIO_GENERATE.Serial_Dout_reg ),
         .Q(Q),
         .ext_spi_clk(ext_spi_clk),
-        .\gic0.gc1.count_reg[0] (\gic0.gc1.count_reg[0] ),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(out),
         .p_6_in(p_6_in),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
         .spisel_d1_reg__0(spisel_d1_reg__0),
-        .src_arst(src_arst));
+        .src_arst(src_arst),
+        .tx_fifo_full(tx_fifo_full));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_top" *) 
@@ -12055,206 +11647,117 @@ module system_axi_quad_spi_0_0_fifo_generator_top__xdcDup__1
    (out,
     \gaf.ram_almost_full_i_reg ,
     Rx_FIFO_Full_Fifo_org,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ,
-    D,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
     Receive_ip2bus_error0,
     Rx_FIFO_Full_Fifo,
-    Q,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ,
     src_arst,
     ext_spi_clk,
     s_axi_aclk,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     spiXfer_done_int,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    p_15_in,
-    bus2ip_rdce_int,
-    spicr_2_mst_n_slv_frm_axi_clk,
-    p_1_in32_in,
-    spicr_3_cpol_frm_axi_clk,
-    p_1_in29_in,
-    rx_fifo_empty_i,
-    p_7_in,
-    Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
     p_5_in,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ,
+    Bus_RNW_reg,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
+    scndry_out,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] );
+    Q);
   output out;
   output \gaf.ram_almost_full_i_reg ;
   output Rx_FIFO_Full_Fifo_org;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  output [0:0]D;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
   output Receive_ip2bus_error0;
   output Rx_FIFO_Full_Fifo;
-  output [5:0]Q;
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   input src_arst;
   input ext_spi_clk;
   input s_axi_aclk;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input spiXfer_done_int;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input p_15_in;
-  input [0:0]bus2ip_rdce_int;
-  input spicr_2_mst_n_slv_frm_axi_clk;
-  input p_1_in32_in;
-  input spicr_3_cpol_frm_axi_clk;
-  input p_1_in29_in;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input p_5_in;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  input scndry_out;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire [5:0]Q;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  wire [7:0]Q;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Full_Fifo;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
   wire Rx_FIFO_Full_Fifo_org;
-  wire [0:0]bus2ip_rdce_int;
   wire ext_spi_clk;
   wire \gaf.ram_almost_full_i_reg ;
-  wire \goreg_dm.dout_i_reg[0] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
   wire out;
-  wire p_15_in;
-  wire p_1_in29_in;
-  wire p_1_in32_in;
   wire p_5_in;
-  wire p_7_in;
-  wire reset2ip_reset_int;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire scndry_out;
   wire spiXfer_done_int;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
-  wire spicr_3_cpol_frm_axi_clk;
   wire src_arst;
-  wire [0:0]tx_fifo_count;
 
   system_axi_quad_spi_0_0_fifo_generator_ramfifo__xdcDup__1 \grf.rf 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .D(D),
         .E(E),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ),
-        .\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .Q(Q),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] (\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
         .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .ext_spi_clk(ext_spi_clk),
         .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
-        .\goreg_dm.dout_i_reg[0] (\goreg_dm.dout_i_reg[0] ),
-        .\ip_irpt_enable_reg_reg[0] (\ip_irpt_enable_reg_reg[0] ),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .out(out),
-        .p_15_in(p_15_in),
-        .p_1_in29_in(p_1_in29_in),
-        .p_1_in32_in(p_1_in32_in),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .scndry_out(scndry_out),
         .spiXfer_done_int(spiXfer_done_int),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
-        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
-        .src_arst(src_arst),
-        .tx_fifo_count(tx_fifo_count));
+        .src_arst(src_arst));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_v13_2_1" *) 
 module system_axi_quad_spi_0_0_fifo_generator_v13_2_1
    (out,
-    \gic0.gc1.count_reg[0] ,
-    IP2Bus_WrAck_transmit_enable__0,
+    tx_fifo_full,
     \OTHER_RATIO_GENERATE.Serial_Dout_reg ,
     Q,
     src_arst,
     s_axi_aclk,
     ext_spi_clk,
     spisel_d1_reg__0,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    Bus_RNW_reg,
     p_6_in,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    Bus_RNW_reg_reg,
     spicr_9_lsb_to_spi_clk,
     s_axi_wdata);
   output out;
-  output \gic0.gc1.count_reg[0] ;
-  output IP2Bus_WrAck_transmit_enable__0;
+  output tx_fifo_full;
   output \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   output [7:0]Q;
   input src_arst;
   input s_axi_aclk;
   input ext_spi_clk;
   input spisel_d1_reg__0;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input Bus_RNW_reg;
   input p_6_in;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input Bus_RNW_reg_reg;
   input spicr_9_lsb_to_spi_clk;
   input [7:0]s_axi_wdata;
 
   wire Bus_RNW_reg;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire Bus_RNW_reg_reg;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   wire [7:0]Q;
   wire ext_spi_clk;
-  wire \gic0.gc1.count_reg[0] ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire p_6_in;
   wire s_axi_aclk;
@@ -12262,22 +11765,23 @@ module system_axi_quad_spi_0_0_fifo_generator_v13_2_1
   wire spicr_9_lsb_to_spi_clk;
   wire spisel_d1_reg__0;
   wire src_arst;
+  wire tx_fifo_full;
 
   system_axi_quad_spi_0_0_fifo_generator_v13_2_1_synth inst_fifo_gen
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
         .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\OTHER_RATIO_GENERATE.Serial_Dout_reg ),
         .Q(Q),
         .ext_spi_clk(ext_spi_clk),
-        .\gic0.gc1.count_reg[0] (\gic0.gc1.count_reg[0] ),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(out),
         .p_6_in(p_6_in),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
         .spisel_d1_reg__0(spisel_d1_reg__0),
-        .src_arst(src_arst));
+        .src_arst(src_arst),
+        .tx_fifo_full(tx_fifo_full));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_v13_2_1" *) 
@@ -12285,206 +11789,117 @@ module system_axi_quad_spi_0_0_fifo_generator_v13_2_1__xdcDup__1
    (out,
     \gaf.ram_almost_full_i_reg ,
     Rx_FIFO_Full_Fifo_org,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ,
-    D,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
     Receive_ip2bus_error0,
     Rx_FIFO_Full_Fifo,
-    Q,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ,
     src_arst,
     ext_spi_clk,
     s_axi_aclk,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     spiXfer_done_int,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    p_15_in,
-    bus2ip_rdce_int,
-    spicr_2_mst_n_slv_frm_axi_clk,
-    p_1_in32_in,
-    spicr_3_cpol_frm_axi_clk,
-    p_1_in29_in,
-    rx_fifo_empty_i,
-    p_7_in,
-    Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
     p_5_in,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ,
+    Bus_RNW_reg,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
+    scndry_out,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] );
+    Q);
   output out;
   output \gaf.ram_almost_full_i_reg ;
   output Rx_FIFO_Full_Fifo_org;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  output [0:0]D;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
   output Receive_ip2bus_error0;
   output Rx_FIFO_Full_Fifo;
-  output [5:0]Q;
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   input src_arst;
   input ext_spi_clk;
   input s_axi_aclk;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input spiXfer_done_int;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input p_15_in;
-  input [0:0]bus2ip_rdce_int;
-  input spicr_2_mst_n_slv_frm_axi_clk;
-  input p_1_in32_in;
-  input spicr_3_cpol_frm_axi_clk;
-  input p_1_in29_in;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input p_5_in;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  input scndry_out;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire [5:0]Q;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  wire [7:0]Q;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Full_Fifo;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
   wire Rx_FIFO_Full_Fifo_org;
-  wire [0:0]bus2ip_rdce_int;
   wire ext_spi_clk;
   wire \gaf.ram_almost_full_i_reg ;
-  wire \goreg_dm.dout_i_reg[0] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
   wire out;
-  wire p_15_in;
-  wire p_1_in29_in;
-  wire p_1_in32_in;
   wire p_5_in;
-  wire p_7_in;
-  wire reset2ip_reset_int;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire scndry_out;
   wire spiXfer_done_int;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
-  wire spicr_3_cpol_frm_axi_clk;
   wire src_arst;
-  wire [0:0]tx_fifo_count;
 
   system_axi_quad_spi_0_0_fifo_generator_v13_2_1_synth__xdcDup__1 inst_fifo_gen
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .D(D),
         .E(E),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ),
-        .\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .Q(Q),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] (\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
         .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .ext_spi_clk(ext_spi_clk),
         .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
-        .\goreg_dm.dout_i_reg[0] (\goreg_dm.dout_i_reg[0] ),
-        .\ip_irpt_enable_reg_reg[0] (\ip_irpt_enable_reg_reg[0] ),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .out(out),
-        .p_15_in(p_15_in),
-        .p_1_in29_in(p_1_in29_in),
-        .p_1_in32_in(p_1_in32_in),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .scndry_out(scndry_out),
         .spiXfer_done_int(spiXfer_done_int),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
-        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
-        .src_arst(src_arst),
-        .tx_fifo_count(tx_fifo_count));
+        .src_arst(src_arst));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_v13_2_1_synth" *) 
 module system_axi_quad_spi_0_0_fifo_generator_v13_2_1_synth
    (out,
-    \gic0.gc1.count_reg[0] ,
-    IP2Bus_WrAck_transmit_enable__0,
+    tx_fifo_full,
     \OTHER_RATIO_GENERATE.Serial_Dout_reg ,
     Q,
     src_arst,
     s_axi_aclk,
     ext_spi_clk,
     spisel_d1_reg__0,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
-    Bus_RNW_reg,
     p_6_in,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    Bus_RNW_reg_reg,
     spicr_9_lsb_to_spi_clk,
     s_axi_wdata);
   output out;
-  output \gic0.gc1.count_reg[0] ;
-  output IP2Bus_WrAck_transmit_enable__0;
+  output tx_fifo_full;
   output \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   output [7:0]Q;
   input src_arst;
   input s_axi_aclk;
   input ext_spi_clk;
   input spisel_d1_reg__0;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  input Bus_RNW_reg;
   input p_6_in;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input Bus_RNW_reg_reg;
   input spicr_9_lsb_to_spi_clk;
   input [7:0]s_axi_wdata;
 
   wire Bus_RNW_reg;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  wire Bus_RNW_reg_reg;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   wire [7:0]Q;
   wire ext_spi_clk;
-  wire \gic0.gc1.count_reg[0] ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire p_6_in;
   wire s_axi_aclk;
@@ -12492,22 +11907,23 @@ module system_axi_quad_spi_0_0_fifo_generator_v13_2_1_synth
   wire spicr_9_lsb_to_spi_clk;
   wire spisel_d1_reg__0;
   wire src_arst;
+  wire tx_fifo_full;
 
   system_axi_quad_spi_0_0_fifo_generator_top \gconvfifo.rf 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
         .\OTHER_RATIO_GENERATE.Serial_Dout_reg (\OTHER_RATIO_GENERATE.Serial_Dout_reg ),
         .Q(Q),
         .ext_spi_clk(ext_spi_clk),
-        .\gic0.gc1.count_reg[0] (\gic0.gc1.count_reg[0] ),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(out),
         .p_6_in(p_6_in),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata),
         .spicr_9_lsb_to_spi_clk(spicr_9_lsb_to_spi_clk),
         .spisel_d1_reg__0(spisel_d1_reg__0),
-        .src_arst(src_arst));
+        .src_arst(src_arst),
+        .tx_fifo_full(tx_fifo_full));
 endmodule
 
 (* ORIG_REF_NAME = "fifo_generator_v13_2_1_synth" *) 
@@ -12515,166 +11931,78 @@ module system_axi_quad_spi_0_0_fifo_generator_v13_2_1_synth__xdcDup__1
    (out,
     \gaf.ram_almost_full_i_reg ,
     Rx_FIFO_Full_Fifo_org,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ,
-    D,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
     Receive_ip2bus_error0,
     Rx_FIFO_Full_Fifo,
-    Q,
+    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ,
     src_arst,
     ext_spi_clk,
     s_axi_aclk,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
     spiXfer_done_int,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    p_15_in,
-    bus2ip_rdce_int,
-    spicr_2_mst_n_slv_frm_axi_clk,
-    p_1_in32_in,
-    spicr_3_cpol_frm_axi_clk,
-    p_1_in29_in,
-    rx_fifo_empty_i,
-    p_7_in,
-    Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
     p_5_in,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ,
+    Bus_RNW_reg,
+    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
+    scndry_out,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] );
+    Q);
   output out;
   output \gaf.ram_almost_full_i_reg ;
   output Rx_FIFO_Full_Fifo_org;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  output [0:0]D;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
   output Receive_ip2bus_error0;
   output Rx_FIFO_Full_Fifo;
-  output [5:0]Q;
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   input src_arst;
   input ext_spi_clk;
   input s_axi_aclk;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input spiXfer_done_int;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input p_15_in;
-  input [0:0]bus2ip_rdce_int;
-  input spicr_2_mst_n_slv_frm_axi_clk;
-  input p_1_in32_in;
-  input spicr_3_cpol_frm_axi_clk;
-  input p_1_in29_in;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   input p_5_in;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  input scndry_out;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
-  wire [5:0]Q;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  wire [7:0]Q;
   wire Receive_ip2bus_error0;
   wire Rx_FIFO_Full_Fifo;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
   wire Rx_FIFO_Full_Fifo_org;
-  wire [0:0]bus2ip_rdce_int;
   wire ext_spi_clk;
   wire \gaf.ram_almost_full_i_reg ;
-  wire \goreg_dm.dout_i_reg[0] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
   wire out;
-  wire p_15_in;
-  wire p_1_in29_in;
-  wire p_1_in32_in;
   wire p_5_in;
-  wire p_7_in;
-  wire reset2ip_reset_int;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
   wire scndry_out;
   wire spiXfer_done_int;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
-  wire spicr_3_cpol_frm_axi_clk;
   wire src_arst;
-  wire [0:0]tx_fifo_count;
 
   system_axi_quad_spi_0_0_fifo_generator_top__xdcDup__1 \gconvfifo.rf 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .D(D),
         .E(E),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ),
-        .\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ),
-        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .Q(Q),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] (\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
         .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
-        .bus2ip_rdce_int(bus2ip_rdce_int),
         .ext_spi_clk(ext_spi_clk),
         .\gaf.ram_almost_full_i_reg (\gaf.ram_almost_full_i_reg ),
-        .\goreg_dm.dout_i_reg[0] (\goreg_dm.dout_i_reg[0] ),
-        .\ip_irpt_enable_reg_reg[0] (\ip_irpt_enable_reg_reg[0] ),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .out(out),
-        .p_15_in(p_15_in),
-        .p_1_in29_in(p_1_in29_in),
-        .p_1_in32_in(p_1_in32_in),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
         .s_axi_aclk(s_axi_aclk),
         .scndry_out(scndry_out),
         .spiXfer_done_int(spiXfer_done_int),
-        .spicr_2_mst_n_slv_frm_axi_clk(spicr_2_mst_n_slv_frm_axi_clk),
-        .spicr_3_cpol_frm_axi_clk(spicr_3_cpol_frm_axi_clk),
-        .src_arst(src_arst),
-        .tx_fifo_count(tx_fifo_count));
+        .src_arst(src_arst));
 endmodule
 
 (* ORIG_REF_NAME = "memory" *) 
@@ -12683,7 +12011,7 @@ module system_axi_quad_spi_0_0_memory
     Q,
     spicr_9_lsb_to_spi_clk,
     s_axi_aclk,
-    I75,
+    I74,
     s_axi_wdata,
     \gc1.count_d2_reg[3] ,
     L,
@@ -12695,7 +12023,7 @@ module system_axi_quad_spi_0_0_memory
   output [7:0]Q;
   input spicr_9_lsb_to_spi_clk;
   input s_axi_aclk;
-  input I75;
+  input I74;
   input [7:0]s_axi_wdata;
   input [3:0]\gc1.count_d2_reg[3] ;
   input [3:0]L;
@@ -12706,7 +12034,7 @@ module system_axi_quad_spi_0_0_memory
 
   wire [0:0]AR;
   wire [0:0]E;
-  wire I75;
+  wire I74;
   wire [3:0]L;
   wire \OTHER_RATIO_GENERATE.Serial_Dout_reg ;
   wire [7:0]Q;
@@ -12735,7 +12063,7 @@ module system_axi_quad_spi_0_0_memory
   system_axi_quad_spi_0_0_dmem \gdm.dm_gen.dm 
        (.AR(AR),
         .E(E),
-        .I75(I75),
+        .I74(I74),
         .L(L),
         .Q({\gdm.dm_gen.dm_n_0 ,\gdm.dm_gen.dm_n_1 ,\gdm.dm_gen.dm_n_2 ,\gdm.dm_gen.dm_n_3 ,\gdm.dm_gen.dm_n_4 ,\gdm.dm_gen.dm_n_5 ,\gdm.dm_gen.dm_n_6 ,\gdm.dm_gen.dm_n_7 }),
         .ext_spi_clk(ext_spi_clk),
@@ -12810,54 +12138,32 @@ endmodule
 
 (* ORIG_REF_NAME = "memory" *) 
 module system_axi_quad_spi_0_0_memory_4
-   (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ,
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ,
-    Q,
-    p_15_in,
-    bus2ip_rdce_int,
-    spicr_2_mst_n_slv_frm_axi_clk,
-    p_1_in32_in,
-    irpt_rdack144_out,
-    spicr_3_cpol_frm_axi_clk,
-    p_1_in29_in,
+   (\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ,
     ext_spi_clk,
     E,
-    \RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ,
+    Q,
     \gc1.count_d2_reg[3] ,
     L,
-    \gpregsm1.curr_fwft_state_reg[1] ,
+    ram_empty_fb_i_reg,
     s_axi_aclk,
     AR,
-    \gpregsm1.curr_fwft_state_reg[0] );
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  output \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  output [5:0]Q;
-  input p_15_in;
-  input [0:0]bus2ip_rdce_int;
-  input spicr_2_mst_n_slv_frm_axi_clk;
-  input p_1_in32_in;
-  input irpt_rdack144_out;
-  input spicr_3_cpol_frm_axi_clk;
-  input p_1_in29_in;
+    \gpregsm1.curr_fwft_state_reg[1] );
+  output [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
   input ext_spi_clk;
   input [0:0]E;
-  input [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
+  input [7:0]Q;
   input [3:0]\gc1.count_d2_reg[3] ;
   input [3:0]L;
-  input [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
+  input [0:0]ram_empty_fb_i_reg;
   input s_axi_aclk;
   input [0:0]AR;
-  input [0:0]\gpregsm1.curr_fwft_state_reg[0] ;
+  input [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
 
   wire [0:0]AR;
   wire [0:0]E;
   wire [3:0]L;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ;
-  wire [5:0]Q;
-  wire [7:0]\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ;
-  wire [0:0]bus2ip_rdce_int;
-  wire [4:5]data_from_rx_fifo;
+  wire [7:0]\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] ;
+  wire [7:0]Q;
   wire ext_spi_clk;
   wire [3:0]\gc1.count_d2_reg[3] ;
   wire \gdm.dm_gen.dm_n_0 ;
@@ -12868,110 +12174,84 @@ module system_axi_quad_spi_0_0_memory_4
   wire \gdm.dm_gen.dm_n_5 ;
   wire \gdm.dm_gen.dm_n_6 ;
   wire \gdm.dm_gen.dm_n_7 ;
-  wire [0:0]\gpregsm1.curr_fwft_state_reg[0] ;
   wire [0:0]\gpregsm1.curr_fwft_state_reg[1] ;
-  wire irpt_rdack144_out;
-  wire p_15_in;
-  wire p_1_in29_in;
-  wire p_1_in32_in;
+  wire [0:0]ram_empty_fb_i_reg;
   wire s_axi_aclk;
-  wire spicr_2_mst_n_slv_frm_axi_clk;
-  wire spicr_3_cpol_frm_axi_clk;
 
-  LUT6 #(
-    .INIT(64'hFFFFF888F888F888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[28]_i_4 
-       (.I0(data_from_rx_fifo[4]),
-        .I1(p_15_in),
-        .I2(spicr_3_cpol_frm_axi_clk),
-        .I3(bus2ip_rdce_int),
-        .I4(p_1_in29_in),
-        .I5(irpt_rdack144_out),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[28] ));
-  LUT6 #(
-    .INIT(64'hFFFFF888F888F888)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[29]_i_4 
-       (.I0(data_from_rx_fifo[5]),
-        .I1(p_15_in),
-        .I2(bus2ip_rdce_int),
-        .I3(spicr_2_mst_n_slv_frm_axi_clk),
-        .I4(p_1_in32_in),
-        .I5(irpt_rdack144_out),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[29] ));
   system_axi_quad_spi_0_0_dmem_5 \gdm.dm_gen.dm 
        (.AR(AR),
         .E(E),
         .L(L),
-        .Q({\gdm.dm_gen.dm_n_0 ,\gdm.dm_gen.dm_n_1 ,\gdm.dm_gen.dm_n_2 ,\gdm.dm_gen.dm_n_3 ,\gdm.dm_gen.dm_n_4 ,\gdm.dm_gen.dm_n_5 ,\gdm.dm_gen.dm_n_6 ,\gdm.dm_gen.dm_n_7 }),
-        .\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] (\RX_DATA_GEN_OTHER_SCK_RATIOS.receive_Data_int_reg[0] ),
+        .Q(Q),
         .ext_spi_clk(ext_spi_clk),
         .\gc1.count_d2_reg[3] (\gc1.count_d2_reg[3] ),
-        .\gpregsm1.curr_fwft_state_reg[1] (\gpregsm1.curr_fwft_state_reg[1] ),
+        .\goreg_dm.dout_i_reg[7] ({\gdm.dm_gen.dm_n_0 ,\gdm.dm_gen.dm_n_1 ,\gdm.dm_gen.dm_n_2 ,\gdm.dm_gen.dm_n_3 ,\gdm.dm_gen.dm_n_4 ,\gdm.dm_gen.dm_n_5 ,\gdm.dm_gen.dm_n_6 ,\gdm.dm_gen.dm_n_7 }),
+        .ram_empty_fb_i_reg(ram_empty_fb_i_reg),
         .s_axi_aclk(s_axi_aclk));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[0] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_7 ),
-        .Q(Q[0]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [0]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[1] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_6 ),
-        .Q(Q[1]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [1]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[2] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_5 ),
-        .Q(data_from_rx_fifo[5]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [2]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[3] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_4 ),
-        .Q(data_from_rx_fifo[4]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [3]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[4] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_3 ),
-        .Q(Q[2]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [4]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[5] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_2 ),
-        .Q(Q[3]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [5]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[6] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_1 ),
-        .Q(Q[4]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [6]));
   FDCE #(
     .INIT(1'b0)) 
     \goreg_dm.dout_i_reg[7] 
        (.C(s_axi_aclk),
-        .CE(\gpregsm1.curr_fwft_state_reg[0] ),
+        .CE(\gpregsm1.curr_fwft_state_reg[1] ),
         .CLR(AR),
         .D(\gdm.dm_gen.dm_n_0 ),
-        .Q(Q[5]));
+        .Q(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data_reg[24] [7]));
 endmodule
 
 (* ORIG_REF_NAME = "rd_bin_cntr" *) 
@@ -13131,10 +12411,10 @@ module system_axi_quad_spi_0_0_rd_bin_cntr
   LUT5 #(
     .INIT(32'hFFFF6FF6)) 
     ram_empty_i_i_2__0
-       (.I0(WR_PNTR_RD[0]),
-        .I1(rd_pntr_plus1[0]),
-        .I2(WR_PNTR_RD[1]),
-        .I3(rd_pntr_plus1[1]),
+       (.I0(WR_PNTR_RD[3]),
+        .I1(rd_pntr_plus1[3]),
+        .I2(WR_PNTR_RD[2]),
+        .I3(rd_pntr_plus1[2]),
         .I4(ram_empty_i_i_4__0_n_0),
         .O(ram_empty_i_reg_0));
   LUT5 #(
@@ -13149,41 +12429,50 @@ module system_axi_quad_spi_0_0_rd_bin_cntr
   LUT4 #(
     .INIT(16'h6FF6)) 
     ram_empty_i_i_4__0
-       (.I0(rd_pntr_plus1[2]),
-        .I1(WR_PNTR_RD[2]),
-        .I2(rd_pntr_plus1[3]),
-        .I3(WR_PNTR_RD[3]),
+       (.I0(rd_pntr_plus1[1]),
+        .I1(WR_PNTR_RD[1]),
+        .I2(rd_pntr_plus1[0]),
+        .I3(WR_PNTR_RD[0]),
         .O(ram_empty_i_i_4__0_n_0));
   LUT4 #(
     .INIT(16'h6FF6)) 
     ram_empty_i_i_5__0
-       (.I0(Q[1]),
-        .I1(WR_PNTR_RD[1]),
-        .I2(Q[0]),
-        .I3(WR_PNTR_RD[0]),
+       (.I0(Q[0]),
+        .I1(WR_PNTR_RD[0]),
+        .I2(Q[1]),
+        .I3(WR_PNTR_RD[1]),
         .O(ram_empty_i_i_5__0_n_0));
 endmodule
 
 (* ORIG_REF_NAME = "rd_bin_cntr" *) 
 module system_axi_quad_spi_0_0_rd_bin_cntr_10
-   (Q,
-    \src_gray_ff_reg[3] ,
+   (ram_empty_i_reg,
+    Q,
+    ram_empty_i_reg_0,
+    WR_PNTR_RD,
     E,
     s_axi_aclk,
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg );
+  output ram_empty_i_reg;
   output [3:0]Q;
-  output [3:0]\src_gray_ff_reg[3] ;
+  output ram_empty_i_reg_0;
+  input [3:0]WR_PNTR_RD;
   input [0:0]E;
   input s_axi_aclk;
   input \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
 
   wire [0:0]E;
   wire [3:0]Q;
+  wire [3:0]WR_PNTR_RD;
   wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire [3:0]plusOp__0;
+  wire ram_empty_i_i_4_n_0;
+  wire ram_empty_i_i_5_n_0;
+  wire ram_empty_i_reg;
+  wire ram_empty_i_reg_0;
+  wire [3:0]rd_pntr_plus1;
   wire [3:0]rd_pntr_plus2;
   wire s_axi_aclk;
-  wire [3:0]\src_gray_ff_reg[3] ;
 
   LUT1 #(
     .INIT(2'h1)) 
@@ -13198,20 +12487,20 @@ module system_axi_quad_spi_0_0_rd_bin_cntr_10
         .O(plusOp__0[1]));
   (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT3 #(
-    .INIT(8'h78)) 
+    .INIT(8'h6A)) 
     \gc1.count[2]_i_1 
-       (.I0(rd_pntr_plus2[0]),
+       (.I0(rd_pntr_plus2[2]),
         .I1(rd_pntr_plus2[1]),
-        .I2(rd_pntr_plus2[2]),
+        .I2(rd_pntr_plus2[0]),
         .O(plusOp__0[2]));
   (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT4 #(
-    .INIT(16'h7F80)) 
+    .INIT(16'h6AAA)) 
     \gc1.count[3]_i_1 
-       (.I0(rd_pntr_plus2[1]),
+       (.I0(rd_pntr_plus2[3]),
         .I1(rd_pntr_plus2[0]),
-        .I2(rd_pntr_plus2[2]),
-        .I3(rd_pntr_plus2[3]),
+        .I2(rd_pntr_plus2[1]),
+        .I3(rd_pntr_plus2[2]),
         .O(plusOp__0[3]));
   FDPE #(
     .INIT(1'b1)) 
@@ -13220,7 +12509,7 @@ module system_axi_quad_spi_0_0_rd_bin_cntr_10
         .CE(E),
         .D(rd_pntr_plus2[0]),
         .PRE(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .Q(Q[0]));
+        .Q(rd_pntr_plus1[0]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d1_reg[1] 
@@ -13228,7 +12517,7 @@ module system_axi_quad_spi_0_0_rd_bin_cntr_10
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .D(rd_pntr_plus2[1]),
-        .Q(Q[1]));
+        .Q(rd_pntr_plus1[1]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d1_reg[2] 
@@ -13236,7 +12525,7 @@ module system_axi_quad_spi_0_0_rd_bin_cntr_10
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .D(rd_pntr_plus2[2]),
-        .Q(Q[2]));
+        .Q(rd_pntr_plus1[2]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d1_reg[3] 
@@ -13244,39 +12533,39 @@ module system_axi_quad_spi_0_0_rd_bin_cntr_10
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .D(rd_pntr_plus2[3]),
-        .Q(Q[3]));
+        .Q(rd_pntr_plus1[3]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d2_reg[0] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(Q[0]),
-        .Q(\src_gray_ff_reg[3] [0]));
+        .D(rd_pntr_plus1[0]),
+        .Q(Q[0]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d2_reg[1] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(Q[1]),
-        .Q(\src_gray_ff_reg[3] [1]));
+        .D(rd_pntr_plus1[1]),
+        .Q(Q[1]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d2_reg[2] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(Q[2]),
-        .Q(\src_gray_ff_reg[3] [2]));
+        .D(rd_pntr_plus1[2]),
+        .Q(Q[2]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_d2_reg[3] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(Q[3]),
-        .Q(\src_gray_ff_reg[3] [3]));
+        .D(rd_pntr_plus1[3]),
+        .Q(Q[3]));
   FDCE #(
     .INIT(1'b0)) 
     \gc1.count_reg[0] 
@@ -13309,6 +12598,40 @@ module system_axi_quad_spi_0_0_rd_bin_cntr_10
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .D(plusOp__0[3]),
         .Q(rd_pntr_plus2[3]));
+  LUT5 #(
+    .INIT(32'hFFFF6FF6)) 
+    ram_empty_i_i_2
+       (.I0(WR_PNTR_RD[1]),
+        .I1(rd_pntr_plus1[1]),
+        .I2(WR_PNTR_RD[0]),
+        .I3(rd_pntr_plus1[0]),
+        .I4(ram_empty_i_i_4_n_0),
+        .O(ram_empty_i_reg_0));
+  LUT5 #(
+    .INIT(32'h00009009)) 
+    ram_empty_i_i_3
+       (.I0(WR_PNTR_RD[3]),
+        .I1(Q[3]),
+        .I2(WR_PNTR_RD[2]),
+        .I3(Q[2]),
+        .I4(ram_empty_i_i_5_n_0),
+        .O(ram_empty_i_reg));
+  LUT4 #(
+    .INIT(16'h6FF6)) 
+    ram_empty_i_i_4
+       (.I0(rd_pntr_plus1[2]),
+        .I1(WR_PNTR_RD[2]),
+        .I2(rd_pntr_plus1[3]),
+        .I3(WR_PNTR_RD[3]),
+        .O(ram_empty_i_i_4_n_0));
+  LUT4 #(
+    .INIT(16'h6FF6)) 
+    ram_empty_i_i_5
+       (.I0(Q[1]),
+        .I1(WR_PNTR_RD[1]),
+        .I2(Q[0]),
+        .I3(WR_PNTR_RD[0]),
+        .O(ram_empty_i_i_5_n_0));
 endmodule
 
 (* ORIG_REF_NAME = "rd_fwft" *) 
@@ -13321,8 +12644,8 @@ module system_axi_quad_spi_0_0_rd_fwft
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     ram_empty_fb_i_reg,
     spisel_d1_reg__0,
-    \dest_out_bin_ff_reg[0] ,
-    \dest_out_bin_ff_reg[3] );
+    \dest_out_bin_ff_reg[3] ,
+    \dest_out_bin_ff_reg[3]_0 );
   output out;
   output [0:0]E;
   output ram_empty_fb_i0;
@@ -13331,16 +12654,16 @@ module system_axi_quad_spi_0_0_rd_fwft
   input \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   input ram_empty_fb_i_reg;
   input spisel_d1_reg__0;
-  input \dest_out_bin_ff_reg[0] ;
   input \dest_out_bin_ff_reg[3] ;
+  input \dest_out_bin_ff_reg[3]_0 ;
 
   wire [0:0]E;
   (* DONT_TOUCH *) wire aempty_fwft_fb_i;
   (* DONT_TOUCH *) wire aempty_fwft_i;
   wire aempty_fwft_i0;
   (* DONT_TOUCH *) wire [1:0]curr_fwft_state;
-  wire \dest_out_bin_ff_reg[0] ;
   wire \dest_out_bin_ff_reg[3] ;
+  wire \dest_out_bin_ff_reg[3]_0 ;
   (* DONT_TOUCH *) wire empty_fwft_fb_i;
   (* DONT_TOUCH *) wire empty_fwft_fb_o_i;
   wire empty_fwft_fb_o_i0;
@@ -13507,163 +12830,88 @@ module system_axi_quad_spi_0_0_rd_fwft
         .I1(spisel_d1_reg__0),
         .I2(curr_fwft_state[0]),
         .I3(curr_fwft_state[1]),
-        .I4(\dest_out_bin_ff_reg[0] ),
-        .I5(\dest_out_bin_ff_reg[3] ),
+        .I4(\dest_out_bin_ff_reg[3] ),
+        .I5(\dest_out_bin_ff_reg[3]_0 ),
         .O(ram_empty_fb_i0));
 endmodule
 
 (* ORIG_REF_NAME = "rd_fwft" *) 
 module system_axi_quad_spi_0_0_rd_fwft_8
    (out,
-    ram_empty_fb_i0,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
     E,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ,
-    D,
+    ram_empty_fb_i0,
     \goreg_dm.dout_i_reg[7] ,
-    \gc1.count_d1_reg[3] ,
     Receive_ip2bus_error0,
     s_axi_aclk,
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
     ram_empty_fb_i_reg,
-    \gc1.count_d1_reg[2] ,
-    \gc1.count_d2_reg[2] ,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    rx_fifo_empty_i,
-    p_7_in,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
+    \dest_out_bin_ff_reg[1] ,
+    \dest_out_bin_ff_reg[3] ,
+    p_5_in,
     Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
-    p_5_in);
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg );
   output out;
-  output ram_empty_fb_i0;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
   output [0:0]E;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  output [0:0]D;
+  output ram_empty_fb_i0;
   output [0:0]\goreg_dm.dout_i_reg[7] ;
-  output [0:0]\gc1.count_d1_reg[3] ;
   output Receive_ip2bus_error0;
   input s_axi_aclk;
   input \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   input ram_empty_fb_i_reg;
-  input \gc1.count_d1_reg[2] ;
-  input \gc1.count_d2_reg[2] ;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
+  input \dest_out_bin_ff_reg[1] ;
+  input \dest_out_bin_ff_reg[3] ;
   input p_5_in;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  wire \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2_n_0 ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   wire Receive_ip2bus_error0;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
   (* DONT_TOUCH *) wire aempty_fwft_fb_i;
   (* DONT_TOUCH *) wire aempty_fwft_i;
   wire aempty_fwft_i0;
   (* DONT_TOUCH *) wire [1:0]curr_fwft_state;
+  wire \dest_out_bin_ff_reg[1] ;
+  wire \dest_out_bin_ff_reg[3] ;
   (* DONT_TOUCH *) wire empty_fwft_fb_i;
   (* DONT_TOUCH *) wire empty_fwft_fb_o_i;
   wire empty_fwft_fb_o_i0;
   (* DONT_TOUCH *) wire empty_fwft_i;
   wire empty_fwft_i0;
-  wire \gc1.count_d1_reg[2] ;
-  wire [0:0]\gc1.count_d1_reg[3] ;
-  wire \gc1.count_d2_reg[2] ;
-  wire \goreg_dm.dout_i_reg[0] ;
   wire [0:0]\goreg_dm.dout_i_reg[7] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
-  wire [1:0]next_fwft_state;
+  wire \gpregsm1.curr_fwft_state[1]_i_1_n_0 ;
+  wire [0:0]next_fwft_state;
   wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire p_5_in;
-  wire p_7_in;
   wire ram_empty_fb_i0;
   wire ram_empty_fb_i_reg;
-  wire reset2ip_reset_int;
-  wire rx_fifo_empty_i;
   wire s_axi_aclk;
-  wire scndry_out;
-  wire [0:0]tx_fifo_count;
   (* DONT_TOUCH *) wire user_valid;
 
   assign out = empty_fwft_i;
-  LUT6 #(
-    .INIT(64'h000000AB00AA00AA)) 
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_i_1 
-       (.I0(Rx_FIFO_Full_Fifo_d1_sig),
-        .I1(Rx_FIFO_Full_Fifo_d1_flag),
-        .I2(empty_fwft_i),
-        .I3(reset2ip_reset_int),
-        .I4(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I5(scndry_out),
-        .O(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ));
-  LUT6 #(
-    .INIT(64'hFFFFFFFFFFEAEAEA)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_1 
-       (.I0(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2_n_0 ),
-        .I1(\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
-        .I2(irpt_rdack144_out),
-        .I3(tx_fifo_count),
-        .I4(Bus_RNW_reg_reg),
-        .I5(\goreg_dm.dout_i_reg[0] ),
-        .O(D));
-  LUT6 #(
-    .INIT(64'hFFFFE000E000E000)) 
-    \LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2 
-       (.I0(empty_fwft_i),
-        .I1(rx_fifo_empty_i),
-        .I2(p_7_in),
-        .I3(Bus_RNW_reg),
-        .I4(\ip_irpt_enable_reg_reg[0] ),
-        .I5(\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .O(\LEGACY_MD_IP2BUS_DATA_GEN.IP2Bus_Data[31]_i_2_n_0 ));
   LUT4 #(
     .INIT(16'hE000)) 
     Receive_ip2bus_error_i_1
-       (.I0(rx_fifo_empty_i),
+       (.I0(\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
         .I1(empty_fwft_i),
-        .I2(Bus_RNW_reg),
-        .I3(p_5_in),
+        .I2(p_5_in),
+        .I3(Bus_RNW_reg),
         .O(Receive_ip2bus_error0));
   LUT5 #(
-    .INIT(32'hEAA88A8A)) 
+    .INIT(32'hF8C0E0F0)) 
     aempty_fwft_fb_i_i_1
-       (.I0(aempty_fwft_fb_i),
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
         .I1(ram_empty_fb_i_reg),
-        .I2(curr_fwft_state[1]),
-        .I3(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I4(curr_fwft_state[0]),
+        .I2(aempty_fwft_fb_i),
+        .I3(curr_fwft_state[0]),
+        .I4(curr_fwft_state[1]),
         .O(aempty_fwft_i0));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
@@ -13688,12 +12936,12 @@ module system_axi_quad_spi_0_0_rd_fwft_8
         .PRE(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .Q(aempty_fwft_i));
   LUT4 #(
-    .INIT(16'hA0EA)) 
+    .INIT(16'hF320)) 
     empty_fwft_fb_i_i_1
-       (.I0(empty_fwft_fb_i),
-        .I1(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I1(curr_fwft_state[1]),
         .I2(curr_fwft_state[0]),
-        .I3(curr_fwft_state[1]),
+        .I3(empty_fwft_fb_i),
         .O(empty_fwft_i0));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
@@ -13707,12 +12955,12 @@ module system_axi_quad_spi_0_0_rd_fwft_8
         .PRE(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .Q(empty_fwft_fb_i));
   LUT4 #(
-    .INIT(16'hA0EA)) 
+    .INIT(16'hF320)) 
     empty_fwft_fb_o_i_i_1
-       (.I0(empty_fwft_fb_o_i),
-        .I1(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I1(curr_fwft_state[1]),
         .I2(curr_fwft_state[0]),
-        .I3(curr_fwft_state[1]),
+        .I3(empty_fwft_fb_o_i),
         .O(empty_fwft_fb_o_i0));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
@@ -13737,54 +12985,41 @@ module system_axi_quad_spi_0_0_rd_fwft_8
         .PRE(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .Q(empty_fwft_i));
   LUT4 #(
-    .INIT(16'h00F7)) 
+    .INIT(16'h4555)) 
     \gc1.count_d1[3]_i_1 
-       (.I0(curr_fwft_state[1]),
-        .I1(curr_fwft_state[0]),
-        .I2(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I3(ram_empty_fb_i_reg),
-        .O(\gc1.count_d1_reg[3] ));
-  LUT4 #(
-    .INIT(16'h4000)) 
-    \gc1.count_d1[3]_i_2 
-       (.I0(empty_fwft_i),
-        .I1(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
-        .I2(Bus_RNW_reg),
-        .I3(p_5_in),
-        .O(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ));
+       (.I0(ram_empty_fb_i_reg),
+        .I1(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I2(curr_fwft_state[0]),
+        .I3(curr_fwft_state[1]),
+        .O(E));
   LUT6 #(
-    .INIT(64'h7555555500000000)) 
+    .INIT(64'h00008000AAAAAAAA)) 
     \goreg_dm.dout_i[7]_i_1 
+       (.I0(curr_fwft_state[1]),
+        .I1(p_5_in),
+        .I2(Bus_RNW_reg),
+        .I3(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
+        .I4(empty_fwft_i),
+        .I5(curr_fwft_state[0]),
+        .O(\goreg_dm.dout_i_reg[7] ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFF8AAAAAAA)) 
+    \gpregsm1.curr_fwft_state[0]_i_1 
        (.I0(curr_fwft_state[0]),
         .I1(empty_fwft_i),
         .I2(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .I3(Bus_RNW_reg),
         .I4(p_5_in),
         .I5(curr_fwft_state[1]),
-        .O(\goreg_dm.dout_i_reg[7] ));
-  LUT4 #(
-    .INIT(16'h00F7)) 
-    \gpr1.dout_i[7]_i_1 
-       (.I0(curr_fwft_state[1]),
-        .I1(curr_fwft_state[0]),
-        .I2(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I3(ram_empty_fb_i_reg),
-        .O(E));
-  LUT3 #(
-    .INIT(8'hF4)) 
-    \gpregsm1.curr_fwft_state[0]_i_1 
-       (.I0(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I1(curr_fwft_state[0]),
-        .I2(curr_fwft_state[1]),
-        .O(next_fwft_state[0]));
+        .O(next_fwft_state));
   LUT4 #(
     .INIT(16'h40FF)) 
     \gpregsm1.curr_fwft_state[1]_i_1 
-       (.I0(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I1(curr_fwft_state[1]),
-        .I2(curr_fwft_state[0]),
+       (.I0(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I1(curr_fwft_state[0]),
+        .I2(curr_fwft_state[1]),
         .I3(ram_empty_fb_i_reg),
-        .O(next_fwft_state[1]));
+        .O(\gpregsm1.curr_fwft_state[1]_i_1_n_0 ));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
   (* equivalent_register_removal = "no" *) 
@@ -13794,7 +13029,7 @@ module system_axi_quad_spi_0_0_rd_fwft_8
        (.C(s_axi_aclk),
         .CE(1'b1),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(next_fwft_state[0]),
+        .D(next_fwft_state),
         .Q(curr_fwft_state[0]));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
@@ -13805,7 +13040,7 @@ module system_axi_quad_spi_0_0_rd_fwft_8
        (.C(s_axi_aclk),
         .CE(1'b1),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(next_fwft_state[1]),
+        .D(\gpregsm1.curr_fwft_state[1]_i_1_n_0 ),
         .Q(curr_fwft_state[1]));
   (* DONT_TOUCH *) 
   (* KEEP = "yes" *) 
@@ -13816,17 +13051,17 @@ module system_axi_quad_spi_0_0_rd_fwft_8
        (.C(s_axi_aclk),
         .CE(1'b1),
         .CLR(\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .D(next_fwft_state[0]),
+        .D(next_fwft_state),
         .Q(user_valid));
   LUT6 #(
-    .INIT(64'hFFFFFFFF00F70000)) 
+    .INIT(64'hFFFFFFFF00004555)) 
     ram_empty_i_i_1
-       (.I0(curr_fwft_state[1]),
-        .I1(curr_fwft_state[0]),
-        .I2(\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .I3(ram_empty_fb_i_reg),
-        .I4(\gc1.count_d1_reg[2] ),
-        .I5(\gc1.count_d2_reg[2] ),
+       (.I0(ram_empty_fb_i_reg),
+        .I1(\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
+        .I2(curr_fwft_state[0]),
+        .I3(curr_fwft_state[1]),
+        .I4(\dest_out_bin_ff_reg[1] ),
+        .I5(\dest_out_bin_ff_reg[3] ),
         .O(ram_empty_fb_i0));
 endmodule
 
@@ -13864,8 +13099,8 @@ module system_axi_quad_spi_0_0_rd_logic
 
   system_axi_quad_spi_0_0_rd_fwft \gr1.gr1_int.rfwft 
        (.E(E),
-        .\dest_out_bin_ff_reg[0] (rpntr_n_5),
-        .\dest_out_bin_ff_reg[3] (rpntr_n_0),
+        .\dest_out_bin_ff_reg[3] (rpntr_n_5),
+        .\dest_out_bin_ff_reg[3]_0 (rpntr_n_0),
         .ext_spi_clk(ext_spi_clk),
         .\goreg_dm.dout_i_reg[7] (\goreg_dm.dout_i_reg[7] ),
         .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
@@ -13891,139 +13126,79 @@ endmodule
 (* ORIG_REF_NAME = "rd_logic" *) 
 module system_axi_quad_spi_0_0_rd_logic_2
    (out,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ,
     E,
-    \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ,
-    D,
     \goreg_dm.dout_i_reg[7] ,
     Receive_ip2bus_error0,
     Q,
-    \src_gray_ff_reg[3] ,
     s_axi_aclk,
     \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ,
-    \gc1.count_d1_reg[2] ,
-    \gc1.count_d2_reg[2] ,
-    Rx_FIFO_Full_Fifo_d1_sig,
-    Rx_FIFO_Full_Fifo_d1_flag,
-    reset2ip_reset_int,
-    scndry_out,
-    \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ,
-    irpt_rdack144_out,
-    tx_fifo_count,
-    Bus_RNW_reg_reg,
-    \goreg_dm.dout_i_reg[0] ,
-    rx_fifo_empty_i,
-    p_7_in,
+    \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ,
+    p_5_in,
     Bus_RNW_reg,
-    \ip_irpt_enable_reg_reg[0] ,
-    \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ,
     \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ,
-    p_5_in);
+    \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ,
+    WR_PNTR_RD);
   output out;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
   output [0:0]E;
-  output \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  output [0:0]D;
   output [0:0]\goreg_dm.dout_i_reg[7] ;
   output Receive_ip2bus_error0;
   output [3:0]Q;
-  output [3:0]\src_gray_ff_reg[3] ;
   input s_axi_aclk;
   input \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
-  input \gc1.count_d1_reg[2] ;
-  input \gc1.count_d2_reg[2] ;
-  input Rx_FIFO_Full_Fifo_d1_sig;
-  input Rx_FIFO_Full_Fifo_d1_flag;
-  input reset2ip_reset_int;
-  input scndry_out;
-  input \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
-  input irpt_rdack144_out;
-  input [0:0]tx_fifo_count;
-  input Bus_RNW_reg_reg;
-  input \goreg_dm.dout_i_reg[0] ;
-  input rx_fifo_empty_i;
-  input p_7_in;
-  input Bus_RNW_reg;
-  input [0:0]\ip_irpt_enable_reg_reg[0] ;
-  input \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   input p_5_in;
+  input Bus_RNW_reg;
+  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
+  input \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  input [3:0]WR_PNTR_RD;
 
   wire Bus_RNW_reg;
-  wire Bus_RNW_reg_reg;
-  wire [0:0]D;
   wire [0:0]E;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ;
-  wire \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ;
-  wire \GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ;
-  wire \GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ;
+  wire \FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ;
+  wire \GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ;
   wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ;
   wire [3:0]Q;
   wire Receive_ip2bus_error0;
-  wire Rx_FIFO_Full_Fifo_d1_flag;
-  wire Rx_FIFO_Full_Fifo_d1_sig;
-  wire \gc1.count_d1_reg[2] ;
-  wire \gc1.count_d2_reg[2] ;
-  wire \goreg_dm.dout_i_reg[0] ;
+  wire [3:0]WR_PNTR_RD;
   wire [0:0]\goreg_dm.dout_i_reg[7] ;
-  wire [0:0]\ip_irpt_enable_reg_reg[0] ;
-  wire irpt_rdack144_out;
   wire \ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ;
   wire out;
   wire p_2_out;
   wire p_5_in;
-  wire p_7_in;
-  wire p_8_out;
   wire ram_empty_fb_i0;
-  wire reset2ip_reset_int;
-  wire rx_fifo_empty_i;
+  wire rpntr_n_0;
+  wire rpntr_n_5;
   wire s_axi_aclk;
-  wire scndry_out;
-  wire [3:0]\src_gray_ff_reg[3] ;
-  wire [0:0]tx_fifo_count;
 
   system_axi_quad_spi_0_0_rd_fwft_8 \gr1.gr1_int.rfwft 
        (.Bus_RNW_reg(Bus_RNW_reg),
-        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
-        .D(D),
         .E(E),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg ),
-        .\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 (\FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_sig_reg_0 ),
-        .\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] (\GEN_BKEND_CE_REGISTERS[10].ce_out_i_reg[10] ),
-        .\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] (\GEN_IP_IRPT_STATUS_REG[0].GEN_REG_STATUS.ip_irpt_status_reg_reg[0] ),
+        .\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg (\FIFO_EXISTS.RX_FULL_EMP_MD_0_GEN.rx_fifo_empty_i_reg ),
+        .\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] (\GEN_BKEND_CE_REGISTERS[27].ce_out_i_reg[27] ),
         .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_RdAck_core_reg_reg ),
         .Receive_ip2bus_error0(Receive_ip2bus_error0),
-        .Rx_FIFO_Full_Fifo_d1_flag(Rx_FIFO_Full_Fifo_d1_flag),
-        .Rx_FIFO_Full_Fifo_d1_sig(Rx_FIFO_Full_Fifo_d1_sig),
-        .\gc1.count_d1_reg[2] (\gc1.count_d1_reg[2] ),
-        .\gc1.count_d1_reg[3] (p_8_out),
-        .\gc1.count_d2_reg[2] (\gc1.count_d2_reg[2] ),
-        .\goreg_dm.dout_i_reg[0] (\goreg_dm.dout_i_reg[0] ),
+        .\dest_out_bin_ff_reg[1] (rpntr_n_5),
+        .\dest_out_bin_ff_reg[3] (rpntr_n_0),
         .\goreg_dm.dout_i_reg[7] (\goreg_dm.dout_i_reg[7] ),
-        .\ip_irpt_enable_reg_reg[0] (\ip_irpt_enable_reg_reg[0] ),
-        .irpt_rdack144_out(irpt_rdack144_out),
         .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .out(out),
         .p_5_in(p_5_in),
-        .p_7_in(p_7_in),
         .ram_empty_fb_i0(ram_empty_fb_i0),
         .ram_empty_fb_i_reg(p_2_out),
-        .reset2ip_reset_int(reset2ip_reset_int),
-        .rx_fifo_empty_i(rx_fifo_empty_i),
-        .s_axi_aclk(s_axi_aclk),
-        .scndry_out(scndry_out),
-        .tx_fifo_count(tx_fifo_count));
+        .s_axi_aclk(s_axi_aclk));
   system_axi_quad_spi_0_0_rd_status_flags_as_9 \gras.rsts 
        (.\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
         .out(p_2_out),
         .ram_empty_fb_i0(ram_empty_fb_i0),
         .s_axi_aclk(s_axi_aclk));
   system_axi_quad_spi_0_0_rd_bin_cntr_10 rpntr
-       (.E(p_8_out),
+       (.E(E),
         .Q(Q),
+        .WR_PNTR_RD(WR_PNTR_RD),
         .\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg (\ngwrdrst.grst.g7serrst.gnsckt_wrst.gic_rst.sckt_rd_rst_ic_reg ),
-        .s_axi_aclk(s_axi_aclk),
-        .\src_gray_ff_reg[3] (\src_gray_ff_reg[3] ));
+        .ram_empty_i_reg(rpntr_n_0),
+        .ram_empty_i_reg_0(rpntr_n_5),
+        .s_axi_aclk(s_axi_aclk));
 endmodule
 
 (* ORIG_REF_NAME = "rd_status_flags_as" *) 
@@ -14175,8 +13350,8 @@ module system_axi_quad_spi_0_0_reset_blk_ramfifo
   LUT2 #(
     .INIT(4'hE)) 
     \grstd1.grst_full.grst_f.rst_d3_i_1 
-       (.I0(rst_d2),
-        .I1(AR),
+       (.I0(AR),
+        .I1(rst_d2),
         .O(\grstd1.grst_full.grst_f.rst_d3_i_1_n_0 ));
   (* ASYNC_REG *) 
   (* KEEP = "yes" *) 
@@ -14557,50 +13732,41 @@ endmodule
 
 (* ORIG_REF_NAME = "wr_bin_cntr" *) 
 module system_axi_quad_spi_0_0_wr_bin_cntr
-   (Q,
-    \gaf.ram_almost_full_i_reg ,
-    \gic0.gc1.count_d2_reg[3]_0 ,
-    \gic0.gc1.count_d3_reg[3]_0 ,
+   (ram_full_i_reg,
+    ram_full_i_reg_0,
+    Q,
     \src_gray_ff_reg[3] ,
-    RD_PNTR_WR,
-    \dest_out_bin_ff_reg[1] ,
     E,
+    RD_PNTR_WR,
+    \grstd1.grst_full.grst_f.rst_d3_reg ,
     s_axi_aclk,
     AR);
-  output [1:0]Q;
-  output \gaf.ram_almost_full_i_reg ;
-  output [3:0]\gic0.gc1.count_d2_reg[3]_0 ;
-  output [3:0]\gic0.gc1.count_d3_reg[3]_0 ;
+  output ram_full_i_reg;
+  output ram_full_i_reg_0;
+  output [3:0]Q;
   output [3:0]\src_gray_ff_reg[3] ;
-  input [1:0]RD_PNTR_WR;
-  input \dest_out_bin_ff_reg[1] ;
   input [0:0]E;
+  input [3:0]RD_PNTR_WR;
+  input \grstd1.grst_full.grst_f.rst_d3_reg ;
   input s_axi_aclk;
   input [0:0]AR;
 
   wire [0:0]AR;
   wire [0:0]E;
-  wire [1:0]Q;
-  wire [1:0]RD_PNTR_WR;
-  wire \dest_out_bin_ff_reg[1] ;
-  wire \gaf.ram_almost_full_i_reg ;
-  wire [3:0]\gic0.gc1.count_d2_reg[3]_0 ;
-  wire [3:0]\gic0.gc1.count_d3_reg[3]_0 ;
+  wire [3:0]Q;
+  wire [3:0]RD_PNTR_WR;
+  wire \grstd1.grst_full.grst_f.rst_d3_reg ;
+  wire [3:0]p_14_out;
   wire [3:0]plusOp__1;
+  wire ram_full_i_i_2_n_0;
+  wire ram_full_i_i_4_n_0;
+  wire ram_full_i_i_5_n_0;
+  wire ram_full_i_reg;
+  wire ram_full_i_reg_0;
   wire s_axi_aclk;
   wire [3:0]\src_gray_ff_reg[3] ;
-  wire [3:2]wr_pntr_plus3;
+  wire [3:0]wr_pntr_plus2;
 
-  LUT6 #(
-    .INIT(64'h9009000000000000)) 
-    \gaf.ram_almost_full_i_i_2 
-       (.I0(wr_pntr_plus3[3]),
-        .I1(RD_PNTR_WR[1]),
-        .I2(wr_pntr_plus3[2]),
-        .I3(RD_PNTR_WR[0]),
-        .I4(\dest_out_bin_ff_reg[1] ),
-        .I5(E),
-        .O(\gaf.ram_almost_full_i_reg ));
   (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT1 #(
     .INIT(2'h1)) 
@@ -14616,20 +13782,20 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
         .O(plusOp__1[1]));
   (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT3 #(
-    .INIT(8'h78)) 
+    .INIT(8'h6A)) 
     \gic0.gc1.count[2]_i_1 
-       (.I0(Q[0]),
+       (.I0(Q[2]),
         .I1(Q[1]),
-        .I2(wr_pntr_plus3[2]),
+        .I2(Q[0]),
         .O(plusOp__1[2]));
   (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
-    .INIT(16'h7F80)) 
+    .INIT(16'h6AAA)) 
     \gic0.gc1.count[3]_i_1 
-       (.I0(Q[1]),
+       (.I0(Q[3]),
         .I1(Q[0]),
-        .I2(wr_pntr_plus3[2]),
-        .I3(wr_pntr_plus3[3]),
+        .I2(Q[1]),
+        .I3(Q[2]),
         .O(plusOp__1[3]));
   FDCE #(
     .INIT(1'b0)) 
@@ -14638,7 +13804,7 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(Q[0]),
-        .Q(\gic0.gc1.count_d2_reg[3]_0 [0]));
+        .Q(wr_pntr_plus2[0]));
   FDPE #(
     .INIT(1'b1)) 
     \gic0.gc1.count_d1_reg[1] 
@@ -14646,62 +13812,62 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
         .CE(E),
         .D(Q[1]),
         .PRE(AR),
-        .Q(\gic0.gc1.count_d2_reg[3]_0 [1]));
+        .Q(wr_pntr_plus2[1]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_d1_reg[2] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(wr_pntr_plus3[2]),
-        .Q(\gic0.gc1.count_d2_reg[3]_0 [2]));
+        .D(Q[2]),
+        .Q(wr_pntr_plus2[2]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_d1_reg[3] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(wr_pntr_plus3[3]),
-        .Q(\gic0.gc1.count_d2_reg[3]_0 [3]));
+        .D(Q[3]),
+        .Q(wr_pntr_plus2[3]));
   FDPE #(
     .INIT(1'b1)) 
     \gic0.gc1.count_d2_reg[0] 
        (.C(s_axi_aclk),
         .CE(E),
-        .D(\gic0.gc1.count_d2_reg[3]_0 [0]),
+        .D(wr_pntr_plus2[0]),
         .PRE(AR),
-        .Q(\gic0.gc1.count_d3_reg[3]_0 [0]));
+        .Q(p_14_out[0]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_d2_reg[1] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d2_reg[3]_0 [1]),
-        .Q(\gic0.gc1.count_d3_reg[3]_0 [1]));
+        .D(wr_pntr_plus2[1]),
+        .Q(p_14_out[1]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_d2_reg[2] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d2_reg[3]_0 [2]),
-        .Q(\gic0.gc1.count_d3_reg[3]_0 [2]));
+        .D(wr_pntr_plus2[2]),
+        .Q(p_14_out[2]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_d2_reg[3] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d2_reg[3]_0 [3]),
-        .Q(\gic0.gc1.count_d3_reg[3]_0 [3]));
+        .D(wr_pntr_plus2[3]),
+        .Q(p_14_out[3]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_d3_reg[0] 
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d3_reg[3]_0 [0]),
+        .D(p_14_out[0]),
         .Q(\src_gray_ff_reg[3] [0]));
   FDCE #(
     .INIT(1'b0)) 
@@ -14709,7 +13875,7 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d3_reg[3]_0 [1]),
+        .D(p_14_out[1]),
         .Q(\src_gray_ff_reg[3] [1]));
   FDCE #(
     .INIT(1'b0)) 
@@ -14717,7 +13883,7 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d3_reg[3]_0 [2]),
+        .D(p_14_out[2]),
         .Q(\src_gray_ff_reg[3] [2]));
   FDCE #(
     .INIT(1'b0)) 
@@ -14725,7 +13891,7 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
        (.C(s_axi_aclk),
         .CE(E),
         .CLR(AR),
-        .D(\gic0.gc1.count_d3_reg[3]_0 [3]),
+        .D(p_14_out[3]),
         .Q(\src_gray_ff_reg[3] [3]));
   FDPE #(
     .INIT(1'b1)) 
@@ -14750,7 +13916,7 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__1[2]),
-        .Q(wr_pntr_plus3[2]));
+        .Q(Q[2]));
   FDCE #(
     .INIT(1'b0)) 
     \gic0.gc1.count_reg[3] 
@@ -14758,7 +13924,50 @@ module system_axi_quad_spi_0_0_wr_bin_cntr
         .CE(E),
         .CLR(AR),
         .D(plusOp__1[3]),
-        .Q(wr_pntr_plus3[3]));
+        .Q(Q[3]));
+  LUT3 #(
+    .INIT(8'hEA)) 
+    ram_full_i_i_1
+       (.I0(ram_full_i_i_2_n_0),
+        .I1(ram_full_i_reg_0),
+        .I2(E),
+        .O(ram_full_i_reg));
+  LUT5 #(
+    .INIT(32'h00009009)) 
+    ram_full_i_i_2
+       (.I0(RD_PNTR_WR[2]),
+        .I1(p_14_out[2]),
+        .I2(RD_PNTR_WR[3]),
+        .I3(p_14_out[3]),
+        .I4(ram_full_i_i_4_n_0),
+        .O(ram_full_i_i_2_n_0));
+  LUT5 #(
+    .INIT(32'h00009009)) 
+    ram_full_i_i_3
+       (.I0(wr_pntr_plus2[2]),
+        .I1(RD_PNTR_WR[2]),
+        .I2(wr_pntr_plus2[3]),
+        .I3(RD_PNTR_WR[3]),
+        .I4(ram_full_i_i_5_n_0),
+        .O(ram_full_i_reg_0));
+  LUT5 #(
+    .INIT(32'hFFFF6FF6)) 
+    ram_full_i_i_4
+       (.I0(p_14_out[0]),
+        .I1(RD_PNTR_WR[0]),
+        .I2(RD_PNTR_WR[1]),
+        .I3(p_14_out[1]),
+        .I4(\grstd1.grst_full.grst_f.rst_d3_reg ),
+        .O(ram_full_i_i_4_n_0));
+  LUT5 #(
+    .INIT(32'hBEFFFFBE)) 
+    ram_full_i_i_5
+       (.I0(\grstd1.grst_full.grst_f.rst_d3_reg ),
+        .I1(wr_pntr_plus2[0]),
+        .I2(RD_PNTR_WR[0]),
+        .I3(wr_pntr_plus2[1]),
+        .I4(RD_PNTR_WR[1]),
+        .O(ram_full_i_i_5_n_0));
 endmodule
 
 (* ORIG_REF_NAME = "wr_bin_cntr" *) 
@@ -14995,85 +14204,73 @@ endmodule
 
 (* ORIG_REF_NAME = "wr_logic" *) 
 module system_axi_quad_spi_0_0_wr_logic
-   (\gic0.gc1.count_reg[0] ,
-    Q,
+   (tx_fifo_full,
     E,
-    IP2Bus_WrAck_transmit_enable__0,
-    \gic0.gc1.count_d2_reg[3] ,
-    \gic0.gc1.count_d3_reg[3] ,
+    Q,
     \src_gray_ff_reg[3] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
     s_axi_aclk,
     out,
-    RD_PNTR_WR,
-    \dest_out_bin_ff_reg[1] ,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ,
-    Bus_RNW_reg,
     p_6_in,
-    \dest_out_bin_ff_reg[2] ,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    RD_PNTR_WR,
     \grstd1.grst_full.grst_f.rst_d3_reg ,
+    \gic0.gc1.count_reg[0] ,
+    Bus_RNW_reg_reg,
     AR);
-  output \gic0.gc1.count_reg[0] ;
-  output [1:0]Q;
+  output tx_fifo_full;
   output [0:0]E;
-  output IP2Bus_WrAck_transmit_enable__0;
-  output [3:0]\gic0.gc1.count_d2_reg[3] ;
-  output [3:0]\gic0.gc1.count_d3_reg[3] ;
+  output [3:0]Q;
   output [3:0]\src_gray_ff_reg[3] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
   input s_axi_aclk;
   input out;
-  input [1:0]RD_PNTR_WR;
-  input \dest_out_bin_ff_reg[1] ;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ;
-  input Bus_RNW_reg;
   input p_6_in;
-  input \dest_out_bin_ff_reg[2] ;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input [3:0]RD_PNTR_WR;
   input \grstd1.grst_full.grst_f.rst_d3_reg ;
+  input \gic0.gc1.count_reg[0] ;
+  input Bus_RNW_reg_reg;
   input [0:0]AR;
 
   wire [0:0]AR;
   wire Bus_RNW_reg;
+  wire Bus_RNW_reg_reg;
   wire [0:0]E;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ;
-  wire [1:0]Q;
-  wire [1:0]RD_PNTR_WR;
-  wire \dest_out_bin_ff_reg[1] ;
-  wire \dest_out_bin_ff_reg[2] ;
-  wire [3:0]\gic0.gc1.count_d2_reg[3] ;
-  wire [3:0]\gic0.gc1.count_d3_reg[3] ;
+  wire [3:0]Q;
+  wire [3:0]RD_PNTR_WR;
   wire \gic0.gc1.count_reg[0] ;
   wire \grstd1.grst_full.grst_f.rst_d3_reg ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire p_6_in;
   wire s_axi_aclk;
   wire [3:0]\src_gray_ff_reg[3] ;
-  wire wpntr_n_2;
+  wire tx_fifo_full;
+  wire wpntr_n_0;
+  wire wpntr_n_1;
 
   system_axi_quad_spi_0_0_wr_status_flags_as \gwas.wsts 
        (.Bus_RNW_reg(Bus_RNW_reg),
+        .Bus_RNW_reg_reg(Bus_RNW_reg_reg),
         .E(E),
-        .IP2Bus_WrAck_transmit_enable__0(IP2Bus_WrAck_transmit_enable__0),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
-        .\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 (\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ),
-        .\dest_out_bin_ff_reg[2] (\dest_out_bin_ff_reg[2] ),
+        .\dest_out_bin_ff_reg[2] (wpntr_n_0),
+        .\gic0.gc1.count_d1_reg[2] (wpntr_n_1),
         .\gic0.gc1.count_reg[0] (\gic0.gc1.count_reg[0] ),
-        .\gic0.gc1.count_reg[3] (wpntr_n_2),
         .\grstd1.grst_full.grst_f.rst_d3_reg (\grstd1.grst_full.grst_f.rst_d3_reg ),
+        .ip2Bus_WrAck_core_reg_1(ip2Bus_WrAck_core_reg_1),
         .out(out),
         .p_6_in(p_6_in),
-        .s_axi_aclk(s_axi_aclk));
+        .s_axi_aclk(s_axi_aclk),
+        .tx_fifo_full(tx_fifo_full));
   system_axi_quad_spi_0_0_wr_bin_cntr wpntr
        (.AR(AR),
         .E(E),
         .Q(Q),
         .RD_PNTR_WR(RD_PNTR_WR),
-        .\dest_out_bin_ff_reg[1] (\dest_out_bin_ff_reg[1] ),
-        .\gaf.ram_almost_full_i_reg (wpntr_n_2),
-        .\gic0.gc1.count_d2_reg[3]_0 (\gic0.gc1.count_d2_reg[3] ),
-        .\gic0.gc1.count_d3_reg[3]_0 (\gic0.gc1.count_d3_reg[3] ),
+        .\grstd1.grst_full.grst_f.rst_d3_reg (\grstd1.grst_full.grst_f.rst_d3_reg ),
+        .ram_full_i_reg(wpntr_n_0),
+        .ram_full_i_reg_0(wpntr_n_1),
         .s_axi_aclk(s_axi_aclk),
         .\src_gray_ff_reg[3] (\src_gray_ff_reg[3] ));
 endmodule
@@ -15093,7 +14290,7 @@ module system_axi_quad_spi_0_0_wr_logic_3
     spiXfer_done_int,
     \gic0.gc1.count_reg[0] ,
     RD_PNTR_WR,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ,
+    scndry_out,
     E,
     AR);
   output \gaf.ram_almost_full_i_reg ;
@@ -15109,13 +14306,12 @@ module system_axi_quad_spi_0_0_wr_logic_3
   input spiXfer_done_int;
   input \gic0.gc1.count_reg[0] ;
   input [3:0]RD_PNTR_WR;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input scndry_out;
   input [0:0]E;
   input [0:0]AR;
 
   wire [0:0]AR;
   wire [0:0]E;
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
   wire [3:0]Q;
   wire [3:0]RD_PNTR_WR;
   wire Rx_FIFO_Full_Fifo;
@@ -15127,14 +14323,14 @@ module system_axi_quad_spi_0_0_wr_logic_3
   wire \gic0.gc1.count_reg[0] ;
   wire \grstd1.grst_full.grst_f.rst_d3_reg ;
   wire out;
+  wire scndry_out;
   wire spiXfer_done_int;
   wire [3:0]\src_gray_ff_reg[3] ;
   wire wpntr_n_0;
   wire wpntr_n_1;
 
   system_axi_quad_spi_0_0_wr_status_flags_as_6 \gwas.wsts 
-       (.\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 (\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
-        .Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
+       (.Rx_FIFO_Full_Fifo(Rx_FIFO_Full_Fifo),
         .Rx_FIFO_Full_Fifo_org(Rx_FIFO_Full_Fifo_org),
         .\dest_out_bin_ff_reg[3] (wpntr_n_1),
         .ext_spi_clk(ext_spi_clk),
@@ -15143,6 +14339,7 @@ module system_axi_quad_spi_0_0_wr_logic_3
         .\grstd1.grst_full.grst_f.rst_d3_reg (wpntr_n_0),
         .\grstd1.grst_full.grst_f.rst_d3_reg_0 (\grstd1.grst_full.grst_f.rst_d3_reg ),
         .out(out),
+        .scndry_out(scndry_out),
         .spiXfer_done_int(spiXfer_done_int));
   system_axi_quad_spi_0_0_wr_bin_cntr_7 wpntr
        (.AR(AR),
@@ -15162,63 +14359,56 @@ endmodule
 
 (* ORIG_REF_NAME = "wr_status_flags_as" *) 
 module system_axi_quad_spi_0_0_wr_status_flags_as
-   (\gic0.gc1.count_reg[0] ,
+   (tx_fifo_full,
     E,
-    IP2Bus_WrAck_transmit_enable__0,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ,
+    \dest_out_bin_ff_reg[2] ,
     s_axi_aclk,
     out,
-    \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ,
-    Bus_RNW_reg,
     p_6_in,
-    \gic0.gc1.count_reg[3] ,
-    \dest_out_bin_ff_reg[2] ,
+    ip2Bus_WrAck_core_reg_1,
+    Bus_RNW_reg,
+    \gic0.gc1.count_d1_reg[2] ,
+    \gic0.gc1.count_reg[0] ,
+    Bus_RNW_reg_reg,
     \grstd1.grst_full.grst_f.rst_d3_reg );
-  output \gic0.gc1.count_reg[0] ;
+  output tx_fifo_full;
   output [0:0]E;
-  output IP2Bus_WrAck_transmit_enable__0;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
+  input \dest_out_bin_ff_reg[2] ;
   input s_axi_aclk;
   input out;
-  input \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ;
-  input Bus_RNW_reg;
   input p_6_in;
-  input \gic0.gc1.count_reg[3] ;
-  input \dest_out_bin_ff_reg[2] ;
+  input ip2Bus_WrAck_core_reg_1;
+  input Bus_RNW_reg;
+  input \gic0.gc1.count_d1_reg[2] ;
+  input \gic0.gc1.count_reg[0] ;
+  input Bus_RNW_reg_reg;
   input \grstd1.grst_full.grst_f.rst_d3_reg ;
 
   wire Bus_RNW_reg;
+  wire Bus_RNW_reg_reg;
   wire [0:0]E;
-  wire IP2Bus_WrAck_transmit_enable__0;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ;
-  wire \LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ;
   wire \dest_out_bin_ff_reg[2] ;
   wire \gaf.ram_almost_full_i_i_1__0_n_0 ;
+  wire \gic0.gc1.count_d1_reg[2] ;
   wire \gic0.gc1.count_reg[0] ;
-  wire \gic0.gc1.count_reg[3] ;
   wire \grstd1.grst_full.grst_f.rst_d3_reg ;
+  wire ip2Bus_WrAck_core_reg_1;
   wire out;
   wire p_6_in;
   (* DONT_TOUCH *) wire ram_full_fb_i;
   (* DONT_TOUCH *) wire ram_full_i;
   wire s_axi_aclk;
+  wire tx_fifo_full;
 
-  LUT4 #(
-    .INIT(16'h0400)) 
-    \FIFO_EXISTS.TX_FULL_EMP_INTR_MD_0_GEN.Tx_FIFO_Full_i_i_3 
-       (.I0(\gic0.gc1.count_reg[0] ),
-        .I1(p_6_in),
-        .I2(Bus_RNW_reg),
-        .I3(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ),
-        .O(IP2Bus_WrAck_transmit_enable__0));
-  LUT5 #(
-    .INIT(32'hEFEEE0EE)) 
+  LUT6 #(
+    .INIT(64'hAAFFAABAAA00AABA)) 
     \gaf.ram_almost_full_i_i_1__0 
-       (.I0(\gic0.gc1.count_reg[3] ),
-        .I1(\dest_out_bin_ff_reg[2] ),
-        .I2(\grstd1.grst_full.grst_f.rst_d3_reg ),
-        .I3(ram_full_fb_i),
-        .I4(\gic0.gc1.count_reg[0] ),
+       (.I0(\gic0.gc1.count_d1_reg[2] ),
+        .I1(\gic0.gc1.count_reg[0] ),
+        .I2(Bus_RNW_reg_reg),
+        .I3(\grstd1.grst_full.grst_f.rst_d3_reg ),
+        .I4(ram_full_fb_i),
+        .I5(tx_fifo_full),
         .O(\gaf.ram_almost_full_i_i_1__0_n_0 ));
   FDPE #(
     .INIT(1'b1)) 
@@ -15227,14 +14417,14 @@ module system_axi_quad_spi_0_0_wr_status_flags_as
         .CE(1'b1),
         .D(\gaf.ram_almost_full_i_i_1__0_n_0 ),
         .PRE(out),
-        .Q(\gic0.gc1.count_reg[0] ));
+        .Q(tx_fifo_full));
   LUT5 #(
-    .INIT(32'h00000020)) 
+    .INIT(32'h00000040)) 
     \gic0.gc1.count_d1[3]_i_1 
-       (.I0(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg_0 ),
-        .I1(Bus_RNW_reg),
-        .I2(p_6_in),
-        .I3(\gic0.gc1.count_reg[0] ),
+       (.I0(tx_fifo_full),
+        .I1(p_6_in),
+        .I2(ip2Bus_WrAck_core_reg_1),
+        .I3(Bus_RNW_reg),
         .I4(ram_full_fb_i),
         .O(E));
   (* DONT_TOUCH *) 
@@ -15245,7 +14435,7 @@ module system_axi_quad_spi_0_0_wr_status_flags_as
     ram_full_fb_i_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .D(\dest_out_bin_ff_reg[2] ),
         .PRE(out),
         .Q(ram_full_fb_i));
   (* DONT_TOUCH *) 
@@ -15256,7 +14446,7 @@ module system_axi_quad_spi_0_0_wr_status_flags_as
     ram_full_i_reg
        (.C(s_axi_aclk),
         .CE(1'b1),
-        .D(\LEGACY_MD_WR_RD_ACK_GEN.ip2Bus_WrAck_core_reg_1_reg ),
+        .D(\dest_out_bin_ff_reg[2] ),
         .PRE(out),
         .Q(ram_full_i));
 endmodule
@@ -15273,7 +14463,7 @@ module system_axi_quad_spi_0_0_wr_status_flags_as_6
     \gic0.gc1.count_reg[0] ,
     \dest_out_bin_ff_reg[3] ,
     \grstd1.grst_full.grst_f.rst_d3_reg_0 ,
-    \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 );
+    scndry_out);
   output \gaf.ram_almost_full_i_reg_0 ;
   output Rx_FIFO_Full_Fifo_org;
   output Rx_FIFO_Full_Fifo;
@@ -15284,9 +14474,8 @@ module system_axi_quad_spi_0_0_wr_status_flags_as_6
   input \gic0.gc1.count_reg[0] ;
   input \dest_out_bin_ff_reg[3] ;
   input \grstd1.grst_full.grst_f.rst_d3_reg_0 ;
-  input \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
+  input scndry_out;
 
-  wire \GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ;
   wire Rx_FIFO_Full_Fifo;
   wire Rx_FIFO_Full_Fifo_org;
   wire \dest_out_bin_ff_reg[3] ;
@@ -15298,6 +14487,7 @@ module system_axi_quad_spi_0_0_wr_status_flags_as_6
   wire out;
   (* DONT_TOUCH *) wire ram_full_fb_i;
   (* DONT_TOUCH *) wire ram_full_i;
+  wire scndry_out;
   wire spiXfer_done_int;
 
   assign \gaf.ram_almost_full_i_reg_0  = ram_full_fb_i;
@@ -15305,7 +14495,7 @@ module system_axi_quad_spi_0_0_wr_status_flags_as_6
     .INIT(4'h2)) 
     \FIFO_EXISTS.Rx_FIFO_Full_Fifo_d1_i_1 
        (.I0(Rx_FIFO_Full_Fifo_org),
-        .I1(\GENERATE_LEVEL_P_S_CDC.SINGLE_BIT.CROSS_PLEVEL_IN2SCNDRY_s_level_out_d2 ),
+        .I1(scndry_out),
         .O(Rx_FIFO_Full_Fifo));
   LUT6 #(
     .INIT(64'h00FF002F0000002F)) 

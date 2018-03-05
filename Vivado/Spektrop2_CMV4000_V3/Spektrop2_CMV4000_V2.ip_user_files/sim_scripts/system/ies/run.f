@@ -90,6 +90,61 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/system/ip/system_axi_quad_spi_0_1/sim/system_axi_quad_spi_0_1.vhd" \
 -endlib
+-makelib ies_lib/v_vid_in_axi4s_v4_0_7 \
+  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/f931/hdl/v_vid_in_axi4s_v4_0_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_v_vid_in_axi4s_0_0/sim/system_v_vid_in_axi4s_0_0.v" \
+  "../../../bd/system/ip/system_v_vid_in_axi4s_0_1/sim/system_v_vid_in_axi4s_0_1.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_aurora_pkg.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_reset_logic.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0_core.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_axi_to_ll.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_idle_and_ver_gen.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_ll_to_axi.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_standard_cc_module.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_sym_gen_4byte.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_cdc_sync.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/gt/system_aurora_8b10b_0_0_tx_startup_fsm.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/gt/system_aurora_8b10b_0_0_rx_startup_fsm.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/gt/system_aurora_8b10b_0_0_gtrxreset_seq.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/gt/system_aurora_8b10b_0_0_gt.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/gt/system_aurora_8b10b_0_0_multi_gt.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/gt/system_aurora_8b10b_0_0_transceiver_wrapper.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_aurora_lane_simplex_4byte.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_channel_err_detect_simplex.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_channel_init_sm_simplex.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_err_detect_simplex.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_global_logic_simplex.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_lane_init_sm_simplex_4byte.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_ll_control.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_ll_datapath.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_ll.vhd" \
+  "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0.vhd" \
+-endlib
+-makelib ies_lib/axis_infrastructure_v1_1_0 \
+  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/0ab1/hdl/axis_infrastructure_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axis_combiner_v1_1_14 \
+  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/cf24/hdl/axis_combiner_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_axis_combiner_0_1/sim/system_axis_combiner_0_1.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_rst_aurora_8b10b_0_156M_0/sim/system_rst_aurora_8b10b_0_156M_0.vhd" \
+-endlib
+-makelib ies_lib/axis_register_slice_v1_1_15 \
+  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/cd45/hdl/axis_register_slice_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/axis_dwidth_converter_v1_1_14 \
+  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/1019/hdl/axis_dwidth_converter_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_axis_dwidth_converter_0_0/sim/system_axis_dwidth_converter_0_0.v" \
+-endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_15 \
   "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
 -endlib

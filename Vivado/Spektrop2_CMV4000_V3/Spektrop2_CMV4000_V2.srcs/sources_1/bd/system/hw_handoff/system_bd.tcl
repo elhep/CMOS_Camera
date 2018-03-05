@@ -156,15 +156,51 @@ proc create_root_design { parentCell } {
 
   # Create interface ports
   set FIXED_IO [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_processing_system7:fixedio_rtl:1.0 FIXED_IO ]
+  set GT_SERIAL_TX_0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:display_aurora:GT_Serial_Transceiver_Pins_TX_rtl:1.0 GT_SERIAL_TX_0 ]
   set I2C [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:iic_rtl:1.0 I2C ]
   set SPI0 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:spi_rtl:1.0 SPI0 ]
   set SPI1 [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:spi_rtl:1.0 SPI1 ]
   set UART [ create_bd_intf_port -mode Master -vlnv xilinx.com:interface:uart_rtl:1.0 UART ]
+  set vid_io_in_0 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:vid_io_rtl:1.0 vid_io_in_0 ]
+  set vid_io_in_1 [ create_bd_intf_port -mode Slave -vlnv xilinx.com:interface:vid_io_rtl:1.0 vid_io_in_1 ]
 
   # Create ports
   set FCLK_100M_CLK [ create_bd_port -dir O -type clk FCLK_100M_CLK ]
   set FCLK_50M_CLK [ create_bd_port -dir O -type clk FCLK_50M_CLK ]
+  set aclken [ create_bd_port -dir I -type ce aclken ]
+  set aresetn [ create_bd_port -dir I -type rst aresetn ]
+  set axis_enable [ create_bd_port -dir I axis_enable ]
   set control_reg0_o [ create_bd_port -dir O -from 31 -to 0 control_reg0_o ]
+  set gt_refclk1_0 [ create_bd_port -dir I -type clk gt_refclk1_0 ]
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {125000000} \
+ ] $gt_refclk1_0
+  set reset_rtl_0 [ create_bd_port -dir I -type rst reset_rtl_0 ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_LOW} \
+ ] $reset_rtl_0
+  set vid_io_in_ce [ create_bd_port -dir I -type ce vid_io_in_ce ]
+  set vid_io_in_clk [ create_bd_port -dir I -type clk vid_io_in_clk ]
+  set_property -dict [ list \
+   CONFIG.FREQ_HZ {74250000} \
+ ] $vid_io_in_clk
+  set vid_io_in_reset [ create_bd_port -dir I -type rst vid_io_in_reset ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_HIGH} \
+ ] $vid_io_in_reset
+
+  # Create instance: aurora_8b10b_0, and set properties
+  set aurora_8b10b_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:aurora_8b10b:11.1 aurora_8b10b_0 ]
+  set_property -dict [ list \
+   CONFIG.Backchannel_mode {Timer} \
+   CONFIG.C_DRP_IF {false} \
+   CONFIG.C_LANE_WIDTH {4} \
+   CONFIG.C_LINE_RATE {6.25} \
+   CONFIG.C_REFCLK_FREQUENCY {125.000} \
+   CONFIG.Dataflow_Config {TX-only_Simplex} \
+   CONFIG.Interface_Mode {Framing} \
+   CONFIG.RX_PPM_OFFSET {0} \
+ ] $aurora_8b10b_0
 
   # Create instance: axi_quad_spi_0, and set properties
   set axi_quad_spi_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_quad_spi:3.2 axi_quad_spi_0 ]
@@ -181,6 +217,19 @@ proc create_root_design { parentCell } {
    CONFIG.C_USE_STARTUP {0} \
    CONFIG.C_USE_STARTUP_INT {0} \
  ] $axi_quad_spi_1
+
+  # Create instance: axis_combiner_0, and set properties
+  set axis_combiner_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_combiner:1.1 axis_combiner_0 ]
+  set_property -dict [ list \
+   CONFIG.TDATA_NUM_BYTES {4} \
+ ] $axis_combiner_0
+
+  # Create instance: axis_dwidth_converter_0, and set properties
+  set axis_dwidth_converter_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axis_dwidth_converter:1.1 axis_dwidth_converter_0 ]
+  set_property -dict [ list \
+   CONFIG.M_TDATA_NUM_BYTES {4} \
+   CONFIG.S_TDATA_NUM_BYTES {8} \
+ ] $axis_dwidth_converter_0
 
   # Create instance: processing_system7_0, and set properties
   set processing_system7_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0 ]
@@ -356,12 +405,39 @@ proc create_root_design { parentCell } {
   # Create instance: register_0, and set properties
   set register_0 [ create_bd_cell -type ip -vlnv xilinx.com:user:register:1.0 register_0 ]
 
+  # Create instance: rst_aurora_8b10b_0_156M, and set properties
+  set rst_aurora_8b10b_0_156M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_aurora_8b10b_0_156M ]
+
   # Create instance: rst_ps7_0_50M, and set properties
   set rst_ps7_0_50M [ create_bd_cell -type ip -vlnv xilinx.com:ip:proc_sys_reset:5.0 rst_ps7_0_50M ]
 
+  # Create instance: v_vid_in_axi4s_0, and set properties
+  set v_vid_in_axi4s_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_vid_in_axi4s:4.0 v_vid_in_axi4s_0 ]
+  set_property -dict [ list \
+   CONFIG.C_ADDR_WIDTH {11} \
+   CONFIG.C_HAS_ASYNC_CLK {1} \
+   CONFIG.C_M_AXIS_VIDEO_DATA_WIDTH {8} \
+   CONFIG.C_M_AXIS_VIDEO_FORMAT {12} \
+   CONFIG.C_NATIVE_COMPONENT_WIDTH {12} \
+   CONFIG.C_PIXELS_PER_CLOCK {8} \
+ ] $v_vid_in_axi4s_0
+
+  # Create instance: v_vid_in_axi4s_1, and set properties
+  set v_vid_in_axi4s_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_vid_in_axi4s:4.0 v_vid_in_axi4s_1 ]
+  set_property -dict [ list \
+   CONFIG.C_HAS_ASYNC_CLK {1} \
+   CONFIG.C_M_AXIS_VIDEO_DATA_WIDTH {8} \
+   CONFIG.C_M_AXIS_VIDEO_FORMAT {12} \
+   CONFIG.C_NATIVE_COMPONENT_WIDTH {12} \
+   CONFIG.C_PIXELS_PER_CLOCK {8} \
+ ] $v_vid_in_axi4s_1
+
   # Create interface connections
+  connect_bd_intf_net -intf_net aurora_8b10b_0_GT_SERIAL_TX [get_bd_intf_ports GT_SERIAL_TX_0] [get_bd_intf_pins aurora_8b10b_0/GT_SERIAL_TX]
   connect_bd_intf_net -intf_net axi_quad_spi_0_SPI_0 [get_bd_intf_ports SPI0] [get_bd_intf_pins axi_quad_spi_0/SPI_0]
   connect_bd_intf_net -intf_net axi_quad_spi_1_SPI_0 [get_bd_intf_ports SPI1] [get_bd_intf_pins axi_quad_spi_1/SPI_0]
+  connect_bd_intf_net -intf_net axis_combiner_0_M_AXIS [get_bd_intf_pins axis_combiner_0/M_AXIS] [get_bd_intf_pins axis_dwidth_converter_0/S_AXIS]
+  connect_bd_intf_net -intf_net axis_dwidth_converter_0_M_AXIS [get_bd_intf_pins aurora_8b10b_0/USER_DATA_S_AXI_TX] [get_bd_intf_pins axis_dwidth_converter_0/M_AXIS]
   connect_bd_intf_net -intf_net processing_system7_0_FIXED_IO [get_bd_intf_ports FIXED_IO] [get_bd_intf_pins processing_system7_0/FIXED_IO]
   connect_bd_intf_net -intf_net processing_system7_0_IIC_0 [get_bd_intf_ports I2C] [get_bd_intf_pins processing_system7_0/IIC_0]
   connect_bd_intf_net -intf_net processing_system7_0_M_AXI_GP0 [get_bd_intf_pins processing_system7_0/M_AXI_GP0] [get_bd_intf_pins ps7_0_axi_periph/S00_AXI]
@@ -369,14 +445,28 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M00_AXI [get_bd_intf_pins ps7_0_axi_periph/M00_AXI] [get_bd_intf_pins register_0/S00_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M01_AXI [get_bd_intf_pins axi_quad_spi_0/AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M01_AXI]
   connect_bd_intf_net -intf_net ps7_0_axi_periph_M02_AXI [get_bd_intf_pins axi_quad_spi_1/AXI_LITE] [get_bd_intf_pins ps7_0_axi_periph/M02_AXI]
+  connect_bd_intf_net -intf_net v_vid_in_axi4s_0_video_out [get_bd_intf_pins axis_combiner_0/S00_AXIS] [get_bd_intf_pins v_vid_in_axi4s_0/video_out]
+  connect_bd_intf_net -intf_net v_vid_in_axi4s_1_video_out [get_bd_intf_pins axis_combiner_0/S01_AXIS] [get_bd_intf_pins v_vid_in_axi4s_1/video_out]
+  connect_bd_intf_net -intf_net vid_io_in_0_1 [get_bd_intf_ports vid_io_in_0] [get_bd_intf_pins v_vid_in_axi4s_0/vid_io_in]
+  connect_bd_intf_net -intf_net vid_io_in_1_1 [get_bd_intf_ports vid_io_in_1] [get_bd_intf_pins v_vid_in_axi4s_1/vid_io_in]
 
   # Create port connections
-  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports FCLK_50M_CLK] [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axi_quad_spi_1/ext_spi_clk] [get_bd_pins axi_quad_spi_1/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins register_0/s00_axi_aclk] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
+  connect_bd_net -net aclken_1 [get_bd_ports aclken] [get_bd_pins v_vid_in_axi4s_0/aclken] [get_bd_pins v_vid_in_axi4s_1/aclken]
+  connect_bd_net -net aresetn_0_1 [get_bd_ports aresetn] [get_bd_pins v_vid_in_axi4s_0/aresetn] [get_bd_pins v_vid_in_axi4s_1/aresetn]
+  connect_bd_net -net aurora_8b10b_0_tx_out_clk [get_bd_pins aurora_8b10b_0/sync_clk] [get_bd_pins aurora_8b10b_0/tx_out_clk] [get_bd_pins aurora_8b10b_0/user_clk] [get_bd_pins axis_combiner_0/aclk] [get_bd_pins axis_dwidth_converter_0/aclk] [get_bd_pins rst_aurora_8b10b_0_156M/slowest_sync_clk] [get_bd_pins v_vid_in_axi4s_0/aclk] [get_bd_pins v_vid_in_axi4s_1/aclk]
+  connect_bd_net -net axis_enable_0_1 [get_bd_ports axis_enable] [get_bd_pins v_vid_in_axi4s_0/axis_enable] [get_bd_pins v_vid_in_axi4s_1/axis_enable]
+  connect_bd_net -net gt_refclk1_0_1 [get_bd_ports gt_refclk1_0] [get_bd_pins aurora_8b10b_0/gt_refclk1]
+  connect_bd_net -net processing_system7_0_FCLK_CLK0 [get_bd_ports FCLK_50M_CLK] [get_bd_pins aurora_8b10b_0/drpclk_in] [get_bd_pins aurora_8b10b_0/init_clk_in] [get_bd_pins axi_quad_spi_0/ext_spi_clk] [get_bd_pins axi_quad_spi_0/s_axi_aclk] [get_bd_pins axi_quad_spi_1/ext_spi_clk] [get_bd_pins axi_quad_spi_1/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0] [get_bd_pins processing_system7_0/M_AXI_GP0_ACLK] [get_bd_pins processing_system7_0/S_AXI_GP0_ACLK] [get_bd_pins ps7_0_axi_periph/ACLK] [get_bd_pins ps7_0_axi_periph/M00_ACLK] [get_bd_pins ps7_0_axi_periph/M01_ACLK] [get_bd_pins ps7_0_axi_periph/M02_ACLK] [get_bd_pins ps7_0_axi_periph/S00_ACLK] [get_bd_pins register_0/s00_axi_aclk] [get_bd_pins rst_ps7_0_50M/slowest_sync_clk]
   connect_bd_net -net processing_system7_0_FCLK_CLK1 [get_bd_ports FCLK_100M_CLK] [get_bd_pins processing_system7_0/FCLK_CLK1]
   connect_bd_net -net processing_system7_0_FCLK_RESET0_N [get_bd_pins processing_system7_0/FCLK_RESET0_N] [get_bd_pins rst_ps7_0_50M/ext_reset_in]
   connect_bd_net -net register_0_data [get_bd_ports control_reg0_o] [get_bd_pins register_0/data]
+  connect_bd_net -net reset_rtl_0_1 [get_bd_ports reset_rtl_0] [get_bd_pins rst_aurora_8b10b_0_156M/ext_reset_in]
+  connect_bd_net -net rst_aurora_8b10b_0_156M_interconnect_aresetn [get_bd_pins axis_combiner_0/aresetn] [get_bd_pins axis_dwidth_converter_0/aresetn] [get_bd_pins rst_aurora_8b10b_0_156M/interconnect_aresetn]
   connect_bd_net -net rst_ps7_0_50M_interconnect_aresetn [get_bd_pins ps7_0_axi_periph/ARESETN] [get_bd_pins rst_ps7_0_50M/interconnect_aresetn]
   connect_bd_net -net rst_ps7_0_50M_peripheral_aresetn [get_bd_pins axi_quad_spi_0/s_axi_aresetn] [get_bd_pins axi_quad_spi_1/s_axi_aresetn] [get_bd_pins ps7_0_axi_periph/M00_ARESETN] [get_bd_pins ps7_0_axi_periph/M01_ARESETN] [get_bd_pins ps7_0_axi_periph/M02_ARESETN] [get_bd_pins ps7_0_axi_periph/S00_ARESETN] [get_bd_pins register_0/s00_axi_aresetn] [get_bd_pins rst_ps7_0_50M/peripheral_aresetn]
+  connect_bd_net -net vid_io_in_ce_0_1 [get_bd_ports vid_io_in_ce] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_ce] [get_bd_pins v_vid_in_axi4s_1/vid_io_in_ce]
+  connect_bd_net -net vid_io_in_clk_0_1 [get_bd_ports vid_io_in_clk] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_clk] [get_bd_pins v_vid_in_axi4s_1/vid_io_in_clk]
+  connect_bd_net -net vid_io_in_reset_0_1 [get_bd_ports vid_io_in_reset] [get_bd_pins v_vid_in_axi4s_0/vid_io_in_reset] [get_bd_pins v_vid_in_axi4s_1/vid_io_in_reset]
 
   # Create address segments
   create_bd_addr_seg -range 0x00010000 -offset 0x41E00000 [get_bd_addr_spaces processing_system7_0/Data] [get_bd_addr_segs axi_quad_spi_0/AXI_LITE/Reg] SEG_axi_quad_spi_0_Reg

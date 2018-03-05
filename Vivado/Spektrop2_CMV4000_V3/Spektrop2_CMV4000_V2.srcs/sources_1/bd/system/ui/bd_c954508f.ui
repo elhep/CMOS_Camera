@@ -2,40 +2,75 @@
    ExpandedHierarchyInLayout: "",
    guistr: "# # String gsaved with Nlview 6.6.11  2017-06-12 bk=1.3860 VDI=40 GEI=35 GUI=JA:1.6
 #  -string -flagsOSRD
+preplace port vid_io_in_ce -pg 1 -y 600 -defaultsOSRD
 preplace port SPI0 -pg 1 -y 380 -defaultsOSRD
 preplace port SPI1 -pg 1 -y 330 -defaultsOSRD
 preplace port UART -pg 1 -y 730 -defaultsOSRD
+preplace port GT_SERIAL_TX_0 -pg 1 -y 680 -defaultsOSRD
+preplace port vid_io_in_clk -pg 1 -y 580 -defaultsOSRD
 preplace port I2C -pg 1 -y 530 -defaultsOSRD
+preplace port aclken -pg 1 -y 660 -defaultsOSRD
+preplace port gt_refclk1_0 -pg 1 -y 840 -defaultsOSRD
 preplace port FCLK_100M_CLK -pg 1 -y 590 -defaultsOSRD
 preplace port FIXED_IO -pg 1 -y 510 -defaultsOSRD
+preplace port vid_io_in_reset -pg 1 -y 620 -defaultsOSRD
+preplace port axis_enable -pg 1 -y 700 -defaultsOSRD
 preplace port FCLK_50M_CLK -pg 1 -y 570 -defaultsOSRD
+preplace port reset_rtl_0 -pg 1 -y 510 -defaultsOSRD
+preplace port vid_io_in_0 -pg 1 -y 560 -defaultsOSRD
+preplace port aresetn -pg 1 -y 680 -defaultsOSRD
+preplace port vid_io_in_1 -pg 1 -y 950 -defaultsOSRD
 preplace portBus control_reg0_o -pg 1 -y 150 -defaultsOSRD
-preplace inst axi_quad_spi_1 -pg 1 -lvl 3 -y 340 -defaultsOSRD
+preplace inst axis_combiner_0 -pg 1 -lvl 2 -y 820 -defaultsOSRD
+preplace inst axi_quad_spi_1 -pg 1 -lvl 5 -y 340 -defaultsOSRD
 preplace inst rst_ps7_0_50M -pg 1 -lvl 1 -y 390 -defaultsOSRD
-preplace inst register_0 -pg 1 -lvl 3 -y 150 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 2 -y 140 -defaultsOSRD
-preplace inst axi_quad_spi_0 -pg 1 -lvl 3 -y 490 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 3 -y 770 -defaultsOSRD
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 1 1300
-preplace netloc axi_quad_spi_0_SPI_0 1 3 1 1810J
-preplace netloc register_0_data 1 3 1 NJ
-preplace netloc processing_system7_0_UART_1 1 3 1 N
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 3 350J 580 NJ 580 1770
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 4 -20 300 NJ 300 1320J 260 1780
-preplace netloc processing_system7_0_IIC_0 1 3 1 1810J
-preplace netloc axi_quad_spi_1_SPI_0 1 3 1 N
-preplace netloc ps7_0_axi_periph_M01_AXI 1 2 1 1310
-preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 1 320
-preplace netloc processing_system7_0_FIXED_IO 1 3 1 1800J
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 2 340 320 1330
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 4 -30 290 330 310 1290 570 1790
-preplace netloc ps7_0_axi_periph_M00_AXI 1 2 1 1310
-preplace netloc processing_system7_0_FCLK_CLK1 1 3 1 1820J
-levelinfo -pg 1 -50 150 1160 1570 1840 -top -200 -bot 970
+preplace inst register_0 -pg 1 -lvl 5 -y 150 -defaultsOSRD
+preplace inst axis_dwidth_converter_0 -pg 1 -lvl 2 -y 680 -defaultsOSRD
+preplace inst aurora_8b10b_0 -pg 1 -lvl 3 -y 700 -defaultsOSRD
+preplace inst v_vid_in_axi4s_0 -pg 1 -lvl 1 -y 700 -defaultsOSRD
+preplace inst v_vid_in_axi4s_1 -pg 1 -lvl 1 -y 1020 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -y 140 -defaultsOSRD
+preplace inst rst_aurora_8b10b_0_156M -pg 1 -lvl 4 -y 920 -defaultsOSRD
+preplace inst axi_quad_spi_0 -pg 1 -lvl 5 -y 490 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -y 770 -defaultsOSRD
+preplace netloc axi_quad_spi_0_SPI_0 1 5 1 1800J
+preplace netloc ps7_0_axi_periph_M02_AXI 1 4 1 1340
+preplace netloc v_vid_in_axi4s_0_video_out 1 1 1 270
+preplace netloc vid_io_in_1_1 1 0 1 N
+preplace netloc register_0_data 1 5 1 NJ
+preplace netloc axis_dwidth_converter_0_M_AXIS 1 2 1 550
+preplace netloc vid_io_in_0_1 1 0 1 N
+preplace netloc processing_system7_0_UART_1 1 5 1 N
+preplace netloc aurora_8b10b_0_tx_out_clk 1 0 4 -90 890 290 900 550 890 950
+preplace netloc axis_enable_0_1 1 0 1 -150
+preplace netloc processing_system7_0_M_AXI_GP0 1 3 3 950J -20 NJ -20 1760
+preplace netloc vid_io_in_ce_0_1 1 0 1 -110
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 -100 500 NJ 500 570J 490 NJ 490 1310J 580 1750
+preplace netloc axis_combiner_0_M_AXIS 1 1 2 300 610 540
+preplace netloc v_vid_in_axi4s_1_video_out 1 1 1 280
+preplace netloc processing_system7_0_IIC_0 1 5 1 1800J
+preplace netloc vid_io_in_reset_0_1 1 0 1 -120
+preplace netloc axi_quad_spi_1_SPI_0 1 5 1 N
+preplace netloc ps7_0_axi_periph_M01_AXI 1 4 1 1350
+preplace netloc rst_ps7_0_50M_interconnect_aresetn 1 1 3 270 80 N 80 N
+preplace netloc aclken_1 1 0 1 -130
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 1780J
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 1 4 300 310 N 310 960 310 1330
+preplace netloc reset_rtl_0_1 1 0 4 NJ 510 NJ 510 NJ 510 960J
+preplace netloc gt_refclk1_0_1 1 0 3 -160J 900 270J 910 570J
+preplace netloc aresetn_0_1 1 0 1 -140
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 -150 490 N 490 560 300 950 300 1320 570 1770
+preplace netloc aurora_8b10b_0_GT_SERIAL_TX 1 3 3 950J 660 NJ 660 1790J
+preplace netloc ps7_0_axi_periph_M00_AXI 1 4 1 1350
+preplace netloc rst_aurora_8b10b_0_156M_interconnect_aresetn 1 1 4 300 920 NJ 920 970J 830 1330J
+preplace netloc processing_system7_0_FCLK_CLK1 1 5 1 1810J
+preplace netloc vid_io_in_clk_0_1 1 0 1 -100
+levelinfo -pg 1 -180 90 420 760 1140 1550 1830 -top -440 -bot 1140
 ",
 }
 {
    da_axi4_cnt: "4",
-   da_clkrst_cnt: "1",
+   da_board_cnt: "1",
+   da_clkrst_cnt: "6",
    da_ps7_cnt: "1",
 }

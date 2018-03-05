@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
---Date        : Mon Feb 19 01:14:06 2018
+--Date        : Tue Mar  6 00:14:29 2018
 --Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -1351,6 +1351,8 @@ entity system is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    GT_SERIAL_TX_0_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_TX_0_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
     I2C_scl_i : in STD_LOGIC;
     I2C_scl_o : out STD_LOGIC;
     I2C_scl_t : out STD_LOGIC;
@@ -1383,12 +1385,34 @@ entity system is
     SPI1_ss_t : out STD_LOGIC;
     UART_rxd : in STD_LOGIC;
     UART_txd : out STD_LOGIC;
-    control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    aclken : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    axis_enable : in STD_LOGIC;
+    control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    gt_refclk1_0 : in STD_LOGIC;
+    reset_rtl_0 : in STD_LOGIC;
+    vid_io_in_0_active_video : in STD_LOGIC;
+    vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+    vid_io_in_0_field : in STD_LOGIC;
+    vid_io_in_0_hblank : in STD_LOGIC;
+    vid_io_in_0_hsync : in STD_LOGIC;
+    vid_io_in_0_vblank : in STD_LOGIC;
+    vid_io_in_0_vsync : in STD_LOGIC;
+    vid_io_in_1_active_video : in STD_LOGIC;
+    vid_io_in_1_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+    vid_io_in_1_field : in STD_LOGIC;
+    vid_io_in_1_hblank : in STD_LOGIC;
+    vid_io_in_1_hsync : in STD_LOGIC;
+    vid_io_in_1_vblank : in STD_LOGIC;
+    vid_io_in_1_vsync : in STD_LOGIC;
+    vid_io_in_ce : in STD_LOGIC;
+    vid_io_in_clk : in STD_LOGIC;
+    vid_io_in_reset : in STD_LOGIC
   );
-  attribute core_generation_info : string;
-  attribute core_generation_info of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=12,numReposBlks=7,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_clkrst_cnt=1,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
-  attribute hw_handoff : string;
-  attribute hw_handoff of system : entity is "system.hwdef";
+  attribute CORE_GENERATION_INFO : string;
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_clkrst_cnt=6,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute HW_HANDOFF : string;
+  attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
 
 architecture STRUCTURE of system is
@@ -1603,6 +1627,154 @@ architecture STRUCTURE of system is
     ip2intc_irpt : out STD_LOGIC
   );
   end component system_axi_quad_spi_0_1;
+  component system_v_vid_in_axi4s_0_0 is
+  port (
+    vid_io_in_clk : in STD_LOGIC;
+    vid_io_in_ce : in STD_LOGIC;
+    vid_io_in_reset : in STD_LOGIC;
+    vid_active_video : in STD_LOGIC;
+    vid_vblank : in STD_LOGIC;
+    vid_hblank : in STD_LOGIC;
+    vid_vsync : in STD_LOGIC;
+    vid_hsync : in STD_LOGIC;
+    vid_field_id : in STD_LOGIC;
+    vid_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+    aclk : in STD_LOGIC;
+    aclken : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    m_axis_video_tdata : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axis_video_tvalid : out STD_LOGIC;
+    m_axis_video_tready : in STD_LOGIC;
+    m_axis_video_tuser : out STD_LOGIC;
+    m_axis_video_tlast : out STD_LOGIC;
+    fid : out STD_LOGIC;
+    vtd_active_video : out STD_LOGIC;
+    vtd_vblank : out STD_LOGIC;
+    vtd_hblank : out STD_LOGIC;
+    vtd_vsync : out STD_LOGIC;
+    vtd_hsync : out STD_LOGIC;
+    vtd_field_id : out STD_LOGIC;
+    overflow : out STD_LOGIC;
+    underflow : out STD_LOGIC;
+    axis_enable : in STD_LOGIC
+  );
+  end component system_v_vid_in_axi4s_0_0;
+  component system_v_vid_in_axi4s_0_1 is
+  port (
+    vid_io_in_clk : in STD_LOGIC;
+    vid_io_in_ce : in STD_LOGIC;
+    vid_io_in_reset : in STD_LOGIC;
+    vid_active_video : in STD_LOGIC;
+    vid_vblank : in STD_LOGIC;
+    vid_hblank : in STD_LOGIC;
+    vid_vsync : in STD_LOGIC;
+    vid_hsync : in STD_LOGIC;
+    vid_field_id : in STD_LOGIC;
+    vid_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+    aclk : in STD_LOGIC;
+    aclken : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    m_axis_video_tdata : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axis_video_tvalid : out STD_LOGIC;
+    m_axis_video_tready : in STD_LOGIC;
+    m_axis_video_tuser : out STD_LOGIC;
+    m_axis_video_tlast : out STD_LOGIC;
+    fid : out STD_LOGIC;
+    vtd_active_video : out STD_LOGIC;
+    vtd_vblank : out STD_LOGIC;
+    vtd_hblank : out STD_LOGIC;
+    vtd_vsync : out STD_LOGIC;
+    vtd_hsync : out STD_LOGIC;
+    vtd_field_id : out STD_LOGIC;
+    overflow : out STD_LOGIC;
+    underflow : out STD_LOGIC;
+    axis_enable : in STD_LOGIC
+  );
+  end component system_v_vid_in_axi4s_0_1;
+  component system_aurora_8b10b_0_0 is
+  port (
+    s_axi_tx_tdata : in STD_LOGIC_VECTOR ( 0 to 31 );
+    s_axi_tx_tkeep : in STD_LOGIC_VECTOR ( 0 to 3 );
+    s_axi_tx_tlast : in STD_LOGIC;
+    s_axi_tx_tvalid : in STD_LOGIC;
+    s_axi_tx_tready : out STD_LOGIC;
+    tx_hard_err : out STD_LOGIC;
+    tx_channel_up : out STD_LOGIC;
+    tx_lane_up : out STD_LOGIC_VECTOR ( 0 to 0 );
+    txp : out STD_LOGIC_VECTOR ( 0 to 0 );
+    txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    tx_system_reset : in STD_LOGIC;
+    gt_reset : in STD_LOGIC;
+    loopback : in STD_LOGIC_VECTOR ( 2 downto 0 );
+    drpclk_in : in STD_LOGIC;
+    power_down : in STD_LOGIC;
+    tx_lock : out STD_LOGIC;
+    tx_resetdone_out : out STD_LOGIC;
+    gt_common_reset_out : out STD_LOGIC;
+    gt0_pll0outclk_in : in STD_LOGIC;
+    gt0_pll1outclk_in : in STD_LOGIC;
+    gt0_pll0outrefclk_in : in STD_LOGIC;
+    gt0_pll1outrefclk_in : in STD_LOGIC;
+    gt0_pll0refclklost_in : in STD_LOGIC;
+    quad1_common_lock_in : in STD_LOGIC;
+    init_clk_in : in STD_LOGIC;
+    pll_not_locked : in STD_LOGIC;
+    tx_out_clk : out STD_LOGIC;
+    sys_reset_out : out STD_LOGIC;
+    user_clk : in STD_LOGIC;
+    sync_clk : in STD_LOGIC;
+    gt_refclk1 : in STD_LOGIC
+  );
+  end component system_aurora_8b10b_0_0;
+  component system_axis_combiner_0_1 is
+  port (
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    s_axis_tvalid : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axis_tready : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    s_axis_tlast : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axis_tuser : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 63 downto 0 );
+    m_axis_tlast : out STD_LOGIC;
+    m_axis_tuser : out STD_LOGIC_VECTOR ( 1 downto 0 )
+  );
+  end component system_axis_combiner_0_1;
+  component system_rst_aurora_8b10b_0_156M_0 is
+  port (
+    slowest_sync_clk : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    dcm_locked : in STD_LOGIC;
+    mb_reset : out STD_LOGIC;
+    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component system_rst_aurora_8b10b_0_156M_0;
+  component system_axis_dwidth_converter_0_0 is
+  port (
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    s_axis_tvalid : in STD_LOGIC;
+    s_axis_tready : out STD_LOGIC;
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    s_axis_tlast : in STD_LOGIC;
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    m_axis_tlast : out STD_LOGIC
+  );
+  end component system_axis_dwidth_converter_0_0;
+  signal aclken_1 : STD_LOGIC;
+  signal aresetn_0_1 : STD_LOGIC;
+  signal aurora_8b10b_0_GT_SERIAL_TX_TXN : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal aurora_8b10b_0_GT_SERIAL_TX_TXP : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal aurora_8b10b_0_tx_out_clk : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_I : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_O : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_T : STD_LOGIC;
@@ -1627,6 +1799,16 @@ architecture STRUCTURE of system is
   signal axi_quad_spi_1_SPI_0_SS_I : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_quad_spi_1_SPI_0_SS_O : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_quad_spi_1_SPI_0_SS_T : STD_LOGIC;
+  signal axis_combiner_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal axis_combiner_0_M_AXIS_TLAST : STD_LOGIC;
+  signal axis_combiner_0_M_AXIS_TREADY : STD_LOGIC;
+  signal axis_combiner_0_M_AXIS_TVALID : STD_LOGIC;
+  signal axis_dwidth_converter_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axis_dwidth_converter_0_M_AXIS_TLAST : STD_LOGIC;
+  signal axis_dwidth_converter_0_M_AXIS_TREADY : STD_LOGIC;
+  signal axis_dwidth_converter_0_M_AXIS_TVALID : STD_LOGIC;
+  signal axis_enable_0_1 : STD_LOGIC;
+  signal gt_refclk1_0_1 : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK1 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
@@ -1734,10 +1916,47 @@ architecture STRUCTURE of system is
   signal ps7_0_axi_periph_M02_AXI_WSTRB : STD_LOGIC_VECTOR ( 3 downto 0 );
   signal ps7_0_axi_periph_M02_AXI_WVALID : STD_LOGIC;
   signal register_0_data : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal reset_rtl_0_1 : STD_LOGIC;
+  signal rst_aurora_8b10b_0_156M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_50M_interconnect_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal v_vid_in_axi4s_0_video_out_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal v_vid_in_axi4s_0_video_out_TLAST : STD_LOGIC;
+  signal v_vid_in_axi4s_0_video_out_TREADY : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal v_vid_in_axi4s_0_video_out_TUSER : STD_LOGIC;
+  signal v_vid_in_axi4s_0_video_out_TVALID : STD_LOGIC;
+  signal v_vid_in_axi4s_1_video_out_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal v_vid_in_axi4s_1_video_out_TLAST : STD_LOGIC;
+  signal v_vid_in_axi4s_1_video_out_TREADY : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal v_vid_in_axi4s_1_video_out_TUSER : STD_LOGIC;
+  signal v_vid_in_axi4s_1_video_out_TVALID : STD_LOGIC;
+  signal vid_io_in_0_1_ACTIVE_VIDEO : STD_LOGIC;
+  signal vid_io_in_0_1_DATA : STD_LOGIC_VECTOR ( 95 downto 0 );
+  signal vid_io_in_0_1_FIELD : STD_LOGIC;
+  signal vid_io_in_0_1_HBLANK : STD_LOGIC;
+  signal vid_io_in_0_1_HSYNC : STD_LOGIC;
+  signal vid_io_in_0_1_VBLANK : STD_LOGIC;
+  signal vid_io_in_0_1_VSYNC : STD_LOGIC;
+  signal vid_io_in_1_1_ACTIVE_VIDEO : STD_LOGIC;
+  signal vid_io_in_1_1_DATA : STD_LOGIC_VECTOR ( 95 downto 0 );
+  signal vid_io_in_1_1_FIELD : STD_LOGIC;
+  signal vid_io_in_1_1_HBLANK : STD_LOGIC;
+  signal vid_io_in_1_1_HSYNC : STD_LOGIC;
+  signal vid_io_in_1_1_VBLANK : STD_LOGIC;
+  signal vid_io_in_1_1_VSYNC : STD_LOGIC;
+  signal vid_io_in_ce_0_1 : STD_LOGIC;
+  signal vid_io_in_clk_0_1 : STD_LOGIC;
+  signal vid_io_in_reset_0_1 : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_gt_common_reset_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_sys_reset_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_tx_channel_up_UNCONNECTED : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_tx_hard_err_UNCONNECTED : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_tx_lock_UNCONNECTED : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_tx_resetdone_out_UNCONNECTED : STD_LOGIC;
+  signal NLW_aurora_8b10b_0_tx_lane_up_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_quad_spi_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_quad_spi_1_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
+  signal NLW_axis_combiner_0_m_axis_tuser_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_processing_system7_0_S_AXI_GP0_ARREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_S_AXI_GP0_AWREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_S_AXI_GP0_BVALID_UNCONNECTED : STD_LOGIC;
@@ -1749,55 +1968,109 @@ architecture STRUCTURE of system is
   signal NLW_processing_system7_0_S_AXI_GP0_RDATA_UNCONNECTED : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal NLW_processing_system7_0_S_AXI_GP0_RID_UNCONNECTED : STD_LOGIC_VECTOR ( 5 downto 0 );
   signal NLW_processing_system7_0_S_AXI_GP0_RRESP_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
+  signal NLW_rst_aurora_8b10b_0_156M_mb_reset_UNCONNECTED : STD_LOGIC;
+  signal NLW_rst_aurora_8b10b_0_156M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_aurora_8b10b_0_156M_peripheral_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_aurora_8b10b_0_156M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_50M_mb_reset_UNCONNECTED : STD_LOGIC;
   signal NLW_rst_ps7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  attribute x_interface_info : string;
-  attribute x_interface_info of FCLK_100M_CLK : signal is "xilinx.com:signal:clock:1.0 CLK.FCLK_100M_CLK CLK";
-  attribute x_interface_parameter : string;
-  attribute x_interface_parameter of FCLK_100M_CLK : signal is "XIL_INTERFACENAME CLK.FCLK_100M_CLK, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, FREQ_HZ 100000000, PHASE 0.000";
-  attribute x_interface_info of FCLK_50M_CLK : signal is "xilinx.com:signal:clock:1.0 CLK.FCLK_50M_CLK CLK";
-  attribute x_interface_parameter of FCLK_50M_CLK : signal is "XIL_INTERFACENAME CLK.FCLK_50M_CLK, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, FREQ_HZ 50000000, PHASE 0.000";
-  attribute x_interface_info of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
-  attribute x_interface_info of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
-  attribute x_interface_info of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
-  attribute x_interface_info of I2C_scl_i : signal is "xilinx.com:interface:iic:1.0 I2C SCL_I";
-  attribute x_interface_info of I2C_scl_o : signal is "xilinx.com:interface:iic:1.0 I2C SCL_O";
-  attribute x_interface_info of I2C_scl_t : signal is "xilinx.com:interface:iic:1.0 I2C SCL_T";
-  attribute x_interface_info of I2C_sda_i : signal is "xilinx.com:interface:iic:1.0 I2C SDA_I";
-  attribute x_interface_info of I2C_sda_o : signal is "xilinx.com:interface:iic:1.0 I2C SDA_O";
-  attribute x_interface_info of I2C_sda_t : signal is "xilinx.com:interface:iic:1.0 I2C SDA_T";
-  attribute x_interface_info of SPI0_io0_i : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_io0_o : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_io0_t : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_io1_i : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_io1_o : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_io1_t : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_sck_i : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_sck_o : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_sck_t : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_ss_t : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI1_io0_i : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_io0_o : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_io0_t : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_io1_i : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_io1_o : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_io1_t : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_sck_i : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_sck_o : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_sck_t : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_ss_t : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of UART_rxd : signal is "xilinx.com:interface:uart:1.0 UART RxD";
-  attribute x_interface_info of UART_txd : signal is "xilinx.com:interface:uart:1.0 UART TxD";
-  attribute x_interface_info of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
-  attribute x_interface_parameter of FIXED_IO_mio : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
-  attribute x_interface_info of SPI0_ss_i : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI0_ss_o : signal is "xilinx.com:interface:spi:1.0 SPI0 ";
-  attribute x_interface_info of SPI1_ss_i : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
-  attribute x_interface_info of SPI1_ss_o : signal is "xilinx.com:interface:spi:1.0 SPI1 ";
+  signal NLW_v_vid_in_axi4s_0_fid_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_overflow_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_underflow_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_vtd_active_video_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_vtd_field_id_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_vtd_hblank_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_vtd_hsync_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_vtd_vblank_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_vtd_vsync_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_fid_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_overflow_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_underflow_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_vtd_active_video_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_vtd_field_id_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_vtd_hblank_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_vtd_hsync_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_vtd_vblank_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_vtd_vsync_UNCONNECTED : STD_LOGIC;
+  attribute X_INTERFACE_INFO : string;
+  attribute X_INTERFACE_INFO of FCLK_100M_CLK : signal is "xilinx.com:signal:clock:1.0 CLK.FCLK_100M_CLK CLK";
+  attribute X_INTERFACE_PARAMETER : string;
+  attribute X_INTERFACE_PARAMETER of FCLK_100M_CLK : signal is "XIL_INTERFACENAME CLK.FCLK_100M_CLK, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK1, FREQ_HZ 100000000, PHASE 0.000";
+  attribute X_INTERFACE_INFO of FCLK_50M_CLK : signal is "xilinx.com:signal:clock:1.0 CLK.FCLK_50M_CLK CLK";
+  attribute X_INTERFACE_PARAMETER of FCLK_50M_CLK : signal is "XIL_INTERFACENAME CLK.FCLK_50M_CLK, CLK_DOMAIN system_processing_system7_0_0_FCLK_CLK0, FREQ_HZ 50000000, PHASE 0.000";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_clk : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_CLK";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_porb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_PORB";
+  attribute X_INTERFACE_INFO of FIXED_IO_ps_srstb : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO PS_SRSTB";
+  attribute X_INTERFACE_INFO of I2C_scl_i : signal is "xilinx.com:interface:iic:1.0 I2C SCL_I";
+  attribute X_INTERFACE_INFO of I2C_scl_o : signal is "xilinx.com:interface:iic:1.0 I2C SCL_O";
+  attribute X_INTERFACE_INFO of I2C_scl_t : signal is "xilinx.com:interface:iic:1.0 I2C SCL_T";
+  attribute X_INTERFACE_INFO of I2C_sda_i : signal is "xilinx.com:interface:iic:1.0 I2C SDA_I";
+  attribute X_INTERFACE_INFO of I2C_sda_o : signal is "xilinx.com:interface:iic:1.0 I2C SDA_O";
+  attribute X_INTERFACE_INFO of I2C_sda_t : signal is "xilinx.com:interface:iic:1.0 I2C SDA_T";
+  attribute X_INTERFACE_INFO of SPI0_io0_i : signal is "xilinx.com:interface:spi:1.0 SPI0 IO0_I";
+  attribute X_INTERFACE_INFO of SPI0_io0_o : signal is "xilinx.com:interface:spi:1.0 SPI0 IO0_O";
+  attribute X_INTERFACE_INFO of SPI0_io0_t : signal is "xilinx.com:interface:spi:1.0 SPI0 IO0_T";
+  attribute X_INTERFACE_INFO of SPI0_io1_i : signal is "xilinx.com:interface:spi:1.0 SPI0 IO1_I";
+  attribute X_INTERFACE_INFO of SPI0_io1_o : signal is "xilinx.com:interface:spi:1.0 SPI0 IO1_O";
+  attribute X_INTERFACE_INFO of SPI0_io1_t : signal is "xilinx.com:interface:spi:1.0 SPI0 IO1_T";
+  attribute X_INTERFACE_INFO of SPI0_sck_i : signal is "xilinx.com:interface:spi:1.0 SPI0 SCK_I";
+  attribute X_INTERFACE_INFO of SPI0_sck_o : signal is "xilinx.com:interface:spi:1.0 SPI0 SCK_O";
+  attribute X_INTERFACE_INFO of SPI0_sck_t : signal is "xilinx.com:interface:spi:1.0 SPI0 SCK_T";
+  attribute X_INTERFACE_INFO of SPI0_ss_t : signal is "xilinx.com:interface:spi:1.0 SPI0 SS_T";
+  attribute X_INTERFACE_INFO of SPI1_io0_i : signal is "xilinx.com:interface:spi:1.0 SPI1 IO0_I";
+  attribute X_INTERFACE_INFO of SPI1_io0_o : signal is "xilinx.com:interface:spi:1.0 SPI1 IO0_O";
+  attribute X_INTERFACE_INFO of SPI1_io0_t : signal is "xilinx.com:interface:spi:1.0 SPI1 IO0_T";
+  attribute X_INTERFACE_INFO of SPI1_io1_i : signal is "xilinx.com:interface:spi:1.0 SPI1 IO1_I";
+  attribute X_INTERFACE_INFO of SPI1_io1_o : signal is "xilinx.com:interface:spi:1.0 SPI1 IO1_O";
+  attribute X_INTERFACE_INFO of SPI1_io1_t : signal is "xilinx.com:interface:spi:1.0 SPI1 IO1_T";
+  attribute X_INTERFACE_INFO of SPI1_sck_i : signal is "xilinx.com:interface:spi:1.0 SPI1 SCK_I";
+  attribute X_INTERFACE_INFO of SPI1_sck_o : signal is "xilinx.com:interface:spi:1.0 SPI1 SCK_O";
+  attribute X_INTERFACE_INFO of SPI1_sck_t : signal is "xilinx.com:interface:spi:1.0 SPI1 SCK_T";
+  attribute X_INTERFACE_INFO of SPI1_ss_t : signal is "xilinx.com:interface:spi:1.0 SPI1 SS_T";
+  attribute X_INTERFACE_INFO of UART_rxd : signal is "xilinx.com:interface:uart:1.0 UART RxD";
+  attribute X_INTERFACE_INFO of UART_txd : signal is "xilinx.com:interface:uart:1.0 UART TxD";
+  attribute X_INTERFACE_INFO of aclken : signal is "xilinx.com:signal:clockenable:1.0 CE.ACLKEN CE";
+  attribute X_INTERFACE_PARAMETER of aclken : signal is "XIL_INTERFACENAME CE.ACLKEN, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of aresetn : signal is "xilinx.com:signal:reset:1.0 RST.ARESETN RST";
+  attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME RST.ARESETN, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of gt_refclk1_0 : signal is "xilinx.com:signal:clock:1.0 CLK.GT_REFCLK1_0 CLK";
+  attribute X_INTERFACE_PARAMETER of gt_refclk1_0 : signal is "XIL_INTERFACENAME CLK.GT_REFCLK1_0, CLK_DOMAIN system_gt_refclk1_0, FREQ_HZ 125000000, PHASE 0.000";
+  attribute X_INTERFACE_INFO of reset_rtl_0 : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST";
+  attribute X_INTERFACE_PARAMETER of reset_rtl_0 : signal is "XIL_INTERFACENAME RST.RESET_RTL_0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of vid_io_in_0_active_video : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 ACTIVE_VIDEO";
+  attribute X_INTERFACE_INFO of vid_io_in_0_field : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 FIELD";
+  attribute X_INTERFACE_INFO of vid_io_in_0_hblank : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 HBLANK";
+  attribute X_INTERFACE_INFO of vid_io_in_0_hsync : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 HSYNC";
+  attribute X_INTERFACE_INFO of vid_io_in_0_vblank : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 VBLANK";
+  attribute X_INTERFACE_INFO of vid_io_in_0_vsync : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 VSYNC";
+  attribute X_INTERFACE_INFO of vid_io_in_1_active_video : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 ACTIVE_VIDEO";
+  attribute X_INTERFACE_INFO of vid_io_in_1_field : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 FIELD";
+  attribute X_INTERFACE_INFO of vid_io_in_1_hblank : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 HBLANK";
+  attribute X_INTERFACE_INFO of vid_io_in_1_hsync : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 HSYNC";
+  attribute X_INTERFACE_INFO of vid_io_in_1_vblank : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 VBLANK";
+  attribute X_INTERFACE_INFO of vid_io_in_1_vsync : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 VSYNC";
+  attribute X_INTERFACE_INFO of vid_io_in_ce : signal is "xilinx.com:signal:clockenable:1.0 CE.VID_IO_IN_CE CE";
+  attribute X_INTERFACE_PARAMETER of vid_io_in_ce : signal is "XIL_INTERFACENAME CE.VID_IO_IN_CE, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of vid_io_in_clk : signal is "xilinx.com:signal:clock:1.0 CLK.VID_IO_IN_CLK CLK";
+  attribute X_INTERFACE_PARAMETER of vid_io_in_clk : signal is "XIL_INTERFACENAME CLK.VID_IO_IN_CLK, CLK_DOMAIN system_vid_io_in_clk_0, FREQ_HZ 74250000, PHASE 0.000";
+  attribute X_INTERFACE_INFO of vid_io_in_reset : signal is "xilinx.com:signal:reset:1.0 RST.VID_IO_IN_RESET RST";
+  attribute X_INTERFACE_PARAMETER of vid_io_in_reset : signal is "XIL_INTERFACENAME RST.VID_IO_IN_RESET, POLARITY ACTIVE_HIGH";
+  attribute X_INTERFACE_INFO of FIXED_IO_mio : signal is "xilinx.com:display_processing_system7:fixedio:1.0 FIXED_IO MIO";
+  attribute X_INTERFACE_PARAMETER of FIXED_IO_mio : signal is "XIL_INTERFACENAME FIXED_IO, CAN_DEBUG false";
+  attribute X_INTERFACE_INFO of GT_SERIAL_TX_0_txn : signal is "xilinx.com:display_aurora:GT_Serial_Transceiver_Pins_TX:1.0 GT_SERIAL_TX_0 TXN";
+  attribute X_INTERFACE_INFO of GT_SERIAL_TX_0_txp : signal is "xilinx.com:display_aurora:GT_Serial_Transceiver_Pins_TX:1.0 GT_SERIAL_TX_0 TXP";
+  attribute X_INTERFACE_INFO of SPI0_ss_i : signal is "xilinx.com:interface:spi:1.0 SPI0 SS_I";
+  attribute X_INTERFACE_INFO of SPI0_ss_o : signal is "xilinx.com:interface:spi:1.0 SPI0 SS_O";
+  attribute X_INTERFACE_INFO of SPI1_ss_i : signal is "xilinx.com:interface:spi:1.0 SPI1 SS_I";
+  attribute X_INTERFACE_INFO of SPI1_ss_o : signal is "xilinx.com:interface:spi:1.0 SPI1 SS_O";
+  attribute X_INTERFACE_INFO of vid_io_in_0_data : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 DATA";
+  attribute X_INTERFACE_INFO of vid_io_in_1_data : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_1 DATA";
 begin
   FCLK_100M_CLK <= processing_system7_0_FCLK_CLK1;
   FCLK_50M_CLK <= processing_system7_0_FCLK_CLK0;
+  GT_SERIAL_TX_0_txn(0) <= aurora_8b10b_0_GT_SERIAL_TX_TXN(0);
+  GT_SERIAL_TX_0_txp(0) <= aurora_8b10b_0_GT_SERIAL_TX_TXP(0);
   I2C_scl_o <= processing_system7_0_IIC_0_SCL_O;
   I2C_scl_t <= processing_system7_0_IIC_0_SCL_T;
   I2C_sda_o <= processing_system7_0_IIC_0_SDA_O;
@@ -1819,6 +2092,8 @@ begin
   SPI1_ss_o(0) <= axi_quad_spi_1_SPI_0_SS_O(0);
   SPI1_ss_t <= axi_quad_spi_1_SPI_0_SS_T;
   UART_txd <= processing_system7_0_UART_1_TxD;
+  aclken_1 <= aclken;
+  aresetn_0_1 <= aresetn;
   axi_quad_spi_0_SPI_0_IO0_I <= SPI0_io0_i;
   axi_quad_spi_0_SPI_0_IO1_I <= SPI0_io1_i;
   axi_quad_spi_0_SPI_0_SCK_I <= SPI0_sck_i;
@@ -1827,10 +2102,95 @@ begin
   axi_quad_spi_1_SPI_0_IO1_I <= SPI1_io1_i;
   axi_quad_spi_1_SPI_0_SCK_I <= SPI1_sck_i;
   axi_quad_spi_1_SPI_0_SS_I(0) <= SPI1_ss_i(0);
+  axis_enable_0_1 <= axis_enable;
   control_reg0_o(31 downto 0) <= register_0_data(31 downto 0);
+  gt_refclk1_0_1 <= gt_refclk1_0;
   processing_system7_0_IIC_0_SCL_I <= I2C_scl_i;
   processing_system7_0_IIC_0_SDA_I <= I2C_sda_i;
   processing_system7_0_UART_1_RxD <= UART_rxd;
+  reset_rtl_0_1 <= reset_rtl_0;
+  vid_io_in_0_1_ACTIVE_VIDEO <= vid_io_in_0_active_video;
+  vid_io_in_0_1_DATA(95 downto 0) <= vid_io_in_0_data(95 downto 0);
+  vid_io_in_0_1_FIELD <= vid_io_in_0_field;
+  vid_io_in_0_1_HBLANK <= vid_io_in_0_hblank;
+  vid_io_in_0_1_HSYNC <= vid_io_in_0_hsync;
+  vid_io_in_0_1_VBLANK <= vid_io_in_0_vblank;
+  vid_io_in_0_1_VSYNC <= vid_io_in_0_vsync;
+  vid_io_in_1_1_ACTIVE_VIDEO <= vid_io_in_1_active_video;
+  vid_io_in_1_1_DATA(95 downto 0) <= vid_io_in_1_data(95 downto 0);
+  vid_io_in_1_1_FIELD <= vid_io_in_1_field;
+  vid_io_in_1_1_HBLANK <= vid_io_in_1_hblank;
+  vid_io_in_1_1_HSYNC <= vid_io_in_1_hsync;
+  vid_io_in_1_1_VBLANK <= vid_io_in_1_vblank;
+  vid_io_in_1_1_VSYNC <= vid_io_in_1_vsync;
+  vid_io_in_ce_0_1 <= vid_io_in_ce;
+  vid_io_in_clk_0_1 <= vid_io_in_clk;
+  vid_io_in_reset_0_1 <= vid_io_in_reset;
+aurora_8b10b_0: component system_aurora_8b10b_0_0
+     port map (
+      drpclk_in => processing_system7_0_FCLK_CLK0,
+      gt0_pll0outclk_in => '0',
+      gt0_pll0outrefclk_in => '0',
+      gt0_pll0refclklost_in => '0',
+      gt0_pll1outclk_in => '0',
+      gt0_pll1outrefclk_in => '0',
+      gt_common_reset_out => NLW_aurora_8b10b_0_gt_common_reset_out_UNCONNECTED,
+      gt_refclk1 => gt_refclk1_0_1,
+      gt_reset => '0',
+      init_clk_in => processing_system7_0_FCLK_CLK0,
+      loopback(2 downto 0) => B"000",
+      pll_not_locked => '0',
+      power_down => '0',
+      quad1_common_lock_in => '0',
+      s_axi_tx_tdata(0) => axis_dwidth_converter_0_M_AXIS_TDATA(31),
+      s_axi_tx_tdata(1) => axis_dwidth_converter_0_M_AXIS_TDATA(30),
+      s_axi_tx_tdata(2) => axis_dwidth_converter_0_M_AXIS_TDATA(29),
+      s_axi_tx_tdata(3) => axis_dwidth_converter_0_M_AXIS_TDATA(28),
+      s_axi_tx_tdata(4) => axis_dwidth_converter_0_M_AXIS_TDATA(27),
+      s_axi_tx_tdata(5) => axis_dwidth_converter_0_M_AXIS_TDATA(26),
+      s_axi_tx_tdata(6) => axis_dwidth_converter_0_M_AXIS_TDATA(25),
+      s_axi_tx_tdata(7) => axis_dwidth_converter_0_M_AXIS_TDATA(24),
+      s_axi_tx_tdata(8) => axis_dwidth_converter_0_M_AXIS_TDATA(23),
+      s_axi_tx_tdata(9) => axis_dwidth_converter_0_M_AXIS_TDATA(22),
+      s_axi_tx_tdata(10) => axis_dwidth_converter_0_M_AXIS_TDATA(21),
+      s_axi_tx_tdata(11) => axis_dwidth_converter_0_M_AXIS_TDATA(20),
+      s_axi_tx_tdata(12) => axis_dwidth_converter_0_M_AXIS_TDATA(19),
+      s_axi_tx_tdata(13) => axis_dwidth_converter_0_M_AXIS_TDATA(18),
+      s_axi_tx_tdata(14) => axis_dwidth_converter_0_M_AXIS_TDATA(17),
+      s_axi_tx_tdata(15) => axis_dwidth_converter_0_M_AXIS_TDATA(16),
+      s_axi_tx_tdata(16) => axis_dwidth_converter_0_M_AXIS_TDATA(15),
+      s_axi_tx_tdata(17) => axis_dwidth_converter_0_M_AXIS_TDATA(14),
+      s_axi_tx_tdata(18) => axis_dwidth_converter_0_M_AXIS_TDATA(13),
+      s_axi_tx_tdata(19) => axis_dwidth_converter_0_M_AXIS_TDATA(12),
+      s_axi_tx_tdata(20) => axis_dwidth_converter_0_M_AXIS_TDATA(11),
+      s_axi_tx_tdata(21) => axis_dwidth_converter_0_M_AXIS_TDATA(10),
+      s_axi_tx_tdata(22) => axis_dwidth_converter_0_M_AXIS_TDATA(9),
+      s_axi_tx_tdata(23) => axis_dwidth_converter_0_M_AXIS_TDATA(8),
+      s_axi_tx_tdata(24) => axis_dwidth_converter_0_M_AXIS_TDATA(7),
+      s_axi_tx_tdata(25) => axis_dwidth_converter_0_M_AXIS_TDATA(6),
+      s_axi_tx_tdata(26) => axis_dwidth_converter_0_M_AXIS_TDATA(5),
+      s_axi_tx_tdata(27) => axis_dwidth_converter_0_M_AXIS_TDATA(4),
+      s_axi_tx_tdata(28) => axis_dwidth_converter_0_M_AXIS_TDATA(3),
+      s_axi_tx_tdata(29) => axis_dwidth_converter_0_M_AXIS_TDATA(2),
+      s_axi_tx_tdata(30) => axis_dwidth_converter_0_M_AXIS_TDATA(1),
+      s_axi_tx_tdata(31) => axis_dwidth_converter_0_M_AXIS_TDATA(0),
+      s_axi_tx_tkeep(0 to 3) => B"1111",
+      s_axi_tx_tlast => axis_dwidth_converter_0_M_AXIS_TLAST,
+      s_axi_tx_tready => axis_dwidth_converter_0_M_AXIS_TREADY,
+      s_axi_tx_tvalid => axis_dwidth_converter_0_M_AXIS_TVALID,
+      sync_clk => aurora_8b10b_0_tx_out_clk,
+      sys_reset_out => NLW_aurora_8b10b_0_sys_reset_out_UNCONNECTED,
+      tx_channel_up => NLW_aurora_8b10b_0_tx_channel_up_UNCONNECTED,
+      tx_hard_err => NLW_aurora_8b10b_0_tx_hard_err_UNCONNECTED,
+      tx_lane_up(0) => NLW_aurora_8b10b_0_tx_lane_up_UNCONNECTED(0),
+      tx_lock => NLW_aurora_8b10b_0_tx_lock_UNCONNECTED,
+      tx_out_clk => aurora_8b10b_0_tx_out_clk,
+      tx_resetdone_out => NLW_aurora_8b10b_0_tx_resetdone_out_UNCONNECTED,
+      tx_system_reset => '0',
+      txn(0) => aurora_8b10b_0_GT_SERIAL_TX_TXN(0),
+      txp(0) => aurora_8b10b_0_GT_SERIAL_TX_TXP(0),
+      user_clk => aurora_8b10b_0_tx_out_clk
+    );
 axi_quad_spi_0: component system_axi_quad_spi_0_0
      port map (
       ext_spi_clk => processing_system7_0_FCLK_CLK0,
@@ -1902,6 +2262,39 @@ axi_quad_spi_1: component system_axi_quad_spi_0_1
       ss_i(0) => axi_quad_spi_1_SPI_0_SS_I(0),
       ss_o(0) => axi_quad_spi_1_SPI_0_SS_O(0),
       ss_t => axi_quad_spi_1_SPI_0_SS_T
+    );
+axis_combiner_0: component system_axis_combiner_0_1
+     port map (
+      aclk => aurora_8b10b_0_tx_out_clk,
+      aresetn => rst_aurora_8b10b_0_156M_interconnect_aresetn(0),
+      m_axis_tdata(63 downto 0) => axis_combiner_0_M_AXIS_TDATA(63 downto 0),
+      m_axis_tlast => axis_combiner_0_M_AXIS_TLAST,
+      m_axis_tready => axis_combiner_0_M_AXIS_TREADY,
+      m_axis_tuser(1 downto 0) => NLW_axis_combiner_0_m_axis_tuser_UNCONNECTED(1 downto 0),
+      m_axis_tvalid => axis_combiner_0_M_AXIS_TVALID,
+      s_axis_tdata(63 downto 32) => v_vid_in_axi4s_1_video_out_TDATA(31 downto 0),
+      s_axis_tdata(31 downto 0) => v_vid_in_axi4s_0_video_out_TDATA(31 downto 0),
+      s_axis_tlast(1) => v_vid_in_axi4s_1_video_out_TLAST,
+      s_axis_tlast(0) => v_vid_in_axi4s_0_video_out_TLAST,
+      s_axis_tready(1) => v_vid_in_axi4s_1_video_out_TREADY(1),
+      s_axis_tready(0) => v_vid_in_axi4s_0_video_out_TREADY(0),
+      s_axis_tuser(1) => v_vid_in_axi4s_1_video_out_TUSER,
+      s_axis_tuser(0) => v_vid_in_axi4s_0_video_out_TUSER,
+      s_axis_tvalid(1) => v_vid_in_axi4s_1_video_out_TVALID,
+      s_axis_tvalid(0) => v_vid_in_axi4s_0_video_out_TVALID
+    );
+axis_dwidth_converter_0: component system_axis_dwidth_converter_0_0
+     port map (
+      aclk => aurora_8b10b_0_tx_out_clk,
+      aresetn => rst_aurora_8b10b_0_156M_interconnect_aresetn(0),
+      m_axis_tdata(31 downto 0) => axis_dwidth_converter_0_M_AXIS_TDATA(31 downto 0),
+      m_axis_tlast => axis_dwidth_converter_0_M_AXIS_TLAST,
+      m_axis_tready => axis_dwidth_converter_0_M_AXIS_TREADY,
+      m_axis_tvalid => axis_dwidth_converter_0_M_AXIS_TVALID,
+      s_axis_tdata(63 downto 0) => axis_combiner_0_M_AXIS_TDATA(63 downto 0),
+      s_axis_tlast => axis_combiner_0_M_AXIS_TLAST,
+      s_axis_tready => axis_combiner_0_M_AXIS_TREADY,
+      s_axis_tvalid => axis_combiner_0_M_AXIS_TVALID
     );
 processing_system7_0: component system_processing_system7_0_0
      port map (
@@ -2128,6 +2521,19 @@ register_0: component system_register_0_0
       s00_axi_wstrb(3 downto 0) => ps7_0_axi_periph_M00_AXI_WSTRB(3 downto 0),
       s00_axi_wvalid => ps7_0_axi_periph_M00_AXI_WVALID(0)
     );
+rst_aurora_8b10b_0_156M: component system_rst_aurora_8b10b_0_156M_0
+     port map (
+      aux_reset_in => '1',
+      bus_struct_reset(0) => NLW_rst_aurora_8b10b_0_156M_bus_struct_reset_UNCONNECTED(0),
+      dcm_locked => '1',
+      ext_reset_in => reset_rtl_0_1,
+      interconnect_aresetn(0) => rst_aurora_8b10b_0_156M_interconnect_aresetn(0),
+      mb_debug_sys_rst => '0',
+      mb_reset => NLW_rst_aurora_8b10b_0_156M_mb_reset_UNCONNECTED,
+      peripheral_aresetn(0) => NLW_rst_aurora_8b10b_0_156M_peripheral_aresetn_UNCONNECTED(0),
+      peripheral_reset(0) => NLW_rst_aurora_8b10b_0_156M_peripheral_reset_UNCONNECTED(0),
+      slowest_sync_clk => aurora_8b10b_0_tx_out_clk
+    );
 rst_ps7_0_50M: component system_rst_ps7_0_50M_1
      port map (
       aux_reset_in => '1',
@@ -2140,5 +2546,67 @@ rst_ps7_0_50M: component system_rst_ps7_0_50M_1
       peripheral_aresetn(0) => rst_ps7_0_50M_peripheral_aresetn(0),
       peripheral_reset(0) => NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED(0),
       slowest_sync_clk => processing_system7_0_FCLK_CLK0
+    );
+v_vid_in_axi4s_0: component system_v_vid_in_axi4s_0_0
+     port map (
+      aclk => aurora_8b10b_0_tx_out_clk,
+      aclken => aclken_1,
+      aresetn => aresetn_0_1,
+      axis_enable => axis_enable_0_1,
+      fid => NLW_v_vid_in_axi4s_0_fid_UNCONNECTED,
+      m_axis_video_tdata(63 downto 0) => v_vid_in_axi4s_0_video_out_TDATA(63 downto 0),
+      m_axis_video_tlast => v_vid_in_axi4s_0_video_out_TLAST,
+      m_axis_video_tready => v_vid_in_axi4s_0_video_out_TREADY(0),
+      m_axis_video_tuser => v_vid_in_axi4s_0_video_out_TUSER,
+      m_axis_video_tvalid => v_vid_in_axi4s_0_video_out_TVALID,
+      overflow => NLW_v_vid_in_axi4s_0_overflow_UNCONNECTED,
+      underflow => NLW_v_vid_in_axi4s_0_underflow_UNCONNECTED,
+      vid_active_video => vid_io_in_0_1_ACTIVE_VIDEO,
+      vid_data(95 downto 0) => vid_io_in_0_1_DATA(95 downto 0),
+      vid_field_id => vid_io_in_0_1_FIELD,
+      vid_hblank => vid_io_in_0_1_HBLANK,
+      vid_hsync => vid_io_in_0_1_HSYNC,
+      vid_io_in_ce => vid_io_in_ce_0_1,
+      vid_io_in_clk => vid_io_in_clk_0_1,
+      vid_io_in_reset => vid_io_in_reset_0_1,
+      vid_vblank => vid_io_in_0_1_VBLANK,
+      vid_vsync => vid_io_in_0_1_VSYNC,
+      vtd_active_video => NLW_v_vid_in_axi4s_0_vtd_active_video_UNCONNECTED,
+      vtd_field_id => NLW_v_vid_in_axi4s_0_vtd_field_id_UNCONNECTED,
+      vtd_hblank => NLW_v_vid_in_axi4s_0_vtd_hblank_UNCONNECTED,
+      vtd_hsync => NLW_v_vid_in_axi4s_0_vtd_hsync_UNCONNECTED,
+      vtd_vblank => NLW_v_vid_in_axi4s_0_vtd_vblank_UNCONNECTED,
+      vtd_vsync => NLW_v_vid_in_axi4s_0_vtd_vsync_UNCONNECTED
+    );
+v_vid_in_axi4s_1: component system_v_vid_in_axi4s_0_1
+     port map (
+      aclk => aurora_8b10b_0_tx_out_clk,
+      aclken => aclken_1,
+      aresetn => aresetn_0_1,
+      axis_enable => axis_enable_0_1,
+      fid => NLW_v_vid_in_axi4s_1_fid_UNCONNECTED,
+      m_axis_video_tdata(63 downto 0) => v_vid_in_axi4s_1_video_out_TDATA(63 downto 0),
+      m_axis_video_tlast => v_vid_in_axi4s_1_video_out_TLAST,
+      m_axis_video_tready => v_vid_in_axi4s_1_video_out_TREADY(1),
+      m_axis_video_tuser => v_vid_in_axi4s_1_video_out_TUSER,
+      m_axis_video_tvalid => v_vid_in_axi4s_1_video_out_TVALID,
+      overflow => NLW_v_vid_in_axi4s_1_overflow_UNCONNECTED,
+      underflow => NLW_v_vid_in_axi4s_1_underflow_UNCONNECTED,
+      vid_active_video => vid_io_in_1_1_ACTIVE_VIDEO,
+      vid_data(95 downto 0) => vid_io_in_1_1_DATA(95 downto 0),
+      vid_field_id => vid_io_in_1_1_FIELD,
+      vid_hblank => vid_io_in_1_1_HBLANK,
+      vid_hsync => vid_io_in_1_1_HSYNC,
+      vid_io_in_ce => vid_io_in_ce_0_1,
+      vid_io_in_clk => vid_io_in_clk_0_1,
+      vid_io_in_reset => vid_io_in_reset_0_1,
+      vid_vblank => vid_io_in_1_1_VBLANK,
+      vid_vsync => vid_io_in_1_1_VSYNC,
+      vtd_active_video => NLW_v_vid_in_axi4s_1_vtd_active_video_UNCONNECTED,
+      vtd_field_id => NLW_v_vid_in_axi4s_1_vtd_field_id_UNCONNECTED,
+      vtd_hblank => NLW_v_vid_in_axi4s_1_vtd_hblank_UNCONNECTED,
+      vtd_hsync => NLW_v_vid_in_axi4s_1_vtd_hsync_UNCONNECTED,
+      vtd_vblank => NLW_v_vid_in_axi4s_1_vtd_vblank_UNCONNECTED,
+      vtd_vsync => NLW_v_vid_in_axi4s_1_vtd_vsync_UNCONNECTED
     );
 end STRUCTURE;

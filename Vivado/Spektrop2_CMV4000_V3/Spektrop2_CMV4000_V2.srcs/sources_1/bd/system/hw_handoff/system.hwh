@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Feb 19 01:14:10 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar  6 00:14:30 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z015" NAME="system" PACKAGE="clg485" SPEEDGRADE="-3"/>
 
@@ -28,6 +28,18 @@
     <PORT DIR="O" NAME="I2C_scl_t" SIGIS="undef"/>
     <PORT DIR="O" NAME="UART_txd" SIGIS="undef"/>
     <PORT DIR="I" NAME="UART_rxd" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI1_io0_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_io0_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_io0_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI1_io1_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_io1_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_io1_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="SPI1_sck_i" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_sck_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_sck_t" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="0" NAME="SPI1_ss_i" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="0" NAME="SPI1_ss_o" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="SPI1_ss_t" SIGIS="undef"/>
     <PORT CLKFREQUENCY="50000000" DIR="O" NAME="FCLK_50M_CLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
@@ -43,18 +55,68 @@
         <CONNECTION INSTANCE="register_0" PORT="data"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="I" NAME="SPI1_io0_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_io0_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_io0_t" SIGIS="undef"/>
-    <PORT DIR="I" NAME="SPI1_io1_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_io1_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_io1_t" SIGIS="undef"/>
-    <PORT DIR="I" NAME="SPI1_sck_i" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_sck_o" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_sck_t" SIGIS="undef"/>
-    <PORT DIR="I" LEFT="0" NAME="SPI1_ss_i" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" LEFT="0" NAME="SPI1_ss_o" RIGHT="0" SIGIS="undef"/>
-    <PORT DIR="O" NAME="SPI1_ss_t" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_0_active_video" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="95" NAME="vid_io_in_0_data" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_0_field" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_0_hblank" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_0_hsync" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_0_vblank" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_0_vsync" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_1_active_video" SIGIS="undef"/>
+    <PORT DIR="I" LEFT="95" NAME="vid_io_in_1_data" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_1_field" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_1_hblank" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_1_hsync" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_1_vblank" SIGIS="undef"/>
+    <PORT DIR="I" NAME="vid_io_in_1_vsync" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="74250000" DIR="I" NAME="vid_io_in_clk" SIGIS="clk" SIGNAME="External_Ports_vid_io_in_clk">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="vid_io_in_clk"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="vid_io_in_clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vid_io_in_ce" SIGIS="ce" SIGNAME="External_Ports_vid_io_in_ce">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="vid_io_in_ce"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="vid_io_in_ce"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="vid_io_in_reset" SIGIS="rst" SIGNAME="External_Ports_vid_io_in_reset">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="vid_io_in_reset"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="vid_io_in_reset"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aclken" SIGIS="ce" SIGNAME="External_Ports_aclken">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="aclken"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="aclken"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="aresetn"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="aresetn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="axis_enable" SIGIS="undef" SIGNAME="External_Ports_axis_enable">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="axis_enable"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="axis_enable"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="GT_SERIAL_TX_0_txn" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" LEFT="0" NAME="GT_SERIAL_TX_0_txp" RIGHT="0" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="125000000" DIR="I" NAME="gt_refclk1_0" SIGIS="clk" SIGNAME="External_Ports_gt_refclk1_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="aurora_8b10b_0" PORT="gt_refclk1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="reset_rtl_0" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="rst_aurora_8b10b_0_156M" PORT="ext_reset_in"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -115,9 +177,369 @@
         <PORTMAP LOGICAL="SS_T" PHYSICAL="SPI1_ss_t"/>
       </PORTMAPS>
     </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_vid_io_in_0" NAME="vid_io_in_0" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="vid_io_in_0_active_video"/>
+        <PORTMAP LOGICAL="DATA" PHYSICAL="vid_io_in_0_data"/>
+        <PORTMAP LOGICAL="FIELD" PHYSICAL="vid_io_in_0_field"/>
+        <PORTMAP LOGICAL="HBLANK" PHYSICAL="vid_io_in_0_hblank"/>
+        <PORTMAP LOGICAL="HSYNC" PHYSICAL="vid_io_in_0_hsync"/>
+        <PORTMAP LOGICAL="VBLANK" PHYSICAL="vid_io_in_0_vblank"/>
+        <PORTMAP LOGICAL="VSYNC" PHYSICAL="vid_io_in_0_vsync"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="External_Interface_vid_io_in_1" NAME="vid_io_in_1" TYPE="TARGET">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="vid_io_in_1_active_video"/>
+        <PORTMAP LOGICAL="DATA" PHYSICAL="vid_io_in_1_data"/>
+        <PORTMAP LOGICAL="FIELD" PHYSICAL="vid_io_in_1_field"/>
+        <PORTMAP LOGICAL="HBLANK" PHYSICAL="vid_io_in_1_hblank"/>
+        <PORTMAP LOGICAL="HSYNC" PHYSICAL="vid_io_in_1_hsync"/>
+        <PORTMAP LOGICAL="VBLANK" PHYSICAL="vid_io_in_1_vblank"/>
+        <PORTMAP LOGICAL="VSYNC" PHYSICAL="vid_io_in_1_vsync"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
+    <BUSINTERFACE BUSNAME="aurora_8b10b_0_GT_SERIAL_TX" NAME="GT_SERIAL_TX_0" TYPE="INITIATOR">
+      <PORTMAPS>
+        <PORTMAP LOGICAL="TXN" PHYSICAL="GT_SERIAL_TX_0_txn"/>
+        <PORTMAP LOGICAL="TXP" PHYSICAL="GT_SERIAL_TX_0_txp"/>
+      </PORTMAPS>
+    </BUSINTERFACE>
   </EXTERNALINTERFACES>
 
   <MODULES>
+    <MODULE FULLNAME="/aurora_8b10b_0" HWVERSION="11.1" INSTANCE="aurora_8b10b_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="aurora_8b10b" VLNV="xilinx.com:ip:aurora_8b10b:11.1">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=aurora_8b10b;v=v11_1;d=pg046-aurora-8b10b.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="component_name" VALUE="system_aurora_8b10b_0_0"/>
+        <PARAMETER NAME="channel_enable" VALUE="X0Y0"/>
+        <PARAMETER NAME="C_REFCLK_LOC_P" VALUE="BL8"/>
+        <PARAMETER NAME="C_REFCLK_LOC_N" VALUE="BL7"/>
+        <PARAMETER NAME="c_column_used" VALUE="None"/>
+        <PARAMETER NAME="c_ucolumn_used" VALUE="right"/>
+        <PARAMETER NAME="c_family" VALUE="zynq"/>
+        <PARAMETER NAME="c_device" VALUE="xc7z015"/>
+        <PARAMETER NAME="c_row_used" VALUE="bottom"/>
+        <PARAMETER NAME="c_xpackage" VALUE="clg485"/>
+        <PARAMETER NAME="c_xspeedgrade" VALUE="-3"/>
+        <PARAMETER NAME="c_aurora_lanes" VALUE="1"/>
+        <PARAMETER NAME="c_lane_width" VALUE="4"/>
+        <PARAMETER NAME="C_active_transceiverquads" VALUE="1"/>
+        <PARAMETER NAME="C_START_QUAD" VALUE="X0Y0"/>
+        <PARAMETER NAME="C_START_LANE" VALUE="X0Y0"/>
+        <PARAMETER NAME="C_REFCLK_SOURCE" VALUE="none"/>
+        <PARAMETER NAME="interface_mode" VALUE="Framing"/>
+        <PARAMETER NAME="c_stream" VALUE="false"/>
+        <PARAMETER NAME="dataflow_config" VALUE="TX-only_Simplex"/>
+        <PARAMETER NAME="backchannel_mode" VALUE="Timer"/>
+        <PARAMETER NAME="c_simplex" VALUE="true"/>
+        <PARAMETER NAME="c_simplex_mode" VALUE="TX"/>
+        <PARAMETER NAME="flow_mode" VALUE="None"/>
+        <PARAMETER NAME="c_nfc" VALUE="false"/>
+        <PARAMETER NAME="c_nfc_mode" VALUE="IMM"/>
+        <PARAMETER NAME="c_ufc" VALUE="false"/>
+        <PARAMETER NAME="c_example_simulation" VALUE="false"/>
+        <PARAMETER NAME="c_gtwiz_out" VALUE="false"/>
+        <PARAMETER NAME="c_line_rate" VALUE="62500"/>
+        <PARAMETER NAME="cc_line_rate" VALUE="6.25"/>
+        <PARAMETER NAME="c_refclk_frequency" VALUE="125000"/>
+        <PARAMETER NAME="cc_refclk_frequency" VALUE="125.000"/>
+        <PARAMETER NAME="c_init_clk" VALUE="50.0"/>
+        <PARAMETER NAME="drp_freq" VALUE="50.0"/>
+        <PARAMETER NAME="c_gt_loc_1" VALUE="1"/>
+        <PARAMETER NAME="c_gt_loc_2" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_3" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_4" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_5" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_6" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_7" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_8" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_9" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_10" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_11" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_12" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_13" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_14" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_15" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_16" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_17" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_18" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_19" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_20" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_21" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_22" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_23" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_24" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_25" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_26" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_27" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_28" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_29" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_30" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_31" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_32" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_33" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_34" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_35" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_36" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_37" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_38" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_39" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_40" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_41" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_42" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_43" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_44" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_45" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_46" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_47" VALUE="X"/>
+        <PARAMETER NAME="c_gt_loc_48" VALUE="X"/>
+        <PARAMETER NAME="c_gt_clock_1" VALUE="GTPQ0"/>
+        <PARAMETER NAME="c_gt_clock_2" VALUE="None"/>
+        <PARAMETER NAME="c_use_scrambler" VALUE="false"/>
+        <PARAMETER NAME="c_use_chipscope" VALUE="false"/>
+        <PARAMETER NAME="c_drp_if" VALUE="false"/>
+        <PARAMETER NAME="transceivercontrol" VALUE="false"/>
+        <PARAMETER NAME="c_use_crc" VALUE="false"/>
+        <PARAMETER NAME="supportlevel" VALUE="false"/>
+        <PARAMETER NAME="c_use_byteswap" VALUE="false"/>
+        <PARAMETER NAME="c_cpll_fbdiv" VALUE="5"/>
+        <PARAMETER NAME="c_cpll_fbdiv_45" VALUE="5"/>
+        <PARAMETER NAME="c_cpll_refclk_div" VALUE="1"/>
+        <PARAMETER NAME="c_rxoutdiv" VALUE="1"/>
+        <PARAMETER NAME="c_txoutdiv" VALUE="1"/>
+        <PARAMETER NAME="user_interface" VALUE="AXI_4_Streaming"/>
+        <PARAMETER NAME="c_ufcbuswidthselect" VALUE="32"/>
+        <PARAMETER NAME="c_ufcrembuswidthselect" VALUE="2"/>
+        <PARAMETER NAME="c_ufcstrbbuswidthselect" VALUE="4"/>
+        <PARAMETER NAME="c_rembuswidthselect" VALUE="2"/>
+        <PARAMETER NAME="isv7gth" VALUE="false"/>
+        <PARAMETER NAME="gtquadcnt" VALUE="1"/>
+        <PARAMETER NAME="port7dmonitorout" VALUE="14"/>
+        <PARAMETER NAME="is_7series" VALUE="true"/>
+        <PARAMETER NAME="SINGLEEND_INITCLK" VALUE="false"/>
+        <PARAMETER NAME="SINGLEEND_GTREFCLK" VALUE="false"/>
+        <PARAMETER NAME="C_DOUBLE_GTRXRESET" VALUE="false"/>
+        <PARAMETER NAME="C_DOCCPORT_ENABLE" VALUE="false"/>
+        <PARAMETER NAME="is_board" VALUE="None"/>
+        <PARAMETER NAME="USDRPADDR_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="USDMON_WIDTH" VALUE="16"/>
+        <PARAMETER NAME="TXDIFFCTRL_WIDTH" VALUE="3"/>
+        <PARAMETER NAME="ins_loss_nyq" VALUE="14"/>
+        <PARAMETER NAME="rx_eq_mode" VALUE="AUTO"/>
+        <PARAMETER NAME="rx_coupling" VALUE="AC"/>
+        <PARAMETER NAME="rx_termination" VALUE="PROGRAMMABLE"/>
+        <PARAMETER NAME="rx_termination_prog_value" VALUE="800"/>
+        <PARAMETER NAME="rx_ppm_offset" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_aurora_8b10b_0_0"/>
+        <PARAMETER NAME="C_AURORA_LANES" VALUE="1"/>
+        <PARAMETER NAME="C_LANE_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_LINE_RATE" VALUE="6.25"/>
+        <PARAMETER NAME="C_REFCLK_FREQUENCY" VALUE="125.000"/>
+        <PARAMETER NAME="C_INIT_CLK" VALUE="50.0"/>
+        <PARAMETER NAME="DRP_FREQ" VALUE="50.0"/>
+        <PARAMETER NAME="Dataflow_Config" VALUE="TX-only_Simplex"/>
+        <PARAMETER NAME="Interface_Mode" VALUE="Framing"/>
+        <PARAMETER NAME="Flow_Mode" VALUE="None"/>
+        <PARAMETER NAME="Backchannel_mode" VALUE="Timer"/>
+        <PARAMETER NAME="C_COLUMN_USED" VALUE="None"/>
+        <PARAMETER NAME="C_UCOLUMN_USED" VALUE="right"/>
+        <PARAMETER NAME="C_ROW_USED" VALUE="bottom"/>
+        <PARAMETER NAME="C_GT_LOC_48" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_47" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_46" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_45" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_44" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_43" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_42" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_41" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_40" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_39" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_38" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_37" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_36" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_35" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_34" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_33" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_32" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_31" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_30" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_29" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_28" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_27" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_26" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_25" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_24" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_23" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_22" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_21" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_20" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_19" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_18" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_17" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_16" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_15" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_14" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_13" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_12" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_11" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_10" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_9" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_8" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_7" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_6" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_5" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_4" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_3" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_2" VALUE="X"/>
+        <PARAMETER NAME="C_GT_LOC_1" VALUE="1"/>
+        <PARAMETER NAME="C_GT_CLOCK_1" VALUE="GTPQ0"/>
+        <PARAMETER NAME="C_GT_CLOCK_2" VALUE="None"/>
+        <PARAMETER NAME="C_USE_CHIPSCOPE" VALUE="false"/>
+        <PARAMETER NAME="C_USE_SCRAMBLER" VALUE="false"/>
+        <PARAMETER NAME="C_USE_CRC" VALUE="false"/>
+        <PARAMETER NAME="SupportLevel" VALUE="0"/>
+        <PARAMETER NAME="TransceiverControl" VALUE="false"/>
+        <PARAMETER NAME="C_EXAMPLE_SIMULATION" VALUE="false"/>
+        <PARAMETER NAME="C_USE_BYTESWAP" VALUE="false"/>
+        <PARAMETER NAME="CHANNEL_ENABLE" VALUE="X0Y0"/>
+        <PARAMETER NAME="C_DRP_IF" VALUE="false"/>
+        <PARAMETER NAME="INS_LOSS_NYQ" VALUE="14"/>
+        <PARAMETER NAME="RX_EQ_MODE" VALUE="AUTO"/>
+        <PARAMETER NAME="RX_COUPLING" VALUE="AC"/>
+        <PARAMETER NAME="RX_TERMINATION" VALUE="PROGRAMMABLE"/>
+        <PARAMETER NAME="RX_TERMINATION_PROG_VALUE" VALUE="800"/>
+        <PARAMETER NAME="RX_PPM_OFFSET" VALUE="0"/>
+        <PARAMETER NAME="C_GTWIZ_OUT" VALUE="false"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="0" NAME="s_axi_tx_tdata" RIGHT="31" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="0" NAME="s_axi_tx_tkeep" RIGHT="3" SIGIS="undef"/>
+        <PORT DIR="I" NAME="s_axi_tx_tlast" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="m_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axi_tx_tvalid" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="m_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axi_tx_tready" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="m_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="tx_hard_err" SIGIS="undef"/>
+        <PORT DIR="O" NAME="tx_channel_up" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="tx_lane_up" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="txp" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="0" NAME="txn" RIGHT="0" SIGIS="undef"/>
+        <PORT DIR="I" NAME="tx_system_reset" SIGIS="rst"/>
+        <PORT DIR="I" NAME="gt_reset" SIGIS="rst"/>
+        <PORT DIR="I" LEFT="2" NAME="loopback" RIGHT="0" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="drpclk_in" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="power_down" SIGIS="rst"/>
+        <PORT DIR="O" NAME="tx_lock" SIGIS="undef"/>
+        <PORT DIR="O" NAME="tx_resetdone_out" SIGIS="undef"/>
+        <PORT DIR="O" NAME="gt_common_reset_out" SIGIS="undef"/>
+        <PORT DIR="I" NAME="gt0_pll0outclk_in" SIGIS="undef"/>
+        <PORT DIR="I" NAME="gt0_pll1outclk_in" SIGIS="undef"/>
+        <PORT DIR="I" NAME="gt0_pll0outrefclk_in" SIGIS="undef"/>
+        <PORT DIR="I" NAME="gt0_pll1outrefclk_in" SIGIS="undef"/>
+        <PORT DIR="I" NAME="gt0_pll0refclklost_in" SIGIS="undef"/>
+        <PORT DIR="I" NAME="quad1_common_lock_in" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="50000000" DIR="I" NAME="init_clk_in" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="pll_not_locked" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="156250000" DIR="O" NAME="tx_out_clk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="user_clk"/>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="sync_clk"/>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="aclk"/>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="aclk"/>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="aclk"/>
+            <CONNECTION INSTANCE="rst_aurora_8b10b_0_156M" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="aclk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="sys_reset_out" SIGIS="rst"/>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="user_clk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="sync_clk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="125000000" DIR="I" NAME="gt_refclk1" SIGIS="clk" SIGNAME="External_Ports_gt_refclk1_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="gt_refclk1_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="axis_dwidth_converter_0_M_AXIS" NAME="USER_DATA_S_AXI_TX" TYPE="TARGET" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="1"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axi_tx_tdata"/>
+            <PORTMAP LOGICAL="TKEEP" PHYSICAL="s_axi_tx_tkeep"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axi_tx_tlast"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axi_tx_tready"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axi_tx_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="CORE_STATUS" TYPE="INITIATOR" VLNV="xilinx.com:display_aurora:core_status_out:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TX_CHANNEL_UP" PHYSICAL="tx_channel_up"/>
+            <PORTMAP LOGICAL="TX_HARD_ERR" PHYSICAL="tx_hard_err"/>
+            <PORTMAP LOGICAL="TX_LANE_UP" PHYSICAL="tx_lane_up"/>
+            <PORTMAP LOGICAL="TX_LOCK" PHYSICAL="tx_lock"/>
+            <PORTMAP LOGICAL="TX_RESETDONE_OUT" PHYSICAL="tx_resetdone_out"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="CORE_CONTROL" TYPE="TARGET" VLNV="xilinx.com:display_aurora:core_control_in:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="LOOPBACK" PHYSICAL="loopback"/>
+            <PORTMAP LOGICAL="PLL_NOT_LOCKED" PHYSICAL="pll_not_locked"/>
+            <PORTMAP LOGICAL="Power_down" PHYSICAL="power_down"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="aurora_8b10b_0_GT_SERIAL_TX" NAME="GT_SERIAL_TX" TYPE="INITIATOR" VLNV="xilinx.com:display_aurora:GT_Serial_Transceiver_Pins_TX:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TXN" PHYSICAL="txn"/>
+            <PORTMAP LOGICAL="TXP" PHYSICAL="txp"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
     <MODULE FULLNAME="/axi_quad_spi_0" HWVERSION="3.2" INSTANCE="axi_quad_spi_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="MEMORY_CNTLR" MODTYPE="axi_quad_spi" VLNV="xilinx.com:ip:axi_quad_spi:3.2">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axi_quad_spi;v=v3_2;d=pg153-axi-quad-spi.pdf"/>
@@ -570,6 +992,294 @@
             <PORTMAP LOGICAL="WREADY" PHYSICAL="s_axi_wready"/>
             <PORTMAP LOGICAL="WSTRB" PHYSICAL="s_axi_wstrb"/>
             <PORTMAP LOGICAL="WVALID" PHYSICAL="s_axi_wvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/axis_combiner_0" HWVERSION="1.1" INSTANCE="axis_combiner_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_combiner" VLNV="xilinx.com:ip:axis_combiner:1.1">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_infrastructure_ip_suite;v=v1_1;d=pg085-axi4stream-infrastructure.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_TUSER_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000010010011"/>
+        <PARAMETER NAME="C_MASTER_PORT_NUM" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_SI_SLOTS" VALUE="2"/>
+        <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+        <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="NUM_SI" VALUE="2"/>
+        <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+        <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+        <PARAMETER NAME="MASTER_PORT_NUM" VALUE="0"/>
+        <PARAMETER NAME="HAS_CMD_ERR" VALUE="0"/>
+        <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_axis_combiner_0_1"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="rst_aurora_8b10b_0_156M_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_aurora_8b10b_0_156M" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_tvalid" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="m_axis_video_tvalid"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="m_axis_video_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="s_axis_tready" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="m_axis_video_tready"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="m_axis_video_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="m_axis_video_tdata"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="m_axis_video_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_tlast" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="m_axis_video_tlast"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="m_axis_video_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="1" NAME="s_axis_tuser" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="m_axis_video_tuser"/>
+          </CONNECTIONS>
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="m_axis_video_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="s_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="1" NAME="m_axis_tuser" RIGHT="0" SIGIS="undef"/>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="axis_combiner_0_M_AXIS" NAME="M_AXIS" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="8"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="2"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_tuser"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="v_vid_in_axi4s_0_video_out" NAME="S00_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value xilinx.com:video:Y_400:1.0} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value rows} size {attribs {resolve_type generated dependency active_rows format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_rows_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cols} size {attribs {resolve_type generated dependency active_cols format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_cols_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_Y {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value Y} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency video_data_width format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}}}}}} TDATA_WIDTH 8}"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="v_vid_in_axi4s_1_video_out" NAME="S01_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value xilinx.com:video:Y_400:1.0} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value rows} size {attribs {resolve_type generated dependency active_rows format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_rows_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cols} size {attribs {resolve_type generated dependency active_cols format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_cols_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_Y {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value Y} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency video_data_width format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}}}}}} TDATA_WIDTH 8}"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="s_axis_tuser"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/axis_dwidth_converter_0" HWVERSION="1.1" INSTANCE="axis_dwidth_converter_0" IPTYPE="BUS" IS_ENABLE="1" MODCLASS="BUS" MODTYPE="axis_dwidth_converter" VLNV="xilinx.com:ip:axis_dwidth_converter:1.1">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=axis_infrastructure_ip_suite;v=v1_1;d=pg085-axi4stream-infrastructure.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_S_AXIS_TDATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="32"/>
+        <PARAMETER NAME="C_AXIS_TID_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_TDEST_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_S_AXIS_TUSER_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_M_AXIS_TUSER_WIDTH" VALUE="1"/>
+        <PARAMETER NAME="C_AXIS_SIGNAL_SET" VALUE="0b00000000000000000000000000010011"/>
+        <PARAMETER NAME="S_TDATA_NUM_BYTES" VALUE="8"/>
+        <PARAMETER NAME="M_TDATA_NUM_BYTES" VALUE="4"/>
+        <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+        <PARAMETER NAME="TUSER_BITS_PER_BYTE" VALUE="0"/>
+        <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+        <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+        <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+        <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+        <PARAMETER NAME="HAS_ACLKEN" VALUE="0"/>
+        <PARAMETER NAME="HAS_MI_TKEEP" VALUE="0"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_axis_dwidth_converter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="BUS"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="rst_aurora_8b10b_0_156M_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_aurora_8b10b_0_156M" PORT="interconnect_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="s_axis_tready" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="s_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="s_axis_tlast" SIGIS="undef" SIGNAME="axis_combiner_0_m_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="m_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tvalid" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="s_axi_tx_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axis_tready" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="s_axi_tx_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="m_axis_tdata" RIGHT="0" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="s_axi_tx_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_tlast" SIGIS="undef" SIGNAME="aurora_8b10b_0_s_axi_tx_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="s_axi_tx_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="axis_combiner_0_M_AXIS" NAME="S_AXIS" TYPE="SLAVE" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="8"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="s_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="s_axis_tready"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="s_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="s_axis_tlast"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="axis_dwidth_converter_0_M_AXIS" NAME="M_AXIS" TYPE="INITIATOR" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="4"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="undef"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_tvalid"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_tready"/>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_tlast"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -1771,13 +2481,15 @@
             <CONNECTION INSTANCE="register_0" PORT="s00_axi_aclk"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="ext_spi_clk"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_aclk"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="ext_spi_clk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ACLK"/>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_aclk"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_ACLK"/>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="ext_spi_clk"/>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="drpclk_in"/>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="init_clk_in"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="O" NAME="FCLK_CLK1" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK1">
@@ -2340,6 +3052,16 @@
             <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="peripheral_aresetn"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="I" NAME="M02_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_50M_peripheral_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="peripheral_aresetn"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" NAME="S00_AXI_arvalid" SIGIS="undef" SIGNAME="processing_system7_0_M_AXI_GP0_ARVALID">
           <CONNECTIONS>
             <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ARVALID"/>
@@ -2710,14 +3432,19 @@
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_ACLK" SIGIS="clk" SIGNAME="processing_system7_0_FCLK_CLK0">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_araddr">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="FCLK_CLK0"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_araddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" NAME="M02_ARESETN" SIGIS="rst" SIGNAME="rst_ps7_0_50M_peripheral_aresetn">
+        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_arready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="rst_ps7_0_50M" PORT="peripheral_aresetn"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_arready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_arvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_arvalid"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="31" NAME="M02_AXI_awaddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_awaddr">
@@ -2725,35 +3452,19 @@
             <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_awaddr"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_awprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_awvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_awvalid"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" NAME="M02_AXI_awready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_awready">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_awready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wdata">
+        <PORT DIR="O" NAME="M02_AXI_awvalid" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_awvalid">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wdata"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_awvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wstrb">
+        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_bready">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wstrb"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wready"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_bready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="M02_AXI_bresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_bresp">
@@ -2766,30 +3477,14 @@
             <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_bvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_bready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_bready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_bready"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" LEFT="31" NAME="M02_AXI_araddr" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_araddr">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_araddr"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="O" NAME="M02_AXI_arprot" SIGIS="undef"/>
-        <PORT DIR="O" NAME="M02_AXI_arvalid" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_arvalid">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_arvalid"/>
-          </CONNECTIONS>
-        </PORT>
-        <PORT DIR="I" NAME="M02_AXI_arready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_arready">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_arready"/>
-          </CONNECTIONS>
-        </PORT>
         <PORT DIR="I" LEFT="31" NAME="M02_AXI_rdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_rdata">
           <CONNECTIONS>
             <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_rdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_rready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_rready"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="I" LEFT="1" NAME="M02_AXI_rresp" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_rresp">
@@ -2802,9 +3497,24 @@
             <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_rvalid"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="M02_AXI_rready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_rready">
+        <PORT DIR="O" LEFT="31" NAME="M02_AXI_wdata" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wdata">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_rready"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="M02_AXI_wready" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="M02_AXI_wstrb" RIGHT="0" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wstrb">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wstrb"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="M02_AXI_wvalid" SIGIS="undef" SIGNAME="axi_quad_spi_1_s_axi_wvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_wvalid"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -2897,25 +3607,23 @@
         </BUSINTERFACE>
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M02_AXI" DATAWIDTH="32" NAME="M02_AXI" TYPE="MASTER" VLNV="xilinx.com:interface:aximm:1.0">
           <PORTMAPS>
+            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M02_AXI_araddr"/>
+            <PORTMAP LOGICAL="ARREADY" PHYSICAL="M02_AXI_arready"/>
+            <PORTMAP LOGICAL="ARVALID" PHYSICAL="M02_AXI_arvalid"/>
             <PORTMAP LOGICAL="AWADDR" PHYSICAL="M02_AXI_awaddr"/>
-            <PORTMAP LOGICAL="AWPROT" PHYSICAL="M02_AXI_awprot"/>
-            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M02_AXI_awvalid"/>
             <PORTMAP LOGICAL="AWREADY" PHYSICAL="M02_AXI_awready"/>
-            <PORTMAP LOGICAL="WDATA" PHYSICAL="M02_AXI_wdata"/>
-            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M02_AXI_wstrb"/>
-            <PORTMAP LOGICAL="WVALID" PHYSICAL="M02_AXI_wvalid"/>
-            <PORTMAP LOGICAL="WREADY" PHYSICAL="M02_AXI_wready"/>
+            <PORTMAP LOGICAL="AWVALID" PHYSICAL="M02_AXI_awvalid"/>
+            <PORTMAP LOGICAL="BREADY" PHYSICAL="M02_AXI_bready"/>
             <PORTMAP LOGICAL="BRESP" PHYSICAL="M02_AXI_bresp"/>
             <PORTMAP LOGICAL="BVALID" PHYSICAL="M02_AXI_bvalid"/>
-            <PORTMAP LOGICAL="BREADY" PHYSICAL="M02_AXI_bready"/>
-            <PORTMAP LOGICAL="ARADDR" PHYSICAL="M02_AXI_araddr"/>
-            <PORTMAP LOGICAL="ARPROT" PHYSICAL="M02_AXI_arprot"/>
-            <PORTMAP LOGICAL="ARVALID" PHYSICAL="M02_AXI_arvalid"/>
-            <PORTMAP LOGICAL="ARREADY" PHYSICAL="M02_AXI_arready"/>
             <PORTMAP LOGICAL="RDATA" PHYSICAL="M02_AXI_rdata"/>
+            <PORTMAP LOGICAL="RREADY" PHYSICAL="M02_AXI_rready"/>
             <PORTMAP LOGICAL="RRESP" PHYSICAL="M02_AXI_rresp"/>
             <PORTMAP LOGICAL="RVALID" PHYSICAL="M02_AXI_rvalid"/>
-            <PORTMAP LOGICAL="RREADY" PHYSICAL="M02_AXI_rready"/>
+            <PORTMAP LOGICAL="WDATA" PHYSICAL="M02_AXI_wdata"/>
+            <PORTMAP LOGICAL="WREADY" PHYSICAL="M02_AXI_wready"/>
+            <PORTMAP LOGICAL="WSTRB" PHYSICAL="M02_AXI_wstrb"/>
+            <PORTMAP LOGICAL="WVALID" PHYSICAL="M02_AXI_wvalid"/>
           </PORTMAPS>
         </BUSINTERFACE>
       </BUSINTERFACES>
@@ -3103,6 +3811,52 @@
         </BUSINTERFACE>
       </BUSINTERFACES>
     </MODULE>
+    <MODULE FULLNAME="/rst_aurora_8b10b_0_156M" HWVERSION="5.0" INSTANCE="rst_aurora_8b10b_0_156M" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_EXT_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_AUX_RST_WIDTH" VALUE="4"/>
+        <PARAMETER NAME="C_EXT_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_AUX_RESET_HIGH" VALUE="0"/>
+        <PARAMETER NAME="C_NUM_BUS_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_RST" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_INTERCONNECT_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="C_NUM_PERP_ARESETN" VALUE="1"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_rst_aurora_8b10b_0_156M_0"/>
+        <PARAMETER NAME="USE_BOARD_FLOW" VALUE="false"/>
+        <PARAMETER NAME="RESET_BOARD_INTERFACE" VALUE="Custom"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="slowest_sync_clk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="ext_reset_in" SIGIS="rst" SIGNAME="External_Ports_reset_rtl_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="reset_rtl_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aux_reset_in" SIGIS="rst"/>
+        <PORT DIR="I" NAME="mb_debug_sys_rst" SIGIS="rst"/>
+        <PORT DIR="I" NAME="dcm_locked" SIGIS="undef"/>
+        <PORT DIR="O" NAME="mb_reset" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="bus_struct_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_reset" RIGHT="0" SIGIS="rst"/>
+        <PORT DIR="O" LEFT="0" NAME="interconnect_aresetn" RIGHT="0" SIGIS="rst" SIGNAME="rst_aurora_8b10b_0_156M_interconnect_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="aresetn"/>
+            <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" RIGHT="0" SIGIS="rst"/>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE FULLNAME="/rst_ps7_0_50M" HWVERSION="5.0" INSTANCE="rst_ps7_0_50M" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="proc_sys_reset" VLNV="xilinx.com:ip:proc_sys_reset:5.0">
       <DOCUMENTS>
         <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=proc_sys_reset;v=v5_0;d=pg164-proc-sys-reset.pdf"/>
@@ -3148,15 +3902,305 @@
           <CONNECTIONS>
             <CONNECTION INSTANCE="register_0" PORT="s00_axi_aresetn"/>
             <CONNECTION INSTANCE="axi_quad_spi_0" PORT="s_axi_aresetn"/>
+            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_ARESETN"/>
-            <CONNECTION INSTANCE="axi_quad_spi_1" PORT="s_axi_aresetn"/>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M02_ARESETN"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
       <BUSINTERFACES/>
+    </MODULE>
+    <MODULE FULLNAME="/v_vid_in_axi4s_0" HWVERSION="4.0" INSTANCE="v_vid_in_axi4s_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="v_vid_in_axi4s" VLNV="xilinx.com:ip:v_vid_in_axi4s:4.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=v_vid_in_axi4s;v=v4_0;d=pg043_v_vid_in_axi4s.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_PIXELS_PER_CLOCK" VALUE="8"/>
+        <PARAMETER NAME="C_COMPONENTS_PER_PIXEL" VALUE="1"/>
+        <PARAMETER NAME="C_M_AXIS_COMPONENT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="C_NATIVE_COMPONENT_WIDTH" VALUE="12"/>
+        <PARAMETER NAME="C_NATIVE_DATA_WIDTH" VALUE="96"/>
+        <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="C_HAS_ASYNC_CLK" VALUE="1"/>
+        <PARAMETER NAME="C_ADDR_WIDTH" VALUE="11"/>
+        <PARAMETER NAME="C_INCLUDE_PIXEL_DROP" VALUE="0"/>
+        <PARAMETER NAME="C_INCLUDE_PIXEL_REMAP_420" VALUE="0"/>
+        <PARAMETER NAME="C_ADDR_WIDTH_PIXEL_REMAP_420" VALUE="10"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_v_vid_in_axi4s_0_0"/>
+        <PARAMETER NAME="C_M_AXIS_VIDEO_FORMAT" VALUE="12"/>
+        <PARAMETER NAME="C_M_AXIS_VIDEO_DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="74250000" DIR="I" NAME="vid_io_in_clk" SIGIS="clk" SIGNAME="External_Ports_vid_io_in_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vid_io_in_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="vid_io_in_ce" SIGIS="ce" SIGNAME="External_Ports_vid_io_in_ce">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vid_io_in_ce"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="vid_io_in_reset" SIGIS="rst" SIGNAME="External_Ports_vid_io_in_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vid_io_in_reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="vid_active_video" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_vblank" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_hblank" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_vsync" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_hsync" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_field_id" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="95" NAME="vid_data" RIGHT="0" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aclken" SIGIS="ce" SIGNAME="External_Ports_aclken">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclken"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="m_axis_video_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_video_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axis_video_tready" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_video_tuser" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_video_tlast" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="fid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_active_video" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_vblank" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_hblank" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_vsync" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_hsync" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_field_id" SIGIS="undef"/>
+        <PORT DIR="O" NAME="overflow" SIGIS="undef"/>
+        <PORT DIR="O" NAME="underflow" SIGIS="undef"/>
+        <PORT DIR="I" NAME="axis_enable" SIGIS="undef" SIGNAME="External_Ports_axis_enable">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="axis_enable"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="v_vid_in_axi4s_0_video_out" NAME="video_out" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="8"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value xilinx.com:video:Y_400:1.0} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value rows} size {attribs {resolve_type generated dependency active_rows format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_rows_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cols} size {attribs {resolve_type generated dependency active_cols format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_cols_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_Y {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value Y} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency video_data_width format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}}}}}} TDATA_WIDTH 8}"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_video_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_video_tlast"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_video_tready"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_video_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_video_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="vtiming_out" TYPE="INITIATOR" VLNV="xilinx.com:interface:video_timing:2.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="vtd_active_video"/>
+            <PORTMAP LOGICAL="FIELD" PHYSICAL="vtd_field_id"/>
+            <PORTMAP LOGICAL="HBLANK" PHYSICAL="vtd_hblank"/>
+            <PORTMAP LOGICAL="HSYNC" PHYSICAL="vtd_hsync"/>
+            <PORTMAP LOGICAL="VBLANK" PHYSICAL="vtd_vblank"/>
+            <PORTMAP LOGICAL="VSYNC" PHYSICAL="vtd_vsync"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_vid_io_in_0" NAME="vid_io_in" TYPE="TARGET" VLNV="xilinx.com:interface:vid_io:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="vid_active_video"/>
+            <PORTMAP LOGICAL="DATA" PHYSICAL="vid_data"/>
+            <PORTMAP LOGICAL="FIELD" PHYSICAL="vid_field_id"/>
+            <PORTMAP LOGICAL="HBLANK" PHYSICAL="vid_hblank"/>
+            <PORTMAP LOGICAL="HSYNC" PHYSICAL="vid_hsync"/>
+            <PORTMAP LOGICAL="VBLANK" PHYSICAL="vid_vblank"/>
+            <PORTMAP LOGICAL="VSYNC" PHYSICAL="vid_vsync"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
+    </MODULE>
+    <MODULE FULLNAME="/v_vid_in_axi4s_1" HWVERSION="4.0" INSTANCE="v_vid_in_axi4s_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="v_vid_in_axi4s" VLNV="xilinx.com:ip:v_vid_in_axi4s:4.0">
+      <DOCUMENTS>
+        <DOCUMENT SOURCE="http://www.xilinx.com/cgi-bin/docs/ipdoc?c=v_vid_in_axi4s;v=v4_0;d=pg043_v_vid_in_axi4s.pdf"/>
+      </DOCUMENTS>
+      <PARAMETERS>
+        <PARAMETER NAME="C_FAMILY" VALUE="zynq"/>
+        <PARAMETER NAME="C_PIXELS_PER_CLOCK" VALUE="8"/>
+        <PARAMETER NAME="C_COMPONENTS_PER_PIXEL" VALUE="1"/>
+        <PARAMETER NAME="C_M_AXIS_COMPONENT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="C_NATIVE_COMPONENT_WIDTH" VALUE="12"/>
+        <PARAMETER NAME="C_NATIVE_DATA_WIDTH" VALUE="96"/>
+        <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="64"/>
+        <PARAMETER NAME="C_HAS_ASYNC_CLK" VALUE="1"/>
+        <PARAMETER NAME="C_ADDR_WIDTH" VALUE="10"/>
+        <PARAMETER NAME="C_INCLUDE_PIXEL_DROP" VALUE="0"/>
+        <PARAMETER NAME="C_INCLUDE_PIXEL_REMAP_420" VALUE="0"/>
+        <PARAMETER NAME="C_ADDR_WIDTH_PIXEL_REMAP_420" VALUE="10"/>
+        <PARAMETER NAME="Component_Name" VALUE="system_v_vid_in_axi4s_0_1"/>
+        <PARAMETER NAME="C_M_AXIS_VIDEO_FORMAT" VALUE="12"/>
+        <PARAMETER NAME="C_M_AXIS_VIDEO_DATA_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="74250000" DIR="I" NAME="vid_io_in_clk" SIGIS="clk" SIGNAME="External_Ports_vid_io_in_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vid_io_in_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="vid_io_in_ce" SIGIS="ce" SIGNAME="External_Ports_vid_io_in_ce">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vid_io_in_ce"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="vid_io_in_reset" SIGIS="rst" SIGNAME="External_Ports_vid_io_in_reset">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="vid_io_in_reset"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="vid_active_video" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_vblank" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_hblank" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_vsync" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_hsync" SIGIS="undef"/>
+        <PORT DIR="I" NAME="vid_field_id" SIGIS="undef"/>
+        <PORT DIR="I" LEFT="95" NAME="vid_data" RIGHT="0" SIGIS="undef"/>
+        <PORT CLKFREQUENCY="156250000" DIR="I" NAME="aclk" SIGIS="clk" SIGNAME="aurora_8b10b_0_tx_out_clk">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="aurora_8b10b_0" PORT="tx_out_clk"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aclken" SIGIS="ce" SIGNAME="External_Ports_aclken">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aclken"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="aresetn" SIGIS="rst" SIGNAME="External_Ports_aresetn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="aresetn"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="m_axis_video_tdata" RIGHT="0" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_video_tvalid" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tvalid">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tvalid"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="m_axis_video_tready" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tready">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tready"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_video_tuser" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tuser">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tuser"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="m_axis_video_tlast" SIGIS="undef" SIGNAME="axis_combiner_0_s_axis_tlast">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="axis_combiner_0" PORT="s_axis_tlast"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="fid" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_active_video" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_vblank" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_hblank" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_vsync" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_hsync" SIGIS="undef"/>
+        <PORT DIR="O" NAME="vtd_field_id" SIGIS="undef"/>
+        <PORT DIR="O" NAME="overflow" SIGIS="undef"/>
+        <PORT DIR="O" NAME="underflow" SIGIS="undef"/>
+        <PORT DIR="I" NAME="axis_enable" SIGIS="undef" SIGNAME="External_Ports_axis_enable">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="axis_enable"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES>
+        <BUSINTERFACE BUSNAME="v_vid_in_axi4s_1_video_out" NAME="video_out" TYPE="MASTER" VLNV="xilinx.com:interface:axis:1.0">
+          <PARAMETER NAME="TDATA_NUM_BYTES" VALUE="8"/>
+          <PARAMETER NAME="TDEST_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TID_WIDTH" VALUE="0"/>
+          <PARAMETER NAME="TUSER_WIDTH" VALUE="1"/>
+          <PARAMETER NAME="HAS_TREADY" VALUE="1"/>
+          <PARAMETER NAME="HAS_TSTRB" VALUE="0"/>
+          <PARAMETER NAME="HAS_TKEEP" VALUE="0"/>
+          <PARAMETER NAME="HAS_TLAST" VALUE="1"/>
+          <PARAMETER NAME="FREQ_HZ" VALUE="156250000"/>
+          <PARAMETER NAME="PHASE" VALUE="0"/>
+          <PARAMETER NAME="CLK_DOMAIN" VALUE="system_aurora_8b10b_0_0_tx_out_clk"/>
+          <PARAMETER NAME="LAYERED_METADATA" VALUE="xilinx.com:interface:datatypes:1.0 {TDATA {datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value xilinx.com:video:Y_400:1.0} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value rows} size {attribs {resolve_type generated dependency active_rows format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_rows_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} array_type {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value cols} size {attribs {resolve_type generated dependency active_cols format long minimum {} maximum {}} value 1} stride {attribs {resolve_type generated dependency active_cols_stride format long minimum {} maximum {}} value 8} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type automatic dependency {} format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} struct {field_Y {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value Y} enabled {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true} datatype {name {attribs {resolve_type immediate dependency {} format string minimum {} maximum {}} value {}} bitwidth {attribs {resolve_type generated dependency video_data_width format long minimum {} maximum {}} value 8} bitoffset {attribs {resolve_type immediate dependency {} format long minimum {} maximum {}} value 0} integer {signed {attribs {resolve_type immediate dependency {} format bool minimum {} maximum {}} value true}}}}}}}}}}} TDATA_WIDTH 8}"/>
+          <PORTMAPS>
+            <PORTMAP LOGICAL="TDATA" PHYSICAL="m_axis_video_tdata"/>
+            <PORTMAP LOGICAL="TLAST" PHYSICAL="m_axis_video_tlast"/>
+            <PORTMAP LOGICAL="TREADY" PHYSICAL="m_axis_video_tready"/>
+            <PORTMAP LOGICAL="TUSER" PHYSICAL="m_axis_video_tuser"/>
+            <PORTMAP LOGICAL="TVALID" PHYSICAL="m_axis_video_tvalid"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="__NOC__" NAME="vtiming_out" TYPE="INITIATOR" VLNV="xilinx.com:interface:video_timing:2.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="vtd_active_video"/>
+            <PORTMAP LOGICAL="FIELD" PHYSICAL="vtd_field_id"/>
+            <PORTMAP LOGICAL="HBLANK" PHYSICAL="vtd_hblank"/>
+            <PORTMAP LOGICAL="HSYNC" PHYSICAL="vtd_hsync"/>
+            <PORTMAP LOGICAL="VBLANK" PHYSICAL="vtd_vblank"/>
+            <PORTMAP LOGICAL="VSYNC" PHYSICAL="vtd_vsync"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+        <BUSINTERFACE BUSNAME="External_Interface_vid_io_in_1" NAME="vid_io_in" TYPE="TARGET" VLNV="xilinx.com:interface:vid_io:1.0">
+          <PORTMAPS>
+            <PORTMAP LOGICAL="ACTIVE_VIDEO" PHYSICAL="vid_active_video"/>
+            <PORTMAP LOGICAL="DATA" PHYSICAL="vid_data"/>
+            <PORTMAP LOGICAL="FIELD" PHYSICAL="vid_field_id"/>
+            <PORTMAP LOGICAL="HBLANK" PHYSICAL="vid_hblank"/>
+            <PORTMAP LOGICAL="HSYNC" PHYSICAL="vid_hsync"/>
+            <PORTMAP LOGICAL="VBLANK" PHYSICAL="vid_vblank"/>
+            <PORTMAP LOGICAL="VSYNC" PHYSICAL="vid_vsync"/>
+          </PORTMAPS>
+        </BUSINTERFACE>
+      </BUSINTERFACES>
     </MODULE>
   </MODULES>
 

@@ -177,25 +177,49 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 
 	component system_wrapper is
 		port (
-			     FCLK_100M_CLK : out STD_LOGIC;
-			     FCLK_50M_CLK : out STD_LOGIC;
-			     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-			     FIXED_IO_ps_clk : inout STD_LOGIC;
-			     FIXED_IO_ps_porb : inout STD_LOGIC;
-			     FIXED_IO_ps_srstb : inout STD_LOGIC;
-			     I2C_scl_io : inout STD_LOGIC;
-			     I2C_sda_io : inout STD_LOGIC;
-			     SPI0_io0_io : inout STD_LOGIC;
-			     SPI0_io1_io : inout STD_LOGIC;
-			     SPI0_sck_io : inout STD_LOGIC;
-			     SPI0_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
-			     SPI1_io0_io : inout STD_LOGIC;
-			     SPI1_io1_io : inout STD_LOGIC;
-			     SPI1_sck_io : inout STD_LOGIC;
-			     SPI1_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
-			     UART_rxd : in STD_LOGIC;
-			     UART_txd : out STD_LOGIC;
-			     control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 )
+    FCLK_100M_CLK : out STD_LOGIC;
+        FCLK_50M_CLK : out STD_LOGIC;
+        FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+        FIXED_IO_ps_clk : inout STD_LOGIC;
+        FIXED_IO_ps_porb : inout STD_LOGIC;
+        FIXED_IO_ps_srstb : inout STD_LOGIC;
+        GT_SERIAL_TX_0_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+        GT_SERIAL_TX_0_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
+        I2C_scl_io : inout STD_LOGIC;
+        I2C_sda_io : inout STD_LOGIC;
+        SPI0_io0_io : inout STD_LOGIC;
+        SPI0_io1_io : inout STD_LOGIC;
+        SPI0_sck_io : inout STD_LOGIC;
+        SPI0_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+        SPI1_io0_io : inout STD_LOGIC;
+        SPI1_io1_io : inout STD_LOGIC;
+        SPI1_sck_io : inout STD_LOGIC;
+        SPI1_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+        UART_rxd : in STD_LOGIC;
+        UART_txd : out STD_LOGIC;
+        aclken : in STD_LOGIC;
+        aresetn : in STD_LOGIC;
+        axis_enable : in STD_LOGIC;
+        control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+        gt_refclk1_0 : in STD_LOGIC;
+        reset_rtl_0 : in STD_LOGIC;
+        vid_io_in_0_active_video : in STD_LOGIC;
+        vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+        vid_io_in_0_field : in STD_LOGIC;
+        vid_io_in_0_hblank : in STD_LOGIC;
+        vid_io_in_0_hsync : in STD_LOGIC;
+        vid_io_in_0_vblank : in STD_LOGIC;
+        vid_io_in_0_vsync : in STD_LOGIC;
+        vid_io_in_1_active_video : in STD_LOGIC;
+        vid_io_in_1_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+        vid_io_in_1_field : in STD_LOGIC;
+        vid_io_in_1_hblank : in STD_LOGIC;
+        vid_io_in_1_hsync : in STD_LOGIC;
+        vid_io_in_1_vblank : in STD_LOGIC;
+        vid_io_in_1_vsync : in STD_LOGIC;
+        vid_io_in_ce : in STD_LOGIC;
+        vid_io_in_clk : in STD_LOGIC;
+        vid_io_in_reset : in STD_LOGIC
 		     );
 	end component;
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z015clg485-3" LaunchTime="1519090014">
+  <File Type="OPT-HWDEF" Name="spektrop2_cmv4000_top.hwdef"/>
   <File Type="PA-DCP" Name="spektrop2_cmv4000_top.dcp"/>
   <File Type="OPT-DCP" Name="spektrop2_cmv4000_top_opt.dcp"/>
-  <File Type="OPT-HWDEF" Name="spektrop2_cmv4000_top.hwdef"/>
   <File Type="ROUTE-PWR" Name="spektrop2_cmv4000_top_power_routed.rpt"/>
   <File Type="PA-TCL" Name="spektrop2_cmv4000_top.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="spektrop2_cmv4000_top_power_summary_routed.pb"/>
@@ -24,22 +24,22 @@
   <File Type="ROUTE-BLACKBOX-DCP" Name="spektrop2_cmv4000_top_routed_bb.dcp"/>
   <File Type="ROUTE-DRC" Name="spektrop2_cmv4000_top_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="spektrop2_cmv4000_top_drc_routed.pb"/>
-  <File Type="ROUTE-DRC-RPX" Name="spektrop2_cmv4000_top_drc_routed.rpx"/>
   <File Type="BITSTR-MSK" Name="spektrop2_cmv4000_top.msk"/>
-  <File Type="ROUTE-METHODOLOGY-DRC" Name="spektrop2_cmv4000_top_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-RPX" Name="spektrop2_cmv4000_top_drc_routed.rpx"/>
   <File Type="BG-BGN" Name="spektrop2_cmv4000_top.bgn"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="spektrop2_cmv4000_top_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="spektrop2_cmv4000_top_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-RBT" Name="spektrop2_cmv4000_top.rbt"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="spektrop2_cmv4000_top_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="spektrop2_cmv4000_top_methodology_drc_routed.rpx"/>
   <File Type="BG-BIN" Name="spektrop2_cmv4000_top.bin"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="spektrop2_cmv4000_top_methodology_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="spektrop2_cmv4000_top_power_routed.rpx"/>
   <File Type="ROUTE-STATUS" Name="spektrop2_cmv4000_top_route_status.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="spektrop2_cmv4000_top_route_status.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="spektrop2_cmv4000_top_timing_summary_routed.rpt"/>
   <File Type="ROUTE-TIMING-PB" Name="spektrop2_cmv4000_top_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMING-RPX" Name="spektrop2_cmv4000_top_timing_summary_routed.rpx"/>
-  <File Type="ROUTE-CLK" Name="spektrop2_cmv4000_top_clock_utilization_routed.rpt"/>
   <File Type="RDI-RDI" Name="spektrop2_cmv4000_top.vdi"/>
+  <File Type="ROUTE-CLK" Name="spektrop2_cmv4000_top_clock_utilization_routed.rpt"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="spektrop2_cmv4000_top_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="spektrop2_cmv4000_top_postroute_physopt_bb.dcp"/>
   <File Type="BITSTR-NKY" Name="spektrop2_cmv4000_top.nky"/>
@@ -144,11 +144,11 @@
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="system_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_rst_ps7_0_50M_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_register_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_quad_spi_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
   <BlockFileSet Type="BlockSrcs" Name="system_axi_quad_spi_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="clk_wiz_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="system_xbar_0"/>
 </GenRun>
