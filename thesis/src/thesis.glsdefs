@@ -1,0 +1,60 @@
+\ifglsentryexists{formula}{}%
+{%
+\gls@defglossaryentry{formula}%
+{%
+name={formula},%
+sort={formula},%
+type={main},%
+first={formula},%
+firstplural={formulas},%
+text={formula},%
+plural={formulas},%
+description={A mathematical expression},%
+descriptionplural={A mathematical expression},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{gcd}{}%
+{%
+\gls@defglossaryentry{gcd}%
+{%
+name={GCD},%
+sort={GCD},%
+type={main},%
+first={Greatest Common Divisor\glsspace (GCD)},%
+firstplural={Greatest Common Divisors\glsspace (GCDs)},%
+text={GCD},%
+plural={GCDs},%
+description={Greatest Common Divisor},%
+descriptionplural={Greatest Common Divisor\acrpluralsuffix },%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={Greatest Common Divisor},%
+longplural={Greatest Common Divisors},%
+short={GCD},%
+shortplural={GCDs},%
+counter={page},%
+parent={},%
+%
+}%
+}%

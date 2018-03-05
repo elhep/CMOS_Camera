@@ -1,0 +1,306 @@
+Message-ID: <1770509071.181.1519934167169.JavaMail.confluence@c4dc42be77a7>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_180_1745944993.1519934167169"
+
+------=_Part_180_1745944993.1519934167169
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Sensor board with CMV4000</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Sensor board with CMV4000</h1>
+    <div class=3D"Section1">
+        <p>Signal and power requirements for CMV4000 sensor board:</p>
+<ul>
+<li><img height=3D"250" style=3D"margin: 2px; border: 1px solid #ddd; box-s=
+izing: border-box; vertical-align: text-bottom;" src=3D"0df4bb42197da6cb098=
+d419e76254940" width=3D"250"></li>
+<li>16x LVDS data lines 1.8V</li>
+<li>SPI (4 lines) 3.3V! CMOS</li>
+<li>CLK_IN (5-48 MHz)</li>
+<li>SYS_RST_EN</li>
+<li>LVDS_CLK_IN (diff) 50-480 MHz in</li>
+<li>FRAME_REQ</li>
+<li>T_exp1, T_exp2 -&nbsp;Input( pin( which( can( be( used( to( program( th=
+e(<br>exposure(time(externally.(Optional)</li>
+<li>T_dig1, T_dig2</li>
+<li>OUT_CTR (diff)</li>
+<li>OUT_CLK (diff)</li>
+</ul>
+<p><br></p>
+<p>Power supply</p>
+<ul>
+<li>requires 3.3V</li>
+</ul>
+<p><br></p>
+<p><a href=3D"/wiki/spaces/SPEKTROP2/pages/209190939/Readout+modes+CMV4000"=
+ data-linked-resource-id=3D"209190939" data-linked-resource-version=3D"3" d=
+ata-linked-resource-type=3D"page">Readout modes from CMV4000</a></p>
+<p><br></p>
+    </div>
+</body>
+</html>
+------=_Part_180_1745944993.1519934167169
+Content-Type: application/octet-stream
+Content-Transfer-Encoding: base64
+Content-Location: file:///C:/0df4bb42197da6cb098d419e76254940
+
+iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAADAFBMVEX19fXv7+98fHx1dXV9fX23
+t7eenp5wcHDn5+f09PTz8/Pd3d2SkpLY2Njt7e3Q0NCioqJycnKqqqq7u7uurq6CgoKGhobOzs7D
+w8PR0dGNjY3Hx8fj4+PGxsbS0tKoqKgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAABYhwFnAAAExElEQVR42u3cfVvaOhjA4dBSUsOLgLwqsH7/T3WunX+Onjmn20Bk
+pSfpG5GBA92oB373rsnTNtA8SZqiLQgBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP8D
+pcPsxl8u3R2Lho7zeEQN7Jc9f+eynuMfUeoVb5/SXuUglXIOspedR3vMXR5Rr8s/Wvxd9/q7dMKp
+uwfZSzlcX9MYVOZOpxvNdyt+RKnXp+7sKRLht/q8sNSLmeb6cpgEQ1kvbJorJPVGeZKF527jpGb4
+VvNjFt6ft4rqj3IRO53OVvG8LI7a2gh2rV+aGu7P2493wJ+Vo9XCQ2G9zrs5Uid1Uif1d/ErPL1O
+6qRO6qRO6qRO6qRO6u8rdaXUKaVukl2kV5JdbyrO1KmkPrv3dWc3k4X6Uojo/nR6/VxMm3cDYf4i
+fzsV4ryQXi/kwlPkPIoH5Vadzl090ql7s+VLxY8p9dpXtRBPou5+d74uhKjO1LyA1Iv5u8RYWrfL
++M7VL4ofU+riolzNwrq8EKeUuhg7zb5/dub3m+UrcVqpi4ZXK8tWueaVxKml/huL8x6e1N9Z6uFe
+t3764RGl7uyVTOgcU+rRPrcHHyh1bgoHAAAAAAAAABQueOP2wmvvyW1VdH5fK7xYvlSTkTQ3EQTp
+ZVRdIzmOo3G8pp5U0dPFvM3BylhK2cs+BhzEttbCqfz19l4P9mwPe1NJ9qpCDaRJvW9W9HWm7aTd
+3bb+oWQ/iFf34/8bAoscqEbX2aFHglcOy7Zu2w/6maOWbnc/ad1sQXdS0hlBRz+65qrShS5eE6vg
+WWdUunltvLiTpRfo9jA950tzBeiyElcybgbTJD8HQjSkihspvoal5KbUA1PpjlX7F0fENp6ciIkZ
+hfJKqUsn3Ue2INtKDN2kExvdlhADORQjk3Ie2LuUk1VHmE/r16XZ3DO3DVZ6cXMl5eO0fLkpMFtN
+Up3kU9/VPHXd9q1+vmAq7Vm1f02vx0fiOH2mktaLqKxGZl/VeDiLOCHdL1Zg7zSyxqCnR0DXM5sn
+Mm2VkXm5IC8nNwVpA4n0riMn+94et6/URXYrUjBOJ4+89i/MAlu3PN7qH7dx+8qgl10BzBa8qOuN
+zIrvpsLm6xee9CHQfrSDLRYP1erDwkQfhT6O9U/xb3OnK4wzMdL/4g+/N72ndGV4PZ3etr+lS1ml
+89q/RhQfWGbAV0qrCSNbEJOmKytZowZp8fx56wehPeCFd3npJZvbXdFt57N08KsBL3qV5PgQFbl2
+iTgdVoFKR2Ve+zcNePOq/fQxXzBG0ko9mVyEFVgfUrenOVNEpkFJ+qscVtOcuykwhlLEk70n177h
+YiL3H/C7THMf9DA3j2an+cJYqY6d+lh6Sl21rMA+I1knt2fnvp7sPTsZmq8uSc9p60HSrk0Z59ZY
+PaelJ96xbKensj2mue3H+qJ+HV2bu5eb/0Q/zvTj8osektlC6+Z7GNpfOPB3xwnDT9IK4vLZCHia
+/ojCu9r6Tvzh87strpefoy/L601B8jozM5Zuhm19eKTDRX4Kw5vl57TAQFe6vrBqz/vut72RPTZ/
++F6adPaZHyodORcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOM/12zykUtXSjYAAAAASUVO
+RK5CYII=
+------=_Part_180_1745944993.1519934167169--

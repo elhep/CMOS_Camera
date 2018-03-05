@@ -1,0 +1,436 @@
+Message-ID: <344939738.207.1519934145089.JavaMail.confluence@d31d78275ad7>
+Subject: Exported From Confluence
+MIME-Version: 1.0
+Content-Type: multipart/related; 
+	boundary="----=_Part_206_171052260.1519934145089"
+
+------=_Part_206_171052260.1519934145089
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Content-Location: file:///C:/exported.html
+
+<html xmlns:o=3D'urn:schemas-microsoft-com:office:office'
+      xmlns:w=3D'urn:schemas-microsoft-com:office:word'
+      xmlns:v=3D'urn:schemas-microsoft-com:vml'
+      xmlns=3D'urn:w3-org-ns:HTML'>
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8=
+">
+    <title>Thesis plan</title>
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:TargetScreenSize>1024x640</o:TargetScreenSize>
+            <o:PixelsPerInch>72</o:PixelsPerInch>
+            <o:AllowPNG/>
+        </o:OfficeDocumentSettings>
+        <w:WordDocument>
+            <w:View>Print</w:View>
+            <w:Zoom>90</w:Zoom>
+            <w:DoNotOptimizeForBrowser/>
+        </w:WordDocument>
+    </xml>
+    <![endif]-->
+    <style>
+                <!--
+        @page Section1 {
+            size: 8.5in 11.0in;
+            margin: 1.0in;
+            mso-header-margin: .5in;
+            mso-footer-margin: .5in;
+            mso-paper-source: 0;
+        }
+
+        table {
+            border: solid 1px;
+            border-collapse: collapse;
+        }
+
+        table td, table th {
+            border: solid 1px;
+            padding: 5px;
+        }
+
+        td {
+            page-break-inside: avoid;
+        }
+
+        tr {
+            page-break-after: avoid;
+        }
+
+        div.Section1 {
+            page: Section1;
+        }
+
+        /* Confluence print stylesheet. Common to all themes for print medi=
+a */
+/* Full of !important until we improve batching for print CSS */
+
+@media print {
+    #main {
+        padding-bottom: 1em !important; /* The default padding of 6em is to=
+o much for printouts */
+    }
+
+    body {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        font-size: 10pt;
+        line-height: 1.2;
+    }
+
+    body, #full-height-container, #main, #page, #content, .has-personal-sid=
+ebar #content {
+        background: #fff !important;
+        color: #000 !important;
+        border: 0 !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: block !important;
+    }
+
+    a, a:link, a:visited, a:focus, a:hover, a:active {
+        color: #000;
+    }
+
+    #content h1,
+    #content h2,
+    #content h3,
+    #content h4,
+    #content h5,
+    #content h6 {
+        font-family: Arial, Helvetica, FreeSans, sans-serif;
+        page-break-after: avoid;
+    }
+
+    pre {
+        font-family: Monaco, "Courier New", monospace;
+    }
+
+    #header,
+    .aui-header-inner,
+    #navigation,
+    #sidebar,
+    .sidebar,
+    #personal-info-sidebar,
+    .ia-fixed-sidebar,
+    .page-actions,
+    .navmenu,
+    .ajs-menu-bar,
+    .noprint,
+    .inline-control-link,
+    .inline-control-link a,
+    a.show-labels-editor,
+    .global-comment-actions,
+    .comment-actions,
+    .quick-comment-container,
+    #addcomment {
+        display: none !important;
+    }
+
+    /* CONF-28544 cannot print multiple pages in IE */
+    #splitter-content {
+        position: relative !important;
+    }
+
+    .comment .date::before {
+        content: none !important; /* remove middot for print view */
+    }
+
+    h1.pagetitle img {
+        height: auto;
+        width: auto;
+    }
+
+    .print-only {
+        display: block;
+    }
+
+    #footer {
+        position: relative !important; /* CONF-17506 Place the footer at en=
+d of the content */
+        margin: 0;
+        padding: 0;
+        background: none;
+        clear: both;
+    }
+
+    #poweredby {
+        border-top: none;
+        background: none;
+    }
+
+    #poweredby li.print-only {
+        display: list-item;
+        font-style: italic;
+    }
+
+    #poweredby li.noprint {
+        display: none;
+    }
+
+    /* no width controls in print */
+    .wiki-content .table-wrap,
+    .wiki-content p,
+    .panel .codeContent,
+    .panel .codeContent pre,
+    .image-wrap {
+        overflow: visible !important;
+    }
+
+    /* TODO - should this work? */
+    #children-section,
+    #comments-section .comment,
+    #comments-section .comment .comment-body,
+    #comments-section .comment .comment-content,
+    #comments-section .comment p {
+        page-break-inside: avoid;
+    }
+
+    #page-children a {
+        text-decoration: none;
+    }
+
+    /**
+     hide twixies
+
+     the specificity here is a hack because print styles
+     are getting loaded before the base styles. */
+    #comments-section.pageSection .section-header,
+    #comments-section.pageSection .section-title,
+    #children-section.pageSection .section-header,
+    #children-section.pageSection .section-title,
+    .children-show-hide {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .children-show-hide.icon {
+        display: none;
+    }
+
+    /* personal sidebar */
+    .has-personal-sidebar #content {
+        margin-right: 0px;
+    }
+
+    .has-personal-sidebar #content .pageSection {
+        margin-right: 0px;
+    }
+
+    .no-print, .no-print * {
+        display: none !important;
+    }
+}
+-->
+    </style>
+</head>
+<body>
+    <h1>Thesis plan</h1>
+    <div class=3D"Section1">
+        <ul>
+<li><span style=3D"color: rgb(34,34,34);">Compact embedded camera design an=
+d evaluation of high speed interfaces for aerial hyper-spectral imaging app=
+lication&nbsp;</span></li>
+<li>Titlepage</li>
+<li>Summary</li>
+<li>O=C5=9Bwiadczenie</li>
+<li>TOC</li>
+<li>Chapter 1<br>
+<ul>
+<li>Project genesis - Centre for Space Studies Hyper-Spectral imaging proje=
+ct.&nbsp;</li>
+<li>Requirements
+<ul>
+<li>The Hyperspectral Camera project - Spektrop requires an embedded camera=
+ inside the Hyper-spectral camera. The existing market solutions are not su=
+itable for the application, thus a new, novel device has to be designed for=
+ the project.
+<ul>
+<li>Compact size</li>
+<li>Low weight</li>
+<li>Low power consumption</li>
+<li>High speed interface
+<ul>
+<li>Noise immunity (optical link/coaxial)</li>
+<li>Relatively long range - possibility to mount the camera head on a speci=
+al long mount</li>
+<li>Low power</li>
+</ul></li>
+<li>Sensor with low noise and high framerate
+<ul>
+<li>CIS1910F</li>
+<li>CMV4000</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Statement of work
+<ul>
+<li>The design of the camera is completely new and novel. It uses a State-o=
+f-the-art SoC Zynq 7000 in a small package with integrated multigigabit tra=
+nsceivers.&nbsp;</li>
+<li>Additionally, due to the nature of the project - aerial hyper-spectral =
+imaging, a study is carried out in order to evaluate the best suitable high=
+ speed interface for the application. Both from the physical layer point of=
+ view (PHY) as well as the type of the interface (Aurora, PCIe, CoaXPress, =
+SDI). The study answers the question: what is the most suitable high speed =
+interface that can be used in aerial imaging appliactions?</li>
+</ul></li>
+<li>Literature review
+<ul>
+<li><a href=3D"https://books.google.pl/books?id=3DJhBbXwFaA6sC&amp;redir_es=
+c=3Dy" class=3D"external-link" rel=3D"nofollow">https://books.google.pl/boo=
+ks?id=3DJhBbXwFaA6sC&amp;redir_esc=3Dy</a></li>
+<li><a href=3D"https://books.google.pl/books?id=3DDqmWQk01mlIC&amp;pg=3DPR1=
+3&amp;redir_esc=3Dy#v=3Donepage&amp;q&amp;f=3Dfalse" class=3D"external-link=
+" rel=3D"nofollow">https://books.google.pl/books?id=3DDqmWQk01mlIC&amp;pg=
+=3DPR13&amp;redir_esc=3Dy#v=3Donepage&amp;q&amp;f=3Dfalse</a></li>
+<li><a href=3D"https://www.amazon.com/Distributed-Embedded-Smart-Cameras-Ar=
+chitectures/dp/1461477042/ref=3Dsr_1_1?s=3Dbooks&amp;ie=3DUTF8&amp;qid=3D15=
+18047399&amp;sr=3D1-1&amp;keywords=3Dembedded+camera+design" class=3D"exter=
+nal-link" rel=3D"nofollow">https://www.amazon.com/Distributed-Embedded-Smar=
+t-Cameras-Architectures/dp/1461477042/ref=3Dsr_1_1?s=3Dbooks&amp;ie=3DUTF8&=
+amp;qid=3D1518047399&amp;sr=3D1-1&amp;keywords=3Dembedded+camera+design</a>=
+</li>
+<li><a href=3D"https://www.amazon.com/Distributed-Video-Sensor-Networks-Bha=
+nu/dp/0857291262/ref=3Dsr_1_2?s=3Dbooks&amp;ie=3DUTF8&amp;qid=3D1518047399&=
+amp;sr=3D1-2&amp;keywords=3Dembedded+camera+design" class=3D"external-link"=
+ rel=3D"nofollow">https://www.amazon.com/Distributed-Video-Sensor-Networks-=
+Bhanu/dp/0857291262/ref=3Dsr_1_2?s=3Dbooks&amp;ie=3DUTF8&amp;qid=3D15180473=
+99&amp;sr=3D1-2&amp;keywords=3Dembedded+camera+design</a></li>
+<li><a href=3D"https://www.amazon.com/Low-Power-Imagers-Vision-Enabled-Sens=
+or-Networks/dp/1461423910/ref=3Dsr_1_7?s=3Dbooks&amp;ie=3DUTF8&amp;qid=3D15=
+18047399&amp;sr=3D1-7&amp;keywords=3Dembedded+camera+design" class=3D"exter=
+nal-link" rel=3D"nofollow">https://www.amazon.com/Low-Power-Imagers-Vision-=
+Enabled-Sensor-Networks/dp/1461423910/ref=3Dsr_1_7?s=3Dbooks&amp;ie=3DUTF8&=
+amp;qid=3D1518047399&amp;sr=3D1-7&amp;keywords=3Dembedded+camera+design</a>=
+</li>
+<li><a href=3D"https://www.amazon.com/Smart-Cameras-Ahmed-Nabil-Belbachir/d=
+p/1489985220/ref=3Dsr_1_9?s=3Dbooks&amp;ie=3DUTF8&amp;qid=3D1518047399&amp;=
+sr=3D1-9&amp;keywords=3Dembedded+camera+design" class=3D"external-link" rel=
+=3D"nofollow">https://www.amazon.com/Smart-Cameras-Ahmed-Nabil-Belbachir/dp=
+/1489985220/ref=3Dsr_1_9?s=3Dbooks&amp;ie=3DUTF8&amp;qid=3D1518047399&amp;s=
+r=3D1-9&amp;keywords=3Dembedded+camera+design</a></li>
+</ul></li>
+<li>Market review
+<ul>
+<li>Existing solutions:
+<ul>
+<li>Ximea USB3 camera&nbsp;<a href=3D"https://www.ximea.com/" class=3D"exte=
+rnal-link" rel=3D"nofollow">https://www.ximea.com/</a>
+<ul>
+<li><a href=3D"https://www.ximea.com/files/brochures/xiQ-USB3-Vision-2015-b=
+rochure.pdf" class=3D"external-link" rel=3D"nofollow">https://www.ximea.com=
+/files/brochures/xiQ-USB3-Vision-2015-brochure.pdf</a></li>
+<li><a href=3D"https://www.ximea.com/support/attachments/4675/XIMEA_imec_HS=
+I_technology-Part-V1.1.pdf" class=3D"external-link" rel=3D"nofollow">https:=
+//www.ximea.com/support/attachments/4675/XIMEA_imec_HSI_technology-Part-V1.=
+1.pdf</a></li>
+<li>Same sensor, same technology</li>
+<li>Only USB3.0 as interface - not suitable for aerial applications, can't =
+work over long distances, requires repeaters</li>
+</ul></li>
+<li><a href=3D"http://cubert-gmbh.com/?gclid=3DCj0KCQiAnuDTBRDUARIsAL41eDok=
+6SeSmOrHgq3H6Fz6yESSoryMGNTKNzNwS9SGr18Jfx73CzNikKEaAkg0EALw_wcB" class=3D"=
+external-link" rel=3D"nofollow">http://cubert-gmbh.com/?gclid=3DCj0KCQiAnuD=
+TBRDUARIsAL41eDok6SeSmOrHgq3H6Fz6yESSoryMGNTKNzNwS9SGr18Jfx73CzNikKEaAkg0EA=
+Lw_wcB</a></li>
+<li><a href=3D"https://books.google.pl/books?id=3DJhBbXwFaA6sC&amp;redir_es=
+c=3Dy" class=3D"external-link" rel=3D"nofollow">https://books.google.pl/boo=
+ks?id=3DJhBbXwFaA6sC&amp;redir_esc=3Dy</a></li>
+<li><a href=3D"http://senop.fi/en/optronics-hyperspectral?gclid=3DCj0KCQiAn=
+uDTBRDUARIsAL41eDqoHkGp7nTKf1bENiHm57n3inQc1OgB5lFeZjwQzGK2Nm--pheV2cQaAhnA=
+EALw_wcB" class=3D"external-link" rel=3D"nofollow">http://senop.fi/en/optro=
+nics-hyperspectral?gclid=3DCj0KCQiAnuDTBRDUARIsAL41eDqoHkGp7nTKf1bENiHm57n3=
+inQc1OgB5lFeZjwQzGK2Nm--pheV2cQaAhnAEALw_wcB</a></li>
+<li><a href=3D"https://books.google.pl/books?id=3DDqmWQk01mlIC&amp;pg=3DPR1=
+3&amp;redir_esc=3Dy#v=3Donepage&amp;q&amp;f=3Dfalse" class=3D"external-link=
+" rel=3D"nofollow">https://books.google.pl/books?id=3DDqmWQk01mlIC&amp;pg=
+=3DPR13&amp;redir_esc=3Dy#v=3Donepage&amp;q&amp;f=3Dfalse</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Chapter 2 - Concept of design
+<ul>
+<li>Electronics hardware design
+<ul>
+<li>Processor board
+<ul>
+<li>Specification</li>
+</ul></li>
+<li>Sensor board
+<ul>
+<li>Specification</li>
+</ul></li>
+</ul></li>
+<li>Digital system design</li>
+<li>Software development</li>
+<li>High speed serial link evaluation</li>
+</ul></li>
+<li>Chapter 3 - Realization of design</li>
+<ol>
+<li>Hardware design
+<ol>
+<li>Processor board
+<ol>
+<li>Schematic design
+<ol>
+<li>Power supply</li>
+<li>Main processing unit</li>
+<li>High speed interfaces</li>
+<li>Communication to the sensor board</li>
+</ol></li>
+<li>PCB design
+<ol>
+<li>SI and PI simulations</li>
+</ol></li>
+</ol></li>
+<li>Sensor board
+<ol>
+<li>CMV4000 sensor board
+<ol>
+<li>Schematic design&nbsp;
+<ol>
+<li>Power supply</li>
+<li>Sensor</li>
+<li>Communication to the sensor board</li>
+</ol></li>
+<li>Power supply design</li>
+<li>SI and PI simulations</li>
+</ol></li>
+<li>CIS1910F sensor board
+<ol>
+<li>Schematic design</li>
+</ol></li>
+</ol></li>
+</ol></li>
+<li>Software and digital system design</li>
+</ol>
+<li>Chapter 4 - Evaluation of camera parameters and high speed interfaces
+<ol>
+<li>Power consumption</li>
+</ol>
+<ol>
+<li>SDI</li>
+<li>Aurora</li>
+<li>CoaXPress</li>
+<li>Comparison</li>
+</ol></li>
+<ol>
+<li>Evaluation of camera parameters</li>
+<li>Evaluation of high speed interfaces parameters</li>
+</ol>
+<li>Chapter 5 - Summary</li>
+<li>Bibliography</li>
+<li>Glossary</li>
+<li>Table of pictures</li>
+<li>List of appendices</li>
+<li>Appendices</li>
+</ul>
+    </div>
+</body>
+</html>
+------=_Part_206_171052260.1519934145089--
