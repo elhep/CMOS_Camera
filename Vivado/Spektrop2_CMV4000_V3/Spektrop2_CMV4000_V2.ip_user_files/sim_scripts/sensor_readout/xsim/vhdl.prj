@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../bd/sensor_readout/sim/sensor_readout.vhd" \
+
+nosort

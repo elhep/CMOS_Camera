@@ -1,0 +1,13 @@
+/*
+ * Empty C++ Application
+ */
+
+
+#include <iostream>
+
+using std_namespace;
+
+int main()
+{
+	return 0;
+}

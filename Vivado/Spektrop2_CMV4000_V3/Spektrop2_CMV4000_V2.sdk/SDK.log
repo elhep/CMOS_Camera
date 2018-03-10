@@ -1,0 +1,90 @@
+19:09:58 INFO  : Registering command handlers for SDK TCF services
+19:09:59 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+19:10:03 INFO  : XSCT server has started successfully.
+19:10:05 INFO  : Successfully done setting XSCT server connection channel  
+19:10:05 INFO  : Successfully done setting SDK workspace  
+19:10:05 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.
+19:34:04 INFO  : Registering command handlers for SDK TCF services
+19:34:05 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+19:34:08 INFO  : XSCT server has started successfully.
+19:34:09 INFO  : Successfully done setting XSCT server connection channel  
+19:34:09 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.
+19:34:09 INFO  : Successfully done setting SDK workspace  
+19:40:22 INFO  : Registering command handlers for SDK TCF services
+19:40:24 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+19:40:27 INFO  : XSCT server has started successfully.
+19:40:28 INFO  : Successfully done setting XSCT server connection channel  
+19:40:28 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.
+19:40:28 INFO  : Successfully done setting SDK workspace  
+18:25:02 INFO  : Registering command handlers for SDK TCF services
+18:25:04 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+18:25:09 INFO  : XSCT server has started successfully.
+18:25:12 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.
+18:25:12 INFO  : Checking for hwspec changes in the project spektrop2_cmv4000_top_hw_platform_2.
+18:25:12 INFO  : Successfully done setting XSCT server connection channel  
+18:25:32 ERROR : Failed to openhw "C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top_hw_platform_2/system.hdf"
+java.io.IOException: Command [C 2 xsdb eval "::hsi::utils::openhw C:/Users/ZdunekPC/Documents/Spektro...] aborted
+	at org.eclipse.tcf.core.AbstractChannel$9.run(AbstractChannel.java:838)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:185)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:84)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:327)
+18:25:33 INFO  : Project spektrop2_cmv4000_top_hw_platform_2's source hardware specification location will not be monitored anymore.
+18:25:32 ERROR : Failed to set SDK workspace  
+java.io.IOException: Command [C 3 xsdb eval "setws C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spekt...] aborted
+	at org.eclipse.tcf.core.AbstractChannel$9.run(AbstractChannel.java:838)
+	at org.eclipse.tcf.EventQueue.run(EventQueue.java:95)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:209)
+	at java.net.SocketInputStream.read(SocketInputStream.java:141)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.tcf.core.ChannelTCP.get(ChannelTCP.java:185)
+	at org.eclipse.tcf.core.StreamChannel.read(StreamChannel.java:84)
+	at org.eclipse.tcf.core.AbstractChannel$1.run(AbstractChannel.java:327)
+18:28:44 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+18:31:44 ERROR : Timed out. 180 seconds have elapsed while waiting for XSCT server to launch.
+18:31:44 ERROR : Failed to openhw "C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top_hw_platform_2/system.hdf"
+Reason: xsct server communication channel is not established.
+18:31:45 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+18:34:45 ERROR : Timed out. 180 seconds have elapsed while waiting for XSCT server to launch.
+18:34:45 ERROR : Failed to openhw "C:/Users/ZdunekPC/AppData/Local/Temp/temp1519752704381/system.hdf"
+Reason: xsct server communication channel is not established.
+00:21:27 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:38:27 INFO  : Registering command handlers for SDK TCF services
+00:38:28 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:41:28 ERROR : Timed out. 180 seconds have elapsed while waiting for XSCT server to launch.
+00:41:28 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:44:28 ERROR : Timed out. 180 seconds have elapsed while waiting for XSCT server to launch.
+00:44:28 ERROR : Failed to call init_repo
+Reason: xsct server communication channel is not established.
+00:44:28 ERROR : Exception raised in executing the command =Failed to call init_repo
+Reason: xsct server communication channel is not established. 
+00:44:28 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.
+00:44:28 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:46:10 INFO  : Registering command handlers for SDK TCF services
+00:46:11 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:49:11 ERROR : Timed out. 180 seconds have elapsed while waiting for XSCT server to launch.
+00:49:11 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:49:11 ERROR : Failed to call init_repo
+Reason: xsct server communication channel is not established.
+00:49:11 ERROR : Exception raised in executing the command =Failed to call init_repo
+Reason: xsct server communication channel is not established. 
+00:49:11 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.
+00:52:11 ERROR : Timed out. 180 seconds have elapsed while waiting for XSCT server to launch.
+00:52:11 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:58:12 INFO  : Registering command handlers for SDK TCF services
+00:58:13 INFO  : Launching XSCT server: xsct.bat -interactive C:\Users\ZdunekPC\Documents\Spektrop2\Vivado\Spektrop2_CMV4000_V3\Spektrop2_CMV4000_V2.sdk\temp_xsdb_launch_script.tcl
+00:58:18 INFO  : XSCT server has started successfully.
+00:58:20 INFO  : Successfully done setting XSCT server connection channel  
+00:58:20 INFO  : Successfully done setting SDK workspace  
+00:58:20 INFO  : Processing command line option -hwspec C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.sdk/spektrop2_cmv4000_top.hdf.

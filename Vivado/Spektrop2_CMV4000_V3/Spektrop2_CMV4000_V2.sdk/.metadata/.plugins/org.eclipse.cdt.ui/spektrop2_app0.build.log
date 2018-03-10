@@ -1,0 +1,22 @@
+00:46:20 **** Auto Build of configuration Debug for project spektrop2_app0 ****
+make pre-build main-build 
+a9-linaro-pre-build-step
+' '
+'Building file: ../src/main.cc'
+'Invoking: ARM v7 g++ compiler'
+arm-none-eabi-g++ -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -I../../spektrop2_bsp/ps7_cortexa9_0/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.cc"
+'Finished building: ../src/main.cc'
+' '
+'Building target: spektrop2_app0.elf'
+'Invoking: ARM v7 g++ linker'
+arm-none-eabi-g++ -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -L../../spektrop2_bsp/ps7_cortexa9_0/lib -o "spektrop2_app0.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,-lstdc++,--end-group
+e:/xilinx/sdk/2017.4/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/bin/ld.exe: spektrop2_app0.elf section `.text' will not fit in region `ps7_ram_0'
+e:/xilinx/sdk/2017.4/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/bin/ld.exe: address 0xbc000 of spektrop2_app0.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+e:/xilinx/sdk/2017.4/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/bin/ld.exe: address 0xbc000 of spektrop2_app0.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+e:/xilinx/sdk/2017.4/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/bin/ld.exe: address 0xbc000 of spektrop2_app0.elf section `.mmu_tbl' is not within region `ps7_ram_0'
+e:/xilinx/sdk/2017.4/gnu/aarch32/nt/gcc-arm-none-eabi/bin/../lib/gcc/arm-none-eabi/6.2.1/../../../../arm-none-eabi/bin/ld.exe: region `ps7_ram_0' overflowed by 617920 bytes
+collect2.exe: error: ld returned 1 exit status
+make: *** [spektrop2_app0.elf] Error 1
+
+00:46:22 Build Finished (took 2s.607ms)
+

@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../Spektrop2_CMV4000_V2.ip_user_files/bd/design_1/sim/design_1.vhd" \
+"../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd" \
+"../../../../Spektrop2_CMV4000_V2.srcs/sim_1/new/datapath_tb.vhd" \
+
+# Do not sort compile order
+nosort
