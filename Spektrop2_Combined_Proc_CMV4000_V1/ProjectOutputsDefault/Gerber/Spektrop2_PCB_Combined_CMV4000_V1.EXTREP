@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: Spektrop2_PCB_Combined_CMV4000_V1.GBR   01-Feb-18  11:21:52 PM
+Gerber File Extension Report For: Spektrop2_PCB_Combined_CMV4000_V1.GBR   08-Mar-18  1:32:19 AM
 ------------------------------------------------------------------------------------------
 
 
@@ -27,6 +27,7 @@ Layer Extension     Layer Description
 .GM13               Mechanical 13                           
 .GM14               Mechanical 14                           
 .GM15               Mechanical 15                           
+.GM10               VCut Line                               
 .GM9                Board Outline                           
 .GM6                Mechanical 6                            
 .GM5                Mechanical 5                            

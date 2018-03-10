@@ -719,15 +719,39 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=ESFMFNLX
 
+[Document41]
+DocumentPath=temp\CAMtastic1.Cam
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
 [ProjectVariant1]
 UniqueID=CBD523E7-9758-477A-AA11-871F0C673E42
 Description=Default
 AllowFabrication=0
 ParameterCount=0
-VariationCount=3
+VariationCount=10
 Variation1=Designator=R89|UniqueId=\DGNDMQHA\BRISFSYA\XIJEJQJT\RWOMPIKR|Kind=1|AlternatePart= 
 Variation2=Designator=R88|UniqueId=\DGNDMQHA\BRISFSYA\XIJEJQJT\XWRVYEYG|Kind=1|AlternatePart= 
 Variation3=Designator=R72|UniqueId=\DGNDMQHA\BRISFSYA\KGULSGNE\TIBEXUXT|Kind=1|AlternatePart= 
+Variation4=Designator=L3|UniqueId=\DGNDMQHA\LWGJCMNM\UTRALEVV|Kind=1|AlternatePart= 
+Variation5=Designator=L4|UniqueId=\DGNDMQHA\LWGJCMNM\LWXJGWLS|Kind=1|AlternatePart= 
+Variation6=Designator=L5|UniqueId=\DGNDMQHA\LWGJCMNM\FVYWUBDH|Kind=1|AlternatePart= 
+Variation7=Designator=L6|UniqueId=\DGNDMQHA\LWGJCMNM\KEDWDFSU|Kind=1|AlternatePart= 
+Variation8=Designator=L7|UniqueId=\DGNDMQHA\LWGJCMNM\OVHJHOMA|Kind=1|AlternatePart= 
+Variation9=Designator=L8|UniqueId=\DGNDMQHA\LWGJCMNM\RHDYLGGK|Kind=1|AlternatePart= 
+Variation10=Designator=R91|UniqueId=\DGNDMQHA\LWGJCMNM\TVEWPHOR|Kind=1|AlternatePart= 
 ParamVariationCount=0
 
 [GeneratedDocument1]
@@ -739,318 +763,646 @@ DocumentPath=Project Outputs for Free Documents\BOM\Bill of Materials-Spektrop2_
 DItemRevisionGUID=
 
 [GeneratedDocument3]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\components
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\comp_+_bot\components
 DItemRevisionGUID=
 
 [GeneratedDocument4]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\components
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\comp_+_top\components
 DItemRevisionGUID=
 
 [GeneratedDocument5]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\eda\data
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\components
 DItemRevisionGUID=
 
 [GeneratedDocument6]
-DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_PCB_Combined_CMV4000_V1.html
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\components
 DItemRevisionGUID=
 
 [GeneratedDocument7]
-DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_PCB_Combined_CMV4000_V2.html
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\eda\data
 DItemRevisionGUID=
 
 [GeneratedDocument8]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\board_outline\features
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\eda\data
 DItemRevisionGUID=
 
 [GeneratedDocument9]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_overlay\features
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_PCB_Combined_CMV4000_V1.html
 DItemRevisionGUID=
 
 [GeneratedDocument10]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_paste\features
+DocumentPath=ProjectOutputsDefault\Design Rule Check - Spektrop2_PCB_Combined_CMV4000_V2.html
 DItemRevisionGUID=
 
 [GeneratedDocument11]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_solder\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\board_outline\features
 DItemRevisionGUID=
 
 [GeneratedDocument12]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\btm\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\bottom_overlay\features
 DItemRevisionGUID=
 
 [GeneratedDocument13]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\bottom_paste\features
 DItemRevisionGUID=
 
 [GeneratedDocument14]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\bottom_solder\features
 DItemRevisionGUID=
 
 [GeneratedDocument15]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\btm\features
 DItemRevisionGUID=
 
 [GeneratedDocument16]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\keep-out_layer\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\comp_+_bot\features
 DItemRevisionGUID=
 
 [GeneratedDocument17]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l1-gnd\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\comp_+_top\features
 DItemRevisionGUID=
 
 [GeneratedDocument18]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l2\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\drill\features
 DItemRevisionGUID=
 
 [GeneratedDocument19]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l3-1v8\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\keep-out_layer\features
 DItemRevisionGUID=
 
 [GeneratedDocument20]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l4-pwr\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\l1-gnd\features
 DItemRevisionGUID=
 
 [GeneratedDocument21]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l5\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\l2\features
 DItemRevisionGUID=
 
 [GeneratedDocument22]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l6-p2v5\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\l3-1v8\features
 DItemRevisionGUID=
 
 [GeneratedDocument23]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_1\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\l4-pwr\features
 DItemRevisionGUID=
 
 [GeneratedDocument24]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_3\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\l5\features
 DItemRevisionGUID=
 
 [GeneratedDocument25]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_4\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\l6-p2v5\features
 DItemRevisionGUID=
 
 [GeneratedDocument26]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_5\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_1\features
 DItemRevisionGUID=
 
 [GeneratedDocument27]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_6\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_3\features
 DItemRevisionGUID=
 
 [GeneratedDocument28]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_13\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_4\features
 DItemRevisionGUID=
 
 [GeneratedDocument29]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_14\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_5\features
 DItemRevisionGUID=
 
 [GeneratedDocument30]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_15\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_6\features
 DItemRevisionGUID=
 
 [GeneratedDocument31]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\notvisible\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_13\features
 DItemRevisionGUID=
 
 [GeneratedDocument32]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_14\features
 DItemRevisionGUID=
 
 [GeneratedDocument33]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_overlay\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\mechanical_15\features
 DItemRevisionGUID=
 
 [GeneratedDocument34]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_paste\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\notvisible\features
 DItemRevisionGUID=
 
 [GeneratedDocument35]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_solder\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\top\features
 DItemRevisionGUID=
 
 [GeneratedDocument36]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect24.4094x22.8346_225\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\top_overlay\features
 DItemRevisionGUID=
 
 [GeneratedDocument37]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect30.315x28.7402_225\features
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\top_paste\features
 DItemRevisionGUID=
 
 [GeneratedDocument38]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\matrix\matrix
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\top_solder\features
 DItemRevisionGUID=
 
 [GeneratedDocument39]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\rect24.4094x22.8346_225\features
 DItemRevisionGUID=
 
 [GeneratedDocument40]
-DocumentPath=ProjectOutputsDefault\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\rect30.315x28.7402_225\features
 DItemRevisionGUID=
 
 [GeneratedDocument41]
-DocumentPath=Project Outputs for Free Documents\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s19.685_315\features
 DItemRevisionGUID=
 
 [GeneratedDocument42]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\profile
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s24.4094_135\features
 DItemRevisionGUID=
 
 [GeneratedDocument43]
-DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.DRL
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s30.315_135\features
 DItemRevisionGUID=
 
 [GeneratedDocument44]
-DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.DRR
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s39.3701_45\features
 DItemRevisionGUID=
 
 [GeneratedDocument45]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.EXTREP
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s39.3701_135\features
 DItemRevisionGUID=
 
 [GeneratedDocument46]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G1
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s78.7401_45\features
 DItemRevisionGUID=
 
 [GeneratedDocument47]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G2
+DocumentPath=ProjectOutputsDefault\ODB\odb\symbols\s78.7401_135\features
 DItemRevisionGUID=
 
 [GeneratedDocument48]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G3
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\board_outline\features
 DItemRevisionGUID=
 
 [GeneratedDocument49]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBL
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_overlay\features
 DItemRevisionGUID=
 
 [GeneratedDocument50]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBO
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_paste\features
 DItemRevisionGUID=
 
 [GeneratedDocument51]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBP
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\bottom_solder\features
 DItemRevisionGUID=
 
 [GeneratedDocument52]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBS
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\btm\features
 DItemRevisionGUID=
 
 [GeneratedDocument53]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GD1
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_bot\features
 DItemRevisionGUID=
 
 [GeneratedDocument54]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GG1
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\comp_+_top\features
 DItemRevisionGUID=
 
 [GeneratedDocument55]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GKO
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\features
 DItemRevisionGUID=
 
 [GeneratedDocument56]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM1
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\keep-out_layer\features
 DItemRevisionGUID=
 
 [GeneratedDocument57]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM3
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l1-gnd\features
 DItemRevisionGUID=
 
 [GeneratedDocument58]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM4
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l2\features
 DItemRevisionGUID=
 
 [GeneratedDocument59]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM5
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l3-1v8\features
 DItemRevisionGUID=
 
 [GeneratedDocument60]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM6
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l4-pwr\features
 DItemRevisionGUID=
 
 [GeneratedDocument61]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM8
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l5\features
 DItemRevisionGUID=
 
 [GeneratedDocument62]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM9
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\l6-p2v5\features
 DItemRevisionGUID=
 
 [GeneratedDocument63]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM13
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_1\features
 DItemRevisionGUID=
 
 [GeneratedDocument64]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM14
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_3\features
 DItemRevisionGUID=
 
 [GeneratedDocument65]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM15
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_4\features
 DItemRevisionGUID=
 
 [GeneratedDocument66]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP1
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_5\features
 DItemRevisionGUID=
 
 [GeneratedDocument67]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP2
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_6\features
 DItemRevisionGUID=
 
 [GeneratedDocument68]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP3
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_13\features
 DItemRevisionGUID=
 
 [GeneratedDocument69]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPB
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_14\features
 DItemRevisionGUID=
 
 [GeneratedDocument70]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPT
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\mechanical_15\features
 DItemRevisionGUID=
 
 [GeneratedDocument71]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTL
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\notvisible\features
 DItemRevisionGUID=
 
 [GeneratedDocument72]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTO
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top\features
 DItemRevisionGUID=
 
 [GeneratedDocument73]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTP
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_overlay\features
 DItemRevisionGUID=
 
 [GeneratedDocument74]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTS
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_paste\features
 DItemRevisionGUID=
 
 [GeneratedDocument75]
-DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.LDP
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\top_solder\features
 DItemRevisionGUID=
 
 [GeneratedDocument76]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect24.4094x22.8346_225\features
 DItemRevisionGUID=
 
 [GeneratedDocument77]
-DocumentPath=Project Outputs for Free Documents\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DocumentPath=Project Outputs for Free Documents\ODB\odb\symbols\rect30.315x28.7402_225\features
 DItemRevisionGUID=
 
 [GeneratedDocument78]
-DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.RUL
+DocumentPath=ProjectOutputsDefault\ODB\odb\matrix\matrix
 DItemRevisionGUID=
 
 [GeneratedDocument79]
-DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.TXT
+DocumentPath=Project Outputs for Free Documents\ODB\odb\matrix\matrix
 DItemRevisionGUID=
 
 [GeneratedDocument80]
-DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\netlists\cadnet\netlist
 DItemRevisionGUID=
 
 [GeneratedDocument81]
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\netlists\cadnet\netlist
+DItemRevisionGUID=
+
+[GeneratedDocument82]
+DocumentPath=ProjectOutputsDefault\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
+DItemRevisionGUID=
+
+[GeneratedDocument83]
+DocumentPath=Project Outputs for Free Documents\Pick Place\Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt
+DItemRevisionGUID=
+
+[GeneratedDocument84]
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument85]
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\profile
+DItemRevisionGUID=
+
+[GeneratedDocument86]
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.DRL
+DItemRevisionGUID=
+
+[GeneratedDocument87]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.DRL
+DItemRevisionGUID=
+
+[GeneratedDocument88]
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument89]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument90]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument91]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument92]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G1
+DItemRevisionGUID=
+
+[GeneratedDocument93]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.G1
+DItemRevisionGUID=
+
+[GeneratedDocument94]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G2
+DItemRevisionGUID=
+
+[GeneratedDocument95]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.G2
+DItemRevisionGUID=
+
+[GeneratedDocument96]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.G3
+DItemRevisionGUID=
+
+[GeneratedDocument97]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.G3
+DItemRevisionGUID=
+
+[GeneratedDocument98]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument99]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument100]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument101]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument102]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument103]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument104]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument105]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument106]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument107]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument108]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument109]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument110]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument111]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument112]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument113]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument114]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM3
+DItemRevisionGUID=
+
+[GeneratedDocument115]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM3
+DItemRevisionGUID=
+
+[GeneratedDocument116]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM4
+DItemRevisionGUID=
+
+[GeneratedDocument117]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM4
+DItemRevisionGUID=
+
+[GeneratedDocument118]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument119]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument120]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM6
+DItemRevisionGUID=
+
+[GeneratedDocument121]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM6
+DItemRevisionGUID=
+
+[GeneratedDocument122]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM8
+DItemRevisionGUID=
+
+[GeneratedDocument123]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM8
+DItemRevisionGUID=
+
+[GeneratedDocument124]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM9
+DItemRevisionGUID=
+
+[GeneratedDocument125]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM9
+DItemRevisionGUID=
+
+[GeneratedDocument126]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument127]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument128]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM14
+DItemRevisionGUID=
+
+[GeneratedDocument129]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM14
+DItemRevisionGUID=
+
+[GeneratedDocument130]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument131]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument132]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP1
+DItemRevisionGUID=
+
+[GeneratedDocument133]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GP1
+DItemRevisionGUID=
+
+[GeneratedDocument134]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP2
+DItemRevisionGUID=
+
+[GeneratedDocument135]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GP2
+DItemRevisionGUID=
+
+[GeneratedDocument136]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GP3
+DItemRevisionGUID=
+
+[GeneratedDocument137]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GP3
+DItemRevisionGUID=
+
+[GeneratedDocument138]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument139]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument140]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument141]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument142]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument143]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument144]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument145]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument146]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument147]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument148]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument149]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument150]
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument151]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument152]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument153]
+DocumentPath=ProjectOutputsDefault\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument154]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument155]
+DocumentPath=Project Outputs for Free Documents\ODB\Spektrop2_PCB_Combined_CMV4000_V1.REP
+DItemRevisionGUID=
+
+[GeneratedDocument156]
+DocumentPath=ProjectOutputsDefault\Gerber\Spektrop2_PCB_Combined_CMV4000_V1.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument157]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument158]
+DocumentPath=ProjectOutputsDefault\NC Drill\Spektrop2_PCB_Combined_CMV4000_V1.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument159]
+DocumentPath=ProjectOutputsDefault\Spektrop2_PCB_Combined_CMV4000_V1.TXT
+DItemRevisionGUID=
+
+[GeneratedDocument160]
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument161]
+DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\stephdr
+DItemRevisionGUID=
+
+[GeneratedDocument162]
+DocumentPath=ProjectOutputsDefault\ODB\odb\steps\pcb\layers\drill\tools
+DItemRevisionGUID=
+
+[GeneratedDocument163]
 DocumentPath=Project Outputs for Free Documents\ODB\odb\steps\pcb\layers\drill\tools
 DItemRevisionGUID=
 
@@ -1298,20 +1650,20 @@ Name=Fabrication Outputs
 Description=
 TargetPrinter=Microsoft Print to PDF
 PrinterOptions=Record=PrinterOptions|Copies=1|Duplex=1|TrueTypeOptions=3|Collate=1|PrintJobKind=1|PrintWhat=1
-OutputType1=Board Stack Report
-OutputName1=Report Board Stack
+OutputType1=CompositeDrill
+OutputName1=Composite Drill Drawing
 OutputDocumentPath1=
 OutputVariantName1=
 OutputDefault1=0
 PageOptions1=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType2=CompositeDrill
-OutputName2=Composite Drill Drawing
+OutputType2=Drill
+OutputName2=Drill Drawing/Guides
 OutputDocumentPath2=
 OutputVariantName2=
 OutputDefault2=0
 PageOptions2=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType3=Drill
-OutputName3=Drill Drawing/Guides
+OutputType3=Board Stack Report
+OutputName3=Report Board Stack
 OutputDocumentPath3=
 OutputVariantName3=
 OutputDefault3=0
@@ -1322,48 +1674,52 @@ OutputDocumentPath4=
 OutputVariantName4=[No Variations]
 OutputDefault4=0
 PageOptions4=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType5=Gerber
-OutputName5=Gerber Files
+OutputType5=Gerber X2
+OutputName5=Gerber X2 Files
 OutputDocumentPath5=
-OutputVariantName5=[No Variations]
+OutputVariantName5=
 OutputDefault5=0
-OutputType6=Gerber X2
-OutputName6=Gerber X2 Files
+OutputType6=ODB
+OutputName6=ODB++ Files
 OutputDocumentPath6=
-OutputVariantName6=
+OutputVariantName6=[No Variations]
 OutputDefault6=0
-OutputType7=IPC2581
-OutputName7=IPC-2581 Files
+OutputType7=Mask
+OutputName7=Solder/Paste Mask Prints
 OutputDocumentPath7=
 OutputVariantName7=
 OutputDefault7=0
-OutputType8=Mask
-OutputName8=Solder/Paste Mask Prints
+PageOptions7=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType8=NC Drill
+OutputName8=NC Drill Files
 OutputDocumentPath8=
 OutputVariantName8=
 OutputDefault8=0
-PageOptions8=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType9=NC Drill
-OutputName9=NC Drill Files
+Configuration8_Name1=OutputConfigurationParameter1
+Configuration8_Item1=BoardEdgeRoutToolDia=2000000|GenerateBoardEdgeRout=False|GenerateDrilledSlotsG85=False|GenerateEIADrillFile=True|GenerateSeparatePlatedNonPlatedFiles=False|NumberOfDecimals=4|NumberOfUnits=4|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Record=DrillView|Units=Metric|ZeroesMode=KeepLeadingAndTrailingZeroes
+OutputType9=IPC2581
+OutputName9=IPC-2581 Files
 OutputDocumentPath9=
 OutputVariantName9=
 OutputDefault9=0
-OutputType10=ODB
-OutputName10=ODB++ Files
+OutputType10=Plane
+OutputName10=Power-Plane Prints
 OutputDocumentPath10=
-OutputVariantName10=[No Variations]
+OutputVariantName10=
 OutputDefault10=0
-OutputType11=Plane
-OutputName11=Power-Plane Prints
+PageOptions10=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
+OutputType11=Test Points
+OutputName11=Test Point Report
 OutputDocumentPath11=
 OutputVariantName11=
 OutputDefault11=0
-PageOptions11=Record=PageOptions|CenterHorizontal=True|CenterVertical=True|PrintScale=1.00|XCorrection=1.00|YCorrection=1.00|PrintKind=1|BorderSize=5000000|LeftOffset=0|BottomOffset=0|Orientation=2|PaperLength=1000|PaperWidth=1000|Scale=100|PaperSource=7|PrintQuality=-3|MediaType=1|DitherType=10|PrintScaleMode=1|PaperKind=A4|PaperIndex=9
-OutputType12=Test Points
-OutputName12=Test Point Report
+OutputType12=Gerber
+OutputName12=Gerber Files
 OutputDocumentPath12=
-OutputVariantName12=
+OutputVariantName12=[No Variations]
 OutputDefault12=0
+Configuration12_Name1=OutputConfigurationParameter1
+Configuration12_Item1=AddToAllLayerClasses.Set= |AddToAllPlots.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|CentrePlots=False|DrillDrawingSymbol=GraphicsSymbol|DrillDrawingSymbolSize=200000|EmbeddedApertures=True|FilmBorderSize=10000000|FilmXSize=200000000|FilmYSize=160000000|FlashAllFills=False|FlashPadShapes=True|G54OnApertureChange=False|GenerateDRCRulesFile=True|GenerateDRCRulesFile=True|GenerateReliefShapes=True|GerberUnit=Metric|GerberUnit=Metric|IncludeUnconnectedMidLayerPads=False|LayerClassesMirror.Set= |LayerClassesPlot.Set= |LeadingAndTrailingZeroesMode=SuppressLeadingZeroes|MaxApertureSize=2500000|MinusApertureTolerance=39|MinusApertureTolerance=39|Mirror.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean|MirrorDrillDrawingPlots=False|MirrorDrillGuidePlots=False|NoRegularPolygons=False|NumberOfDecimals=4|NumberOfDecimals=4|OptimizeChangeLocationCommands=True|OptimizeChangeLocationCommands=True|OriginPosition=Relative|Panelize=False|Plot.Set=SerializeLayerHash.Version~2,ClassName~TLayerToBoolean,16973830~1,16973832~1,16973834~1,16777217~1,16842753~1,16777218~1,16777219~1,16842754~1,16777220~1,16842755~1,16842751~1,16973835~1,16973833~1,16973831~1,16908296~1,16908301~1,16908302~1,16908303~1,16908297~1,16908294~1,16908293~1,16908292~1,16908291~1,16908289~1,16973837~1,16973848~1,16973849~1|PlotDrillDrawingLayerPair0_BackDrill=False|PlotDrillDrawingLayerPair0_HighLayer=Top Layer|PlotDrillDrawingLayerPair0_LowLayer=Bottom Layer|PlotDrillGuideLayerPair0_BackDrill=False|PlotDrillGuideLayerPair0_HighLayer=Top Layer|PlotDrillGuideLayerPair0_LowLayer=Bottom Layer|PlotPositivePlaneLayers=False|PlotUsedDrillDrawingLayerPairs=False|PlotUsedDrillGuideLayerPairs=False|PlusApertureTolerance=39|PlusApertureTolerance=39|Record=GerberView|SoftwareArcs=False|Sorted=False|Sorted=False
 
 [OutputGroup6]
 Name=Report Outputs

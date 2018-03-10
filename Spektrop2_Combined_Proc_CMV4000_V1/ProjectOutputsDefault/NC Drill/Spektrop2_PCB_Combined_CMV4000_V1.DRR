@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc   01-Feb-18  11:21:51 PM
+NCDrill File Report For: Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc   08-Mar-18  1:32:17 AM
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : TOP to BTM
@@ -8,8 +8,8 @@ EIA File   : Spektrop2_PCB_Combined_CMV4000_V1.DRL
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      8mil (0.201mm)                                            Round             949       PTH        56.85inch (1444.11mm)
-T2      20mil (0.5mm)                                             Round             95        PTH        5.50inch (139.70mm)
+T1      8mil (0.201mm)                                            Round             951       PTH        56.08inch (1424.35mm)
+T2      20mil (0.5mm)                                             Round             95        PTH        5.15inch (130.75mm)
 T3      22mil (0.551mm)                                           Round             9         PTH        3.84inch (97.56mm)
 T4      28mil (0.701mm)                                           Round             6         PTH        0.40inch (10.24mm)
 T5      32mil (0.8mm)                                             Round             3         PTH        1.86inch (47.31mm)
@@ -20,6 +20,6 @@ T9      67mil (1.699mm)                                           Round         
 T10     98mil (2.499mm)                                           Round             8         PTH        8.03inch (204.00mm)
 T11     57mil (1.45mm)                                            Round             8         NPTH       6.65inch (168.80mm)
 ----------------------------------------------------------------------------------------------------------------------------------
-Totals                                                                              1089
+Totals                                                                              1091
 
-Total Processing Time (hh:mm:ss) : 00:00:01
+Total Processing Time (hh:mm:ss) : 00:00:02

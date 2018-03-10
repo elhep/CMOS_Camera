@@ -1,48 +1,53 @@
 This is BibTeX, Version 0.99d (TeX Live 2017/W32TeX)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: thesis.aux
-The style file: alpha.bst
-I found no \citation commands---while reading file thesis.aux
+The style file: unsrt.bst
 Database file #1: bibliography/bibliography.bib
-You've used 0 entries,
-            2543 wiz_defined-function locations,
-            558 strings with 4456 characters,
-and the built_in function-call counts, 24 in all, are:
-= -- 0
-> -- 0
+Warning--entry type for "PUB:KASPROWICZ_PI" isn't style-file defined
+--line 28 of file bibliography/bibliography.bib
+Too many commas in name 1 of "Maciej Kwiatkowski,Grzegorz Kasprowicz,Krzysztof Pozniak,Ryszard Romaniuk,Grzegorz Wrochna" for entry PUB:KASPROWICZ_PI
+while executing---line 944 of file unsrt.bst
+Too many commas in name 1 of "Maciej Kwiatkowski,Grzegorz Kasprowicz,Krzysztof Pozniak,Ryszard Romaniuk,Grzegorz Wrochna" for entry PUB:KASPROWICZ_PI
+while executing---line 944 of file unsrt.bst
+You've used 1 entry,
+            1791 wiz_defined-function locations,
+            453 strings with 3755 characters,
+and the built_in function-call counts, 138 in all, are:
+= -- 8
+> -- 4
 < -- 0
-+ -- 0
-- -- 0
-* -- 2
-:= -- 10
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
++ -- 2
+- -- 1
+* -- 3
+:= -- 26
+add.period$ -- 2
+call.type$ -- 1
+change.case$ -- 1
 chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 1
-format.name$ -- 0
-if$ -- 2
-int.to.chr$ -- 1
-int.to.str$ -- 0
+cite$ -- 1
+duplicate$ -- 5
+empty$ -- 19
+format.name$ -- 1
+if$ -- 29
+int.to.chr$ -- 0
+int.to.str$ -- 1
 missing$ -- 0
-newline$ -- 3
-num.names$ -- 0
-pop$ -- 0
+newline$ -- 7
+num.names$ -- 1
+pop$ -- 7
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 2
+skip$ -- 4
 stack$ -- 0
 substring$ -- 0
-swap$ -- 0
+swap$ -- 1
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 2
-(There was 1 error message)
+while$ -- 1
+width$ -- 2
+write$ -- 10
+(There were 2 error messages)

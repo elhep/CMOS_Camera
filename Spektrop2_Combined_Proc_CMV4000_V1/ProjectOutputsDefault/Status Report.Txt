@@ -1,10 +1,14 @@
-Output: Pick and place
-Type  : Pick Place
-From  : Variant [Default] of PCB Document [Spektrop2_PCB_Combined_CMV4000_V1.PcbDoc]
-   Generated File[Pick Place for Spektrop2_PCB_Combined_CMV4000_V1(Default).txt]
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 1:40:22 AM On 08-Mar-18
+
+Output: Bill of Materials
+Type  : BOM
+From  : Variant [Default] of Project [Spektrop2_Combined_Proc_CMV4000_V1.PrjPcb]
+   Generated File[Bill of Materials-Spektrop2_Combined_Proc_CMV4000_V1(Default).csv]
 
 
 Files Generated   : 1
 Documents Printed : 0
 
-Finished Output Generation At 11:22:04 PM On 01-Feb-18
+Finished Output Generation At 1:40:26 AM On 08-Mar-18

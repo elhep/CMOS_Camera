@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.2.8)  5 MAR 2018 19:00
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/W32TeX) (preloaded format=xelatex 2018.2.8)  7 MAR 2018 07:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1187,54 +1187,60 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 (./introduction/introduction.tex
 Chapter 1.
-[9
-
-] [10] [11] [12] [13] [14] [15] [16] [17]) (./concept/concept.tex
+) (./concept/concept.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
-[19]
+ [9
+
+]
+[10]
 Chapter 2.
-) (./realisation/realisation.tex [20
+) (./realisation/realisation.tex [11
 
 ]
 Chapter 3.
-) (./evaluation/evaluation.tex [21
+) (./evaluation/evaluation.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12
 
 ]
+[13]
 Chapter 4.
-) (./summary/summary.tex [22
+) (./summary/summary.tex [14
 
 ]
 Chapter 5.
-) (./thesis.bbl [23
+) (./thesis.bbl [15
 
 ]
+Underfull \hbox (badness 1292) in paragraph at lines 4--8
+[]\TU/Arial(0)/m/n/10.95 Krzysztof Pozniak Ryszard Romaniuk Grzegorz Wrochna Ma
+ciej Kwiatkowski, Grze-
+ []
 
-LaTeX Warning: Empty `thebibliography' environment on input line 3.
+) (./thesis.gls [16
 
-) (./thesis.gls [24
-
-]) [25
+]) [17
 
 
 ] (./thesis.lof)
 \tf@lof=\write9
 \openout9 = `thesis.lof'.
 
- [26
+ [18
 
-] [27
+] [19
 
 
 ]
 Appendix A.
-[28
+[20
 
 ]
 Appendix B.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 99.
-[29
+[21
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 99.
@@ -1244,12 +1250,12 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 99.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 99.
  ) 
 Here is how much of TeX's memory you used:
- 25364 strings out of 493005
- 455767 string characters out of 6137948
- 730575 words of memory out of 5000000
- 28994 multiletter control sequences out of 15000+600000
+ 25372 strings out of 493005
+ 455887 string characters out of 6137948
+ 725772 words of memory out of 5000000
+ 29002 multiletter control sequences out of 15000+600000
  534531 words of font info for 59 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 75i,18n,65p,10425b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,18n,65p,10425b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on thesis.pdf (29 pages).
+Output written on thesis.pdf (21 pages).
