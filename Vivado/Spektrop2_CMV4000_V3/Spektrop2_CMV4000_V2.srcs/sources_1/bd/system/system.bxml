@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="33">
   <CompositeFile CompositeFileTopName="system" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1520291671"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1520291671"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1520291671"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1520291671"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1520816217"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1520816217"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1520816217"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1520816217"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\system_processing_system7_0_0\system_processing_system7_0_0.xci" Type="IP">
         <Instance HierarchyPath="processing_system7_0"/>
@@ -97,14 +97,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_axis_combiner_0_1\system_axis_combiner_0_1.xci" Type="IP">
-        <Instance HierarchyPath="axis_combiner_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\system_rst_aurora_8b10b_0_156M_0\system_rst_aurora_8b10b_0_156M_0.xci" Type="IP">
         <Instance HierarchyPath="rst_aurora_8b10b_0_156M"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -113,8 +105,32 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\system_axis_dwidth_converter_0_0\system_axis_dwidth_converter_0_0.xci" Type="IP">
+      <File Name="ip\system_axis_dwidth_converter_0_1\system_axis_dwidth_converter_0_1.xci" Type="IP">
         <Instance HierarchyPath="axis_dwidth_converter_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axis_dwidth_converter_0_2\system_axis_dwidth_converter_0_2.xci" Type="IP">
+        <Instance HierarchyPath="axis_dwidth_converter_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_axis_combiner_0_0\system_axis_combiner_0_0.xci" Type="IP">
+        <Instance HierarchyPath="axis_combiner_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\system_ila_0_2\system_ila_0_2.xci" Type="IP">
+        <Instance HierarchyPath="ila_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>

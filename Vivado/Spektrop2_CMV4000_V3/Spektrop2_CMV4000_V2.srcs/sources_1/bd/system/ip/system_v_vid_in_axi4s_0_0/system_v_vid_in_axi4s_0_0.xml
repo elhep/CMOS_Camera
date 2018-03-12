@@ -535,7 +535,7 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:9daf7001</spirit:value>
+            <spirit:value>7:0c9443a4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -549,11 +549,11 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Mar 05 22:58:33 UTC 2018</spirit:value>
+            <spirit:value>Sun Mar 11 12:42:52 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:9daf7001</spirit:value>
+            <spirit:value>7:0c9443a4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -568,11 +568,11 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Mar 05 22:58:33 UTC 2018</spirit:value>
+            <spirit:value>Sun Mar 11 12:42:52 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:9daf7001</spirit:value>
+            <spirit:value>7:0c9443a4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -591,7 +591,7 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:65c875f5</spirit:value>
+            <spirit:value>7:908eaf01</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -606,11 +606,11 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Mar 05 22:58:33 UTC 2018</spirit:value>
+            <spirit:value>Sun Mar 11 12:42:52 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:65c875f5</spirit:value>
+            <spirit:value>7:908eaf01</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -624,11 +624,11 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
-            <spirit:value>Mon Mar 05 23:00:05 UTC 2018</spirit:value>
+            <spirit:value>Sun Mar 11 12:44:24 UTC 2018</spirit:value>
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
-            <spirit:value>7:9daf7001</spirit:value>
+            <spirit:value>7:0c9443a4</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1140,7 +1140,7 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_ADDR_WIDTH</spirit:name>
         <spirit:displayName>Address Width</spirit:displayName>
-        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ADDR_WIDTH" spirit:choiceRef="choice_pairs_2ccd4550">11</spirit:value>
+        <spirit:value spirit:format="long" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.C_ADDR_WIDTH" spirit:choiceRef="choice_pairs_2ccd4550">13</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="integer">
         <spirit:name>C_INCLUDE_PIXEL_DROP</spirit:name>
@@ -1385,7 +1385,7 @@ ribs {resolve_type generated dependency video_data_width format long minimum {} 
     <spirit:parameter>
       <spirit:name>C_ADDR_WIDTH</spirit:name>
       <spirit:displayName>Address Width</spirit:displayName>
-      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ADDR_WIDTH" spirit:choiceRef="choice_pairs_2ccd4550" spirit:order="1404" spirit:configGroups="1 NoDisplay">11</spirit:value>
+      <spirit:value spirit:format="long" spirit:resolve="user" spirit:id="PARAM_VALUE.C_ADDR_WIDTH" spirit:choiceRef="choice_pairs_2ccd4550" spirit:order="1404" spirit:configGroups="1 NoDisplay">13</spirit:value>
       <spirit:vendorExtensions>
         <xilinx:parameterInfo>
           <xilinx:enablement>

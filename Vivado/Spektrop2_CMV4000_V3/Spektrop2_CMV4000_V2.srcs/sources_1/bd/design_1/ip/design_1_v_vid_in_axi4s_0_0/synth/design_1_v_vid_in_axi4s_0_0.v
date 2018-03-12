@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "v_vid_in_axi4s_v4_0_7,Vivado 2017.4" *)
 (* CHECK_LICENSE_TYPE = "design_1_v_vid_in_axi4s_0_0,v_vid_in_axi4s_v4_0_7,{}" *)
-(* CORE_GENERATION_INFO = "design_1_v_vid_in_axi4s_0_0,v_vid_in_axi4s_v4_0_7,{x_ipProduct=Vivado 2017.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=v_vid_in_axi4s,x_ipVersion=4.0,x_ipCoreRevision=7,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_PIXELS_PER_CLOCK=8,C_COMPONENTS_PER_PIXEL=1,C_M_AXIS_COMPONENT_WIDTH=8,C_NATIVE_COMPONENT_WIDTH=12,C_NATIVE_DATA_WIDTH=96,C_M_AXIS_TDATA_WIDTH=64,C_HAS_ASYNC_CLK=1,C_ADDR_WIDTH=12,C_INCLUDE_PIXEL_DROP=0,C_INCLUDE_PIXEL_REMAP_420=0,C_ADDR_WIDTH_PIXEL_REMAP_420=10}" *)
+(* CORE_GENERATION_INFO = "design_1_v_vid_in_axi4s_0_0,v_vid_in_axi4s_v4_0_7,{x_ipProduct=Vivado 2017.4,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=v_vid_in_axi4s,x_ipVersion=4.0,x_ipCoreRevision=7,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=zynq,C_PIXELS_PER_CLOCK=8,C_COMPONENTS_PER_PIXEL=1,C_M_AXIS_COMPONENT_WIDTH=8,C_NATIVE_COMPONENT_WIDTH=12,C_NATIVE_DATA_WIDTH=96,C_M_AXIS_TDATA_WIDTH=64,C_HAS_ASYNC_CLK=1,C_ADDR_WIDTH=13,C_INCLUDE_PIXEL_DROP=0,C_INCLUDE_PIXEL_REMAP_420=0,C_ADDR_WIDTH_PIXEL_REMAP_420=10}" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_v_vid_in_axi4s_0_0 (
   vid_io_in_clk,
@@ -154,7 +154,7 @@ input wire axis_enable;
     .C_NATIVE_DATA_WIDTH(96),
     .C_M_AXIS_TDATA_WIDTH(64),
     .C_HAS_ASYNC_CLK(1),
-    .C_ADDR_WIDTH(12),
+    .C_ADDR_WIDTH(13),
     .C_INCLUDE_PIXEL_DROP(0),
     .C_INCLUDE_PIXEL_REMAP_420(0),
     .C_ADDR_WIDTH_PIXEL_REMAP_420(10)

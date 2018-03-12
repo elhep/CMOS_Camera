@@ -192,7 +192,7 @@ proc create_root_design { parentCell } {
   # Create instance: v_vid_in_axi4s_0, and set properties
   set v_vid_in_axi4s_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_vid_in_axi4s:4.0 v_vid_in_axi4s_0 ]
   set_property -dict [ list \
-   CONFIG.C_ADDR_WIDTH {12} \
+   CONFIG.C_ADDR_WIDTH {13} \
    CONFIG.C_HAS_ASYNC_CLK {1} \
    CONFIG.C_M_AXIS_VIDEO_DATA_WIDTH {8} \
    CONFIG.C_M_AXIS_VIDEO_FORMAT {12} \
@@ -203,7 +203,7 @@ proc create_root_design { parentCell } {
   # Create instance: v_vid_in_axi4s_1, and set properties
   set v_vid_in_axi4s_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:v_vid_in_axi4s:4.0 v_vid_in_axi4s_1 ]
   set_property -dict [ list \
-   CONFIG.C_ADDR_WIDTH {12} \
+   CONFIG.C_ADDR_WIDTH {13} \
    CONFIG.C_HAS_ASYNC_CLK {1} \
    CONFIG.C_M_AXIS_VIDEO_DATA_WIDTH {8} \
    CONFIG.C_M_AXIS_VIDEO_FORMAT {12} \

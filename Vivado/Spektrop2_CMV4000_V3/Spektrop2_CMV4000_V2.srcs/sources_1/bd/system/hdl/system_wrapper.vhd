@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
---Date        : Tue Mar  6 00:14:29 2018
+--Date        : Mon Mar 12 01:56:53 2018
 --Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 --Command     : generate_target system_wrapper.bd
 --Design      : system_wrapper
@@ -38,7 +38,8 @@ entity system_wrapper is
     axis_enable : in STD_LOGIC;
     control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
     gt_refclk1_0 : in STD_LOGIC;
-    reset_rtl_0 : in STD_LOGIC;
+    gt_reset_0 : in STD_LOGIC;
+    resetn_rtl : in STD_LOGIC;
     vid_io_in_0_active_video : in STD_LOGIC;
     vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
     vid_io_in_0_field : in STD_LOGIC;
@@ -98,9 +99,6 @@ architecture STRUCTURE of system_wrapper is
     SPI1_ss_i : in STD_LOGIC_VECTOR ( 0 to 0 );
     SPI1_ss_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     SPI1_ss_t : out STD_LOGIC;
-    FCLK_50M_CLK : out STD_LOGIC;
-    FCLK_100M_CLK : out STD_LOGIC;
-    control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
     vid_io_in_0_active_video : in STD_LOGIC;
     vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
     vid_io_in_0_field : in STD_LOGIC;
@@ -115,16 +113,20 @@ architecture STRUCTURE of system_wrapper is
     vid_io_in_1_hsync : in STD_LOGIC;
     vid_io_in_1_vblank : in STD_LOGIC;
     vid_io_in_1_vsync : in STD_LOGIC;
+    GT_SERIAL_TX_0_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    GT_SERIAL_TX_0_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
+    FCLK_50M_CLK : out STD_LOGIC;
+    FCLK_100M_CLK : out STD_LOGIC;
+    control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
     vid_io_in_clk : in STD_LOGIC;
     vid_io_in_ce : in STD_LOGIC;
     vid_io_in_reset : in STD_LOGIC;
-    aclken : in STD_LOGIC;
     aresetn : in STD_LOGIC;
     axis_enable : in STD_LOGIC;
-    GT_SERIAL_TX_0_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    GT_SERIAL_TX_0_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
     gt_refclk1_0 : in STD_LOGIC;
-    reset_rtl_0 : in STD_LOGIC
+    resetn_rtl : in STD_LOGIC;
+    aclken : in STD_LOGIC;
+    gt_reset_0 : in STD_LOGIC
   );
   end component system;
   component IOBUF is
@@ -285,7 +287,8 @@ system_i: component system
       axis_enable => axis_enable,
       control_reg0_o(31 downto 0) => control_reg0_o(31 downto 0),
       gt_refclk1_0 => gt_refclk1_0,
-      reset_rtl_0 => reset_rtl_0,
+      gt_reset_0 => gt_reset_0,
+      resetn_rtl => resetn_rtl,
       vid_io_in_0_active_video => vid_io_in_0_active_video,
       vid_io_in_0_data(95 downto 0) => vid_io_in_0_data(95 downto 0),
       vid_io_in_0_field => vid_io_in_0_field,

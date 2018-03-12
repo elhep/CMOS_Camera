@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
---Date        : Thu Mar  8 22:37:26 2018
+--Date        : Sun Mar 11 11:43:19 2018
 --Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -61,14 +61,14 @@ architecture STRUCTURE of design_1_wrapper is
     M_AXIS_0_tvalid : out STD_LOGIC;
     M_AXIS_0_tready : in STD_LOGIC;
     M_AXIS_0_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
+    M_AXIS_0_tlast : out STD_LOGIC;
     vid_io_in_clk_0 : in STD_LOGIC;
     vid_io_in_ce_0 : in STD_LOGIC;
     vid_io_in_reset_0 : in STD_LOGIC;
-    aclk_0 : in STD_LOGIC;
     aclken_0 : in STD_LOGIC;
     aresetn_0 : in STD_LOGIC;
     axis_enable_0 : in STD_LOGIC;
-    M_AXIS_0_tlast : out STD_LOGIC
+    aclk_0 : in STD_LOGIC
   );
   end component design_1;
 begin

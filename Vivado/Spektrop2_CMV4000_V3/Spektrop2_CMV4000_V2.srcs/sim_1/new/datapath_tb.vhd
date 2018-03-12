@@ -69,29 +69,34 @@ end component;
 
   signal M_AXIS_0_tdata  : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal M_AXIS_0_tlast  : STD_LOGIC;
-  signal M_AXIS_0_tready : STD_LOGIC := '1';
+  signal M_AXIS_0_tready : STD_LOGIC := '0';
   signal M_AXIS_0_tvalid : STD_LOGIC;
   signal aclk_0 	: STD_LOGIC := '0';
   signal aclken_0 	: STD_LOGIC := '1';
   signal aresetn_0 	: STD_LOGIC := '1';
   signal axis_enable_0 	: STD_LOGIC := '1';
-  signal vid_io_in_0_active_video : STD_LOGIC := '1';
-  signal vid_io_in_0_data : STD_LOGIC_VECTOR ( 95 downto 0 ) := (others => '0');
+  signal vid_io_in_0_active_video : STD_LOGIC := '0';
+  signal vid_io_in_0_data : STD_LOGIC_VECTOR ( 95 downto 0 ) := (others => '1');
   signal vid_io_in_0_field : STD_LOGIC := '0';
   signal vid_io_in_0_hblank : STD_LOGIC := '0';
-  signal vid_io_in_0_hsync : STD_LOGIC := '1';
+  signal vid_io_in_0_hsync : STD_LOGIC := '0';
   signal vid_io_in_0_vblank : STD_LOGIC := '0';
-  signal vid_io_in_0_vsync : STD_LOGIC := '1';
-  signal vid_io_in_1_active_video : STD_LOGIC := '1';
-  signal vid_io_in_1_data : STD_LOGIC_VECTOR ( 95 downto 0 ) := (others => '0');
+  signal vid_io_in_0_vsync : STD_LOGIC := '0';
+  signal vid_io_in_1_active_video : STD_LOGIC := '0';
+  signal vid_io_in_1_data : STD_LOGIC_VECTOR ( 95 downto 0 ) := (others => '1');
   signal vid_io_in_1_field : STD_LOGIC := '0';
   signal vid_io_in_1_hblank : STD_LOGIC := '0';
-  signal vid_io_in_1_hsync : STD_LOGIC := '1';
+  signal vid_io_in_1_hsync : STD_LOGIC := '0';
   signal vid_io_in_1_vblank : STD_LOGIC := '0';
-  signal vid_io_in_1_vsync : STD_LOGIC := '1';
+  signal vid_io_in_1_vsync : STD_LOGIC := '0';
   signal vid_io_in_ce_0 : STD_LOGIC := '1';
   signal vid_io_in_clk_0 : STD_LOGIC := '0';
   signal vid_io_in_reset_0 : STD_LOGIC := '0';
+  signal data_valid : std_logic := '0';
+  signal fval : std_logic := '0';
+  signal blank : std_logic := '1';
+  
+  signal pixel : std_logic_vector(11 downto 0) := (others => '0');
 
   signal video_clk : std_logic := '0';
   constant video_clk_period : time := 25 ns;
@@ -121,10 +126,31 @@ begin
 	video_data: process(video_clk)
 	begin
 		if(rising_edge(video_clk)) then
-			vid_io_in_0_data <= std_logic_vector(unsigned(vid_io_in_0_data) + 1);
-			vid_io_in_1_data <= std_logic_vector(unsigned(vid_io_in_1_data) + 1);
+            if(data_valid = '1') then
+                pixel <= std_logic_vector(unsigned(pixel) + 1);
+            elsif(data_valid = '0') then
+                pixel <= (others => '0');
+            end if;
 		end if;
 	end process;
+	
+	vid_io_in_0_data <= pixel &
+	                    pixel &
+	                    pixel &
+	                    pixel &
+	                    pixel &
+	                    pixel &
+	                    pixel &
+                        pixel;
+                        
+     	vid_io_in_1_data <= pixel &
+                                            pixel &
+                                            pixel &
+                                            pixel &
+                                            pixel &
+                                            pixel &
+                                            pixel &
+                                            pixel;
 
 
 	datapath_i: design_1_wrapper
@@ -138,64 +164,79 @@ begin
 		aclken_0 			=>  '1',
 		aresetn_0 			=>  aresetn_0,
 		axis_enable_0 			=>  '1',
-		vid_io_in_0_active_video 	=>  vid_io_in_0_active_video,
+		vid_io_in_0_active_video 	=>  data_valid,
 		vid_io_in_0_data 		=>  vid_io_in_0_data,
 		vid_io_in_0_field 		=>  '0',
-		vid_io_in_0_hblank 		=>  '0',
-		vid_io_in_0_hsync 		=>  vid_io_in_0_hsync,
-		vid_io_in_0_vblank 		=>  '0',
-		vid_io_in_0_vsync 		=>  vid_io_in_0_vsync,
-		vid_io_in_1_active_video 	=>  vid_io_in_1_active_video,
+		vid_io_in_0_hblank 		=>  blank,
+		vid_io_in_0_hsync 		=>  fval,
+		vid_io_in_0_vblank 		=>  blank,
+		vid_io_in_0_vsync 		=>  fval,
+		vid_io_in_1_active_video 	=>  data_valid,
 		vid_io_in_1_data 		=>  vid_io_in_1_data,
 		vid_io_in_1_field 		=>  '0',
-		vid_io_in_1_hblank 		=>  '0',
-		vid_io_in_1_hsync 		=>  vid_io_in_1_hsync,
-		vid_io_in_1_vblank 		=>  '0',
-		vid_io_in_1_vsync 		=>  vid_io_in_1_vsync,
+		vid_io_in_1_hblank 		=>  blank,
+		vid_io_in_1_hsync 		=>  fval,
+		vid_io_in_1_vblank 		=>  blank,
+		vid_io_in_1_vsync 		=>  fval,
 		vid_io_in_ce_0 			=>  '1',
 		vid_io_in_clk_0 		=>  video_clk,
 		vid_io_in_reset_0 		=>  vid_io_in_reset_0 
 	);
 	
-
-
+    blank <= not fval;
+    fval <= data_valid;
    -- Stimulus process, Apply inputs here.
   stim_proc: process
    begin        
-        wait for video_clk_period*40; --wait for 10 clock cycles.
-        vid_io_in_reset_0 <='1';                    --then apply reset for 2 clock cycles.
+        wait for video_clk_period*40;
+        
+        vid_io_in_reset_0 <='1';                    --then pull down reset for 20 clock cycles.
         aresetn_0 <= '0';
-        wait for video_clk_period*10;
+        wait for video_clk_period*40;
+        
         vid_io_in_reset_0 <='0';                    --then pull down reset for 20 clock cycles.
         aresetn_0 <= '1';
+        
+        wait for video_clk_period*40;
+        
+        data_valid <= '0';
+       -- fval <= '0';
         wait for video_clk_period*5;
-        vid_io_in_0_vsync <= '0';
-        vid_io_in_1_vsync <= '0';
-        vid_io_in_0_hsync <= '0';
-        vid_io_in_1_hsync <= '0';
-        vid_io_in_0_active_video <= '0';
-        vid_io_in_1_active_video <= '0';
-        wait for video_clk_period*5;
-        vid_io_in_0_vsync <= '1';
-        vid_io_in_1_vsync <= '1';
-        vid_io_in_0_hsync <= '1';
-        vid_io_in_1_hsync <= '1';
-               vid_io_in_0_active_video <= '1';
-        vid_io_in_1_active_video <= '1';
-        wait for video_clk_period*5;
-        vid_io_in_0_vsync <= '0';
-        vid_io_in_1_vsync <= '0';
-        vid_io_in_0_hsync <= '0';
-        vid_io_in_1_hsync <= '0';
-                vid_io_in_0_active_video <= '0';
-        vid_io_in_1_active_video <= '0';
-        wait for video_clk_period*5;
-        vid_io_in_0_vsync <= '1';
-        vid_io_in_1_vsync <= '1';
-        vid_io_in_0_hsync <= '1';
-        vid_io_in_1_hsync <= '1';
-        vid_io_in_0_active_video <= '1';
-        vid_io_in_1_active_video <= '1';
+        
+        --data_valid <= '1';
+        --
+        --wait for video_clk_period;
+--        --fval <= '1';
+--        wait for video_clk_period;
+        
+--        data_valid <= '0';
+--        fval <= '0';
+--        wait for video_clk_period;
+        M_AXIS_0_tready <= '1';
+        wait for video_clk_period*10;
+        data_valid <= '1';
+        --wait for video_clk_period;
+        --fval <= '1';
+        wait for video_clk_period*40;
+ 
+        data_valid <= '0';
+        --fval <= '0';
+        wait for video_clk_period;
+        
+--                data_valid <= '1';
+--        wait for video_clk_period;
+--        fval <= '1';
+--        wait for video_clk_period*20;
+        
+--                data_valid <= '0';
+--        fval <= '0';
+--        wait for video_clk_period;
+             
+       -- data_valid <= '1';
+       -- wait for video_clk_period*40;
+        
+        --data_valid <= '0';
+
         wait;
   end process;
 

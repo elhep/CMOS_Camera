@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
---Date        : Tue Mar  6 00:14:29 2018
+--Date        : Mon Mar 12 01:56:53 2018
 --Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -1390,7 +1390,8 @@ entity system is
     axis_enable : in STD_LOGIC;
     control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
     gt_refclk1_0 : in STD_LOGIC;
-    reset_rtl_0 : in STD_LOGIC;
+    gt_reset_0 : in STD_LOGIC;
+    resetn_rtl : in STD_LOGIC;
     vid_io_in_0_active_video : in STD_LOGIC;
     vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
     vid_io_in_0_field : in STD_LOGIC;
@@ -1410,7 +1411,7 @@ entity system is
     vid_io_in_reset : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=18,numReposBlks=13,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_clkrst_cnt=6,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_clkrst_cnt=8,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -1726,22 +1727,6 @@ architecture STRUCTURE of system is
     gt_refclk1 : in STD_LOGIC
   );
   end component system_aurora_8b10b_0_0;
-  component system_axis_combiner_0_1 is
-  port (
-    aclk : in STD_LOGIC;
-    aresetn : in STD_LOGIC;
-    s_axis_tvalid : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axis_tready : out STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
-    s_axis_tlast : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    s_axis_tuser : in STD_LOGIC_VECTOR ( 1 downto 0 );
-    m_axis_tvalid : out STD_LOGIC;
-    m_axis_tready : in STD_LOGIC;
-    m_axis_tdata : out STD_LOGIC_VECTOR ( 63 downto 0 );
-    m_axis_tlast : out STD_LOGIC;
-    m_axis_tuser : out STD_LOGIC_VECTOR ( 1 downto 0 )
-  );
-  end component system_axis_combiner_0_1;
   component system_rst_aurora_8b10b_0_156M_0 is
   port (
     slowest_sync_clk : in STD_LOGIC;
@@ -1756,7 +1741,7 @@ architecture STRUCTURE of system is
     peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
   );
   end component system_rst_aurora_8b10b_0_156M_0;
-  component system_axis_dwidth_converter_0_0 is
+  component system_axis_dwidth_converter_0_1 is
   port (
     aclk : in STD_LOGIC;
     aresetn : in STD_LOGIC;
@@ -1766,15 +1751,58 @@ architecture STRUCTURE of system is
     s_axis_tlast : in STD_LOGIC;
     m_axis_tvalid : out STD_LOGIC;
     m_axis_tready : in STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    m_axis_tlast : out STD_LOGIC
+  );
+  end component system_axis_dwidth_converter_0_1;
+  component system_axis_dwidth_converter_0_2 is
+  port (
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    s_axis_tvalid : in STD_LOGIC;
+    s_axis_tready : out STD_LOGIC;
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 63 downto 0 );
+    s_axis_tlast : in STD_LOGIC;
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
+    m_axis_tdata : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    m_axis_tlast : out STD_LOGIC
+  );
+  end component system_axis_dwidth_converter_0_2;
+  component system_axis_combiner_0_0 is
+  port (
+    aclk : in STD_LOGIC;
+    aresetn : in STD_LOGIC;
+    s_axis_tvalid : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axis_tready : out STD_LOGIC_VECTOR ( 1 downto 0 );
+    s_axis_tdata : in STD_LOGIC_VECTOR ( 31 downto 0 );
+    s_axis_tlast : in STD_LOGIC_VECTOR ( 1 downto 0 );
+    m_axis_tvalid : out STD_LOGIC;
+    m_axis_tready : in STD_LOGIC;
     m_axis_tdata : out STD_LOGIC_VECTOR ( 31 downto 0 );
     m_axis_tlast : out STD_LOGIC
   );
-  end component system_axis_dwidth_converter_0_0;
+  end component system_axis_combiner_0_0;
+  component system_ila_0_2 is
+  port (
+    clk : in STD_LOGIC;
+    probe0 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe1 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe2 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe3 : in STD_LOGIC_VECTOR ( 0 to 0 );
+    probe4 : in STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component system_ila_0_2;
   signal aclken_1 : STD_LOGIC;
   signal aresetn_0_1 : STD_LOGIC;
   signal aurora_8b10b_0_GT_SERIAL_TX_TXN : STD_LOGIC_VECTOR ( 0 to 0 );
   signal aurora_8b10b_0_GT_SERIAL_TX_TXP : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal aurora_8b10b_0_tx_channel_up : STD_LOGIC;
+  signal aurora_8b10b_0_tx_hard_err : STD_LOGIC;
+  signal aurora_8b10b_0_tx_lane_up : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal aurora_8b10b_0_tx_lock : STD_LOGIC;
   signal aurora_8b10b_0_tx_out_clk : STD_LOGIC;
+  signal aurora_8b10b_0_tx_resetdone_out : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_I : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_O : STD_LOGIC;
   signal axi_quad_spi_0_SPI_0_IO0_T : STD_LOGIC;
@@ -1799,16 +1827,21 @@ architecture STRUCTURE of system is
   signal axi_quad_spi_1_SPI_0_SS_I : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_quad_spi_1_SPI_0_SS_O : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axi_quad_spi_1_SPI_0_SS_T : STD_LOGIC;
-  signal axis_combiner_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
+  signal axis_combiner_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
   signal axis_combiner_0_M_AXIS_TLAST : STD_LOGIC;
   signal axis_combiner_0_M_AXIS_TREADY : STD_LOGIC;
   signal axis_combiner_0_M_AXIS_TVALID : STD_LOGIC;
-  signal axis_dwidth_converter_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 31 downto 0 );
+  signal axis_dwidth_converter_0_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 15 downto 0 );
   signal axis_dwidth_converter_0_M_AXIS_TLAST : STD_LOGIC;
-  signal axis_dwidth_converter_0_M_AXIS_TREADY : STD_LOGIC;
+  signal axis_dwidth_converter_0_M_AXIS_TREADY : STD_LOGIC_VECTOR ( 0 to 0 );
   signal axis_dwidth_converter_0_M_AXIS_TVALID : STD_LOGIC;
+  signal axis_dwidth_converter_1_M_AXIS_TDATA : STD_LOGIC_VECTOR ( 15 downto 0 );
+  signal axis_dwidth_converter_1_M_AXIS_TLAST : STD_LOGIC;
+  signal axis_dwidth_converter_1_M_AXIS_TREADY : STD_LOGIC_VECTOR ( 1 to 1 );
+  signal axis_dwidth_converter_1_M_AXIS_TVALID : STD_LOGIC;
   signal axis_enable_0_1 : STD_LOGIC;
   signal gt_refclk1_0_1 : STD_LOGIC;
+  signal gt_reset_0_1 : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK0 : STD_LOGIC;
   signal processing_system7_0_FCLK_CLK1 : STD_LOGIC;
   signal processing_system7_0_FCLK_RESET0_N : STD_LOGIC;
@@ -1922,13 +1955,11 @@ architecture STRUCTURE of system is
   signal rst_ps7_0_50M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal v_vid_in_axi4s_0_video_out_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal v_vid_in_axi4s_0_video_out_TLAST : STD_LOGIC;
-  signal v_vid_in_axi4s_0_video_out_TREADY : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal v_vid_in_axi4s_0_video_out_TUSER : STD_LOGIC;
+  signal v_vid_in_axi4s_0_video_out_TREADY : STD_LOGIC;
   signal v_vid_in_axi4s_0_video_out_TVALID : STD_LOGIC;
   signal v_vid_in_axi4s_1_video_out_TDATA : STD_LOGIC_VECTOR ( 63 downto 0 );
   signal v_vid_in_axi4s_1_video_out_TLAST : STD_LOGIC;
-  signal v_vid_in_axi4s_1_video_out_TREADY : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal v_vid_in_axi4s_1_video_out_TUSER : STD_LOGIC;
+  signal v_vid_in_axi4s_1_video_out_TREADY : STD_LOGIC;
   signal v_vid_in_axi4s_1_video_out_TVALID : STD_LOGIC;
   signal vid_io_in_0_1_ACTIVE_VIDEO : STD_LOGIC;
   signal vid_io_in_0_1_DATA : STD_LOGIC_VECTOR ( 95 downto 0 );
@@ -1949,14 +1980,8 @@ architecture STRUCTURE of system is
   signal vid_io_in_reset_0_1 : STD_LOGIC;
   signal NLW_aurora_8b10b_0_gt_common_reset_out_UNCONNECTED : STD_LOGIC;
   signal NLW_aurora_8b10b_0_sys_reset_out_UNCONNECTED : STD_LOGIC;
-  signal NLW_aurora_8b10b_0_tx_channel_up_UNCONNECTED : STD_LOGIC;
-  signal NLW_aurora_8b10b_0_tx_hard_err_UNCONNECTED : STD_LOGIC;
-  signal NLW_aurora_8b10b_0_tx_lock_UNCONNECTED : STD_LOGIC;
-  signal NLW_aurora_8b10b_0_tx_resetdone_out_UNCONNECTED : STD_LOGIC;
-  signal NLW_aurora_8b10b_0_tx_lane_up_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_quad_spi_0_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_quad_spi_1_ip2intc_irpt_UNCONNECTED : STD_LOGIC;
-  signal NLW_axis_combiner_0_m_axis_tuser_UNCONNECTED : STD_LOGIC_VECTOR ( 1 downto 0 );
   signal NLW_processing_system7_0_S_AXI_GP0_ARREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_S_AXI_GP0_AWREADY_UNCONNECTED : STD_LOGIC;
   signal NLW_processing_system7_0_S_AXI_GP0_BVALID_UNCONNECTED : STD_LOGIC;
@@ -1976,6 +2001,7 @@ architecture STRUCTURE of system is
   signal NLW_rst_ps7_0_50M_bus_struct_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_rst_ps7_0_50M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_v_vid_in_axi4s_0_fid_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_0_m_axis_video_tuser_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_0_overflow_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_0_underflow_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_0_vtd_active_video_UNCONNECTED : STD_LOGIC;
@@ -1985,6 +2011,7 @@ architecture STRUCTURE of system is
   signal NLW_v_vid_in_axi4s_0_vtd_vblank_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_0_vtd_vsync_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_1_fid_UNCONNECTED : STD_LOGIC;
+  signal NLW_v_vid_in_axi4s_1_m_axis_video_tuser_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_1_overflow_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_1_underflow_UNCONNECTED : STD_LOGIC;
   signal NLW_v_vid_in_axi4s_1_vtd_active_video_UNCONNECTED : STD_LOGIC;
@@ -2036,8 +2063,10 @@ architecture STRUCTURE of system is
   attribute X_INTERFACE_PARAMETER of aresetn : signal is "XIL_INTERFACENAME RST.ARESETN, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of gt_refclk1_0 : signal is "xilinx.com:signal:clock:1.0 CLK.GT_REFCLK1_0 CLK";
   attribute X_INTERFACE_PARAMETER of gt_refclk1_0 : signal is "XIL_INTERFACENAME CLK.GT_REFCLK1_0, CLK_DOMAIN system_gt_refclk1_0, FREQ_HZ 125000000, PHASE 0.000";
-  attribute X_INTERFACE_INFO of reset_rtl_0 : signal is "xilinx.com:signal:reset:1.0 RST.RESET_RTL_0 RST";
-  attribute X_INTERFACE_PARAMETER of reset_rtl_0 : signal is "XIL_INTERFACENAME RST.RESET_RTL_0, POLARITY ACTIVE_LOW";
+  attribute X_INTERFACE_INFO of gt_reset_0 : signal is "xilinx.com:signal:reset:1.0 RST.GT_RESET_0 RST";
+  attribute X_INTERFACE_PARAMETER of gt_reset_0 : signal is "XIL_INTERFACENAME RST.GT_RESET_0, POLARITY ACTIVE_HIGH";
+  attribute X_INTERFACE_INFO of resetn_rtl : signal is "xilinx.com:signal:reset:1.0 RST.RESETN_RTL RST";
+  attribute X_INTERFACE_PARAMETER of resetn_rtl : signal is "XIL_INTERFACENAME RST.RESETN_RTL, POLARITY ACTIVE_LOW";
   attribute X_INTERFACE_INFO of vid_io_in_0_active_video : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 ACTIVE_VIDEO";
   attribute X_INTERFACE_INFO of vid_io_in_0_field : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 FIELD";
   attribute X_INTERFACE_INFO of vid_io_in_0_hblank : signal is "xilinx.com:interface:vid_io:1.0 vid_io_in_0 HBLANK";
@@ -2105,10 +2134,11 @@ begin
   axis_enable_0_1 <= axis_enable;
   control_reg0_o(31 downto 0) <= register_0_data(31 downto 0);
   gt_refclk1_0_1 <= gt_refclk1_0;
+  gt_reset_0_1 <= gt_reset_0;
   processing_system7_0_IIC_0_SCL_I <= I2C_scl_i;
   processing_system7_0_IIC_0_SDA_I <= I2C_sda_i;
   processing_system7_0_UART_1_RxD <= UART_rxd;
-  reset_rtl_0_1 <= reset_rtl_0;
+  reset_rtl_0_1 <= resetn_rtl;
   vid_io_in_0_1_ACTIVE_VIDEO <= vid_io_in_0_active_video;
   vid_io_in_0_1_DATA(95 downto 0) <= vid_io_in_0_data(95 downto 0);
   vid_io_in_0_1_FIELD <= vid_io_in_0_field;
@@ -2136,57 +2166,57 @@ aurora_8b10b_0: component system_aurora_8b10b_0_0
       gt0_pll1outrefclk_in => '0',
       gt_common_reset_out => NLW_aurora_8b10b_0_gt_common_reset_out_UNCONNECTED,
       gt_refclk1 => gt_refclk1_0_1,
-      gt_reset => '0',
+      gt_reset => gt_reset_0_1,
       init_clk_in => processing_system7_0_FCLK_CLK0,
       loopback(2 downto 0) => B"000",
       pll_not_locked => '0',
       power_down => '0',
       quad1_common_lock_in => '0',
-      s_axi_tx_tdata(0) => axis_dwidth_converter_0_M_AXIS_TDATA(31),
-      s_axi_tx_tdata(1) => axis_dwidth_converter_0_M_AXIS_TDATA(30),
-      s_axi_tx_tdata(2) => axis_dwidth_converter_0_M_AXIS_TDATA(29),
-      s_axi_tx_tdata(3) => axis_dwidth_converter_0_M_AXIS_TDATA(28),
-      s_axi_tx_tdata(4) => axis_dwidth_converter_0_M_AXIS_TDATA(27),
-      s_axi_tx_tdata(5) => axis_dwidth_converter_0_M_AXIS_TDATA(26),
-      s_axi_tx_tdata(6) => axis_dwidth_converter_0_M_AXIS_TDATA(25),
-      s_axi_tx_tdata(7) => axis_dwidth_converter_0_M_AXIS_TDATA(24),
-      s_axi_tx_tdata(8) => axis_dwidth_converter_0_M_AXIS_TDATA(23),
-      s_axi_tx_tdata(9) => axis_dwidth_converter_0_M_AXIS_TDATA(22),
-      s_axi_tx_tdata(10) => axis_dwidth_converter_0_M_AXIS_TDATA(21),
-      s_axi_tx_tdata(11) => axis_dwidth_converter_0_M_AXIS_TDATA(20),
-      s_axi_tx_tdata(12) => axis_dwidth_converter_0_M_AXIS_TDATA(19),
-      s_axi_tx_tdata(13) => axis_dwidth_converter_0_M_AXIS_TDATA(18),
-      s_axi_tx_tdata(14) => axis_dwidth_converter_0_M_AXIS_TDATA(17),
-      s_axi_tx_tdata(15) => axis_dwidth_converter_0_M_AXIS_TDATA(16),
-      s_axi_tx_tdata(16) => axis_dwidth_converter_0_M_AXIS_TDATA(15),
-      s_axi_tx_tdata(17) => axis_dwidth_converter_0_M_AXIS_TDATA(14),
-      s_axi_tx_tdata(18) => axis_dwidth_converter_0_M_AXIS_TDATA(13),
-      s_axi_tx_tdata(19) => axis_dwidth_converter_0_M_AXIS_TDATA(12),
-      s_axi_tx_tdata(20) => axis_dwidth_converter_0_M_AXIS_TDATA(11),
-      s_axi_tx_tdata(21) => axis_dwidth_converter_0_M_AXIS_TDATA(10),
-      s_axi_tx_tdata(22) => axis_dwidth_converter_0_M_AXIS_TDATA(9),
-      s_axi_tx_tdata(23) => axis_dwidth_converter_0_M_AXIS_TDATA(8),
-      s_axi_tx_tdata(24) => axis_dwidth_converter_0_M_AXIS_TDATA(7),
-      s_axi_tx_tdata(25) => axis_dwidth_converter_0_M_AXIS_TDATA(6),
-      s_axi_tx_tdata(26) => axis_dwidth_converter_0_M_AXIS_TDATA(5),
-      s_axi_tx_tdata(27) => axis_dwidth_converter_0_M_AXIS_TDATA(4),
-      s_axi_tx_tdata(28) => axis_dwidth_converter_0_M_AXIS_TDATA(3),
-      s_axi_tx_tdata(29) => axis_dwidth_converter_0_M_AXIS_TDATA(2),
-      s_axi_tx_tdata(30) => axis_dwidth_converter_0_M_AXIS_TDATA(1),
-      s_axi_tx_tdata(31) => axis_dwidth_converter_0_M_AXIS_TDATA(0),
+      s_axi_tx_tdata(0) => axis_combiner_0_M_AXIS_TDATA(31),
+      s_axi_tx_tdata(1) => axis_combiner_0_M_AXIS_TDATA(30),
+      s_axi_tx_tdata(2) => axis_combiner_0_M_AXIS_TDATA(29),
+      s_axi_tx_tdata(3) => axis_combiner_0_M_AXIS_TDATA(28),
+      s_axi_tx_tdata(4) => axis_combiner_0_M_AXIS_TDATA(27),
+      s_axi_tx_tdata(5) => axis_combiner_0_M_AXIS_TDATA(26),
+      s_axi_tx_tdata(6) => axis_combiner_0_M_AXIS_TDATA(25),
+      s_axi_tx_tdata(7) => axis_combiner_0_M_AXIS_TDATA(24),
+      s_axi_tx_tdata(8) => axis_combiner_0_M_AXIS_TDATA(23),
+      s_axi_tx_tdata(9) => axis_combiner_0_M_AXIS_TDATA(22),
+      s_axi_tx_tdata(10) => axis_combiner_0_M_AXIS_TDATA(21),
+      s_axi_tx_tdata(11) => axis_combiner_0_M_AXIS_TDATA(20),
+      s_axi_tx_tdata(12) => axis_combiner_0_M_AXIS_TDATA(19),
+      s_axi_tx_tdata(13) => axis_combiner_0_M_AXIS_TDATA(18),
+      s_axi_tx_tdata(14) => axis_combiner_0_M_AXIS_TDATA(17),
+      s_axi_tx_tdata(15) => axis_combiner_0_M_AXIS_TDATA(16),
+      s_axi_tx_tdata(16) => axis_combiner_0_M_AXIS_TDATA(15),
+      s_axi_tx_tdata(17) => axis_combiner_0_M_AXIS_TDATA(14),
+      s_axi_tx_tdata(18) => axis_combiner_0_M_AXIS_TDATA(13),
+      s_axi_tx_tdata(19) => axis_combiner_0_M_AXIS_TDATA(12),
+      s_axi_tx_tdata(20) => axis_combiner_0_M_AXIS_TDATA(11),
+      s_axi_tx_tdata(21) => axis_combiner_0_M_AXIS_TDATA(10),
+      s_axi_tx_tdata(22) => axis_combiner_0_M_AXIS_TDATA(9),
+      s_axi_tx_tdata(23) => axis_combiner_0_M_AXIS_TDATA(8),
+      s_axi_tx_tdata(24) => axis_combiner_0_M_AXIS_TDATA(7),
+      s_axi_tx_tdata(25) => axis_combiner_0_M_AXIS_TDATA(6),
+      s_axi_tx_tdata(26) => axis_combiner_0_M_AXIS_TDATA(5),
+      s_axi_tx_tdata(27) => axis_combiner_0_M_AXIS_TDATA(4),
+      s_axi_tx_tdata(28) => axis_combiner_0_M_AXIS_TDATA(3),
+      s_axi_tx_tdata(29) => axis_combiner_0_M_AXIS_TDATA(2),
+      s_axi_tx_tdata(30) => axis_combiner_0_M_AXIS_TDATA(1),
+      s_axi_tx_tdata(31) => axis_combiner_0_M_AXIS_TDATA(0),
       s_axi_tx_tkeep(0 to 3) => B"1111",
-      s_axi_tx_tlast => axis_dwidth_converter_0_M_AXIS_TLAST,
-      s_axi_tx_tready => axis_dwidth_converter_0_M_AXIS_TREADY,
-      s_axi_tx_tvalid => axis_dwidth_converter_0_M_AXIS_TVALID,
+      s_axi_tx_tlast => axis_combiner_0_M_AXIS_TLAST,
+      s_axi_tx_tready => axis_combiner_0_M_AXIS_TREADY,
+      s_axi_tx_tvalid => axis_combiner_0_M_AXIS_TVALID,
       sync_clk => aurora_8b10b_0_tx_out_clk,
       sys_reset_out => NLW_aurora_8b10b_0_sys_reset_out_UNCONNECTED,
-      tx_channel_up => NLW_aurora_8b10b_0_tx_channel_up_UNCONNECTED,
-      tx_hard_err => NLW_aurora_8b10b_0_tx_hard_err_UNCONNECTED,
-      tx_lane_up(0) => NLW_aurora_8b10b_0_tx_lane_up_UNCONNECTED(0),
-      tx_lock => NLW_aurora_8b10b_0_tx_lock_UNCONNECTED,
+      tx_channel_up => aurora_8b10b_0_tx_channel_up,
+      tx_hard_err => aurora_8b10b_0_tx_hard_err,
+      tx_lane_up(0) => aurora_8b10b_0_tx_lane_up(0),
+      tx_lock => aurora_8b10b_0_tx_lock,
       tx_out_clk => aurora_8b10b_0_tx_out_clk,
-      tx_resetdone_out => NLW_aurora_8b10b_0_tx_resetdone_out_UNCONNECTED,
-      tx_system_reset => '0',
+      tx_resetdone_out => aurora_8b10b_0_tx_resetdone_out,
+      tx_system_reset => gt_reset_0_1,
       txn(0) => aurora_8b10b_0_GT_SERIAL_TX_TXN(0),
       txp(0) => aurora_8b10b_0_GT_SERIAL_TX_TXP(0),
       user_clk => aurora_8b10b_0_tx_out_clk
@@ -2263,38 +2293,57 @@ axi_quad_spi_1: component system_axi_quad_spi_0_1
       ss_o(0) => axi_quad_spi_1_SPI_0_SS_O(0),
       ss_t => axi_quad_spi_1_SPI_0_SS_T
     );
-axis_combiner_0: component system_axis_combiner_0_1
+axis_combiner_0: component system_axis_combiner_0_0
      port map (
       aclk => aurora_8b10b_0_tx_out_clk,
       aresetn => rst_aurora_8b10b_0_156M_interconnect_aresetn(0),
-      m_axis_tdata(63 downto 0) => axis_combiner_0_M_AXIS_TDATA(63 downto 0),
+      m_axis_tdata(31 downto 0) => axis_combiner_0_M_AXIS_TDATA(31 downto 0),
       m_axis_tlast => axis_combiner_0_M_AXIS_TLAST,
       m_axis_tready => axis_combiner_0_M_AXIS_TREADY,
-      m_axis_tuser(1 downto 0) => NLW_axis_combiner_0_m_axis_tuser_UNCONNECTED(1 downto 0),
       m_axis_tvalid => axis_combiner_0_M_AXIS_TVALID,
-      s_axis_tdata(63 downto 32) => v_vid_in_axi4s_1_video_out_TDATA(31 downto 0),
-      s_axis_tdata(31 downto 0) => v_vid_in_axi4s_0_video_out_TDATA(31 downto 0),
-      s_axis_tlast(1) => v_vid_in_axi4s_1_video_out_TLAST,
-      s_axis_tlast(0) => v_vid_in_axi4s_0_video_out_TLAST,
-      s_axis_tready(1) => v_vid_in_axi4s_1_video_out_TREADY(1),
-      s_axis_tready(0) => v_vid_in_axi4s_0_video_out_TREADY(0),
-      s_axis_tuser(1) => v_vid_in_axi4s_1_video_out_TUSER,
-      s_axis_tuser(0) => v_vid_in_axi4s_0_video_out_TUSER,
-      s_axis_tvalid(1) => v_vid_in_axi4s_1_video_out_TVALID,
-      s_axis_tvalid(0) => v_vid_in_axi4s_0_video_out_TVALID
+      s_axis_tdata(31 downto 16) => axis_dwidth_converter_1_M_AXIS_TDATA(15 downto 0),
+      s_axis_tdata(15 downto 0) => axis_dwidth_converter_0_M_AXIS_TDATA(15 downto 0),
+      s_axis_tlast(1) => axis_dwidth_converter_1_M_AXIS_TLAST,
+      s_axis_tlast(0) => axis_dwidth_converter_0_M_AXIS_TLAST,
+      s_axis_tready(1) => axis_dwidth_converter_1_M_AXIS_TREADY(1),
+      s_axis_tready(0) => axis_dwidth_converter_0_M_AXIS_TREADY(0),
+      s_axis_tvalid(1) => axis_dwidth_converter_1_M_AXIS_TVALID,
+      s_axis_tvalid(0) => axis_dwidth_converter_0_M_AXIS_TVALID
     );
-axis_dwidth_converter_0: component system_axis_dwidth_converter_0_0
+axis_dwidth_converter_0: component system_axis_dwidth_converter_0_1
      port map (
       aclk => aurora_8b10b_0_tx_out_clk,
       aresetn => rst_aurora_8b10b_0_156M_interconnect_aresetn(0),
-      m_axis_tdata(31 downto 0) => axis_dwidth_converter_0_M_AXIS_TDATA(31 downto 0),
+      m_axis_tdata(15 downto 0) => axis_dwidth_converter_0_M_AXIS_TDATA(15 downto 0),
       m_axis_tlast => axis_dwidth_converter_0_M_AXIS_TLAST,
-      m_axis_tready => axis_dwidth_converter_0_M_AXIS_TREADY,
+      m_axis_tready => axis_dwidth_converter_0_M_AXIS_TREADY(0),
       m_axis_tvalid => axis_dwidth_converter_0_M_AXIS_TVALID,
-      s_axis_tdata(63 downto 0) => axis_combiner_0_M_AXIS_TDATA(63 downto 0),
-      s_axis_tlast => axis_combiner_0_M_AXIS_TLAST,
-      s_axis_tready => axis_combiner_0_M_AXIS_TREADY,
-      s_axis_tvalid => axis_combiner_0_M_AXIS_TVALID
+      s_axis_tdata(63 downto 0) => v_vid_in_axi4s_0_video_out_TDATA(63 downto 0),
+      s_axis_tlast => v_vid_in_axi4s_0_video_out_TLAST,
+      s_axis_tready => v_vid_in_axi4s_0_video_out_TREADY,
+      s_axis_tvalid => v_vid_in_axi4s_0_video_out_TVALID
+    );
+axis_dwidth_converter_1: component system_axis_dwidth_converter_0_2
+     port map (
+      aclk => aurora_8b10b_0_tx_out_clk,
+      aresetn => rst_aurora_8b10b_0_156M_interconnect_aresetn(0),
+      m_axis_tdata(15 downto 0) => axis_dwidth_converter_1_M_AXIS_TDATA(15 downto 0),
+      m_axis_tlast => axis_dwidth_converter_1_M_AXIS_TLAST,
+      m_axis_tready => axis_dwidth_converter_1_M_AXIS_TREADY(1),
+      m_axis_tvalid => axis_dwidth_converter_1_M_AXIS_TVALID,
+      s_axis_tdata(63 downto 0) => v_vid_in_axi4s_1_video_out_TDATA(63 downto 0),
+      s_axis_tlast => v_vid_in_axi4s_1_video_out_TLAST,
+      s_axis_tready => v_vid_in_axi4s_1_video_out_TREADY,
+      s_axis_tvalid => v_vid_in_axi4s_1_video_out_TVALID
+    );
+ila_0: component system_ila_0_2
+     port map (
+      clk => aurora_8b10b_0_tx_out_clk,
+      probe0(0) => aurora_8b10b_0_tx_channel_up,
+      probe1(0) => aurora_8b10b_0_tx_hard_err,
+      probe2(0) => aurora_8b10b_0_tx_lane_up(0),
+      probe3(0) => aurora_8b10b_0_tx_lock,
+      probe4(0) => aurora_8b10b_0_tx_resetdone_out
     );
 processing_system7_0: component system_processing_system7_0_0
      port map (
@@ -2556,8 +2605,8 @@ v_vid_in_axi4s_0: component system_v_vid_in_axi4s_0_0
       fid => NLW_v_vid_in_axi4s_0_fid_UNCONNECTED,
       m_axis_video_tdata(63 downto 0) => v_vid_in_axi4s_0_video_out_TDATA(63 downto 0),
       m_axis_video_tlast => v_vid_in_axi4s_0_video_out_TLAST,
-      m_axis_video_tready => v_vid_in_axi4s_0_video_out_TREADY(0),
-      m_axis_video_tuser => v_vid_in_axi4s_0_video_out_TUSER,
+      m_axis_video_tready => v_vid_in_axi4s_0_video_out_TREADY,
+      m_axis_video_tuser => NLW_v_vid_in_axi4s_0_m_axis_video_tuser_UNCONNECTED,
       m_axis_video_tvalid => v_vid_in_axi4s_0_video_out_TVALID,
       overflow => NLW_v_vid_in_axi4s_0_overflow_UNCONNECTED,
       underflow => NLW_v_vid_in_axi4s_0_underflow_UNCONNECTED,
@@ -2587,8 +2636,8 @@ v_vid_in_axi4s_1: component system_v_vid_in_axi4s_0_1
       fid => NLW_v_vid_in_axi4s_1_fid_UNCONNECTED,
       m_axis_video_tdata(63 downto 0) => v_vid_in_axi4s_1_video_out_TDATA(63 downto 0),
       m_axis_video_tlast => v_vid_in_axi4s_1_video_out_TLAST,
-      m_axis_video_tready => v_vid_in_axi4s_1_video_out_TREADY(1),
-      m_axis_video_tuser => v_vid_in_axi4s_1_video_out_TUSER,
+      m_axis_video_tready => v_vid_in_axi4s_1_video_out_TREADY,
+      m_axis_video_tuser => NLW_v_vid_in_axi4s_1_m_axis_video_tuser_UNCONNECTED,
       m_axis_video_tvalid => v_vid_in_axi4s_1_video_out_TVALID,
       overflow => NLW_v_vid_in_axi4s_1_overflow_UNCONNECTED,
       underflow => NLW_v_vid_in_axi4s_1_underflow_UNCONNECTED,

@@ -3,7 +3,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 
---moduł zmieniający timingi sygnałów wideo
+--modu? zmieniaj?cy timingi sygna?u video
 --wchodzi:
 --	DVAL        ______________________   _____________________
 --		  _|                      |_|                     |_

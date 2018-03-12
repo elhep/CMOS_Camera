@@ -23,15 +23,15 @@ use UNISIM.VComponents.all;
 entity spektrop2_cmv4000_top is
 	Port ( 
 
-    -- Processor board signals
-    -- Signals are named from 19 downto 1 to correspond to schematics. 
+		     -- Processor board signals
+		     -- Signals are named from 19 downto 1 to correspond to schematics. 
 		     FPGA_BANK35_DIFF_P : inout STD_LOGIC_VECTOR(19 downto 1);
 		     FPGA_BANK35_DIFF_N : inout STD_LOGIC_VECTOR(19 downto 1);   
 		     FPGA_BANK13_IO : inout STD_LOGIC_VECTOR ( 10 downto 0 );
-		  --   CLK_MGT1_P : in STD_LOGIC;
-		  --   CLK_MGT1_N : in STD_LOGIC;
-		  --   CLK_MGT0_P : in STD_LOGIC;
-		  --  CLK_MGT0_N : in STD_LOGIC;
+		     --   CLK_MGT1_P : in STD_LOGIC;
+		     --   CLK_MGT1_N : in STD_LOGIC;
+		     CLK_MGT0_P : in STD_LOGIC;
+		     CLK_MGT0_N : in STD_LOGIC;
 		     COAXPRESS_UPLINK_I : in STD_LOGIC;
 		     SI5340_LOS_XAXBb : in STD_LOGIC;
 		     SI5340_nINTR : in STD_LOGIC;
@@ -41,14 +41,14 @@ entity spektrop2_cmv4000_top is
 		     SI5340_SDA : inout STD_LOGIC;
 		     LED0 : out STD_LOGIC;
 		     LED1 : out STD_LOGIC;
-		--     MGT_RX0_P : in STD_LOGIC;
---		     MGT_RX0_N : in STD_LOGIC;
---		     MGT_TX0_P : out STD_LOGIC;
---		     MGT_TX0_N : out STD_LOGIC;
---		     MGT_TX1_P : out STD_LOGIC;
---		     MGT_TX1_N : out STD_LOGIC;
---		     MGT_TX2_P : out STD_LOGIC;
---		     MGT_TX2_N : out STD_LOGIC;
+		     --     MGT_RX0_P : in STD_LOGIC;
+		     --		     MGT_RX0_N : in STD_LOGIC;
+		     --		     MGT_TX0_P : out STD_LOGIC;
+		     --		     MGT_TX0_N : out STD_LOGIC;
+		     --		     MGT_TX1_P : out STD_LOGIC;
+		     --		     MGT_TX1_N : out STD_LOGIC;
+		     --		     MGT_TX2_P : out STD_LOGIC;
+		     --		     MGT_TX2_N : out STD_LOGIC;
 		     RS485_RX : in STD_LOGIC;
 		     RS485_TX : out STD_LOGIC;
 		     GS12281_nCS : inout STD_LOGIC;
@@ -57,45 +57,45 @@ entity spektrop2_cmv4000_top is
 		     GS12281_SDOUT : inout STD_LOGIC;
 		     GS12281_GPIO : inout STD_LOGIC_VECTOR ( 4 downto 1 );
 
-    -- CMV4000 signals   
-    --main reset of the CMV4000 IP
-    --rst_n           : in std_logic;
-    --sensor data
-    --data_in_p       : in unsigned (15 downto 0);
-    --data_in_n       : in unsigned (15 downto 0);
-    --data clock
-    --    clk_in_p        : in std_logic;
-    --    clk_in_n        : in std_logic;
-    --control signal
-    --    cntrl_in_p      : in std_logic;
-    --    cntrl_in_n      : in std_logic;
+		     -- CMV4000 signals   
+		     --main reset of the CMV4000 IP
+		     --rst_n           : in std_logic;
+		     --sensor data
+		     --data_in_p       : in unsigned (15 downto 0);
+		     --data_in_n       : in unsigned (15 downto 0);
+		     --data clock
+		     --    clk_in_p        : in std_logic;
+		     --    clk_in_n        : in std_logic;
+		     --control signal
+		     --    cntrl_in_p      : in std_logic;
+		     --    cntrl_in_n      : in std_logic;
 
-    --trigger
-    --frame_req       : out std_logic;
-    --slow sensor clock
-    --sen_clk_in      : out std_logic;
-    --sensor reset
-    --sen_reset_n     : out std_logic;
+		     --trigger
+		     --frame_req       : out std_logic;
+		     --slow sensor clock
+		     --sen_clk_in      : out std_logic;
+		     --sensor reset
+		     --sen_reset_n     : out std_logic;
 
-    --fast sensor clock 480 MHz
-    --    CLK_LVDS_OUT_P  : out std_logic;
-    --    CLK_LVDS_OUT_N  : out std_logic;
+		     --fast sensor clock 480 MHz
+		     --    CLK_LVDS_OUT_P  : out std_logic;
+		     --    CLK_LVDS_OUT_N  : out std_logic;
 
---		     cmd_grab_frame        : in std_logic;
+		     --		     cmd_grab_frame        : in std_logic;
 
-    --		     fvalid_led            : out std_logic;
-    --control_led           : out std_logic;
-    --monitor_locked_led    : out std_logic;
-    --rst_sys_dbg_led       : out std_logic;
-    --state_no_led          : out std_logic_vector(3 downto 0);
+		     --		     fvalid_led            : out std_logic;
+		     --control_led           : out std_logic;
+		     --monitor_locked_led    : out std_logic;
+		     --rst_sys_dbg_led       : out std_logic;
+		     --state_no_led          : out std_logic_vector(3 downto 0);
 
-    -- Zynq Processing System signals
+		     -- Zynq Processing System signals
 		     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
 		     FIXED_IO_ps_clk : inout STD_LOGIC;
 		     FIXED_IO_ps_porb : inout STD_LOGIC;
 		     FIXED_IO_ps_srstb : inout STD_LOGIC
-		 --    UART_rxd : in STD_LOGIC;
-		 --    UART_txd : out STD_LOGIC
+	     --    UART_rxd : in STD_LOGIC;
+	     --    UART_txd : out STD_LOGIC
 	     );
 end spektrop2_cmv4000_top;
 
@@ -111,26 +111,26 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 
 	component tsc_mv1_top is
 		port (
-      -- EXTERNAL CONTROL
+			     -- EXTERNAL CONTROL
 			     rst_n               : in std_logic;
 			     clk_100m            : in std_logic;
-      --    clk_400m            : in std_logic;
-      --    clk_idelay            : in std_logic;
-      --    clk_locked            : in std_logic;
-      --    clk_rst                : out std_logic;
+			     --    clk_400m            : in std_logic;
+			     --    clk_idelay            : in std_logic;
+			     --    clk_locked            : in std_logic;
+			     --    clk_rst                : out std_logic;
 			     cmd_grab_frame        : in std_logic;
-      --    clk_ser             : in std_logic;
-      --    clk_ser_locked        : in std_logic;
+			     --    clk_ser             : in std_logic;
+			     --    clk_ser_locked        : in std_logic;
 			     prev_en : in std_logic;
 
-      -- SENSOR CLOCK AND RESET
+			     -- SENSOR CLOCK AND RESET
 			     sen_clk_in        : out std_logic;
 			     sen_reset_n       : out std_logic;
 
-      -- CONTROL OUTPUTS TO SENSOR
+			     -- CONTROL OUTPUTS TO SENSOR
 			     frame_req         : out std_logic;
 
-      -- LVDS DATA TO/FROM SENSOR
+			     -- LVDS DATA TO/FROM SENSOR
 			     data_rx_p         : in unsigned (15 downto 0);
 			     data_rx_n         : in unsigned (15 downto 0);
 
@@ -143,7 +143,7 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 			     clk_byp_p         : out std_logic;
 			     clk_byp_n         : out std_logic;
 
-      -- DESERIALIZED OUTPUT
+			     -- DESERIALIZED OUTPUT
 			     data00   : out unsigned (11 downto 0);
 			     data01   : out unsigned (11 downto 0);
 			     data02   : out unsigned (11 downto 0);
@@ -166,7 +166,7 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 			     pix_clk             : out std_logic;
 			     data_valid          : out std_logic;
 
-      --DEBUG
+			     --DEBUG
 			     training_active     : out std_logic;
 			     monitor_locked      : out std_logic;
 			     monitor_clk_rx      : out std_logic;
@@ -177,94 +177,59 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 
 	component system_wrapper is
 		port (
-    FCLK_100M_CLK : out STD_LOGIC;
-        FCLK_50M_CLK : out STD_LOGIC;
-        FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
-        FIXED_IO_ps_clk : inout STD_LOGIC;
-        FIXED_IO_ps_porb : inout STD_LOGIC;
-        FIXED_IO_ps_srstb : inout STD_LOGIC;
-        GT_SERIAL_TX_0_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
-        GT_SERIAL_TX_0_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
-        I2C_scl_io : inout STD_LOGIC;
-        I2C_sda_io : inout STD_LOGIC;
-        SPI0_io0_io : inout STD_LOGIC;
-        SPI0_io1_io : inout STD_LOGIC;
-        SPI0_sck_io : inout STD_LOGIC;
-        SPI0_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
-        SPI1_io0_io : inout STD_LOGIC;
-        SPI1_io1_io : inout STD_LOGIC;
-        SPI1_sck_io : inout STD_LOGIC;
-        SPI1_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
-        UART_rxd : in STD_LOGIC;
-        UART_txd : out STD_LOGIC;
-        aclken : in STD_LOGIC;
-        aresetn : in STD_LOGIC;
-        axis_enable : in STD_LOGIC;
-        control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
-        gt_refclk1_0 : in STD_LOGIC;
-        reset_rtl_0 : in STD_LOGIC;
-        vid_io_in_0_active_video : in STD_LOGIC;
-        vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
-        vid_io_in_0_field : in STD_LOGIC;
-        vid_io_in_0_hblank : in STD_LOGIC;
-        vid_io_in_0_hsync : in STD_LOGIC;
-        vid_io_in_0_vblank : in STD_LOGIC;
-        vid_io_in_0_vsync : in STD_LOGIC;
-        vid_io_in_1_active_video : in STD_LOGIC;
-        vid_io_in_1_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
-        vid_io_in_1_field : in STD_LOGIC;
-        vid_io_in_1_hblank : in STD_LOGIC;
-        vid_io_in_1_hsync : in STD_LOGIC;
-        vid_io_in_1_vblank : in STD_LOGIC;
-        vid_io_in_1_vsync : in STD_LOGIC;
-        vid_io_in_ce : in STD_LOGIC;
-        vid_io_in_clk : in STD_LOGIC;
-        vid_io_in_reset : in STD_LOGIC
+			     FCLK_100M_CLK : out STD_LOGIC;
+			     FCLK_50M_CLK : out STD_LOGIC;
+			     FIXED_IO_mio : inout STD_LOGIC_VECTOR ( 53 downto 0 );
+			     FIXED_IO_ps_clk : inout STD_LOGIC;
+			     FIXED_IO_ps_porb : inout STD_LOGIC;
+			     FIXED_IO_ps_srstb : inout STD_LOGIC;
+			     GT_SERIAL_TX_0_txn : out STD_LOGIC_VECTOR ( 0 to 0 );
+			     GT_SERIAL_TX_0_txp : out STD_LOGIC_VECTOR ( 0 to 0 );
+			     I2C_scl_io : inout STD_LOGIC;
+			     I2C_sda_io : inout STD_LOGIC;
+			     SPI0_io0_io : inout STD_LOGIC;
+			     SPI0_io1_io : inout STD_LOGIC;
+			     SPI0_sck_io : inout STD_LOGIC;
+			     SPI0_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+			     SPI1_io0_io : inout STD_LOGIC;
+			     SPI1_io1_io : inout STD_LOGIC;
+			     SPI1_sck_io : inout STD_LOGIC;
+			     SPI1_ss_io : inout STD_LOGIC_VECTOR ( 0 to 0 );
+			     UART_rxd : in STD_LOGIC;
+			     UART_txd : out STD_LOGIC;
+			     aclken : in STD_LOGIC;
+			     aresetn : in STD_LOGIC;
+			     axis_enable : in STD_LOGIC;
+			     control_reg0_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
+                 gt_reset_0 : in STD_LOGIC; -- aurora reset clock synchronous to init clock which is FCLK 50 M
+			     gt_refclk1_0 : in STD_LOGIC;
+			     resetn_rtl : in STD_LOGIC;
+			     vid_io_in_0_active_video : in STD_LOGIC;
+			     vid_io_in_0_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+			     vid_io_in_0_field : in STD_LOGIC;
+			     vid_io_in_0_hblank : in STD_LOGIC;
+			     vid_io_in_0_hsync : in STD_LOGIC;
+			     vid_io_in_0_vblank : in STD_LOGIC;
+			     vid_io_in_0_vsync : in STD_LOGIC;
+			     vid_io_in_1_active_video : in STD_LOGIC;
+			     vid_io_in_1_data : in STD_LOGIC_VECTOR ( 95 downto 0 );
+			     vid_io_in_1_field : in STD_LOGIC;
+			     vid_io_in_1_hblank : in STD_LOGIC;
+			     vid_io_in_1_hsync : in STD_LOGIC;
+			     vid_io_in_1_vblank : in STD_LOGIC;
+			     vid_io_in_1_vsync : in STD_LOGIC;
+			     vid_io_in_ce : in STD_LOGIC;
+			     vid_io_in_clk : in STD_LOGIC;
+			     vid_io_in_reset : in STD_LOGIC
 		     );
 	end component;
 
-  --  component vid_sig_formatter is
-  --  port 
-  --  (
-  --      pix_clk   : in std_logic;        
-  --      dval      : in std_logic;
-  --      fval      : in std_logic;
-  --      data0     : in std_logic_vector(63 downto 0);
-  --      data1     : in std_logic_vector(63 downto 0);
-  --      data2     : in std_logic_vector(63 downto 0);
-  --      data3     : in std_logic_vector(63 downto 0);
-
-  --      dval_out  : out std_logic;
-  --      fval_out  : out std_logic;
-  --      data0_out : out std_logic_vector(63 downto 0);
-  --      data1_out : out std_logic_vector(63 downto 0);
-  --      data2_out : out std_logic_vector(63 downto 0);
-  --      data3_out : out std_logic_vector(63 downto 0)
-  --  );
-  --  end component;
-
-  --  signal rst_n  : std_logic;
+	--  signal rst_n  : std_logic;
 	signal led0_o : std_logic;
 	signal led1_o : std_logic;
 
-	signal dval           : std_logic; --data valid
-	signal lval           : std_logic; --line valid
-	signal fval           : std_logic;  --frame valid
-	signal ctrl_par       : unsigned (11 downto 0);
-	signal pix_clk_sig    : std_logic;
-
-	signal dval_shft  : std_logic;
-	signal fval_shft  : std_logic;
-
-	signal vid_data0  : std_logic_vector(63 downto 0);
-	signal vid_data1  : std_logic_vector(63 downto 0);
-	signal vid_data2  : std_logic_vector(63 downto 0);
-	signal vid_data3  : std_logic_vector(63 downto 0);
-
-	signal data0_shft : std_logic_vector(63 downto 0);
-	signal data1_shft : std_logic_vector(63 downto 0);
-	signal data2_shft : std_logic_vector(63 downto 0);
-	signal data3_shft : std_logic_vector(63 downto 0);
+	signal video_data0  : std_logic_vector(95 downto 0);
+	signal video_data1  : std_logic_vector(95 downto 0);
 
 	signal data00   : unsigned (11 downto 0);
 	signal data01   : unsigned (11 downto 0);
@@ -286,24 +251,18 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 	signal sen_clk  :   std_logic;
 	signal frame_req  :   std_logic;
 
+	--  signal spi_SCK_sig        : std_logic;
+	--  signal spi_MISO_sig       : std_logic;
+	--  signal spi_MOSI_sig       : std_logic;
 
-  --  signal spi_SCK_sig        : std_logic;
-  --  signal spi_MISO_sig       : std_logic;
-  --  signal spi_MOSI_sig       : std_logic;
+	--  signal spi_SS_sig         : std_logic;
+	--  signal spi_SS_I_sig       : std_logic;
+	--  signal spi_SS_O_sig       : std_logic;
+	--  signal spi_SS_O_sig_inv   : std_logic; -- CMV4000 wymaga odwrotnego SS
+	--  signal spi_SS_T_sig       : std_logic;
 
-  --  signal spi_SS_sig         : std_logic;
-  --  signal spi_SS_I_sig       : std_logic;
-  --  signal spi_SS_O_sig       : std_logic;
-  --  signal spi_SS_O_sig_inv   : std_logic; -- CMV4000 wymaga odwrotnego SS
-  --  signal spi_SS_T_sig       : std_logic;
-
-	signal control_data       : std_logic_vector(31 downto 0);
-
-  --  signal clk_ser : std_logic; --zegar s?u??cy do taktowania deserializer?w LVDS (zegar z sensora przesuni?ty o 90 stopni)
-  --  signal clk_ser_locked : std_logic;
-
-	signal ctrl_data_reg      : std_logic_vector(11 downto 0);
-	signal ctrl_data_next     : std_logic_vector(11 downto 0);
+	--  signal clk_ser : std_logic; --zegar s?u??cy do taktowania deserializer?w LVDS (zegar z sensora przesuni?ty o 90 stopni)
+	--  signal clk_ser_locked : std_logic;
 
 	signal cmd_grab_frame_sig : std_logic;
 	signal rst_n          : std_logic;
@@ -330,12 +289,21 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 	signal data_valid          : std_logic;
 	signal sen_reset_n         : std_logic;
 
-  --DEBUG
+    -- video in to axi4 stream additional signals
+    signal blank : std_logic;
+
+    -- aurora signals
+    signal aurora_rst_n : std_logic;
+
+	--DEBUG
 	signal   training_active     : std_logic;
 	signal   monitor_locked      : std_logic;
 	signal   monitor_clk_rx      : std_logic;
 	signal   rst_sys_dbg         : std_logic;
 	signal   state_no            : std_logic_vector(3 downto 0);
+
+    signal rst : std_logic;
+    
 
 begin
 
@@ -359,30 +327,57 @@ begin
 			 SPI1_ss_io  => spi_gs12281_ss, 
 			 UART_rxd => RS485_RX,
 			 UART_txd => RS485_TX,
-			 control_reg0_o => control_reg0_o
-		 );
+			 control_reg0_o => control_reg0_o,
+			 aclken  => '1', -- always enabled 
+			 aresetn  => rst_n, -- reset is common with tsc core
+			 axis_enable  => '1', -- always enabled
+			 gt_refclk1_0  => CLK_MGT0_IBUFDS_GTE2_O, 
+             gt_reset_0 => rst,
+			 resetn_rtl  => rst_n, 
+			 vid_io_in_0_active_video  => data_valid,
+			 vid_io_in_0_data => video_data0,
+             vid_io_in_0_field  => '0', --non interlaced video 
+			 vid_io_in_0_hblank  => blank,
+			 vid_io_in_0_hsync  => data_valid,
+			 vid_io_in_0_vblank  => blank, 
+			 vid_io_in_0_vsync  => data_valid, 
+			 vid_io_in_1_active_video  => data_valid,
+			 vid_io_in_1_data => video_data1,
+             vid_io_in_1_field  => '0', -- non interlaced video
+			 vid_io_in_1_hblank  => blank, 
+			 vid_io_in_1_hsync  => data_valid, 
+			 vid_io_in_1_vblank  => blank,
+			 vid_io_in_1_vsync  => data_valid, 
+			 vid_io_in_ce  => '1', -- always enabled 
+			 vid_io_in_clk  => pix_clk, 
+			 vid_io_in_reset => rst 
+		     );
+
+    blank <= not data_valid;
+    
+    rst <= not rst_n;
 
 	tsc_ms1_top_i: tsc_mv1_top
 	port map(
-		   -- EXTERNAL CONTROL
+			-- EXTERNAL CONTROL
 			rst_n               => control_reg0_o(3),
 			clk_100m            => ps_100m_clk,
 			cmd_grab_frame       => cmd_grab_frame_sig,
 			prev_en => control_reg0_o(1), 
 
-		   -- SENSOR CLOCK AND RESET
+			-- SENSOR CLOCK AND RESET
 			sen_clk_in        => sen_clk,
 			sen_reset_n       => sen_reset_n,     
 
-		   -- CONTROL OUTPUTS TO SENSOR
+			-- CONTROL OUTPUTS TO SENSOR
 			frame_req        => frame_req, 
 
-		   -- LVDS DATA TO/FROM SENSOR
+			-- LVDS DATA TO/FROM SENSOR
 			data_rx_p        => cmv4000_data_p, 
 			data_rx_n        => cmv4000_data_n, 
 
 			ctrl_rx_p  	    => FPGA_BANK35_DIFF_P(7),        
-			ctrl_rx_n        => FPGA_BANK35_DIFF_N(7),      
+			ctrl_rx_n       => FPGA_BANK35_DIFF_N(7),      
 
 			clk_rx_p        => FPGA_BANK35_DIFF_P(12),        
 			clk_rx_n        => FPGA_BANK35_DIFF_N(12),        
@@ -390,7 +385,7 @@ begin
 			clk_byp_p       => FPGA_BANK35_DIFF_P(13),    -- not sure    
 			clk_byp_n       => FPGA_BANK35_DIFF_N(13),        
 
-		   -- DESERIALIZED OUTPUT
+			-- DESERIALIZED OUTPUT
 			data00  => data00,
 			data01  => data01,
 			data02  => data02,
@@ -413,7 +408,7 @@ begin
 			pix_clk 	=> pix_clk,    
 			data_valid 	=> data_valid,  
 
-		   --DEBUG
+			--DEBUG
 			training_active    => training_active,
 			monitor_locked     => monitor_locked,
 			monitor_clk_rx     => monitor_clk_rx,
@@ -421,6 +416,26 @@ begin
 			state_no           => state_no
 		);
 
+
+	video_data0 <=    std_logic_vector(data07(11 downto 0)) & 
+                    std_logic_vector(data06(11 downto 0)) & 
+                    std_logic_vector(data05(11 downto 0)) & 
+                    std_logic_vector(data04(11 downto 0)) & 
+                    std_logic_vector(data03(11 downto 0)) & 
+                    std_logic_vector(data02(11 downto 0)) & 
+                    std_logic_vector(data01(11 downto 0)) & 
+                    std_logic_vector(data00(11 downto 0));
+
+ 	video_data1 <=    std_logic_vector(data15(11 downto 0)) & 
+                    std_logic_vector(data14(11 downto 0)) & 
+                    std_logic_vector(data13(11 downto 0)) & 
+                    std_logic_vector(data12(11 downto 0)) & 
+                    std_logic_vector(data11(11 downto 0)) & 
+                    std_logic_vector(data10(11 downto 0)) & 
+                    std_logic_vector(data09(11 downto 0)) & 
+                    std_logic_vector(data08(11 downto 0));
+                    
+                    
 
 	FPGA_BANK35_DIFF_P(14) <= cmv4000_data_p(1);
 	FPGA_BANK35_DIFF_N(14) <= cmv4000_data_n(1);
@@ -469,33 +484,30 @@ begin
 
 	FPGA_BANK35_DIFF_P(1) <= cmv4000_data_p(16);
 	FPGA_BANK35_DIFF_N(1) <= cmv4000_data_n(16);
-	
-	
 
-   -- frame req signal
+
+
+	-- frame req signal
 	FPGA_BANK13_IO(5) <= cmd_grab_frame_sig;
 	cmd_grab_frame_sig <= control_reg0_o(2);
-	
-   -- sensor reset signal
+
+	-- sensor reset signal
 	FPGA_BANK13_IO(9) <= sen_reset_n; 
 
-   --slow sensor clock
+	--slow sensor clock
 	FPGA_BANK13_IO(3) <= sen_clk; 
 
-   -- sensor SPI
+	-- sensor SPI
 	FPGA_BANK13_IO(10) <= spi_cmv4000_miso; 
 	FPGA_BANK13_IO(6) <=  spi_cmv4000_mosi; 
 	FPGA_BANK13_IO(4) <=  spi_cmv4000_sck; 
 	FPGA_BANK13_IO(2) <=  spi_cmv4000_ss(0); 
 
-   -- GS12281 SPI 
+	-- GS12281 SPI 
 	GS12281_SDOUT 	 <= spi_gs12281_miso;
 	GS12281_SDIN	 <= spi_gs12281_mosi;
 	GS12281_SCLK	 <= spi_gs12281_sck;
 	GS12281_nCS 	 <= spi_gs12281_ss(0);
-
-   -- control of the CMV4000 IP reset
-	rst_n <= control_reg0_o(3);
 
 
 	led_blink: process (ps_50m_clk)
@@ -521,12 +533,12 @@ begin
 --			 O => CLK_MGT1_IBUFDS_GTE2_O
 --		 );
 
---	CLK_MGT0_IBUFDS_GTE2: unisim.vcomponents.IBUFDS_GTE2
---	port map (
---			 I => CLK_MGT0_P,
---			 IB => CLK_MGT0_N,
---			 O => CLK_MGT0_IBUFDS_GTE2_O
---		 );
+	CLK_MGT0_IBUFDS_GTE2: unisim.vcomponents.IBUFDS_GTE2
+	port map (
+			 I => CLK_MGT0_P,
+			 IB => CLK_MGT0_N,
+			 O => CLK_MGT0_IBUFDS_GTE2_O
+		 );
 
 --	MGT_RX0_IBUFDS_GTE2: unisim.vcomponents.IBUFDS_GTE2
 --	port map (

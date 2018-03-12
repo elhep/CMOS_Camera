@@ -1,7 +1,7 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
--- Date        : Thu Mar  8 22:39:06 2018
+-- Date        : Sun Mar 11 11:45:07 2018
 -- Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_v_vid_in_axi4s_0_1 -prefix
 --               design_1_v_vid_in_axi4s_0_1_ design_1_v_vid_in_axi4s_0_0_stub.vhdl

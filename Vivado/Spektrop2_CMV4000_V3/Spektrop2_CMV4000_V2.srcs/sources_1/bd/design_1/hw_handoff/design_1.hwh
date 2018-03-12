@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Mar  8 22:37:28 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Mar 11 11:43:20 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z015" NAME="design_1" PACKAGE="clg485" SPEEDGRADE="-3"/>
 
@@ -21,6 +21,7 @@
     <PORT DIR="O" NAME="M_AXIS_0_tvalid" SIGIS="undef"/>
     <PORT DIR="I" NAME="M_AXIS_0_tready" SIGIS="undef"/>
     <PORT DIR="O" LEFT="31" NAME="M_AXIS_0_tdata" RIGHT="0" SIGIS="undef"/>
+    <PORT DIR="O" NAME="M_AXIS_0_tlast" SIGIS="undef"/>
     <PORT CLKFREQUENCY="74250000" DIR="I" NAME="vid_io_in_clk_0" SIGIS="clk" SIGNAME="External_Ports_vid_io_in_clk_0">
       <CONNECTIONS>
         <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="vid_io_in_clk"/>
@@ -37,15 +38,6 @@
       <CONNECTIONS>
         <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="vid_io_in_reset"/>
         <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="vid_io_in_reset"/>
-      </CONNECTIONS>
-    </PORT>
-    <PORT CLKFREQUENCY="74250000" DIR="I" NAME="aclk_0" SIGIS="clk" SIGNAME="External_Ports_aclk_0">
-      <CONNECTIONS>
-        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="aclk"/>
-        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="aclk"/>
-        <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="aclk"/>
-        <CONNECTION INSTANCE="axis_dwidth_converter_1" PORT="aclk"/>
-        <CONNECTION INSTANCE="axis_combiner_0" PORT="aclk"/>
       </CONNECTIONS>
     </PORT>
     <PORT DIR="I" NAME="aclken_0" SIGIS="ce" SIGNAME="External_Ports_aclken_0">
@@ -69,7 +61,15 @@
         <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="axis_enable"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="M_AXIS_0_tlast" SIGIS="undef"/>
+    <PORT CLKFREQUENCY="74250000" DIR="I" NAME="aclk_0" SIGIS="clk" SIGNAME="External_Ports_aclk_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_0" PORT="aclk"/>
+        <CONNECTION INSTANCE="v_vid_in_axi4s_1" PORT="aclk"/>
+        <CONNECTION INSTANCE="axis_dwidth_converter_0" PORT="aclk"/>
+        <CONNECTION INSTANCE="axis_dwidth_converter_1" PORT="aclk"/>
+        <CONNECTION INSTANCE="axis_combiner_0" PORT="aclk"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -513,7 +513,7 @@
         <PARAMETER NAME="C_NATIVE_DATA_WIDTH" VALUE="96"/>
         <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="C_HAS_ASYNC_CLK" VALUE="1"/>
-        <PARAMETER NAME="C_ADDR_WIDTH" VALUE="12"/>
+        <PARAMETER NAME="C_ADDR_WIDTH" VALUE="13"/>
         <PARAMETER NAME="C_INCLUDE_PIXEL_DROP" VALUE="0"/>
         <PARAMETER NAME="C_INCLUDE_PIXEL_REMAP_420" VALUE="0"/>
         <PARAMETER NAME="C_ADDR_WIDTH_PIXEL_REMAP_420" VALUE="10"/>
@@ -654,7 +654,7 @@
         <PARAMETER NAME="C_NATIVE_DATA_WIDTH" VALUE="96"/>
         <PARAMETER NAME="C_M_AXIS_TDATA_WIDTH" VALUE="64"/>
         <PARAMETER NAME="C_HAS_ASYNC_CLK" VALUE="1"/>
-        <PARAMETER NAME="C_ADDR_WIDTH" VALUE="12"/>
+        <PARAMETER NAME="C_ADDR_WIDTH" VALUE="13"/>
         <PARAMETER NAME="C_INCLUDE_PIXEL_DROP" VALUE="0"/>
         <PARAMETER NAME="C_INCLUDE_PIXEL_REMAP_420" VALUE="0"/>
         <PARAMETER NAME="C_ADDR_WIDTH_PIXEL_REMAP_420" VALUE="10"/>

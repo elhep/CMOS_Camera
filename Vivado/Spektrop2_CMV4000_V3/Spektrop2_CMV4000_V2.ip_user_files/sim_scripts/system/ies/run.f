@@ -123,18 +123,10 @@
   "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_ll_datapath.vhd" \
   "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0/src/system_aurora_8b10b_0_0_tx_ll.vhd" \
   "../../../bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0.vhd" \
+  "../../../bd/system/ip/system_rst_aurora_8b10b_0_156M_0/sim/system_rst_aurora_8b10b_0_156M_0.vhd" \
 -endlib
 -makelib ies_lib/axis_infrastructure_v1_1_0 \
   "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/0ab1/hdl/axis_infrastructure_v1_1_vl_rfs.v" \
--endlib
--makelib ies_lib/axis_combiner_v1_1_14 \
-  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/cf24/hdl/axis_combiner_v1_1_vl_rfs.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_axis_combiner_0_1/sim/system_axis_combiner_0_1.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_rst_aurora_8b10b_0_156M_0/sim/system_rst_aurora_8b10b_0_156M_0.vhd" \
 -endlib
 -makelib ies_lib/axis_register_slice_v1_1_15 \
   "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/cd45/hdl/axis_register_slice_v1_1_vl_rfs.v" \
@@ -143,7 +135,17 @@
   "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/1019/hdl/axis_dwidth_converter_v1_1_vl_rfs.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
-  "../../../bd/system/ip/system_axis_dwidth_converter_0_0/sim/system_axis_dwidth_converter_0_0.v" \
+  "../../../bd/system/ip/system_axis_dwidth_converter_0_1/sim/system_axis_dwidth_converter_0_1.v" \
+  "../../../bd/system/ip/system_axis_dwidth_converter_0_2/sim/system_axis_dwidth_converter_0_2.v" \
+-endlib
+-makelib ies_lib/axis_combiner_v1_1_14 \
+  "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/cf24/hdl/axis_combiner_v1_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_axis_combiner_0_0/sim/system_axis_combiner_0_0.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/system/ip/system_ila_0_2/sim/system_ila_0_2.vhd" \
 -endlib
 -makelib ies_lib/axi_protocol_converter_v2_1_15 \
   "../../../../Spektrop2_CMV4000_V2.srcs/sources_1/bd/system/ipshared/ff69/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

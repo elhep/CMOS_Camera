@@ -1,0 +1,6 @@
+Exception at PC 0x00007FF92F283C58
+Exception at PC 0x00007FF932B2AC9A
+Printing stacktrace...
+
+Exception at PC 0x00007FF932B282F5
+Another exception occurred while writing back trace, hence exiting

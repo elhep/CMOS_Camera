@@ -9,5 +9,5 @@
     ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 
 source design_1_v_vid_in_axi4s_0_1.tcl -notrace
-INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_v_vid_in_axi4s_0_1, cache-ID = e77bea5fbf2c4d51.
-INFO: [Common 17-206] Exiting Vivado at Thu Mar  8 22:39:20 2018...
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_v_vid_in_axi4s_0_1, cache-ID = 6262c0cdff257140.
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 11 11:45:23 2018...

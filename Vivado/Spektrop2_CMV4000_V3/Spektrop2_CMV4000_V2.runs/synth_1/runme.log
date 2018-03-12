@@ -1087,3 +1087,70 @@ INFO: [Common 17-1381] The checkpoint 'C:/Users/ZdunekPC/Documents/Spektrop2/Viv
 INFO: [runtcl-4] Executing : report_utilization -file spektrop2_cmv4000_top_utilization_synth.rpt -pb spektrop2_cmv4000_top_utilization_synth.pb
 report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 834.516 ; gain = 0.000
 INFO: [Common 17-206] Exiting Vivado at Tue Feb 20 01:22:48 2018...
+
+*** Running vivado
+    with args -log spektrop2_cmv4000_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source spektrop2_cmv4000_top.tcl
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source spektrop2_cmv4000_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/ZdunekPC/Documents/Spektrop2/Vivado/ip_repo/register_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2017.4/data/ip'.
+add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 331.301 ; gain = 96.395
+Command: synth_design -top spektrop2_cmv4000_top -part xc7z015clg485-3
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z015'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z015'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6800 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:08 . Memory (MB): peak = 431.891 ; gain = 98.852
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-2774] type unsigned does not match with the integer literal [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:307]
+ERROR: [Synth 8-2715] syntax error near aclken [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:333]
+ERROR: [Synth 8-2715] syntax error near ) [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:356]
+ERROR: [Synth 8-2029] formal uart_rxd has no actual or default value [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:312]
+INFO: [Synth 8-994] uart_rxd is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:198]
+INFO: [Synth 8-994] aclken is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:200]
+INFO: [Synth 8-994] aresetn is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:201]
+INFO: [Synth 8-994] axis_enable is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:202]
+INFO: [Synth 8-994] gt_reset_0 is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:204]
+INFO: [Synth 8-994] gt_refclk1_0 is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:205]
+INFO: [Synth 8-994] resetn_rtl is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:206]
+INFO: [Synth 8-994] vid_io_in_0_active_video is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:207]
+INFO: [Synth 8-994] vid_io_in_0_data is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:208]
+INFO: [Synth 8-994] vid_io_in_0_field is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:209]
+INFO: [Synth 8-994] vid_io_in_0_hblank is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:210]
+INFO: [Synth 8-994] vid_io_in_0_hsync is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:211]
+INFO: [Synth 8-994] vid_io_in_0_vblank is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:212]
+INFO: [Synth 8-994] vid_io_in_0_vsync is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:213]
+INFO: [Synth 8-994] vid_io_in_1_active_video is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:214]
+INFO: [Synth 8-994] vid_io_in_1_data is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:215]
+INFO: [Synth 8-994] vid_io_in_1_field is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:216]
+INFO: [Synth 8-994] vid_io_in_1_hblank is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:217]
+INFO: [Synth 8-994] vid_io_in_1_hsync is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:218]
+INFO: [Synth 8-994] vid_io_in_1_vblank is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:219]
+INFO: [Synth 8-994] vid_io_in_1_vsync is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:220]
+INFO: [Synth 8-994] vid_io_in_ce is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:221]
+INFO: [Synth 8-994] vid_io_in_clk is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:222]
+INFO: [Synth 8-994] vid_io_in_reset is declared here [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:223]
+ERROR: [Synth 8-1031] ctrl_par is not declared [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:407]
+ERROR: [Synth 8-1568] actual of formal out port ctrl_par cannot be an expression [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:407]
+ERROR: [Synth 8-1031] video_data1 is not declared [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:430]
+ERROR: [Synth 8-2029] formal ceb has no actual or default value [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:537]
+INFO: [Synth 8-994] ceb is declared here [E:/Xilinx/Vivado/2017.4/scripts/rt/data/unisim_VCOMP.vhd:13508]
+INFO: [Synth 8-2810] unit structure ignored due to previous errors [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/imports/Spektrop2_CMV4000_V2/spektrop2_cmv4000_top.vhd:102]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 481.660 ; gain = 148.621
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 1 Warnings, 0 Critical Warnings and 9 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 12 02:03:10 2018...
