@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xC08C8F2C4F7F2060" bd:device="xc7z015clg485-3" bd:isValidated="true" bd:synthFlowMode="Hierarchical" bd:tool_version="2017.4" bd:top="system" bd:version="1.00.a">
+<bd:repository xmlns:bd="http://www.xilinx.com/bd" bd:BoundaryCRC="0xC08C8F2C4F7F2060" bd:device="xc7z015clg485-3" bd:isValidated="true" bd:synthFlowMode="None" bd:tool_version="2017.4" bd:top="system" bd:version="1.00.a">
 
   <spirit:component xmlns:spirit="http://www.spiritconsortium.org/XMLSchema/SPIRIT/1685-2009">
     <spirit:vendor>xilinx.com</spirit:vendor>

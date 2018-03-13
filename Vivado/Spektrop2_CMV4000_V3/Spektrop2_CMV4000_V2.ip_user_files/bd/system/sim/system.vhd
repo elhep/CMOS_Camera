@@ -1,7 +1,7 @@
 --Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
---Date        : Mon Mar 12 01:56:53 2018
+--Date        : Tue Mar 13 02:20:09 2018
 --Host        : DESKTOP-C5LKN8N running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
@@ -1411,7 +1411,7 @@ entity system is
     vid_io_in_reset : in STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_clkrst_cnt=8,da_ps7_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=20,numReposBlks=15,numNonXlnxBlks=0,numHierBlks=5,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=0,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=4,da_board_cnt=1,da_clkrst_cnt=8,da_ps7_cnt=1,synth_mode=Global}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;

@@ -1,20 +1,45 @@
 \chapter{Camera design}
 
-In this chapter a design of the camera is presented . First of all, an electrical design is shown of the processor board as well as of the sensor board. Next, the hardware design is presented together with SI/PI simulation.
+In this chapter a design of the camera is presented. First of all, an electrical design is shown of the processor board as well as of the sensor board. Next, the hardware design is presented together with SI/PI simulation.
 At the end of the chapter, measurements of physical characteristics of the boards are presented.
 
 \section{Processor board} 
+The main functions of the processor board are as follows:
+\begin{itemize}
+\item Sensor control and data acquisition
+\item Video data transmission
+\end{itemize}
 
-\subsection{Architecture}
+Figure \ref{fig:block_diagram_proc_brd} presents the architecture block diagram of the processor board. It consists of:
 
-\subsection{Zynq 7Z015 - Main processing unit}
+\begin{itemize}
+\item Main processing unit - Zynq SoC
+\item SDI transceiver GS12281
+\item CoaXPress transceiver - ECQ
+\item SATA connector
+\item RS485 transceiver
+\item Rugged Board-to-Board connectors for sensor board
+\item Clock synthesis IC Si5340
+\item Power supply 
+\end{itemize}
 
+\subsection{Main processing unit - Zynq SoC}
+The main processing unit (MPU) is a Xilinx Zynq SoC \cite{ZYNQ} device, which consists of FPGA and dual core Cortex A9. This device was chosen as a MPU due to a fact that it has the capability of an FPGA as well as embedded application processor. FPGA fabric can be used for sensor data acquisition and high speed data transmission whereas application processor can be used for the control of the camera. 
+
+In the embedded camera Zynq Z7015 in FBG485 package has been chosen due to its compact size, GTP transceivers as well as compatibility with Z7012S and Z7030 devices which makes it possible to upgrade the camera in future \cite{ZYNQ_COMPATIBILITY}.
+
+MPU consists of 3 High Range banks, one GTP Quad and a Processing System.
+Bank 35 is used for CMV4000 control and data acquisition, whereas Bank 34 is used for CIS1910F control and data acquisition. Bank 13 is used as variable logic level IO control for both sensors. The Banks' voltage is taken from the sensor board and adjusts to the desired signaling level. For example CMV4000 is using LVCMOS 3.3V as signal standard for IOs whereas CIS1910F is using LVCMOS 2.5V.
+
+Figure \ref{ZYNQ_CONFIG} presents the block diagram of the configuration of the Zynq SoC in the embedded camera. 
+ 
 \subsection{High speed interfaces}
 \subsubsection{SDI}
 \subsubsection{CoaXPress}
 \subsubsection{PCIe/Aurora}
 
 \subsection{Sensor connection}
+
 \subsubsection{CMV4000}
 \subsubsection{CIS1910F}
 
@@ -25,6 +50,12 @@ At the end of the chapter, measurements of physical characteristics of the board
 \subsection{SI/PI simulations}
 
 \section{Sensor board}
+One of the requirements for the camera was the support of either CIS1910F or CMV4000 sensor. 
+
+For this reason the camera is a multi-board design where one board is a sensor board and the other is the processor board. Figure presents the architecture of the sensor board and processor board. 
+
+Thesis presents the design of both sensor boards, but only CMV4000 was produced due to cost reasons.
+
 \subsection{CIS1910F}
 \subsection{CMV4000}
 

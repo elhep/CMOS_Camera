@@ -288,6 +288,10 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 	signal pix_clk             : std_logic;
 	signal data_valid          : std_logic;
 	signal sen_reset_n         : std_logic;
+    signal dval : std_logic;
+    signal fval : std_logic;
+    signal lval : std_logic;
+    signal ctrl_par : unsigned(11 downto 0);
 
     -- video in to axi4 stream additional signals
     signal blank : std_logic;
@@ -303,6 +307,7 @@ architecture STRUCTURE of spektrop2_cmv4000_top is
 	signal   state_no            : std_logic_vector(3 downto 0);
 
     signal rst : std_logic;
+    signal aclken : std_logic;
     
 
 begin
@@ -328,34 +333,34 @@ begin
 			 UART_rxd => RS485_RX,
 			 UART_txd => RS485_TX,
 			 control_reg0_o => control_reg0_o,
-			 aclken  => '1', -- always enabled 
+			 aclken  => aclken, -- always enabled 
 			 aresetn  => rst_n, -- reset is common with tsc core
 			 axis_enable  => '1', -- always enabled
 			 gt_refclk1_0  => CLK_MGT0_IBUFDS_GTE2_O, 
              gt_reset_0 => rst,
 			 resetn_rtl  => rst_n, 
-			 vid_io_in_0_active_video  => data_valid,
+			 vid_io_in_0_active_video  => dval,
 			 vid_io_in_0_data => video_data0,
              vid_io_in_0_field  => '0', --non interlaced video 
 			 vid_io_in_0_hblank  => blank,
-			 vid_io_in_0_hsync  => data_valid,
+			 vid_io_in_0_hsync  => dval,
 			 vid_io_in_0_vblank  => blank, 
-			 vid_io_in_0_vsync  => data_valid, 
-			 vid_io_in_1_active_video  => data_valid,
+			 vid_io_in_0_vsync  => dval, 
+			 vid_io_in_1_active_video  => dval,
 			 vid_io_in_1_data => video_data1,
              vid_io_in_1_field  => '0', -- non interlaced video
 			 vid_io_in_1_hblank  => blank, 
-			 vid_io_in_1_hsync  => data_valid, 
+			 vid_io_in_1_hsync  => dval, 
 			 vid_io_in_1_vblank  => blank,
-			 vid_io_in_1_vsync  => data_valid, 
+			 vid_io_in_1_vsync  => dval, 
 			 vid_io_in_ce  => '1', -- always enabled 
 			 vid_io_in_clk  => pix_clk, 
 			 vid_io_in_reset => rst 
 		     );
 
-    blank <= not data_valid;
     
     rst <= not rst_n;
+    aclken <= '1';
 
 	tsc_ms1_top_i: tsc_mv1_top
 	port map(
@@ -436,6 +441,10 @@ begin
                     std_logic_vector(data08(11 downto 0));
                     
                     
+    blank <= not dval;
+	dval      <= ctrl_par(0) when data_valid = '1' else '0';
+	lval      <= ctrl_par(1) when data_valid = '1' else '0';
+	fval      <= ctrl_par(2) when data_valid = '1' else '0';
 
 	FPGA_BANK35_DIFF_P(14) <= cmv4000_data_p(1);
 	FPGA_BANK35_DIFF_N(14) <= cmv4000_data_n(1);
@@ -533,12 +542,30 @@ begin
 --			 O => CLK_MGT1_IBUFDS_GTE2_O
 --		 );
 
-	CLK_MGT0_IBUFDS_GTE2: unisim.vcomponents.IBUFDS_GTE2
+	CLK_MGT0_IBUFDS_GTE2: IBUFDS_GTE2
 	port map (
 			 I => CLK_MGT0_P,
 			 IB => CLK_MGT0_N,
+			 CEB => '0',
 			 O => CLK_MGT0_IBUFDS_GTE2_O
 		 );
+		 
+--   IBUFDS_GTE2_inst : IBUFDS_GTE2
+--         generic map (
+--            CLKCM_CFG => TRUE,    -- Refer to Transceiver User Guide
+--            CLKRCV_TRST => TRUE,  -- Refer to Transceiver User Guide
+--            CLKSWING_CFG => '11'  -- Refer to Transceiver User Guide
+--         )
+--         port map (
+--            O => O,         -- 1-bit output: Refer to Transceiver User Guide
+--            ODIV2 => ODIV2, -- 1-bit output: Refer to Transceiver User Guide
+--            CEB => CEB,     -- 1-bit input: Refer to Transceiver User Guide
+--            I => I,         -- 1-bit input: Refer to Transceiver User Guide
+--            IB => IB        -- 1-bit input: Refer to Transceiver User Guide
+--         );
+      
+         -- End of IBUFDS_GTE2_inst instantiation
+              
 
 --	MGT_RX0_IBUFDS_GTE2: unisim.vcomponents.IBUFDS_GTE2
 --	port map (

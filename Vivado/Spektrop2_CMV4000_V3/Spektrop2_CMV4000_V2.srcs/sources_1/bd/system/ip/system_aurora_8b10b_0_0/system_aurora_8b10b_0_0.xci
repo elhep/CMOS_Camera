@@ -161,7 +161,7 @@
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_cpll_fbdiv_45">5</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_cpll_refclk_div">1</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_device">xc7z015</spirit:configurableElementValue>
-        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_drp_if">false</spirit:configurableElementValue>
+        <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_drp_if">true</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_example_simulation">false</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_family">zynq</spirit:configurableElementValue>
         <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.c_gt_clock_1">GTPQ0</spirit:configurableElementValue>

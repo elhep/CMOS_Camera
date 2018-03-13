@@ -39238,7 +39238,7 @@
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>c_drp_if</spirit:name>
-        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_drp_if">false</spirit:value>
+        <spirit:value spirit:format="bool" spirit:resolve="generated" spirit:id="MODELPARAM_VALUE.c_drp_if">true</spirit:value>
       </spirit:modelParameter>
       <spirit:modelParameter spirit:dataType="boolean">
         <spirit:name>transceivercontrol</spirit:name>

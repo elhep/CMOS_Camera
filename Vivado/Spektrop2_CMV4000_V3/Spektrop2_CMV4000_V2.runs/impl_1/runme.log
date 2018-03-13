@@ -608,3 +608,479 @@ INFO: [Common 17-83] Releasing license: Implementation
 write_bitstream completed successfully
 write_bitstream: Time (s): cpu = 00:00:35 ; elapsed = 00:00:32 . Memory (MB): peak = 1669.234 ; gain = 483.551
 INFO: [Common 17-206] Exiting Vivado at Tue Feb 20 02:30:35 2018...
+
+*** Running vivado
+    with args -log spektrop2_cmv4000_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source spektrop2_cmv4000_top.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source spektrop2_cmv4000_top.tcl -notrace
+Command: open_checkpoint C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/spektrop2_cmv4000_top.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 226.508 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 454 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z015clg485-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/Users/ZdunekPC/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8600-DESKTOP-C5LKN8N/dcp98/clk_wiz_0.edf:377]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_board.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_board.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1220.559 ; gain = 572.754
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_early.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_late.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-2352-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.321 . Memory (MB): peak = 1223.340 ; gain = 0.535
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.322 . Memory (MB): peak = 1223.340 ; gain = 0.535
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 66 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 48 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 10 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 8 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.4 (64-bit) build 2086221
+open_checkpoint: Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1223.340 ; gain = 996.832
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z015'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z015'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[9] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[10] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[11] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[12] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[13] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[14] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[15] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[16] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[17] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[18] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[19] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[7] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[8] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[9] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[10] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[11] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[12] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[13] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[14] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[15] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[16] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[17] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[18] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[19] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[7] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[8] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[9] expects both input and output buffering but the buffers are incomplete.
+INFO: [Project 1-461] DRC finished with 0 Errors, 41 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1233.055 ; gain = 8.773
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-318] Generating core instance : dbg_hub
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/ZdunekPC/Documents/Spektrop2/Vivado/ip_repo/register_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+ERROR: [Chipscope 16-301] Could not generate core for dbg_hub .Aborting IP Generation operation. 
+	ERROR: [Chipscope 16-218] An error occurred while trying to create or get a cached instance from the IP cache manager:
+	"Problem generating DCP file"
+
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 23dbd75a4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:17 . Memory (MB): peak = 1236.387 ; gain = 3.332
+INFO: [Common 17-83] Releasing license: Implementation
+19 Infos, 42 Warnings, 0 Critical Warnings and 2 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-307] Implementing debug core dbg_hub failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 13 02:52:37 2018...
+
+*** Running vivado
+    with args -log spektrop2_cmv4000_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source spektrop2_cmv4000_top.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source spektrop2_cmv4000_top.tcl -notrace
+Command: open_checkpoint C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/spektrop2_cmv4000_top.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 225.992 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 454 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z015clg485-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/Users/ZdunekPC/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8600-DESKTOP-C5LKN8N/dcp98/clk_wiz_0.edf:377]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_board.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_board.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1219.883 ; gain = 572.469
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_early.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_late.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-6284-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.308 . Memory (MB): peak = 1222.961 ; gain = 0.719
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.308 . Memory (MB): peak = 1222.961 ; gain = 0.719
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 66 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 48 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 10 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 8 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.4 (64-bit) build 2086221
+open_checkpoint: Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 1222.961 ; gain = 996.969
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z015'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z015'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[9] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[10] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[11] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[12] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[13] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[14] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[15] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[16] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[17] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[18] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[19] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[7] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[8] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[9] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[10] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[11] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[12] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[13] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[14] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[15] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[16] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[17] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[18] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[19] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[7] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[8] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[9] expects both input and output buffering but the buffers are incomplete.
+INFO: [Project 1-461] DRC finished with 0 Errors, 41 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 1230.887 ; gain = 6.988
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-318] Generating core instance : dbg_hub
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/ZdunekPC/Documents/Spektrop2/Vivado/ip_repo/register_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+CRITICAL WARNING: [Vivado 12-5447] synth_ip is not supported in project mode, please use non-project mode.
+ERROR: [Timing 38-246] Caught exception 'Out of memory' while reading timing library and applying constraints.
+Resolution: For technical support on this issue, please visit http://www.xilinx.com/support
+ERROR: [Timing 38-17] An error was encountered initializing the timing graph. Analysis will not be performed.
+Resolution: For technical support on this issue, please visit http://www.xilinx.com/support
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+ERROR: [Common 17-53] User Exception: No open design. Please open an elaborated, synthesized or implemented design before executing this command.
+ERROR: [Vivado 12-398] No designs are open
+ERROR: [Chipscope 16-301] Could not generate core for dbg_hub .Aborting IP Generation operation. 
+	ERROR: [Chipscope 16-218] An error occurred while trying to create or get a cached instance from the IP cache manager:
+	"IP generation failed.
+"
+
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 23dbd75a4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:01:30 . Memory (MB): peak = 1244.348 ; gain = 13.461
+INFO: [Common 17-83] Releasing license: Implementation
+19 Infos, 42 Warnings, 1 Critical Warnings and 11 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-307] Implementing debug core dbg_hub failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 13 02:57:08 2018...
+
+*** Running vivado
+    with args -log spektrop2_cmv4000_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source spektrop2_cmv4000_top.tcl -notrace
+
+
+****** Vivado v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source spektrop2_cmv4000_top.tcl -notrace
+Command: open_checkpoint C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/spektrop2_cmv4000_top.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.078 . Memory (MB): peak = 226.004 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 454 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2017.4
+INFO: [Device 21-403] Loading part xc7z015clg485-3
+INFO: [Project 1-570] Preparing netlist for logic optimization
+WARNING: [Constraints 18-550] Could not create 'IBUF_LOW_PWR' constraint because net 'tsc_ms1_top_i/inst_clocking/clk_gen0_inst/clk_in1' is not directly connected to top level port. 'IBUF_LOW_PWR' is ignored by Vivado but preserved for implementation tool. [C:/Users/ZdunekPC/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-8600-DESKTOP-C5LKN8N/dcp98/clk_wiz_0.edf:377]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_board.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_board.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_early.xdc]
+INFO: [Timing 38-35] Done setting XDC timing constraints. [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc:57]
+get_clocks: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1219.996 ; gain = 572.730
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_early.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top.xdc]
+Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_late.xdc]
+Finished Parsing XDC File [C:/Users/ZdunekPC/Documents/Spektrop2/Vivado/Spektrop2_CMV4000_V3/Spektrop2_CMV4000_V2.runs/impl_1/.Xil/Vivado-5504-DESKTOP-C5LKN8N/dcp1/spektrop2_cmv4000_top_late.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.389 . Memory (MB): peak = 1223.270 ; gain = 0.652
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.390 . Memory (MB): peak = 1223.270 ; gain = 0.652
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 66 instances were transformed.
+  CFGLUT5 => CFGLUT5 (SRLC32E, SRL16E): 48 instances
+  IOBUF => IOBUF (IBUF, OBUFT): 10 instances
+  RAM32M => RAM32M (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 8 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2017.4 (64-bit) build 2086221
+open_checkpoint: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1223.273 ; gain = 997.270
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z015'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z015'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK13_IO[9] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[10] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[11] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[12] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[13] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[14] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[15] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[16] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[17] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[18] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[19] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[7] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[8] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_N[9] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[10] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[11] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[12] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[13] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[14] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[15] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[16] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[17] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[18] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[19] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[1] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[2] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[3] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[4] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[5] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[6] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[7] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[8] expects both input and output buffering but the buffers are incomplete.
+WARNING: [DRC RPBF-3] IO port buffering is incomplete: Device port FPGA_BANK35_DIFF_P[9] expects both input and output buffering but the buffers are incomplete.
+INFO: [Project 1-461] DRC finished with 0 Errors, 41 Warnings
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:01 . Memory (MB): peak = 1233.215 ; gain = 9.004
+
+Starting Logic Optimization Task
+
+Phase 1 Generate And Synthesize Debug Cores
+INFO: [Chipscope 16-318] Generating core instance : dbg_hub
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/ZdunekPC/Documents/Spektrop2/Vivado/ip_repo/register_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Xilinx/Vivado/2017.4/data/ip'.
+INFO: [IP_Flow 19-3806] Processing IP xilinx.com:ip:xsdbm:3.0 for cell dbg_hub_CV.
+ERROR: [Common 17-249] Param 'device.trackDeviceDataLoading' is already registered
+ERROR: [Common 17-249] Param 'device.disableTemplateLoading' is already registered
+ERROR: [Common 17-249] Param 'device.loadAllNodeTemplates' is already registered
+ERROR: [Common 17-249] Param 'device.disableCostCodes' is already registered
+ERROR: [Common 17-249] Param 'device.hotfabricfactor' is already registered
+ERROR: [Common 17-249] Param 'device.precomputedNodes' is already registered
+ERROR: [Common 17-249] Param 'device.dontDisconnectWires' is already registered
+ERROR: [Common 17-249] Param 'device.modifyReserveProperty' is already registered
+ERROR: [Common 17-249] Param 'device.leakDevices' is already registered
+ERROR: [Common 17-249] Param 'device.derivedDieDevice' is already registered
+ERROR: [Common 17-249] Param 'device.mungeCookedNames' is already registered
+ERROR: [Common 17-249] Param 'device.disableOracleGroups' is already registered
+ERROR: [Common 17-249] Param 'device.enablePhysicalDataLoad' is already registered
+ERROR: [Common 17-249] Param 'device.enablePhysicalDataDump' is already registered
+ERROR: [Common 17-249] Param 'arch.debugParse' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.cfgFile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRouting' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingVerbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingIgnoreSites' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.TrimUnusedRoutingSliceTypes' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.cfg' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.elbertCLBXYSize' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.intTileColsPerIntColumn' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Monitor' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.ReportFileName' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.GVerbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Verbose' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.QORDefaults' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.GNLDefaults' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.Threads' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.logfile' is already registered
+ERROR: [Common 17-249] Param 'arch.evalarch.addInterposerRouting' is already registered
+ERROR: [Common 17-249] Param 'device.externalEstimator' is already registered
+ERROR: [Common 17-249] Param 'device.mappingFile' is already registered
+ERROR: [Common 17-249] Param 'device.xmlDstFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.xmlDstFile_5lev' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.delayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.delayModel_5lev' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.floorplan' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.intXml' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.muxLayout' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overwriteTileGridDistWithCSV' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.paspdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.nonlibPaspdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.padrFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.padrFileAsText' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pbPadrFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.libertyFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.evalBlackBoxDelays' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.muxequivsFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaArchFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaDevice' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.lagunaDeviceFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.enableLagunaFlow' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dumpLagunaDeviceXML' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pinDlysFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pinIgnoreFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.overlapIgnoreFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.constSourcesFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.HDXMIallowMuxMissingInLayout' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dstGenMode' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketWithCrossings' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketPostPlaceWithCalc' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bucketPostRouteWithCalc' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.epsReportEstimatedDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.dumpGrids' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.bypassDistanceDelays' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.boundingBoxDelay' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.nominalTileNames' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.estDelayWithFnPenalty' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.longestHorizDelayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.longestVertDelayModel' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.altRoutedTiming' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.interconnectBuilderTasks' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.trimCenterColumn' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.belContextWrite' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.netContextWrite' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pipContextWrite' is already registered
+ERROR: [Common 17-249] Param 'device.clbDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.bramDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.dspDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.restDelayScale' is already registered
+ERROR: [Common 17-249] Param 'device.xmlUseCrossingPenalty' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.archXngFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.deviceXngFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.deviceXgdFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.veamMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.belTimingSetFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.belContextMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.netContextMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.netTimingSetFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.siteTimingSetFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.sitemapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.secondaryPlacementFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.secondaryPinPlacementFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.pkgSsoFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.progDelayCfgFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.idcMapFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.clockBuffersFile' is already registered
+ERROR: [Common 17-249] Param 'device.evalarch.clockRegionFile' is already registered
+INFO: [Common 17-14] Message 'Common 17-249' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+ERROR: [Common 17-217] Failed to load feature 'core'.
+ERROR: [Chipscope 16-301] Could not generate core for dbg_hub .Aborting IP Generation operation. 
+	ERROR: [Chipscope 16-218] An error occurred while trying to create or get a cached instance from the IP cache manager:
+	"IP generation failed.
+"
+
+Phase 1 Generate And Synthesize Debug Cores | Checksum: 23dbd75a4
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 1236.539 ; gain = 3.324
+INFO: [Common 17-83] Releasing license: Implementation
+20 Infos, 42 Warnings, 0 Critical Warnings and 103 Errors encountered.
+opt_design failed
+ERROR: [Chipscope 16-307] Implementing debug core dbg_hub failed due to earlier errors.
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 13 03:03:53 2018...

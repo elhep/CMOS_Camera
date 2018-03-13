@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Mar 12 01:56:57 2018" VIVADOVERSION="2017.4">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Tue Mar 13 02:20:11 2018" VIVADOVERSION="2017.4">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z015" NAME="system" PACKAGE="clg485" SPEEDGRADE="-3"/>
 
@@ -306,7 +306,7 @@
         <PARAMETER NAME="c_gt_clock_2" VALUE="None"/>
         <PARAMETER NAME="c_use_scrambler" VALUE="false"/>
         <PARAMETER NAME="c_use_chipscope" VALUE="false"/>
-        <PARAMETER NAME="c_drp_if" VALUE="false"/>
+        <PARAMETER NAME="c_drp_if" VALUE="true"/>
         <PARAMETER NAME="transceivercontrol" VALUE="false"/>
         <PARAMETER NAME="c_use_crc" VALUE="false"/>
         <PARAMETER NAME="supportlevel" VALUE="false"/>

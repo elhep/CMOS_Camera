@@ -75,7 +75,7 @@ preplace netloc rst_aurora_8b10b_0_156M_interconnect_aresetn 1 1 2 470 890 860J
 preplace netloc processing_system7_0_FCLK_CLK1 1 4 2 NJ 150 N
 preplace netloc aurora_8b10b_0_tx_resetdone_out 1 4 1 1700
 preplace netloc vid_io_in_clk_0_1 1 0 1 70
-levelinfo -pg 1 0 290 670 1040 1450 1800 1910 -top -70 -bot 1240
+levelinfo -pg 1 0 290 670 1040 1450 1800 1920 -top -70 -bot 1240
 ",
 }
 {

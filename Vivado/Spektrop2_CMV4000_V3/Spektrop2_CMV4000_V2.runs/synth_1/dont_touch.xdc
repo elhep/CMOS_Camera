@@ -54,4 +54,81 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_ila_0_2 
 # IP: bd/system/ip/system_auto_pc_0/system_auto_pc_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==system_auto_pc_0 || ORIG_REF_NAME==system_auto_pc_0} -quiet] -quiet
 
+# XDC: bd/system/ip/system_processing_system7_0_0/system_processing_system7_0_0.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_processing_system7_0_0 || ORIG_REF_NAME==system_processing_system7_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_rst_ps7_0_50M_1/system_rst_ps7_0_50M_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_rst_ps7_0_50M_1 || ORIG_REF_NAME==system_rst_ps7_0_50M_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_rst_ps7_0_50M_1/system_rst_ps7_0_50M_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_rst_ps7_0_50M_1 || ORIG_REF_NAME==system_rst_ps7_0_50M_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_rst_ps7_0_50M_1/system_rst_ps7_0_50M_1_ooc.xdc
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_0/system_axi_quad_spi_0_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_axi_quad_spi_0_0 || ORIG_REF_NAME==system_axi_quad_spi_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_0/system_axi_quad_spi_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_axi_quad_spi_0_0 || ORIG_REF_NAME==system_axi_quad_spi_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_0/system_axi_quad_spi_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_0/system_axi_quad_spi_0_0_clocks.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_axi_quad_spi_0_0 || ORIG_REF_NAME==system_axi_quad_spi_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_xbar_0/system_xbar_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_1/system_axi_quad_spi_0_1_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_axi_quad_spi_0_1 || ORIG_REF_NAME==system_axi_quad_spi_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_1/system_axi_quad_spi_0_1.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_axi_quad_spi_0_1 || ORIG_REF_NAME==system_axi_quad_spi_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_1/system_axi_quad_spi_0_1_ooc.xdc
+
+# XDC: bd/system/ip/system_axi_quad_spi_0_1/system_axi_quad_spi_0_1_clocks.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_axi_quad_spi_0_1 || ORIG_REF_NAME==system_axi_quad_spi_0_1} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_v_vid_in_axi4s_0_0 || ORIG_REF_NAME==system_v_vid_in_axi4s_0_0} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_v_vid_in_axi4s_0_0/system_v_vid_in_axi4s_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_v_vid_in_axi4s_0_1/system_v_vid_in_axi4s_0_1_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_v_vid_in_axi4s_0_1 || ORIG_REF_NAME==system_v_vid_in_axi4s_0_1} -quiet] {/inst } ]/inst ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_v_vid_in_axi4s_0_1/system_v_vid_in_axi4s_0_1_ooc.xdc
+
+# XDC: bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0_clocks.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_aurora_8b10b_0_0 || ORIG_REF_NAME==system_aurora_8b10b_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_aurora_8b10b_0_0 || ORIG_REF_NAME==system_aurora_8b10b_0_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_aurora_8b10b_0_0/system_aurora_8b10b_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_rst_aurora_8b10b_0_156M_0/system_rst_aurora_8b10b_0_156M_0_board.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_rst_aurora_8b10b_0_156M_0 || ORIG_REF_NAME==system_rst_aurora_8b10b_0_156M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_rst_aurora_8b10b_0_156M_0/system_rst_aurora_8b10b_0_156M_0.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_rst_aurora_8b10b_0_156M_0 || ORIG_REF_NAME==system_rst_aurora_8b10b_0_156M_0} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_rst_aurora_8b10b_0_156M_0/system_rst_aurora_8b10b_0_156M_0_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_dwidth_converter_0_1/system_axis_dwidth_converter_0_1_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_dwidth_converter_0_2/system_axis_dwidth_converter_0_2_ooc.xdc
+
+# XDC: bd/system/ip/system_axis_combiner_0_0/system_axis_combiner_0_0_ooc.xdc
+
+# XDC: bd/system/ip/system_ila_0_2/ila_v6_2/constraints/ila_impl.xdc
+set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_ila_0_2 || ORIG_REF_NAME==system_ila_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_ila_0_2/ila_v6_2/constraints/ila.xdc
+#dup# set_property DONT_TOUCH TRUE [get_cells [split [join [get_cells -hier -filter {REF_NAME==system_ila_0_2 || ORIG_REF_NAME==system_ila_0_2} -quiet] {/U0 } ]/U0 ] -quiet] -quiet
+
+# XDC: bd/system/ip/system_ila_0_2/system_ila_0_2_ooc.xdc
+
+# XDC: bd/system/ip/system_auto_pc_0/system_auto_pc_0_ooc.xdc
+
 # XDC: bd/system/system_ooc.xdc
